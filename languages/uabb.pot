@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Beaver Builder package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Beaver Builder 1.34.1\n"
+"Project-Id-Version: Ultimate Addons for Beaver Builder 1.34.2\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/bb-ultimate-addon\n"
-"POT-Creation-Date: 2021-12-09 05:02:05+00:00\n"
+"POT-Creation-Date: 2021-12-23 04:19:08+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -220,8 +220,8 @@ msgid "Sign Up & Activate"
 msgstr ""
 
 #: admin/bsf-core/class-bsf-envato-activate.php:138
-#: admin/bsf-core/class-bsf-license-manager.php:508
-#: admin/bsf-core/class-bsf-license-manager.php:732
+#: admin/bsf-core/class-bsf-license-manager.php:524
+#: admin/bsf-core/class-bsf-license-manager.php:748
 msgid "Deactivate License"
 msgstr ""
 
@@ -232,45 +232,45 @@ msgid ""
 msgstr ""
 
 #: admin/bsf-core/class-bsf-envato-activate.php:200
-#: admin/bsf-core/class-bsf-license-manager.php:572
+#: admin/bsf-core/class-bsf-license-manager.php:588
 msgid ""
 "Click on the button below to activate your license and subscribe to our "
 "newsletter."
 msgstr ""
 
-#: admin/bsf-core/class-bsf-license-manager.php:493
+#: admin/bsf-core/class-bsf-license-manager.php:509
 msgid "Product id is missing."
 msgstr ""
 
-#: admin/bsf-core/class-bsf-license-manager.php:507
-#: admin/bsf-core/class-bsf-license-manager.php:716
-#: admin/bsf-core/class-bsf-license-manager.php:731
+#: admin/bsf-core/class-bsf-license-manager.php:523
+#: admin/bsf-core/class-bsf-license-manager.php:732
+#: admin/bsf-core/class-bsf-license-manager.php:747
 msgid "Activate License"
 msgstr ""
 
-#: admin/bsf-core/class-bsf-license-manager.php:574
+#: admin/bsf-core/class-bsf-license-manager.php:590
 msgid "Enter your purchase key and activate automatic updates."
 msgstr ""
 
-#: admin/bsf-core/class-bsf-license-manager.php:603
+#: admin/bsf-core/class-bsf-license-manager.php:619
 msgid "Your license is active."
 msgstr ""
 
-#: admin/bsf-core/class-bsf-license-manager.php:719
+#: admin/bsf-core/class-bsf-license-manager.php:735
 #: classes/class-uabb-admin-settings.php:347
 #: includes/admin-settings-license.php:10
 msgid "License"
 msgstr ""
 
-#: admin/bsf-core/class-bsf-license-manager.php:734
+#: admin/bsf-core/class-bsf-license-manager.php:750
 msgid "Your license is not active!"
 msgstr ""
 
-#: admin/bsf-core/class-bsf-license-manager.php:735
+#: admin/bsf-core/class-bsf-license-manager.php:751
 msgid "Your license is activated!"
 msgstr ""
 
-#: admin/bsf-core/class-bsf-license-manager.php:781
+#: admin/bsf-core/class-bsf-license-manager.php:797
 msgid "Close"
 msgstr ""
 
@@ -330,27 +330,27 @@ msgstr ""
 msgid "Plugin Activated"
 msgstr ""
 
-#: admin/bsf-core/includes/helpers.php:241
+#: admin/bsf-core/includes/helpers.php:245
 msgid " requires following plugins to be active : "
 msgstr ""
 
-#: admin/bsf-core/includes/helpers.php:251
+#: admin/bsf-core/includes/helpers.php:255
 msgid " requires following plugins to be installed and activated : "
 msgstr ""
 
-#: admin/bsf-core/includes/helpers.php:260
+#: admin/bsf-core/includes/helpers.php:264
 msgid "Begin activating plugins"
 msgstr ""
 
-#: admin/bsf-core/includes/helpers.php:264
+#: admin/bsf-core/includes/helpers.php:268
 msgid "Begin installing plugins"
 msgstr ""
 
-#: admin/bsf-core/includes/helpers.php:267
+#: admin/bsf-core/includes/helpers.php:271
 msgid "Dismiss This Notice"
 msgstr ""
 
-#: admin/bsf-core/includes/helpers.php:298
+#: admin/bsf-core/includes/helpers.php:302
 #. translators: %1$s: strong tag %2%s: strong tag  %3%s: anchor tag %4%s:
 #. closing anchor tag
 msgid ""
@@ -387,11 +387,11 @@ msgstr ""
 msgid "Installed Extensions"
 msgstr ""
 
-#: admin/bsf-core/index.php:116 admin/bsf-core/index.php:117
+#: admin/bsf-core/index.php:117 admin/bsf-core/index.php:118
 msgid "Extensions"
 msgstr ""
 
-#: admin/bsf-core/index.php:215
+#: admin/bsf-core/index.php:216
 msgid "iMedica Extensions"
 msgstr ""
 
@@ -427,33 +427,33 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
-#: bb-ultimate-addon.php:59
+#: bb-ultimate-addon.php:60
 msgid ""
 "Unfortunately, plugin could not be activated as the memory allocated by "
 "your host has almost exhausted. UABB plugin recommends that your site "
 "should have 15M PHP memory remaining. "
 msgstr ""
 
-#: bb-ultimate-addon.php:60
+#: bb-ultimate-addon.php:61
 msgid "Please check "
 msgstr ""
 
-#: bb-ultimate-addon.php:60 includes/admin-settings-general.php:69
+#: bb-ultimate-addon.php:61 includes/admin-settings-general.php:69
 #: includes/admin-settings-general.php:109
 #: includes/admin-settings-general.php:127
 #: includes/admin-settings-general.php:153
 msgid "this article"
 msgstr ""
 
-#: bb-ultimate-addon.php:61
+#: bb-ultimate-addon.php:62
 msgid " for solution or contact "
 msgstr ""
 
-#: bb-ultimate-addon.php:61
+#: bb-ultimate-addon.php:62
 msgid " support"
 msgstr ""
 
-#: bb-ultimate-addon.php:62
+#: bb-ultimate-addon.php:63
 msgid "Return to Plugins Page"
 msgstr ""
 
@@ -14065,7 +14065,8 @@ msgstr ""
 msgid "Display a group of Image / Icons."
 msgstr ""
 
-#: modules/advanced-icon/includes/frontend.php:22
+#: modules/advanced-icon/includes/frontend.php:25
+#: modules/info-box/includes/frontend.php:31
 #: modules/info-list/info-list.php:513 modules/info-list/info-list.php:520
 #: modules/info-list/info-list.php:535
 msgid "Go to"
@@ -30793,12 +30794,12 @@ msgstr ""
 #: modules/uabb-registration-form/uabb-registration-form-bb-less-than-2-2-compatibility.php:18
 #. translators: %1$s: search term, translators: %2$s: search term
 msgid ""
-"Thank you for registering with us! You can access your account at:\n"
-"\t\t<strong>User Name:</strong> [USERNAME]\n"
-"<strong>Password:</strong> [PASSWORD]\n"
-"\n"
-"----\n"
-"You have received a new submission from %1$s\n"
+"Thank you for registering with us! You can access your account at:\r\n"
+"\t\t<strong>User Name:</strong> [USERNAME]\r\n"
+"<strong>Password:</strong> [PASSWORD]\r\n"
+"\r\n"
+"----\r\n"
+"You have received a new submission from %1$s\r\n"
 "(%2$s)"
 msgstr ""
 
@@ -32602,33 +32603,33 @@ msgstr ""
 msgid "from "
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:524
+#: modules/uabb-video/uabb-video.php:527
 msgid "Please choose a file."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:853
+#: modules/uabb-video/uabb-video.php:856
 #. translators: %s: search term
 msgid ""
 "<div style=\"%2$s\"> Make sure you add the actual URL of the video and not "
-"the share URL.</div>\r\n"
+"the share URL.</div>\n"
 "\t\t\t\t<div style=\"%1$s\"><b> Valid URL : </b>  "
-"https://www.youtube.com/watch?v=HJRzUQMhJMQ</div>\r\n"
+"https://www.youtube.com/watch?v=HJRzUQMhJMQ</div>\n"
 "\t\t\t\t<div style=\"%1$s\"> <b> Invalid URL : </b> "
 "https://youtu.be/HJRzUQMhJMQ</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:868
+#: modules/uabb-video/uabb-video.php:871
 #. translators: %s: search term
 msgid ""
 "<div style=\"%1$s\">Make sure you add the actual URL of the video and not "
-"the share URL.</div>\r\n"
+"the share URL.</div>\n"
 "\t\t\t\t<div style=\"%1$s\"><b> Valid URL : </b>  "
-"https://vimeo.com/274860274</div>\r\n"
+"https://vimeo.com/274860274</div>\n"
 "\t\t\t\t<div style=\"%1$s\"> <b> Invalid URL : </b> "
 "https://vimeo.com/channels/staffpicks/274860274</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:881
+#: modules/uabb-video/uabb-video.php:884
 #: modules/uabb-video-gallery/uabb-video-gallery.php:905
 #. translators: %s: search term
 msgid ""
@@ -32636,7 +32637,7 @@ msgid ""
 "Thumbnail\" and paste here.</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:898
+#: modules/uabb-video/uabb-video.php:901
 msgid ""
 "Click <a "
 "href=\"https://www.ultimatebeaver.com/docs/how-to-find-youtube-channel-name-"
@@ -32645,14 +32646,14 @@ msgid ""
 "here</strong> </a> to know how to find your YouTube Channel ID."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:904
+#: modules/uabb-video/uabb-video.php:907
 msgid ""
 "Click <a href=\"https://support.google.com/youtube/answer/3250431?hl=en\" "
 "target=\"_blank\" rel=\"noopener\"> <strong> here</strong> </a> to know how "
 "to find your YouTube Channel ID."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:913
+#: modules/uabb-video/uabb-video.php:916
 msgid ""
 "Click <a "
 "href=\"https://www.ultimatebeaver.com/docs/how-to-find-youtube-channel-name-"
@@ -32661,7 +32662,7 @@ msgid ""
 "here</strong> </a> to know how to find your YouTube Channel Name."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:919
+#: modules/uabb-video/uabb-video.php:922
 msgid ""
 "Click <a href=\"https://support.google.com/youtube/answer/3250431?hl=en\" "
 "target=\"_blank\" rel=\"noopener\"> <strong> here</strong> </a> to know how "
