@@ -483,7 +483,7 @@ class UABBVideoGallery extends FLBuilderModule {
 
 		if ( 'yes' === $item->custom_placeholder ) {
 
-			$url = $item->placeholder_image_src;
+			$url = ( ! empty( $item->placeholder_image_src ) ) ? $item->placeholder_image_src : FL_BUILDER_URL . 'img/no-image.png';
 
 		} else {
 			if ( 'youtube' === $item->video_type ) {
@@ -491,12 +491,23 @@ class UABBVideoGallery extends FLBuilderModule {
 				$url = 'https://i.ytimg.com/vi/' . $vid_id . '/' . apply_filters( 'uabb_vg_youtube_image_quality', $item->yt_thumbnail_size ) . '.jpg';
 			} elseif ( 'vimeo' === $item->video_type ) {
 				if ( '' !== $vid_id && 0 !== $vid_id ) {
-					$vimeo = maybe_unserialize( file_get_contents( "https://vimeo.com/api/v2/video/$vid_id.php" ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
-					$url   = $vimeo[0]['thumbnail_large'];
+					$opts    = array(
+						'ssl' => array(
+							'allow_self_signed' => true,
+							'verify_peer'       => false,
+							'verify_peer_name'  => false,
+						),
+					);
+					$context = stream_context_create( $opts );
+					$vimeo   = maybe_unserialize( file_get_contents( "https://vimeo.com/api/v2/video/$vid_id.php", false, $context ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+					$url     = $vimeo[0]['thumbnail_large'];
 				}
 			} elseif ( 'wistia' === $item->video_type ) {
 
 				$url = 'https://embedwistia-a.akamaihd.net/deliveries/' . $this->getStringBetween( $video_url, 'deliveries/', '?' );
+			} elseif ( 'hosted' === $item->video_type ) {
+
+				$url = FL_BUILDER_URL . 'img/no-image.png';
 			}
 		}
 		return array(
@@ -653,7 +664,7 @@ class UABBVideoGallery extends FLBuilderModule {
 			}
 
 			if ( 'inline' !== $this->settings->click_action ) {
-					$html = '<a href="' . $href . '" data-fancybox="uabb-video-gallery" data-url="' . $vurl . '"class="uabb-video-gallery-fancybox uabb-vg__play_full ">';
+					$html = '<a href="' . $href . '" aria-label="uabb-video-gallery" data-fancybox="uabb-video-gallery" data-url="' . $vurl . '"class="uabb-video-gallery-fancybox uabb-vg__play_full ">';
 			} else {
 
 				switch ( $item->video_type ) {
@@ -669,7 +680,7 @@ class UABBVideoGallery extends FLBuilderModule {
 						$vurl = $video_url . '?&autoplay=1';
 						break;
 				}
-				$html = '<a href="' . $href . '" class="uabb-clickable uabb-vg__play_full" data-url="' . $vurl . '">';
+				$html = '<a href="' . $href . '" aria-label="uabb-video-gallery" class="uabb-clickable uabb-vg__play_full" data-url="' . $vurl . '">';
 			}
 
 			?>
