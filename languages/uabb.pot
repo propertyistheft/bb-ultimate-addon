@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Beaver Builder package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Beaver Builder 1.35.1\n"
+"Project-Id-Version: Ultimate Addons for Beaver Builder 1.35.2\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/bb-ultimate-addon\n"
-"POT-Creation-Date: 2022-10-08 04:20:54+00:00\n"
+"POT-Creation-Date: 2022-11-24 05:16:54+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1434,12 +1434,13 @@ msgstr ""
 #: modules/flip-box/flip-box-bb-less-than-2-2-compatibility.php:768
 #: modules/google-map/google-map-bb-2-2-compatibility.php:95
 #: modules/google-map/google-map-bb-2-2-compatibility.php:136
-#: modules/google-map/google-map-bb-2-2-compatibility.php:158
-#: modules/google-map/google-map-bb-2-2-compatibility.php:167
-#: modules/google-map/google-map-bb-2-2-compatibility.php:176
-#: modules/google-map/google-map-bb-2-2-compatibility.php:203
-#: modules/google-map/google-map-bb-2-2-compatibility.php:352
-#: modules/google-map/google-map-bb-2-2-compatibility.php:372
+#: modules/google-map/google-map-bb-2-2-compatibility.php:148
+#: modules/google-map/google-map-bb-2-2-compatibility.php:170
+#: modules/google-map/google-map-bb-2-2-compatibility.php:179
+#: modules/google-map/google-map-bb-2-2-compatibility.php:188
+#: modules/google-map/google-map-bb-2-2-compatibility.php:215
+#: modules/google-map/google-map-bb-2-2-compatibility.php:364
+#: modules/google-map/google-map-bb-2-2-compatibility.php:384
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:81
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:122
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:144
@@ -1982,12 +1983,13 @@ msgstr ""
 #: modules/flip-box/flip-box-bb-less-than-2-2-compatibility.php:769
 #: modules/google-map/google-map-bb-2-2-compatibility.php:96
 #: modules/google-map/google-map-bb-2-2-compatibility.php:137
-#: modules/google-map/google-map-bb-2-2-compatibility.php:159
-#: modules/google-map/google-map-bb-2-2-compatibility.php:168
-#: modules/google-map/google-map-bb-2-2-compatibility.php:177
-#: modules/google-map/google-map-bb-2-2-compatibility.php:204
-#: modules/google-map/google-map-bb-2-2-compatibility.php:353
-#: modules/google-map/google-map-bb-2-2-compatibility.php:373
+#: modules/google-map/google-map-bb-2-2-compatibility.php:149
+#: modules/google-map/google-map-bb-2-2-compatibility.php:171
+#: modules/google-map/google-map-bb-2-2-compatibility.php:180
+#: modules/google-map/google-map-bb-2-2-compatibility.php:189
+#: modules/google-map/google-map-bb-2-2-compatibility.php:216
+#: modules/google-map/google-map-bb-2-2-compatibility.php:365
+#: modules/google-map/google-map-bb-2-2-compatibility.php:385
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:82
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:123
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:145
@@ -2843,7 +2845,7 @@ msgstr ""
 #: modules/blog-posts/includes/loop-settings.php:114
 #: modules/dual-button/dual-button-bb-2-2-compatibility.php:88
 #: modules/dual-button/dual-button-bb-less-than-2-2-compatibility.php:56
-#: modules/google-map/google-map-bb-2-2-compatibility.php:232
+#: modules/google-map/google-map-bb-2-2-compatibility.php:244
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:218
 #: modules/ihover/ihover-bb-2-2-compatibility.php:106
 #: modules/ihover/ihover-bb-less-than-2-2-compatibility.php:94
@@ -2996,8 +2998,8 @@ msgid "Refresh"
 msgstr ""
 
 #: classes/class-uabb-cloud-templates.php:586
-#: modules/blog-posts/blog-posts.php:1881
-#: modules/blog-posts/blog-posts.php:1905
+#: modules/blog-posts/blog-posts.php:1882
+#: modules/blog-posts/blog-posts.php:1906
 #: modules/blog-posts/includes/loop-settings.php:113
 #: modules/blog-posts/includes/loop-settings.php:293
 #: modules/blog-posts/includes/loop-settings.php:294
@@ -4328,7 +4330,7 @@ msgstr ""
 #: modules/fancy-text/fancy-text-bb-2-2-compatibility.php:15
 #: modules/fancy-text/fancy-text-bb-less-than-2-2-compatibility.php:14
 #: modules/google-map/google-map-bb-2-2-compatibility.php:33
-#: modules/google-map/google-map-bb-2-2-compatibility.php:283
+#: modules/google-map/google-map-bb-2-2-compatibility.php:295
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:32
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:247
 #: modules/ihover/ihover-bb-2-2-compatibility.php:15
@@ -15755,7 +15757,7 @@ msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:331
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:312
-#: modules/google-map/google-map-bb-2-2-compatibility.php:148
+#: modules/google-map/google-map-bb-2-2-compatibility.php:160
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:134
 #: modules/uabb-devices/uabb-devices.php:687
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:352
@@ -17135,7 +17137,7 @@ msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:1091
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:950
-#: modules/blog-posts/blog-posts.php:2286
+#: modules/blog-posts/blog-posts.php:2287
 msgid "Comment"
 msgstr ""
 
@@ -17579,7 +17581,7 @@ msgid "Taxonomy Filter"
 msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:2249
-#: modules/google-map/google-map-bb-2-2-compatibility.php:253
+#: modules/google-map/google-map-bb-2-2-compatibility.php:265
 #: modules/ihover/ihover-bb-2-2-compatibility.php:365
 #: modules/image-separator/image-separator-bb-2-2-compatibility.php:483
 #: modules/modal-popup/modal-popup-bb-2-2-compatibility.php:1239
@@ -17617,7 +17619,7 @@ msgid "Docs"
 msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:2252
-#: modules/google-map/google-map-bb-2-2-compatibility.php:256
+#: modules/google-map/google-map-bb-2-2-compatibility.php:268
 #: modules/ihover/ihover-bb-2-2-compatibility.php:368
 #: modules/image-separator/image-separator-bb-2-2-compatibility.php:486
 #: modules/modal-popup/modal-popup-bb-2-2-compatibility.php:1242
@@ -17722,11 +17724,11 @@ msgstr ""
 msgid "Advanced Posts"
 msgstr ""
 
-#: modules/blog-posts/blog-posts.php:2151
+#: modules/blog-posts/blog-posts.php:2152
 msgid "By"
 msgstr ""
 
-#: modules/blog-posts/blog-posts.php:2286
+#: modules/blog-posts/blog-posts.php:2287
 msgid "Comments"
 msgstr ""
 
@@ -19814,7 +19816,7 @@ msgid "Addresses"
 msgstr ""
 
 #: modules/google-map/google-map-bb-2-2-compatibility.php:23
-#: modules/google-map/google-map-bb-2-2-compatibility.php:286
+#: modules/google-map/google-map-bb-2-2-compatibility.php:298
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:22
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:250
 msgid "Address"
@@ -19860,68 +19862,72 @@ msgstr ""
 msgid "Disable map zoom on mouse wheel scroll"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:151
+#: modules/google-map/google-map-bb-2-2-compatibility.php:145
+msgid "Load default fonts by Google"
+msgstr ""
+
+#: modules/google-map/google-map-bb-2-2-compatibility.php:163
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:137
 msgid "Advanced Controls"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:155
+#: modules/google-map/google-map-bb-2-2-compatibility.php:167
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:141
 msgid "Street view control"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:164
+#: modules/google-map/google-map-bb-2-2-compatibility.php:176
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:150
 msgid "Map type control"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:173
+#: modules/google-map/google-map-bb-2-2-compatibility.php:185
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:159
 msgid "Zoom control"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:187
+#: modules/google-map/google-map-bb-2-2-compatibility.php:199
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:173
 msgid "Zoom control position"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:200
+#: modules/google-map/google-map-bb-2-2-compatibility.php:212
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:186
 msgid "Disable dragging on Mobile"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:212
+#: modules/google-map/google-map-bb-2-2-compatibility.php:224
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:198
 msgid "JSON Style"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:215
+#: modules/google-map/google-map-bb-2-2-compatibility.php:227
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:201
 msgid "Map Style"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:219
+#: modules/google-map/google-map-bb-2-2-compatibility.php:231
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:205
 msgid "Map Skin"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:222
+#: modules/google-map/google-map-bb-2-2-compatibility.php:234
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:208
 msgid "Standard"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:223
+#: modules/google-map/google-map-bb-2-2-compatibility.php:235
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:209
 #: modules/uabb-devices/uabb-devices.php:1115
 msgid "Silver"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:224
+#: modules/google-map/google-map-bb-2-2-compatibility.php:236
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:210
 msgid "Retro"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:225
+#: modules/google-map/google-map-bb-2-2-compatibility.php:237
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:211
 #: modules/uabb-contact-form/uabb-contact-form-bb-2-2-compatibility.php:1458
 #: modules/uabb-contact-form/uabb-contact-form-bb-less-than-2-2-compatibility.php:1734
@@ -19932,37 +19938,37 @@ msgstr ""
 msgid "Dark"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:226
+#: modules/google-map/google-map-bb-2-2-compatibility.php:238
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:212
 msgid "Night"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:227
+#: modules/google-map/google-map-bb-2-2-compatibility.php:239
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:213
 msgid "Aubergine"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:228
+#: modules/google-map/google-map-bb-2-2-compatibility.php:240
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:214
 msgid "Aqua"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:229
+#: modules/google-map/google-map-bb-2-2-compatibility.php:241
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:215
 msgid "Classic Blue"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:230
+#: modules/google-map/google-map-bb-2-2-compatibility.php:242
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:216
 msgid "Earth"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:231
+#: modules/google-map/google-map-bb-2-2-compatibility.php:243
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:217
 msgid "Magnesium"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:245
+#: modules/google-map/google-map-bb-2-2-compatibility.php:257
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:231
 msgid ""
 "<br/><br/><a target=\"_blank\" rel=\"noopener\" "
@@ -19970,12 +19976,12 @@ msgid ""
 "JSON code for styling your map."
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:280
+#: modules/google-map/google-map-bb-2-2-compatibility.php:292
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:244
 msgid "Add Address"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:290
+#: modules/google-map/google-map-bb-2-2-compatibility.php:302
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:254
 #: modules/team/team-bb-2-2-compatibility.php:178
 #: modules/team/team-bb-2-2-compatibility.php:781
@@ -19987,18 +19993,18 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:292
+#: modules/google-map/google-map-bb-2-2-compatibility.php:304
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:256
 msgid "Name the Address to identify while editing"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:296
+#: modules/google-map/google-map-bb-2-2-compatibility.php:308
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:260
 msgid "Latitude"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:298
-#: modules/google-map/google-map-bb-2-2-compatibility.php:305
+#: modules/google-map/google-map-bb-2-2-compatibility.php:310
+#: modules/google-map/google-map-bb-2-2-compatibility.php:317
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:262
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:269
 msgid ""
@@ -20008,12 +20014,12 @@ msgid ""
 "Latitude & Longitude of your location"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:303
+#: modules/google-map/google-map-bb-2-2-compatibility.php:315
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:267
 msgid "Longitude"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:313
+#: modules/google-map/google-map-bb-2-2-compatibility.php:325
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:277
 #: modules/uabb-hotspot/uabb-hotspot-bb-2-2-compatibility.php:31
 #: modules/uabb-hotspot/uabb-hotspot-bb-2-2-compatibility.php:67
@@ -20024,27 +20030,27 @@ msgstr ""
 msgid "Marker"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:320
+#: modules/google-map/google-map-bb-2-2-compatibility.php:332
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:284
 msgid "Marker Point Icon"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:334
+#: modules/google-map/google-map-bb-2-2-compatibility.php:346
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:298
 msgid "Custom Marker"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:342
+#: modules/google-map/google-map-bb-2-2-compatibility.php:354
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:306
 msgid "Info Text"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:349
+#: modules/google-map/google-map-bb-2-2-compatibility.php:361
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:313
 msgid "Show Info Text"
 msgstr ""
 
-#: modules/google-map/google-map-bb-2-2-compatibility.php:369
+#: modules/google-map/google-map-bb-2-2-compatibility.php:381
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:333
 msgid "Disable Info Window On Load"
 msgstr ""

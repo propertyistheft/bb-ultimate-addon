@@ -61,7 +61,7 @@ if ( isset( $settings->info_window_text ) ) {
 				$marker->map_lattitude = ( $marker->map_lattitude != '' ) ? $marker->map_lattitude : 40.76142;
 				$marker->map_longitude = ( $marker->map_longitude != '' ) ? $marker->map_longitude : -73.97712;
 				?>
-		
+
 			pos['lat'] = <?php echo json_encode( do_shortcode( $marker->map_lattitude ) ); ?>;
 			pos['lng'] = <?php echo json_encode( do_shortcode( $marker->map_longitude ) ); ?>;
 			markers.push(pos);
@@ -73,13 +73,13 @@ if ( isset( $settings->info_window_text ) ) {
 			enable_info.push( '<?php echo $marker->enable_info; ?>' );
 			open_marker.push( '<?php echo ( isset( $marker->open_marker ) ) ? $marker->open_marker : 'no'; ?>' );
 			marker_point.push( '<?php echo ( isset( $marker->marker_point ) ) ? $marker->marker_point : 'default'; ?>' );
-			
+
 
 				<?php
 			}
 		}
 		?>
-	
+
 	var args = {
 			id: '<?php echo esc_attr( $id ); ?>',
 			markers: markers,
@@ -89,6 +89,7 @@ if ( isset( $settings->info_window_text ) ) {
 			street_view: '<?php echo $settings->street_view; ?>',
 			map_type_control: '<?php echo $settings->map_type_control; ?>',
 			zoom: '<?php echo $settings->zoom; ?>',
+			load_google_fonts: '<?php echo $settings->load_google_fonts; ?>',
 			zoom_control_position: '<?php echo $settings->zoom_control_position; ?>',
 			map_type: '<?php echo $settings->map_type; ?>',
 			map_style: '<?php $order = array( "\r\n", "\n", "\r", '<br/>', '<br>' );
@@ -103,7 +104,7 @@ if ( isset( $settings->info_window_text ) ) {
 		};
 
 	jQuery(document).ready( function() {
-		
+
 		/* Accordion Click Trigger */
 		UABBTrigger.addHook( 'uabb-accordion-click', function( argument, selector ) {
 			new UABBGoogleMaps( args );

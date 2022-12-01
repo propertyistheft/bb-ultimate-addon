@@ -337,18 +337,18 @@ if ( ! $version_bb_check ) {
 	}
 <?php } ?>
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_body .ginput_container_checkbox .gfield_checkbox li, 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_body .ginput_container_checkbox .gfield_checkbox li,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_body .ginput_container_radio .gfield_radio li,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_body .ginput_container_checkbox .gfield_checkbox div, 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_body .ginput_container_checkbox .gfield_checkbox div,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_body .ginput_container_radio .gfield_radio div {
 	<?php if ( $settings->input_text_align ) { ?>
 		text-align: <?php echo esc_attr( $settings->input_text_align ); ?>;
 	<?php } ?>
 }
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio li label, 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio li label,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_checkbox li label,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio div label, 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio div label,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_checkbox div label {
 
 	<?php if ( 'true' === $settings->radio_check_custom_option ) { ?>
@@ -367,9 +367,9 @@ if ( ! $version_bb_check ) {
 }
 
 <?php if ( ! $version_bb_check ) { ?>
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio li label, 
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio li label,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_checkbox li label,
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio div label, 
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio div label,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_checkbox div label {
 
 		<?php if ( 'true' === $settings->radio_check_custom_option ) { ?>
@@ -381,7 +381,7 @@ if ( ! $version_bb_check ) {
 				font-size: <?php echo esc_attr( $settings->radio_checkbox_font_size_unit ); ?>px;
 			<?php endif; ?>
 
-		<?php } elseif ( 'false' === $settings->radio_check_custom_option ) { ?>     
+		<?php } elseif ( 'false' === $settings->radio_check_custom_option ) { ?>
 
 			<?php if ( 'Default' !== $settings->label_font_family['family'] ) : ?>
 				<?php UABB_Helper::uabb_font_css( $settings->label_font_family ); ?>
@@ -415,7 +415,7 @@ if ( ! $version_bb_check ) {
 if ( 'true' === $settings->radio_check_custom_option ) {
 	$font_size = $settings->radio_check_size / 1.3;
 	?>
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_body .ginput_container_checkbox .gfield_checkbox input[type='checkbox'], 
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_body .ginput_container_checkbox .gfield_checkbox input[type='checkbox'],
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_body .ginput_container_radio .gfield_radio input[type='radio'] {
 		display: none;
 	}
@@ -468,8 +468,9 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 if ( $settings->placeholder_color && 'block' === $settings->input_placeholder_display ) {
 	?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield input::-webkit-input-placeholder,
-	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select .chosen-container-single .chosen-single, 
-	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select select {
+	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select .chosen-container-single .chosen-single,
+	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select select,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .ginput_container_select:after {
 		color: #<?php echo esc_attr( $settings->placeholder_color ); ?>;
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield input:-moz-placeholder {
@@ -832,7 +833,7 @@ if ( 'gradient' === $settings->btn_style ) {
 			<?php endif; ?>
 
 			<?php if ( 'yes' === $converted || isset( $settings->form_title_font_size_unit ) && '' !== $settings->form_title_font_size_unit ) { ?>
-				font-size: <?php echo esc_attr( $settings->form_title_font_size_unit ); ?>px;   
+				font-size: <?php echo esc_attr( $settings->form_title_font_size_unit ); ?>px;
 			<?php } elseif ( isset( $settings->form_title_font_size_unit ) && '' === $settings->form_title_font_size_unit && isset( $settings->form_title_font_size['desktop'] ) && '' !== $settings->form_title_font_size['desktop'] ) { ?>
 				font-size: <?php echo esc_attr( $settings->form_title_font_size['desktop'] ); ?>px;
 			<?php } ?>
@@ -842,7 +843,7 @@ if ( 'gradient' === $settings->btn_style ) {
 			<?php } ?>
 
 			<?php if ( 'yes' === $converted || isset( $settings->form_title_line_height_unit ) && '' !== $settings->form_title_line_height_unit ) { ?>
-				line-height: <?php echo esc_attr( $settings->form_title_line_height_unit ); ?>em;  
+				line-height: <?php echo esc_attr( $settings->form_title_line_height_unit ); ?>em;
 			<?php } elseif ( isset( $settings->form_title_line_height_unit ) && '' === $settings->form_title_line_height_unit && isset( $settings->form_title_line_height['desktop'] ) && '' !== $settings->form_title_line_height['desktop'] ) { ?>
 				line-height: <?php echo esc_attr( $settings->form_title_line_height['desktop'] ); ?>px;
 			<?php } ?>
@@ -885,7 +886,7 @@ if ( 'gradient' === $settings->btn_style ) {
 			<?php endif; ?>
 
 			<?php if ( 'yes' === $converted || isset( $settings->form_desc_font_size_unit ) && '' !== $settings->form_desc_font_size_unit ) { ?>
-				font-size: <?php echo esc_attr( $settings->form_desc_font_size_unit ); ?>px;    
+				font-size: <?php echo esc_attr( $settings->form_desc_font_size_unit ); ?>px;
 			<?php } elseif ( isset( $settings->form_desc_font_size_unit ) && '' === $settings->form_desc_font_size_unit && isset( $settings->form_desc_font_size['desktop'] ) && '' !== $settings->form_desc_font_size['desktop'] ) { ?>
 				font-size: <?php echo esc_attr( $settings->form_desc_font_size['desktop'] ); ?>px;
 			<?php } ?>
@@ -895,7 +896,7 @@ if ( 'gradient' === $settings->btn_style ) {
 			<?php } ?>
 
 			<?php if ( 'yes' === $converted || isset( $settings->form_desc_line_height_unit ) && '' !== $settings->form_desc_line_height_unit ) { ?>
-				line-height: <?php echo esc_attr( $settings->form_desc_line_height_unit ); ?>em;  
+				line-height: <?php echo esc_attr( $settings->form_desc_line_height_unit ); ?>em;
 			<?php } elseif ( isset( $settings->form_desc_line_height_unit ) && '' === $settings->form_desc_line_height_unit && isset( $settings->form_desc_line_height['desktop'] ) && '' !== $settings->form_desc_line_height['desktop'] ) { ?>
 				line-height: <?php echo esc_attr( $settings->form_desc_line_height['desktop'] ); ?>px;
 			<?php } ?>
@@ -938,7 +939,7 @@ if ( 'gradient' === $settings->btn_style ) {
 		<?php } ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->font_size_unit ) && '' !== $settings->font_size_unit ) { ?>
-			font-size: <?php echo esc_attr( $settings->font_size_unit ); ?>px;   
+			font-size: <?php echo esc_attr( $settings->font_size_unit ); ?>px;
 		<?php } elseif ( isset( $settings->font_size_unit ) && '' === $settings->font_size_unit && isset( $settings->font_size['desktop'] ) && '' !== $settings->font_size['desktop'] ) { ?>
 			font-size: <?php echo esc_attr( $settings->font_size['desktop'] ); ?>px;
 		<?php } ?>
@@ -986,7 +987,7 @@ if ( 'gradient' === $settings->btn_style ) {
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit] {
 
 		<?php
-		$uabb_theme_btn_family = apply_filters( 'uabb/theme/button_font_family', '' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores 
+		$uabb_theme_btn_family = apply_filters( 'uabb/theme/button_font_family', '' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
 		?>
 
 		<?php if ( '' !== uabb_theme_button_letter_spacing( '' ) ) { ?>
@@ -1010,7 +1011,7 @@ if ( 'gradient' === $settings->btn_style ) {
 		<?php endif; ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->btn_font_size_unit ) && '' !== $settings->btn_font_size_unit ) { ?>
-			font-size: <?php echo esc_attr( $settings->btn_font_size_unit ); ?>px; 
+			font-size: <?php echo esc_attr( $settings->btn_font_size_unit ); ?>px;
 		<?php } else { ?>
 				<?php if ( '' !== uabb_theme_button_line_height( '' ) ) { ?>
 					font-size: <?php echo esc_attr( uabb_theme_button_font_size( '' ) ); ?>;
@@ -1077,7 +1078,7 @@ if ( 'gradient' === $settings->btn_style ) {
 		<?php endif; ?>
 
 		text-align: <?php echo esc_attr( $settings->input_text_align ); ?>;
-	<?php } ?>    
+	<?php } ?>
 }
 
 <?php if ( ! $version_bb_check ) { ?>
@@ -1098,7 +1099,7 @@ if ( 'gradient' === $settings->btn_style ) {
 			<?php } ?>
 
 			<?php if ( 'yes' === $converted || isset( $settings->label_font_size_unit ) && '' !== $settings->label_font_size_unit ) { ?>
-				font-size: <?php echo esc_attr( $settings->label_font_size_unit ); ?>px;     
+				font-size: <?php echo esc_attr( $settings->label_font_size_unit ); ?>px;
 			<?php } elseif ( isset( $settings->label_font_size_unit ) && '' === $settings->label_font_size_unit && isset( $settings->label_font_size['desktop'] ) && '' !== $settings->label_font_size['desktop'] ) { ?>
 				font-size: <?php echo esc_attr( $settings->label_font_size['desktop'] ); ?>px;
 			<?php } ?>
@@ -1108,7 +1109,7 @@ if ( 'gradient' === $settings->btn_style ) {
 			<?php } ?>
 
 			<?php if ( 'yes' === $converted || isset( $settings->label_line_height_unit ) && '' !== $settings->label_line_height_unit ) { ?>
-				line-height: <?php echo esc_attr( $settings->label_line_height_unit ); ?>em;  
+				line-height: <?php echo esc_attr( $settings->label_line_height_unit ); ?>em;
 			<?php } elseif ( isset( $settings->label_line_height_unit ) && '' === $settings->label_line_height_unit && isset( $settings->label_line_height['desktop'] ) && '' !== $settings->label_line_height['desktop'] ) { ?>
 				line-height: <?php echo esc_attr( $settings->label_line_height['desktop'] ); ?>px;
 			<?php } ?>
@@ -1297,7 +1298,7 @@ if ( 'gradient' === $settings->btn_style ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield_error input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
 .fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield_error .ginput_container select,
 .fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield_error .ginput_container textarea,
-.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select .chosen-container-single .chosen-single { 
+.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select .chosen-container-single .chosen-single {
 	<?php if ( $settings->input_error_border_color && 'yes' === $settings->input_error_display ) { ?>
 		border-color: <?php echo '#' . esc_attr( $settings->input_error_border_color ); ?>;
 	<?php } ?>
@@ -1329,9 +1330,9 @@ if ( 'gradient' === $settings->btn_style ) {
 	@media ( max-width: <?php echo esc_attr( $global_settings->medium_breakpoint ) . 'px'; ?> ) {
 
 		<?php if ( ! $version_bb_check ) { ?>
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio li label, 
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio li label,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_checkbox li label,
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio div label, 
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio div label,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_checkbox div label {
 
 				<?php if ( 'true' === $settings->radio_check_custom_option ) { ?>
@@ -1344,12 +1345,12 @@ if ( 'gradient' === $settings->btn_style ) {
 						font-size: <?php echo esc_attr( $settings->radio_checkbox_font_size_unit_medium ); ?>px;
 					<?php } elseif ( isset( $settings->radio_checkbox_font_size_unit_medium ) && '' === $settings->radio_checkbox_font_size_unit_medium && isset( $settings->radio_checkbox_font_size['medium'] ) && '' !== $settings->radio_checkbox_font_size['medium'] ) { ?>
 						font-size: <?php echo esc_attr( $settings->radio_checkbox_font_size['medium'] ); ?>px;
-					<?php } ?> 
+					<?php } ?>
 
 					<?php if ( $settings->radio_checkbox_color ) { ?>
 						color: #<?php echo esc_attr( $settings->radio_checkbox_color ); ?>;
 					<?php } ?>
-				<?php } elseif ( 'false' === $settings->radio_check_custom_option ) { ?>		
+				<?php } elseif ( 'false' === $settings->radio_check_custom_option ) { ?>
 
 					<?php if ( ! $version_bb_check ) { ?>
 						<?php if ( 'Default' !== $settings->label_font_family['family'] ) : ?>
@@ -1371,7 +1372,7 @@ if ( 'gradient' === $settings->btn_style ) {
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .uabb-gf-form-title {
 
 				<?php if ( 'yes' === $converted || isset( $settings->form_title_font_size_unit_medium ) && '' !== $settings->form_title_font_size_unit_medium ) { ?>
-					font-size: <?php echo esc_attr( $settings->form_title_font_size_unit_medium ); ?>px; 
+					font-size: <?php echo esc_attr( $settings->form_title_font_size_unit_medium ); ?>px;
 				<?php } elseif ( isset( $settings->form_title_font_size_unit_medium ) && '' === $settings->form_title_font_size_unit_medium && isset( $settings->form_title_font_size['medium'] ) && '' !== $settings->form_title_font_size['medium'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->form_title_font_size['medium'] ); ?>px;
 				<?php } ?>
@@ -1381,15 +1382,15 @@ if ( 'gradient' === $settings->btn_style ) {
 				<?php } ?>
 
 				<?php if ( 'yes' === $converted || isset( $settings->form_title_line_height_unit_medium ) && '' !== $settings->form_title_line_height_unit_medium ) { ?>
-					line-height: <?php echo esc_attr( $settings->form_title_line_height_unit_medium ); ?>em;   
+					line-height: <?php echo esc_attr( $settings->form_title_line_height_unit_medium ); ?>em;
 				<?php } elseif ( isset( $settings->form_title_line_height_unit_medium ) && '' === $settings->form_title_line_height_unit_medium && isset( $settings->form_title_line_height['medium'] ) && '' !== $settings->form_title_line_height['medium'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->form_title_line_height['medium'] ); ?>px;
 				<?php } ?>
 			}
 
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield .gfield_radio li label, 
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield .gfield_radio li label,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield .gfield_checkbox li label,
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield .gfield_radio div label, 
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield .gfield_radio div label,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield .gfield_checkbox div label {
 				<?php if ( isset( $settings->radio_checkbox_font_size['medium'] ) && '' !== $settings->radio_checkbox_font_size['medium'] && 'true' === $settings->radio_check_custom_option ) : ?>
 					font-size: <?php echo esc_attr( $settings->radio_checkbox_font_size['medium'] ); ?>px;
@@ -1409,7 +1410,7 @@ if ( 'gradient' === $settings->btn_style ) {
 				<?php } ?>
 
 				<?php if ( 'yes' === $converted || isset( $settings->form_desc_line_height_unit_medium ) && '' !== $settings->form_desc_line_height_unit_medium ) { ?>
-					line-height: <?php echo esc_attr( $settings->form_desc_line_height_unit_medium ); ?>em;   
+					line-height: <?php echo esc_attr( $settings->form_desc_line_height_unit_medium ); ?>em;
 				<?php } elseif ( isset( $settings->form_desc_line_height_unit_medium ) && '' === $settings->form_desc_line_height_unit_medium && isset( $settings->form_desc_line_height['medium'] ) && '' !== $settings->form_desc_line_height['medium'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->form_desc_line_height['medium'] ); ?>px;
 				<?php } ?>
@@ -1445,7 +1446,7 @@ if ( 'gradient' === $settings->btn_style ) {
 				<?php } ?>
 
 				<?php if ( 'yes' === $converted || isset( $settings->btn_line_height_unit_medium ) && '' !== $settings->btn_line_height_unit_medium ) { ?>
-					line-height: <?php echo esc_attr( $settings->btn_line_height_unit_medium ); ?>em;   
+					line-height: <?php echo esc_attr( $settings->btn_line_height_unit_medium ); ?>em;
 				<?php } elseif ( isset( $settings->btn_line_height_unit_medium ) && '' === $settings->btn_line_height_unit_medium && isset( $settings->btn_line_height['medium'] ) && '' !== $settings->btn_line_height['medium'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->btn_line_height['medium'] ); ?>px;
 				<?php } ?>
@@ -1463,7 +1464,7 @@ if ( 'gradient' === $settings->btn_style ) {
 				<?php } ?>
 
 				<?php if ( 'yes' === $converted || isset( $settings->label_line_height_unit_medium ) && '' !== $settings->label_line_height_unit_medium ) { ?>
-					line-height: <?php echo esc_attr( $settings->label_line_height_unit_medium ); ?>em;   
+					line-height: <?php echo esc_attr( $settings->label_line_height_unit_medium ); ?>em;
 				<?php } elseif ( isset( $settings->label_line_height_unit_medium ) && '' === $settings->label_line_height_unit_medium && isset( $settings->label_line_height['medium'] ) && '' !== $settings->label_line_height['medium'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->label_line_height['medium'] ); ?>px;
 				<?php } ?>
@@ -1598,9 +1599,9 @@ if ( 'gradient' === $settings->btn_style ) {
 
 		<?php if ( ! $version_bb_check ) { ?>
 
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio li label, 
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio li label,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_checkbox li label,
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio div label, 
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_radio div label,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield_checkbox div label {
 				<?php if ( 'true' === $settings->radio_check_custom_option ) { ?>
 
@@ -1609,14 +1610,14 @@ if ( 'gradient' === $settings->btn_style ) {
 					<?php } ?>
 
 					<?php if ( 'yes' === $converted || isset( $settings->radio_checkbox_font_size_unit_responsive ) && '' !== $settings->radio_checkbox_font_size_unit_responsive ) { ?>
-						font-size: <?php echo esc_attr( $settings->radio_checkbox_font_size_unit_responsive ); ?>px;      
+						font-size: <?php echo esc_attr( $settings->radio_checkbox_font_size_unit_responsive ); ?>px;
 					<?php } elseif ( isset( $settings->radio_checkbox_font_size_unit_responsive ) && '' === $settings->radio_checkbox_font_size_unit_responsive && isset( $settings->radio_checkbox_font_size['small'] ) && '' !== $settings->radio_checkbox_font_size['small'] ) { ?>
 						font-size: <?php echo esc_attr( $settings->radio_checkbox_font_size['small'] ); ?>px;
 					<?php } ?>
 					<?php if ( $settings->radio_checkbox_color ) { ?>
 						color: #<?php echo esc_attr( $settings->radio_checkbox_color ); ?>;
 					<?php } ?>
-				<?php } elseif ( 'false' === $settings->radio_check_custom_option ) { ?>		
+				<?php } elseif ( 'false' === $settings->radio_check_custom_option ) { ?>
 
 					<?php if ( ! $version_bb_check ) { ?>
 						<?php if ( 'Default' !== $settings->label_font_family['family'] ) : ?>
@@ -1637,7 +1638,7 @@ if ( 'gradient' === $settings->btn_style ) {
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .uabb-gf-form-title {
 
 				<?php if ( 'yes' === $converted || isset( $settings->form_title_font_size_unit_responsive ) && '' !== $settings->form_title_font_size_unit_responsive ) { ?>
-					font-size: <?php echo esc_attr( $settings->form_title_font_size_unit_responsive ); ?>px;   
+					font-size: <?php echo esc_attr( $settings->form_title_font_size_unit_responsive ); ?>px;
 				<?php } elseif ( isset( $settings->form_title_font_size_unit_responsive ) && '' === $settings->form_title_font_size_unit_responsive && isset( $settings->form_title_font_size['small'] ) && '' !== $settings->form_title_font_size['small'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->form_title_font_size['small'] ); ?>px;
 				<?php } ?>
@@ -1653,9 +1654,9 @@ if ( 'gradient' === $settings->btn_style ) {
 				<?php } ?>
 			}
 
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield .gfield_radio li label, 
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield .gfield_radio li label,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield .gfield_checkbox li label,
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield .gfield_radio div label, 
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield .gfield_radio div label,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gfield .gfield_checkbox div label {
 				<?php if ( isset( $settings->radio_checkbox_font_size['small'] ) && '' !== $settings->radio_checkbox_font_size['small'] && 'true' === $settings->radio_check_custom_option ) : ?>
 					font-size: <?php echo esc_attr( $settings->radio_checkbox_font_size['small'] ); ?>px;
@@ -1665,7 +1666,7 @@ if ( 'gradient' === $settings->btn_style ) {
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .uabb-gf-form-desc {
 
 				<?php if ( 'yes' === $converted || isset( $settings->form_desc_font_size_unit_responsive ) && '' !== $settings->form_desc_font_size_unit_responsive ) { ?>
-					font-size: <?php echo esc_attr( $settings->form_desc_font_size_unit_responsive ); ?>px;    
+					font-size: <?php echo esc_attr( $settings->form_desc_font_size_unit_responsive ); ?>px;
 				<?php } elseif ( isset( $settings->form_desc_font_size_unit_responsive ) && '' === $settings->form_desc_font_size_unit_responsive && isset( $settings->form_desc_font_size['small'] ) && '' !== $settings->form_desc_font_size['small'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->form_desc_font_size['small'] ); ?>px;
 				<?php } ?>
@@ -1678,7 +1679,7 @@ if ( 'gradient' === $settings->btn_style ) {
 					line-height: <?php echo esc_attr( $settings->form_desc_line_height_unit_responsive ); ?>em;
 				<?php } elseif ( isset( $settings->form_desc_line_height_unit_responsive ) && '' === $settings->form_desc_line_height_unit_responsive && isset( $settings->form_desc_line_height['small'] ) && '' !== $settings->form_desc_line_height['small'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->form_desc_line_height['small'] ); ?>px;
-				<?php } ?>			
+				<?php } ?>
 			}
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper <?php echo '#gform_' . esc_attr( $settings->form_id ); ?> input[type=tel],
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper <?php echo '#gform_' . esc_attr( $settings->form_id ); ?> input[type=email],
@@ -1700,7 +1701,7 @@ if ( 'gradient' === $settings->btn_style ) {
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style <?php echo '#gform_' . esc_attr( $settings->form_id ); ?> .gform_page .gform_page_footer input[type=submit] {
 
 				<?php if ( 'yes' === $converted || isset( $settings->btn_font_size_unit_responsive ) && '' !== $settings->btn_font_size_unit_responsive ) { ?>
-					font-size: <?php echo esc_attr( $settings->btn_font_size_unit_responsive ); ?>px;     
+					font-size: <?php echo esc_attr( $settings->btn_font_size_unit_responsive ); ?>px;
 				<?php } elseif ( isset( $settings->btn_font_size_unit_responsive ) && '' === $settings->btn_font_size_unit_responsive && isset( $settings->btn_font_size['small'] ) && '' !== $settings->btn_font_size['small'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->btn_font_size['small'] ); ?>px;
 				<?php } ?>
@@ -1713,13 +1714,13 @@ if ( 'gradient' === $settings->btn_style ) {
 					line-height: <?php echo esc_attr( $settings->btn_line_height_unit_responsive ); ?>em;
 				<?php } elseif ( isset( $settings->btn_line_height_unit_responsive ) && '' === $settings->btn_line_height_unit_responsive && isset( $settings->btn_line_height['small'] ) && '' !== $settings->btn_line_height['small'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->btn_line_height['small'] ); ?>px;
-				<?php } ?>            
+				<?php } ?>
 			}
 
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style form:not(input) {
 
 				<?php if ( 'yes' === $converted || isset( $settings->label_font_size_unit_responsive ) && '' !== $settings->label_font_size_unit_responsive ) { ?>
-					font-size: <?php echo esc_attr( $settings->label_font_size_unit_responsive ); ?>px;     
+					font-size: <?php echo esc_attr( $settings->label_font_size_unit_responsive ); ?>px;
 				<?php } elseif ( isset( $settings->label_font_size_unit_responsive ) && '' === $settings->label_font_size_unit_responsive && isset( $settings->label_font_size['small'] ) && '' !== $settings->label_font_size['small'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->label_font_size['small'] ); ?>px;
 				<?php } ?>

@@ -30,6 +30,7 @@ class UABBContactForm7Module extends FLBuilderModule {
 				'icon'            => 'editor-table.svg',
 			)
 		);
+		$this->add_css( 'font-awesome-5' );
 	}
 
 	/**

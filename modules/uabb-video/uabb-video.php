@@ -430,9 +430,9 @@ class UABBVideo extends FLBuilderModule {
 		$id          = $this->get_video_id();
 		$embed_param = $this->get_embed_params();
 		if ( 'yes' === $this->settings->video_double_click ) {
-			$device = false;
+			$device = 'false';
 		} else {
-			$device = ( false !== ( stripos( $_SERVER['HTTP_USER_AGENT'], 'iPhone' ) ) ? true : false );
+			$device = 'true';
 		}
 		if ( 'hosted' !== $this->settings->video_type ) {
 			$src = $this->get_url( $embed_param, $id );
@@ -526,7 +526,7 @@ class UABBVideo extends FLBuilderModule {
 			<?php if ( 'hosted' === $this->settings->video_type && empty( $video_url ) ) { ?>
 			<span class='uabb-hosted-error-message'><?php echo esc_attr__( 'Please choose a file.', 'uabb' ); ?></span>
 		<?php } else { ?>
-			<div class="uabb-video__outer-wrap <?php echo ( 'yes' === $this->settings->sticky_info_bar_enable ) ? 'uabb-sticky-infobar-wrap' : ''; ?> <?php echo ( 'hosted' === $this->settings->video_type ) ? 'uabb-video-type-hosted' : ''; ?>" data-autoplay="<?php echo esc_attr( $autoplay ); ?>" data-device="<?php echo esc_attr( $device ); ?> " <?php echo ( 'hosted' === $this->settings->video_type ) ? 'data-html="' . esc_attr( $video_html ) . '"' : ''; ?>>
+			<div class="uabb-video__outer-wrap <?php echo ( 'yes' === $this->settings->sticky_info_bar_enable ) ? 'uabb-sticky-infobar-wrap' : ''; ?> <?php echo ( 'hosted' === $this->settings->video_type ) ? 'uabb-video-type-hosted' : ''; ?>" data-autoplay="<?php echo esc_attr( $autoplay ); ?>" data-device="<?php echo esc_attr( $device ); ?>" <?php echo ( 'hosted' === $this->settings->video_type ) ? 'data-html="' . esc_attr( $video_html ) . '"' : ''; ?>>
 				<?php $this->get_header_wrap( $id ); ?>
 				<div class="uabb-video-inner-wrap">
 					<div class="uabb-video__play" data-src="<?php echo esc_url( $src ); ?>">

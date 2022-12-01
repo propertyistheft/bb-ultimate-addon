@@ -1,3 +1,12 @@
+Version 1.35.2, Thursday, 24th November 2022
+- Improvement: Google Map - Added an option Load Default Google fonts.
+- Improvement: Modal Popup - Stop audio in the content when Popup is closed.
+- Fixed: CF7 Styler - Select field layout issue on Safari browser.
+- Fixed: Gravity Form Styler - Select field layout issue on Safari browser.
+- Fixed: Image Carousel - Incorrect counter in lightbox.
+- Fixed: Redirection issue to the proper URL based on the site url.
+- Fixed: Video - Enable Double Click on Mobile setting not working properly.
+
 Version 1.35.1, Tuesday, 11th October 2022
 - Improvement: Advanced Posts - Made Filterable Tabs accessible.
 - Improvement: Advanced Posts - Used wp_raise_memory_limit() instead of ini_set().

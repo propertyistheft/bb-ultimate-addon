@@ -70,6 +70,30 @@
 	vertical-align: baseline;
 }
 
+.uabb-gf-style .gform_wrapper .gfield select {
+	-webkit-appearance: none;
+}
+
+.uabb-gf-style .ginput_container_select {
+	position: relative;
+}
+
+.uabb-gf-style .ginput_container_select:after {
+	content: "\f078";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 800;
+    font-size: 0.7em;
+    line-height: 1;
+    position: absolute;
+    top: 45%;
+    -webkit-transform: translateY(-45%);
+    -ms-transform: translateY(-45%);
+    transform: translateY(-45%);
+    right: 0.5em;
+    pointer-events: none;
+    z-index: 5;
+}
+
 .gform_wrapper label.gfield_label {
 	font-weight: 700;
 }

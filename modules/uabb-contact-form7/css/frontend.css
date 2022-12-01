@@ -20,6 +20,22 @@
 	width: 100%;
 }
 
+.uabb-cf7-style .wpcf7-form-control-wrap:has(select):after {
+    content: "\f078";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 800;
+    position: absolute;
+    font-size: 0.7em;
+    line-height: 1;
+    top: 45%;
+    -webkit-transform: translateY(-45%);
+    -ms-transform: translateY(-45%);
+    transform: translateY(-45%);
+    right: 0.5em;
+    z-index: 5;
+    pointer-events: none;
+}
+
 .uabb-cf7-style input[type=checkbox],
 .uabb-cf7-style input[type=file] {
 	display: inline-block;

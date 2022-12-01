@@ -35,7 +35,7 @@ FLBuilder::register_module(
 				'title' => array( // Section.
 					'title'  => '', // Section Title.
 					'fields' => array( // Section Fields.
-						'map_width'      => array(
+						'map_width'         => array(
 							'type'        => 'unit',
 							'label'       => __( 'Width', 'uabb' ),
 							'placeholder' => '100',
@@ -48,7 +48,7 @@ FLBuilder::register_module(
 							),
 							'units'       => array( '%' ),
 						),
-						'map_height'     => array(
+						'map_height'        => array(
 							'type'        => 'unit',
 							'label'       => __( 'Height', 'uabb' ),
 							'placeholder' => '300',
@@ -62,7 +62,7 @@ FLBuilder::register_module(
 							),
 							'units'       => array( 'px' ),
 						),
-						'map_type'       => array(
+						'map_type'          => array(
 							'type'    => 'select',
 							'label'   => __( 'Map type', 'uabb' ),
 							'default' => 'ROADMAP',
@@ -87,7 +87,7 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'map_fit_marker' => array(
+						'map_fit_marker'    => array(
 							'type'    => 'select',
 							'label'   => __( 'Auto Zoom', 'uabb' ),
 							'default' => 'no',
@@ -101,7 +101,7 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'map_zoom'       => array(
+						'map_zoom'          => array(
 							'type'    => 'select',
 							'label'   => __( 'Map Zoom', 'uabb' ),
 							'default' => '15',
@@ -128,10 +128,22 @@ FLBuilder::register_module(
 								'20' => __( '20', 'uabb' ),
 							),
 						),
-						'map_expand'     => array(
+						'map_expand'        => array(
 							'type'    => 'select',
 							'label'   => __( 'Disable map zoom on mouse wheel scroll', 'uabb' ),
 							'default' => 'yes',
+							'options' => array(
+								'yes' => __( 'Yes', 'uabb' ),
+								'no'  => __( 'No', 'uabb' ),
+							),
+							'preview' => array(
+								'type' => 'none',
+							),
+						),
+						'load_google_fonts' => array(
+							'type'    => 'select',
+							'label'   => __( 'Load default fonts by Google', 'uabb' ),
+							'default' => 'no',
 							'options' => array(
 								'yes' => __( 'Yes', 'uabb' ),
 								'no'  => __( 'No', 'uabb' ),
@@ -264,7 +276,7 @@ FLBuilder::register_module(
 								<li class="uabb-docs-list-item"> <i class="ua-icon ua-icon-chevron-right2"> </i> <a href="https://www.ultimatebeaver.com/docs/how-to-hide-the-google-maps-info-window-on-page-load/?utm_source=Uabb-Pro-Backend&utm_medium=Module-Editor-Screen&utm_campaign=Google-Map-module" target="_blank" rel="noopener"> How to hide the Google Map’s Info Window on Page Load? </a> </li>
 
 								<li class="uabb-docs-list-item"> <i class="ua-icon ua-icon-chevron-right2"> </i> <a href="https://www.ultimatebeaver.com/docs/unable-to-see-the-address-on-entering/?utm_source=Uabb-Pro-Backend&utm_medium=Module-Editor-Screen&utm_campaign=Google-Map-module" target="_blank" rel="noopener"> Unable to see the address on entering? </a> </li>
-								
+
 							 </ul>',
 						),
 					),

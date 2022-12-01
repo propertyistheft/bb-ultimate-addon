@@ -142,10 +142,11 @@ if ( ! $version_bb_check ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style select,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style select:focus {
-	-webkit-appearance: menulist !important;
+	-webkit-appearance: none;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style select,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-form-control-wrap:has(select):after,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style input[type=tel],
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style input[type=email],
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style input[type=text],
