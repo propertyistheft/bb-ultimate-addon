@@ -2,7 +2,7 @@
   UABBVideo = function( settings ) {
     this.nodeClass         = '.fl-node-' + settings.id;
     this.id                = settings.id;
-    
+
     var outer_wrap = jQuery(this.nodeClass).find( '.uabb-video__outer-wrap' );
     var inner_wrap = jQuery(this.nodeClass).find( '.uabb-video-inner-wrap' );
     var sticky_margin_bottom = settings.stickybottom;
@@ -18,8 +18,7 @@
       UABBVideos._play( selector, outer_wrap );
     });
 
-
-		if( '1' == outer_wrap.data( 'autoplay' ) || true == outer_wrap.data( 'device' ) ) {
+		if( '1' == outer_wrap.data( 'autoplay' ) || ( true == outer_wrap.data( 'device' ) && window.matchMedia("(max-width: 767px)").matches ) ) {
       UABBVideos._play( jQuery(this.nodeClass).find( '.uabb-video__play' ), outer_wrap );
     }
 

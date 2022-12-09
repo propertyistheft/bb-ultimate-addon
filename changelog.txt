@@ -1,3 +1,7 @@
+Version 1.35.3 - Tuesday, 6th December 2022
+- Fixed: Advanced Posts - Pagination shows same posts repeatedly.
+- Fixed: Video - Video autoplays even if Autoplay setting is set to No.
+
 Version 1.35.2, Thursday, 24th November 2022
 - Improvement: Google Map - Added an option Load Default Google fonts.
 - Improvement: Modal Popup - Stop audio in the content when Popup is closed.

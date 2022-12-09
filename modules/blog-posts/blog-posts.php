@@ -60,13 +60,9 @@ class BlogPostsModule extends FLBuilderModule {
 	 */
 	public function uabb_posts_template_redirect() {
 		if ( is_singular() ) {
-			if ( is_singular() ) {
-				global $wp_query;
-				if ( $wp_query->is_paged() ) {
-					$wp_query->set( 'page', 1 );
-					$wp_query->set( 'paged', $page );
-					remove_action( 'template_redirect', 'redirect_canonical' );
-				}
+			global $wp_query;
+			if ( $wp_query->is_paged() ) {
+				remove_action( 'template_redirect', 'redirect_canonical' );
 			}
 		}
 	}
