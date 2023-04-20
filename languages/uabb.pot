@@ -1,15 +1,15 @@
-# Copyright (C) 2022 Brainstorm Force
+# Copyright (C) 2023 Brainstorm Force
 # This file is distributed under the same license as the Ultimate Addons for Beaver Builder package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Beaver Builder 1.35.3\n"
+"Project-Id-Version: Ultimate Addons for Beaver Builder 1.35.4\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/bb-ultimate-addon\n"
-"POT-Creation-Date: 2022-12-06 06:09:17+00:00\n"
+"POT-Creation-Date: 2023-04-20 07:51:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2022-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en\n"
@@ -779,7 +779,7 @@ msgstr ""
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:222
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-less-than-2-2-compatibility.php:176
 #: modules/uabb-woo-mini-cart/uabb-woo-mini-cart.php:438
-#: modules/uabb-woo-products/includes/loop-settings.php:166
+#: modules/uabb-woo-products/includes/loop-settings.php:174
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:441
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:549
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:700
@@ -1834,8 +1834,8 @@ msgstr ""
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:704
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:47
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-less-than-2-2-compatibility.php:41
-#: modules/uabb-woo-categories/includes/loop-settings.php:94
-#: modules/uabb-woo-categories/includes/loop-settings.php:113
+#: modules/uabb-woo-categories/includes/loop-settings.php:102
+#: modules/uabb-woo-categories/includes/loop-settings.php:121
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:104
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:127
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:137
@@ -1849,7 +1849,7 @@ msgstr ""
 #: modules/uabb-woo-mini-cart/uabb-woo-mini-cart.php:181
 #: modules/uabb-woo-mini-cart/uabb-woo-mini-cart.php:279
 #: modules/uabb-woo-mini-cart/uabb-woo-mini-cart.php:288
-#: modules/uabb-woo-products/includes/loop-settings.php:249
+#: modules/uabb-woo-products/includes/loop-settings.php:257
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:112
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:135
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:145
@@ -2413,8 +2413,8 @@ msgstr ""
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:705
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:48
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-less-than-2-2-compatibility.php:42
-#: modules/uabb-woo-categories/includes/loop-settings.php:95
-#: modules/uabb-woo-categories/includes/loop-settings.php:114
+#: modules/uabb-woo-categories/includes/loop-settings.php:103
+#: modules/uabb-woo-categories/includes/loop-settings.php:122
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:105
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:128
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:138
@@ -2428,7 +2428,7 @@ msgstr ""
 #: modules/uabb-woo-mini-cart/uabb-woo-mini-cart.php:182
 #: modules/uabb-woo-mini-cart/uabb-woo-mini-cart.php:280
 #: modules/uabb-woo-mini-cart/uabb-woo-mini-cart.php:289
-#: modules/uabb-woo-products/includes/loop-settings.php:250
+#: modules/uabb-woo-products/includes/loop-settings.php:258
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:113
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:136
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:146
@@ -3179,7 +3179,7 @@ msgstr ""
 #: modules/uabb-timeline/uabb-timeline.php:1581
 #: modules/uabb-timeline/uabb-timeline.php:1681
 #: modules/uabb-timeline/uabb-timeline.php:1799
-#: modules/uabb-woo-categories/includes/loop-settings.php:131
+#: modules/uabb-woo-categories/includes/loop-settings.php:139
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:431
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:520
 msgid "Description"
@@ -6139,7 +6139,7 @@ msgstr ""
 #: modules/uabb-timeline/includes/loop-settings.php:160
 #: modules/uabb-timeline/uabb-timeline.php:1113
 #: modules/uabb-timeline/uabb-timeline.php:1650
-#: modules/uabb-woo-products/includes/loop-settings.php:197
+#: modules/uabb-woo-products/includes/loop-settings.php:205
 msgid "Date"
 msgstr ""
 
@@ -8070,7 +8070,7 @@ msgstr ""
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:858
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:325
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:807
-#: modules/uabb-woo-products/includes/loop-settings.php:204
+#: modules/uabb-woo-products/includes/loop-settings.php:212
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:314
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:945
 #: modules/uabb-woo-products/uabb-woo-products-bb-less-than-2-2-compatibility.php:301
@@ -9822,7 +9822,7 @@ msgstr ""
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:947
 #: modules/blog-posts/includes/loop-settings.php:168
 #: modules/uabb-timeline/includes/loop-settings.php:163
-#: modules/uabb-woo-products/includes/loop-settings.php:195
+#: modules/uabb-woo-products/includes/loop-settings.php:203
 msgid "Author"
 msgstr ""
 
@@ -17825,38 +17825,38 @@ msgstr ""
 
 #: modules/blog-posts/includes/loop-settings.php:164
 #: modules/uabb-timeline/includes/loop-settings.php:159
-#: modules/uabb-woo-products/includes/loop-settings.php:199
+#: modules/uabb-woo-products/includes/loop-settings.php:207
 msgid "ID"
 msgstr ""
 
 #: modules/blog-posts/includes/loop-settings.php:166
 #: modules/uabb-timeline/includes/loop-settings.php:161
-#: modules/uabb-woo-products/includes/loop-settings.php:198
+#: modules/uabb-woo-products/includes/loop-settings.php:206
 msgid "Date Last Modified"
 msgstr ""
 
 #: modules/blog-posts/includes/loop-settings.php:169
 #: modules/uabb-timeline/includes/loop-settings.php:164
-#: modules/uabb-woo-products/includes/loop-settings.php:196
+#: modules/uabb-woo-products/includes/loop-settings.php:204
 msgid "Comment Count"
 msgstr ""
 
 #: modules/blog-posts/includes/loop-settings.php:170
 #: modules/uabb-timeline/includes/loop-settings.php:165
-#: modules/uabb-woo-categories/includes/loop-settings.php:132
-#: modules/uabb-woo-products/includes/loop-settings.php:200
+#: modules/uabb-woo-categories/includes/loop-settings.php:140
+#: modules/uabb-woo-products/includes/loop-settings.php:208
 msgid "Menu Order"
 msgstr ""
 
 #: modules/blog-posts/includes/loop-settings.php:171
 #: modules/uabb-timeline/includes/loop-settings.php:166
-#: modules/uabb-woo-products/includes/loop-settings.php:201
+#: modules/uabb-woo-products/includes/loop-settings.php:209
 msgid "Meta Value (Alphabetical)"
 msgstr ""
 
 #: modules/blog-posts/includes/loop-settings.php:172
 #: modules/uabb-timeline/includes/loop-settings.php:167
-#: modules/uabb-woo-products/includes/loop-settings.php:202
+#: modules/uabb-woo-products/includes/loop-settings.php:210
 msgid "Meta Value (Numeric)"
 msgstr ""
 
@@ -17866,7 +17866,7 @@ msgstr ""
 #: modules/uabb-timeline/includes/loop-settings.php:168
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:134
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:126
-#: modules/uabb-woo-products/includes/loop-settings.php:203
+#: modules/uabb-woo-products/includes/loop-settings.php:211
 msgid "Random"
 msgstr ""
 
@@ -17877,14 +17877,14 @@ msgstr ""
 
 #: modules/blog-posts/includes/loop-settings.php:193
 #: modules/uabb-timeline/includes/loop-settings.php:188
-#: modules/uabb-woo-products/includes/loop-settings.php:223
+#: modules/uabb-woo-products/includes/loop-settings.php:231
 msgid "Meta Key"
 msgstr ""
 
 #: modules/blog-posts/includes/loop-settings.php:203
 #: modules/uabb-timeline/includes/loop-settings.php:198
-#: modules/uabb-woo-categories/includes/loop-settings.php:143
-#: modules/uabb-woo-products/includes/loop-settings.php:179
+#: modules/uabb-woo-categories/includes/loop-settings.php:151
+#: modules/uabb-woo-products/includes/loop-settings.php:187
 msgid "Order"
 msgstr ""
 
@@ -17895,15 +17895,15 @@ msgstr ""
 
 #: modules/blog-posts/includes/loop-settings.php:207
 #: modules/uabb-timeline/includes/loop-settings.php:202
-#: modules/uabb-woo-categories/includes/loop-settings.php:146
-#: modules/uabb-woo-products/includes/loop-settings.php:181
+#: modules/uabb-woo-categories/includes/loop-settings.php:154
+#: modules/uabb-woo-products/includes/loop-settings.php:189
 msgid "Descending"
 msgstr ""
 
 #: modules/blog-posts/includes/loop-settings.php:208
 #: modules/uabb-timeline/includes/loop-settings.php:203
-#: modules/uabb-woo-categories/includes/loop-settings.php:147
-#: modules/uabb-woo-products/includes/loop-settings.php:182
+#: modules/uabb-woo-categories/includes/loop-settings.php:155
+#: modules/uabb-woo-products/includes/loop-settings.php:190
 msgid "Ascending"
 msgstr ""
 
@@ -17941,7 +17941,7 @@ msgstr ""
 #: modules/blog-posts/includes/loop-settings.php:305
 #: modules/uabb-timeline/includes/loop-settings.php:229
 #: modules/uabb-woo-categories/includes/loop-settings.php:27
-#: modules/uabb-woo-products/includes/loop-settings.php:154
+#: modules/uabb-woo-products/includes/loop-settings.php:162
 msgid "Filter"
 msgstr ""
 
@@ -17983,33 +17983,33 @@ msgstr ""
 msgid "Match all related %s except..."
 msgstr ""
 
-#: modules/blog-posts/includes/loop-settings.php:388
-#: modules/uabb-timeline/includes/loop-settings.php:312
-#: modules/uabb-woo-products/includes/loop-settings.php:142
+#: modules/blog-posts/includes/loop-settings.php:397
+#: modules/uabb-timeline/includes/loop-settings.php:321
+#: modules/uabb-woo-products/includes/loop-settings.php:150
 msgid "Authors"
 msgstr ""
 
-#: modules/blog-posts/includes/loop-settings.php:389
-#: modules/blog-posts/includes/loop-settings.php:394
-#: modules/uabb-timeline/includes/loop-settings.php:313
-#: modules/uabb-timeline/includes/loop-settings.php:318
+#: modules/blog-posts/includes/loop-settings.php:398
+#: modules/blog-posts/includes/loop-settings.php:403
+#: modules/uabb-timeline/includes/loop-settings.php:322
+#: modules/uabb-timeline/includes/loop-settings.php:327
 msgid ""
 "Enter a comma separated list of authors usernames. Only posts with these "
 "authors will be shown."
 msgstr ""
 
-#: modules/blog-posts/includes/loop-settings.php:391
-#: modules/uabb-timeline/includes/loop-settings.php:315
+#: modules/blog-posts/includes/loop-settings.php:400
+#: modules/uabb-timeline/includes/loop-settings.php:324
 msgid "Match these Authors"
 msgstr ""
 
-#: modules/blog-posts/includes/loop-settings.php:392
-#: modules/uabb-timeline/includes/loop-settings.php:316
+#: modules/blog-posts/includes/loop-settings.php:401
+#: modules/uabb-timeline/includes/loop-settings.php:325
 msgid "Do not match these Authors"
 msgstr ""
 
-#: modules/blog-posts/includes/loop-settings.php:404
-#: modules/uabb-timeline/includes/loop-settings.php:328
+#: modules/blog-posts/includes/loop-settings.php:413
+#: modules/uabb-timeline/includes/loop-settings.php:337
 msgid "&nbsp"
 msgstr ""
 
@@ -19989,7 +19989,7 @@ msgstr ""
 #: modules/team/team-bb-less-than-2-2-compatibility.php:687
 #: modules/uabb-contact-form/uabb-contact-form-bb-2-2-compatibility.php:22
 #: modules/uabb-contact-form/uabb-contact-form-bb-less-than-2-2-compatibility.php:21
-#: modules/uabb-woo-categories/includes/loop-settings.php:128
+#: modules/uabb-woo-categories/includes/loop-settings.php:136
 msgid "Name"
 msgstr ""
 
@@ -23452,7 +23452,7 @@ msgstr ""
 #. translators: %1$s: search term, %2$s: search term
 msgid ""
 "<div style=\"%2$s\"> The related CSS and JS scripts will load on "
-"request.</div>\r\n"
+"request.</div>\n"
 "\t\t<div style=\"%1$s\">A loader will appear during loading of the "
 "iFrame.</div>"
 msgstr ""
@@ -25933,7 +25933,7 @@ msgstr ""
 
 #: modules/uabb-business-reviews/uabb-business-reviews-bb-2-2-compatibility.php:320
 #: modules/uabb-business-reviews/uabb-business-reviews-bb-less-than-2-2-compatibility.php:234
-#: modules/uabb-woo-products/includes/loop-settings.php:164
+#: modules/uabb-woo-products/includes/loop-settings.php:172
 msgid "Filter By"
 msgstr ""
 
@@ -27228,15 +27228,15 @@ msgstr ""
 #: modules/uabb-contact-form/uabb-contact-form.php:1183
 #. translators: %1$s: search term, translators: %2$s: search term
 msgid ""
-"<strong>From:</strong> [NAME]\r\n"
-"<strong>Email:</strong> [EMAIL]\r\n"
-"<strong>Subject:</strong> [SUBJECT]\r\n"
-"\r\n"
-"<strong>Message Body:</strong>\r\n"
-"[MESSAGE]\r\n"
-"\r\n"
-"----\r\n"
-"You have received a new submission from %1$s\r\n"
+"<strong>From:</strong> [NAME]\n"
+"<strong>Email:</strong> [EMAIL]\n"
+"<strong>Subject:</strong> [SUBJECT]\n"
+"\n"
+"<strong>Message Body:</strong>\n"
+"[MESSAGE]\n"
+"\n"
+"----\n"
+"You have received a new submission from %1$s\n"
 "(%2$s)"
 msgstr ""
 
@@ -30846,12 +30846,12 @@ msgstr ""
 #: modules/uabb-registration-form/uabb-registration-form-bb-less-than-2-2-compatibility.php:18
 #. translators: %1$s: search term, translators: %2$s: search term
 msgid ""
-"Thank you for registering with us! You can access your account at:\r\n"
-"\t\t<strong>User Name:</strong> [USERNAME]\r\n"
-"<strong>Password:</strong> [PASSWORD]\r\n"
-"\r\n"
-"----\r\n"
-"You have received a new submission from %1$s\r\n"
+"Thank you for registering with us! You can access your account at:\n"
+"\t\t<strong>User Name:</strong> [USERNAME]\n"
+"<strong>Password:</strong> [PASSWORD]\n"
+"\n"
+"----\n"
+"You have received a new submission from %1$s\n"
 "(%2$s)"
 msgstr ""
 
@@ -30945,18 +30945,18 @@ msgstr ""
 #: modules/uabb-registration-form/uabb-registration-form.php:639
 #. translators: %1$s: search term, translators: %2$s: search term
 msgid ""
-"Dear User,\r\n"
-"\r\n"
+"Dear User,\n"
+"\n"
 "You have successfully created your \"%1$s\" account. Thank you for "
-"registering with us!\r\n"
+"registering with us!\n"
 "Get the most of our service benefits with your registered account.Please "
-"click the link below to access your account.%2$s\r\n"
-"And here's the password [PASSWORD] to log in to the account.\r\n"
-"\r\n"
-"Regards,\r\n"
-"Team\r\n"
-"----\r\n"
-"You have received a new submission from %1$s\r\n"
+"click the link below to access your account.%2$s\n"
+"And here's the password [PASSWORD] to log in to the account.\n"
+"\n"
+"Regards,\n"
+"Team\n"
+"----\n"
+"You have received a new submission from %1$s\n"
 "\t\t\t(%2$s)"
 msgstr ""
 
@@ -32651,15 +32651,15 @@ msgstr ""
 msgid "Font size"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:413
+#: modules/uabb-video/uabb-video.php:424
 msgid "from "
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:527
+#: modules/uabb-video/uabb-video.php:538
 msgid "Please choose a file."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:856
+#: modules/uabb-video/uabb-video.php:867
 #. translators: %s: search term
 msgid ""
 "<div style=\"%2$s\"> Make sure you add the actual URL of the video and not "
@@ -32670,7 +32670,7 @@ msgid ""
 "https://youtu.be/HJRzUQMhJMQ</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:871
+#: modules/uabb-video/uabb-video.php:882
 #. translators: %s: search term
 msgid ""
 "<div style=\"%1$s\">Make sure you add the actual URL of the video and not "
@@ -32681,7 +32681,7 @@ msgid ""
 "https://vimeo.com/channels/staffpicks/274860274</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:884
+#: modules/uabb-video/uabb-video.php:895
 #: modules/uabb-video-gallery/uabb-video-gallery.php:916
 #. translators: %s: search term
 msgid ""
@@ -32689,7 +32689,7 @@ msgid ""
 "Thumbnail\" and paste here.</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:901
+#: modules/uabb-video/uabb-video.php:912
 msgid ""
 "Click <a "
 "href=\"https://www.ultimatebeaver.com/docs/how-to-find-youtube-channel-name-"
@@ -32698,14 +32698,14 @@ msgid ""
 "here</strong> </a> to know how to find your YouTube Channel ID."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:907
+#: modules/uabb-video/uabb-video.php:918
 msgid ""
 "Click <a href=\"https://support.google.com/youtube/answer/3250431?hl=en\" "
 "target=\"_blank\" rel=\"noopener\"> <strong> here</strong> </a> to know how "
 "to find your YouTube Channel ID."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:916
+#: modules/uabb-video/uabb-video.php:927
 msgid ""
 "Click <a "
 "href=\"https://www.ultimatebeaver.com/docs/how-to-find-youtube-channel-name-"
@@ -32714,7 +32714,7 @@ msgid ""
 "here</strong> </a> to know how to find your YouTube Channel Name."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:922
+#: modules/uabb-video/uabb-video.php:933
 msgid ""
 "Click <a href=\"https://support.google.com/youtube/answer/3250431?hl=en\" "
 "target=\"_blank\" rel=\"noopener\"> <strong> here</strong> </a> to know how "
@@ -32873,9 +32873,9 @@ msgstr ""
 #. translators: %s: search term
 msgid ""
 "<div style=\"%2$s\"> Make sure you add the actual URL of the video and not "
-"the share URL.</div>\r\n"
+"the share URL.</div>\n"
 "\t\t\t        <div style=\"%1$s\"><b> Valid URL : </b>  "
-"https://www.youtube.com/watch?v=HJRzUQMhJMQ</div>\r\n"
+"https://www.youtube.com/watch?v=HJRzUQMhJMQ</div>\n"
 "\t\t\t        <div style=\"%1$s\"> <b> Invalid URL : </b> "
 "https://youtu.be/HJRzUQMhJMQ</div>"
 msgstr ""
@@ -32884,9 +32884,9 @@ msgstr ""
 #. translators: %s: search term
 msgid ""
 "<div style=\"%1$s\">Make sure you add the actual URL of the video and not "
-"the categorized URL.</div>\r\n"
+"the categorized URL.</div>\n"
 "\t\t\t        <div style=\"%1$s\"><b> Valid URL : </b>  "
-"https://vimeo.com/274860274</div>\r\n"
+"https://vimeo.com/274860274</div>\n"
 "\t\t\t        <div style=\"%1$s\"> <b> Invalid URL : </b> "
 "https://vimeo.com/channels/staffpicks/274860274</div>"
 msgstr ""
@@ -32969,31 +32969,31 @@ msgstr ""
 msgid "Exclude These Categories"
 msgstr ""
 
-#: modules/uabb-woo-categories/includes/loop-settings.php:81
+#: modules/uabb-woo-categories/includes/loop-settings.php:89
 #: modules/uabb-woo-products/includes/loop-settings.php:105
-#: modules/uabb-woo-products/includes/loop-settings.php:123
+#: modules/uabb-woo-products/includes/loop-settings.php:131
 #. translators: %s: search term
 msgid "Enter a list of %1$s."
 msgstr ""
 
-#: modules/uabb-woo-categories/includes/loop-settings.php:91
+#: modules/uabb-woo-categories/includes/loop-settings.php:99
 msgid "Display Category Description"
 msgstr ""
 
-#: modules/uabb-woo-categories/includes/loop-settings.php:110
+#: modules/uabb-woo-categories/includes/loop-settings.php:118
 msgid "Display Empty Categories"
 msgstr ""
 
-#: modules/uabb-woo-categories/includes/loop-settings.php:125
-#: modules/uabb-woo-products/includes/loop-settings.php:193
+#: modules/uabb-woo-categories/includes/loop-settings.php:133
+#: modules/uabb-woo-products/includes/loop-settings.php:201
 msgid "Order By"
 msgstr ""
 
-#: modules/uabb-woo-categories/includes/loop-settings.php:129
+#: modules/uabb-woo-categories/includes/loop-settings.php:137
 msgid "Slug"
 msgstr ""
 
-#: modules/uabb-woo-categories/includes/loop-settings.php:130
+#: modules/uabb-woo-categories/includes/loop-settings.php:138
 msgid "Count"
 msgstr ""
 
@@ -33252,27 +33252,27 @@ msgstr ""
 msgid "View cart"
 msgstr ""
 
-#: modules/uabb-woo-products/includes/loop-settings.php:143
+#: modules/uabb-woo-products/includes/loop-settings.php:151
 msgid "Enter a list of authors usernames."
 msgstr ""
 
-#: modules/uabb-woo-products/includes/loop-settings.php:167
+#: modules/uabb-woo-products/includes/loop-settings.php:175
 msgid "Sale"
 msgstr ""
 
-#: modules/uabb-woo-products/includes/loop-settings.php:168
+#: modules/uabb-woo-products/includes/loop-settings.php:176
 msgid "Featured"
 msgstr ""
 
-#: modules/uabb-woo-products/includes/loop-settings.php:236
+#: modules/uabb-woo-products/includes/loop-settings.php:244
 msgid "Skip this many products that match the specified criteria."
 msgstr ""
 
-#: modules/uabb-woo-products/includes/loop-settings.php:245
+#: modules/uabb-woo-products/includes/loop-settings.php:253
 msgid "Exclude Current Product"
 msgstr ""
 
-#: modules/uabb-woo-products/includes/loop-settings.php:247
+#: modules/uabb-woo-products/includes/loop-settings.php:255
 msgid "Exclude the current product from the query."
 msgstr ""
 
@@ -33492,8 +33492,8 @@ msgstr ""
 
 #: modules/uabb-wp-forms-styler/uabb-wp-forms-styler-bb-2-2-compatibility.php:884
 msgid ""
-"Heading tag will be applied to a custom heading only.\r\n"
-"The default heading will inherit tag from WPForms plugin itself\r\n"
+"Heading tag will be applied to a custom heading only.\n"
+"The default heading will inherit tag from WPForms plugin itself\n"
 msgstr ""
 
 #: modules/uabb-wp-forms-styler/uabb-wp-forms-styler-bb-2-2-compatibility.php:1006
@@ -33511,8 +33511,8 @@ msgstr ""
 
 #: modules/uabb-wp-forms-styler/uabb-wp-forms-styler-bb-less-than-2-2-compatibility.php:1101
 msgid ""
-"Heading tag will be applied to a custom heading only.\r\n"
-"\tThe default heading will inherit tag from WPForms plugin itself\r\n"
+"Heading tag will be applied to a custom heading only.\n"
+"\tThe default heading will inherit tag from WPForms plugin itself\n"
 "\t"
 msgstr ""
 
@@ -33745,7 +33745,7 @@ msgid_plural "<mark class=\"uabb-count\">%1$s %3$s</mark>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: modules/uabb-woo-products/includes/loop-settings.php:233
+#: modules/uabb-woo-products/includes/loop-settings.php:241
 msgctxt "How many products to skip."
 msgid "Offset"
 msgstr ""

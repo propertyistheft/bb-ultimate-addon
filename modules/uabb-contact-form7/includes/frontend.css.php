@@ -301,12 +301,14 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 	$font_size = $settings->radio_check_size / 1.3;
 	?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-checkbox input[type='checkbox'],
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-radio input[type='radio'] {
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-radio input[type='radio'],
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-acceptance input[type="checkbox"] {
 		display: none;
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-checkbox input[type='checkbox'] + span:before,
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-radio input[type='radio'] + span:before {
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wperfw+cf7-radio input[type='radio'] + span:before,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-acceptance input[type="checkbox"] + span:before {
 		content: '';
 		background: #<?php echo esc_attr( $settings->radio_check_bgcolor ); ?>;
 		border: <?php echo esc_attr( $settings->radio_check_border_width ); ?>px solid #<?php echo esc_attr( $settings->radio_check_border_color ); ?>;
@@ -336,7 +338,8 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 		border-color: #<?php echo esc_attr( $settings->radio_check_border_color ); ?>;
 	}
 
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-checkbox input[type='checkbox']:checked + span:before {
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-checkbox input[type='checkbox']:checked + span:before,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-acceptance input[type='checkbox']:checked + span:before {
 		content: "\2714";
 		font-weight: bold;
 		font-size: calc(<?php echo esc_attr( $font_size ); ?>px - <?php echo esc_attr( $settings->radio_check_border_width ); ?>px );

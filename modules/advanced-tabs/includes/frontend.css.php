@@ -966,7 +966,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 if ( isset( $settings->tab_layout ) && 'vertical' === $settings->tab_layout ) {
 	?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-tabs > nav a span,.uabb-tabs > nav a .uabb-tab-title {
-		display: inline; 
+		display: inline;
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-tabs > nav a {
 		white-space: normal;

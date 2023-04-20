@@ -71,8 +71,16 @@ do_action( 'uabb_woo_categories_products_loop_settings_before_form', $settings )
 					continue;
 				}
 
+				$field_key = 'tax_' . $slug . '_' . $tax_slug;
+
+				$field_settings = new stdClass();
+
+				if ( isset( $settings->$field_key ) ) {
+					$field_settings->$field_key = $settings->$field_key;
+				}
+
 				FLBuilder::render_settings_field(
-					'tax_' . $slug . '_' . $tax_slug,
+					$field_key,
 					array(
 						'type'   => 'suggest',
 						'action' => 'fl_as_terms',
@@ -80,7 +88,7 @@ do_action( 'uabb_woo_categories_products_loop_settings_before_form', $settings )
 						'label'  => $tax->label,
 						'help'   => sprintf( /* translators: %s: search term */ __( 'Enter a list of %1$s.', 'uabb' ), $tax->label ),
 					),
-					$settings
+					$field_settings
 				);
 			}
 

@@ -361,15 +361,24 @@ esc_attr_e( 'Custom Query', 'uabb' );
 				),
 				$settings
 			);
+
+			$field_key = 'tax_' . $slug . '_' . $tax_slug;
+
+			$field_settings = new stdClass();
+
+			if ( isset( $settings->$field_key ) ) {
+				$field_settings->$field_key = $settings->$field_key;
+			}
+
 			FLBuilder::render_settings_field(
-				'tax_' . $slug . '_' . $tax_slug,
+				$field_key,
 				array(
 					'type'   => 'suggest',
 					'action' => 'fl_as_terms',
 					'data'   => $tax_slug,
 					'label'  => '&nbsp',
 				),
-				$settings
+				$field_settings
 			);
 			$taxonomies_array[ $tax_slug ] = $tax->label;
 		}

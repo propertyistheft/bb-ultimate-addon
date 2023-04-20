@@ -1,3 +1,8 @@
+Version 1.35.4, Thursday, 20th April 2023
+- Improvement: Optimised taxonomy term loops in loop settings file.
+- Fixed: CF7 Styler - Acceptance Checkbox not visible when Custom Style is disabled.
+- Fixed: Video - Fatal PHP error while using private Vimeo videos.
+
 Version 1.35.3 - Tuesday, 6th December 2022
 - Fixed: Advanced Posts - Pagination shows same posts repeatedly.
 - Fixed: Video - Video autoplays even if Autoplay setting is set to No.

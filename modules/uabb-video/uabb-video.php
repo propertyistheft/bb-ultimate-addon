@@ -345,9 +345,16 @@ class UABBVideo extends FLBuilderModule {
 			if ( 'youtube' === $this->settings->video_type ) {
 				$thumb = 'https://i.ytimg.com/vi/' . $id . '/' . apply_filters( 'uabb_video_youtube_image_quality', $this->settings->yt_thumbnail_size ) . '.jpg';
 			} elseif ( 'vimeo' === $this->settings->video_type ) {
-				// phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
-				$vimeo = maybe_unserialize( file_get_contents( "https://vimeo.com/api/v2/video/$id.php" ) );
-				$thumb = str_replace( '_640', '_840', $vimeo[0]['thumbnail_large'] );
+
+				$response = wp_remote_get( "https://vimeo.com/api/v2/video/$id.php" );
+				if ( is_wp_error( $response ) || 404 === $response['response']['code'] ) {
+					return;
+				}
+				$vimeo = maybe_unserialize( $response['body'] );
+
+				// videos that support privacy do not return thumbnail images.
+				$thumb = ( isset( $vimeo[0]['thumbnail_large'] ) && ! empty( $vimeo[0]['thumbnail_large'] ) ) ? str_replace( '_640', '_840', $vimeo[0]['thumbnail_large'] ) : '';
+
 			} elseif ( 'wistia' === $this->settings->video_type ) {
 				$url   = $this->settings->wistia_link;
 				$thumb = 'https://embedwistia-a.akamaihd.net/deliveries/' . $this->getStringBetween( $url, 'deliveries/', '?' );
@@ -390,8 +397,12 @@ class UABBVideo extends FLBuilderModule {
 			'yes' === $this->settings->vimeo_title ||
 			'yes' === $this->settings->vimeo_byline
 			) {
-				// phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
-				$vimeo = maybe_unserialize( file_get_contents( "https://vimeo.com/api/v2/video/$id.php" ) );
+				$response = wp_remote_get( "https://vimeo.com/api/v2/video/$id.php" );
+
+				if ( is_wp_error( $response ) || 404 === $response['response']['code'] ) {
+					return;
+				}
+				$vimeo = maybe_unserialize( $response ['body'] );
 				?>
 			<div class="uabb-vimeo-wrap">
 				<?php if ( 'yes' === $this->settings->vimeo_portrait ) { ?>
