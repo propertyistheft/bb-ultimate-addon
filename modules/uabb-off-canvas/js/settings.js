@@ -1,5 +1,7 @@
 (function($){
-
+	FLBuilder.addHook( 'didRenderLayoutJSComplete', function() {
+		FLBuilder._moduleHelpers['uabb-off-canvas']._showCanavsPreview();
+	} );
 	FLBuilder.registerModuleHelper( 'uabb-off-canvas', {
 		_templates: {
             saved_modules: '',
@@ -9,7 +11,7 @@
 		init: function()
 		{
 			var form	= $('.fl-builder-settings');
-			content_type	= form.find('select[name=content_type]'); 
+			content_type	= form.find('select[name=content_type]');
             preview_off_canvas = form.find('select[name=preview_off_canvas]');
             btn_style   = form.find('select[name=btn_style]');
             save_button = form.find('.fl-builder-settings-save');
@@ -27,7 +29,6 @@
             cancel_button.off( 'click' ).on( 'click', this._closeCanavsPreview );
 
             this._btn_style_changed();
-            $( '.fl-builder-content' ).on( 'fl-builder.layout-rendered', $.proxy( this._showCanavsPreview, this ) );
 
             form.find("#fl-field-ct_raw_nonce").hide();
 		},
@@ -43,12 +44,16 @@
             }
         },
         _showCanavsPreview: function() {
-            var form    = $('.fl-builder-settings');
-            preview_off_canvas = form.find('select[name=preview_off_canvas]').val();
+            var form    = $('.fl-builder-uabb-off-canvas-settings:visible');
             node_id         = form.attr('data-node');
-            modal_node       = $( '#offcanvas-' + node_id );
+			preview = FLBuilder.preview;
+			if ( ! form.length || ! preview || ! preview.elements.node ) {
+				return;
+			}
+			var settings   = FLBuilder._getSettings( form ),
+        		modal_node = preview.elements.node.find( '#offcanvas-' + node_id );
 
-            if ( '1' === preview_off_canvas ) {
+            if ( '1' === settings.preview_off_canvas ) {
 
                 modal_node.removeClass( 'uabb-drag-fix' );
 
@@ -89,14 +94,14 @@
                 /* If Push Transition  is enabled*/
                 if(  modal_node.hasClass( 'uabb-offcanvas-type-push' ) ) {
 
-                    $( 'body' ).css({ 
+                    $( 'body' ).css({
                         position: '',
                         'margin-left' : '',
                         'margin-right' : '',
                     });
 
                     setTimeout( function() {
-                        $( 'body' ).removeClass( 'uabb-offcanvas-animating' ).css({ 
+                        $( 'body' ).removeClass( 'uabb-offcanvas-animating' ).css({
                             width: '',
                         });
                     }, 300 );
@@ -118,7 +123,7 @@
                     });
 
                     setTimeout( function() {
-                        $( 'body' ).removeClass( 'uabb-offcanvas-animating' ).css({ 
+                        $( 'body' ).removeClass( 'uabb-offcanvas-animating' ).css({
                             width: '',
                         });
                     }, 300 );
@@ -183,7 +188,7 @@
         },
         _setTemplates: function( type )
         {
-            var form = $('.fl-builder-settings'),       
+            var form = $('.fl-builder-settings'),
                 select = form.find( 'select[name="ct_' + type + '"]' ),
                 value = '', self = this;
 

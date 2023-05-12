@@ -451,23 +451,24 @@ jQuery(document).ready(function( $ ) {
 
 				if ( this.responsive_display != '' ) {
 
-					var current_window_size = $(window).width(),
+					var responsive_display = this.responsive_display,
+						current_window_size = $(window).width(),
                         medium_device = parseInt( this.medium_device ),
                         small_device = parseInt( this.small_device );
 
-					if ( this.responsive_display == 'desktop' && current_window_size > medium_device ) {
+					if ( ( responsive_display == 'desktop' || responsive_display.includes("desktop") ) && current_window_size > medium_device ) {
 
 						return true;
-					}else if( this.responsive_display == 'desktop-medium' && current_window_size > small_device ){
+					}else if( ( responsive_display == 'desktop-medium' || responsive_display.includes("large") ) && current_window_size > small_device ){
 
 						return true;
-					}else if( this.responsive_display == 'medium' && current_window_size < medium_device && current_window_size > small_device ){
+					}else if( ( responsive_display == 'medium' || responsive_display.includes("medium") ) && current_window_size < medium_device && current_window_size > small_device ){
 
 						return true;
-					}else if( this.responsive_display == 'medium-mobile' && current_window_size < medium_device ){
+					}else if( ( responsive_display == 'medium-mobile' || responsive_display.includes("mobile") ) && current_window_size < medium_device ){
 
 						return true;
-					}else if( this.responsive_display == 'mobile' && current_window_size < small_device ){
+					}else if( ( responsive_display == 'mobile' || responsive_display.includes("mobile") ) && current_window_size < small_device ){
 
 						return true;
 					}else{

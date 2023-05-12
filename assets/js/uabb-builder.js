@@ -27,8 +27,8 @@
 
 			_bindButtonEvents: function()
 			{
-				$('body').delegate('.fl-builder-uabb-global-settings-button', 'click', UABBGlobal._globalSettingsClicked);
-				$('body').delegate('.fl-builder-uabb-global-settings .fl-builder-settings-save', 'click', UABBGlobal._saveGlobalSettingsClicked);
+				$('body', window.parent.document ).delegate('.fl-builder-uabb-global-settings-button', 'click', UABBGlobal._globalSettingsClicked);
+				$('body', window.parent.document ).delegate('.fl-builder-uabb-global-settings .fl-builder-settings-save', 'click', UABBGlobal._saveGlobalSettingsClicked);
 				//$('body').delegate('.fl-builder-uabb-global-settings .fl-builder-settings-cancel', 'click', UABBGlobal._cancelGlobalSettingsClicked);
 
 				FLBuilder.addHook('showUABBGlobalSettings', UABBGlobal.showUABBGlobalSettings);
@@ -150,7 +150,7 @@
 
 		init: function()
 		{
-			var form        = $('.fl-builder-settings'),
+			var form        = $('.fl-builder-settings .fl-builder-module-settings'),
 				btn_style   = form.find('select[name=btn_style]'),
 				transparent_button_options = form.find('select[name=btn_transparent_button_options]'),
 				hover_attribute = form.find('select[name=hover_attribute]'),
@@ -169,7 +169,7 @@
 
 		_btn_styleChanged: function()
 		{
-			var form        = $('.fl-builder-settings'),
+			var form        = $('.fl-builder-settings .fl-builder-module-settings'),
 				btn_style   = form.find('select[name=btn_style]').val(),
 				btn_style_opt   = form.find('select[name=btn_flat_button_options]').val(),
 				hover_attribute = form.find('select[name=hover_attribute]').val(),
