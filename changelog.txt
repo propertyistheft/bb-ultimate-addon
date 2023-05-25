@@ -1,3 +1,6 @@
+Version 1.35.6, Monday, 15th May 2023
+- Fixed: Advanced Posts - Styles not loaded with BB Themer latest version 1.4.6.
+
 Version 1.35.5, Wednesday, 10th May 2023
 - Fixed: Modal Popup - Saved content type not getting fetched with BB version 2.7.
 - Fixed: Modal Popup - Popup is not displayed in preview and on frontend with BB version 2.7.

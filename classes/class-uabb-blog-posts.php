@@ -158,11 +158,11 @@ if ( ! class_exists( 'UABB_Blog_Posts' ) ) {
 		 * @return string
 		 */
 		public static function blog_posts_css( $css, $nodes ) {
-			if ( ! class_exists( 'lessc' ) && file_exists( FL_THEME_BUILDER_DIR . 'classes/class-lessc.php' ) ) {
-				require_once FL_THEME_BUILDER_DIR . 'classes/class-lessc.php';
+			if ( ! class_exists( 'uabb_lessc' ) && file_exists( BB_ULTIMATE_ADDON_DIR . 'classes/class-uabb-lessc.php' ) ) {
+				require_once BB_ULTIMATE_ADDON_DIR . 'classes/class-uabb-lessc.php';
 			}
 
-			if ( class_exists( 'lessc' ) ) {
+			if ( class_exists( 'uabb_lessc' ) ) {
 
 				foreach ( $nodes['modules'] as $module ) {
 
@@ -175,7 +175,7 @@ if ( ! class_exists( 'UABB_Blog_Posts' ) ) {
 					}
 
 					try {
-						$less    = new lessc();
+						$less    = new uabb_lessc();
 						$custom  = '.fl-node-' . $module->node . ' { ';
 						$custom .= $module->settings->uabb_custom_post_layout->css;
 						$custom .= ' }';
