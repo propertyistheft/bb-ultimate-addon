@@ -1,3 +1,8 @@
+Version 1.35.7, Wednesday, 14th June 2023
+- Improvement: FAQ Schema- Improved accessibility by adding proper role attributes.
+- Fixed: BB editor panel layout issue when UABB Template Sections are installed.
+- Fixed: Woo - Mini Cart - Quantity Plus and Minus layout broken with Astra theme.
+
 Version 1.35.6, Monday, 15th May 2023
 - Fixed: Advanced Posts - Styles not loaded with BB Themer latest version 1.4.6.
 

@@ -22,18 +22,18 @@ $module->render_schema( true );
 				if ( empty( $settings->faq_items[ $i ] ) ) {
 					continue;}
 				?>
-			<div class="uabb-faq-item"
+			<div role="tablist" class="uabb-faq-item"
 				<?php
 				if ( ! empty( $settings->id ) ) {
 					echo ' id="' . sanitize_html_class( $settings->id ) . '-' . esc_attr( $i ) . '"';}
 				?>
 				data-index="<?php echo esc_attr( $i ); ?>">
-				<div class="uabb-faq-questions-button uabb-faq-questions-button<?php echo esc_attr( $id ); ?> uabb-faq-questions uabb-faq-questions<?php echo esc_attr( $id ); ?> uabb-faq-<?php echo esc_attr( $settings->icon_position ); ?>-text" aria-selected="false" role="tab" tabindex="0" aria-expanded="true" aria-controls="expandable" data-index="<?php echo esc_attr( $i ); ?>">
+				<div role="tab" class="uabb-faq-questions-button uabb-faq-questions-button<?php echo esc_attr( $id ); ?> uabb-faq-questions uabb-faq-questions<?php echo esc_attr( $id ); ?> uabb-faq-<?php echo esc_attr( $settings->icon_position ); ?>-text" aria-selected="false" tabindex="0" aria-expanded="true" aria-controls="expandable" data-index="<?php echo esc_attr( $i ); ?>">
 					<?php echo $module->render_icon( 'before' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					<<?php echo esc_attr( $settings->tag_selection ); ?> class="uabb-faq-question-label" tabindex="0" ><?php echo $settings->faq_items[ $i ]->faq_question; ?></<?php echo esc_attr( $settings->tag_selection ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 					<?php echo $module->render_icon( 'after' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
-				<div class="uabb-faq-content uabb-faq-content<?php echo esc_attr( $id ); ?> fl-clearfix" aria-expanded="true" >
+				<div role="tabpanel" class="uabb-faq-content uabb-faq-content<?php echo esc_attr( $id ); ?> fl-clearfix" aria-expanded="true" >
 					<?php echo $module->get_faq_content( $settings->faq_items[ $i ] ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 			</div>
@@ -49,17 +49,17 @@ $module->render_schema( true );
 					if ( empty( $settings->faq_items[ $i ] ) ) {
 						continue;}
 					?>
-			<div class="uabb-faq-item"
+			<div role="tablist" class="uabb-faq-item"
 					<?php
 					if ( ! empty( $settings->id ) ) {
 						echo ' id="' . sanitize_html_class( $settings->id ) . '-' . esc_attr( $i ) . '"';}
 					?>
 					>
 			<div class="uabb-faq-item-wrap">
-				<div class="uabb-faq-questions-button uabb-faq-questions uabb-faq-questions<?php echo esc_attr( $id ); ?> uabb-faq-<?php echo esc_attr( $settings->icon_position ); ?>-text">
+				<div role="tab" class="uabb-faq-questions-button uabb-faq-questions uabb-faq-questions<?php echo esc_attr( $id ); ?> uabb-faq-<?php echo esc_attr( $settings->icon_position ); ?>-text">
 					<<?php echo esc_attr( $settings->tag_selection ); ?> class="uabb-faq-question-label"><?php echo $settings->faq_items[ $i ]->faq_question; ?></<?php echo esc_attr( $settings->tag_selection ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 				</div>
-				<div class="uabb-faq-content uabb-faq-content<?php echo esc_attr( $id ); ?> fl-clearfix">
+				<div role="tabpanel" class="uabb-faq-content uabb-faq-content<?php echo esc_attr( $id ); ?> fl-clearfix">
 					<?php echo $module->get_faq_content( $settings->faq_items[ $i ] ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</div>
 			</div>

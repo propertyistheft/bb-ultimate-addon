@@ -38,6 +38,7 @@ class UABB_UI_Panels {
 
 		// Enqueue CSS & JS.
 		add_action( 'wp_enqueue_scripts', array( $this, 'uabb_panel_css_js' ) );
+		add_action( 'fl_builder_ui_enqueue_scripts', array( $this, 'uabb_panel_css_js' ) );
 
 		add_action( 'wp_footer', array( $this, 'render_live_preview' ), 9 );
 
