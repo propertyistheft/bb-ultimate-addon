@@ -168,6 +168,7 @@ if ( isset( $settings->media_type ) && '' !== $settings->media_type && 'slider' 
 														'vimeo_byline' => $settings->vimeo_byline,
 														'wistia_muted' => $settings->wistia_mute,
 														'wistia_loop' => $settings->wistia_loop,
+														'video_double_click' => 'yes',
 													)
 												);
 											?>

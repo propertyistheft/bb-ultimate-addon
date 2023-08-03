@@ -51,6 +51,7 @@ class GoogleMapModule extends FLBuilderModule {
 				'key' => $google_api_key,
 			);
 			$url          = esc_url( add_query_arg( $arr_params, $url ) );
+			$url          = $url . '&callback=Function.prototype';
 			$this->notice = '';
 			$this->add_js( 'google-map', $url, array(), '', true );
 		}

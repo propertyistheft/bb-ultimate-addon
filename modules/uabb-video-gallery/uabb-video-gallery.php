@@ -475,7 +475,9 @@ class UABBVideoGallery extends FLBuilderModule {
 			}
 		} elseif ( 'vimeo' === $item->video_type ) {
 
-			$vid_id = preg_replace( '/[^\/]+[^0-9]|(\/)/', '', rtrim( $video_url, '/' ) );
+			if ( preg_match( '%^https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)(?:[?]?.*)$%im', $video_url, $regs ) ) {
+				$vid_id = $regs[3];
+			}
 		} elseif ( 'wistia' === $item->video_type ) {
 
 			$vid_id = $this->getStringBetween( $video_url, 'wvideo=', '"' );
@@ -490,7 +492,8 @@ class UABBVideoGallery extends FLBuilderModule {
 
 				$url = 'https://i.ytimg.com/vi/' . $vid_id . '/' . apply_filters( 'uabb_vg_youtube_image_quality', $item->yt_thumbnail_size ) . '.jpg';
 			} elseif ( 'vimeo' === $item->video_type ) {
-				if ( '' !== $vid_id && 0 !== $vid_id ) {
+				$vid_id_image = preg_replace( '/[^\/]+[^0-9]|(\/)/', '', rtrim( $video_url, '/' ) );
+				if ( '' !== $vid_id_image && 0 !== $vid_id_image ) {
 					$opts    = array(
 						'ssl' => array(
 							'allow_self_signed' => true,
@@ -499,7 +502,7 @@ class UABBVideoGallery extends FLBuilderModule {
 						),
 					);
 					$context = stream_context_create( $opts );
-					$vimeo   = maybe_unserialize( file_get_contents( "https://vimeo.com/api/v2/video/$vid_id.php", false, $context ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+					$vimeo   = maybe_unserialize( file_get_contents( "https://vimeo.com/api/v2/video/$vid_id_image.php", false, $context ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 					$url     = $vimeo[0]['thumbnail_large'];
 				}
 			} elseif ( 'wistia' === $item->video_type ) {
@@ -656,6 +659,17 @@ class UABBVideoGallery extends FLBuilderModule {
 				case 'vimeo':
 					$dnt_track = ( isset( $item->vimeo_dnt_track ) && 'yes' === $item->vimeo_dnt_track ) ? '1' : '0';
 					$vurl      = 'https://player.vimeo.com/video/' . $url['video_id'] . '?autoplay=1&version=3&enablejsapi=1&dnt=' . $dnt_track;
+
+					/**
+					 * Support Vimeo unlisted and private videos
+					 */
+					$h_param = array();
+					preg_match( '/(?|(?:[\?|\&]h={1})([\w]+)|\d\/([\w]+))/', $item->vimeo_link, $h_param );
+
+					if ( ! empty( $h_param ) ) {
+						$vurl .= '&h=' . $h_param[1];
+					}
+
 					break;
 				case 'wistia':
 				case 'hosted':
@@ -674,6 +688,15 @@ class UABBVideoGallery extends FLBuilderModule {
 					case 'vimeo':
 						$dnt_track = ( isset( $item->vimeo_dnt_track ) && 'yes' === $item->vimeo_dnt_track ) ? '1' : '0';
 						$vurl      = 'https://player.vimeo.com/video/' . $url['video_id'] . '?autoplay=1&version=3&enablejsapi=1&dnt=' . $dnt_track;
+						/**
+						 * Support Vimeo unlisted and private videos
+						 */
+						$h_param = array();
+						preg_match( '/(?|(?:[\?|\&]h={1})([\w]+)|\d\/([\w]+))/', $item->vimeo_link, $h_param );
+
+						if ( ! empty( $h_param ) ) {
+							$vurl .= '&h=' . $h_param[1];
+						}
 						break;
 					case 'wistia':
 					case 'hosted':

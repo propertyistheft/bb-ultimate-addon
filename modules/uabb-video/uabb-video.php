@@ -276,8 +276,8 @@ class UABBVideo extends FLBuilderModule {
 			}
 		} elseif ( 'vimeo' === $video_type ) {
 			$url = $this->settings->vimeo_link;
-			if ( preg_match( '/https?:\/\/(?:www\.)?vimeo\.com\/\d{8}/', $url ) ) {
-				$id = preg_replace( '/[^\/]+[^0-9]|(\/)/', '', rtrim( $url, '/' ) );
+			if ( preg_match( '%^https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)(?:[?]?.*)$%im', $url, $regs ) ) {
+				$id = $regs[3];
 			}
 		} elseif ( 'wistia' === $video_type ) {
 			$url = $this->settings->wistia_link;
@@ -315,7 +315,28 @@ class UABBVideo extends FLBuilderModule {
 
 		$url .= ( empty( $params ) ) ? '?' : '&';
 
-		$url .= 'autoplay=1';
+		if ( 'vimeo' === $this->settings->video_type ) {
+			/**
+			 * Support Vimeo unlisted and private videos
+			 *
+			 * Vimeo requires an additional parameter when displaying private/unlisted videos. It has two ways of
+			 * passing that parameter:
+			 * * as an endpoint - vimeo.com/{video_id}/{privacy_token}
+			 * OR
+			 * * as a GET parameter named `h` - vimeo.com/{video_id}?h={privacy_token}
+			 *
+			 * The following regex match looks for either of these methods in the Vimeo URL, and if it finds a privacy
+			 * token, it adds it to the embed params array as the `h` parameter (which is how Vimeo can receive it when
+			 * using Oembed).
+			 */
+			$h_param   = array();
+			$video_url = $this->settings->vimeo_link;
+			preg_match( '/(?|(?:[\?|\&]h={1})([\w]+)|\d\/([\w]+))/', $video_url, $h_param );
+
+			if ( ! empty( $h_param ) ) {
+				$url .= '&h=' . $h_param[1];
+			}
+		}
 
 		if ( 'vimeo' === $this->settings->video_type && '' !== $this->settings->start ) {
 			$time = gmdate( 'H\hi\ms\s', $this->settings->start );

@@ -60,8 +60,19 @@ $settings->title_margin_bottom = ( isset( $settings->title_margin_bottom ) ) ? $
 
 $settings->element_space = ( isset( $settings->element_space ) && '' !== $settings->element_space ) ? $settings->element_space : '15';
 
-
-$settings->show_meta = ( isset( $settings->show_meta ) ) ? $settings->show_meta : 'yes';
+$column_desktop       = isset( $settings->post_per_grid_desktop ) && ! empty( $settings->post_per_grid_desktop ) && intval( $settings->post_per_grid_desktop ) > 0 ? intval( $settings->post_per_grid_desktop ) : 3;
+$column_tablet        = isset( $settings->post_per_grid_tablet ) && ! empty( $settings->post_per_grid_tablet ) && intval( $settings->post_per_grid_tablet ) > 0 ? intval( $settings->post_per_grid_tablet ) : 2;
+$column_mobile        = isset( $settings->post_per_grid_mobile ) && ! empty( $settings->post_per_grid_mobile ) && intval( $settings->post_per_grid_mobile ) > 0 ? intval( $settings->post_per_grid_mobile ) : 1;
+$spacing              = isset( $settings->element_space ) && '' !== $settings->element_space ? $settings->element_space : '15';
+$space_desktop        = ( $column_desktop - 1 ) * $spacing;
+$space_large          = ( $column_desktop - 1 ) * $spacing;
+$space_tablet         = ( $column_tablet - 1 ) * $spacing;
+$space_mobile         = ( $column_mobile - 1 ) * $spacing;
+$post_columns_desktop = ( 100 - $space_desktop ) / $column_desktop;
+$post_columns_large   = ( 100 - $space_large ) / $column_desktop;
+$post_columns_tablet  = ( 100 - $space_tablet ) / $column_tablet;
+$post_columns_mobile  = ( 100 - $space_mobile ) / $column_mobile;
+$settings->show_meta  = ( isset( $settings->show_meta ) ) ? $settings->show_meta : 'yes';
 if ( ! $version_bb_check ) {
 	$settings->pagination_color_border = UABB_Helper::uabb_colorpicker( $settings, 'pagination_color_border' );
 	$settings->pagination_border_size  = ( '' !== $settings->pagination_border_size ) ? $settings->pagination_border_size : '2';
@@ -246,7 +257,7 @@ if ( 'custom' === $settings->featured_image_size ) {
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-post-inner-wrap .uabb-post-thumbnail.uabb-crop-thumbnail img {
 		height: <?php echo esc_attr( $settings->featured_image_size_height ); ?>px;
 
-	}	
+	}
 	<?php
 }
 
@@ -705,9 +716,6 @@ if ( ! $version_bb_check ) {
 if ( 'grid' === $settings->is_carousel ) {
 	?>
 @media all and ( min-width: <?php echo esc_attr( $global_settings->medium_breakpoint ); ?>px ) {
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-grid-sizer {
-		width: <?php echo esc_attr( ( 100 / $settings->post_per_grid ) ); ?>%;
-	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-wrapper:nth-child(<?php echo esc_attr( $settings->post_per_grid ); ?>n+1){
 		<!-- clear: left; -->
 	}
@@ -725,7 +733,7 @@ if ( 'grid' === $settings->is_carousel ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-post-content .uabb-read-more-text span,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-post-content .uabb-read-more-text:visited * {
-	color: 
+	color:
 	<?php
 	echo esc_attr( ( '' === uabb_theme_base_color( $settings->link_more_arrow_color ) ) ? '#f7f7f7' : uabb_theme_base_color( $settings->link_more_arrow_color ) );
 	?>
@@ -1213,12 +1221,62 @@ if ( 'carousel' !== $settings->is_carousel && 'yes' === $show_pagination && 'num
 
 	<?php
 }
+
+if ( 'grid' === $settings->is_carousel ) {
+	?>
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-8,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-7,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-6,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-5,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-4,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-3,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-2,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-1,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-grid-sizer {
+		width: calc((100% - <?php echo esc_attr( $space_desktop ) + 0.1; ?>px) / <?php echo esc_attr( $column_desktop ); ?>);/*<?php echo esc_attr( $post_columns_desktop ) - 0.1; ?>%;*/
+	}
+	<?php
+}
+
 ?>
 
 <?php
 if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 	?>
+	<?php if ( isset( $global_settings->large_breakpoint ) ) { ?>
+	@media screen and (max-width: <?php echo esc_attr( $global_settings->large_breakpoint ); ?>px) {
+
+		<?php if ( 'grid' === $settings->is_carousel ) { ?>
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-8,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-7,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-6,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-5,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-4,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-3,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-2,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-1,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-grid-sizer {
+				width: calc((100% - <?php echo esc_attr( $space_large ); ?>px) / <?php echo esc_attr( $column_desktop ); ?>);
+			}
+		<?php } ?>
+
+	}
+<?php } ?>
 	@media ( max-width: <?php echo esc_attr( $global_settings->medium_breakpoint ); ?>px ) {
+
+		<?php if ( 'grid' === $settings->is_carousel ) { ?>
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-8,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-7,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-6,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-5,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-4,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-3,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-2,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-1,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-grid-sizer {
+				width: calc((100% - <?php echo esc_attr( $space_tablet ); ?>px) / <?php echo esc_attr( $column_tablet ); ?>);
+			}
+		<?php } ?>
 
 		.fl-node-<?php echo esc_attr( $id ); ?> ul.uabb-masonary-filters > li {
 			<?php
@@ -1301,7 +1359,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 		?>
 
 		<?php
-		if ( 'masonary' === $settings->is_carousel || 'grid' === $settings->is_carousel ) {
+		if ( 'masonary' === $settings->is_carousel ) {
 			?>
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-8,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-7,
@@ -1527,6 +1585,20 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 
 	@media ( max-width: <?php echo esc_attr( $global_settings->responsive_breakpoint ); ?>px ) {
 
+		<?php if ( 'grid' === $settings->is_carousel ) { ?>
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-8,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-7,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-6,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-5,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-4,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-3,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-2,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-1,
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-grid-sizer {
+				width: calc((100% - <?php echo esc_attr( $space_mobile ); ?>px) / <?php echo esc_attr( $column_mobile ); ?>);
+			}
+		<?php } ?>
+
 		.fl-node-<?php echo esc_attr( $id ); ?> ul.uabb-masonary-filters > li {
 		<?php
 		if ( isset( $settings->masonary_padding_dimension_top_responsive ) ) {
@@ -1650,7 +1722,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			}
 		}
 
-		if ( 'masonary' === $settings->is_carousel || 'grid' === $settings->is_carousel ) {
+		if ( 'masonary' === $settings->is_carousel ) {
 			?>
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-8,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-7,

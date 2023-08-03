@@ -307,7 +307,7 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-checkbox input[type='checkbox'] + span:before,
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wperfw+cf7-radio input[type='radio'] + span:before,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-radio input[type='radio'] + span:before,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-acceptance input[type="checkbox"] + span:before {
 		content: '';
 		background: #<?php echo esc_attr( $settings->radio_check_bgcolor ); ?>;

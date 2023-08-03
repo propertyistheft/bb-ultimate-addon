@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Beaver Builder package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Beaver Builder 1.35.7\n"
+"Project-Id-Version: Ultimate Addons for Beaver Builder 1.35.9\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/bb-ultimate-addon\n"
-"POT-Creation-Date: 2023-06-14 06:50:34+00:00\n"
+"POT-Creation-Date: 2023-08-03 05:45:38+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -3015,7 +3015,7 @@ msgstr ""
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:161
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:152
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:153
-#: modules/uabb-video-gallery/uabb-video-gallery.php:828
+#: modules/uabb-video-gallery/uabb-video-gallery.php:851
 msgid "All"
 msgstr ""
 
@@ -20063,7 +20063,7 @@ msgstr ""
 msgid "Notice"
 msgstr ""
 
-#: modules/google-map/google-map.php:122
+#: modules/google-map/google-map.php:123
 #. translators: %1$s: search term, %2$s: search term, %3$s: search term
 msgid ""
 "<span style=\"%1$s\">To display customized Google Map without an issue, you "
@@ -20073,7 +20073,7 @@ msgid ""
 "rel=\"noopener\">here</a></span>."
 msgstr ""
 
-#: modules/google-map/google-map.php:136
+#: modules/google-map/google-map.php:137
 #. translators: %1$s: search term
 msgid ""
 "<span style=\"%1$s\">Facing issues while using Google Map module. Please "
@@ -23447,7 +23447,7 @@ msgstr ""
 msgid "Video Popup"
 msgstr ""
 
-#: modules/modal-popup/modal-popup.php:997
+#: modules/modal-popup/modal-popup.php:1016
 #: modules/uabb-devices/uabb-devices.php:175
 #. translators: %1$s: search term, %2$s: search term
 msgid ""
@@ -27902,21 +27902,21 @@ msgstr ""
 msgid "An animated countdown area."
 msgstr ""
 
-#: modules/uabb-devices/includes/frontend.php:184
-#: modules/uabb-devices/includes/frontend.php:193
+#: modules/uabb-devices/includes/frontend.php:185
+#: modules/uabb-devices/includes/frontend.php:194
 msgid "Rewind"
 msgstr ""
 
-#: modules/uabb-devices/includes/frontend.php:185
-#: modules/uabb-devices/includes/frontend.php:194
+#: modules/uabb-devices/includes/frontend.php:186
+#: modules/uabb-devices/includes/frontend.php:195
 msgid "Play / Pause"
 msgstr ""
 
-#: modules/uabb-devices/includes/frontend.php:207
+#: modules/uabb-devices/includes/frontend.php:208
 msgid "Volume"
 msgstr ""
 
-#: modules/uabb-devices/includes/frontend.php:214
+#: modules/uabb-devices/includes/frontend.php:215
 #: modules/uabb-search/uabb-search.php:343
 msgid "Expand"
 msgstr ""
@@ -32651,15 +32651,15 @@ msgstr ""
 msgid "Font size"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:424
+#: modules/uabb-video/uabb-video.php:445
 msgid "from "
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:538
+#: modules/uabb-video/uabb-video.php:559
 msgid "Please choose a file."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:867
+#: modules/uabb-video/uabb-video.php:888
 #. translators: %s: search term
 msgid ""
 "<div style=\"%2$s\"> Make sure you add the actual URL of the video and not "
@@ -32670,7 +32670,7 @@ msgid ""
 "https://youtu.be/HJRzUQMhJMQ</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:882
+#: modules/uabb-video/uabb-video.php:903
 #. translators: %s: search term
 msgid ""
 "<div style=\"%1$s\">Make sure you add the actual URL of the video and not "
@@ -32681,15 +32681,15 @@ msgid ""
 "https://vimeo.com/channels/staffpicks/274860274</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:895
-#: modules/uabb-video-gallery/uabb-video-gallery.php:916
+#: modules/uabb-video/uabb-video.php:916
+#: modules/uabb-video-gallery/uabb-video-gallery.php:939
 #. translators: %s: search term
 msgid ""
 "<div style=\"%1$s\">Go to your Wistia video, right click, \"Copy Link & "
 "Thumbnail\" and paste here.</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:912
+#: modules/uabb-video/uabb-video.php:933
 msgid ""
 "Click <a "
 "href=\"https://www.ultimatebeaver.com/docs/how-to-find-youtube-channel-name-"
@@ -32698,14 +32698,14 @@ msgid ""
 "here</strong> </a> to know how to find your YouTube Channel ID."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:918
+#: modules/uabb-video/uabb-video.php:939
 msgid ""
 "Click <a href=\"https://support.google.com/youtube/answer/3250431?hl=en\" "
 "target=\"_blank\" rel=\"noopener\"> <strong> here</strong> </a> to know how "
 "to find your YouTube Channel ID."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:927
+#: modules/uabb-video/uabb-video.php:948
 msgid ""
 "Click <a "
 "href=\"https://www.ultimatebeaver.com/docs/how-to-find-youtube-channel-name-"
@@ -32714,7 +32714,7 @@ msgid ""
 "here</strong> </a> to know how to find your YouTube Channel Name."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:933
+#: modules/uabb-video/uabb-video.php:954
 msgid ""
 "Click <a href=\"https://support.google.com/youtube/answer/3250431?hl=en\" "
 "target=\"_blank\" rel=\"noopener\"> <strong> here</strong> </a> to know how "
@@ -32869,7 +32869,7 @@ msgstr ""
 msgid "Video  Gallery"
 msgstr ""
 
-#: modules/uabb-video-gallery/uabb-video-gallery.php:888
+#: modules/uabb-video-gallery/uabb-video-gallery.php:911
 #. translators: %s: search term
 msgid ""
 "<div style=\"%2$s\"> Make sure you add the actual URL of the video and not "
@@ -32880,7 +32880,7 @@ msgid ""
 "https://youtu.be/HJRzUQMhJMQ</div>"
 msgstr ""
 
-#: modules/uabb-video-gallery/uabb-video-gallery.php:903
+#: modules/uabb-video-gallery/uabb-video-gallery.php:926
 #. translators: %s: search term
 msgid ""
 "<div style=\"%1$s\">Make sure you add the actual URL of the video and not "

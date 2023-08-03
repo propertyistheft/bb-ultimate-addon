@@ -188,10 +188,12 @@
         </widget>
         <widget name="dual-color-heading">
             <fields>
-                <field type="Dual Color Heading : First Heading" editor_type="LINE">first_heading_text</field>
-                <field type="Dual Color Heading : First Heading Link" editor_type="LINK">first_heading_link</field>
-                <field type="Dual Color Heading : Second Heading" editor_type="LINE">second_heading_text</field>
-                <field type="Dual Color Heading : Second Heading Link" editor_type="LINK">second_heading_link</field>
+                <field type="Dual Color Heading : Before Text" editor_type="LINE">first_heading_text</field>
+                <field type="Dual Color Heading : Before Text Link" editor_type="LINK">first_heading_link</field>
+                <field type="Dual Color Heading : Highlighted Text" editor_type="LINE">second_heading_text</field>
+                <field type="Dual Color Heading : Highlighted Text Link" editor_type="LINK">second_heading_link</field>
+				<field type="Dual Color Heading : After Text" editor_type="LINE">after_heading_text</field>
+                <field type="Dual Color Heading : Background Text" editor_type="LINE">bg_heading</field>
             </fields>
         </widget>
         <widget name="fancy-text">

@@ -31,6 +31,14 @@
 			event.stopPropagation();
 			jQuery(this).removeClass('uabb-ib2-hover');
 		});
+		jQuery('.uabb-ib2-outter').focus(function(event){
+			event.stopPropagation();
+			jQuery(this).addClass('uabb-ib2-hover');
+		}).blur(function(event
+			) {
+			event.stopPropagation();
+			jQuery(this).removeClass('uabb-ib2-hover');
+		  });
 	}
 
 }(jQuery, window));

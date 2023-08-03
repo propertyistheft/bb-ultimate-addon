@@ -1,3 +1,21 @@
+Version 1.35.9, Thursday, 3rd August 2023
+- Improvement: Advanced Posts - Added aria-label attribute to the Post link to improve accessibility.
+- Improvement: Dual Color Heading - Added WPML support for After text and Background text.
+- Improvement: Interactive Banner 2 - Made banner accessible through keyboard.
+- Fixed: Advanced Menu - Below Row responsive layout not working properly.
+- Fixed: Advanced Posts - Columns layout not working properly in some cases.
+- Fixed: Video - Videos autoplaying even if autoplay is set to no.
+
+Version 1.35.8, Thursday, 6th July 2023
+- Fixed: CF7 Styler - Radio button custom style not working.
+- Fixed: Devices - Videos getting autoplayed on first page load even if autoplay is disabled.
+- Fixed: Google Map - Resolved JS warning in console.
+- Fixed: Modal Popup - Issue with Vimeo private/unlisted videos.
+- Fixed: Presets feature not working properly.
+- Fixed: Table - Media file selector popup does not appear for selecting CSV file as source.
+- Fixed: Video - Issue with Vimeo private/unlisted videos.
+- Fixed: Video Gallery - Show Vimeo private/unlisted videos if videos are set to play inline.
+
 Version 1.35.7, Wednesday, 14th June 2023
 - Improvement: FAQ Schema- Improved accessibility by adding proper role attributes.
 - Fixed: BB editor panel layout issue when UABB Template Sections are installed.

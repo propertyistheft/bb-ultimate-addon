@@ -512,6 +512,8 @@ class UABB_UI_Panels {
 	public function uabb_panel_css_js() {
 		if ( FLBuilderModel::is_builder_active() ) {
 			wp_enqueue_script( 'uabb-panel-js', BB_ULTIMATE_ADDON_URL . 'assets/js/uabb-panel.js', array( 'jquery' ), BB_ULTIMATE_ADDON_VER, true );
+			wp_enqueue_script( 'uabb-file', BB_ULTIMATE_ADDON_URL . 'fields/uabb-file/js/uabb-file.js', array(), BB_ULTIMATE_ADDON_VER, true );
+			wp_enqueue_style( 'uabb-file', BB_ULTIMATE_ADDON_URL . 'fields/uabb-file/css/uabb-file.css', array(), BB_ULTIMATE_ADDON_VER );
 		}
 	}
 

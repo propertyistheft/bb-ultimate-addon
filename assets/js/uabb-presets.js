@@ -49,7 +49,7 @@
                                 action: 'save_settings',
                                 node_id: nodeId,
                                 settings: merged
-                            }, FLBuilder._saveSettingsComplete.bind(this, true, null));
+                            }, FLBuilder._saveSettingsComplete.bind(this, true));
 
                             FLBuilder.triggerHook('didSaveNodeSettings', {
                                 nodeId: nodeId,
@@ -95,7 +95,7 @@
                             action: 'save_settings',
                             node_id: nodeId,
                             settings: defaultSettings
-                        }, FLBuilder._saveSettingsComplete.bind(this, true, null));
+                        }, FLBuilder._saveSettingsComplete.bind(this, true));
 
                         FLBuilder.triggerHook('didSaveNodeSettings', {
                             nodeId: nodeId,

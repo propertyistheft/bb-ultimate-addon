@@ -532,8 +532,13 @@
 			}
 
 			var module = $( this.nodeClass ),
-				clone  = module.clone(),
-				col    = module.closest( '.fl-row-content' );
+				clone  = null,
+				col    = module.closest( '.fl-col' );
+
+			if ( module.length < 1 ) {
+				return;
+			}
+			clone = ( module.length > 1 ) ? $( module[0] ).clone() : module.clone();
 			module.find( 'ul.menu' ).css('display','none');
 			clone.addClass( ( this.nodeClass + '-clone' ).replace( '.', '' ) );
 			clone.find( '.uabb-creative-menu-mobile-toggle' ).remove();

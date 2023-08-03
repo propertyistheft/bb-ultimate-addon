@@ -170,13 +170,32 @@ class ModalPopupModule extends FLBuilderModule {
 
 			$html .= '<div class="uabb-modal-iframe uabb-video-player" data-src="youtube" data-id="' . $vid_id . '" data-append="?version=3&enablejsapi=1' . $related_videos . $player_controls . '" data-thumb="' . $thumb . '"></div>';
 		} elseif ( 'vimeo' === $this->settings->content_type ) {
-			$vid_id = preg_replace( '/[^\/]+[^0-9]|(\/)/', '', rtrim( $url, '/' ) );
+
 			$thumb  = '';
-			if ( '' !== $vid_id && 0 !== $vid_id ) {
-					$vimeo = maybe_unserialize( @file_get_contents( "https://vimeo.com/api/v2/video/$vid_id.php" ) );// @codingStandardsIgnoreLine.
-					$thumb = $vimeo[0]['thumbnail_large'];
-				$html     .= '<div class="uabb-modal-iframe uabb-video-player" data-src="vimeo" data-id="' . $vid_id . '" data-append="?title=0&byline=0&portrait=0&badge=0" data-thumb="' . $thumb . '"></div>';
+			$params = '?title=0&byline=0&portrait=0&badge=0';
+
+			if ( preg_match( '%^https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)(?:[?]?.*)$%im', $url, $regs ) ) {
+				$vid_id = $regs[3];
 			}
+
+			$vid_id_image = preg_replace( '/[^\/]+[^0-9]|(\/)/', '', rtrim( $url, '/' ) );
+
+			if ( '' !== $vid_id_image && 0 !== $vid_id_image ) {
+				$vimeo = maybe_unserialize( @file_get_contents( "https://vimeo.com/api/v2/video/$vid_id_image.php" ) );// @codingStandardsIgnoreLine.
+				$thumb = $vimeo[0]['thumbnail_large'];
+			}
+
+			/**
+			 * Support Vimeo unlisted and private videos
+			 */
+			$h_param = array();
+			preg_match( '/(?|(?:[\?|\&]h={1})([\w]+)|\d\/([\w]+))/', $url, $h_param );
+
+			if ( ! empty( $h_param ) ) {
+				$params .= '&h=' . $h_param[1];
+			}
+
+			$html .= '<div class="uabb-modal-iframe uabb-video-player" data-src="vimeo" data-id="' . $vid_id . '" data-append="' . $params . '" data-thumb="' . $thumb . '"></div>';
 		}
 		$html .= '</div>';
 		return $html;
