@@ -22,7 +22,7 @@ if ( UABB_Compatibility::$version_bb_check ) {
 }
 
 ?>
-<div class="uabb-module-content uabb-ib2-outter uabb-new-ib uabb-ib-effect-<?php echo esc_attr( $settings->banner_style ); ?>  <?php echo ( '' !== $settings->banner_height ) ? 'uabb-ib2-min-height' : ''; ?> " tabindex=0 autofocus=true>
+<div class="uabb-module-content uabb-ib2-outter uabb-new-ib uabb-ib-effect-<?php echo esc_attr( $settings->banner_style ); ?>  <?php echo ( '' !== $settings->banner_height ) ? 'uabb-ib2-min-height' : ''; ?> " tabindex=0>
 	<?php
 	if ( '' !== $settings->banner_image ) {
 		?>
