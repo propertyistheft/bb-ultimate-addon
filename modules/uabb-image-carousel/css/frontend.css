@@ -3,6 +3,12 @@
 	text-align: center;
 }
 
+.fl-col-group.fl-col-group-responsive-reversed:has(.fl-module-uabb-image-carousel),
+.fl-col-group.fl-col-group-responsive-reversed .fl-col:has(.fl-module-uabb-image-carousel),
+.fl-col-group.fl-col-group-responsive-reversed .fl-col-content:has(.fl-module-uabb-image-carousel) {
+   min-width: 0px;
+}
+
 .internet-explorer9 .uabb-background-mask .uabb-overlay-icon {
 	top: 50%;
 	position: absolute;

@@ -81,6 +81,10 @@ if ( ! class_exists( 'UABB_Plugin_Update' ) ) {
 			// Update saved version number.
 			update_option( '_uabb_saved_version', BB_ULTIMATE_ADDON_VER );
 
+			if ( class_exists( 'FLBuilderModel' ) ) {
+				FLBuilderModel::delete_asset_cache_for_all_posts();
+			}
+
 			// Flush the rewrite rules.
 			flush_rewrite_rules();
 
