@@ -1164,7 +1164,10 @@ class UABBCreativeMenu extends FLBuilderModule {
 			<?php echo esc_attr( $settings->creative_mobile_menu_type ); ?>">
 				<div class="uabb-clear"></div>
 				<?php echo wp_kses_post( $classes ); ?>
-				<?php echo wp_kses_post( $module->get_menu( $settings, $module ) ); ?>
+				<?php
+				$menu = $module->get_menu( $settings, $module );
+				echo ( ! is_null( $menu ) ? wp_kses_post( $menu ) : '' );
+				?>
 				</div>
 			</div>
 			<?php

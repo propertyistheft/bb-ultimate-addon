@@ -18,7 +18,10 @@ if ( 'always' === $settings->creative_menu_mobile_breakpoint ) {
 		uabb-menu-default">
 			<?php $module->get_toggle_button(); ?>
 				<div class="uabb-clear"></div>
-				<?php echo wp_kses_post( $module->get_menu( $settings, $module ) ); ?>
+				<?php
+				$menu_html = $module->get_menu( $settings, $module );
+				echo ( ! is_null( $menu_html ) ? wp_kses_post( $menu_html ) : '' );
+				?>
 		</div>
 	<?php } else { ?>
 		<?php
@@ -34,7 +37,10 @@ if ( 'always' === $settings->creative_menu_mobile_breakpoint ) {
 	uabb-menu-default">
 		<?php $module->get_toggle_button(); ?>
 			<div class="uabb-clear"></div>
-			<?php echo wp_kses_post( $module->get_menu( $settings, $module ) ); ?>
+			<?php
+			$menu_html = $module->get_menu( $settings, $module );
+			echo ( ! is_null( $menu_html ) ? wp_kses_post( $menu_html ) : '' );
+			?>
 	</div>
 
 	<?php

@@ -22,7 +22,8 @@ foreach ( $settings->icons as $icon ) {
 		if ( '' === $icon->link ) {
 			echo '<div class="adv-icon-link adv-icon-' . esc_attr( $icon_count ) . '">';
 		} else {
-			echo '<a class="adv-icon-link adv-icon-' . esc_attr( $icon_count ) . '" href="' . $icon->link . '" target="' . esc_attr( $icon->link_target ) . '" ' . wp_kses_post( BB_Ultimate_Addon_Helper::get_link_rel( $icon->link_target, $icon->link_nofollow, 0 ) ) . ' aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . $icon->link . '">'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			$link_rel = BB_Ultimate_Addon_Helper::get_link_rel( $icon->link_target, $icon->link_nofollow, 0 );
+			echo '<a class="adv-icon-link adv-icon-' . esc_attr( $icon_count ) . '" href="' . $icon->link . '" target="' . esc_attr( $icon->link_target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . $icon->link . '">'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 		$imageicon_array = array(
 

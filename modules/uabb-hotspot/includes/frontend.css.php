@@ -160,7 +160,7 @@ if ( '' !== $photo_src ) {
 					.fl-node-<?php echo esc_attr( $id ); ?> .uabb-hotspot-item-<?php echo esc_attr( $i ); ?> .uabb-hotspot-text {
 
 						<?php if ( 'yes' === $converted || isset( $settings->hotspot_marker[ $i ]->text_typography_font_size_unit ) && '' !== $settings->hotspot_marker[ $i ]->text_typography_font_size_unit ) { ?>
-							font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->text_typography_font_size_unit ); ?>px;	
+							font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->text_typography_font_size_unit ); ?>px;
 						<?php } elseif ( isset( $settings->hotspot_marker[ $i ]->text_typography_font_size_unit ) && '' === $settings->hotspot_marker[ $i ]->text_typography_font_size_unit && isset( $settings->hotspot_marker[ $i ]->text_typography_font_size['desktop'] ) && '' !== $settings->hotspot_marker[ $i ]->text_typography_font_size['desktop'] ) { ?>
 							font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->text_typography_font_size['desktop'] ); ?>px;
 						<?php } ?>
@@ -170,10 +170,10 @@ if ( '' !== $photo_src ) {
 						<?php } ?>
 
 						<?php if ( 'yes' === $converted || isset( $settings->hotspot_marker[ $i ]->text_typography_line_height_unit ) && '' !== $settings->hotspot_marker[ $i ]->text_typography_line_height_unit ) { ?>
-							line-height: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->text_typography_line_height_unit ); ?>em;	
+							line-height: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->text_typography_line_height_unit ); ?>em;
 						<?php } elseif ( isset( $settings->hotspot_marker[ $i ]->text_typography_line_height_unit ) && '' === $settings->hotspot_marker[ $i ]->text_typography_line_height_unit && isset( $settings->hotspot_marker[ $i ]->text_typography_line_height['desktop'] ) && '' !== $settings->hotspot_marker[ $i ]->text_typography_line_height['desktop'] ) { ?>
 							line-height: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->text_typography_line_height['desktop'] ); ?>px;
-						<?php } ?>	
+						<?php } ?>
 
 						<?php
 						if ( 'Default' !== $settings->hotspot_marker[ $i ]->text_typography_font_family['family'] ) {
@@ -239,7 +239,7 @@ if ( '' !== $photo_src ) {
 				$im_icon_backside = 0;
 				$im_icon_size     = 0;
 				if ( '' !== $settings->hotspot_marker[ $i ]->icon && 'custom' === $settings->hotspot_marker[ $i ]->icon_style ) {
-					$im_icon_backside = (int) $settings->hotspot_marker[ $i ]->icon_bg_size + ( $settings->hotspot_marker[ $i ]->icon_border_width * 2 );
+					$im_icon_backside = (int) $settings->hotspot_marker[ $i ]->icon_bg_size + ( (int) $settings->hotspot_marker[ $i ]->icon_border_width * 2 );
 					$im_icon_size     = $settings->hotspot_marker[ $i ]->icon_size;
 				} elseif ( '' !== $settings->hotspot_marker[ $i ]->icon && 'circle' === $settings->hotspot_marker[ $i ]->icon_style || 'square' === $settings->hotspot_marker[ $i ]->icon_style ) {
 					$im_icon_size = $settings->hotspot_marker[ $i ]->icon_size * 2;
@@ -253,7 +253,7 @@ if ( '' !== $photo_src ) {
 				$element_width = $im_icon_size + $im_icon_backside;
 			} elseif ( 'photo' === $settings->hotspot_marker[ $i ]->hotspot_marker_type ) {
 				if ( 'custom' === $settings->hotspot_marker[ $i ]->image_style ) {
-					$im_backside = ( $settings->hotspot_marker[ $i ]->img_bg_size * 2 ) + ( $settings->hotspot_marker[ $i ]->img_border_width * 2 );
+					$im_backside = ( (int) $settings->hotspot_marker[ $i ]->img_bg_size * 2 ) + ( (int) $settings->hotspot_marker[ $i ]->img_border_width * 2 );
 				} else {
 					$im_backside = 0;
 				}
@@ -315,7 +315,7 @@ if ( '' !== $photo_src ) {
 				<?php if ( ! $version_bb_check ) { ?>
 					.fl-node-<?php echo esc_attr( $id ); ?> .uabb-hotspot-item-<?php echo esc_attr( $i ); ?> .uabb-hotspot-tooltip-content {
 							<?php if ( 'yes' === $converted || isset( $settings->hotspot_marker[ $i ]->tooltip_font_size_unit ) && '' !== $settings->hotspot_marker[ $i ]->tooltip_font_size_unit ) { ?>
-								font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_font_size_unit ); ?>px;		
+								font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_font_size_unit ); ?>px;
 							<?php } elseif ( isset( $settings->hotspot_marker[ $i ]->tooltip_font_size_unit ) && '' === $settings->hotspot_marker[ $i ]->tooltip_font_size_unit && isset( $settings->hotspot_marker[ $i ]->tooltip_font_size['desktop'] ) && '' !== $settings->hotspot_marker[ $i ]->tooltip_font_size['desktop'] ) { ?>
 								font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_font_size['desktop'] ); ?>px;
 							<?php } ?>
@@ -324,7 +324,7 @@ if ( '' !== $photo_src ) {
 							<?php } ?>
 
 							<?php if ( 'yes' === $converted || isset( $settings->hotspot_marker[ $i ]->tooltip_line_height_unit ) && '' !== $settings->hotspot_marker[ $i ]->tooltip_line_height_unit ) { ?>
-								line-height: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_line_height_unit ); ?>em;	
+								line-height: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_line_height_unit ); ?>em;
 							<?php } elseif ( isset( $settings->hotspot_marker[ $i ]->tooltip_line_height_unit ) && '' === $settings->hotspot_marker[ $i ]->tooltip_line_height_unit && isset( $settings->hotspot_marker[ $i ]->tooltip_line_height['desktop'] ) && '' !== $settings->hotspot_marker[ $i ]->tooltip_line_height['desktop'] ) { ?>
 								line-height: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_line_height['desktop'] ); ?>px;
 							<?php } ?>
@@ -553,17 +553,17 @@ if ( '' !== $photo_src ) {
 					<?php if ( ! $version_bb_check ) { ?>
 						.fl-node-<?php echo esc_attr( $id ); ?> .uabb-hotspot-item-<?php echo esc_attr( $i ); ?> .uabb-hotspot-tooltip-content {
 							<?php if ( 'yes' === $converted || isset( $settings->hotspot_marker[ $i ]->tooltip_font_size_unit_medium ) && '' !== $settings->hotspot_marker[ $i ]->tooltip_font_size_unit_medium ) { ?>
-								font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_font_size_unit_medium ); ?>px;	
+								font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_font_size_unit_medium ); ?>px;
 							<?php } elseif ( isset( $settings->hotspot_marker[ $i ]->tooltip_font_size_unit_medium ) && '' === $settings->hotspot_marker[ $i ]->tooltip_font_size_unit_medium && isset( $settings->hotspot_marker[ $i ]->tooltip_font_size['medium'] ) && '' !== $settings->hotspot_marker[ $i ]->tooltip_font_size['medium'] ) { ?>
 								font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_font_size['medium'] ); ?>px;
-							<?php } ?> 
+							<?php } ?>
 
 							<?php if ( isset( $settings->hotspot_marker[ $i ]->tooltip_font_size['medium'] ) && '' === $settings->hotspot_marker[ $i ]->tooltip_font_size['medium'] && isset( $settings->hotspot_marker[ $i ]->tooltip_line_height['medium'] ) && '' !== $settings->hotspot_marker[ $i ]->tooltip_line_height['medium'] && '' === $settings->hotspot_marker[ $i ]->tooltip_line_height_unit_medium && '' === $settings->hotspot_marker[ $i ]->tooltip_line_height_unit ) { ?>
 								line-height: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_line_height['medium'] ); ?>px;
 							<?php } ?>
 
 							<?php if ( 'yes' === $converted || isset( $settings->hotspot_marker[ $i ]->tooltip_line_height_unit_medium ) && '' !== $settings->hotspot_marker[ $i ]->tooltip_line_height_unit_medium ) { ?>
-								line-height: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_line_height_unit_medium ); ?>em;	
+								line-height: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_line_height_unit_medium ); ?>em;
 							<?php } elseif ( isset( $settings->hotspot_marker[ $i ]->tooltip_line_height_unit_medium ) && '' === $settings->hotspot_marker[ $i ]->tooltip_line_height_unit_medium && isset( $settings->hotspot_marker[ $i ]->tooltip_line_height['medium'] ) && '' !== $settings->hotspot_marker[ $i ]->tooltip_line_height['medium'] ) { ?>
 								line-height: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_line_height['medium'] ); ?>px;
 							<?php } ?>
@@ -599,7 +599,7 @@ if ( '' !== $photo_src ) {
 					<?php if ( ! $version_bb_check ) { ?>
 						.fl-node-<?php echo esc_attr( $id ); ?> .uabb-hotspot-item-<?php echo esc_attr( $i ); ?> .uabb-hotspot-text {
 							<?php if ( 'yes' === $converted || isset( $settings->hotspot_marker[ $i ]->text_typography_font_size_unit_responsive ) && '' !== $settings->hotspot_marker[ $i ]->text_typography_font_size_unit_responsive ) { ?>
-								font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->text_typography_font_size_unit_responsive ); ?>px;	
+								font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->text_typography_font_size_unit_responsive ); ?>px;
 							<?php } elseif ( isset( $settings->hotspot_marker[ $i ]->text_typography_font_size_unit_responsive ) && '' === $settings->hotspot_marker[ $i ]->text_typography_font_size_unit_responsive && isset( $settings->hotspot_marker[ $i ]->text_typography_font_size['small'] ) && '' !== $settings->hotspot_marker[ $i ]->text_typography_font_size['small'] ) { ?>
 								font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->text_typography_font_size['small'] ); ?>px;
 							<?php } ?>
@@ -612,7 +612,7 @@ if ( '' !== $photo_src ) {
 								line-height: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->text_typography_line_height_unit_responsive ); ?>em;
 							<?php } elseif ( isset( $settings->hotspot_marker[ $i ]->text_typography_line_height_unit_responsive ) && '' === $settings->hotspot_marker[ $i ]->text_typography_line_height_unit_responsive && isset( $settings->hotspot_marker[ $i ]->text_typography_line_height['small'] ) && '' !== $settings->hotspot_marker[ $i ]->text_typography_line_height['small'] ) { ?>
 								line-height: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->text_typography_line_height['small'] ); ?>px;
-							<?php } ?>	
+							<?php } ?>
 						}
 					<?php } ?>
 					.fl-node-<?php echo esc_attr( $id ); ?> .uabb-hotspot-item-<?php echo esc_attr( $i ); ?> .uabb-hotspot-text {
@@ -635,7 +635,7 @@ if ( '' !== $photo_src ) {
 					<?php if ( ! $version_bb_check ) { ?>
 						.fl-node-<?php echo esc_attr( $id ); ?> .uabb-hotspot-item-<?php echo esc_attr( $i ); ?> .uabb-hotspot-tooltip-content {
 							<?php if ( 'yes' === $converted || isset( $settings->hotspot_marker[ $i ]->tooltip_font_size_unit_responsive ) && '' !== $settings->hotspot_marker[ $i ]->tooltip_font_size_unit_responsive ) { ?>
-								font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_font_size_unit_responsive ); ?>px;	
+								font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_font_size_unit_responsive ); ?>px;
 							<?php } elseif ( isset( $settings->hotspot_marker[ $i ]->tooltip_font_size_unit_responsive ) && '' === $settings->hotspot_marker[ $i ]->tooltip_font_size_unit_responsive && isset( $settings->hotspot_marker[ $i ]->tooltip_font_size['small'] ) && '' !== $settings->hotspot_marker[ $i ]->tooltip_font_size['small'] ) { ?>
 								font-size: <?php echo esc_attr( $settings->hotspot_marker[ $i ]->tooltip_font_size['small'] ); ?>px;
 							<?php } ?>

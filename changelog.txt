@@ -1,3 +1,13 @@
+Version 1.35.13, Thursday, 14th September 2023
+- Fixed: Advanced Menu - Resolved PHP warning for undefined variable.
+
+Version 1.35.12, Wednesday, 13th Septemeber 2023
+- Improvement: Added compatibility with PHP version 8.1.
+- Improvement: Table - Added alt attribute support for Photo in Table Header and Content cells.
+- Improvement: Video - Made play button accessible through keyboard to play video.
+- Fixed: Advanced Posts - Layout alignment issue with Grid layout option.
+- Fixed: Image Carousel - Layout rendering issue when multiple modules are added in Content Toggle / Advanced Tabs / Advanced Accordion content.
+
 Version 1.35.11, Wednesday, 23rd August 2023
 - Improvement: Advanced tabs - Made tabs accessible through keyboard.
 - Improvement: Clear Beaver Builder cache when UABB is updated.

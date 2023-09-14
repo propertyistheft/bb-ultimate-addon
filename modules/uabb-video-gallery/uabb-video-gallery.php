@@ -739,7 +739,7 @@ class UABBVideoGallery extends FLBuilderModule {
 			$video_url = $item->video_url;
 		} else {
 			$this->data = FLBuilderPhoto::get_attachment_data( $item->video );
-			$video_url  = $this->data->url;
+			$video_url  = isset( $this->data ) ? $this->data->url : '';
 		}
 
 		if ( empty( $video_url ) ) {

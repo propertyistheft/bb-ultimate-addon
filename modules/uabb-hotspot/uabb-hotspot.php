@@ -584,8 +584,9 @@ class UABBHotspot extends FLBuilderModule {
 			);
 			echo '<div class="uabb-hotspot-wrap">';
 			FLBuilder::render_module_html( 'image-icon', $img_icon_array );
-			echo ( 'yes' === $this->settings->hotspot_marker[ $i ]->show_animation ) ? wp_kses_post( $this->render_animation( $this->settings->hotspot_marker[ $i ] ) ) : '';
-			echo ( 'always' === $this->settings->hotspot_marker[ $i ]->show_animation ) ? wp_kses_post( $this->render_animation( $this->settings->hotspot_marker[ $i ] ) ) : '';
+			$animation = $this->render_animation( $this->settings->hotspot_marker[ $i ] );
+			echo ( 'yes' === $this->settings->hotspot_marker[ $i ]->show_animation ) ? ( ! is_null( $animation ) ? wp_kses_post( $animation ) : '' ) : '';
+			echo ( 'always' === $this->settings->hotspot_marker[ $i ]->show_animation ) ? ( ! is_null( $animation ) ? wp_kses_post( $animation ) : '' ) : '';
 			echo '</div>';
 		} else {
 			echo '<div class="uabb-hotspot-text uabb-hotspot-wrap uabb-text-editor">' . $this->settings->hotspot_marker[ $i ]->marker_text . '</div>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

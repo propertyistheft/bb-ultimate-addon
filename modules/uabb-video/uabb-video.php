@@ -563,7 +563,7 @@ class UABBVideo extends FLBuilderModule {
 				<div class="uabb-video-inner-wrap">
 					<div class="uabb-video__play" data-src="<?php echo esc_url( $src ); ?>">
 					<<?php echo esc_attr( $custom_tag ); ?> src="<?php echo wp_kses_post( $video_thumb ); ?>" alt="<?php echo ( 'yes' === $this->settings->show_image_overlay ) ? esc_attr( $alt ) : esc_attr( $this->settings->video_type ) . '-video-thumbnail'; ?>"></<?php echo esc_attr( $custom_tag ); ?>>
-						<div class="uabb-video__play-icon <?php echo esc_attr( ( 'icon' === $this->settings->play_source ) ? $this->settings->play_icon : '' ); ?> uabb-animation-<?php echo esc_attr( $this->settings->hover_animation ); ?>">
+						<div class="uabb-video__play-icon <?php echo esc_attr( ( 'icon' === $this->settings->play_source ) ? $this->settings->play_icon : '' ); ?> uabb-animation-<?php echo esc_attr( $this->settings->hover_animation ); ?>" tabindex="0">
 							<?php echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						</div>
 					</div>
@@ -742,7 +742,11 @@ class UABBVideo extends FLBuilderModule {
 		}
 		$video_type = $this->settings->video_type;
 		$markup     = '';
-		$url        = $settings->{$video_type . '_link'};
+		if ( 'hosted' === $video_type ) {
+			$url = $this->get_hosted_video_url();
+		} else {
+			$url = $settings->{$video_type . '_link'};
+		}
 
 		if ( empty( $settings->video_title ) || empty( $settings->video_desc ) || empty( $settings->video_thumbnail ) || empty( $settings->video_upload_date ) ) {
 			return false;

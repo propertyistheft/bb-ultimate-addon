@@ -34,5 +34,6 @@ if ( ( 'custom' === $settings->offcanvas_on || 'automatic' === $settings->offcan
 	</div>
 	<?php
 }
-echo wp_kses_post( $module->render( $id ) );
+$module_html = $module->render( $id );
+echo ( ! is_null( $module_html ) ? wp_kses_post( $module_html ) : '' );
 

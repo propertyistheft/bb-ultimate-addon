@@ -316,12 +316,16 @@ if ( count( $settings->horizontal ) > 0 ) {
 			if ( 'horizontal' === $settings->layout ) {
 				?>
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-layout-horizontal.uabb-progress-bar-<?php echo esc_attr( $i ); ?> .uabb-progress-bar {
-				<?php if ( 'image' === $tmp[ $i ]->progress_bg_type && '' !== trim( FLBuilderPhoto::get_attachment_data( $tmp[ $i ]->progress_bg_img )->url ) ) : ?>
+				<?php
+				if ( 'image' === $tmp[ $i ]->progress_bg_type && ! empty( $tmp[ $i ]->progress_bg_img ) ) :
+					if ( '' !== trim( FLBuilderPhoto::get_attachment_data( $tmp[ $i ]->progress_bg_img )->url ) ) :
+						?>
 		background-image: url(<?php echo esc_url( FLBuilderPhoto::get_attachment_data( $tmp[ $i ]->progress_bg_img )->url ); ?> );
 		background-position: <?php echo esc_attr( $tmp[ $i ]->progress_bg_img_pos ); ?>;
 		background-size: <?php echo esc_attr( $tmp[ $i ]->progress_bg_img_size ); ?>;
 		background-repeat: <?php echo esc_attr( $tmp[ $i ]->progress_bg_img_repeat ); ?>;
-					<?php
+						<?php
+					endif;
 	elseif ( 'gradient' === $tmp[ $i ]->progress_bg_type ) :
 		$tmp[ $i ]->gradient_field = (array) $tmp[ $i ]->gradient_field;
 		UABB_Helper::uabb_gradient_css( $tmp[ $i ]->gradient_field );

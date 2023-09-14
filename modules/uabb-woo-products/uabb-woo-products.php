@@ -425,7 +425,8 @@ class UABBWooProductsModule extends FLBuilderModule {
 	public function woo_shop_short_desc() {
 		if ( has_excerpt() ) {
 			echo '<div class="uabb-woo-products-description">';
-				echo wp_kses_post( the_excerpt() );
+			$excerpt = the_excerpt();
+				echo ( ! is_null( $excerpt ) ? wp_kses_post( $excerpt ) : '' );
 			echo '</div>';
 		}
 	}

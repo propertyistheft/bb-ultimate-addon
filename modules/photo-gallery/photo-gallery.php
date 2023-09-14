@@ -354,6 +354,7 @@ class UABBPhotoGalleryModule extends FLBuilderModule {
 		}
 
 		/* Check if all photos are available on host */
+		$photo_attachment_data = array();
 		foreach ( $ids as $id ) {
 			$photo_attachment_data[ $id ] = FLBuilderPhoto::get_attachment_data( $id );
 

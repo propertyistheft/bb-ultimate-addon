@@ -206,7 +206,10 @@ class UABBOffCanvasModule extends FLBuilderModule {
 				<div id="offcanvas-<?php echo esc_attr( $node ); ?>" class="uabb-offcanvas uabb-custom-offcanvas uabb-offcanvas-position-<?php echo esc_attr( $offcanvas_position ); ?> uabb-offcanvas-type-<?php echo esc_attr( $this->settings->offcanvas_type ); ?>">
 					<div class="uabb-offcanvas-content">
 						<div class="uabb-offcanvas-action-wrap">
-							<?php echo wp_kses_post( $this->render_close_icon() ); ?>
+							<?php
+							$close_icon = $this->render_close_icon();
+							echo ( ! is_null( $close_icon ) ? wp_kses_post( $close_icon ) : '' );
+							?>
 						</div>
 						<div class="uabb-offcanvas-text uabb-offcanvas-content-data">
 							<?php echo $this->get_modal_content( $this->settings ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>

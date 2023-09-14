@@ -458,7 +458,12 @@ class UABBTimelineModule extends FLBuilderModule {
 		<?php } ?>
 			<div class="inner-date-new">
 				<?php if ( 'published' === $settings->date_type ) { ?>
-					<p><?php echo wp_kses_post( $this->render_date( $post_id ) ); ?></p>
+					<p>
+					<?php
+						$publish_date = $this->render_date( $post_id );
+						echo ( ! is_null( $publish_date ) ? wp_kses_post( $publish_date ) : '' );
+					?>
+						</p>
 				<?php } elseif ( 'modified' === $settings->date_type ) { ?>
 					<p><?php echo wp_kses_post( get_the_modified_date( '', $post_id ) ); ?></p>
 				<?php } elseif ( 'custom' === $settings->date_type ) { ?>

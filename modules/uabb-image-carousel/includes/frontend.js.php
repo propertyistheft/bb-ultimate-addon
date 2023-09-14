@@ -44,7 +44,9 @@ jQuery(document).ready(function( $ ) {
 
 	/* Content Toggle Trigger */
 	UABBTrigger.addHook( 'uabb-toggle-click', function( argument, selector ) {
-		var child_id = jQuery(selector+' .fl-module-uabb-image-carousel').data('node');
+		var img_carousels = jQuery(selector+' .fl-module-uabb-image-carousel');
+		img_carousels.each(function( index ) {
+			var child_id = jQuery(this).data('node');
 			if( null !== child_id ) {
 				jQuery( '.fl-node-' + child_id ).find( '.uabb-image-carousel' ).uabbslick('unslick');
 				var child_args = {
@@ -69,11 +71,15 @@ jQuery(document).ready(function( $ ) {
 				};
 				new UABBImageCarousel( child_args );
 			}
+		});
+
 	});
 
 	/* Tab Click Trigger */
 	UABBTrigger.addHook( 'uabb-tab-click', function( argument, selector ) {
-		var child_id = jQuery(selector+' .fl-module-uabb-image-carousel').data('node');
+		var img_carousels = jQuery(selector+' .fl-module-uabb-image-carousel');
+		img_carousels.each(function( index ) {
+			var child_id = jQuery(this).data('node');
 			if( null !== child_id ) {
 				jQuery( '.fl-node-' + child_id ).find( '.uabb-image-carousel' ).uabbslick('unslick');
 				var child_args = {
@@ -98,11 +104,14 @@ jQuery(document).ready(function( $ ) {
 				};
 				new UABBImageCarousel( child_args );
 			}
+		});
 	});
 
 	/* Accordion Click Trigger */
 		UABBTrigger.addHook( 'uabb-accordion-click', function( argument, selector ) {
-			var child_id = jQuery(selector+' .fl-module-uabb-image-carousel').data('node');
+			var img_carousels = jQuery(selector+' .fl-module-uabb-image-carousel');
+			img_carousels.each(function( index ) {
+			var child_id = jQuery(this).data('node');
 			if( child_id !== null ) {
 				jQuery( '.fl-node-' + child_id ).find( '.uabb-image-carousel' ).uabbslick('unslick');
 				var child_args = {
@@ -138,6 +147,7 @@ jQuery(document).ready(function( $ ) {
 					}, 100);
 				}
 			}
+		});
 		});
 
 	<?php if ( 'lightbox' === $settings->click_action ) : ?>

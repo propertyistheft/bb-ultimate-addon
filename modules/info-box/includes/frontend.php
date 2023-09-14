@@ -28,7 +28,8 @@ if ( 'none' !== $settings->image_type ) {
 	<div class="uabb-infobox-left-right-wrap">
 	<?php
 	if ( 'module' === $settings->cta_type && ! empty( $settings->link ) ) {
-		echo '<a href="' . $settings->link . '" target="' . esc_attr( $target ) . '" ' . wp_kses_post( BB_Ultimate_Addon_Helper::get_link_rel( $target, $nofollow, 0 ) ) . ' class="uabb-infobox-module-link" aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . $settings->link . '"></a>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		$link_rel = BB_Ultimate_Addon_Helper::get_link_rel( $target, $nofollow, 0 );
+		echo '<a href="' . $settings->link . '" target="' . esc_attr( $target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' class="uabb-infobox-module-link" aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . $settings->link . '"></a>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 	// Image left.
 	$module->render_image( 'left' );

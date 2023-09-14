@@ -76,7 +76,7 @@ if ( count( $settings->social_icons ) > 0 ) {
 					$img_size  = apply_filters( 'uabb_social_share_pinterest_img_size', 'large' );
 					$pin_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), $img_size );
 					if ( $pin_thumb ) {
-						$pin_image_url = $pin_thumb['0'];
+						$pin_image_url = is_array( $pin_thumb ) ? $pin_thumb['0'] : '';
 					}
 				} else {
 					$pin_image_url = $icon->fallback_image_src;
@@ -149,7 +149,7 @@ if ( count( $settings->social_icons ) > 0 ) {
 
 			case 'vk':
 				$pin_thumb   = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
-				$pin_url     = $pin_thumb['0'];
+				$pin_url     = is_array( $pin_thumb ) ? $pin_thumb['0'] : '';
 				$url         = 'https://vkontakte.ru/share.php?url=' . $current_page . '&title=' . $title . '&image=' . $pin_url;
 				$share_title = __( 'VK', 'uabb' );
 				$share_icon  = 'fab fa-vk';
@@ -157,7 +157,7 @@ if ( count( $settings->social_icons ) > 0 ) {
 
 			case 'odnoklassniki':
 				$pin_thumb   = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
-				$pin_url     = $pin_thumb['0'];
+				$pin_url     = is_array( $pin_thumb ) ? $pin_thumb['0'] : '';
 				$url         = 'https://connect.ok.ru/offer?url=' . $current_page . '&title=' . $title . '&imageUrl=' . $pin_url;
 				$share_title = __( 'OK', 'uabb' );
 				$share_icon  = 'fab fa-odnoklassniki';

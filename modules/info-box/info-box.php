@@ -1079,7 +1079,8 @@ class UABBInfoBoxModule extends FLBuilderModule {
 	 */
 	public function render_link() {
 		if ( 'link' === $this->settings->cta_type ) {
-			echo '<a href="' . $this->settings->link . '" target="' . esc_attr( $this->settings->link_target ) . '" ' . wp_kses_post( BB_Ultimate_Addon_Helper::get_link_rel( $this->settings->link_target, $this->settings->link_nofollow, 0 ) ) . ' class="uabb-infobox-cta-link">' . $this->settings->cta_text . '</a>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			$link_rel = BB_Ultimate_Addon_Helper::get_link_rel( $this->settings->link_target, $this->settings->link_nofollow, 0 );
+			echo '<a href="' . $this->settings->link . '" target="' . esc_attr( $this->settings->link_target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' class="uabb-infobox-cta-link">' . $this->settings->cta_text . '</a>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 

@@ -251,12 +251,12 @@ var UABBBlogPosts;
             $grid = jQuery( nodeClass ).find('.uabb-blog-posts-grid').isotope({
                 layoutMode: LayoutMode,
                 itemSelector: '.uabb-blog-posts-grid-item-' + $this.id,
-                gutter: parseInt($this.element_space),
-                isFitWidth          : true,
+				percentPosition: true,
+                fitRows: {
+                    columnWidth: '.uabb-blog-posts-grid-item-' + $this.id,
+					gutter: '.uabb-post-grid-sizer'
+				  },
                 transitionDuration  : 0,
-                masonry: {
-                    columnWidth: $this.nodeClass + ' .uabb-post-grid-sizer'
-                }
             });
 
 

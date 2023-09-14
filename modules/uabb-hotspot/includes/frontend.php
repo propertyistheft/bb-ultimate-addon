@@ -130,7 +130,10 @@ if ( isset( $photo_src ) ) {
 			?>
 			<div class="uabb-hotspot-overlay">
 				<div class="uabb-overlay-button">
-					<?php echo wp_kses_post( $module->render_button() ); ?>
+					<?php
+					$button = $module->render_button();
+					echo ( ! is_null( $button ) ? wp_kses_post( $button ) : '' );
+					?>
 				</div>
 			</div>
 		<?php } ?>

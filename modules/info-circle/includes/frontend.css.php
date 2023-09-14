@@ -479,17 +479,18 @@ foreach ( $settings->add_circle_item as $item ) {
 
 		<?php
 		/* Information Circle Background Image */
-		elseif ( 'image' === $item->inner_circle_bg_type && '' !== FLBuilderPhoto::get_attachment_data( $item->inner_circle_bg_img )->url ) :
-			?>
+		elseif ( 'image' === $item->inner_circle_bg_type && ! empty( $item->inner_circle_bg_img ) ) :
+			if ( '' !== FLBuilderPhoto::get_attachment_data( $item->inner_circle_bg_img )->url ) :
+				?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-info-circle-in-<?php echo esc_attr( $circle_item_count ); ?> {
 			background-image: url(
-			<?php echo esc_url( FLBuilderPhoto::get_attachment_data( $item->inner_circle_bg_img )->url ); ?>);
+				<?php echo esc_url( FLBuilderPhoto::get_attachment_data( $item->inner_circle_bg_img )->url ); ?>);
 			background-position: <?php echo esc_attr( $item->inner_circle_bg_img_pos ); ?>;
 			background-size: <?php echo esc_attr( $item->inner_circle_bg_img_size ); ?>;
 			background-repeat: <?php echo esc_attr( $item->inner_circle_bg_img_repeat ); ?>;
 		}
 
-			<?php if ( isset( $item->inner_circle_bg_overlay ) && '' !== $item->inner_circle_bg_overlay ) : ?>
+				<?php if ( isset( $item->inner_circle_bg_overlay ) && '' !== $item->inner_circle_bg_overlay ) : ?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-info-circle.uabb-info-circle-in-<?php echo esc_attr( $circle_item_count ); ?>:before{
 				content: '';
 				position: absolute;
@@ -500,10 +501,10 @@ foreach ( $settings->add_circle_item as $item ) {
 				background:<?php echo esc_attr( $item->inner_circle_bg_overlay ); ?>;
 			}
 		<?php endif; ?>
-			<?php
-			/* Information Circle Background Image for Responsive */
-			if ( 'true' === $settings->responsive_nature ) :
-				?>
+				<?php
+				/* Information Circle Background Image for Responsive */
+				if ( 'true' === $settings->responsive_nature ) :
+					?>
 			@media ( max-width: <?php echo esc_attr( $responsive_breakpoint ) . 'px'; ?> ) {
 				.fl-node-<?php echo esc_attr( $id ); ?> .uabb-ic-<?php echo esc_attr( $circle_item_count ); ?> {
 					background: url( <?php echo esc_url( FLBuilderPhoto::get_attachment_data( $item->inner_circle_bg_img )->url ); ?> );
@@ -512,7 +513,7 @@ foreach ( $settings->add_circle_item as $item ) {
 					background-repeat: <?php echo esc_attr( $item->inner_circle_bg_img_repeat ); ?>;
 					position:relative;
 				}
-				<?php if ( isset( $item->inner_circle_bg_overlay ) && '' !== $item->inner_circle_bg_overlay ) : ?>
+					<?php if ( isset( $item->inner_circle_bg_overlay ) && '' !== $item->inner_circle_bg_overlay ) : ?>
 					.fl-node-<?php echo esc_attr( $id ); ?> .uabb-ic-<?php echo esc_attr( $circle_item_count ); ?>:before{
 						content: '';
 						position: absolute;
@@ -524,7 +525,10 @@ foreach ( $settings->add_circle_item as $item ) {
 					}
 				<?php endif; ?>
 			}
-		<?php endif; ?>
+					<?php
+			endif;
+		endif;
+			?>
 			<?php
 			/* Information Circle Background Global Color */
 		elseif ( '' !== $settings->info_bg_color ) :

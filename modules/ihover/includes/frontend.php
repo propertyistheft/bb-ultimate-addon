@@ -72,7 +72,10 @@ if ( ! UABB_Compatibility::$version_bb_check ) {
 			<div class="uabb-ih-item uabb-ih-<?php echo esc_attr( $settings->ihover_item[ $i ]->effect ); ?> uabb-ih-<?php echo esc_attr( $advanced_effect ); ?>  uabb-ih-<?php echo esc_attr( $settings->shape ); ?>" >
 				<div class="uabb-ih-image-block">
 					<div class="uabb-ih-wrapper"></div>
-											<?php echo wp_kses_post( $module->render_image( $i ) ); ?>
+											<?php
+											$img_html = $module->render_image( $i );
+											echo ( ! is_null( $img_html ) ? wp_kses_post( $img_html ) : '' );
+											?>
 				</div>
 											<?php echo ( 'effect8' === $settings->ihover_item[ $i ]->effect ) ? '<div class="uabb-info-container">' : ''; ?>
 				<div class="uabb-ih-info <?php echo esc_attr( $hidden_box_class ); ?>">

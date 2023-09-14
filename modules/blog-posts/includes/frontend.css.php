@@ -499,12 +499,11 @@ if ( 'grid' === $settings->is_carousel || 'masonary' === $settings->is_carousel 
 	} else {
 		if ( 1 === $settings->post_per_grid_desktop ) {
 			echo 'padding: 0;';
-		} else {
+		} elseif ( 'grid' !== $settings->is_carousel ) {
 			echo ( '' !== $settings->element_space ) ? 'padding-left: ' . esc_attr( $settings->element_space / 2 ) . 'px;' : 'padding-left: 7.5px;';
 			echo ( '' !== $settings->element_space ) ? 'padding-right: ' . esc_attr( $settings->element_space / 2 ) . 'px;' : 'padding-right: 7.5px;';
 		}
 	}
-
 	if ( 'grid' === $settings->is_carousel || 'masonary' === $settings->is_carousel ) {
 		?>
 	margin-bottom: <?php echo ( '' !== $settings->below_element_space ) ? esc_attr( $settings->below_element_space ) : '30'; ?>px;
@@ -1231,9 +1230,11 @@ if ( 'grid' === $settings->is_carousel ) {
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-4,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-3,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-2,
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-1,
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-grid-sizer {
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-1 {
 		width: calc((100% - <?php echo esc_attr( $space_desktop ) + 0.1; ?>px) / <?php echo esc_attr( $column_desktop ); ?>);/*<?php echo esc_attr( $post_columns_desktop ) - 0.1; ?>%;*/
+	}
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-grid-sizer {
+		width: <?php echo esc_attr( $spacing ); ?>px;
 	}
 	<?php
 }
@@ -1254,9 +1255,11 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-4,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-3,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-2,
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-1,
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-grid-sizer {
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-1 {
 				width: calc((100% - <?php echo esc_attr( $space_large ); ?>px) / <?php echo esc_attr( $column_desktop ); ?>);
+			}
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-grid-sizer {
+				width: <?php echo esc_attr( $spacing ); ?>px;
 			}
 		<?php } ?>
 
@@ -1272,9 +1275,11 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-4,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-3,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-2,
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-1,
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-grid-sizer {
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-1 {
 				width: calc((100% - <?php echo esc_attr( $space_tablet ); ?>px) / <?php echo esc_attr( $column_tablet ); ?>);
+			}
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-grid-sizer {
+				width: <?php echo esc_attr( $space_tablet ); ?>px;
 			}
 		<?php } ?>
 
@@ -1558,7 +1563,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			margin: 0;
 		}
 			<?php
-		} else {
+		} elseif ( 'grid' !== $settings->is_carousel ) {
 			?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts .uabb-post-wrapper {
 			<?php
@@ -1593,9 +1598,11 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-4,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-3,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-2,
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-1,
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-grid-sizer {
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-col-1 {
 				width: calc((100% - <?php echo esc_attr( $space_mobile ); ?>px) / <?php echo esc_attr( $column_mobile ); ?>);
+			}
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-post-grid-sizer {
+				width: <?php echo esc_attr( $space_mobile ); ?>px;
 			}
 		<?php } ?>
 
@@ -1706,7 +1713,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			padding-left: 0;
 		}
 				<?php
-			} else {
+			} elseif ( 'grid' !== $settings->is_carousel ) {
 				?>
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts .uabb-post-wrapper {
 				<?php

@@ -35,22 +35,22 @@ if ( '' === $settings->show_entries_all_label ) {
 		<?php if ( 'yes' === $settings->show_entries ) : ?>
 			<div class="entries-wrapper">
 				<label class="lbl-entries"><?php echo $settings->show_entries_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
-				<select class="select-filter">	
+				<select class="select-filter">
 					<option class="filter-entry"><?php echo $settings->show_entries_all_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></option>
 					<?php for ( $cnt = 1; $cnt < $row_filter_count; $cnt++ ) { ?>
 						<option class="filter-entry"> <?php echo wp_kses_post( $cnt ); ?> </option>
-					<?php } ?>									
+					<?php } ?>
 				</select>
-			</div>	
+			</div>
 		<?php endif; ?>
 
 		<?php if ( 'yes' === $settings->show_search ) : ?>
 			<div class="search-wrapper">
 				<input class="search-input" type="text" placeholder="<?php echo $settings->search_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" name="toSearch" id="searchHere"/>
 			</div>
-		<?php endif ?>	
+		<?php endif ?>
 	</div>
-<?php endif ?>	
+<?php endif ?>
 
 <?php if ( 'manual' === $settings->table_type ) { ?>
 	<div class="uabb-table-module-content uabb-table">
@@ -81,8 +81,8 @@ if ( '' === $settings->show_entries_all_label ) {
 										<?php
 									} else {
 										?>
-									<label class="head-style-<?php echo esc_attr( $table_header ); ?> th-style"> 
-										<label class="head-inner-text"> <?php echo $settings->thead_row[ $table_header ]->heading; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </label> 
+									<label class="head-style-<?php echo esc_attr( $table_header ); ?> th-style">
+										<label class="head-inner-text"> <?php echo $settings->thead_row[ $table_header ]->heading; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </label>
 									</label>
 										<?php
 									}
@@ -92,6 +92,7 @@ if ( '' === $settings->show_entries_all_label ) {
 									$after_icon  = 'after-icon';
 
 									$head_src = isset( $settings->thead_row[ $table_header ]->head_photo_src ) ? $settings->thead_row[ $table_header ]->head_photo_src : '';
+									$head_alt = get_post_meta( $settings->thead_row[ $table_header ]->head_photo, '_wp_attachment_image_alt', true );
 
 									if ( ! empty( $settings->thead_row[ $table_header ]->head_link ) ) {
 										?>
@@ -104,26 +105,26 @@ if ( '' === $settings->show_entries_all_label ) {
 											if ( ( isset( $settings->thead_row[ $table_header ]->head_icon_type ) && 'icon' === $settings->thead_row[ $table_header ]->head_icon_type ) && ( ! empty( $settings->thead_row[ $table_header ]->head_icon ) ) ) {
 												?>
 
-											<i class="<?php echo esc_attr( $before_icon ); ?> <?php echo esc_attr( $settings->thead_row[ $table_header ]->head_icon ); ?>"></i>														
+											<i class="<?php echo esc_attr( $before_icon ); ?> <?php echo esc_attr( $settings->thead_row[ $table_header ]->head_icon ); ?>"></i>
 											<?php } elseif ( ( isset( $settings->thead_row[ $table_header ]->head_icon_type ) && 'photo' === $settings->thead_row[ $table_header ]->head_icon_type ) && ( ! empty( $settings->thead_row[ $table_header ]->head_photo ) ) ) { ?>
 
-											<img class="thead-img <?php echo esc_attr( $before_icon ); ?> head-content-img" src="<?php echo esc_url( $settings->thead_row[ $table_header ]->head_photo_src ); ?>"/>
+											<img class="thead-img <?php echo esc_attr( $before_icon ); ?> head-content-img" src="<?php echo esc_url( $settings->thead_row[ $table_header ]->head_photo_src ); ?>" alt="<?php echo esc_attr( $head_alt ); ?>"/>
 												<?php
 											}
 										}
 										?>
 
-										<span class="thead-th-context"> <?php echo $settings->thead_row[ $table_header ]->heading; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </span>									
+										<span class="thead-th-context"> <?php echo $settings->thead_row[ $table_header ]->heading; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </span>
 										<?php
 										if ( 'after' === $settings->thead_row[ $table_header ]->head_icon_position ) {
 
 											if ( ( isset( $settings->thead_row[ $table_header ]->head_icon_type ) && 'icon' === $settings->thead_row[ $table_header ]->head_icon_type ) && ( ! empty( $settings->thead_row[ $table_header ]->head_icon ) ) ) {
 												?>
 
-											<i class="<?php echo esc_attr( $after_icon ); ?> <?php echo esc_attr( $settings->thead_row[ $table_header ]->head_icon ); ?>"></i>														
+											<i class="<?php echo esc_attr( $after_icon ); ?> <?php echo esc_attr( $settings->thead_row[ $table_header ]->head_icon ); ?>"></i>
 											<?php } elseif ( ( isset( $settings->thead_row[ $table_header ]->head_icon_type ) && 'photo' === $settings->thead_row[ $table_header ]->head_icon_type ) && ( ! empty( $settings->thead_row[ $table_header ]->head_photo ) ) ) { ?>
 
-												<img class="thead-img <?php echo esc_attr( $after_icon ); ?> head-content-img" src="<?php echo esc_url( $settings->thead_row[ $table_header ]->head_photo_src ); ?>"/>
+												<img class="thead-img <?php echo esc_attr( $after_icon ); ?> head-content-img" src="<?php echo esc_url( $settings->thead_row[ $table_header ]->head_photo_src ); ?>" alt="<?php echo esc_attr( $head_alt ); ?>"/>
 												<?php
 											}
 										}
@@ -140,17 +141,17 @@ if ( '' === $settings->show_entries_all_label ) {
 											?>
 											<label class="th-style head-style-<?php echo esc_attr( $table_header ); ?>">
 										<?php } else { ?>
-											<span class="head-inner-text"> 
+											<span class="head-inner-text">
 											<?php
 										} if ( 'before' === $settings->thead_row[ $table_header ]->head_icon_position ) {
 
 											if ( ( isset( $settings->thead_row[ $table_header ]->head_icon_type ) && 'icon' === $settings->thead_row[ $table_header ]->head_icon_type ) && ( ! empty( $settings->thead_row[ $table_header ]->head_icon ) ) ) {
 												?>
 
-											<i class="<?php echo esc_attr( $before_icon ); ?> <?php echo esc_attr( $settings->thead_row[ $table_header ]->head_icon ); ?>"></i>														
+											<i class="<?php echo esc_attr( $before_icon ); ?> <?php echo esc_attr( $settings->thead_row[ $table_header ]->head_icon ); ?>"></i>
 							<?php } elseif ( ( isset( $settings->thead_row[ $table_header ]->head_icon_type ) && 'photo' === $settings->thead_row[ $table_header ]->head_icon_type ) && ( ! empty( $settings->thead_row[ $table_header ]->head_photo ) ) ) { ?>
 
-												<img class="thead-img <?php echo esc_attr( $before_icon ); ?> head-content-img" src="<?php echo esc_url( $settings->thead_row[ $table_header ]->head_photo_src ); ?>"/>
+												<img class="thead-img <?php echo esc_attr( $before_icon ); ?> head-content-img" src="<?php echo esc_url( $settings->thead_row[ $table_header ]->head_photo_src ); ?>" alt="<?php echo esc_attr( $head_alt ); ?>"/>
 												<?php
 							}
 										}
@@ -164,10 +165,10 @@ if ( '' === $settings->show_entries_all_label ) {
 											if ( ( isset( $settings->thead_row[ $table_header ]->head_icon_type ) && 'icon' === $settings->thead_row[ $table_header ]->head_icon_type ) && ( ! empty( $settings->thead_row[ $table_header ]->head_icon ) ) ) {
 												?>
 
-												<i class="<?php echo esc_attr( $after_icon ); ?> <?php echo esc_attr( $settings->thead_row[ $table_header ]->head_icon ); ?>"></i>														
+												<i class="<?php echo esc_attr( $after_icon ); ?> <?php echo esc_attr( $settings->thead_row[ $table_header ]->head_icon ); ?>"></i>
 											<?php } elseif ( ( isset( $settings->thead_row[ $table_header ]->head_icon_type ) && 'photo' === $settings->thead_row[ $table_header ]->head_icon_type ) && ( ! empty( $settings->thead_row[ $table_header ]->head_photo ) ) ) { ?>
 
-												<img class="thead-img <?php echo esc_attr( $after_icon ); ?> head-content-img" src="<?php echo esc_url( $settings->thead_row[ $table_header ]->head_photo_src ); ?>"/>
+												<img class="thead-img <?php echo esc_attr( $after_icon ); ?> head-content-img" src="<?php echo esc_url( $settings->thead_row[ $table_header ]->head_photo_src ); ?>" alt="<?php echo esc_attr( $head_alt ); ?>"/>
 												<?php
 											}
 										}
@@ -181,7 +182,7 @@ if ( '' === $settings->show_entries_all_label ) {
 									}
 								}
 								?>
-							</th> 
+							</th>
 						<?php } ?>
 					</thead>
 
@@ -194,9 +195,9 @@ if ( '' === $settings->show_entries_all_label ) {
 
 							if ( 'row' === $settings->tbody_row[ $table_body ]->action ) {
 								?>
-									<tr class="tbody-row"> 
+									<tr class="tbody-row">
 										<?php } ?>
-										<td class="table-body-td <?php echo esc_attr( $body_text_color ); ?> <?php echo esc_attr( $body_bg_color ); ?> table-body-<?php echo esc_attr( $table_body ); ?>" colspan="<?php echo esc_attr( $settings->tbody_row[ $table_body ]->body_col_span ); ?>" rowspan="<?php echo esc_attr( $settings->tbody_row[ $table_body ]->body_row_span ); ?>"> 
+										<td class="table-body-td <?php echo esc_attr( $body_text_color ); ?> <?php echo esc_attr( $body_bg_color ); ?> table-body-<?php echo esc_attr( $table_body ); ?>" colspan="<?php echo esc_attr( $settings->tbody_row[ $table_body ]->body_col_span ); ?>" rowspan="<?php echo esc_attr( $settings->tbody_row[ $table_body ]->body_row_span ); ?>">
 											<?php if ( 'no' === $settings->tbody_row[ $table_body ]->body_advanced_opt ) { ?>
 												<span class="content-text"> <?php echo $settings->tbody_row[ $table_body ]->features; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </span>
 													<?php
@@ -207,6 +208,7 @@ if ( '' === $settings->show_entries_all_label ) {
 													$after_icon  = 'after-icon';
 
 													$body_src = isset( $settings->tbody_row[ $table_body ]->body_photo_src ) ? $settings->tbody_row[ $table_body ]->body_photo_src : '';
+													$body_alt = get_post_meta( $settings->tbody_row[ $table_body ]->body_photo, '_wp_attachment_image_alt', true );
 
 													if ( ! empty( $settings->tbody_row[ $table_body ]->body_link ) ) {
 														?>
@@ -214,7 +216,7 @@ if ( '' === $settings->show_entries_all_label ) {
 													<a class="td-style" href="<?php echo $settings->tbody_row[ $table_body ]->body_link; ?>" target="<?php echo esc_attr( $settings->tbody_row[ $table_body ]->body_link_target ); ?>"<?php BB_Ultimate_Addon_Helper::get_link_rel( $settings->tbody_row[ $table_body ]->body_link_target, $settings->tbody_row[ $table_body ]->body_link_nofollow, 1 ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> >
 
 														<?php if ( 'photo' === $settings->tbody_row[ $table_body ]->body_icon_type && ! empty( $settings->tbody_row[ $table_body ]->body_photo ) && 'before' === $settings->tbody_row[ $table_body ]->body_icon_position ) { ?>
-															<img class="body-content-img <?php echo esc_attr( $before_icon ); ?>" src="<?php echo esc_url( $settings->tbody_row[ $table_body ]->body_photo_src ); ?>"/>
+															<img class="body-content-img <?php echo esc_attr( $before_icon ); ?>" src="<?php echo esc_url( $settings->tbody_row[ $table_body ]->body_photo_src ); ?>" alt="<?php echo esc_attr( $body_alt ); ?>"/>
 														<?php } ?>
 
 														<?php if ( 'icon' === $settings->tbody_row[ $table_body ]->body_icon_type && ( ! empty( $settings->tbody_row[ $table_body ]->body_icon ) && ( 'before' === $settings->tbody_row[ $table_body ]->body_icon_position ) ) ) { ?>
@@ -224,7 +226,7 @@ if ( '' === $settings->show_entries_all_label ) {
 														<span class="content-text"> <?php echo $settings->tbody_row[ $table_body ]->features; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </span>
 
 														<?php if ( 'photo' === $settings->tbody_row[ $table_body ]->body_icon_type && ( ! empty( $settings->tbody_row[ $table_body ]->body_photo ) && 'after' === $settings->tbody_row[ $table_body ]->body_icon_position ) ) { ?>
-																<img class="body-content-img <?php echo esc_attr( $after_icon ); ?>" src="<?php echo esc_url( $settings->tbody_row[ $table_body ]->body_photo_src ); ?>"/>
+																<img class="body-content-img <?php echo esc_attr( $after_icon ); ?>" src="<?php echo esc_url( $settings->tbody_row[ $table_body ]->body_photo_src ); ?>" alt="<?php echo esc_attr( $body_alt ); ?>"/>
 															<?php } ?>
 
 														<?php if ( 'icon' === $settings->tbody_row[ $table_body ]->body_icon_type && ( ! empty( $settings->tbody_row[ $table_body ]->body_icon ) && ( 'after' === $settings->tbody_row[ $table_body ]->body_icon_position ) ) ) { ?>
@@ -234,9 +236,9 @@ if ( '' === $settings->show_entries_all_label ) {
 
 									<?php } else { ?>
 
-													<span class="td-style"> 
+													<span class="td-style">
 														<?php if ( 'photo' === $settings->tbody_row[ $table_body ]->body_icon_type && ( ! empty( $settings->tbody_row[ $table_body ]->body_photo ) && 'before' === $settings->tbody_row[ $table_body ]->body_icon_position ) ) { ?>
-																<img class="body-content-img <?php echo esc_attr( $before_icon ); ?>" src="<?php echo esc_url( $settings->tbody_row[ $table_body ]->body_photo_src ); ?>"/>
+																<img class="body-content-img <?php echo esc_attr( $before_icon ); ?>" src="<?php echo esc_url( $settings->tbody_row[ $table_body ]->body_photo_src ); ?>" alt="<?php echo esc_attr( $body_alt ); ?>"/>
 															<?php } ?>
 
 															<?php if ( 'icon' === $settings->tbody_row[ $table_body ]->body_icon_type && ( ! empty( $settings->tbody_row[ $table_body ]->body_icon ) && ( 'before' === $settings->tbody_row[ $table_body ]->body_icon_position ) ) ) { ?>
@@ -265,7 +267,7 @@ if ( '' === $settings->show_entries_all_label ) {
 				</table>
 			</div>
 		</div>
-	</div>	
+	</div>
 	<?php
 } else {
 	echo $module->render(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

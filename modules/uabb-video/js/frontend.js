@@ -17,6 +17,10 @@
     var selector  = $( this ).find( '.uabb-video__play' );
       UABBVideos._play( selector, outer_wrap );
     });
+	outer_wrap.find( '.uabb-video__play-icon' ).on( 'keypress', function( e ) {
+		var selector  = outer_wrap.find( '.uabb-video__play' );
+      	UABBVideos._play( selector, outer_wrap );
+	});
 
 		if( '1' == outer_wrap.data( 'autoplay' ) || ( true == outer_wrap.data( 'device' ) && window.matchMedia("(max-width: 767px)").matches ) ) {
       UABBVideos._play( jQuery(this.nodeClass).find( '.uabb-video__play' ), outer_wrap );
