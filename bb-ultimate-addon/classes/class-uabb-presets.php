@@ -55,7 +55,7 @@ if ( ! class_exists( 'UABB_PRESETS' ) ) :
 
 			check_ajax_referer( 'uabb-presets-nonce', 'security' );
 
-			$presets = self::get_presets( $_GET['current_module'] );
+			$presets = self::get_presets( sanitize_file_name( $_GET['current_module'] ) );
 
 			wp_send_json_success( $presets, 200 );
 		}

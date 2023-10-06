@@ -335,6 +335,10 @@ class UABBRegistrationFormModule extends FLBuilderModule {
 
 				unset( $user_args['phone'] );
 
+				if ( 'administrator' === $user_args['role'] ) {
+					$user_args['role'] = get_option( 'default_role' );
+				}
+
 				$result = wp_insert_user( $user_args );
 
 				if ( ! is_wp_error( $result ) ) {
@@ -590,6 +594,25 @@ class UABBRegistrationFormModule extends FLBuilderModule {
 
 		return $email_username;
 	}
+
+	/**
+	 * Update module settings.
+	 *
+	 * @param object $settings module settings object.
+	 * @return object
+	 */
+	public function update( $settings ) {
+		if ( ! isset( $settings->new_user_role ) ) {
+			$settings->new_user_role = 'default';
+		}
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			$settings->new_user_role = 'default';
+		}
+
+		return $settings;
+	}
+
 	/**
 	 * Retrieve User Roles.
 	 *
@@ -610,13 +633,23 @@ class UABBRegistrationFormModule extends FLBuilderModule {
 			$wp_roles = get_editable_roles(); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 		}
 
-		$roles      = isset( $wp_roles->roles ) ? $wp_roles->roles : array();
+		$roles = isset( $wp_roles->roles ) ? $wp_roles->roles : array();
+		unset( $roles['administrator'] );
 		$user_roles = array();
 
 		$user_roles['default'] = __( 'Default', 'uabb' );
 
 		foreach ( $roles as $role_key => $role ) {
 			$user_roles[ $role_key ] = $role['name'];
+		}
+
+		if ( isset( $user_roles['contributor'] ) && current_user_can( 'contributor' ) ) {
+			foreach ( $user_roles as $key => $role ) {
+				if ( 'default' === $key || 'contributor' === $key ) {
+					continue;
+				}
+				unset( $user_roles[ $key ] );
+			}
 		}
 
 		return apply_filters( 'uabb_user_default_roles', $user_roles );

@@ -48,7 +48,7 @@ class BlogPostsModule extends FLBuilderModule {
 		);
 		$this->add_css( 'font-awesome-5' );
 		add_filter( 'wp_footer', array( $this, 'enqueue_scripts' ) );
-		add_filter( 'fl_builder_loop_query_args', array( $this, 'uabb_loop_query_args' ) );
+		add_filter( 'fl_builder_loop_query_args', array( $this, 'uabb_loop_query_args' ), 1 );
 		add_filter( 'uabb_custom_post_layout_html', array( $this, 'parse_shortcodes' ), 1 );
 		add_action( 'template_redirect', array( $this, 'uabb_posts_template_redirect' ), 0 );
 	}
@@ -1574,6 +1574,11 @@ class BlogPostsModule extends FLBuilderModule {
 	 */
 	public function render_args() {
 
+		if ( isset( $this->settings->data_source ) && 'acf_relationship' === $this->settings->data_source ) {
+			add_filter( 'fl_builder_loop_query_args', array( $this, 'uabb_loop_query_args' ), 1 );
+		} else {
+			add_filter( 'fl_builder_loop_query_args', array( $this, 'uabb_loop_query_args' ) );
+		}
 		$show_pagination = ( isset( $this->settings->show_pagination ) ) ? $this->settings->show_pagination : 'yes';
 
 		$args['post_type'] = ( isset( $this->settings->post_type ) ) ? $this->settings->post_type : 'post';

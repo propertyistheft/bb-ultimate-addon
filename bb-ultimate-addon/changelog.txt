@@ -1,3 +1,11 @@
+Version 1.35.15, Monday, 25th September 2023
+- Improvement: Improved Security.
+
+Version 1.35.14, Friday, 22nd September 2023
+- Improvement: Presets - Elevated security measures through the implementation of sanitization. Props to Patchstack for their confidential reporting to our team.
+- Improvement: User Registration Form - Enhanced security by providing access to New User Role setting only for Administrator role. Props to Patchstack for discreetly reporting this to our team.
+- Fixed: Advanced Posts - ACF Relationship option for Source setting is not working.
+
 Version 1.35.13, Thursday, 14th September 2023
 - Fixed: Advanced Menu - Resolved PHP warning for undefined variable.
 
