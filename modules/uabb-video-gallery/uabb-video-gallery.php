@@ -502,7 +502,7 @@ class UABBVideoGallery extends FLBuilderModule {
 						),
 					);
 					$context = stream_context_create( $opts );
-					$vimeo   = maybe_unserialize( file_get_contents( "https://vimeo.com/api/v2/video/$vid_id_image.php", false, $context ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+					$vimeo   = maybe_unserialize( file_get_contents( "https://vimeo.com/api/v2/video/$vid_id_image.php", false, $context ) ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents,WordPressVIPMinimum.Performance.FetchingRemoteData.FileGetContentsRemoteFile
 					$url     = $vimeo[0]['thumbnail_large'];
 				}
 			} elseif ( 'wistia' === $item->video_type ) {

@@ -74,7 +74,7 @@ $quick_view_text     = apply_filters( 'uabb_quick_view_text', __( 'Quick View', 
 
 		/* Out of stock */
 		if ( 'outofstock' === $out_of_stock ) {
-			echo '<span class="uabb-out-of-stock">' . esc_attr( $out_of_stock_string ) . '</span>';
+			echo '<span class="uabb-out-of-stock">' . esc_html( $out_of_stock_string ) . '</span>';
 		}
 
 
@@ -85,7 +85,7 @@ $quick_view_text     = apply_filters( 'uabb_quick_view_text', __( 'Quick View', 
 			echo '<div class="uabb-action-item-wrap uabb-quick-view-btn" data-product_id="' . esc_attr( $post_id ) . '">';
 
 				echo '<span class="uabb-action-item fa fa-eye"></span>';
-				echo '<span class="uabb-action-tooltip">' . esc_attr( $quick_view_text ) . '</span>';
+				echo '<span class="uabb-action-tooltip">' . esc_html( $quick_view_text ) . '</span>';
 			echo '</div>';
 		}
 

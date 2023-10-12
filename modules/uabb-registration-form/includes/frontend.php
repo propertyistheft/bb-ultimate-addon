@@ -131,7 +131,7 @@ if ( 'yes' === $settings->hide_form_logged && is_user_logged_in() && ! FLBuilder
 									<?php } elseif ( 'v2' === $settings->uabb_recaptcha_version && ! empty( $settings->uabb_recaptcha_site_key ) && ! empty( $settings->uabb_recaptcha_secret_key ) ) { ?>
 										<div id="<?php echo esc_attr( $id ); ?>-uabb-grecaptcha" class="uabb-grecaptcha" data-sitekey="<?php echo esc_attr( $settings->uabb_recaptcha_site_key ); ?>" data-theme="<?php echo esc_attr( $settings->uabb_recaptcha_theme ); ?>"></div>
 									<?php } ?>
-									<span class="uabb-registration-error uabb-registration_form-error-message-required "><?php esc_attr_e( 'Please check the reCAPTCHA to verify you are not a robot.', 'uabb' ); ?></span>
+									<span class="uabb-registration-error uabb-registration_form-error-message-required "><?php esc_html_e( 'Please check the reCAPTCHA to verify you are not a robot.', 'uabb' ); ?></span>
 								</div>
 							</div>
 							<?php
@@ -202,10 +202,10 @@ if ( 'yes' === $settings->hide_form_logged && is_user_logged_in() && ! FLBuilder
 			?>
 	<?php } else {
 		if ( is_multisite() ) {
-			echo '<div class="uabb-registration-form-error uabb-register-error-message">' . esc_attr_e( 'To use the Registration Form on your site, you must set the "Allow new registrations" to "User accounts may be registered" setting from Network Admin -> Dashboard -> Settings.', 'uabb' ) . '</div>';
+			echo '<div class="uabb-registration-form-error uabb-register-error-message">' . esc_html_e( 'To use the Registration Form on your site, you must set the "Allow new registrations" to "User accounts may be registered" setting from Network Admin -> Dashboard -> Settings.', 'uabb' ) . '</div>';
 		} else {
 
-			echo '<div class="uabb-registration-form-error uabb-register-error-message">' . esc_attr_e( 'To use the Registration Form on your site, you must enable the "Anyone can register" setting from Dashboard -> Settings -> General -> Membership.', 'uabb' ) . '</div>';
+			echo '<div class="uabb-registration-form-error uabb-register-error-message">' . esc_html_e( 'To use the Registration Form on your site, you must enable the "Anyone can register" setting from Dashboard -> Settings -> General -> Membership.', 'uabb' ) . '</div>';
 		}
 	}
 }

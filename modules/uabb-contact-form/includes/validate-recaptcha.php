@@ -13,7 +13,7 @@
 require_once FL_BUILDER_DIR . 'includes/vendor/recaptcha/autoload.php';
 
 $recaptcha = new \ReCaptcha\ReCaptcha( $settings->uabb_recaptcha_secret_key, new \ReCaptcha\RequestMethod\CurlPost() );
-$resp      = $recaptcha->verify( $recaptcha_response, $_SERVER['REMOTE_ADDR'] );
+$resp      = isset( $_SERVER['REMOTE_ADDR'] ) ? $recaptcha->verify( $recaptcha_response, sanitize_text_field( $_SERVER['REMOTE_ADDR'] ) ) : null; // phpcs:ignore WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders, WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__REMOTE_ADDR__
 
 if ( $resp->isSuccess() ) {
 	$response['error'] = false;

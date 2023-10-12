@@ -192,9 +192,9 @@ class UabbBusinessReview extends FLBuilderModule {
 			<div class="uabb-module-content" id="uabb-google-api-key">
 				<?php if ( current_user_can( 'delete_users' ) ) { ?>
 				<div>
-					<span > <?php esc_attr_e( 'It seems that you have not yet configured Google Place API key. To display Google Reviews, please set up API key in', 'uabb' ); ?>
+					<span > <?php esc_html_e( 'It seems that you have not yet configured Google Place API key. To display Google Reviews, please set up API key in', 'uabb' ); ?>
 						<a href="<?php echo esc_url( admin_url( 'options-general.php?page=uabb-builder-settings#uabb' ) ); ?>" class="uabb-google-map-notice" target="_blank" rel="noopener">
-							<span class="uabb-google-key-ref-link"><?php esc_attr_e( 'General Settings', 'uabb' ); ?></span>
+							<span class="uabb-google-key-ref-link"><?php esc_html_e( 'General Settings', 'uabb' ); ?></span>
 						</a>
 					</span>
 				</div>
@@ -342,7 +342,7 @@ class UabbBusinessReview extends FLBuilderModule {
 
 			if ( $is_editor ) {
 				/* translators: %1$s doc link */
-				echo sprintf( '<span class="uabb-reviews-notice-message">' . esc_attr_e( 'Something went wrong while fetching Google reviews:', 'uabb' ) . '%1$s </span>', wp_kses_post( $error_message ) );
+				echo sprintf( '<span class="uabb-reviews-notice-message">' . esc_html_e( 'Something went wrong while fetching Google reviews:', 'uabb' ) . '%1$s </span>', wp_kses_post( $error_message ) );
 			}
 			delete_transient( $transient_name );
 			return;
@@ -355,32 +355,32 @@ class UabbBusinessReview extends FLBuilderModule {
 			switch ( $result_status ) {
 				case 'OK':
 					if ( ! property_exists( $result->result, 'reviews' ) ) {
-						echo '<span>' . esc_attr_e( 'Something went wrong: Seems like the Google place you have selected does not have any reviews.', 'uabb' ) . '</span>';
+						echo '<span>' . esc_html_e( 'Something went wrong: Seems like the Google place you have selected does not have any reviews.', 'uabb' ) . '</span>';
 						delete_transient( $transient_name );
 						return false;
 					}
 					break;
 
 				case 'OVER_QUERY_LIMIT':
-					echo '<span>' . esc_attr_e( 'Something went wrong: You have exceeded the usage limits.', 'uabb' ) . '</span>';
+					echo '<span>' . esc_html_e( 'Something went wrong: You have exceeded the usage limits.', 'uabb' ) . '</span>';
 					delete_transient( $transient_name );
 					return false;
 					break; // phpcs:ignore Squiz.PHP.NonExecutableCode.Unreachable
 
 				case 'REQUEST_DENIED':
 					/* translators: %s: search term */
-					echo sprintf( '<span class="uabb-google-api-key-error">' . esc_attr_e( 'Something went wrong: The invalid API key is entered. Please configure the API key from', 'uabb' ) . '<a href="%s" target="_blank" rel="noopener"> here </a>.</span>', esc_url( $admin_link ) );
+					echo sprintf( '<span class="uabb-google-api-key-error">' . esc_html_e( 'Something went wrong: The invalid API key is entered. Please configure the API key from', 'uabb' ) . '<a href="%s" target="_blank" rel="noopener"> here </a>.</span>', esc_url( $admin_link ) );
 						delete_transient( $transient_name );
 					return false;
 
 				case 'UNKNOWN_ERROR':
-					echo '<span>' . esc_attr_e( 'Something went wrong: Seems like a server-side error; Please try again later.', 'uabb' ) . '</span>';
+					echo '<span>' . esc_html_e( 'Something went wrong: Seems like a server-side error; Please try again later.', 'uabb' ) . '</span>';
 					delete_transient( $transient_name );
 					return false;
 
 				case 'ZERO_RESULTS':
 				case 'INVALID_REQUEST':
-					echo '<span>' . esc_attr_e( 'Something went wrong: The invalid Place ID is entered.', 'uabb' ) . '</span>';
+					echo '<span>' . esc_html_e( 'Something went wrong: The invalid Place ID is entered.', 'uabb' ) . '</span>';
 					delete_transient( $transient_name );
 					return false;
 
@@ -474,10 +474,10 @@ class UabbBusinessReview extends FLBuilderModule {
 
 					if ( 'VALIDATION_ERROR' === $error_code ) {
 
-						echo '<span class="uabb-reviews-notice-message"><span class="uabb-reviews-error-message">' . esc_attr_e( 'Yelp Error Message:', 'uabb' ) . '</span>' . esc_attr_e( 'Incorrect Yelp API key. Please set up the API key from UABB settings', 'uabb' ) . '</span>';
+						echo '<span class="uabb-reviews-notice-message"><span class="uabb-reviews-error-message">' . esc_html_e( 'Yelp Error Message:', 'uabb' ) . '</span>' . esc_html_e( 'Incorrect Yelp API key. Please set up the API key from UABB settings', 'uabb' ) . '</span>';
 					} elseif ( 'BUSINESS_NOT_FOUND' === $error_code ) {
 
-						echo '<span class="uabb-reviews-notice-message"><span class="uabb-reviews-error-message">' . esc_attr_e( 'Yelp Error Message :', 'uabb' ) . '</span>' . esc_attr_e( ' Incorrect Business ID.', 'uabb' ) . '</span>';
+						echo '<span class="uabb-reviews-notice-message"><span class="uabb-reviews-error-message">' . esc_html_e( 'Yelp Error Message :', 'uabb' ) . '</span>' . esc_html_e( ' Incorrect Business ID.', 'uabb' ) . '</span>';
 					}
 				}
 				delete_transient( $transient_name );
@@ -852,7 +852,7 @@ class UabbBusinessReview extends FLBuilderModule {
 					</span>
 				<?php } ?>
 				<?php if ( 'yes' === $settings->review_date ) { ?>
-					<div class="uabb-review-time"> <?php echo esc_attr( $date_value ) . esc_attr( $review_sorce_date ); ?> </div>
+					<div class="uabb-review-time"> <?php echo esc_html( $date_value ) . esc_html( $review_sorce_date ); ?> </div>
 				<?php } ?>
 				<?php
 				if ( 'bubble' === $settings->_skin || 'card' === $settings->_skin ) {
@@ -951,7 +951,7 @@ class UabbBusinessReview extends FLBuilderModule {
 								}
 							}
 							?>
-							<div class="uabb-review-content"><?php echo esc_attr( $the_content ); ?></div>
+							<div class="uabb-review-content"><?php echo esc_html( $the_content ); ?></div>
 							<div class="uabb-reviews-read-more_wrap"> <?php echo wp_kses_post( $content ); ?></div>
 							<?php $this->get_reviews_header( $review, $photolink, $settings ); ?>
 						<?php } ?>
@@ -993,7 +993,7 @@ class UabbBusinessReview extends FLBuilderModule {
 							}
 							?>
 							<div class="uabb-review-content-wrap">
-								<div class="uabb-review-content"><?php echo esc_attr( $the_content ); ?>
+								<div class="uabb-review-content"><?php echo esc_html( $the_content ); ?>
 									<div class="uabb-review-content-arrow-wrap">
 										<div class="uabb-review-arrow-border"></div>
 										<div class="uabb-review-arrow"></div>
@@ -1024,7 +1024,7 @@ class UabbBusinessReview extends FLBuilderModule {
 				<div class="uabb-review uabb-review-type-<?php echo esc_attr( $review['source'] ); ?>">
 						<?php if ( 'yes' === $settings->reviewer_image && 'all_left' === $settings->image_align ) { ?>
 						<div class="uabb-review-image">
-							<img src="<?php echo esc_attr( $photolink ); ?>" alt="profile image">
+							<img src="<?php echo esc_url( $photolink ); ?>" alt="profile image">
 						</div>
 					<?php } ?>
 					<div class="uabb-review-inner-wrap">
@@ -1046,7 +1046,7 @@ class UabbBusinessReview extends FLBuilderModule {
 								}
 							}
 							?>
-							<div class="uabb-review-content"><?php echo esc_attr( $the_content ); ?></div>
+							<div class="uabb-review-content"><?php echo esc_html( $the_content ); ?></div>
 						<?php } ?>
 					</div>
 				</div>

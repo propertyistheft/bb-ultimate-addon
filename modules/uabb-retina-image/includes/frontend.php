@@ -22,7 +22,7 @@ if ( 'url' === $settings->retina_img_source ) {
 
 if ( '' !== $default_img_src && '' !== $retina_img_src ) {
 
-	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && strpos( $_SERVER['HTTP_USER_AGENT'], 'Chrome' ) !== false ) {
+	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && strpos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'Chrome' ) !== false ) { // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
 		$date            = new DateTime();
 		$timestam        = $date->getTimestamp();
 		$default_img_src = $default_img_src . '?' . $timestam;

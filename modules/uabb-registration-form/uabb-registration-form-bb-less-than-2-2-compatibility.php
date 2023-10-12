@@ -9,10 +9,10 @@
 
 $host = 'localhost';
 if ( isset( $_SERVER['HTTP_HOST'] ) ) {
-	$host = $_SERVER['HTTP_HOST'];
+	$host = sanitize_text_field( $_SERVER['HTTP_HOST'] );
 }
 
-$current_url = 'http://' . $host . strtok( $_SERVER['REQUEST_URI'], '?' );
+$current_url = isset( $_SERVER['REQUEST_URI'] ) ? 'http://' . $host . strtok( esc_url_raw( $_SERVER['REQUEST_URI'] ), '?' ) : '';
 
 $default_template_reg = sprintf(
 	/* translators: %1$s: search term, translators: %2$s: search term */    __(

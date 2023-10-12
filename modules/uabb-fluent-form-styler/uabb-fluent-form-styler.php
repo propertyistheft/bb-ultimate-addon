@@ -43,7 +43,7 @@ class UABBFluentFormsStyler extends FLBuilderModule {
 
 		if ( function_exists( 'wpFluentForm' ) ) {
 			global $wpdb;
-			$result = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}fluentform_forms" );
+			$result = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}fluentform_forms" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 			if ( $result ) {
 				$options[0] = esc_html__( 'Select a form', 'uabb' );
 				foreach ( $result as $form ) {

@@ -84,7 +84,7 @@ class UABBContactFormModule extends FLBuilderModule {
 
 		foreach ( $server_ip_keys as $key ) {
 			if ( isset( $_SERVER[ $key ] ) && filter_var( $_SERVER[ $key ], FILTER_VALIDATE_IP ) ) {
-				return $_SERVER[ $key ];
+				return sanitize_text_field( $_SERVER[ $key ] );
 			}
 		}
 
@@ -192,26 +192,26 @@ class UABBContactFormModule extends FLBuilderModule {
 		if ( '' !== $subject ) {
 
 			if ( isset( $_POST['name'] ) ) {
-				$subject = str_replace( '[NAME]', $_POST['name'], $subject );
+				$subject = str_replace( '[NAME]', sanitize_text_field( $_POST['name'] ), $subject );
 			}
 			if ( isset( $_POST['subject'] ) ) {
-				$subject = str_replace( '[SUBJECT]', $_POST['subject'], $subject );
+				$subject = str_replace( '[SUBJECT]', sanitize_text_field( $_POST['subject'] ), $subject );
 			}
 			if ( isset( $_POST['email'] ) ) {
-				$subject = str_replace( '[EMAIL]', $_POST['email'], $subject );
+				$subject = str_replace( '[EMAIL]', sanitize_text_field( $_POST['email'] ), $subject );
 			}
 			if ( isset( $_POST['phone'] ) ) {
-				$subject = str_replace( '[PHONE]', $_POST['phone'], $subject );
+				$subject = str_replace( '[PHONE]', sanitize_text_field( $_POST['phone'] ), $subject );
 			}
 			if ( isset( $_POST['message'] ) ) {
-				$subject = str_replace( '[MESSAGE]', $_POST['message'], $subject );
+				$subject = str_replace( '[MESSAGE]', sanitize_text_field( $_POST['message'] ), $subject );
 			}
 		} else {
 			$subject = __( 'Contact Form Submission', 'uabb' );
 		}
 
-		$uabb_contact_from_email = ( isset( $_POST['email'] ) ? $_POST['email'] : null );
-		$uabb_contact_from_name  = ( isset( $_POST['name'] ) ? $_POST['name'] : null );
+		$uabb_contact_from_email = ( isset( $_POST['email'] ) ? sanitize_text_field( $_POST['email'] ) : null );
+		$uabb_contact_from_name  = ( isset( $_POST['name'] ) ? sanitize_text_field( $_POST['name'] ) : null );
 
 		$uabb_filter_from_email = apply_filters( 'uabb_from_email', $uabb_contact_from_email );
 		$uabb_filter_from_name  = apply_filters( 'uabb_from_name', $uabb_contact_from_name );
@@ -228,25 +228,25 @@ class UABBContactFormModule extends FLBuilderModule {
 
 		$template = $settings->email_template;
 		if ( isset( $_POST['name'] ) ) {
-			$template = str_replace( '[NAME]', $_POST['name'], $template );
+			$template = str_replace( '[NAME]', sanitize_text_field( $_POST['name'] ), $template );
 		}
 		if ( isset( $_POST['subject'] ) ) {
-			$template = str_replace( '[SUBJECT]', $_POST['subject'], $template );
+			$template = str_replace( '[SUBJECT]', sanitize_text_field( $_POST['subject'] ), $template );
 		}
 		if ( isset( $_POST['email'] ) ) {
-			$template = str_replace( '[EMAIL]', $_POST['email'], $template );
+			$template = str_replace( '[EMAIL]', sanitize_text_field( $_POST['email'] ), $template );
 		}
 		if ( isset( $_POST['phone'] ) ) {
-			$template = str_replace( '[PHONE]', $_POST['phone'], $template );
+			$template = str_replace( '[PHONE]', sanitize_text_field( $_POST['phone'] ), $template );
 		}
 		if ( isset( $_POST['message'] ) ) {
-			$template = str_replace( '[MESSAGE]', $_POST['message'], $template );
+			$template = str_replace( '[MESSAGE]', sanitize_text_field( $_POST['message'] ), $template );
 		}
 
 		$template = wpautop( $template );
 		// Double check the mailto email is proper and send.
 		if ( $mailto ) {
-			wp_mail( $mailto, stripslashes( $subject ), do_shortcode( stripslashes( $template ) ), $headers );
+			wp_mail( $mailto, stripslashes( $subject ), do_shortcode( stripslashes( $template ) ), $headers ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.wp_mail_wp_mail
 			die( '1' );
 		} else {
 			die( wp_kses_post( $mailto ) );
@@ -1174,10 +1174,10 @@ class UABBContactFormModule extends FLBuilderModule {
 
 $host = 'localhost';
 if ( isset( $_SERVER['HTTP_HOST'] ) ) {
-	$host = $_SERVER['HTTP_HOST'];
+	$host = sanitize_text_field( $_SERVER['HTTP_HOST'] );
 }
 
-$current_url = 'http://' . $host . strtok( $_SERVER['REQUEST_URI'], '?' );
+$current_url = isset( $_SERVER['REQUEST_URI'] ) ? 'http://' . $host . strtok( esc_url_raw( $_SERVER['REQUEST_URI'] ), '?' ) : '';
 
 $default_template = sprintf(
 	/* translators: %1$s: search term, translators: %2$s: search term */    __(

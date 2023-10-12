@@ -136,7 +136,7 @@ class UABBLoginForm extends FLBuilderModule {
 			}
 			$verified_data = $this->verify_user_data( $id_token, $uabb_social_google_client_id );
 
-			$data       = $_POST['data'];
+			$data       = array_map( 'sanitize_text_field', $_POST['data'] );
 			$name       = isset( $verified_data['name'] ) ? $verified_data['name'] : '';
 			$email      = isset( $verified_data['email'] ) ? $verified_data['email'] : '';
 			$send_email = $data['send_email'];
@@ -237,9 +237,9 @@ class UABBLoginForm extends FLBuilderModule {
 			$uabb_social_facebook_app_secret = ( array_key_exists( 'uabb-social-facebook-app-secret', $uabb_setting_options ) ) ? $uabb_setting_options['uabb-social-facebook-app-secret'] : '';
 		}
 
-		$username   = sanitize_user( $_POST['name'] );
-		$first_name = sanitize_user( $_POST['first_name'] );
-		$last_name  = sanitize_user( $_POST['last_name'] );
+		$username   = isset( $_POST['name'] ) ? sanitize_user( $_POST['name'] ) : '';
+		$first_name = isset( $_POST['first_name'] ) ? sanitize_user( $_POST['first_name'] ) : '';
+		$last_name  = isset( $_POST['last_name'] ) ? sanitize_user( $_POST['last_name'] ) : '';
 		$email      = ! empty( $_POST['email'] ) ? sanitize_email( $_POST['email'] ) : '';
 
 		$user_id_js = filter_input( INPUT_POST, 'userID', FILTER_SANITIZE_STRING );
@@ -334,7 +334,7 @@ class UABBLoginForm extends FLBuilderModule {
 		check_ajax_referer( 'uabb-lf-nonce', 'nonce' );
 
 		$username   = ! empty( $_POST['username'] ) ? sanitize_user( $_POST['username'] ) : '';
-		$password   = ! empty( $_POST['password'] ) ? $_POST['password'] : '';
+		$password   = ! empty( $_POST['password'] ) ? sanitize_text_field( $_POST['password'] ) : '';
 		$rememberme = ! empty( $_POST['rememberme'] ) ? sanitize_text_field( $_POST['rememberme'] ) : '';
 		$user_data  = get_user_by( 'login', $username );
 		if ( ! $user_data ) {
@@ -624,7 +624,7 @@ class UABBLoginForm extends FLBuilderModule {
 										11.9-11.9V11.9C216 5.3 210.7 0 204.1 0z"></path></svg>
 										</div>
 									</div>
-									<span class="uabb-facebook-text"><?php echo esc_attr( apply_filters( 'uabb_login_form_facebook_button_text', $facebook_button_string ) ); ?></span>
+									<span class="uabb-facebook-text"><?php echo esc_html( apply_filters( 'uabb_login_form_facebook_button_text', $facebook_button_string ) ); ?></span>
 								</div>
 							</div>
 						</div>

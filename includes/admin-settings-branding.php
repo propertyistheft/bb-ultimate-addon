@@ -8,7 +8,7 @@
 ?>
 <div id="fl-uabb-branding-form" class="fl-settings-form uabb-branding-fl-settings-form">
 
-	<h3 class="fl-settings-form-header"><?php esc_attr_e( 'Branding', 'uabb' ); ?></h3>
+	<h3 class="fl-settings-form-header"><?php esc_html_e( 'Branding', 'uabb' ); ?></h3>
 
 	<form id="uabb-branding-form" action="<?php UABBBuilderAdminSettings::render_form_action( 'uabb-branding' ); ?>" method="post">
 
@@ -68,74 +68,74 @@
 
 			<?php /* Plugin Name*/ ?>
 			<div class="uabb-branding-fields" style="margin-top: 30px;">
-			<h4 class="field-title"><?php esc_attr_e( 'Plugin Name', 'uabb' ); ?></h4>
+			<h4 class="field-title"><?php esc_html_e( 'Plugin Name', 'uabb' ); ?></h4>
 			<input type="text" name="uabb-plugin-name" placeholder="Ultimate Addons for Beaver Builder" value="<?php echo esc_attr( $uabb_plugin_name ); ?>" class="regular-text uabb-plugin-name" />
 			</div>
 
 			<?php /* Plugin Short Name*/ ?>
 			<div class="uabb-branding-fields">
-			<h4 class="field-title"><?php esc_attr_e( 'Plugin Short Name', 'uabb' ); ?></h4>
+			<h4 class="field-title"><?php esc_html_e( 'Plugin Short Name', 'uabb' ); ?></h4>
 			<input type="text" name="uabb-plugin-short-name" placeholder="UABB" value="<?php echo esc_attr( $uabb_plugin_short_name ); ?>" class="regular-text uabb-plugin-short-name" />
 			</div>
 			<?php /* Plugin Description */ ?>
 			<div class="uabb-branding-fields">
-			<h4 class="field-title"><?php esc_attr_e( 'Plugin Description', 'uabb' ); ?></h4>
+			<h4 class="field-title"><?php esc_html_e( 'Plugin Description', 'uabb' ); ?></h4>
 			<input type="text" name="uabb-plugin-desc" placeholder="Ultimate Addons is a premium extension for Beaver Builder that adds 55+ modules, 100+ templates and works on top of any Beaver Builder Package. (Free, Standard, Pro and Agency) You can use it with on any WordPress theme." value="<?php echo esc_attr( $uabb_plugin_desc ); ?>" class="regular-text uabb-plugin-desc" />
 			</div>
 			<?php /* Author Name */ ?>
 			<div class="uabb-branding-fields">
-			<h4 class="field-title"><?php esc_attr_e( 'Author / Agency Name', 'uabb' ); ?></h4>
+			<h4 class="field-title"><?php esc_html_e( 'Author / Agency Name', 'uabb' ); ?></h4>
 			<input type="text" name="uabb-author-name" placeholder="Brainstorm Force" value="<?php echo esc_attr( $uabb_author_name ); ?>" class="regular-text uabb-author-name" />
 			</div>
 			<?php /* Author URL */ ?>
 			<div class="uabb-branding-fields">
-			<h4 class="field-title"><?php esc_attr_e( 'Author / Agency URL', 'uabb' ); ?></h4>
+			<h4 class="field-title"><?php esc_html_e( 'Author / Agency URL', 'uabb' ); ?></h4>
 			<input type="text" name="uabb-author-url" placeholder="http://www.brainstormforce.com" value="<?php echo esc_url( $uabb_author_url ); ?>" class="regular-text uabb-author-url" />
 			</div>
 			<?php /* Plugin Icon URL */ ?>
 			<div class="uabb-branding-fields">
-			<h4 class="field-title"><?php esc_attr_e( 'Plugin Icon URL', 'uabb' ); ?></h4>
+			<h4 class="field-title"><?php esc_html_e( 'Plugin Icon URL', 'uabb' ); ?></h4>
 			<input type="text" name="uabb-plugin-icon-url" value="<?php echo esc_url( $uabb_plugin_icon_url ); ?>" class="regular-text uabb-plugin-icon" />
 			</div>
 			<?php /* Knowledge Base URL */ ?>
 			<div class="uabb-branding-fields">
-			<h4 class="field-title"><?php esc_attr_e( 'Knowledge Base URL', 'uabb' ); ?></h4>
-			<p class="uabb-admin-help"><?php esc_attr_e( 'Enable this option to display Knowledge Base link in Help tab.', 'uabb' ); ?></p>
+			<h4 class="field-title"><?php esc_html_e( 'Knowledge Base URL', 'uabb' ); ?></h4>
+			<p class="uabb-admin-help"><?php esc_html_e( 'Enable this option to display Knowledge Base link in Help tab.', 'uabb' ); ?></p>
 			<label>
-				<input type="checkbox" class="uabb-enable-knowledge-base" name="uabb-enable-knowledge-base" value="1" <?php echo esc_attr( $uabb_enable_knowledge_base ); ?> ><?php esc_attr_e( 'Enable Knowledge Base', 'uabb' ); ?>
+				<input type="checkbox" class="uabb-enable-knowledge-base" name="uabb-enable-knowledge-base" value="1" <?php echo esc_attr( $uabb_enable_knowledge_base ); ?> ><?php esc_html_e( 'Enable Knowledge Base', 'uabb' ); ?>
 			</label>
 			<p class="knowledge-base-url"><input type="text" name="uabb-knowledge-base-url" placeholder="https://www.ultimatebeaver.com/docs/" value="<?php echo esc_url( $uabb_knowledge_base_url ); ?>" class="regular-text uabb-knowledge-base-url" /></p>
 			</div>
 			<?php /* Contact Support URL */ ?>
 			<div class="uabb-branding-fields">
-			<h4 class="field-title"><?php esc_attr_e( 'Contact Support URL', 'uabb' ); ?></h4>
-			<p class="uabb-admin-help"><?php esc_attr_e( 'Enable this option to display support link in Help tab.', 'uabb' ); ?></p>
+			<h4 class="field-title"><?php esc_html_e( 'Contact Support URL', 'uabb' ); ?></h4>
+			<p class="uabb-admin-help"><?php esc_html_e( 'Enable this option to display support link in Help tab.', 'uabb' ); ?></p>
 				<label>
-					<input type="checkbox" class="uabb-enable-contact-support" name="uabb-enable-contact-support" value="1" <?php echo esc_attr( $uabb_enable_contact_support ); ?> ><?php esc_attr_e( 'Enable Contact Support', 'uabb' ); ?>
+					<input type="checkbox" class="uabb-enable-contact-support" name="uabb-enable-contact-support" value="1" <?php echo esc_attr( $uabb_enable_contact_support ); ?> ><?php esc_html_e( 'Enable Contact Support', 'uabb' ); ?>
 				</label>
 			<p class="contact-support-url"><input type="text" name="uabb-contact-support-url" placeholder="https://www.ultimatebeaver.com/contact/" value="<?php echo esc_url( $uabb_contact_support_url ); ?>" class="regular-text uabb-contact-support-url" /></p>
 			</div>
 			<div class="uabb-form-setting">
-				<h4><?php esc_attr_e( 'Enable Template Cloud', 'uabb' ); ?></h4>
-				<p class="uabb-admin-help"><?php esc_attr_e( 'Enable this option to activate Template Cloud functionality.', 'uabb' ); ?></p>
+				<h4><?php esc_html_e( 'Enable Template Cloud', 'uabb' ); ?></h4>
+				<p class="uabb-admin-help"><?php esc_html_e( 'Enable this option to activate Template Cloud functionality.', 'uabb' ); ?></p>
 				<label>
-					<input type="checkbox" class="uabb-enable-template-cloud" name="uabb-enable-template-cloud" value="" <?php echo esc_attr( $uabb_enable_template_cloud ); ?> ><?php esc_attr_e( 'Enable Template Cloud Settings', 'uabb' ); ?>
+					<input type="checkbox" class="uabb-enable-template-cloud" name="uabb-enable-template-cloud" value="" <?php echo esc_attr( $uabb_enable_template_cloud ); ?> ><?php esc_html_e( 'Enable Template Cloud Settings', 'uabb' ); ?>
 				</label>
 			</div>
 			<div class="uabb-form-setting">
-				<h4><?php esc_attr_e( 'List Modules under Standard Modules', 'uabb' ); ?></h4>
-				<p class="uabb-admin-help"><?php esc_attr_e( 'Enable this to list UABB Modules under standard modules.', 'uabb' ); ?></p>
+				<h4><?php esc_html_e( 'List Modules under Standard Modules', 'uabb' ); ?></h4>
+				<p class="uabb-admin-help"><?php esc_html_e( 'Enable this to list UABB Modules under standard modules.', 'uabb' ); ?></p>
 				<label>
-					<input type="checkbox" class="uabb-global-module-listing" name="uabb-global-module-listing" value="" <?php echo esc_attr( $uabb_global_module_listing ); ?> ><?php esc_attr_e( 'Enable UABB modules listing in default Standard category', 'uabb' ); ?>
+					<input type="checkbox" class="uabb-global-module-listing" name="uabb-global-module-listing" value="" <?php echo esc_attr( $uabb_global_module_listing ); ?> ><?php esc_html_e( 'Enable UABB modules listing in default Standard category', 'uabb' ); ?>
 				</label>
 			</div>
 
 			<?php /* Hide This Form */ ?>
 			<div class="uabb-form-setting">
-				<h4><?php esc_attr_e( 'Hide White Label Settings', 'uabb' ); ?></h4>
-				<p class="uabb-admin-help"><?php esc_attr_e( 'Enable this option to hide White Label settings. Re-activate the plugin to enable this form again.', 'uabb' ); ?></p>
+				<h4><?php esc_html_e( 'Hide White Label Settings', 'uabb' ); ?></h4>
+				<p class="uabb-admin-help"><?php esc_html_e( 'Enable this option to hide White Label settings. Re-activate the plugin to enable this form again.', 'uabb' ); ?></p>
 				<label>
-					<input type="checkbox" class="uabb-hide-branding" name="uabb-hide-branding" value="" <?php echo esc_attr( $uabb_hide_branding ); ?> ><?php esc_attr_e( 'Hide White Label Settings', 'uabb' ); ?>
+					<input type="checkbox" class="uabb-hide-branding" name="uabb-hide-branding" value="" <?php echo esc_attr( $uabb_hide_branding ); ?> ><?php esc_html_e( 'Hide White Label Settings', 'uabb' ); ?>
 				</label>
 			</div>
 

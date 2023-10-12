@@ -1064,7 +1064,7 @@ class UABBCreativeMenu extends FLBuilderModule {
 			if ( in_array( $toggle, array( 'hamburger', 'hamburger-label' ), true ) ) {
 				echo '<div class="uabb-creative-menu-mobile-toggle-container">';
 				echo '<div class="uabb-creative-menu-mobile-toggle ' . esc_attr( $toggle ) . '" tabindex="0"><div class="uabb-svg-container">';
-				include 'img/hamburger-menu.svg';
+				include 'img/hamburger-menu.svg'; // phpcs:ignore WordPressVIPMinimum.Files.IncludingNonPHPFile.IncludingSVGCSSFile
 				echo '</div>';
 
 				if ( 'hamburger-label' === $toggle ) {

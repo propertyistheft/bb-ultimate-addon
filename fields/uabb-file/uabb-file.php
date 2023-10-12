@@ -60,23 +60,23 @@ if ( ! class_exists( 'UABB_File' ) ) {
 				echo ' ' . esc_attr( $field['class'] );}
 			?>
 			">
-				<a class="fl-file-select" href="javascript:void(0);" onclick="return false;"><?php esc_attr_e( 'Select File', 'uabb' ); ?></a>
+				<a class="fl-file-select" href="javascript:void(0);" onclick="return false;"><?php esc_html_e( 'Select File', 'uabb' ); ?></a>
 				<div class="fl-file-preview">
 					<?php if ( ! empty( $value ) && $file ) : ?>
 					<div class="fl-file-preview-img">
 					</div>
-					<span class="fl-file-preview-filename"><?php echo esc_attr( $file->filename ); ?></span>
+					<span class="fl-file-preview-filename"><?php echo esc_html( $file->filename ); ?></span>
 					<?php else : ?>
 					<div class="fl-file-preview-img">
 					</div>
 					<span class="fl-file-preview-filename"></span>
 					<?php endif; ?>
 					<br />
-					<a class="fl-file-replace" href="javascript:void(0);" onclick="return false;"><?php esc_attr_e( 'Replace File', 'uabb' ); ?></a>
+					<a class="fl-file-replace" href="javascript:void(0);" onclick="return false;"><?php esc_html_e( 'Replace File', 'uabb' ); ?></a>
 					<div class="fl-clear"></div>
 				</div>
 				<input name="<?php echo esc_attr( $name ); ?>" type="hidden" value='<?php echo esc_attr( $value ); ?>' />
-			</div> 
+			</div>
 			<?php
 		}
 	}

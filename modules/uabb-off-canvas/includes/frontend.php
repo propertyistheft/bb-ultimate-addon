@@ -22,14 +22,14 @@ if ( 'button' === $settings->offcanvas_on ) {
 	if ( isset( $settings->photo_src ) && ! empty( $settings->photo_src ) ) {
 		$img_src = $settings->photo_src;
 		?>
-		<div class="uabb-offcanvas-action uabb-offcanvas-trigger uabb-offcanvas-photo-wrap" data-modal="<?php echo esc_attr( $id ); ?>"><div class="uabb-offcanvas-photo-content"><img class="uabb-offcanvas-photo" src="<?php echo esc_attr( $img_src ); ?>"></div></div>
+		<div class="uabb-offcanvas-action uabb-offcanvas-trigger uabb-offcanvas-photo-wrap" data-modal="<?php echo esc_attr( $id ); ?>"><div class="uabb-offcanvas-photo-content"><img class="uabb-offcanvas-photo" src="<?php echo esc_url( $img_src ); ?>"></div></div>
 		<?php
 	}
 }
 if ( ( 'custom' === $settings->offcanvas_on || 'automatic' === $settings->offcanvas_on ) && FLBuilderModel::is_builder_active() ) {
 	?>
 	<div class="uabb-builder-msg" style="text-align: center;">
-		<h5><?php esc_attr_e( 'Off - Canvas - ID ', 'uabb' ); ?><?php echo esc_attr( $id ); ?></h5>
+		<h5><?php esc_html_e( 'Off - Canvas - ID ', 'uabb' ); ?><?php echo esc_attr( $id ); ?></h5>
 		<?php esc_attr_e( 'Click here to edit the "Off - Canvas" settings. This text will not be visible on frontend.', 'uabb' ); ?>
 	</div>
 	<?php

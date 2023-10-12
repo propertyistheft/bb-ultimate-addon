@@ -1273,7 +1273,7 @@ class BlogPostsModule extends FLBuilderModule {
 	 */
 	public function update( $settings ) {
 		global $wp_rewrite;
-		$wp_rewrite->flush_rules( false );
+		$wp_rewrite->flush_rules( false ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.flush_rules_flush_rules
 		return $settings;
 	}
 
@@ -1314,7 +1314,7 @@ class BlogPostsModule extends FLBuilderModule {
 	/**
 	 * Filter to enqueue scripts
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts() { // phpcs:ignore WordPressVIPMinimum.Hooks.AlwaysReturnInFilter.MissingReturnStatement
 
 		if ( isset( $this->settings->is_carousel ) && 'carousel' === $this->settings->is_carousel ) {
 			$this->add_js( 'carousel', BB_ULTIMATE_ADDON_URL . 'assets/js/global-scripts/jquery-carousel.js', array( 'jquery' ), '', true );
@@ -1419,7 +1419,7 @@ class BlogPostsModule extends FLBuilderModule {
 	public function deleteUrl( $i, $url ) {
 		$cropped_path = $this->_get_cropped_path( $i, $url );
 		if ( file_exists( $cropped_path['path'] ) ) {
-			unlink( $cropped_path['path'] );
+			unlink( $cropped_path['path'] ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_unlink
 		}
 	}
 
@@ -1889,16 +1889,16 @@ class BlogPostsModule extends FLBuilderModule {
 									if ( isset( $this->settings->{ 'masonary_filter_' . $post_type } ) && $tax_slug === $this->settings->{ 'masonary_filter_' . $post_type } ) {
 										if ( isset( $this->settings->{'tax_' . $post_type . '_' . $tax_slug . '_matching'} ) && '0' === $this->settings->{'tax_' . $post_type . '_' . $tax_slug . '_matching'} ) {
 											if ( ! in_array( $cat_details->term_id, $tax_value ) ) { // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
-												echo '<option class="uabb-masonary-filter-' . esc_attr( $this->node ) . '" data-filter=".uabb-masonary-cat-' . esc_attr( $cat_details->term_id ) . '">' . esc_attr( $cat_details->name ) . '</option>';
+												echo '<option class="uabb-masonary-filter-' . esc_attr( $this->node ) . '" data-filter=".uabb-masonary-cat-' . esc_attr( $cat_details->term_id ) . '">' . esc_html( $cat_details->name ) . '</option>';
 											}
 										} else {
 											if ( in_array( $cat_details->term_id, $tax_value ) ) { // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
-												echo '<option class="uabb-masonary-filter-' . esc_attr( $this->node ) . '" data-filter=".uabb-masonary-cat-' . esc_attr( $cat_details->term_id ) . '">' . esc_attr( $cat_details->name ) . '</option>';
+												echo '<option class="uabb-masonary-filter-' . esc_attr( $this->node ) . '" data-filter=".uabb-masonary-cat-' . esc_attr( $cat_details->term_id ) . '">' . esc_html( $cat_details->name ) . '</option>';
 											}
 										}
 									}
 								} else {
-									echo '<option class="uabb-masonary-filter-' . esc_attr( $this->node ) . '" data-filter=".uabb-masonary-cat-' . esc_attr( $cat_details->term_id ) . '">' . esc_attr( $cat_details->name ) . '</option>';
+									echo '<option class="uabb-masonary-filter-' . esc_attr( $this->node ) . '" data-filter=".uabb-masonary-cat-' . esc_attr( $cat_details->term_id ) . '">' . esc_html( $cat_details->name ) . '</option>';
 								}
 							}
 							echo '</select>';
@@ -1912,16 +1912,16 @@ class BlogPostsModule extends FLBuilderModule {
 									if ( isset( $this->settings->{ 'masonary_filter_' . $post_type } ) && $tax_slug === $this->settings->{ 'masonary_filter_' . $post_type } ) {
 										if ( isset( $this->settings->{'tax_' . $post_type . '_' . $tax_slug . '_matching'} ) && '0' === $this->settings->{'tax_' . $post_type . '_' . $tax_slug . '_matching'} ) {
 											if ( ! in_array( $cat_details->term_id, $tax_value ) ) { // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
-												echo '<li class="uabb-masonary-filter-' . esc_attr( $this->node ) . '" data-filter=".uabb-masonary-cat-' . esc_attr( $cat_details->term_id ) . '" tabindex="0">' . esc_attr( $cat_details->name ) . '</li>';
+												echo '<li class="uabb-masonary-filter-' . esc_attr( $this->node ) . '" data-filter=".uabb-masonary-cat-' . esc_attr( $cat_details->term_id ) . '" tabindex="0">' . esc_html( $cat_details->name ) . '</li>';
 											}
 										} else {
 											if ( in_array( $cat_details->term_id, $tax_value ) ) { // phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
-												echo '<li class="uabb-masonary-filter-' . esc_attr( $this->node ) . '" data-filter=".uabb-masonary-cat-' . esc_attr( $cat_details->term_id ) . '" tabindex="0">' . esc_attr( $cat_details->name ) . '</li>';
+												echo '<li class="uabb-masonary-filter-' . esc_attr( $this->node ) . '" data-filter=".uabb-masonary-cat-' . esc_attr( $cat_details->term_id ) . '" tabindex="0">' . esc_html( $cat_details->name ) . '</li>';
 											}
 										}
 									}
 								} else {
-									echo '<li class="uabb-masonary-filter-' . esc_attr( $this->node ) . '" data-filter=".uabb-masonary-cat-' . esc_attr( $cat_details->term_id ) . '" tabindex="0">' . esc_attr( $cat_details->name ) . '</li>';
+									echo '<li class="uabb-masonary-filter-' . esc_attr( $this->node ) . '" data-filter=".uabb-masonary-cat-' . esc_attr( $cat_details->term_id ) . '" tabindex="0">' . esc_html( $cat_details->name ) . '</li>';
 								}
 							}
 								echo '</ul>';
@@ -2286,7 +2286,7 @@ class BlogPostsModule extends FLBuilderModule {
 				<?php
 				echo esc_url( get_permalink( $obj->ID ) );
 				?>
-			#comments"><?php echo esc_attr( $obj->comment_count ); ?> <?php echo ( esc_attr( $obj->comment_count ) > 1 ? __( 'Comments', 'uabb' ) : __( 'Comment', 'uabb' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a></span>
+			#comments"><?php echo esc_html( $obj->comment_count ); ?> <?php echo ( esc_html( $obj->comment_count ) > 1 ? __( 'Comments', 'uabb' ) : __( 'Comment', 'uabb' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a></span>
 				<?php
 			}
 		}

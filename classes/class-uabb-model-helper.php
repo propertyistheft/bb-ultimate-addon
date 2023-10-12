@@ -45,7 +45,7 @@ if ( ! class_exists( 'UABB_Model_Helper' && FLBuilderModel::is_builder_active() 
 					'orderby'        => 'title',
 					'order'          => 'ASC',
 					'posts_per_page' => '-1',
-					'tax_query'      => array(
+					'tax_query'      => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 						array(
 							'taxonomy' => 'fl-builder-template-type',
 							'field'    => 'slug',

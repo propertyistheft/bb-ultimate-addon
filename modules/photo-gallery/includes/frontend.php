@@ -44,7 +44,7 @@ if ( ! empty( $settings->photos ) ) {
 			</div>
 			<?php if ( 'scroll' === $settings->pagination ) { ?>
 				<div class="uabb-gallery-loader" style="display: none;">
-					<span class="uabb-grid-loader-icon"><img src="<?php echo esc_attr( BB_ULTIMATE_ADDON_URL ) . 'modules/photo-gallery/images/loader.svg'; ?>" style="height: 50px;"/></span>
+					<span class="uabb-grid-loader-icon"><img src="<?php echo esc_url( BB_ULTIMATE_ADDON_URL ) . 'modules/photo-gallery/images/loader.svg'; ?>" style="height: 50px;"/></span>
 				</div>
 			<?php } ?>
 		<?php } ?>

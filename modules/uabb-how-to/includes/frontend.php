@@ -91,7 +91,7 @@ if ( empty( $settings->uabb_supply[0] ) || 'no' === $settings->show_advanced || 
 if ( empty( $settings->uabb_tool[0] ) || 'no' === $settings->show_advanced || 'no' === $settings->add_tool ) {
 	array_push( $empty_items_array, 'Tools' );
 }
-?>		
+?>
 		<div class="uabb-how-to-error-notices-wrap">
 			<?php if ( FLBuilderModel::is_builder_active() && isset( $empty_items_array ) && ! empty( $empty_items_array ) && is_array( $empty_items_array ) ) { ?>
 
@@ -110,7 +110,7 @@ if ( empty( $settings->uabb_tool[0] ) || 'no' === $settings->show_advanced || 'n
 
 						$error_string = rtrim( $error_string, ', ' );
 
-						echo 'It seems the<b> ' . esc_attr( $error_string ) . '</b> fields are empty.<br>It may generate Schema errors / warnings for your Page, we recommend you to fill those fields.';
+						echo 'It seems the<b> ' . esc_html( $error_string ) . '</b> fields are empty.<br>It may generate Schema errors / warnings for your Page, we recommend you to fill those fields.';
 
 					?>
 				</div>
@@ -145,7 +145,7 @@ if ( empty( $settings->uabb_tool[0] ) || 'no' === $settings->show_advanced || 'n
 						},
 					<?php } ?>
 					<?php if ( ! empty( $settings->uabb_supply[0] ) && 'yes' === $settings->show_advanced && 'yes' === $settings->add_supply ) { ?>
-					"supply": 
+					"supply":
 						<?php
 						if ( isset( $supply ) && ! empty( $supply ) ) {
 							echo wp_kses_post( $supply );
@@ -154,7 +154,7 @@ if ( empty( $settings->uabb_tool[0] ) || 'no' === $settings->show_advanced || 'n
 						,
 					<?php } ?>
 					<?php if ( ! empty( $settings->uabb_tool[0] ) && 'yes' === $settings->show_advanced && 'yes' === $settings->add_tool ) { ?>
-					"tool": 
+					"tool":
 						<?php
 						if ( isset( $tool ) && ! empty( $tool ) ) {
 							echo wp_kses_post( $tool );
@@ -163,15 +163,15 @@ if ( empty( $settings->uabb_tool[0] ) || 'no' === $settings->show_advanced || 'n
 						,
 					<?php } ?>
 					<?php if ( ! empty( $settings->step_data[0] ) ) { ?>
-					"step": 
+					"step":
 						<?php
 						if ( isset( $steps ) && ! empty( $steps ) ) {
 							echo wp_kses_post( $steps );
 						}
 					}
 					?>
-					<?php if ( ! empty( $settings->total_time ) ) { ?>	
-						, "totalTime": 
+					<?php if ( ! empty( $settings->total_time ) ) { ?>
+						, "totalTime":
 						<?php
 						if ( isset( $settings->total_time ) && ! empty( $settings->total_time ) ) {
 							?>
@@ -204,7 +204,7 @@ if ( empty( $settings->uabb_tool[0] ) || 'no' === $settings->show_advanced || 'n
 							<p class="uabb-how-to-total-time">
 								<?php echo ! empty( $settings->total_time_text ) ? $settings->total_time_text : ''; ?><?php echo ' ' . esc_attr( $settings->total_time ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> minutes
 							</p>
-						<?php } ?>						
+						<?php } ?>
 							<p class="uabb-how-to-estimated-cost">
 
 								<?php echo ! empty( $settings->estimated_cost_text ) ? $settings->estimated_cost_text : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>

@@ -56,11 +56,11 @@ class UABB_Template_Ajax {
 			);
 
 			if ( isset( $_POST['type'] ) && ! empty( $_POST['type'] ) ) {
-				$args['tax_query'] = array(
+				$args['tax_query'] = array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 					array(
 						'taxonomy' => 'fl-builder-template-type',
 						'field'    => 'slug',
-						'terms'    => $_POST['type'],
+						'terms'    => sanitize_text_field( $_POST['type'] ),
 					),
 				);
 			}
@@ -146,7 +146,7 @@ class UABB_Template_Ajax {
 
 			$id = 0;
 
-			$forms = $wpdb->get_results( $wpdb->prepare( 'SELECT id, title FROM ' . $form_table_name . ' WHERE id != %d', $id ), object );// phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared
+			$forms = $wpdb->get_results( $wpdb->prepare( 'SELECT id, title FROM ' . $form_table_name . ' WHERE id != %d', $id ), object ); // phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 			if ( count( $forms ) ) {
 
 				foreach ( $forms as $form ) {

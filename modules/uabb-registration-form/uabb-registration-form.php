@@ -95,7 +95,7 @@ class UABBRegistrationFormModule extends FLBuilderModule {
 
 		foreach ( $server_ip_keys as $key ) {
 			if ( isset( $_SERVER[ $key ] ) && filter_var( $_SERVER[ $key ], FILTER_VALIDATE_IP ) ) {
-				return $_SERVER[ $key ];
+				return sanitize_text_field( $_SERVER[ $key ] );
 			}
 		}
 
@@ -201,7 +201,7 @@ class UABBRegistrationFormModule extends FLBuilderModule {
 
 		if ( isset( $_POST['data'] ) && $allow_register ) {
 
-			$data = $_POST['data'];
+			$data = array_map( 'sanitize_text_field', $_POST['data'] );
 
 			if ( 'v3' === $settings->uabb_recaptcha_version ) {
 
@@ -663,10 +663,10 @@ class UABBRegistrationFormModule extends FLBuilderModule {
 	public static function default_email_template() {
 		$host = 'localhost';
 		if ( isset( $_SERVER['HTTP_HOST'] ) ) {
-			$host = $_SERVER['HTTP_HOST'];
+			$host = sanitize_text_field( $_SERVER['HTTP_HOST'] );
 		}
 
-		$current_url = 'http://' . $host . strtok( $_SERVER['REQUEST_URI'], '?' );
+		$current_url = isset( $_SERVER['REQUEST_URI'] ) ? 'http://' . $host . strtok( esc_url_raw( $_SERVER['REQUEST_URI'] ), '?' ) : '';
 
 		$default_template_reg = sprintf(
 			/* translators: %1$s: search term, translators: %2$s: search term */            __(

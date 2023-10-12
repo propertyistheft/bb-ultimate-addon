@@ -41,7 +41,7 @@ if ( 'yes' === $settings->add_legend ) {
 if ( 'yes' === $settings->show_spacing && '' !== $settings->spacing ) {
 	?>
 .fl-builder-content .fl-node-<?php echo esc_attr( $id ); ?> .uabb-pricing-table-col-<?php echo esc_attr( $columns ); ?> {
-	padding: 0 <?php echo esc_attr( ( $settings->spacing / 2 ) ) . 'px'; ?>;
+	margin: 0 <?php echo esc_attr( ( $settings->spacing / 2 ) ) . 'px'; ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-pricing-table {
@@ -314,7 +314,7 @@ for ( $i = 0; $i < $count; $i++ ) :
 			?>
 					.fl-node-<?php echo esc_attr( $id ); ?> .uabb-pricing-table .uabb-pricing-table-column-<?php echo esc_attr( $i ) + 1; ?> .uabb-pricing-table-features li:last-child {
 						margin-bottom: 0;
-					}		
+					}
 					<?php
 		}
 		?>

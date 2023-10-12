@@ -7,7 +7,7 @@
 
 ?>
 <div id="fl-uabb-license-form" class="fl-settings-form uabb-fl-settings-form">
-	<h3 class="fl-settings-form-header"><?php esc_attr_e( 'License', 'uabb' ); ?></h3>
+	<h3 class="fl-settings-form-header"><?php esc_html_e( 'License', 'uabb' ); ?></h3>
 
 	<?php
 		$bsf_product_id = bsf_extract_product_id( BB_ULTIMATE_ADDON_DIR );
@@ -28,7 +28,7 @@
 		?>
 
 	<?php if ( is_multisite() ) : ?>
-	<p><strong style="color:#ff0000;"><?php esc_attr_e( 'NOTE:', 'uabb' ); ?></strong> <?php esc_attr_e( 'This applies to all sites on the network.', 'uabb' ); ?></p>
+	<p><strong style="color:#ff0000;"><?php esc_html_e( 'NOTE:', 'uabb' ); ?></strong> <?php esc_html_e( 'This applies to all sites on the network.', 'uabb' ); ?></p>
 	<?php endif; ?>
 
 </div>

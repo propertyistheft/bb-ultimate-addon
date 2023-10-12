@@ -254,7 +254,7 @@ class UABBPhotoGalleryModule extends FLBuilderModule {
 	 */
 	public function uabb_get_photos() {
 
-		if ( isset( $_POST['security'] ) && wp_verify_nonce( $_POST['security'], 'uabb-photo-nonce' ) ) {
+		if ( isset( $_POST['security'] ) && wp_verify_nonce( sanitize_text_field( $_POST['security'] ), 'uabb-photo-nonce' ) ) {
 
 			$response = array(
 				'error' => false,
@@ -264,7 +264,7 @@ class UABBPhotoGalleryModule extends FLBuilderModule {
 			$node_id = isset( $_POST['node_id'] ) ? sanitize_text_field( $_POST['node_id'] ) : false;
 
 			if ( $node_id ) {
-				$settings = (object) $_POST['settings'];
+				$settings = isset( $_POST['settings'] ) ? (object) $_POST['settings'] : null; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 				if ( ! isset( $this->settings ) ) {
 					$this->settings = $settings;

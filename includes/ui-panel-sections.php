@@ -60,9 +60,9 @@
 
 											<span class="fl-builder-block fl-builder-block-template fl-builder-block-row-template" data-id="<?php echo esc_attr( $template['id'] ); ?>" data-type="<?php echo esc_attr( $template['type'] ); ?>">
 												<?php if ( ! stristr( $template['image'], 'blank.jpg' ) ) : ?>
-												<img class="fl-builder-block-template-image" src="<?php echo esc_attr( $template['image'] ); ?>" />
+												<img class="fl-builder-block-template-image" src="<?php echo esc_url( $template['image'] ); ?>" />
 												<?php endif; ?>
-												<span class="fl-builder-block-title" data-tags="<?php echo esc_attr( $tags ); ?>" data-cat-name="<?php echo esc_attr( $sections_cat['name'] ); ?>"><?php echo esc_attr( $template['name'] ); ?></span>
+												<span class="fl-builder-block-title" data-tags="<?php echo esc_attr( $tags ); ?>" data-cat-name="<?php echo esc_attr( $sections_cat['name'] ); ?>"><?php echo esc_html( $template['name'] ); ?></span>
 											</span>
 
 										<?php endforeach; ?>

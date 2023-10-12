@@ -67,7 +67,7 @@ if ( 'vertical' === $settings->tab_layout ) {
 				<div class="uabb-content uabb-tab-acc-content clearfix <?php echo ( 'content' === $settings->items[ $i ]->content_type ) ? 'uabb-tabs-desc uabb-text-editor' : ''; ?>">
 					<?php
 					if ( isset( $settings->items[ $i ]->content ) && 'content' === $settings->items[ $i ]->content_type && '' !== $settings->items[ $i ]->content && '' === $settings->items[ $i ]->ct_content ) {
-						global $wp_embed;
+						global $wp_embed; // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.VariableRedeclaration
 						echo wp_kses_post( wpautop( $wp_embed->autoembed( $settings->items[ $i ]->content ) ) );
 					} else {
 						echo $module->get_tab_content( $settings->items[ $i ] ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

@@ -102,7 +102,7 @@ $label_on  = ( isset( $settings->label_box_on ) ) ? $settings->label_box_on : 'O
 		<div <?php echo wp_kses_post( $rbs_section_2 ); ?> >
 			<?php
 			if ( 'content_head2' === $settings->cont2_section ) {
-				global $wp_embed;
+				global $wp_embed; // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.VariableRedeclaration
 				echo wpautop( $wp_embed->autoembed( $settings->content2_editor ) ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			} else {
 				echo $module->get_toggle_content2( $settings ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

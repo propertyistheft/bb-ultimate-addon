@@ -1,3 +1,10 @@
+Version 1.35.16, Wednesday, 11th October 2023
+- Improvement: Compatibility with WordPress VIP Go rules.
+- Improvement: Use of relative path instead of absolute path while registering templates downloaded from template cloud.
+- Fixed: Advanced Posts - Columns layout not working properly with Grid option on Safari browser.
+- Fixed: Price Box - Corner Ribbon layout issue when spacing is added between boxes.
+- Fixed: Video - Video requires double click to play on desktop.
+
 Version 1.35.15, Monday, 25th September 2023
 - Improvement: Improved Security.
 

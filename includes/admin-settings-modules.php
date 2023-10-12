@@ -16,13 +16,13 @@ if ( is_callable( 'FLBuilderWhiteLabel::get_branding' ) ) {
 ?>
 <div id="fl-uabb-modules-form" class="fl-settings-form uabb-modules-fl-settings-form">
 
-	<h3 class="fl-settings-form-header"><?php esc_attr_e( 'Enabled Modules', 'uabb' ); ?></h3>
+	<h3 class="fl-settings-form-header"><?php esc_html_e( 'Enabled Modules', 'uabb' ); ?></h3>
 
 	<form id="uabb-modules-form" action="<?php UABBBuilderAdminSettings::render_form_action( 'uabb-modules' ); ?>" method="post">
 
 		<div class="fl-settings-form-content">
 
-			<p><?php esc_attr_e( 'Check or uncheck modules and extensions below to enable or disable them.', 'uabb' ); ?></p>
+			<p><?php esc_html_e( 'Check or uncheck modules and extensions below to enable or disable them.', 'uabb' ); ?></p>
 
 			<p><?php echo sprintf( /* translators: %1$s: search term, %2$s: search term, %3$s: search term */ wp_kses_post( __( '<strong> Note: </strong> If you are unable to find the %1$s Modules under the %1$s Group on frontend, please make sure that you have enabled the modules from the below list and also from the <a href="%3$s"> %2$s modules list</a>.', 'uabb' ) ), esc_attr( $branding_short_name ), esc_attr( $bb_branding_short_name ), esc_url( admin_url( 'options-general.php?page=fl-builder-settings#modules' ) ) ); ?></p>
 
@@ -41,7 +41,7 @@ if ( is_callable( 'FLBuilderWhiteLabel::get_branding' ) ) {
 			?>
 			<label>
 				<input class="uabb-module-all-cb" type="checkbox" name="uabb-modules[all]" value="all" <?php echo esc_attr( $checked ); ?> />
-				<?php echo esc_attr( _ex( 'All', 'Plugin setup page: Modules.', 'uabb' ) ); ?>
+				<?php echo esc_attr( _ex( 'All', 'Plugin setup page: Modules.', 'uabb' ) ); // phpcs:ignore WordPressVIPMinimum.Security.EscapingVoidReturnFunctions.Found ?>
 			</label>
 			<h3><?php /* translators: %s: search term */ echo sprintf( esc_attr__( '%s Modules', 'uabb' ), esc_attr( UABB_PREFIX ) ); ?></h3>
 			<?php foreach ( $modules_array as $slug => $name ) : ?>

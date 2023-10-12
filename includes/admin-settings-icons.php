@@ -8,8 +8,8 @@
 ?>
 <div id="fl-uabb-icons-form" class="fl-settings-form uabb-fl-settings-form">
 
-	<h3 class="fl-settings-form-header"><?php esc_attr_e( 'Reload Icons', 'uabb' ); ?></h3>	
-	<form id="uabb-icons-form" action="<?php UABBBuilderAdminSettings::render_form_action( 'uabb-icons' ); ?>" method="post" data-nonce=<?php echo wp_kses_post( wp_create_nonce( 'uabb-icons-nonce' ) ); ?>>		
+	<h3 class="fl-settings-form-header"><?php esc_html_e( 'Reload Icons', 'uabb' ); ?></h3>
+	<form id="uabb-icons-form" action="<?php UABBBuilderAdminSettings::render_form_action( 'uabb-icons' ); ?>" method="post" data-nonce=<?php echo wp_kses_post( wp_create_nonce( 'uabb-icons-nonce' ) ); ?>>
 		<div class="fl-settings-form-content">
 			<p>
 			<?php

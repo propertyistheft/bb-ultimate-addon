@@ -18,7 +18,7 @@ var field   = data.field,
 
 <div class="fl-field uabb-evergreen-wrap" data-type="select" data-preview="{{preview}}"><div class="uabb-countdown-custom-fields">
 	<select class="text text-full" name="{{name}}_days" >
-	<option value="0"><?php esc_attr_e( 'Days', 'uabb' ); ?></option>
+	<option value="0"><?php esc_html_e( 'Days', 'uabb' ); ?></option>
 	<#
 	for ( var i=0; i <= 31; i++ ) {
 		if ( '' != settings.evergreen_date_days ) {
@@ -43,7 +43,7 @@ var field   = data.field,
 	#>
 	</select>
 	</br>
-	<label><?php esc_attr_e( 'Days', 'uabb' ); ?></label>
+	<label><?php esc_html_e( 'Days', 'uabb' ); ?></label>
 </div>
 
 <div class="uabb-countdown-custom-fields">

@@ -90,7 +90,7 @@ if ( ! class_exists( 'UABB_Batch_Process' ) ) :
 			add_action( 'admin_enqueue_scripts', array( $this, 'batch_process_scripts' ) );
 			add_action( 'admin_init', array( $this, 'register_notices' ) );
 			add_action( 'uabb_import_complete', array( $this, 'complete_batch_import' ) );
-			add_filter( 'upload_mimes', array( $this, 'custom_upload_mimes' ) );
+			add_filter( 'upload_mimes', array( $this, 'custom_upload_mimes' ) ); // phpcs:ignore WordPressVIPMinimum.Hooks.RestrictedHooks.upload_mimes
 			add_filter( 'wp_prepare_attachment_for_js', array( $this, 'add_svg_image_support' ), 10, 3 );
 			add_filter( 'uabb_image_importer_skip_image', array( $this, 'included_domains' ), 10, 2 );
 			add_filter( 'fl_builder_override_apply_template', array( $this, 'process_render_template_dat_file' ), 10, 2 );

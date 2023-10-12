@@ -42,13 +42,13 @@ class UABBTable extends FLBuilderModule {
 	 * @method uabb_csv_file_handle
 	 * @param string $file fetches the file.
 	 */
-	public function uabb_csv_file_handle( $file ) {
+	public function uabb_csv_file_handle( $file ) { // phpcs:ignore WordPressVIPMinimum.Hooks.AlwaysReturnInFilter.MissingReturnStatement
 
 		if ( ! function_exists( 'get_current_screen()' ) ) {
 			return $file;
 		} else {
 			if ( 'async-upload' === get_current_screen()->base ) {
-				$type = isset( $_POST['uabb_upload_type'] ) ? $_POST['uabb_upload_type'] : false; // phpcs:ignore WordPress.Security.NonceVerification.Missing
+				$type = isset( $_POST['uabb_upload_type'] ) ? sanitize_text_field( $_POST['uabb_upload_type'] ) : false; // phpcs:ignore WordPress.Security.NonceVerification.Missing
 
 				$ext = pathinfo( $file['name'], PATHINFO_EXTENSION );
 
@@ -403,7 +403,7 @@ class UABBTable extends FLBuilderModule {
 
 		// Attempt to change permissions if not readable.
 		if ( ! is_readable( $file ) ) {
-			chmod( $file, 0744 );
+			chmod( $file, 0744 ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.chmod_chmod
 		}
 
 		// Check if file is writable, then open it in 'read only' mode.

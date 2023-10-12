@@ -52,10 +52,10 @@ if ( count( $settings->social_icons ) > 0 ) {
 		$social_icon = $icon;
 
 
-		if ( ( isset( $_SERVER['HTTPS'] ) && ! empty( $_SERVER['HTTPS'] ) && 'off' !== strtolower( $_SERVER['HTTPS'] ) ) || 443 === $_SERVER['SERVER_PORT'] ) {
-			$current_page = rawurlencode( 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
+		if ( ( isset( $_SERVER['HTTPS'] ) && ! empty( $_SERVER['HTTPS'] ) && 'off' !== strtolower( sanitize_text_field( $_SERVER['HTTPS'] ) ) ) || ( isset( $_SERVER['SERVER_PORT'] ) && 443 === $_SERVER['SERVER_PORT'] ) ) {
+			$current_page = isset( $_SERVER['HTTP_HOST'] ) && isset( $_SERVER['REQUEST_URI'] ) ? rawurlencode( 'https://' . sanitize_text_field( $_SERVER['HTTP_HOST'] ) . esc_url_raw( $_SERVER['REQUEST_URI'] ) ) : '';
 		} else {
-			$current_page = rawurlencode( 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
+			$current_page = isset( $_SERVER['HTTP_HOST'] ) && isset( $_SERVER['REQUEST_URI'] ) ? rawurlencode( 'http://' . sanitize_text_field( $_SERVER['HTTP_HOST'] ) . esc_url_raw( $_SERVER['REQUEST_URI'] ) ) : '';
 		}
 
 		switch ( $icon->social_share_type ) {
@@ -275,7 +275,7 @@ if ( count( $settings->social_icons ) > 0 ) {
 
 					<?php if ( 'icon-text' === $settings->share_view || 'text' === $settings->share_view ) { ?>
 						<div class="uabb-ss-button-text">
-								<div class="uabb-ss-button-title"><?php echo esc_attr( $share_title ); ?></div>
+								<div class="uabb-ss-button-title"><?php echo esc_html( $share_title ); ?></div>
 						</div>
 					<?php } ?>
 					</a>

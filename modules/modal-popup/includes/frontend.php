@@ -67,7 +67,7 @@
 		$image_alt  = isset( $image_data->alt ) ? $image_data->alt : '';
 		$img_src    = $settings->photo_src;
 		?>
-	<div class="uabb-modal-action uabb-trigger uabb-modal-photo-wrap" data-modal="<?php echo esc_attr( $id ); ?>"><img class="uabb-modal-photo" src="<?php echo esc_attr( $img_src ); ?>" alt="<?php echo esc_attr( $image_alt ); ?>"></div>
+	<div class="uabb-modal-action uabb-trigger uabb-modal-photo-wrap" data-modal="<?php echo esc_attr( $id ); ?>"><img class="uabb-modal-photo" src="<?php echo esc_url( $img_src ); ?>" alt="<?php echo esc_attr( $image_alt ); ?>"></div>
 	<?php } ?>
 <?php }if ( ( 'custom' === $settings->modal_on || 'automatic' === $settings->modal_on ) && FLBuilderModel::is_builder_active() ) { ?>
 	<div class="uabb-builder-msg" style="text-align: center;">

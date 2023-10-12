@@ -86,7 +86,7 @@ if ( ! class_exists( 'UABB_Plugin_Update' ) ) {
 			}
 
 			// Flush the rewrite rules.
-			flush_rewrite_rules();
+			flush_rewrite_rules(); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.flush_rewrite_rules_flush_rewrite_rules
 
 			do_action( 'uabb_update_version_after' );
 		}

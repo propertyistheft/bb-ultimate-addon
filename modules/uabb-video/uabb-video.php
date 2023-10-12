@@ -315,6 +315,14 @@ class UABBVideo extends FLBuilderModule {
 
 		$url .= ( empty( $params ) ) ? '?' : '&';
 
+		$regexp = '/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i';
+
+		$is_mobile = isset( $_SERVER['HTTP_USER_AGENT'] ) ? preg_match( $regexp, sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ) ) : false; // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
+
+		if ( ! $is_mobile ) {
+			$url .= 'autoplay=1';
+		}
+
 		if ( 'vimeo' === $this->settings->video_type ) {
 			/**
 			 * Support Vimeo unlisted and private videos
@@ -437,12 +445,12 @@ class UABBVideo extends FLBuilderModule {
 				<div class="uabb-vimeo-headers">
 					<?php if ( 'yes' === $this->settings->vimeo_title ) { ?>
 						<div class="uabb-vimeo-title">
-							<a href="<?php $this->settings->vimeo_link; ?>"><?php echo esc_attr( $vimeo[0]['title'] ); ?></a>
+							<a href="<?php $this->settings->vimeo_link; ?>"><?php echo esc_html( $vimeo[0]['title'] ); ?></a>
 						</div>
 					<?php } ?>
 					<?php if ( 'yes' === $this->settings->vimeo_byline ) { ?>
 						<div class="uabb-vimeo-byline">
-							<?php esc_attr_e( 'from ', 'uabb' ); ?> <a href="<?php $this->settings->vimeo_link; ?>"><?php echo esc_attr( $vimeo[0]['user_name'] ); ?></a>
+							<?php esc_attr_e( 'from ', 'uabb' ); ?> <a href="<?php $this->settings->vimeo_link; ?>"><?php echo esc_html( $vimeo[0]['user_name'] ); ?></a>
 						</div>
 					<?php } ?>
 				</div>
@@ -556,7 +564,7 @@ class UABBVideo extends FLBuilderModule {
 			}
 			?>
 			<?php if ( 'hosted' === $this->settings->video_type && empty( $video_url ) ) { ?>
-			<span class='uabb-hosted-error-message'><?php echo esc_attr__( 'Please choose a file.', 'uabb' ); ?></span>
+			<span class='uabb-hosted-error-message'><?php echo esc_html__( 'Please choose a file.', 'uabb' ); ?></span>
 		<?php } else { ?>
 			<div class="uabb-video__outer-wrap <?php echo ( 'yes' === $this->settings->sticky_info_bar_enable ) ? 'uabb-sticky-infobar-wrap' : ''; ?> <?php echo ( 'hosted' === $this->settings->video_type ) ? 'uabb-video-type-hosted' : ''; ?>" data-autoplay="<?php echo esc_attr( $autoplay ); ?>" data-device="<?php echo esc_attr( $device ); ?>" <?php echo ( 'hosted' === $this->settings->video_type ) ? 'data-html="' . esc_attr( $video_html ) . '"' : ''; ?>>
 				<?php $this->get_header_wrap( $id ); ?>

@@ -107,8 +107,8 @@ class UABBWooProductsModule extends FLBuilderModule {
 
 		ob_start();
 
-		if ( wp_verify_nonce( $_POST['security'], 'uabb-woo-nonce' ) ) {
-			$this->settings = (object) $_POST['settings'];
+		if ( isset( $_POST['security'] ) && wp_verify_nonce( sanitize_text_field( $_POST['security'] ), 'uabb-woo-nonce' ) ) {
+			$this->settings = isset( $_POST['settings'] ) ? (object) array_map( 'sanitize_text_field', $_POST['settings'] ) : null;
 
 			add_filter( 'fl_builder_loop_query_args', array( $this, 'loop_query_args' ), 10, 1 );
 
@@ -135,12 +135,12 @@ class UABBWooProductsModule extends FLBuilderModule {
 	 * @access public
 	 * @param array $args page numbers.
 	 */
-	public function loop_query_args( $args ) {
+	public function loop_query_args( $args ) { // phpcs:ignore WordPressVIPMinimum.Hooks.AlwaysReturnInFilter.MissingReturnStatement
 
-		if ( isset( $_POST['security'] ) && wp_verify_nonce( $_POST['security'], 'uabb-woo-nonce' ) ) {
+		if ( isset( $_POST['security'] ) && wp_verify_nonce( sanitize_text_field( $_POST['security'] ), 'uabb-woo-nonce' ) ) {
 			if ( isset( $_POST['page_number'] ) && '' !== $_POST['page_number'] ) {
-				$args['paged']  = $_POST['page_number'];
-				$args['offset'] = ( ( $_POST['page_number'] - 1 ) * $this->settings->posts_per_page );
+				$args['paged']  = sanitize_text_field( $_POST['page_number'] );
+				$args['offset'] = ( ( sanitize_text_field( $_POST['page_number'] ) - 1 ) * $this->settings->posts_per_page );
 			}
 			return $args;
 		}
@@ -278,9 +278,9 @@ class UABBWooProductsModule extends FLBuilderModule {
 			'post__not_in'   => array(),
 		);
 
-		if ( isset( $_POST['security'] ) && wp_verify_nonce( $_POST['security'], 'uabb-woo-nonce' ) ) {
+		if ( isset( $_POST['security'] ) && wp_verify_nonce( sanitize_text_field( $_POST['security'] ), 'uabb-woo-nonce' ) ) {
 			if ( isset( $_POST['page_number'] ) && '' !== $_POST['page_number'] ) {
-				$query_args['paged'] = $_POST['page_number'];
+				$query_args['paged'] = sanitize_text_field( $_POST['page_number'] );
 			}
 		}
 
@@ -337,9 +337,9 @@ class UABBWooProductsModule extends FLBuilderModule {
 			// Pagination.
 			if ( 0 < $settings->grid_products && '' !== $settings->pagination_type ) {
 				$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-				if ( isset( $_POST['security'] ) && wp_verify_nonce( $_POST['security'], 'uabb-woo-nonce' ) ) {
+				if ( isset( $_POST['security'] ) && wp_verify_nonce( sanitize_text_field( $_POST['security'] ), 'uabb-woo-nonce' ) ) {
 					if ( isset( $_POST['page_number'] ) && '' !== $_POST['page_number'] ) {
-						$paged = $_POST['page_number'];
+						$paged = sanitize_text_field( $_POST['page_number'] );
 					}
 				}
 				$woocommerce_loop['paged']        = $paged;
@@ -493,9 +493,9 @@ class UABBWooProductsModule extends FLBuilderModule {
 			$permalink_structure = get_option( 'permalink_structure' );
 			$paged               = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : '1';
 
-			if ( isset( $_POST['security'] ) && wp_verify_nonce( $_POST['security'], 'uabb-woo-nonce' ) ) {
+			if ( isset( $_POST['security'] ) && wp_verify_nonce( sanitize_text_field( $_POST['security'] ), 'uabb-woo-nonce' ) ) {
 				if ( isset( $_POST['page_number'] ) && '' !== $_POST['page_number'] ) {
-					$paged = $_POST['page_number'];
+					$paged = sanitize_text_field( $_POST['page_number'] );
 				}
 			}
 			$base = wp_specialchars_decode( get_pagenum_link() );
@@ -723,7 +723,7 @@ class UABBWooProductsModule extends FLBuilderModule {
 	 */
 	public function add_cart_single_product_ajax() {
 		add_filter( 'nonce_user_logged_out', array( $this, 'filter_nonce_user_logged_out' ) );
-		if ( isset( $_POST['security'] ) && wp_verify_nonce( $_POST['security'], 'uabb-woo-nonce' ) ) {
+		if ( isset( $_POST['security'] ) && wp_verify_nonce( sanitize_text_field( $_POST['security'] ), 'uabb-woo-nonce' ) ) {
 			$product_id   = isset( $_POST['product_id'] ) ? sanitize_text_field( $_POST['product_id'] ) : 0;
 			$variation_id = isset( $_POST['variation_id'] ) ? sanitize_text_field( $_POST['variation_id'] ) : 0;
 			$quantity     = isset( $_POST['quantity'] ) ? sanitize_text_field( $_POST['quantity'] ) : 0;

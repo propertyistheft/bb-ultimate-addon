@@ -16,12 +16,12 @@ if ( defined( 'FL_BUILDER_VERSION' ) ) {
 	if ( version_compare( $ver1, $ver2 ) < 0 ) {
 		?>
 	<div class='uabb-mailchimp-version-error'>
-		<span><?php esc_attr_e( 'Subscribe Form requires Beaver Builder versions above 1.8.4. Make sure you use latest Beaver Builder to view best results.', 'uabb' ); ?></span>.
+		<span><?php esc_html_e( 'Subscribe Form requires Beaver Builder versions above 1.8.4. Make sure you use latest Beaver Builder to view best results.', 'uabb' ); ?></span>.
 	</div>
 		<?php
 	} else {
 		?>
-		<div class="uabb-module-content uabb-subscribe-form uabb-subscribe-form-<?php echo esc_attr( $settings->layout ); ?> uabb-sf-style-<?php echo esc_attr( $settings->form_style ); ?> uabb-form fl-clearfix" 
+		<div class="uabb-module-content uabb-subscribe-form uabb-subscribe-form-<?php echo esc_attr( $settings->layout ); ?> uabb-sf-style-<?php echo esc_attr( $settings->form_style ); ?> uabb-form fl-clearfix"
 																					<?php
 																					if ( isset( $module->template_id ) ) {
 																						echo 'data-template-id="' . esc_attr( $module->template_id ) . '" data-template-node-id="' . esc_attr( $module->template_node_id ) . '"';}
@@ -51,7 +51,7 @@ if ( defined( 'FL_BUILDER_VERSION' ) ) {
 					}
 					?>
 					<div class="uabb-form-error-message">!</div>
-				</div><?php endif; ?><!-- Inline Block Space Fix 
+				</div><?php endif; ?><!-- Inline Block Space Fix
 
 				-->
 				<?php
@@ -79,7 +79,7 @@ if ( defined( 'FL_BUILDER_VERSION' ) ) {
 					}
 					?>
 					<div class="uabb-form-error-message">!</div>
-				</div><!-- Inline Block Space Fix	
+				</div><!-- Inline Block Space Fix
 				--><?php if ( 'stacked' === $settings->layout ) : ?>
 					<?php if ( 'show' === $settings->terms_checkbox ) : ?>
 						<div class="uabb-form-field uabb-input-group uabb-terms-checkbox">
@@ -97,7 +97,7 @@ if ( defined( 'FL_BUILDER_VERSION' ) ) {
 							</div>
 						</div>
 					<?php endif; ?>
-				<?php endif; ?><!-- Inline Block Space Fix	
+				<?php endif; ?><!-- Inline Block Space Fix
 				--><div class="uabb-form-button" data-wait-text="<?php echo $settings->btn_processing_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
 				<?php
 				$resp_overall_alignment = 'default' !== $settings->resp_overall_alignment ? $settings->resp_overall_alignment : $settings->overall_alignment;

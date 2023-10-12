@@ -47,7 +47,7 @@ final class UABBBuilderMultisiteSettings {
 	 */
 	public static function admin_init() {
 
-		if ( is_network_admin() && isset( $_REQUEST['page'] ) && 'uabb-builder-multisite-settings' === $_REQUEST['page'] && wp_verify_nonce( $_REQUEST['uabb_setting_nonce'], 'uabb_setting_nonce' ) ) {
+		if ( is_network_admin() && isset( $_REQUEST['page'] ) && 'uabb-builder-multisite-settings' === $_REQUEST['page'] && isset( $_REQUEST['uabb_setting_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['uabb_setting_nonce'] ), 'uabb_setting_nonce' ) ) {
 			add_action( 'admin_enqueue_scripts', 'UABBBuilderAdminSettings::styles_scripts' );
 			UABBBuilderAdminSettings::save();
 		}

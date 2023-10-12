@@ -348,7 +348,7 @@ class UABBWooCategoriesModule extends FLBuilderModule {
 			'pad_counts' => true,
 			'child_of'   => $atts['parent'],
 			'include'    => $include_ids,
-			'exclude'    => $exclude_ids,
+			'exclude'    => $exclude_ids, // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 		);
 
 		$product_categories = get_terms( 'product_cat', $args );
@@ -438,7 +438,7 @@ class UABBWooCategoriesModule extends FLBuilderModule {
 	 * @param object $category Category object.
 	 */
 	public function template_loop_category_link_open( $category ) {
-		$link = apply_filters( 'uabb_woo_category_link', esc_url( get_term_link( $category, 'product_cat' ) ) );
+		$link = apply_filters( 'uabb_woo_category_link', esc_url( get_term_link( $category, 'product_cat' ) ) ); // phpcs:ignore WordPressVIPMinimum.Functions.CheckReturnValue.DirectFunctionCall
 
 		echo '<a href="' . esc_url( $link ) . '">';
 	}

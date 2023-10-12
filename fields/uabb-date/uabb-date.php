@@ -71,14 +71,14 @@ if ( ! class_exists( 'UABB_Date_Field' ) ) {
 				if ( $i <= 9 ) {
 					echo '<option value="' . esc_attr( $i ) . '" ' . esc_attr( $selected ) . '>0' . esc_attr( $i ) . '</option>';
 				} else {
-					echo '<option value="' . esc_attr( $i ) . '" ' . esc_attr( $selected ) . '>' . esc_attr( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_attr( $selected ) . '>' . esc_html( $i ) . '</option>';
 				}
 			}
 
-			echo '</select></br><label>' . esc_attr__( 'Date', 'uabb' ) . '</label></div>';
+			echo '</select></br><label>' . esc_html__( 'Date', 'uabb' ) . '</label></div>';
 
 			echo '<div class="uabb-countdown-custom-fields"><select class="text text-full" name="' . esc_attr( $name ) . '_month" >';
-			echo '<option value="0">' . esc_attr__( 'Month', 'uabb' ) . '</option>';
+			echo '<option value="0">' . esc_html__( 'Month', 'uabb' ) . '</option>';
 			echo '<option value="01" ' . ( ( isset( $settings->fixed_date_month ) && '01' === $settings->fixed_date_month ) ? 'selected' : '' ) . ' >Jan</option>';
 			echo '<option value="02" ' . ( ( isset( $settings->fixed_date_month ) && '02' === $settings->fixed_date_month ) ? 'selected' : '' ) . ' >Feb</option>';
 			echo '<option value="03" ' . ( ( isset( $settings->fixed_date_month ) && '03' === $settings->fixed_date_month ) ? 'selected' : '' ) . ' >Mar</option>';
@@ -91,10 +91,10 @@ if ( ! class_exists( 'UABB_Date_Field' ) ) {
 			echo '<option value="10" ' . ( ( isset( $settings->fixed_date_month ) && '10' === $settings->fixed_date_month ) ? 'selected' : '' ) . ' >Oct</option>';
 			echo '<option value="11" ' . ( ( isset( $settings->fixed_date_month ) && '11' === $settings->fixed_date_month ) ? 'selected' : '' ) . ' >Nov</option>';
 			echo '<option value="12" ' . ( ( isset( $settings->fixed_date_month ) && '12' === $settings->fixed_date_month ) ? 'selected' : '' ) . ' >Dec</option>';
-			echo '</select></br><label>' . esc_attr__( 'Months', 'uabb' ) . '</label></div>';
+			echo '</select></br><label>' . esc_html__( 'Months', 'uabb' ) . '</label></div>';
 
 			echo '<div class="uabb-countdown-custom-fields"><select class="text text-full" name="' . esc_attr( $name ) . '_year" >';
-			echo '<option value="0">' . esc_attr__( 'Year', 'uabb' ) . '</option>';
+			echo '<option value="0">' . esc_html__( 'Year', 'uabb' ) . '</option>';
 			for ( $i = date( 'Y' ); $i < date( 'Y' ) + 6; $i++ ) { // @codingStandardsIgnoreLine.  ( WordPress.DateTime.RestrictedFunctions.date_date , Generic.CodeAnalysis.ForLoopWithTestFunctionCall.NotAllowed )
 					$selected = '';
 				if ( isset( $settings->fixed_date_year ) ) {
@@ -106,10 +106,10 @@ if ( ! class_exists( 'UABB_Date_Field' ) ) {
 				} elseif ( date( 'Y' ) + 5 === $i ) { //phpcs:ignore WordPress.DateTime.RestrictedFunctions.date_date
 					$selected = 'selected';
 				}
-					echo '<option value="' . esc_html( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
 			}
 					echo '</select></br><label>' . esc_html__( 'Years', 'uabb' ) . '</label></div>';
-					echo '<div class="uabb-countdown-custom-fields"><select class="text text-full" name="' . esc_html( $name ) . '_hour" >';
+					echo '<div class="uabb-countdown-custom-fields"><select class="text text-full" name="' . esc_attr( $name ) . '_hour" >';
 					echo '<option value="0">' . esc_html__( 'Hour', 'uabb' ) . '</option>';
 			for ( $i = 0; $i < 24; $i++ ) {
 				$selected = '';
@@ -124,13 +124,13 @@ if ( ! class_exists( 'UABB_Date_Field' ) ) {
 				}
 
 				if ( $i <= 9 ) {
-					echo '<option value="' . esc_html( $i ) . '" ' . esc_html( $selected ) . '>0' . esc_html( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_html( $selected ) . '>0' . esc_html( $i ) . '</option>';
 				} else {
-					echo '<option value="' . esc_html( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
 				}
 			}
 					echo '</select></br><label>' . esc_html__( 'Hours', 'uabb' ) . '</label></div>';
-					echo '<div class="uabb-countdown-custom-fields"><select class="text text-full" name="' . esc_html( $name ) . '_minutes" >';
+					echo '<div class="uabb-countdown-custom-fields"><select class="text text-full" name="' . esc_attr( $name ) . '_minutes" >';
 					echo '<option value="0">' . esc_html__( 'Minutes', 'uabb' ) . '</option>';
 			for ( $i = 0; $i < 60; $i++ ) {
 				$selected = '';
@@ -145,9 +145,9 @@ if ( ! class_exists( 'UABB_Date_Field' ) ) {
 				}
 
 				if ( $i <= 9 ) {
-					echo '<option value="' . esc_html( $i ) . '" ' . esc_html( $selected ) . '>0' . esc_html( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_html( $selected ) . '>0' . esc_html( $i ) . '</option>';
 				} else {
-					echo '<option value="' . esc_html( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
 				}
 			}
 					echo '</select></br><label>' . esc_html__( 'Minutes', 'uabb' ) . '</label></div><div>';
@@ -169,7 +169,7 @@ if ( ! class_exists( 'UABB_Date_Field' ) ) {
 			$preview      = isset( $field['preview'] ) ? wp_json_encode( $field['preview'] ) : wp_json_encode( array( 'type' => 'refresh' ) );
 
 			echo '<div class="fl-field uabb-evergreen-wrap" data-type="select" data-preview=\'' . esc_attr( $preview ) . '\'><div class="uabb-countdown-custom-fields"><select class="text text-full" name="' . esc_attr( $name ) . '_days" >';
-			echo '<option value="0">' . esc_attr__( 'Days', 'uabb' ) . '</option>';
+			echo '<option value="0">' . esc_html__( 'Days', 'uabb' ) . '</option>';
 			for ( $i = 0; $i <= 31; $i++ ) {
 				if ( isset( $settings->evergreen_date_days ) ) {
 					if ( $i === $settings->evergreen_date_days ) {
@@ -181,9 +181,9 @@ if ( ! class_exists( 'UABB_Date_Field' ) ) {
 					$selected = 'selected';
 				}
 				if ( $i <= 9 ) {
-					echo '<option value="' . esc_html( $i ) . '" ' . esc_html( $selected ) . '>0' . esc_html( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_html( $selected ) . '>0' . esc_html( $i ) . '</option>';
 				} else {
-					echo '<option value="' . esc_html( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
 				}
 			}
 			echo '</select></br><label>' . esc_html__( 'Days', 'uabb' ) . '</label></div>';
@@ -201,13 +201,13 @@ if ( ! class_exists( 'UABB_Date_Field' ) ) {
 					$selected = 'selected';
 				}
 				if ( $i <= 9 ) {
-					echo '<option value="' . esc_html( $i ) . '" ' . esc_html( $selected ) . '>0' . esc_html( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_html( $selected ) . '>0' . esc_html( $i ) . '</option>';
 				} else {
-					echo '<option value="' . esc_html( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
 				}
 			}
 					echo '</select></br><label>' . esc_html__( 'Hours', 'uabb' ) . '</label></div>';
-					echo '<div class="uabb-countdown-custom-fields"><select class="text text-full" name="' . esc_html( $name ) . '_minutes" >';
+					echo '<div class="uabb-countdown-custom-fields"><select class="text text-full" name="' . esc_attr( $name ) . '_minutes" >';
 					echo '<option value="0">' . esc_html__( 'Minutes', 'uabb' ) . '</option>';
 			for ( $i = 0; $i < 60; $i++ ) {
 				if ( isset( $settings->evergreen_date_minutes ) ) {
@@ -221,13 +221,13 @@ if ( ! class_exists( 'UABB_Date_Field' ) ) {
 				}
 
 				if ( $i <= 9 ) {
-					echo '<option value="' . esc_html( $i ) . '" ' . esc_html( $selected ) . '>0' . esc_html( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_html( $selected ) . '>0' . esc_html( $i ) . '</option>';
 				} else {
-					echo '<option value="' . esc_html( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
 				}
 			}
-					echo '</select></br><label>' . esc_attr__( 'Minutes', 'uabb' ) . '</label></div>';
-					echo '<div class="uabb-countdown-custom-fields"><select class="text text-full" name="' . esc_html( $name ) . '_seconds" >';
+					echo '</select></br><label>' . esc_html__( 'Minutes', 'uabb' ) . '</label></div>';
+					echo '<div class="uabb-countdown-custom-fields"><select class="text text-full" name="' . esc_attr( $name ) . '_seconds" >';
 					echo '<option value="0">' . esc_html__( 'Seconds', 'uabb' ) . '</option>';
 			for ( $i = 0; $i < 60; $i++ ) {
 				if ( isset( $settings->evergreen_date_seconds ) ) {
@@ -240,9 +240,9 @@ if ( ! class_exists( 'UABB_Date_Field' ) ) {
 					$selected = 'selected';
 				}
 				if ( $i <= 9 ) {
-					echo '<option value="' . esc_html( $i ) . '" ' . esc_html( $selected ) . '>0' . esc_html( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_html( $selected ) . '>0' . esc_html( $i ) . '</option>';
 				} else {
-					echo '<option value="' . esc_html( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
+					echo '<option value="' . esc_attr( $i ) . '" ' . esc_html( $selected ) . '>' . esc_html( $i ) . '</option>';
 				}
 			}
 					echo '</select></br><label>' . esc_html__( 'Seconds', 'uabb' ) . '</label></div></div>';

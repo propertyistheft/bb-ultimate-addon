@@ -500,7 +500,7 @@ class iHoverModule extends FLBuilderModule { // @codingStandardsIgnoreLine.
 		if ( isset( $this->settings->ihover_item[ $i ]->photo_src ) ) {
 			$photo_data = FLBuilderPhoto::get_attachment_data( $this->settings->ihover_item[ $i ]->photo );
 			$alt        = ( isset( $photo_data->alt ) ) ? $photo_data->alt : '';
-			echo '<img src="' . esc_attr( $this->settings->ihover_item[ $i ]->photo_src ) . '" alt="' . esc_attr( $alt ) . '" class="uabb-ih-image">';
+			echo '<img src="' . esc_url( $this->settings->ihover_item[ $i ]->photo_src ) . '" alt="' . esc_attr( $alt ) . '" class="uabb-ih-image">';
 		}
 	}
 }

@@ -114,7 +114,7 @@ class ModalPopupModule extends FLBuilderModule {
 				}
 				return '<img src="" />';
 			case 'video':
-				global $wp_embed;
+				global $wp_embed; // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.VariableRedeclaration
 				return $wp_embed->autoembed( $settings->ct_video );
 			case 'iframe':
 				if ( 'yes' === $this->settings->async_iframe ) {

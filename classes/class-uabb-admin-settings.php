@@ -56,7 +56,7 @@ final class UABBBuilderAdminSettings {
 	 * @return void
 	 */
 	public static function render_styles() {
-		if ( isset( $_GET['page'] ) && isset( $_REQUEST['uabb_setting_nonce'] ) && wp_verify_nonce( $_REQUEST['uabb_setting_nonce'], 'uabb_setting_nonce' ) && 'uabb-builder-settings' === $_GET['page'] ) {
+		if ( isset( $_GET['page'] ) && isset( $_REQUEST['uabb_setting_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['uabb_setting_nonce'] ), 'uabb_setting_nonce' ) && 'uabb-builder-settings' === $_GET['page'] ) {
 			add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles_scripts' );
 			self::save();
 			self::api_key_authenticate();
@@ -76,11 +76,11 @@ final class UABBBuilderAdminSettings {
 
 		$status = array();
 
-		if ( isset( $_POST['fl-uabb-nonce'] ) && wp_verify_nonce( $_POST['fl-uabb-nonce'], 'uabb' ) ) {
+		if ( isset( $_POST['fl-uabb-nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['fl-uabb-nonce'] ), 'uabb' ) ) {
 
 			if ( isset( $_POST['uabb-google-place-api'] ) && ! empty( $_POST['uabb-google-place-api'] ) ) {
 
-				$api_key = $_POST['uabb-google-place-api'];
+				$api_key = sanitize_text_field( $_POST['uabb-google-place-api'] );
 
 				$place_id = 'ChIJq6qqat2_wjsR4Rri4i22ap4';
 
@@ -125,7 +125,7 @@ final class UABBBuilderAdminSettings {
 			}
 			if ( isset( $_POST['uabb-yelp-api-key'] ) && ! empty( $_POST['uabb-yelp-api-key'] ) ) {
 
-				$yelp_api_key = $_POST['uabb-yelp-api-key'];
+				$yelp_api_key = sanitize_text_field( $_POST['uabb-yelp-api-key'] );
 
 				$business_id = 'ling-ho-chinese-cuisine-los-angeles';
 
@@ -178,7 +178,7 @@ final class UABBBuilderAdminSettings {
 			$param2 = '%_uabb_reviews_%';
 			$param3 = '%\_transient\_timeout%';
 
-			$transients = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$wpdb->options} WHERE option_name LIKE %s AND option_name LIKE %s AND option_name NOT LIKE %s", $param1, $param2, $param3 ) );
+			$transients = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$wpdb->options} WHERE option_name LIKE %s AND option_name LIKE %s AND option_name NOT LIKE %s", $param1, $param2, $param3 ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 
 			foreach ( $transients as $transient ) {
 
@@ -314,7 +314,7 @@ final class UABBBuilderAdminSettings {
 	 */
 	public static function render_page_heading() {
 		if ( ! empty( $icon ) ) {
-			echo '<img src="' . esc_attr( $icon ) . '" />';
+			echo '<img src="' . esc_url( $icon ) . '" />';
 		}
 		echo wp_kses_post( '<span>' . sprintf( /* translators: %s: search term */ _x( '%s Settings', '%s stands for custom branded "UABB" name.', 'uabb' ), UABB_PREFIX ) . '</span>' );
 	}
@@ -329,9 +329,9 @@ final class UABBBuilderAdminSettings {
 
 		if ( ! empty( self::$errors ) ) {
 			foreach ( self::$errors as $message ) {
-				echo '<div class="error"><p>' . esc_attr( $message ) . '</p></div>';
+				echo '<div class="error"><p>' . esc_html( $message ) . '</p></div>';
 			}
-		} elseif ( isset( $_REQUEST['uabb_setting_nonce'] ) && wp_verify_nonce( $_REQUEST['uabb_setting_nonce'], 'uabb_setting_nonce' ) && ! empty( $_POST ) && ! isset( $_POST['email'] ) ) {
+		} elseif ( isset( $_REQUEST['uabb_setting_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['uabb_setting_nonce'] ), 'uabb_setting_nonce' ) && ! empty( $_POST ) && ! isset( $_POST['email'] ) ) {
 			echo wp_kses_post( '<div class="updated"><p>' ) . esc_attr( __( 'Settings updated!', 'uabb' ) ) . wp_kses_post( '</p></div>' );
 		}
 	}
@@ -406,7 +406,7 @@ final class UABBBuilderAdminSettings {
 
 		foreach ( $sorted_data as $data ) {
 			if ( $data['show'] ) {
-				echo '<li><a href="#' . esc_attr( $data['key'] ) . '">' . esc_attr( $data['title'] ) . '</a></li>';
+				echo '<li><a href="#' . esc_attr( $data['key'] ) . '">' . esc_html( $data['title'] ) . '</a></li>';
 			}
 		}
 
@@ -524,7 +524,7 @@ final class UABBBuilderAdminSettings {
 			return;
 		}
 
-		if ( isset( $_POST['fl-uabb-nonce'] ) && wp_verify_nonce( $_POST['fl-uabb-nonce'], 'uabb' ) ) {
+		if ( isset( $_POST['fl-uabb-nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['fl-uabb-nonce'] ), 'uabb' ) ) {
 
 			$uabb = UABB_Init::$uabb_options['fl_builder_uabb'];
 
@@ -532,20 +532,20 @@ final class UABBBuilderAdminSettings {
 			isset( $_POST['uabb-live-preview'] ) ? $uabb['uabb-live-preview'] = true : $uabb['uabb-live-preview'] = false;
 			isset( $_POST['uabb-load-templates'] ) ? $uabb['load_templates']  = true : $uabb['load_templates'] = false;
 			if ( isset( $_POST['uabb-google-map-api'] ) ) {
-				$uabb['uabb-google-map-api'] = $_POST['uabb-google-map-api'];
+				$uabb['uabb-google-map-api'] = sanitize_text_field( $_POST['uabb-google-map-api'] );
 			}
 			isset( $_POST['uabb-enable-beta-updates'] ) ? $uabb['uabb-enable-beta-updates'] = true : $uabb['uabb-enable-beta-updates'] = false;
 			if ( isset( $_POST['uabb-yelp-api-key'] ) ) {
-				$uabb['uabb-yelp-api-key'] = $_POST['uabb-yelp-api-key'];
+				$uabb['uabb-yelp-api-key'] = sanitize_text_field( $_POST['uabb-yelp-api-key'] );
 			}
 			if ( isset( $_POST['uabb-google-place-api'] ) ) {
-				$uabb['uabb-google-place-api'] = $_POST['uabb-google-place-api'];
+				$uabb['uabb-google-place-api'] = sanitize_text_field( $_POST['uabb-google-place-api'] );
 			}
 
 			FLBuilderModel::update_admin_settings_option( '_fl_builder_uabb', $uabb, false );
 		}
 
-		if ( isset( $_POST['fl-uabb-branding-nonce'] ) && wp_verify_nonce( $_POST['fl-uabb-branding-nonce'], 'uabb-branding' ) ) {
+		if ( isset( $_POST['fl-uabb-branding-nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['fl-uabb-branding-nonce'] ), 'uabb-branding' ) ) {
 
 			if ( isset( $_POST['uabb-plugin-name'] ) ) {
 				$uabb['uabb-plugin-name'] = wp_kses_post( $_POST['uabb-plugin-name'] ); }
@@ -597,7 +597,7 @@ final class UABBBuilderAdminSettings {
 			FLBuilderModel::update_admin_settings_option( '_fl_builder_uabb_branding', $uabb, false );
 		}
 
-		if ( isset( $_POST['fl-uabb-modules-nonce'] ) && wp_verify_nonce( $_POST['fl-uabb-modules-nonce'], 'uabb-modules' ) ) {
+		if ( isset( $_POST['fl-uabb-modules-nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['fl-uabb-modules-nonce'] ), 'uabb-modules' ) ) {
 			$modules = array();
 
 			$modules_array = BB_Ultimate_Addon_Helper::get_all_modules();
@@ -632,7 +632,7 @@ final class UABBBuilderAdminSettings {
 			FLBuilderModel::update_admin_settings_option( '_fl_builder_uabb', $uabb, false );
 			FLBuilderModel::update_admin_settings_option( '_fl_builder_uabb_modules', $modules, false );
 		}
-		if ( isset( $_POST['fl-uabb-social-nonce'] ) && wp_verify_nonce( $_POST['fl-uabb-social-nonce'], 'uabb' ) ) {
+		if ( isset( $_POST['fl-uabb-social-nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['fl-uabb-social-nonce'] ), 'uabb' ) ) {
 
 			$uabb = UABB_Init::$uabb_options['fl_builder_uabb'];
 
@@ -641,7 +641,7 @@ final class UABBBuilderAdminSettings {
 			}
 
 			if ( isset( $_POST['uabb-social-google-redirect-url'] ) ) {
-				$uabb['uabb-social-google-redirect-url'] = esc_url( $_POST['uabb-social-google-redirect-url'] );
+				$uabb['uabb-social-google-redirect-url'] = esc_url_raw( $_POST['uabb-social-google-redirect-url'] );
 			}
 			if ( isset( $_POST['uabb-social-facebook-app-id'] ) ) {
 				$uabb['uabb-social-facebook-app-id'] = sanitize_text_field( $_POST['uabb-social-facebook-app-id'] );
@@ -650,7 +650,7 @@ final class UABBBuilderAdminSettings {
 				$uabb['uabb-social-facebook-app-secret'] = sanitize_text_field( $_POST['uabb-social-facebook-app-secret'] );
 			}
 			if ( isset( $_POST['uabb-social-facebook-redirect-url'] ) ) {
-				$uabb['uabb-social-facebook-redirect-url'] = esc_url( $_POST['uabb-social-facebook-redirect-url'] );
+				$uabb['uabb-social-facebook-redirect-url'] = esc_url_raw( $_POST['uabb-social-facebook-redirect-url'] );
 			}
 
 			FLBuilderModel::update_admin_settings_option( '_fl_builder_uabb', $uabb, false );

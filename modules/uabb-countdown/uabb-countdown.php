@@ -54,7 +54,7 @@ class UABBCountdownModule extends FLBuilderModule {
 
 		ob_start();
 
-		?><div class="uabb-countdown-holding <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-digit-wrapper <?php echo esc_attr( $this->settings->timer_style ); ?>"><<?php echo esc_attr( $this->settings->digit_tag_selection ); ?> class="uabb-count-down-digit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_attr( $str1 ); ?></<?php echo esc_attr( $this->settings->digit_tag_selection ); ?>></div><div class="uabb-countdown-unit-names"><<?php echo esc_attr( $this->settings->unit_tag_selection ); ?> class="uabb-count-down-unit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_attr( $str2 ); ?></<?php echo esc_attr( $this->settings->unit_tag_selection ); ?>></div></div>
+		?><div class="uabb-countdown-holding <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-digit-wrapper <?php echo esc_attr( $this->settings->timer_style ); ?>"><<?php echo esc_attr( $this->settings->digit_tag_selection ); ?> class="uabb-count-down-digit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_html( $str1 ); ?></<?php echo esc_attr( $this->settings->digit_tag_selection ); ?>></div><div class="uabb-countdown-unit-names"><<?php echo esc_attr( $this->settings->unit_tag_selection ); ?> class="uabb-count-down-unit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_html( $str2 ); ?></<?php echo esc_attr( $this->settings->unit_tag_selection ); ?>></div></div>
 		<?php
 
 		$html = ob_get_contents();
@@ -75,7 +75,7 @@ class UABBCountdownModule extends FLBuilderModule {
 		ob_start();
 
 		?>
-		<div class="uabb-countdown-holding <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-digit-wrapper <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-unit-names"><<?php echo esc_attr( $this->settings->unit_tag_selection ); ?> class="uabb-count-down-unit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_attr( $str2 ); ?></<?php echo esc_attr( $this->settings->unit_tag_selection ); ?>></div><<?php echo esc_attr( $this->settings->digit_tag_selection ); ?> class="uabb-count-down-digit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_attr( $str1 ); ?></<?php echo esc_attr( $this->settings->digit_tag_selection ); ?>></div><?php echo esc_attr( $str3 ); ?></div>
+		<div class="uabb-countdown-holding <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-digit-wrapper <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-unit-names"><<?php echo esc_attr( $this->settings->unit_tag_selection ); ?> class="uabb-count-down-unit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_html( $str2 ); ?></<?php echo esc_attr( $this->settings->unit_tag_selection ); ?>></div><<?php echo esc_attr( $this->settings->digit_tag_selection ); ?> class="uabb-count-down-digit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_html( $str1 ); ?></<?php echo esc_attr( $this->settings->digit_tag_selection ); ?>></div><?php echo esc_html( $str3 ); ?></div>
 
 		<?php
 		$html = ob_get_contents();
@@ -96,7 +96,7 @@ class UABBCountdownModule extends FLBuilderModule {
 		ob_start();
 
 		?>
-		<div class="uabb-countdown-holding <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-digit-wrapper <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-digit-content"><<?php echo esc_attr( $this->settings->digit_tag_selection ); ?> class="uabb-count-down-digit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_attr( $str1 ); ?></<?php echo esc_attr( $this->settings->digit_tag_selection ); ?>></div><div class="uabb-countdown-unit-names"><<?php echo esc_attr( $this->settings->unit_tag_selection ); ?> class="uabb-count-down-unit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_attr( $str2 ); ?></<?php echo esc_attr( $this->settings->unit_tag_selection ); ?>></div></div><?php echo esc_attr( $str3 ); ?></div>
+		<div class="uabb-countdown-holding <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-digit-wrapper <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-digit-content"><<?php echo esc_attr( $this->settings->digit_tag_selection ); ?> class="uabb-count-down-digit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_html( $str1 ); ?></<?php echo esc_attr( $this->settings->digit_tag_selection ); ?>></div><div class="uabb-countdown-unit-names"><<?php echo esc_attr( $this->settings->unit_tag_selection ); ?> class="uabb-count-down-unit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_html( $str2 ); ?></<?php echo esc_attr( $this->settings->unit_tag_selection ); ?>></div></div><?php echo esc_html( $str3 ); ?></div>
 		<?php
 		$html = ob_get_contents();
 		$html = trim( $html );
@@ -116,7 +116,7 @@ class UABBCountdownModule extends FLBuilderModule {
 		ob_start();
 
 		?>
-		<div class="uabb-countdown-holding <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-digit-wrapper <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-unit-names"><<?php echo esc_attr( $this->settings->unit_tag_selection ); ?> class="uabb-count-down-unit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_attr( $str2 ); ?></<?php echo esc_attr( $this->settings->unit_tag_selection ); ?>></div><<?php echo esc_attr( $this->settings->digit_tag_selection ); ?> class="uabb-count-down-digit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_attr( $str1 ); ?></<?php echo esc_attr( $this->settings->digit_tag_selection ); ?>></div><?php echo esc_attr( $str3 ); ?></div>
+		<div class="uabb-countdown-holding <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-digit-wrapper <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-unit-names"><<?php echo esc_attr( $this->settings->unit_tag_selection ); ?> class="uabb-count-down-unit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_html( $str2 ); ?></<?php echo esc_attr( $this->settings->unit_tag_selection ); ?>></div><<?php echo esc_attr( $this->settings->digit_tag_selection ); ?> class="uabb-count-down-digit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_html( $str1 ); ?></<?php echo esc_attr( $this->settings->digit_tag_selection ); ?>></div><?php echo esc_html( $str3 ); ?></div>
 		<?php
 
 		$html = ob_get_contents();
@@ -137,7 +137,7 @@ class UABBCountdownModule extends FLBuilderModule {
 		ob_start();
 
 		?>
-		<div class="uabb-countdown-holding <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-unit-names"><<?php echo esc_attr( $this->settings->unit_tag_selection ); ?> class="uabb-count-down-unit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_attr( $str2 ); ?></<?php echo esc_attr( $this->settings->unit_tag_selection ); ?>></div><div class="uabb-countdown-digit-wrapper <?php echo esc_attr( $this->settings->timer_style ); ?>"><<?php echo esc_attr( $this->settings->digit_tag_selection ); ?> class="uabb-count-down-digit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_attr( $str1 ); ?></<?php echo esc_attr( $this->settings->digit_tag_selection ); ?>></div><?php echo esc_attr( $str3 ); ?></div>
+		<div class="uabb-countdown-holding <?php echo esc_attr( $this->settings->timer_style ); ?>"><div class="uabb-countdown-unit-names"><<?php echo esc_attr( $this->settings->unit_tag_selection ); ?> class="uabb-count-down-unit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_html( $str2 ); ?></<?php echo esc_attr( $this->settings->unit_tag_selection ); ?>></div><div class="uabb-countdown-digit-wrapper <?php echo esc_attr( $this->settings->timer_style ); ?>"><<?php echo esc_attr( $this->settings->digit_tag_selection ); ?> class="uabb-count-down-digit <?php echo esc_attr( $this->settings->timer_style ); ?>"><?php echo esc_html( $str1 ); ?></<?php echo esc_attr( $this->settings->digit_tag_selection ); ?>></div><?php echo esc_html( $str3 ); ?></div>
 		<?php
 
 		$html = ob_get_contents();

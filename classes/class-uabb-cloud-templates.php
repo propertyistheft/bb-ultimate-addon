@@ -204,6 +204,9 @@ if ( ! class_exists( 'UABB_Cloud_Templates' ) ) {
 
 							$type_templates[ $key ]['status']        = ( isset( $downloaded_templates[ $type ][ $key ]['status'] ) ) ? $downloaded_templates[ $type ][ $key ]['status'] : '';
 							$type_templates[ $key ]['dat_url_local'] = ( isset( $downloaded_templates[ $type ][ $key ]['dat_url_local'] ) ) ? $downloaded_templates[ $type ][ $key ]['dat_url_local'] : '';
+							if ( '' !== $type_templates[ $key ]['dat_url_local'] && ! str_contains( $type_templates[ $key ]['dat_url_local'], 'uploads/bb-ultimate-addon/' ) ) {
+								$type_templates[ $key ]['dat_url_local'] = WP_CONTENT_DIR . '/uploads/bb-ultimate-addon/' . $type_templates[ $key ]['dat_url_local'];
+							}
 
 							/**
 							 *  Not found local template id in new templates
@@ -344,9 +347,9 @@ if ( ! class_exists( 'UABB_Cloud_Templates' ) ) {
 
 			check_ajax_referer( 'uabb_cloud_nonce', 'form_nonce' );
 			// Get template details.
-			$dat_file_id        = ( $_POST['dat_file_id'] ) ? sanitize_text_field( $_POST['dat_file_id'] ) : '';
-			$dat_url_local      = ( $_POST['dat_file_url_local'] ) ? sanitize_text_field( $_POST['dat_file_url_local'] ) : '';
-			$dat_file_type      = ( $_POST['dat_file_type'] ) ? $this->get_right_type_key( sanitize_text_field( $_POST['dat_file_type'] ) ) : '';
+			$dat_file_id        = isset( $_POST['dat_file_id'] ) ? sanitize_text_field( $_POST['dat_file_id'] ) : '';
+			$dat_url_local      = isset( $_POST['dat_file_url_local'] ) ? sanitize_text_field( $_POST['dat_file_url_local'] ) : '';
+			$dat_file_type      = isset( $_POST['dat_file_type'] ) ? $this->get_right_type_key( sanitize_text_field( $_POST['dat_file_type'] ) ) : '';
 			$templates          = get_site_option( '_uabb_cloud_templats', false );
 			$updatedstatus      = false;
 			$removeddatfile     = false;
@@ -376,7 +379,7 @@ if ( ! class_exists( 'UABB_Cloud_Templates' ) ) {
 					 */
 					$local_dat_file = ( isset( $templates[ $dat_file_type ][ $dat_file_id ]['dat_url_local'] ) ) ? $templates[ $dat_file_type ][ $dat_file_id ]['dat_url_local'] : '';
 					if ( ! empty( $local_dat_file ) && file_exists( $local_dat_file ) ) {
-						unlink( $local_dat_file );
+						unlink( $local_dat_file ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_unlink
 						$removeddatfile = true;
 					} else {
 						$msg[] = 'Not found [dat_url_local] for ID: ' . $dat_file_id;
@@ -467,9 +470,9 @@ if ( ! class_exists( 'UABB_Cloud_Templates' ) ) {
 			$dir_info = $this->create_local_dir();
 
 			// Get template details.
-			$dat_file_url                = $dir_info['url'] . basename( $_POST['dat_file'] );
+			$dat_file_url                = isset( $_POST['dat_file'] ) ? $dir_info['url'] . basename( sanitize_text_field( $_POST['dat_file'] ) ) : '';
 			$remote_file                 = ( isset( $_POST['dat_file'] ) ) ? esc_url_raw( $_POST['dat_file'] ) : '';
-			$local_file                  = trailingslashit( $dir_info['path'] ) . basename( $remote_file );
+			$local_file                  = basename( $remote_file );
 			$dat_file_id                 = ( isset( $_POST['dat_file_id'] ) ) ? sanitize_text_field( $_POST['dat_file_id'] ) : '';
 			$dat_file_type               = ( isset( $_POST['dat_file_type'] ) ) ? $this->get_right_type_key( sanitize_text_field( $_POST['dat_file_type'] ) ) : '';
 			$ajaxresult['id']            = $dat_file_id;
@@ -541,7 +544,7 @@ if ( ! class_exists( 'UABB_Cloud_Templates' ) ) {
 				if ( 'not-found' === $msg ) { ?>
 					<div class="uabb-cloud-templates-not-found">
 
-						<h3> <?php printf( /* translators: %s: search term */ esc_attr__( 'Welcome to %s Template Cloud!', 'uabb' ), esc_attr( UABB_PREFIX ) ); ?> </h3> 
+						<h3> <?php printf( /* translators: %s: search term */ esc_attr__( 'Welcome to %s Template Cloud!', 'uabb' ), esc_attr( UABB_PREFIX ) ); ?> </h3>
 						<p> <?php printf( /* translators: %s: search term */ esc_attr__( '%s Template Cloud would allow you to browse through our growing library of 150+ professionally designed templates and download the only ones that you need.', 'uabb' ), esc_attr( UABB_PREFIX ) ); ?> <span class="uabb-cloud-process button-primary" data-operation="fetch"> <i class="dashicons dashicons-update " style="display: none; padding: 3px;"></i> <?php esc_html_e( "Let's get started", 'uabb' ); ?> &rarr; </span></p>
 
 					</div>
@@ -612,7 +615,7 @@ if ( ! class_exists( 'UABB_Cloud_Templates' ) ) {
 							foreach ( $tags as $tag ) {
 								$tag_title = strtolower( str_replace( ' ', '-', $tag ) );
 								?>
-									<li><a href="#" data-group='<?php echo esc_attr( $tag_title ); ?>' class="<?php echo esc_attr( $tag_title ); ?>"><?php echo esc_attr( $tag ); ?></a></li>
+									<li><a href="#" data-group='<?php echo esc_attr( $tag_title ); ?>' class="<?php echo esc_attr( $tag_title ); ?>"><?php echo esc_html( $tag ); ?></a></li>
 								<?php } ?>
 						</ul><!-- #uabb-templates-filter -->
 					<?php } ?>
@@ -664,13 +667,13 @@ if ( ! class_exists( 'UABB_Cloud_Templates' ) ) {
 											</noscript>
 											<span class="more-details"> <?php esc_html_e( 'Preview', 'uabb' ); ?> </span>
 										<?php } else { ?>
-											<h2 class="uabb-template-name"> <?php echo esc_attr( $data['name'] ); ?> </h2>
-											<div class="uabb-count"><?php echo esc_attr( $data['count'] ); ?></div>
+											<h2 class="uabb-template-name"> <?php echo esc_html( $data['name'] ); ?> </h2>
+											<div class="uabb-count"><?php echo esc_html( $data['count'] ); ?></div>
 										<?php } ?>
 
 									</div>
 									<div class="uabb-template-info">
-										<h2 class="uabb-template-name"> <?php echo esc_attr( $data['name'] ); ?> </h2>
+										<h2 class="uabb-template-name"> <?php echo esc_html( $data['name'] ); ?> </h2>
 										<div class="uabb-template-actions">
 
 											<?php if ( 'true' === $data['status'] ) { ?>
@@ -680,6 +683,11 @@ if ( ! class_exists( 'UABB_Cloud_Templates' ) ) {
 													<span class="msg"> <?php esc_html_e( 'Remove', 'uabb' ); ?> </span>
 														<input type="hidden" class="template-dat-meta-id" value='<?php echo esc_attr( $data['id'] ); ?>' />
 														<input type="hidden" class="template-dat-meta-type" value='<?php echo esc_attr( $type ); ?>' />
+														<?php
+														if ( '' !== $data['dat_url_local'] && ! str_contains( $data['dat_url_local'], 'uploads/bb-ultimate-addon/' ) ) {
+																$data['dat_url_local'] = WP_CONTENT_DIR . '/uploads/bb-ultimate-addon/' . $data['dat_url_local'];
+														}
+														?>
 														<input type="hidden" class="template-dat-meta-dat_url_local" value='<?php echo $data['dat_url_local'];  //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>' />
 													</span>
 													<span class="button button-sucess uabb-installed-btn">
@@ -726,7 +734,7 @@ if ( ! class_exists( 'UABB_Cloud_Templates' ) ) {
 				/**
 				 * Debugging
 				 */
-				if ( isset( $_GET['debug'] ) && isset( $_REQUEST['uabb_setting_nonce'] ) && wp_verify_nonce( $_REQUEST['uabb_setting_nonce'], 'uabb_setting_nonce' ) ) {
+				if ( isset( $_GET['debug'] ) && isset( $_REQUEST['uabb_setting_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['uabb_setting_nonce'] ), 'uabb_setting_nonce' ) ) {
 					if ( count( $templates ) < 1 ) {
 						?>
 						<h2> <?php esc_html_e( 'Templates are disabled from RestAPI.', 'uabb' ); ?> </h2>

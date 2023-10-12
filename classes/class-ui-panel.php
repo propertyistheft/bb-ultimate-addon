@@ -336,6 +336,9 @@ class UABB_UI_Panels {
 							isset( $template_data['status'] ) && true === (bool) $template_data['status'] &&
 							isset( $template_data['dat_url_local'] ) && ! empty( $template_data['dat_url_local'] )
 						) {
+							if ( '' !== $template_data['dat_url_local'] && ! str_contains( $template_data['dat_url_local'], 'uploads/bb-ultimate-addon/' ) ) {
+								$template_data['dat_url_local'] = WP_CONTENT_DIR . '/uploads/bb-ultimate-addon/' . $template_data['dat_url_local'];
+							}
 							FLBuilder::register_templates(
 								$template_data['dat_url_local'],
 								array(

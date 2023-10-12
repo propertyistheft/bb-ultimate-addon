@@ -83,7 +83,7 @@ do_action( 'uabb_woo_products_loop_settings_before_form', $settings ); // e.g Ad
 <div class="fl-custom-query fl-loop-data-source" data-source="custom_query">
 	<div id="fl-builder-settings-section-filter" class="fl-builder-settings-section">
 		<h3 class="fl-builder-settings-title">
-			<span class="fl-builder-settings-title-text-wrap"><?php esc_attr_e( 'Custom Query', 'uabb' ); ?></span>
+			<span class="fl-builder-settings-title-text-wrap"><?php esc_html_e( 'Custom Query', 'uabb' ); ?></span>
 		</h3>
 		<?php foreach ( FLBuilderLoop::post_types() as $slug => $type ) : // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited ?>
 			<table class="fl-form-table fl-custom-query-filter fl-custom-query-<?php echo esc_attr( $slug ); ?>-filter"
@@ -159,7 +159,7 @@ do_action( 'uabb_woo_products_loop_settings_before_form', $settings ); // e.g Ad
 	</div>
 	<div id="fl-builder-settings-section-general" class="fl-builder-settings-section">
 		<h3 class="fl-builder-settings-title">
-			<span class="fl-builder-settings-title-text-wrap"><?php esc_attr_e( 'Filter', 'uabb' ); ?></span>
+			<span class="fl-builder-settings-title-text-wrap"><?php esc_html_e( 'Filter', 'uabb' ); ?></span>
 		</h3>
 		<table class="fl-form-table">
 		<?php
@@ -206,13 +206,13 @@ do_action( 'uabb_woo_products_loop_settings_before_form', $settings ); // e.g Ad
 					'modified'       => __( 'Date Last Modified', 'uabb' ),
 					'ID'             => __( 'ID', 'uabb' ),
 					'menu_order'     => __( 'Menu Order', 'uabb' ),
-					'meta_value'     => __( 'Meta Value (Alphabetical)', 'uabb' ),
+					'meta_value'     => __( 'Meta Value (Alphabetical)', 'uabb' ), // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 					'meta_value_num' => __( 'Meta Value (Numeric)', 'uabb' ),
 					'rand'           => __( 'Random', 'uabb' ),
 					'title'          => __( 'Title', 'uabb' ),
 				),
 				'toggle'  => array(
-					'meta_value'     => array(
+					'meta_value'     => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_value
 						'fields' => array( 'order_by_meta_key' ),
 					),
 					'meta_value_num' => array(

@@ -46,7 +46,7 @@ if ( 'yes' === $settings->scroll_top ) {
 		</div>
 	</div>
 	<div class="uabb-toc-empty-note">
-		<span><?php esc_attr_e( 'Add a header to begin generating the table of contents', 'uabb' ); ?></span>
+		<span><?php esc_html_e( 'Add a header to begin generating the table of contents', 'uabb' ); ?></span>
 	</div>
 	<?php $module->render_separator( 'bottom' ); ?>
 	</div>

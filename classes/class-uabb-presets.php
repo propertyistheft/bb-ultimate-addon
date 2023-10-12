@@ -55,7 +55,7 @@ if ( ! class_exists( 'UABB_PRESETS' ) ) :
 
 			check_ajax_referer( 'uabb-presets-nonce', 'security' );
 
-			$presets = self::get_presets( sanitize_file_name( $_GET['current_module'] ) );
+			$presets = isset( $_GET['current_module'] ) ? self::get_presets( sanitize_file_name( $_GET['current_module'] ) ) : '';
 
 			wp_send_json_success( $presets, 200 );
 		}
@@ -72,7 +72,7 @@ if ( ! class_exists( 'UABB_PRESETS' ) ) :
 			if ( ! is_readable( $design ) ) {
 				return false;
 			}
-			return fl_builder_filesystem()->file_get_contents( $design );
+			return fl_builder_filesystem()->file_get_contents( $design ); // phpcs:ignore WordPressVIPMinimum.Performance.FetchingRemoteData.FileGetContentsUnknown
 		}
 	}
 

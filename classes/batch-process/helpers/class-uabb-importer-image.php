@@ -111,7 +111,7 @@ if ( ! class_exists( 'UABB_Import_Image' ) ) :
 			}
 
 			// 1. Is already imported in Batch Import Process?.
-			$post_id = $wpdb->get_var(
+			$post_id = $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 				$wpdb->prepare(
 					'SELECT `post_id` FROM `' . $wpdb->postmeta . '`
 						WHERE `meta_key` = \'_uabb_image_hash\'
@@ -126,7 +126,7 @@ if ( ! class_exists( 'UABB_Import_Image' ) ) :
 				// To check it exist in attachment.
 				$filename = basename( $attachment['url'] );
 
-				$post_id = $wpdb->get_var(
+				$post_id = $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 					$wpdb->prepare(
 						"SELECT post_id FROM {$wpdb->postmeta}
 							WHERE meta_key = '_wp_attached_file'

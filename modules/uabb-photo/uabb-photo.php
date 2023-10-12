@@ -97,7 +97,7 @@ class UABBPhotoModule extends FLBuilderModule {
 		$cropped_path = $this->_get_cropped_path();
 
 		if ( file_exists( $cropped_path['path'] ) ) {
-			unlink( $cropped_path['path'] );
+			unlink( $cropped_path['path'] ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_unlink
 		}
 	}
 
@@ -247,7 +247,7 @@ class UABBPhotoModule extends FLBuilderModule {
 			// See if the cropped photo already exists.
 			if ( file_exists( $cropped_path['path'] ) ) {
 				$src = $cropped_path['url'];
-			} elseif ( stristr( $src, FL_BUILDER_DEMO_URL ) && ! stristr( FL_BUILDER_DEMO_URL, $_SERVER['HTTP_HOST'] ) ) {
+			} elseif ( stristr( $src, FL_BUILDER_DEMO_URL ) && isset( $_SERVER['HTTP_HOST'] ) && ! stristr( FL_BUILDER_DEMO_URL, sanitize_text_field( $_SERVER['HTTP_HOST'] ) ) ) {
 				// It doesn't, check if this is a demo image.
 				$src = $this->_get_cropped_demo_url();
 			} elseif ( stristr( $src, FL_BUILDER_OLD_DEMO_URL ) ) {

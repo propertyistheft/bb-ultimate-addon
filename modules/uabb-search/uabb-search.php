@@ -63,11 +63,11 @@ class UABBSearchModule extends FLBuilderModule {
 
 		check_ajax_referer( 'uabb-search-nonce', 'security' );
 
-		$post_id          = isset( $_POST['post_id'] ) ? $_POST['post_id'] : false;
+		$post_id          = isset( $_POST['post_id'] ) ? sanitize_text_field( $_POST['post_id'] ) : false;
 		$node_id          = isset( $_POST['node_id'] ) ? sanitize_text_field( $_POST['node_id'] ) : false;
 		$template_id      = isset( $_POST['template_id'] ) ? sanitize_text_field( $_POST['template_id'] ) : false;
 		$template_node_id = isset( $_POST['template_node_id'] ) ? sanitize_text_field( $_POST['template_node_id'] ) : false;
-		$keyword          = $_POST['keyword'];
+		$keyword          = isset( $_POST['keyword'] ) ? sanitize_text_field( $_POST['keyword'] ) : '';
 		$args             = new stdClass();
 		$query            = null;
 		$html             = '';

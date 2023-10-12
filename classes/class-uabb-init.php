@@ -93,7 +93,7 @@ class UABB_Init {
 		check_ajax_referer( 'uabb-batch-complete-nonce', 'batch_complete_nonce' );
 
 		// Request the dismissed value.
-		$dismissed = sanitize_text_field( $_REQUEST['dismissed'] );
+		$dismissed = isset( $_REQUEST['dismissed'] ) ? sanitize_text_field( $_REQUEST['dismissed'] ) : '';
 
 		// Store it in the options table.
 		update_option( 'uabb_batch_notice_complete_dismissed', $dismissed );
@@ -110,7 +110,7 @@ class UABB_Init {
 		check_ajax_referer( 'uabb-batch-process-nonce', 'batch_process_nonce' );
 
 		// Request the dismissed value.
-		$dismissed = sanitize_text_field( $_REQUEST['dismissed'] );
+		$dismissed = isset( $_REQUEST['dismissed'] ) ? sanitize_text_field( $_REQUEST['dismissed'] ) : '';
 
 		// Store it in the options table.
 		update_option( 'uabb_batch_notice_dismissed', $dismissed );
@@ -139,7 +139,7 @@ class UABB_Init {
 		// Request the dismissed value.
 		check_ajax_referer( 'uabb-admin-nonce', 'dismiss_nonce' );
 		// Request the dismissed value.
-		$dismissed = sanitize_text_field( $_REQUEST['dismissed'] );
+		$dismissed = isset( $_REQUEST['dismissed'] ) ? sanitize_text_field( $_REQUEST['dismissed'] ) : '';
 
 		// Store it in the options table.
 		update_option( 'dismiss-admin-notice', $dismissed );
@@ -153,7 +153,7 @@ class UABB_Init {
 
 		check_ajax_referer( 'uabb-admin-nonce', 'dismiss_login_nonce' );
 		// Request the dismissed value.
-		$dismissed = sanitize_text_field( $_REQUEST['dismissed'] );
+		$dismissed = isset( $_REQUEST['dismissed'] ) ? sanitize_text_field( $_REQUEST['dismissed'] ) : '';
 		// Store it in the options table.
 		update_option( 'dismiss-admin-login-notice', $dismissed );
 	}

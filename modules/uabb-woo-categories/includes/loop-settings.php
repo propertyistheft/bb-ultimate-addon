@@ -24,7 +24,7 @@ do_action( 'uabb_woo_categories_products_loop_settings_before_form', $settings )
 <div class="fl-custom-query fl-loop-data-source" data-source="custom_query">
 	<div id="fl-builder-settings-section-filter" class="fl-builder-settings-section">
 		<h3 class="fl-builder-settings-title">
-			<span class="fl-builder-settings-title-text-wrap"><?php esc_attr_e( 'Filter', 'uabb' ); ?></span>
+			<span class="fl-builder-settings-title-text-wrap"><?php esc_html_e( 'Filter', 'uabb' ); ?></span>
 		</h3>
 		<?php foreach ( FLBuilderLoop::post_types() as $slug => $type ) : // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited ?>
 
@@ -47,13 +47,13 @@ do_action( 'uabb_woo_categories_products_loop_settings_before_form', $settings )
 						'all'     => __( 'Show All', 'uabb' ),
 						'top'     => __( 'Only Top Level', 'uabb' ),
 						'include' => __( 'Match These Categories', 'uabb' ),
-						'exclude' => __( 'Exclude These Categories', 'uabb' ),
+						'exclude' => __( 'Exclude These Categories', 'uabb' ), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 					),
 					'toggle'  => array(
 						'include' => array(
 							'fields' => array( 'tax_product_product_cat' ),
 						),
-						'exclude' => array(
+						'exclude' => array( // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude
 							'fields' => array( 'tax_product_product_cat' ),
 						),
 					),
