@@ -142,8 +142,6 @@ jQuery(document).ready(function( $ ) {
 					return;
 				}
 
-				jQuery(".uabb-modal-parent-wrapper.uabb-module-content").find(".uabb-modal.uabb-modal-custom").css("pointer-events", "none");
-
 				var cookies_name = 'modal-' + this.node,
 					refresh_cookies_name = 'refresh-modal-' + this.node,
 					cookies_status = this.enable_cookies,

@@ -556,7 +556,7 @@ class UABBPhotoGalleryModule extends FLBuilderModule {
 					echo ( isset( $default ) ) ? $default : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 				">
-					<li class="uabb-photo__gallery-filter uabb-filter__current" data-filter="*">
+					<li class="uabb-photo__gallery-filter uabb-filter__current" data-filter="<?php echo '.' . esc_attr( strtolower( str_replace( ' ', '-', $this->settings->filters_all_text ) ) ); ?>">
 					<?php
 					echo ( '' !== $this->settings->filters_all_text ) ? $this->settings->filters_all_text : __( 'All', 'uabb' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					?>

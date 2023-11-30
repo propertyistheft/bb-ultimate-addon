@@ -2370,7 +2370,7 @@ class BlogPostsModule extends FLBuilderModule {
 		$settings   = $this->settings;
 		$terms_show = '';
 
-		$terms_show = $settings->terms_to_show;
+		$terms_show = apply_filters( 'uabb_posts_tax_badge_taxonomy', $settings->terms_to_show, $settings );
 
 		$terms = wp_get_post_terms( $obj->ID, $terms_show );
 

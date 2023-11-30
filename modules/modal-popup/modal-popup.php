@@ -182,7 +182,9 @@ class ModalPopupModule extends FLBuilderModule {
 
 			if ( '' !== $vid_id_image && 0 !== $vid_id_image ) {
 				$vimeo = maybe_unserialize( @file_get_contents( "https://vimeo.com/api/v2/video/$vid_id_image.php" ) );// @codingStandardsIgnoreLine.
-				$thumb = $vimeo[0]['thumbnail_large'];
+				if ( $thumb ) {
+					$thumb = $vimeo[0]['thumbnail_large'];
+				}
 			}
 
 			/**

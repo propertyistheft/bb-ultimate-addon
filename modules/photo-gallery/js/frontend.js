@@ -1,6 +1,6 @@
 (function($) {
 	UABBPhotoGallery = function( settings ) {
-		
+
 		this.settings       = settings;
 		this.node           = settings.id;
 		this.uabb_ajaxurl   = settings.uabb_ajaxurl;
@@ -39,7 +39,7 @@
 		 * Intaialize the Filterable Tabs.
 		 *
 		 * @since  1.16.5
-		 * 
+		 *
 		 */
 		_initFilter:function() {
 
@@ -64,9 +64,9 @@
 				}
 
 				if ( selector.hasClass( 'uabb-photo-gallery-filter-grid' ) ) {
-				
+
 				var filters = nodeClass.find( '.uabb-photo__gallery-filters' );
-			
+
 				var def_cat = '*';
 
 				if( '' !== id && sanitize_input ) {
@@ -140,9 +140,9 @@
 			}
 
 			if ( selector.hasClass( 'uabb-photo-gallery-filter' ) ) {
-				
+
 				var filters = nodeClass.find( '.uabb-photo__gallery-filters' );
-			
+
 				var def_cat = '*';
 
 				if( '' !== id && sanitize_input ) {
@@ -191,7 +191,7 @@
 					});
 				});
 				nodeClass.find( '.uabb-photo__gallery-filter' ).on( 'click', function() {
-				
+
 					$( this ).siblings().removeClass( 'uabb-filter__current' );
 					$( this ).addClass( 'uabb-filter__current' );
 					var value = $( this ).data( 'filter' );
@@ -202,7 +202,7 @@
 		_initPagination: function()
 		{
 			var self = this;
-			
+
 			$(this.itemClass).each(function() {
 				self.cachedIds.push( $(this).data('item-id') );
 			});
@@ -293,7 +293,7 @@
 			var self = this;
 			var _nonce = $(self.wrapperClass).data( 'nonce' );
 			var ajaxurl = this.uabb_ajaxurl;
-			
+
 			var data = {
 				action: 'uabb_get_photos',
 				node_id: self.settings.id,
@@ -312,7 +312,7 @@
 				async: true,
 				success: function(response) {
 					response = JSON.parse(JSON.stringify(response));
-					
+
 						self.cachedItems = response.data;
 						self._renderItems();
 						if ( 'function' === typeof callback ) {
@@ -328,7 +328,7 @@
 			$(this.nodeClass).find( '.uabb-form-loader' ).remove();
 			$(this.nodeClass).find( '.uabb-gallery-load-more' ).removeClass('disabled loading');
 			$(this.nodeClass).find('.uabb-gallery-loader').show();
-			
+
 			var self = this,
 				wrap = $(self.wrapperClass);
 
@@ -350,12 +350,12 @@
 
 				if ( items.length > 0 ) {
 					items = $(items).hide();
-					
+
 					// Grid layout.
 					if ( self.layout === 'grid' ) {
 						wrap.append( items.fadeIn() );
 					}
-					
+
 					// Masonry layout.
 					if ( self.layout === 'masonary' ) {
 						items = items.show();

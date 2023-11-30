@@ -489,7 +489,7 @@ if ( ! class_exists( 'UABB_Cloud_Templates' ) ) {
 				self::load_filesystem();
 
 				// Copy remote .dat file.
-				if ( self::$uabb_filesystem->copy( $temp_file, $local_file, true ) ) {
+				if ( self::$uabb_filesystem->copy( $temp_file, WP_CONTENT_DIR . '/uploads/bb-ultimate-addon/' . $local_file, true ) ) {
 
 					if ( ! empty( $dat_file_id ) ) {
 

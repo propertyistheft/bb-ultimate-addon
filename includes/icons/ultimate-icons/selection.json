@@ -13063,6 +13063,20 @@
       "setIdx": 4,
       "setId": 1,
       "iconIdx": 384
+    },
+    {
+      "icon":{
+      "paths":["M778.411 96h141.141l-308.352 352.427 362.752 479.573h-284.032l-222.464-290.859-254.549 290.859h-141.227l329.813-376.96-347.989-455.040h291.243l201.088 265.856zM728.875 843.52h78.208l-504.832-667.477h-83.925z"],
+      "attrs":[{}],
+      "isMulticolor":false,
+      "isMulticolor2":false,
+      "tags":["x","twitter"],
+      "grid":0},
+      "attrs":[{}],
+      "properties":{"order":2,"id":0,"prevSize":32,"code":59648,"name":"x"},
+      "setIdx":2,
+      "setId":2,
+      "iconIdx":0
     }
   ],
   "height": 1024,

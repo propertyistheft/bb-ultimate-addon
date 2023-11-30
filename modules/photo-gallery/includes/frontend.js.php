@@ -126,6 +126,13 @@ jQuery(document).ready(function( $ ) {
 				total_img_count: <?php echo esc_attr( ( isset( $settings->photos ) && is_array( $settings->photos ) ) ? count( $settings->photos ) : 0 ); ?>,
 			};
 
+			var $grid = $('.fl-node-<?php echo esc_attr( $id ); ?> .uabb-module-content').imagesLoaded( function() {
+				$grid.isotope({
+					columnWidth: '.uabb-grid-sizer',
+					itemSelector: '.uabb-photo-item-grid'
+				});
+			});
+
 			/* Tab Click Trigger */
 			UABBTrigger.addHook( 'uabb-tab-click', function( argument, selector ) {
 				new UABBPhotoGallery( args );

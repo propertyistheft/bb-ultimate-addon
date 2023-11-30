@@ -1,3 +1,14 @@
+Version 1.35.17, Thursday, 23rd November 2023
+- Improvement: Advanced Menu - Improved accessibility by adding title attribute to Hamburger SVG and aria-haspopup attribute to menu items.
+- Improvement: Advanced Posts - Added filter hook to filter the Taxonomy for Taxonomy Badge.
+- Improvement: Added new Twitter icon to Ultimate Icons font.
+- Improvement: Social Share - Updated Twitter icon to new.
+- Fixed: Modal Popup - Scrolling issue on iPhone devices with Automatic popup.
+- Fixed: Modal Popup - Resolved PHP notice when Vimeo video thumbnail is empty.
+- Fixed: Photo Gallery - Filterable tabs not working when Default Category Name is set to "All" tab label.
+- Fixed: Photo Gallery - Grid layout issue on iOS version 17.
+- Fixed: Template Cloud - Installed templates not shown in Beaver Builder editor.
+
 Version 1.35.16, Wednesday, 11th October 2023
 - Improvement: Compatibility with WordPress VIP Go rules.
 - Improvement: Use of relative path instead of absolute path while registering templates downloaded from template cloud.

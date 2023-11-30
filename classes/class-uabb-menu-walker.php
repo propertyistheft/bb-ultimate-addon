@@ -46,10 +46,11 @@ class Creative_Menu_Walker extends Walker_Nav_Menu {
 
 		$classes     = empty( $item->classes ) ? array() : (array) $item->classes;
 		$submenu     = $args->has_children ? ' uabb-has-submenu' : '';
+		$aria_attr   = $args->has_children ? ' aria-haspopup="true"' : '';
 		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth ) );
 		$class_names = ' class="' . esc_attr( $class_names ) . $submenu . ' uabb-creative-menu uabb-cm-style"';
 
-		$output .= $indent . '<li id="menu-item-' . $item->ID . '"' . $value . $class_names . '>';
+		$output .= $indent . '<li id="menu-item-' . $item->ID . '"' . $value . $class_names . $aria_attr . '>';
 
 		if ( isset( $item->target ) && '_blank' === $item->target && isset( $item->xfn ) && strpos( $item->xfn, 'noopener' ) === false ) {
 			$rel_xfn = ' noopener';

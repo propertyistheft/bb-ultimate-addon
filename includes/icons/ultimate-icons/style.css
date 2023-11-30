@@ -1185,4 +1185,8 @@
 .ua-icon-Circle-Full:before {
   content: "\ea80";
 }
+.ua-iconx:before {
+  content: "\e900";
+}
+
 
