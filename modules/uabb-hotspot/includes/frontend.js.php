@@ -84,11 +84,24 @@
 						} elseif ( 'always' === $settings->hotspot_marker[ $i ]->tooltip_trigger_on ) {
 							?>
 							var selector = jQuery( '.fl-node-<?php echo esc_attr( $id ); ?> .uabb-hotspot-item-<?php echo esc_attr( $i ); ?>' );
+
+							var modal_iframe 		= selector.find( 'iframe' ),
+								modal_video_tag 	= modal_iframe.find( 'video' );
+
 							if ( selector.hasClass( 'uabb-hotspot-hover' ) ) {
-								selector.removeClass('uabb-hotspot-hover');
+								selector.removeClass( 'uabb-hotspot-hover' );
+								if ( modal_iframe.length ) {
+									var modal_src = modal_iframe.attr( "src" ).replace( "&autoplay=1", "" );
+									modal_iframe.attr( "src", '' );
+									modal_iframe.attr( "src", modal_src );
+								} else if ( modal_video_tag.length ) {
+									modal_video_tag[0].pause();
+									modal_video_tag[0].currentTime = 0;
+								}
 							} else {
 								selector.addClass('uabb-hotspot-hover');
 							}
+
 							<?php
 						} elseif ( 'click' === $settings->hotspot_marker[ $i ]->tooltip_trigger_on ) {
 
@@ -99,8 +112,21 @@
 
 									var selector = jQuery('.fl-node-<?php echo esc_attr( $id ); ?> .uabb-hotspot-item-<?php echo esc_attr( $i ); ?>');
 
-									if( selector.hasClass( 'uabb-hotspot-hover' ) ){
-										selector.removeClass('uabb-hotspot-hover');
+									var modal_iframe 		= selector.find( 'iframe' ),
+										modal_video_tag 	= modal_iframe.find( 'video' );
+
+
+
+									if ( selector.hasClass( 'uabb-hotspot-hover' ) ) {
+										selector.removeClass( 'uabb-hotspot-hover' );
+										if ( modal_iframe.length ) {
+											var modal_src = modal_iframe.attr( "src" ).replace( "&autoplay=1", "" );
+											modal_iframe.attr( "src", '' );
+											modal_iframe.attr( "src", modal_src );
+										} else if ( modal_video_tag.length ) {
+											modal_video_tag[0].pause();
+											modal_video_tag[0].currentTime = 0;
+										}
 									} else {
 										selector.addClass('uabb-hotspot-hover');
 									}
@@ -114,8 +140,19 @@
 
 								var selector = jQuery('.fl-node-<?php echo esc_attr( $id ); ?> .uabb-hotspot-item-<?php echo esc_attr( $i ); ?>');
 
-								if( selector.hasClass( 'uabb-hotspot-hover' ) ){
-									selector.removeClass('uabb-hotspot-hover');
+								var modal_iframe 		= selector.find( 'iframe' ),
+									modal_video_tag 	= modal_iframe.find( 'video' );
+
+								if ( selector.hasClass( 'uabb-hotspot-hover' ) ) {
+									selector.removeClass( 'uabb-hotspot-hover' );
+									if ( modal_iframe.length ) {
+										var modal_src = modal_iframe.attr( "src" ).replace( "&autoplay=1", "" );
+										modal_iframe.attr( "src", '' );
+										modal_iframe.attr( "src", modal_src );
+									} else if ( modal_video_tag.length ) {
+										modal_video_tag[0].pause();
+										modal_video_tag[0].currentTime = 0;
+									}
 								} else {
 									selector.addClass('uabb-hotspot-hover');
 								}
@@ -136,9 +173,21 @@
 
 								var bselector = jQuery('.fl-node-<?php echo esc_attr( $id ); ?> .uabb-hotspot-item');
 
-								if( bselector.hasClass( 'uabb-hotspot-hover' ) ){
-									bselector.removeClass('uabb-hotspot-hover');
-								}										
+								var modal_iframe 		= bselector.find( 'iframe' ),
+									modal_video_tag 	= modal_iframe.find( 'video' );
+
+
+								if ( bselector.hasClass( 'uabb-hotspot-hover' ) ) {
+									bselector.removeClass( 'uabb-hotspot-hover' );
+									if ( modal_iframe.length ) {
+										var modal_src = modal_iframe.attr( "src" ).replace( "&autoplay=1", "" );
+										modal_iframe.attr( "src", '' );
+										modal_iframe.attr( "src", modal_src );
+									} else if ( modal_video_tag.length ) {
+										modal_video_tag[0].pause();
+										modal_video_tag[0].currentTime = 0;
+									}
+								}									
 							}
 						} );
 
@@ -147,7 +196,19 @@
 
 							var removeSelector = jQuery('.fl-node-<?php echo esc_attr( $id ); ?> .uabb-hotspot-item').not(".fl-node-<?php echo esc_attr( $id ); ?> .uabb-hotspot-item-<?php echo esc_attr( $i ); ?>");
 
+							var modal_iframe 		= removeSelector.find( 'iframe' ),
+								modal_video_tag 	= modal_iframe.find( 'video' );
+
 							removeSelector.removeClass('uabb-hotspot-hover');
+
+							if ( modal_iframe.length ) {
+								var modal_src = modal_iframe.attr( "src" ).replace( "&autoplay=1", "" );
+								modal_iframe.attr( "src", '' );
+								modal_iframe.attr( "src", modal_src );
+							} else if ( modal_video_tag.length ) {
+								modal_video_tag[0].pause();
+								modal_video_tag[0].currentTime = 0;
+							}
 
 						});
 							<?php

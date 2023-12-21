@@ -386,7 +386,7 @@ class UABBVideo extends FLBuilderModule {
 
 			} elseif ( 'wistia' === $this->settings->video_type ) {
 				$url   = $this->settings->wistia_link;
-				$thumb = 'https://embedwistia-a.akamaihd.net/deliveries/' . $this->getStringBetween( $url, 'deliveries/', '?' );
+				$thumb = 'https://embed-ssl.wistia.com/deliveries/' . $this->getStringBetween( $url, 'deliveries/', '?' );
 			}
 		}
 		return $thumb;

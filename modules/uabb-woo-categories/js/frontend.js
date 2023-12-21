@@ -55,6 +55,9 @@ var UABBWooCategories;
 			//alert();
 			var self = this;
 
+			// Apply positioning styles regardless of layout
+			self.applyPositioningStyles();
+
 			/* Slider */
 			if ( 'carousel' === self.layout ) {
 				var slider_wrapper 	= self.nodeScope.find('.uabb-woo-categories-carousel');
@@ -93,6 +96,22 @@ var UABBWooCategories;
 					});
 				}
 			}
+		},
+
+		applyPositioningStyles: function() {
+			var categoryWrappers = this.nodeScope.find('.uabb-woo-categories li.product');
+	
+			// Loop through each category and apply positioning styles
+			categoryWrappers.each(function() {
+				var titleWrap = $(this).find('.uabb-category__title-wrap');
+	
+				// Set positioning styles using JavaScript.
+				setTimeout(function () {
+					titleWrap.css({
+						position: 'absolute',
+					});
+				}, 1000);
+			});
 		},
 	};
 })(jQuery);

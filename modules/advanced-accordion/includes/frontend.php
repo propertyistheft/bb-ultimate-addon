@@ -28,7 +28,7 @@
 	data-index="<?php echo esc_attr( $i ); ?>">
 		<div class="uabb-adv-accordion-button uabb-adv-accordion-button<?php echo esc_attr( $id ); ?> uabb-adv-<?php echo esc_attr( $settings->icon_position ); ?>-text" aria-selected="false" role="tab" tabindex="0" aria-expanded="true" aria-controls="expandable">
 			<?php echo $module->render_icon( 'before' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-			<<?php echo esc_attr( $settings->tag_selection ); ?> class="uabb-adv-accordion-button-label" tabindex="0"><?php echo $settings->acc_items[ $i ]->acc_title;  //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></<?php echo esc_attr( $settings->tag_selection ); ?>>
+			<<?php echo esc_attr( $settings->tag_selection ); ?> class="uabb-adv-accordion-button-label" ><?php echo $settings->acc_items[ $i ]->acc_title;  //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></<?php echo esc_attr( $settings->tag_selection ); ?>>
 			<?php echo $module->render_icon( 'after' );  //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 		</div>
 		<div class="uabb-adv-accordion-content uabb-adv-accordion-content<?php echo esc_attr( $id ); ?> fl-clearfix <?php echo ( 'content' === $settings->acc_items[ $i ]->content_type ) ? 'uabb-accordion-desc uabb-text-editor' : ''; ?>" aria-expanded="true" >

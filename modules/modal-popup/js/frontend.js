@@ -525,7 +525,7 @@ jQuery(document).ready(function( $ ) {
 
 				jQuery('html').addClass(iphone).addClass(ipod);
 				jQuery( 'html.iphone .uabb-modal-action-wrap .uabb-module-content .uabb-button.uabb-trigger, html.ipod .uabb-modal-action-wrap .uabb-module-content .uabb-button.uabb-trigger' ).click ( function() {
-				    jQuery('body').css( 'position', 'fixed' );
+				    jQuery('body').css( 'position', '' );
 				});
 
 				if( this.overlay_click == 1 ) {

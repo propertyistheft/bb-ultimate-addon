@@ -507,7 +507,7 @@ class UABBVideoGallery extends FLBuilderModule {
 				}
 			} elseif ( 'wistia' === $item->video_type ) {
 
-				$url = 'https://embedwistia-a.akamaihd.net/deliveries/' . $this->getStringBetween( $video_url, 'deliveries/', '?' );
+				$url = 'https://embed-ssl.wistia.com/deliveries/' . $this->getStringBetween( $video_url, 'deliveries/', '?' );
 			} elseif ( 'hosted' === $item->video_type ) {
 
 				$url = FL_BUILDER_URL . 'img/no-image.png';

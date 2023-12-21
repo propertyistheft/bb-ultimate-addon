@@ -1,3 +1,13 @@
+Version 1.35.18, Tuesday, 19th December 2023
+- Fixed: Advanced Accordion - Accessibility issue with tabindex.
+- Fixed: Hotspot - Video inside tooltip keeps playing after closing tooltip.
+- Fixed: Modal Popup - Page scrolls to the top when popup is shown on iPhone devices.
+- Fixed: Photo Gallery - All tab filter not working when revisited.
+- Fixed: Photo Gallery - Default Tab on Page Load setting not working when category name contains only digits.
+- Fixed: Video - Wistia video thumbnails not showing up correctly.
+- Fixed: Video Gallery - Wistia video thumbnails not showing up correctly.
+- Fixed: Woo-Categories - Title & description text appearing vertical on page load.
+
 Version 1.35.17, Thursday, 23rd November 2023
 - Improvement: Advanced Menu - Improved accessibility by adding title attribute to Hamburger SVG and aria-haspopup attribute to menu items.
 - Improvement: Advanced Posts - Added filter hook to filter the Taxonomy for Taxonomy Badge.

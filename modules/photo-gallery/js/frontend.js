@@ -101,6 +101,7 @@
 							def_cat_sel.siblings().removeClass( 'uabb-filter__current' );
 							def_cat_sel.addClass( 'uabb-filter__current' );
 						}
+						all_filters = all_filters.toString();
 						if ( -1 == all_filters.indexOf( def_cat.replace('.', "") ) ) {
 							def_cat = '*';
 						}
@@ -174,6 +175,7 @@
 							def_cat_sel.siblings().removeClass( 'uabb-filter__current' );
 							def_cat_sel.addClass( 'uabb-filter__current' );
 						}
+						all_filters = all_filters.toString();
 						if ( -1 == all_filters.indexOf( def_cat.replace('.', "") ) ) {
 							def_cat = '*';
 						}

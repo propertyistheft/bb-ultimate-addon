@@ -539,8 +539,10 @@ class UABBPhotoGalleryModule extends FLBuilderModule {
 
 		if ( 'yes' === $this->settings->default_filter_switch && '' !== $this->settings->default_filter ) {
 
-			$default = '.' . trim( $this->settings->default_filter );
-			$default = strtolower( str_replace( ' ', '-', $default ) );
+			$default    = '.' . trim( $this->settings->default_filter );
+			$default    = strtolower( str_replace( ' ', '-', $default ) );
+			$filter_all = '.' . strtolower( str_replace( ' ', '-', $this->settings->filters_all_text ) );
+			$default    = $filter_all === $default ? '*' : $default;
 
 		}
 		?>
@@ -553,10 +555,10 @@ class UABBPhotoGalleryModule extends FLBuilderModule {
 			<?php } ?>
 				<ul class="uabb-photo__gallery-filters" data-default="
 				<?php
-					echo ( isset( $default ) ) ? $default : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo ( isset( $default ) ) ? $default : '*'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 				">
-					<li class="uabb-photo__gallery-filter uabb-filter__current" data-filter="<?php echo '.' . esc_attr( strtolower( str_replace( ' ', '-', $this->settings->filters_all_text ) ) ); ?>">
+					<li class="uabb-photo__gallery-filter uabb-filter__current" data-filter="*">
 					<?php
 					echo ( '' !== $this->settings->filters_all_text ) ? $this->settings->filters_all_text : __( 'All', 'uabb' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					?>
