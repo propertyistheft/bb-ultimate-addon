@@ -5,44 +5,44 @@
  *   @package UABB Caldera Forms Styler Module
  */
 
-	$settings->form_title_color               = UABB_Helper::uabb_colorpicker( $settings, 'form_title_color', true );
-	$settings->form_desc_color                = UABB_Helper::uabb_colorpicker( $settings, 'form_desc_color', true );
-	$settings->field_bg_color                 = UABB_Helper::uabb_colorpicker( $settings, 'field_bg_color', true );
-	$settings->fields_border_active_color     = UABB_Helper::uabb_colorpicker( $settings, 'fields_border_active_color', true );
-	$settings->field_active_bg_color          = UABB_Helper::uabb_colorpicker( $settings, 'field_active_bg_color', true );
-	$settings->label_color                    = UABB_Helper::uabb_colorpicker( $settings, 'label_color', true );
-	$settings->input_field_color              = UABB_Helper::uabb_colorpicker( $settings, 'input_field_color', true );
-	$settings->required_asterisk_color        = UABB_Helper::uabb_colorpicker( $settings, 'required_asterisk_color', true );
-	$settings->button_bg_color                = UABB_Helper::uabb_colorpicker( $settings, 'button_bg_color', true );
-	$settings->button_bg_hover_color          = UABB_Helper::uabb_colorpicker( $settings, 'button_bg_hover_color', true );
-	$settings->btn_text_color                 = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_color', true );
-	$settings->btn_text_hover_color           = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_hover_color', true );
-	$settings->button_border_hover_color      = UABB_Helper::uabb_colorpicker( $settings, 'button_border_hover_color', true );
-	$settings->sec_button_bg_color            = UABB_Helper::uabb_colorpicker( $settings, 'sec_button_bg_color', true );
-	$settings->sec_button_bg_hover_color      = UABB_Helper::uabb_colorpicker( $settings, 'sec_button_bg_hover_color', true );
-	$settings->sec_btn_text_color             = UABB_Helper::uabb_colorpicker( $settings, 'sec_btn_text_color', true );
-	$settings->sec_btn_text_hover_color       = UABB_Helper::uabb_colorpicker( $settings, 'sec_btn_text_hover_color', true );
-	$settings->sec_button_border_hover_color  = UABB_Helper::uabb_colorpicker( $settings, 'sec_button_border_hover_color', true );
-	$settings->error_message_color            = UABB_Helper::uabb_colorpicker( $settings, 'error_message_color', true );
-	$settings->error_input_field_border_color = UABB_Helper::uabb_colorpicker( $settings, 'error_input_field_border_color', true );
-	$settings->success_msg_color              = UABB_Helper::uabb_colorpicker( $settings, 'success_msg_color', true );
-	$settings->success_bg_color               = UABB_Helper::uabb_colorpicker( $settings, 'success_bg_color', true );
-	$settings->form_bg_color                  = UABB_Helper::uabb_colorpicker( $settings, 'form_bg_color', true );
-	$settings->radio_cb_color                 = UABB_Helper::uabb_colorpicker( $settings, 'radio_cb_color', true );
-	$settings->radio_cb_checked_color         = UABB_Helper::uabb_colorpicker( $settings, 'radio_cb_checked_color', true );
-	$settings->radio_cb_border_color          = UABB_Helper::uabb_colorpicker( $settings, 'radio_cb_border_color', true );
-	$settings->radio_checkbox_color           = UABB_Helper::uabb_colorpicker( $settings, 'radio_checkbox_color', true );
-	$settings->star_icon_selected_color       = UABB_Helper::uabb_colorpicker( $settings, 'star_icon_selected_color', true );
-	$settings->star_inactive_color            = UABB_Helper::uabb_colorpicker( $settings, 'star_inactive_color', true );
-	$settings->section_field_bg_color         = UABB_Helper::uabb_colorpicker( $settings, 'section_field_bg_color', true );
-	$settings->section_title_color            = UABB_Helper::uabb_colorpicker( $settings, 'section_title_color', true );
-	$settings->section_description_color      = UABB_Helper::uabb_colorpicker( $settings, 'section_description_color', true );
-	$settings->input_placeholder_color        = UABB_Helper::uabb_colorpicker( $settings, 'input_placeholder_color', true );
+	$settings->form_title_color               = FLBuilderColor::hex_or_rgb( $settings->form_title_color );
+	$settings->form_desc_color                = FLBuilderColor::hex_or_rgb( $settings->form_desc_color );
+	$settings->field_bg_color                 = FLBuilderColor::hex_or_rgb( $settings->field_bg_color );
+	$settings->fields_border_active_color     = FLBuilderColor::hex_or_rgb( $settings->fields_border_active_color );
+	$settings->field_active_bg_color          = FLBuilderColor::hex_or_rgb( $settings->field_active_bg_color );
+	$settings->label_color                    = FLBuilderColor::hex_or_rgb( $settings->label_color );
+	$settings->input_field_color              = FLBuilderColor::hex_or_rgb( $settings->input_field_color );
+	$settings->required_asterisk_color        = FLBuilderColor::hex_or_rgb( $settings->required_asterisk_color );
+	$settings->button_bg_color                = FLBuilderColor::hex_or_rgb( $settings->button_bg_color );
+	$settings->button_bg_hover_color          = FLBuilderColor::hex_or_rgb( $settings->button_bg_hover_color );
+	$settings->btn_text_color                 = FLBuilderColor::hex_or_rgb( $settings->btn_text_color );
+	$settings->btn_text_hover_color           = FLBuilderColor::hex_or_rgb( $settings->btn_text_hover_color );
+	$settings->button_border_hover_color      = FLBuilderColor::hex_or_rgb( $settings->button_border_hover_color );
+	$settings->sec_button_bg_color            = FLBuilderColor::hex_or_rgb( $settings->sec_button_bg_color );
+	$settings->sec_button_bg_hover_color      = FLBuilderColor::hex_or_rgb( $settings->sec_button_bg_hover_color );
+	$settings->sec_btn_text_color             = FLBuilderColor::hex_or_rgb( $settings->sec_btn_text_color );
+	$settings->sec_btn_text_hover_color       = FLBuilderColor::hex_or_rgb( $settings->sec_btn_text_hover_color );
+	$settings->sec_button_border_hover_color  = FLBuilderColor::hex_or_rgb( $settings->sec_button_border_hover_color );
+	$settings->error_message_color            = FLBuilderColor::hex_or_rgb( $settings->error_message_color );
+	$settings->error_input_field_border_color = FLBuilderColor::hex_or_rgb( $settings->error_input_field_border_color );
+	$settings->success_msg_color              = FLBuilderColor::hex_or_rgb( $settings->success_msg_color );
+	$settings->success_bg_color               = FLBuilderColor::hex_or_rgb( $settings->success_bg_color );
+	$settings->form_bg_color                  = FLBuilderColor::hex_or_rgb( $settings->form_bg_color );
+	$settings->radio_cb_color                 = FLBuilderColor::hex_or_rgb( $settings->radio_cb_color );
+	$settings->radio_cb_checked_color         = FLBuilderColor::hex_or_rgb( $settings->radio_cb_checked_color );
+	$settings->radio_cb_border_color          = FLBuilderColor::hex_or_rgb( $settings->radio_cb_border_color );
+	$settings->radio_checkbox_color           = FLBuilderColor::hex_or_rgb( $settings->radio_checkbox_color );
+	$settings->star_icon_selected_color       = FLBuilderColor::hex_or_rgb( $settings->star_icon_selected_color );
+	$settings->star_inactive_color            = FLBuilderColor::hex_or_rgb( $settings->star_inactive_color );
+	$settings->section_field_bg_color         = FLBuilderColor::hex_or_rgb( $settings->section_field_bg_color );
+	$settings->section_title_color            = FLBuilderColor::hex_or_rgb( $settings->section_title_color );
+	$settings->section_description_color      = FLBuilderColor::hex_or_rgb( $settings->section_description_color );
+	$settings->input_placeholder_color        = FLBuilderColor::hex_or_rgb( $settings->input_placeholder_color );
 
 
 	// Button Background Gradient.
 if ( ! empty( $settings->button_bg_color ) ) {
-	$bg_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->button_bg_color ), 30, 'lighten' );
+	$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->button_bg_color, 30, 'lighten' ) );
 }
 
 ?>
@@ -238,7 +238,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 if ( isset( $settings->form_title_color ) ) {
 	?>
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .uabb-ff-form-title { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .uabb-ff-form-title {
 
 		<?php
 		echo ( ! empty( $settings->form_title_color ) ) ? 'color:' . esc_attr( $settings->form_title_color ) . ';' : '';
@@ -263,7 +263,7 @@ if ( isset( $settings->field_bg_color ) ) {
 	?>
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform .ff-el-form-control,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform .select2-container--default .select2-selection--multiple{ 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform .select2-container--default .select2-selection--multiple{
 
 		<?php
 		echo ( ! empty( $settings->field_bg_color ) ) ? 'background:' . esc_attr( $settings->field_bg_color ) . ';' : '';
@@ -289,7 +289,7 @@ if ( isset( $settings->field_active_bg_color ) && '' !== $settings->field_active
 	}
 <?php } ?>
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .ff-el-input--label label { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .ff-el-input--label label {
 	<?php
 
 	if ( isset( $settings->label_color ) ) {
@@ -307,7 +307,7 @@ if ( isset( $settings->input_field_color ) ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform .ff-el-form-control,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform .select2-container--default .select2-selection--multiple,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .ff_net_table tbody tr td label { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .ff_net_table tbody tr td label {
 	<?php
 
 	echo ( ! empty( $settings->input_field_color ) ) ? 'color:' . esc_attr( $settings->input_field_color ) . ';' : '';
@@ -320,7 +320,7 @@ if ( isset( $settings->input_field_color ) ) {
 if ( isset( $settings->input_placeholder_color ) ) {
 	?>
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform .ff-el-form-control::-webkit-input-placeholder { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform .ff-el-form-control::-webkit-input-placeholder {
 	<?php
 
 	echo ( ! empty( $settings->input_placeholder_color ) ) ? 'color:' . esc_attr( $settings->input_placeholder_color ) . ';' : '';
@@ -328,7 +328,7 @@ if ( isset( $settings->input_placeholder_color ) ) {
 }
 <?php } ?>
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .ff-el-input--label.ff-el-is-required.asterisk-right label:after { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .ff-el-input--label.ff-el-is-required.asterisk-right label:after {
 	<?php
 
 	if ( isset( $settings->required_asterisk_color ) ) {
@@ -503,7 +503,7 @@ if ( 'yes' === $settings->override_checkbox_radio_style ) {
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform input[type=checkbox]:focus:checked:before {
 		content: "\2714";
 		color: <?php echo esc_attr( $settings->radio_cb_checked_color ); ?>;
-		font-size: calc(<?php echo esc_attr( $font_size ); ?>px - <?php echo esc_attr( $settings->radio_cb_border_width ); ?>px );		
+		font-size: calc(<?php echo esc_attr( $font_size ); ?>px - <?php echo esc_attr( $settings->radio_cb_border_width ); ?>px );
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform input[type=radio]:checked:before,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform input[type=radio]:focus:checked:before{
@@ -544,7 +544,7 @@ if ( 'yes' === $settings->override_checkbox_radio_style ) {
 <?php
 // Primary Submit Button style.
 ?>
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform .ff_submit_btn_wrapper button { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform .ff_submit_btn_wrapper button {
 	<?php
 	if ( 'color' === esc_attr( $settings->button_bg_type ) ) {
 		if ( isset( $settings->button_bg_color ) ) {
@@ -617,8 +617,8 @@ if ( 'yes' === $settings->override_checkbox_radio_style ) {
 <?php
 // Seconday button style.
 ?>
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform span.ff_upload_btn.ff-btn, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform button.ff-btn.ff-btn-secondary { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform span.ff_upload_btn.ff-btn,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform button.ff-btn.ff-btn-secondary {
 	<?php
 	if ( isset( $settings->sec_button_bg_color ) ) {
 
@@ -637,14 +637,14 @@ if ( 'yes' === $settings->override_checkbox_radio_style ) {
 
 <?php if ( isset( $settings->sec_button_border_hover_color ) && '' !== $settings->sec_button_border_hover_color ) { ?>
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform span.ff_upload_btn.ff-btn:hover, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform button.ff-btn.ff-btn-secondary:hover { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform span.ff_upload_btn.ff-btn:hover,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform button.ff-btn.ff-btn-secondary:hover {
 		border-color: <?php echo esc_attr( $settings->sec_button_border_hover_color ); ?>;
 	}
 <?php } ?>
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform span.ff_upload_btn.ff-btn:hover, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform button.ff-btn.ff-btn-secondary:hover { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform span.ff_upload_btn.ff-btn:hover,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-fluent-form-content .fluentform button.ff-btn.ff-btn-secondary:hover {
 	<?php
 	if ( isset( $settings->sec_btn_text_hover_color ) ) {
 		echo ( ! empty( $settings->sec_btn_text_hover_color ) ) ? 'color:' . esc_attr( $settings->sec_btn_text_hover_color ) . ';' : '';

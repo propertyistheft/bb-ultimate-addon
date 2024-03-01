@@ -5,9 +5,9 @@
  *  @package UABB Devices Module Frontend.css.php file.
  */
 
-$settings->arrow_color            = UABB_Helper::uabb_colorpicker( $settings, 'arrow_color' );
-$settings->arrow_background_color = UABB_Helper::uabb_colorpicker( $settings, 'arrow_background_color', true );
-$settings->arrow_color_border     = UABB_Helper::uabb_colorpicker( $settings, 'arrow_color_border' );
+$settings->arrow_color            = FLBuilderColor::hex_or_rgb( $settings->arrow_color );
+$settings->arrow_background_color = FLBuilderColor::hex_or_rgb( $settings->arrow_background_color );
+$settings->arrow_color_border     = FLBuilderColor::hex_or_rgb( $settings->arrow_color_border );
 
 if ( 'video' === $settings->media_type && 'self_hosted' !== $settings->video_src ) {
 	$video_settings = array(
@@ -176,7 +176,7 @@ if ( '' !== $settings->device_control_color ) {
 <?php
 if ( '' !== $settings->device_control_hover_color ) {
 	?>
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-device-switch-control i:hover, 
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-device-switch-control i:hover,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-device-switch-control i:focus {
 		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->device_control_hover_color ) ); ?>;
 	}

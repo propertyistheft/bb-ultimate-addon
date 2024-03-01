@@ -42,10 +42,10 @@ if ( $enable_row_separator ) {
 		}
 
 		if ( isset( $row->uabb_row_separator_color ) && '' !== $row->uabb_row_separator_color ) {
-			$row->uabb_row_separator_color = UABB_Helper::uabb_colorpicker( $row, 'uabb_row_separator_color', true );
+			$row->uabb_row_separator_color = FLBuilderColor::hex_or_rgb( $row->uabb_row_separator_color );
 		} else {
 			if ( isset( $row->separator_color ) && '' !== $row->separator_color && 'ffffff' === $row->separator_color ) {
-				$row->uabb_row_separator_color = UABB_Helper::uabb_colorpicker( $row, 'separator_color', true );
+				$row->uabb_row_separator_color = FLBuilderColor::hex_or_rgb( $row->separator_color );
 			}
 		}
 
@@ -57,7 +57,7 @@ if ( $enable_row_separator ) {
 			$row->bot_separator_color = '#ffffff';
 		}
 
-		$row->bot_separator_color = UABB_Helper::uabb_colorpicker( $row, 'bot_separator_color', true );
+		$row->bot_separator_color = FLBuilderColor::hex_or_rgb( $row->bot_separator_color );
 
 		if ( 'round_split' === $row->separator_shape ) {
 			?>
@@ -138,60 +138,60 @@ if ( $enable_row_separator ) {
 
 		.fl-node-<?php echo esc_attr( $row_id ); ?> #uabb-top-slit2,
 		.fl-node-<?php echo esc_attr( $row_id ); ?> #uabb-top-slit3 {
-			<?php $dark_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( uabb_theme_base_color( $row->uabb_row_separator_color ) ), 80, 'darken' ); ?>
+			<?php $dark_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( uabb_theme_base_color( $row->uabb_row_separator_color ), 80, 'darken' ) ); ?>
 			fill: <?php echo esc_attr( $dark_color ); ?>;
 		}
 
 		.fl-node-<?php echo esc_attr( $row_id ); ?> #uabb-bottom-slit2,
 		.fl-node-<?php echo esc_attr( $row_id ); ?> #uabb-bottom-slit3 {
-			<?php $dark_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( uabb_theme_base_color( $row->bot_separator_color ) ), 80, 'darken' ); ?>
+			<?php $dark_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( uabb_theme_base_color( $row->bot_separator_color ), 80, 'darken' ) ); ?>
 			fill: <?php echo esc_attr( $dark_color ); ?>;
 		}
 
 		.fl-node-<?php echo esc_attr( $row_id ); ?> #uabb-top-pine-tree-separator2 {
-			<?php $dark_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( uabb_theme_base_color( $row->uabb_row_separator_color ) ), 80, 'lighten' ); ?>
+			<?php $dark_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( uabb_theme_base_color( $row->uabb_row_separator_color ), 80, 'lighten' ) ); ?>
 			fill: <?php echo esc_attr( $dark_color ); ?>;
 			stroke: <?php echo esc_attr( $dark_color ); ?>;
 		}
 
 		.fl-node-<?php echo esc_attr( $row_id ); ?> #uabb-bottom-pine-tree-separator2 {
-			<?php $dark_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( uabb_theme_base_color( $row->bot_separator_color ) ), 80, 'lighten' ); ?>
+			<?php $dark_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( uabb_theme_base_color( $row->bot_separator_color ), 80, 'lighten' ) ); ?>
 			fill: <?php echo esc_attr( $dark_color ); ?>;
 			stroke: <?php echo esc_attr( $dark_color ); ?>;
 		}
 
 		.fl-node-<?php echo esc_attr( $row_id ); ?> #uabb-top-pine-tree-bend-separator2 {
-			<?php $dark_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( uabb_theme_base_color( $row->uabb_row_separator_color ) ), 80, 'lighten' ); ?>
+			<?php $dark_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( uabb_theme_base_color( $row->uabb_row_separator_color ), 80, 'lighten' ) ); ?>
 			fill: <?php echo esc_attr( $dark_color ); ?>;
 			stroke: <?php echo esc_attr( $dark_color ); ?>;
 		}
 
 		.fl-node-<?php echo esc_attr( $row_id ); ?> #uabb-bottom-pine-tree-bend-separator2 {
-			<?php $dark_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( uabb_theme_base_color( $row->bot_separator_color ) ), 80, 'lighten' ); ?>
+			<?php $dark_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( uabb_theme_base_color( $row->bot_separator_color ), 80, 'lighten' ) ); ?>
 			fill: <?php echo esc_attr( $dark_color ); ?>;
 			stroke: <?php echo esc_attr( $dark_color ); ?>;
 		}
 
 		.fl-node-<?php echo esc_attr( $row_id ); ?> #uabb-top-slime-separator2 {
-			<?php $dark_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( uabb_theme_base_color( $row->uabb_row_separator_color ) ), 80, 'lighten' ); ?>
+			<?php $dark_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( uabb_theme_base_color( $row->uabb_row_separator_color ), 80, 'lighten' ) ); ?>
 			fill: <?php echo esc_attr( $dark_color ); ?>;
 			stroke: <?php echo esc_attr( $dark_color ); ?>;
 		}
 
 		.fl-node-<?php echo esc_attr( $row_id ); ?> #uabb-bottom-slime-separator2 {
-			<?php $dark_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( uabb_theme_base_color( $row->bot_separator_color ) ), 80, 'lighten' ); ?>
+			<?php $dark_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( uabb_theme_base_color( $row->bot_separator_color ), 80, 'lighten' ) ); ?>
 			fill: <?php echo esc_attr( $dark_color ); ?>;
 			stroke: <?php echo esc_attr( $dark_color ); ?>;
 		}
 
 		.fl-node-<?php echo esc_attr( $row_id ); ?> #uabb-top-wave-slide-separator2 {
-			<?php $lighten_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( uabb_theme_base_color( $row->uabb_row_separator_color ) ), 80, 'lighten' ); ?>
+			<?php $lighten_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( uabb_theme_base_color( $row->uabb_row_separator_color ), 80, 'lighten' ) ); ?>
 			fill: <?php echo esc_attr( $lighten_color ); ?>;
 			stroke: <?php echo esc_attr( $lighten_color ); ?>;
 		}
 
 		.fl-node-<?php echo esc_attr( $row_id ); ?> #uabb-bottom-wave-slide-separator2 {
-			<?php $lighten_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( uabb_theme_base_color( $row->bot_separator_color ) ), 80, 'lighten' ); ?>
+			<?php $lighten_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( uabb_theme_base_color( $row->bot_separator_color ), 80, 'lighten' ) ); ?>
 			fill: <?php echo esc_attr( $lighten_color ); ?>;
 			stroke: <?php echo esc_attr( $lighten_color ); ?>;
 		}

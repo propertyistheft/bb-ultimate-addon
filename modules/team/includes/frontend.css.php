@@ -11,14 +11,14 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->img_bg_color  = UABB_Helper::uabb_colorpicker( $settings, 'img_bg_color', true );
-$settings->text_bg_color = UABB_Helper::uabb_colorpicker( $settings, 'text_bg_color', true );
+$settings->img_bg_color  = FLBuilderColor::hex_or_rgb( $settings->img_bg_color );
+$settings->text_bg_color = FLBuilderColor::hex_or_rgb( $settings->text_bg_color );
 
-$settings->separator_color = UABB_Helper::uabb_colorpicker( $settings, 'separator_color' );
-$settings->color           = UABB_Helper::uabb_colorpicker( $settings, 'color' );
-$settings->desg_color      = UABB_Helper::uabb_colorpicker( $settings, 'desg_color' );
-$settings->desc_color      = UABB_Helper::uabb_colorpicker( $settings, 'desc_color' );
-$settings->box_bg_color    = UABB_Helper::uabb_colorpicker( $settings, 'box_bg_color' );
+$settings->separator_color = FLBuilderColor::hex_or_rgb( $settings->separator_color );
+$settings->color           = FLBuilderColor::hex_or_rgb( $settings->color );
+$settings->desg_color      = FLBuilderColor::hex_or_rgb( $settings->desg_color );
+$settings->desc_color      = FLBuilderColor::hex_or_rgb( $settings->desc_color );
+$settings->box_bg_color    = FLBuilderColor::hex_or_rgb( $settings->box_bg_color );
 
 
 $settings->module_border_radius = ( '' !== trim( $settings->module_border_radius ) ) ? $settings->module_border_radius : '0';
@@ -277,12 +277,12 @@ if ( 'simple' === $settings->photo_style ) {
 if ( 'yes' === $settings->enable_social_icons ) {
 	$icon_count = 1;
 	foreach ( $settings->icons as $i => $icon ) :
-		$icon->icobg_color           = UABB_Helper::uabb_colorpicker( $icon, 'icobg_color', true );
-		$icon->icobg_hover_color     = UABB_Helper::uabb_colorpicker( $icon, 'icobg_hover_color', true );
-		$icon->icoborder_color       = UABB_Helper::uabb_colorpicker( $icon, 'icoborder_color' );
-		$icon->icoborder_hover_color = UABB_Helper::uabb_colorpicker( $icon, 'icoborder_hover_color' );
-		$icon->icocolor              = UABB_Helper::uabb_colorpicker( $icon, 'icocolor' );
-		$icon->icohover_color        = UABB_Helper::uabb_colorpicker( $icon, 'icohover_color' );
+		$icon->icobg_color           = FLBuilderColor::hex_or_rgb( $icon->icobg_color );
+		$icon->icobg_hover_color     = FLBuilderColor::hex_or_rgb( $icon->icobg_hover_color );
+		$icon->icoborder_color       = FLBuilderColor::hex_or_rgb( $icon->icoborder_color );
+		$icon->icoborder_hover_color = FLBuilderColor::hex_or_rgb( $icon->icoborder_hover_color );
+		$icon->icocolor              = FLBuilderColor::hex_or_rgb( $icon->icocolor );
+		$icon->icohover_color        = FLBuilderColor::hex_or_rgb( $icon->icohover_color );
 
 		$imageicon_array = array(
 
@@ -352,7 +352,7 @@ if ( 'yes' === $settings->enable_social_icons ) {
 	<?php } elseif ( 'right' === $settings->text_alignment ) { ?>
 		<?php $social_margin = ( trim( $settings->spacing ) !== '' ) ? $settings->spacing : '10'; ?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-team-icon-link {
-			margin: 0 0 <?php echo esc_attr( $social_margin ); ?>px <?php echo esc_attr( $social_margin ); ?>px;  
+			margin: 0 0 <?php echo esc_attr( $social_margin ); ?>px <?php echo esc_attr( $social_margin ); ?>px;
 		}
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-team-icon-link:first-child {
 			margin-left: 0px;
@@ -363,7 +363,7 @@ if ( 'yes' === $settings->enable_social_icons ) {
 			$social_margin_lr = ( intval( $social_margin ) !== 0 ) ? intval( $social_margin ) / 2 : $social_margin;
 		?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-team-icon-link {
-			margin: 0 <?php echo esc_attr( $social_margin_lr ); ?>px <?php echo esc_attr( $social_margin ); ?>px <?php echo esc_attr( $social_margin_lr ); ?>px;  
+			margin: 0 <?php echo esc_attr( $social_margin_lr ); ?>px <?php echo esc_attr( $social_margin ); ?>px <?php echo esc_attr( $social_margin_lr ); ?>px;
 		}
 	<?php } ?>
 
@@ -394,7 +394,7 @@ if ( 'yes' === $settings->enable_social_icons ) {
 			font-size: <?php echo esc_attr( $settings->font_size_unit ); ?>px;
 		<?php } elseif ( isset( $settings->font_size_unit ) && '' === $settings->font_size_unit && isset( $settings->font_size['desktop'] ) && '' !== $settings->font_size['desktop'] ) { ?>
 			font-size: <?php echo esc_attr( $settings->font_size['desktop'] ); ?>px;
-		<?php } ?>	
+		<?php } ?>
 
 		<?php if ( isset( $settings->font_size['desktop'] ) && '' === $settings->font_size['desktop'] && isset( $settings->line_height['desktop'] ) && '' !== $settings->line_height['desktop'] && '' === $settings->line_height_unit ) { ?>
 			line-height: <?php echo esc_attr( $settings->line_height['desktop'] ); ?>px;
@@ -450,7 +450,7 @@ if ( 'yes' === $settings->enable_social_icons ) {
 			font-size: <?php echo esc_attr( $settings->desg_font_size_unit ); ?>px;
 		<?php } elseif ( isset( $settings->desg_font_size_unit ) && '' === $settings->desg_font_size_unit && isset( $settings->desg_font_size['desktop'] ) && '' !== $settings->desg_font_size['desktop'] ) { ?>
 			font-size: <?php echo esc_attr( $settings->desg_font_size['desktop'] ); ?>px;
-		<?php } ?>	
+		<?php } ?>
 
 		<?php if ( isset( $settings->desg_font_size['desktop'] ) && '' === $settings->desg_font_size['desktop'] && isset( $settings->desg_line_height['desktop'] ) && '' !== $settings->desg_line_height['desktop'] && '' === $settings->desg_line_height_unit ) { ?>
 			line-height: <?php echo esc_attr( $settings->desg_line_height['desktop'] ); ?>px;
@@ -601,7 +601,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 						font-size: <?php echo esc_attr( $settings->font_size_unit_medium ); ?>px;
 						<?php if ( '' === $settings->line_height_unit_medium && '' !== $settings->font_size_unit_medium ) { ?>
 							line-height: <?php $settings->font_size_unit_medium + 2; ?>px;
-						<?php } ?>	
+						<?php } ?>
 					<?php } elseif ( isset( $settings->font_size_unit_medium ) && '' === $settings->font_size_unit_medium && isset( $settings->font_size['medium'] ) && '' !== $settings->font_size['medium'] ) { ?>
 						font-size: <?php echo esc_attr( $settings->font_size['medium'] ); ?>px;
 						line-height: <?php $settings->font_size['medium'] + 2; ?>px;
@@ -612,7 +612,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 					<?php } ?>
 
 					<?php if ( 'yes' === $converted || isset( $settings->line_height_unit_medium ) && '' !== $settings->line_height_unit_medium ) { ?>
-						line-height: <?php echo esc_attr( $settings->line_height_unit_medium ); ?>em;	
+						line-height: <?php echo esc_attr( $settings->line_height_unit_medium ); ?>em;
 					<?php } elseif ( isset( $settings->line_height_unit_medium ) && '' === $settings->line_height_unit_medium && isset( $settings->line_height['medium'] ) && '' !== $settings->line_height['medium'] ) { ?>
 						line-height: <?php echo esc_attr( $settings->line_height['medium'] ); ?>px;
 					<?php } ?>
@@ -623,9 +623,9 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 
 					<?php if ( 'yes' === $converted || isset( $settings->desg_font_size_unit_medium ) && '' !== $settings->desg_font_size_unit_medium ) { ?>
 						font-size: <?php echo esc_attr( $settings->desg_font_size_unit_medium ); ?>px;
-					<?php } elseif ( isset( $settings->desg_font_size_unit_medium ) && '' === $settings->desg_font_size_unit_medium && isset( $settings->desg_font_size['medium'] ) && '' !== $settings->desg_font_size['medium'] ) { ?> 
+					<?php } elseif ( isset( $settings->desg_font_size_unit_medium ) && '' === $settings->desg_font_size_unit_medium && isset( $settings->desg_font_size['medium'] ) && '' !== $settings->desg_font_size['medium'] ) { ?>
 						font-size: <?php echo esc_attr( $settings->desg_font_size['medium'] ); ?>px;
-					<?php } ?> 
+					<?php } ?>
 
 					<?php if ( isset( $settings->desg_font_size['medium'] ) && '' === $settings->desg_font_size['medium'] && isset( $settings->desg_line_height['medium'] ) && '' !== $settings->desg_line_height['medium'] && '' === $settings->desg_line_height_unit_medium && '' === $settings->desg_line_height_unit ) { ?>
 							line-height: <?php echo esc_attr( $settings->desg_line_height['medium'] ); ?>px;
@@ -633,9 +633,9 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 
 					<?php if ( 'yes' === $converted || isset( $settings->desg_line_height_unit_medium ) && '' !== $settings->desg_line_height_unit_medium ) { ?>
 						line-height: <?php echo esc_attr( $settings->desg_line_height_unit_medium ); ?>em;
-					<?php } elseif ( isset( $settings->desg_line_height_unit_medium ) && '' === $settings->desg_line_height_unit_medium && isset( $settings->desg_line_height['medium'] ) && '' !== $settings->desg_line_height['medium'] ) { ?> 
+					<?php } elseif ( isset( $settings->desg_line_height_unit_medium ) && '' === $settings->desg_line_height_unit_medium && isset( $settings->desg_line_height['medium'] ) && '' !== $settings->desg_line_height['medium'] ) { ?>
 						line-height: <?php echo esc_attr( $settings->desg_line_height['medium'] ); ?>px;
-					<?php } ?> 
+					<?php } ?>
 				}
 
 				/* Desc Text */
@@ -643,9 +643,9 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 
 					<?php if ( 'yes' === $converted || isset( $settings->desc_font_size_unit_medium ) && '' !== $settings->desc_font_size_unit_medium ) { ?>
 						font-size: <?php echo esc_attr( $settings->desc_font_size_unit_medium ); ?>px;
-					<?php } elseif ( isset( $settings->desc_font_size_unit_medium ) && '' === $settings->desc_font_size_unit_medium && isset( $settings->desc_font_size['medium'] ) && '' !== $settings->desc_font_size['medium'] ) { ?> 
+					<?php } elseif ( isset( $settings->desc_font_size_unit_medium ) && '' === $settings->desc_font_size_unit_medium && isset( $settings->desc_font_size['medium'] ) && '' !== $settings->desc_font_size['medium'] ) { ?>
 						font-size: <?php echo esc_attr( $settings->desc_font_size['medium'] ); ?>px;
-					<?php } ?> 
+					<?php } ?>
 
 					<?php if ( isset( $settings->desc_font_size['medium'] ) && '' === $settings->desc_font_size['medium'] && isset( $settings->desc_line_height['medium'] ) && '' !== $settings->desc_line_height['medium'] && '' === $settings->desc_line_height_unit_medium && '' === $settings->desc_line_height_unit ) { ?>
 							line-height: <?php echo esc_attr( $settings->desc_line_height['medium'] ); ?>px;
@@ -653,15 +653,15 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 
 					<?php if ( 'yes' === $converted || isset( $settings->desc_line_height_unit_medium ) && '' !== $settings->desc_line_height_unit_medium ) { ?>
 						line-height: <?php echo esc_attr( $settings->desc_line_height_unit_medium ); ?>em;
-					<?php } elseif ( isset( $settings->desc_line_height_unit_medium ) && '' === $settings->desc_line_height_unit_medium && isset( $settings->desc_line_height['medium'] ) && '' !== $settings->desc_line_height['medium'] ) { ?> 
+					<?php } elseif ( isset( $settings->desc_line_height_unit_medium ) && '' === $settings->desc_line_height_unit_medium && isset( $settings->desc_line_height['medium'] ) && '' !== $settings->desc_line_height['medium'] ) { ?>
 						line-height: <?php echo esc_attr( $settings->desc_line_height['medium'] ); ?>px;
-					<?php } ?>  
+					<?php } ?>
 				}
 				<?php
 			}
 		}
 		?>
-	}		
+	}
 	<?php
 		/* Small Breakpoint media query */
 	?>
@@ -716,11 +716,11 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 							font-size: <?php echo esc_attr( $settings->font_size_unit_responsive ); ?>px;
 							<?php if ( '' === $settings->line_height_unit_responsive && '' !== $settings->font_size_unit_responsive ) { ?>
 								line-height: <?php echo esc_attr( $settings->font_size_unit_responsive ) + 2; ?>px;
-							<?php } ?>	
+							<?php } ?>
 						<?php } elseif ( isset( $settings->font_size_unit_responsive ) && '' === $settings->font_size_unit_responsive && isset( $settings->font_size['small'] ) && '' !== $settings->font_size['small'] ) { ?>
 							font-size: <?php echo esc_attr( $settings->font_size['small'] ); ?>px;
 							line-height: <?php echo esc_attr( $settings->font_size['small'] + 2 ); ?>px;
-							<?php } ?>		
+							<?php } ?>
 
 						<?php if ( isset( $settings->font_size['small'] ) && '' === $settings->font_size['small'] && isset( $settings->line_height['small'] ) && '' !== $settings->line_height['small'] && '' === $settings->line_height_unit_responsive && '' === $settings->line_height_unit_medium && '' === $settings->line_height_unit ) { ?>
 								line-height: <?php echo esc_attr( $settings->line_height['small'] ); ?>px;
@@ -740,8 +740,8 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 							font-size: <?php echo esc_attr( $settings->desg_font_size_unit_responsive ); ?>px;
 							<?php if ( '' === $settings->desg_line_height_unit_responsive && '' !== $settings->desg_font_size_unit_responsive ) { ?>
 								line-height: <?php $settings->desg_font_size_unit_responsive + 2; ?>px;
-							<?php } ?>	
-						<?php } elseif ( isset( $settings->desg_font_size_unit_responsive ) && '' === $settings->desg_font_size_unit_responsive && isset( $settings->desg_font_size['small'] ) && '' !== $settings->desg_font_size['small'] ) { ?> 
+							<?php } ?>
+						<?php } elseif ( isset( $settings->desg_font_size_unit_responsive ) && '' === $settings->desg_font_size_unit_responsive && isset( $settings->desg_font_size['small'] ) && '' !== $settings->desg_font_size['small'] ) { ?>
 							font-size: <?php echo esc_attr( $settings->desg_font_size['small'] ); ?>px;
 							line-height: <?php $settings->desg_font_size['small'] + 2; ?>px;
 						<?php } ?>
@@ -752,7 +752,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 
 						<?php if ( 'yes' === $converted || isset( $settings->desg_line_height_unit_responsive ) && '' !== $settings->desg_line_height_unit_responsive ) { ?>
 							line-height: <?php echo esc_attr( $settings->desg_line_height_unit_responsive ); ?>em;
-						<?php } elseif ( isset( $settings->desg_line_height_unit_responsive ) && '' === $settings->desg_line_height_unit_responsive && isset( $settings->desg_line_height['small'] ) && '' !== $settings->desg_line_height['small'] ) { ?> 
+						<?php } elseif ( isset( $settings->desg_line_height_unit_responsive ) && '' === $settings->desg_line_height_unit_responsive && isset( $settings->desg_line_height['small'] ) && '' !== $settings->desg_line_height['small'] ) { ?>
 							line-height: <?php echo esc_attr( $settings->desg_line_height['small'] ); ?>px;
 						<?php } ?>
 					}
@@ -764,8 +764,8 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 							font-size: <?php echo esc_attr( $settings->desc_font_size_unit_responsive ); ?>px;
 							<?php if ( '' === $settings->desc_line_height_unit_responsive && '' !== $settings->desc_font_size_unit_responsive ) { ?>
 								line-height: <?php echo esc_attr( $settings->desc_font_size_unit_responsive ) + 2; ?>px;
-							<?php } ?>	
-						<?php } elseif ( isset( $settings->desc_font_size_unit_responsive ) && '' === $settings->desc_font_size_unit_responsive && isset( $settings->desc_font_size['small'] ) && '' !== $settings->desc_font_size['small'] ) { ?> 
+							<?php } ?>
+						<?php } elseif ( isset( $settings->desc_font_size_unit_responsive ) && '' === $settings->desc_font_size_unit_responsive && isset( $settings->desc_font_size['small'] ) && '' !== $settings->desc_font_size['small'] ) { ?>
 							font-size: <?php echo esc_attr( $settings->desc_font_size['small'] ); ?>px;
 							line-height: <?php $settings->desc_font_size['small'] + 2; ?>px;
 						<?php } ?>
@@ -776,7 +776,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 
 						<?php if ( 'yes' === $converted || isset( $settings->desc_line_height_unit_responsive ) && '' !== $settings->desc_line_height_unit_responsive ) { ?>
 							line-height: <?php echo esc_attr( $settings->desc_line_height_unit_responsive ); ?>em;
-						<?php } elseif ( isset( $settings->desc_line_height_unit_responsive ) && '' === $settings->desc_line_height_unit_responsive && isset( $settings->desc_line_height['small'] ) && '' !== $settings->desc_line_height['small'] ) { ?> 
+						<?php } elseif ( isset( $settings->desc_line_height_unit_responsive ) && '' === $settings->desc_line_height_unit_responsive && isset( $settings->desc_line_height['small'] ) && '' !== $settings->desc_line_height['small'] ) { ?>
 							line-height: <?php echo esc_attr( $settings->desc_line_height['small'] ); ?>px;
 						<?php } ?>
 					}
@@ -784,6 +784,6 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 				}
 			}
 			?>
-		}		
+		}
 	<?php
 }

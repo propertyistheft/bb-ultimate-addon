@@ -8,18 +8,18 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->front_background_color = UABB_Helper::uabb_colorpicker( $settings, 'front_background_color', true );
+$settings->front_background_color = FLBuilderColor::hex_or_rgb( $settings->front_background_color );
 
-$settings->back_background_color = UABB_Helper::uabb_colorpicker( $settings, 'back_background_color', true );
+$settings->back_background_color = FLBuilderColor::hex_or_rgb( $settings->back_background_color );
 
-$settings->front_title_typography_color = UABB_Helper::uabb_colorpicker( $settings, 'front_title_typography_color' );
-$settings->front_desc_typography_color  = UABB_Helper::uabb_colorpicker( $settings, 'front_desc_typography_color' );
-$settings->back_title_typography_color  = UABB_Helper::uabb_colorpicker( $settings, 'back_title_typography_color' );
-$settings->back_desc_typography_color   = UABB_Helper::uabb_colorpicker( $settings, 'back_desc_typography_color' );
+$settings->front_title_typography_color = FLBuilderColor::hex_or_rgb( $settings->front_title_typography_color );
+$settings->front_desc_typography_color  = FLBuilderColor::hex_or_rgb( $settings->front_desc_typography_color );
+$settings->back_title_typography_color  = FLBuilderColor::hex_or_rgb( $settings->back_title_typography_color );
+$settings->back_desc_typography_color   = FLBuilderColor::hex_or_rgb( $settings->back_desc_typography_color );
 
 if ( ! $version_bb_check ) {
-	$settings->front_border_color = UABB_Helper::uabb_colorpicker( $settings, 'front_border_color' );
-	$settings->back_border_color  = UABB_Helper::uabb_colorpicker( $settings, 'back_border_color' );
+	$settings->front_border_color = FLBuilderColor::hex_or_rgb( $settings->front_border_color );
+	$settings->back_border_color  = FLBuilderColor::hex_or_rgb( $settings->back_border_color );
 }
 ?>
 <?php
@@ -144,7 +144,7 @@ if ( 'uabb-custom-height' === $settings->flip_box_min_height_options ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-front .uabb-text-editor {
 
-	color : 
+	color :
 	<?php echo esc_attr( uabb_theme_text_color( $settings->front_desc_typography_color ) ); ?>;
 
 	<?php
@@ -289,7 +289,7 @@ if ( 'uabb-custom-height' === $settings->flip_box_min_height_options ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-back .uabb-text-editor {
 
-	color : 
+	color :
 	<?php echo esc_attr( uabb_theme_text_color( $settings->back_desc_typography_color ) ); ?>;
 
 	<?php

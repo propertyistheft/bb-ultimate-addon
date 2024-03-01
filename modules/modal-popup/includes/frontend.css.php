@@ -8,21 +8,21 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->content_bg_color = UABB_Helper::uabb_colorpicker( $settings, 'content_bg_color' );
-$settings->overlay_color    = UABB_Helper::uabb_colorpicker( $settings, 'overlay_color', true );
+$settings->content_bg_color = FLBuilderColor::hex_or_rgb( $settings->content_bg_color );
+$settings->overlay_color    = FLBuilderColor::hex_or_rgb( $settings->overlay_color );
 
-$settings->close_icon_color = UABB_Helper::uabb_colorpicker( $settings, 'close_icon_color' );
+$settings->close_icon_color = FLBuilderColor::hex_or_rgb( $settings->close_icon_color );
 
-$settings->icon_color       = UABB_Helper::uabb_colorpicker( $settings, 'icon_color' );
-$settings->icon_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'icon_hover_color' );
+$settings->icon_color       = FLBuilderColor::hex_or_rgb( $settings->icon_color );
+$settings->icon_hover_color = FLBuilderColor::hex_or_rgb( $settings->icon_hover_color );
 
-$settings->text_color       = UABB_Helper::uabb_colorpicker( $settings, 'text_color' );
-$settings->text_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'text_hover_color' );
+$settings->text_color       = FLBuilderColor::hex_or_rgb( $settings->text_color );
+$settings->text_hover_color = FLBuilderColor::hex_or_rgb( $settings->text_hover_color );
 
-$settings->title_color    = UABB_Helper::uabb_colorpicker( $settings, 'title_color' );
-$settings->title_bg_color = UABB_Helper::uabb_colorpicker( $settings, 'title_bg_color', true );
+$settings->title_color    = FLBuilderColor::hex_or_rgb( $settings->title_color );
+$settings->title_bg_color = FLBuilderColor::hex_or_rgb( $settings->title_bg_color );
 
-$settings->ct_content_color = UABB_Helper::uabb_colorpicker( $settings, 'ct_content_color' );
+$settings->ct_content_color = FLBuilderColor::hex_or_rgb( $settings->ct_content_color );
 
 ?>
 

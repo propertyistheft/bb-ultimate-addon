@@ -7,33 +7,33 @@
 
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 
-$settings->form_bg_color = UABB_Helper::uabb_colorpicker( $settings, 'form_bg_color', true );
+$settings->form_bg_color = FLBuilderColor::hex_or_rgb( $settings->form_bg_color );
 
-$settings->input_background_color        = UABB_Helper::uabb_colorpicker( $settings, 'input_background_color', true );
-$settings->input_background_active_color = UABB_Helper::uabb_colorpicker( $settings, 'input_background_active_color', true );
-$settings->input_border_active_color     = UABB_Helper::uabb_colorpicker( $settings, 'input_border_active_color', true );
-$settings->field_description_color       = UABB_Helper::uabb_colorpicker( $settings, 'field_description_color', true );
-$settings->required_asterisk_color       = UABB_Helper::uabb_colorpicker( $settings, 'required_asterisk_color', true );
+$settings->input_background_color        = FLBuilderColor::hex_or_rgb( $settings->input_background_color );
+$settings->input_background_active_color = FLBuilderColor::hex_or_rgb( $settings->input_background_active_color );
+$settings->input_border_active_color     = FLBuilderColor::hex_or_rgb( $settings->input_border_active_color );
+$settings->field_description_color       = FLBuilderColor::hex_or_rgb( $settings->field_description_color );
+$settings->required_asterisk_color       = FLBuilderColor::hex_or_rgb( $settings->required_asterisk_color );
 
-$settings->btn_text_color             = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_color', true );
-$settings->btn_text_hover_color       = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_hover_color', true );
-$settings->btn_background_color       = UABB_Helper::uabb_colorpicker( $settings, 'btn_background_color', true );
-$settings->btn_background_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'btn_background_hover_color', true );
+$settings->btn_text_color             = FLBuilderColor::hex_or_rgb( $settings->btn_text_color );
+$settings->btn_text_hover_color       = FLBuilderColor::hex_or_rgb( $settings->btn_text_hover_color );
+$settings->btn_background_color       = FLBuilderColor::hex_or_rgb( $settings->btn_background_color );
+$settings->btn_background_hover_color = FLBuilderColor::hex_or_rgb( $settings->btn_background_hover_color );
 
 /* Typography Colors */
 
-$settings->form_title_color = UABB_Helper::uabb_colorpicker( $settings, 'form_title_color', true );
-$settings->form_desc_color  = UABB_Helper::uabb_colorpicker( $settings, 'form_desc_color', true );
+$settings->form_title_color = FLBuilderColor::hex_or_rgb( $settings->form_title_color );
+$settings->form_desc_color  = FLBuilderColor::hex_or_rgb( $settings->form_desc_color );
 
-$settings->label_color     = UABB_Helper::uabb_colorpicker( $settings, 'label_color', true );
-$settings->sub_label_color = UABB_Helper::uabb_colorpicker( $settings, 'sub_label_color', true );
+$settings->label_color     = FLBuilderColor::hex_or_rgb( $settings->label_color );
+$settings->sub_label_color = FLBuilderColor::hex_or_rgb( $settings->sub_label_color );
 
 /* Input Color */
-$settings->color = UABB_Helper::uabb_colorpicker( $settings, 'color', true );
+$settings->color = FLBuilderColor::hex_or_rgb( $settings->color );
 
-$settings->input_msg_color      = UABB_Helper::uabb_colorpicker( $settings, 'input_msg_color', true );
-$settings->validation_msg_color = UABB_Helper::uabb_colorpicker( $settings, 'validation_msg_color', true );
-$settings->validation_bg_color  = UABB_Helper::uabb_colorpicker( $settings, 'validation_bg_color', true );
+$settings->input_msg_color      = FLBuilderColor::hex_or_rgb( $settings->input_msg_color );
+$settings->validation_msg_color = FLBuilderColor::hex_or_rgb( $settings->validation_msg_color );
+$settings->validation_bg_color  = FLBuilderColor::hex_or_rgb( $settings->validation_bg_color );
 
 $settings->radio_check_size          = ( isset( $settings->radio_check_size ) && '' !== $settings->radio_check_size ) ? $settings->radio_check_size : '';
 $settings->radio_check_border_width  = ( isset( $settings->radio_check_border_width ) && '' !== $settings->radio_check_border_width ) ? $settings->radio_check_border_width : '';
@@ -44,8 +44,8 @@ $settings->validation_msg_font_size  = ( isset( $settings->validation_msg_font_s
 
 if ( ! $version_bb_check ) {
 	$settings->input_border_radius     = ( isset( $settings->input_border_radius ) && '' !== $settings->input_border_radius ) ? $settings->input_border_radius : '';
-	$settings->validation_border_color = UABB_Helper::uabb_colorpicker( $settings, 'validation_border_color' );
-	$settings->input_border_color      = UABB_Helper::uabb_colorpicker( $settings, 'input_border_color', true );
+	$settings->validation_border_color = FLBuilderColor::hex_or_rgb( $settings->validation_border_color );
+	$settings->input_border_color      = FLBuilderColor::hex_or_rgb( $settings->input_border_color );
 }
 
 ?>
@@ -335,8 +335,8 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-wpf-styler .wpforms-form .wpforms-field input[type="checkbox"] + label:before,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-wpf-styler .wpforms-form .wpforms-field input[type="radio"] + label:before {
 
-		background: #<?php echo esc_attr( $settings->radio_check_bgcolor ); ?>;
-		border: <?php echo esc_attr( $settings->radio_check_border_width ); ?>px solid #<?php echo esc_attr( $settings->radio_check_border_color ); ?>;
+		background: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_bgcolor ) ); ?>;
+		border: <?php echo esc_attr( $settings->radio_check_border_width ); ?>px solid <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_border_color ) ); ?>;
 		width: <?php echo esc_attr( $settings->radio_check_size ); ?>px;
 		height: <?php echo esc_attr( $settings->radio_check_size ); ?>px;
 
@@ -345,7 +345,7 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-wpf-styler .wpforms-form .wpforms-field input[type="checkbox"]:checked + label:before {
 		content: "\2714";
 		font-size: calc(<?php echo esc_attr( $font_size ); ?>px - <?php echo esc_attr( $settings->radio_check_border_width ); ?>px );
-		color: #<?php echo esc_attr( $settings->radio_check_selected_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_selected_color ) ); ?>;
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-wpf-styler .wpforms-form .wpforms-field input[type="checkbox"] + label:before {
@@ -354,8 +354,8 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-wpf-styler .wpforms-form .wpforms-field input[type="radio"]:checked + label:before {
-		background: #<?php echo esc_attr( $settings->radio_check_selected_color ); ?>;
-		box-shadow: inset 0 0 0 4px #<?php echo esc_attr( $settings->radio_check_bgcolor ); ?>;
+		background: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_selected_color ) ); ?>;
+		box-shadow: inset 0 0 0 4px <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_bgcolor ) ); ?>;
 	}
 
 	<?php
@@ -368,7 +368,7 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 	if ( 'true' === $settings->radio_check_custom_option ) {
 		if ( '' !== $settings->radio_checkbox_color ) :
 			?>
-			color: #<?php echo esc_attr( $settings->radio_checkbox_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_checkbox_color ) ); ?>;
 			<?php
 		endif;
 	}
@@ -409,7 +409,7 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 
 			<?php if ( 'none' !== $settings->radio_checkbox_transform ) : ?>
 				text-transform: <?php echo esc_attr( $settings->radio_checkbox_transform ); ?>;
-			<?php endif; ?>esc_attr( 
+			<?php endif; ?>esc_attr(
 
 			<?php if ( '' !== $settings->radio_checkbox_letter_spacing ) : ?>
 				letter-spacing: <?php echo esc_attr( $settings->radio_checkbox_letter_spacing ); ?>px;
@@ -494,7 +494,7 @@ if ( 'transparent' === $settings->btn_style ) {
 				echo ( '' !== $settings->button_border_radius ) ? 'border-radius:' . esc_attr( $settings->button_border_radius ) . 'px;' : 'border-radius:' . esc_attr( uabb_theme_button_border_radius( '' ) ) . 'px;';
 			}
 			if ( isset( $settings->button_border_color ) ) {
-				echo ( '' !== $settings->button_border_color ) ? 'border-color:#' . esc_attr( $settings->button_border_color ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_color( '' ) ) . ';';
+				echo ( '' !== $settings->button_border_color ) ? 'border-color:' . esc_attr( FLBuilderColor::hex_or_rgb( $settings->button_border_color ) ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_color( '' ) ) . ';';
 			}
 			?>
 		}
@@ -517,12 +517,12 @@ if ( 'transparent' === $settings->btn_style ) {
 	?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-wpf-styler .wpforms-container .wpforms-form button[type=submit]:hover,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-wpf-styler .wpforms-container .wpforms-form .wpforms-page-button:hover {
-		<?php echo ( '' !== $settings->border_hover_color ) ? 'border-color:#' . esc_attr( $settings->border_hover_color ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_hover_color( '' ) ) . ';'; ?>
+		<?php echo ( '' !== $settings->border_hover_color ) ? 'border-color:' . esc_attr( FLBuilderColor::hex_or_rgb( $settings->border_hover_color ) ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_hover_color( '' ) ) . ';'; ?>
 		<?php echo ( '' !== $settings->btn_text_hover_color ) ? 'color:' . esc_attr( $settings->btn_text_hover_color ) . ';' : ''; ?>
 		background:<?php echo esc_attr( uabb_theme_default_button_bg_hover_color( $settings->btn_background_hover_color ) ); ?>
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-wpf-styler .wpforms-form button[type=submit],
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-wpf-styler .wpforms-form .wpforms-page-button { 
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-wpf-styler .wpforms-form .wpforms-page-button {
 
 		background:<?php echo esc_attr( uabb_theme_default_button_bg_color( $settings->btn_background_color ) ); ?>
 	}
@@ -1199,7 +1199,7 @@ if ( 'transparent' === $settings->btn_style ) {
 					echo ( '' !== $settings->btn_padding_right_medium ) ? 'padding-right:' . esc_attr( $settings->btn_padding_right_medium ) . 'px;' : '';
 				}
 				?>
-			} 
+			}
 		<?php } ?>
 		<?php if ( ( 'full' === $settings->btn_width || 'auto' === $settings->btn_width ) && 'default' === $settings->btn_style ) { ?>
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-wpf-styler .wpforms-form button[type=submit],

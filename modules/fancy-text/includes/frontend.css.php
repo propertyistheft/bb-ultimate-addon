@@ -8,8 +8,8 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->color       = UABB_Helper::uabb_colorpicker( $settings, 'color' );
-$settings->fancy_color = UABB_Helper::uabb_colorpicker( $settings, 'fancy_color' );
+$settings->color       = FLBuilderColor::hex_or_rgb( $settings->color );
+$settings->fancy_color = FLBuilderColor::hex_or_rgb( $settings->fancy_color );
 
 ?>
 
@@ -43,7 +43,7 @@ $settings->fancy_color = UABB_Helper::uabb_colorpicker( $settings, 'fancy_color'
 			font-size: <?php echo esc_attr( $settings->font_size_unit ); ?>px;
 			<?php if ( '' === $settings->line_height_unit && '' !== $settings->font_size_unit ) { ?>
 				line-height: <?php echo esc_attr( $settings->font_size_unit + 2 ); ?>px;
-			<?php } ?>		
+			<?php } ?>
 		<?php } elseif ( isset( $settings->font_size_unit ) && '' === $settings->font_size_unit && isset( $settings->font_size['desktop'] ) && '' !== $settings->font_size['desktop'] ) { ?>
 			font-size: <?php echo esc_attr( $settings->font_size['desktop'] ); ?>px;
 			line-height: <?php echo esc_attr( $settings->font_size['desktop'] + 2 ); ?>px;
@@ -54,7 +54,7 @@ $settings->fancy_color = UABB_Helper::uabb_colorpicker( $settings, 'fancy_color'
 		<?php } ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->line_height_unit ) && '' !== $settings->line_height_unit ) { ?>
-			line-height: <?php echo esc_attr( $settings->line_height_unit ); ?>em;	
+			line-height: <?php echo esc_attr( $settings->line_height_unit ); ?>em;
 		<?php } elseif ( isset( $settings->line_height_unit ) && '' === $settings->line_height_unit && isset( $settings->line_height['desktop'] ) && '' !== $settings->line_height['desktop'] ) { ?>
 			line-height: <?php echo esc_attr( $settings->line_height['desktop'] ); ?>px;
 		<?php } ?>
@@ -99,11 +99,11 @@ $settings->fancy_color = UABB_Helper::uabb_colorpicker( $settings, 'fancy_color'
 			font-size: <?php echo esc_attr( $settings->fancy_font_size_unit ); ?>px;
 			<?php if ( '' === $settings->fancy_line_height_unit && '' !== $settings->fancy_font_size_unit ) { ?>
 				line-height: <?php echo esc_attr( $settings->fancy_font_size_unit + 2 ); ?>px;
-			<?php } ?>	
-		<?php } elseif ( isset( $settings->fancy_font_size_unit ) && '' === $settings->fancy_font_size_unit && isset( $settings->fancy_font_size['desktop'] ) && '' !== $settings->fancy_font_size['desktop'] ) { ?> 
+			<?php } ?>
+		<?php } elseif ( isset( $settings->fancy_font_size_unit ) && '' === $settings->fancy_font_size_unit && isset( $settings->fancy_font_size['desktop'] ) && '' !== $settings->fancy_font_size['desktop'] ) { ?>
 			font-size: <?php echo esc_attr( $settings->fancy_font_size['desktop'] ); ?>px;
 			line-height: <?php echo esc_attr( $settings->fancy_font_size['desktop'] + 2 ); ?>px;
-		<?php } ?> 
+		<?php } ?>
 
 		<?php if ( isset( $settings->fancy_font_size['desktop'] ) && '' === $settings->fancy_font_size['desktop'] && isset( $settings->fancy_line_height['desktop'] ) && '' !== $settings->fancy_line_height['desktop'] && '' === $settings->fancy_line_height_unit ) { ?>
 			line-height: <?php echo esc_attr( $settings->fancy_line_height['desktop'] ); ?>px;
@@ -113,7 +113,7 @@ $settings->fancy_color = UABB_Helper::uabb_colorpicker( $settings, 'fancy_color'
 			line-height: <?php echo esc_attr( $settings->fancy_line_height_unit ); ?>em;
 		<?php } elseif ( isset( $settings->fancy_line_height_unit ) && '' === $settings->fancy_line_height_unit && isset( $settings->fancy_line_height['desktop'] ) && '' !== $settings->fancy_line_height['desktop'] ) { ?>
 			line-height: <?php echo esc_attr( $settings->fancy_line_height['desktop'] ); ?>px;
-		<?php } ?> 
+		<?php } ?>
 		<?php if ( 'none' !== $settings->fancy_transform ) : ?>
 			text-transform: <?php echo esc_attr( $settings->fancy_transform ); ?>;
 		<?php endif; ?>
@@ -193,18 +193,18 @@ if ( 'type' === $settings->effect_type && 'yes' === $settings->show_cursor && 'y
 						font-size: <?php echo esc_attr( $settings->font_size_unit_medium ); ?>px;
 						<?php if ( '' === $settings->line_height_unit_medium && '' !== $settings->font_size_unit_medium ) { ?>
 							line-height: <?php $settings->font_size_unit_medium + 2; ?>px;
-						<?php } ?>	
+						<?php } ?>
 					<?php } elseif ( isset( $settings->font_size_unit_medium ) && '' === $settings->font_size_unit_medium && isset( $settings->font_size['medium'] ) && '' !== $settings->font_size['medium'] ) { ?>
 						font-size: <?php echo esc_attr( $settings->font_size['medium'] ); ?>px;
 						line-height: <?php $settings->font_size['medium'] + 2; ?>px;
-					<?php } ?> 
+					<?php } ?>
 
 				<?php if ( isset( $settings->font_size['medium'] ) && '' === $settings->font_size['medium'] && isset( $settings->line_height['medium'] ) && '' !== $settings->line_height['medium'] && '' === $settings->line_height_unit_medium && '' === $settings->line_height_unit ) { ?>
 						line-height: <?php echo esc_attr( $settings->line_height['medium'] ); ?>px;
 					<?php } ?>
 
 				<?php if ( 'yes' === $converted || isset( $settings->line_height_unit_medium ) && '' !== $settings->line_height_unit_medium ) { ?>
-						line-height: <?php echo esc_attr( $settings->line_height_unit_medium ); ?>em;	
+						line-height: <?php echo esc_attr( $settings->line_height_unit_medium ); ?>em;
 					<?php } elseif ( isset( $settings->line_height_unit_medium ) && '' === $settings->line_height_unit_medium && isset( $settings->line_height['medium'] ) && '' !== $settings->line_height['medium'] ) { ?>
 						line-height: <?php echo esc_attr( $settings->line_height['medium'] ); ?>px;
 					<?php } ?>
@@ -216,7 +216,7 @@ if ( 'type' === $settings->effect_type && 'yes' === $settings->show_cursor && 'y
 						font-size: <?php echo esc_attr( $settings->fancy_font_size_unit_medium ); ?>px;
 						<?php if ( '' === $settings->fancy_line_height_unit_medium && '' !== $settings->fancy_font_size_unit_medium ) { ?>
 							line-height: <?php $settings->fancy_font_size_unit_medium + 2; ?>px;
-						<?php } ?>	
+						<?php } ?>
 					<?php } elseif ( isset( $settings->fancy_font_size_unit_medium ) && '' === $settings->fancy_font_size_unit_medium && isset( $settings->fancy_font_size['medium'] ) && '' !== $settings->fancy_font_size['medium'] ) { ?>
 						font-size: <?php echo esc_attr( $settings->fancy_font_size['medium'] ); ?>px;
 						line-height: <?php $settings->fancy_font_size['medium'] + 2; ?>px;
@@ -227,7 +227,7 @@ if ( 'type' === $settings->effect_type && 'yes' === $settings->show_cursor && 'y
 					<?php } ?>
 
 				<?php if ( 'yes' === $converted || isset( $settings->fancy_line_height_unit_medium ) && '' !== $settings->fancy_line_height_unit_medium ) { ?>
-						line-height: <?php echo esc_attr( $settings->fancy_line_height_unit_medium ); ?>em;	
+						line-height: <?php echo esc_attr( $settings->fancy_line_height_unit_medium ); ?>em;
 					<?php } elseif ( isset( $settings->fancy_line_height_unit_medium ) && '' === $settings->fancy_line_height_unit_medium && isset( $settings->fancy_line_height['medium'] ) && '' !== $settings->fancy_line_height['medium'] ) { ?>
 						line-height: <?php echo esc_attr( $settings->fancy_line_height['medium'] ); ?>px;
 					<?php } ?>
@@ -249,11 +249,11 @@ if ( 'type' === $settings->effect_type && 'yes' === $settings->show_cursor && 'y
 						font-size: <?php echo esc_attr( $settings->font_size_unit_responsive ); ?>px;
 						<?php if ( '' === $settings->line_height_unit_responsive && '' !== $settings->font_size_unit_responsive ) { ?>
 							line-height: <?php echo esc_attr( $settings->font_size_unit_responsive + 2 ); ?>px;
-						<?php } ?>		
+						<?php } ?>
 					<?php } elseif ( isset( $settings->font_size_unit_responsive ) && '' === $settings->font_size_unit_responsive && isset( $settings->font_size['small'] ) && '' !== $settings->font_size['small'] ) { ?>
 						font-size: <?php echo esc_attr( $settings->font_size['small'] ); ?>px;
 						line-height: <?php echo esc_attr( $settings->font_size['small'] + 2 ); ?>px;
-					<?php } ?>  
+					<?php } ?>
 
 					<?php if ( isset( $settings->font_size['small'] ) && '' === $settings->font_size['small'] && isset( $settings->line_height['small'] ) && '' !== $settings->line_height['small'] && '' === $settings->line_height_unit_responsive && '' === $settings->line_height_unit_medium && '' === $settings->line_height_unit ) { ?>
 						line-height: <?php echo esc_attr( $settings->line_height['small'] ); ?>px;
@@ -285,7 +285,7 @@ if ( 'type' === $settings->effect_type && 'yes' === $settings->show_cursor && 'y
 						line-height: <?php echo esc_attr( $settings->fancy_line_height_unit_responsive ); ?>em;
 					<?php } elseif ( isset( $settings->fancy_line_height_unit_responsive ) && '' === $settings->fancy_line_height_unit_responsive && isset( $settings->fancy_line_height['small'] ) && '' !== $settings->fancy_line_height['small'] ) { ?>
 						line-height: <?php echo esc_attr( $settings->fancy_line_height['small'] ); ?>px;
-					<?php } ?>		
+					<?php } ?>
 
 					width: auto !important;
 				}

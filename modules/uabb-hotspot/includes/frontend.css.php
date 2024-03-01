@@ -11,17 +11,17 @@ FLBuilder::render_module_css( 'uabb-button', $id, $settings->button );
 $photo_src = ( 'url' !== $settings->photo_source ) ? ( ( isset( $settings->photo_src ) && '' !== $settings->photo_src ) ? $settings->photo_src : '' ) : ( ( '' !== $settings->photo_url ) ? $settings->photo_url : '' );
 
 if ( isset( $settings->content_color ) ) {
-	$settings->content_color = UABB_Helper::uabb_colorpicker( $settings, 'content_color' );
+	$settings->content_color = FLBuilderColor::hex_or_rgb( $settings->content_color );
 }
 if ( isset( $settings->hotspot_hover_bgcolor ) ) {
-	$settings->hotspot_hover_bgcolor = UABB_Helper::uabb_colorpicker( $settings, 'hotspot_hover_bgcolor' );
+	$settings->hotspot_hover_bgcolor = FLBuilderColor::hex_or_rgb( $settings->hotspot_hover_bgcolor );
 }
 if ( isset( $settings->hotspot_color ) ) {
-	$settings->hotspot_color = UABB_Helper::uabb_colorpicker( $settings, 'hotspot_color' );
+	$settings->hotspot_color = FLBuilderColor::hex_or_rgb( $settings->hotspot_color );
 
 }
 if ( isset( $settings->hotspot_background_color ) ) {
-	$settings->hotspot_background_color = UABB_Helper::uabb_colorpicker( $settings, 'hotspot_background_color' );
+	$settings->hotspot_background_color = FLBuilderColor::hex_or_rgb( $settings->hotspot_background_color );
 }
 
 if ( 'click' === $settings->autoplay_options ) {
@@ -37,12 +37,12 @@ if ( '' !== $photo_src ) {
 			$x_coordinate = ( isset( $coordinate[1] ) ) ? $coordinate[1] : '0';
 			$y_coordinate = ( isset( $coordinate[0] ) ) ? $coordinate[0] : '0';
 
-			$settings->hotspot_marker[ $i ]->tooltip_color                   = UABB_Helper::uabb_colorpicker( $settings->hotspot_marker[ $i ], 'tooltip_color' );
-			$settings->hotspot_marker[ $i ]->text_typography_color           = UABB_Helper::uabb_colorpicker( $settings->hotspot_marker[ $i ], 'text_typography_color' );
-			$settings->hotspot_marker[ $i ]->text_typography_active_color    = UABB_Helper::uabb_colorpicker( $settings->hotspot_marker[ $i ], 'text_typography_active_color' );
-			$settings->hotspot_marker[ $i ]->tooltip_bg_color                = UABB_Helper::uabb_colorpicker( $settings->hotspot_marker[ $i ], 'tooltip_bg_color' );
-			$settings->hotspot_marker[ $i ]->text_typography_bg_color        = UABB_Helper::uabb_colorpicker( $settings->hotspot_marker[ $i ], 'text_typography_bg_color', true );
-			$settings->hotspot_marker[ $i ]->text_typography_bg_active_color = UABB_Helper::uabb_colorpicker( $settings->hotspot_marker[ $i ], 'text_typography_bg_active_color', true );
+			$settings->hotspot_marker[ $i ]->tooltip_color                   = FLBuilderColor::hex_or_rgb( $settings->hotspot_marker[ $i ]->tooltip_color );
+			$settings->hotspot_marker[ $i ]->text_typography_color           = FLBuilderColor::hex_or_rgb( $settings->hotspot_marker[ $i ]->text_typography_color );
+			$settings->hotspot_marker[ $i ]->text_typography_active_color    = FLBuilderColor::hex_or_rgb( $settings->hotspot_marker[ $i ]->text_typography_active_color );
+			$settings->hotspot_marker[ $i ]->tooltip_bg_color                = FLBuilderColor::hex_or_rgb( $settings->hotspot_marker[ $i ]->tooltip_bg_color );
+			$settings->hotspot_marker[ $i ]->text_typography_bg_color        = FLBuilderColor::hex_or_rgb( $settings->hotspot_marker[ $i ]->text_typography_bg_color );
+			$settings->hotspot_marker[ $i ]->text_typography_bg_active_color = FLBuilderColor::hex_or_rgb( $settings->hotspot_marker[ $i ]->text_typography_bg_active_color );
 			$settings->hotspot_marker[ $i ]->icon_size                       = ( '' !== $settings->hotspot_marker[ $i ]->icon_size ) ? $settings->hotspot_marker[ $i ]->icon_size : '30';
 			if ( ! $version_bb_check ) {
 				$settings->hotspot_marker[ $i ]->text_typography_line_height = ( isset( $settings->hotspot_marker[ $i ]->text_typography_line_height ) ) ? (array) $settings->hotspot_marker[ $i ]->text_typography_line_height : '';

@@ -10,6 +10,8 @@
  *
  * @class GoogleMapModule
  */
+
+#[AllowDynamicProperties]
 class GoogleMapModule extends FLBuilderModule {
 
 	/**

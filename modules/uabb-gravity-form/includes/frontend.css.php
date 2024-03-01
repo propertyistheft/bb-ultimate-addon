@@ -8,29 +8,29 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->form_bg_color          = UABB_Helper::uabb_colorpicker( $settings, 'form_bg_color', true );
-$settings->input_background_color = UABB_Helper::uabb_colorpicker( $settings, 'input_background_color', true );
+$settings->form_bg_color          = FLBuilderColor::hex_or_rgb( $settings->form_bg_color );
+$settings->input_background_color = FLBuilderColor::hex_or_rgb( $settings->input_background_color );
 
-$settings->input_border_active_color = UABB_Helper::uabb_colorpicker( $settings, 'input_border_active_color' );
+$settings->input_border_active_color = FLBuilderColor::hex_or_rgb( $settings->input_border_active_color );
 
-$settings->btn_text_color             = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_color' );
-$settings->btn_text_hover_color       = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_hover_color' );
-$settings->btn_background_color       = UABB_Helper::uabb_colorpicker( $settings, 'btn_background_color', true );
-$settings->btn_background_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'btn_background_hover_color', true );
-$settings->radio_check_bgcolor        = UABB_Helper::uabb_colorpicker( $settings, 'radio_check_bgcolor', true );
+$settings->btn_text_color             = FLBuilderColor::hex_or_rgb( $settings->btn_text_color );
+$settings->btn_text_hover_color       = FLBuilderColor::hex_or_rgb( $settings->btn_text_hover_color );
+$settings->btn_background_color       = FLBuilderColor::hex_or_rgb( $settings->btn_background_color );
+$settings->btn_background_hover_color = FLBuilderColor::hex_or_rgb( $settings->btn_background_hover_color );
+$settings->radio_check_bgcolor        = FLBuilderColor::hex_or_rgb( $settings->radio_check_bgcolor );
 
 /* Typography Colors */
 
-$settings->form_title_color = UABB_Helper::uabb_colorpicker( $settings, 'form_title_color' );
-$settings->form_desc_color  = UABB_Helper::uabb_colorpicker( $settings, 'form_desc_color' );
+$settings->form_title_color = FLBuilderColor::hex_or_rgb( $settings->form_title_color );
+$settings->form_desc_color  = FLBuilderColor::hex_or_rgb( $settings->form_desc_color );
 
-$settings->label_color = UABB_Helper::uabb_colorpicker( $settings, 'label_color' );
+$settings->label_color = FLBuilderColor::hex_or_rgb( $settings->label_color );
 /* Input Color */
-$settings->color = UABB_Helper::uabb_colorpicker( $settings, 'color' );
+$settings->color = FLBuilderColor::hex_or_rgb( $settings->color );
 
-$settings->input_msg_color      = UABB_Helper::uabb_colorpicker( $settings, 'input_msg_color' );
-$settings->validation_msg_color = UABB_Helper::uabb_colorpicker( $settings, 'validation_msg_color' );
-$settings->validation_bg_color  = UABB_Helper::uabb_colorpicker( $settings, 'validation_bg_color', true );
+$settings->input_msg_color      = FLBuilderColor::hex_or_rgb( $settings->input_msg_color );
+$settings->validation_msg_color = FLBuilderColor::hex_or_rgb( $settings->validation_msg_color );
+$settings->validation_bg_color  = FLBuilderColor::hex_or_rgb( $settings->validation_bg_color );
 
 $settings->radio_check_size            = ( '' !== $settings->radio_check_size ) ? $settings->radio_check_size : 20;
 $settings->radio_check_border_width    = ( '' !== $settings->radio_check_border_width ) ? $settings->radio_check_border_width : 1;
@@ -42,8 +42,8 @@ $settings->input_top_margin            = ( '' !== $settings->input_top_margin ) 
 $settings->input_bottom_margin         = ( '' !== $settings->input_bottom_margin ) ? $settings->input_bottom_margin : 15;
 
 if ( ! $version_bb_check ) {
-	$settings->input_border_color      = UABB_Helper::uabb_colorpicker( $settings, 'input_border_color' );
-	$settings->validation_border_color = UABB_Helper::uabb_colorpicker( $settings, 'validation_border_color' );
+	$settings->input_border_color      = FLBuilderColor::hex_or_rgb( $settings->input_border_color );
+	$settings->validation_border_color = FLBuilderColor::hex_or_rgb( $settings->validation_border_color );
 }
 ?>
 .fl-node-<?php echo esc_attr( $id ); ?> {
@@ -94,7 +94,7 @@ if ( ! $version_bb_check ) {
 /* Input Fields CSS */
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper form .gform_body input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
-.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper textarea,
+.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper form .gform_body textarea,
 .fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield .ginput_container select,
 .fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select .chosen-container-single .chosen-single {
 
@@ -265,7 +265,7 @@ if ( ! $version_bb_check ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield .gfield_description {
 
 	<?php if ( $settings->input_description_color ) { ?>
-		color: #<?php echo esc_attr( $settings->input_description_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->input_description_color ) ); ?>;
 	<?php } ?>
 }
 
@@ -353,13 +353,13 @@ if ( ! $version_bb_check ) {
 
 	<?php if ( 'true' === $settings->radio_check_custom_option ) { ?>
 		<?php if ( $settings->radio_checkbox_color ) { ?>
-			color: #<?php echo esc_attr( $settings->radio_checkbox_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_checkbox_color ) ); ?>;
 			<?php
 		}
 	} elseif ( 'false' === $settings->radio_check_custom_option ) {
 		?>
 		<?php if ( '' !== $settings->label_color ) : ?>
-			color: <?php echo esc_attr( $settings->label_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->label_color ) ); ?>;
 			<?php
 			endif;
 	}
@@ -425,7 +425,7 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_body .ginput_container_radio .gfield_radio .gchoice_label label:before {
 		content: '';
 		background: <?php echo esc_attr( $settings->radio_check_bgcolor ); ?>;
-		border: <?php echo esc_attr( $settings->radio_check_border_width ); ?>px solid #<?php echo esc_attr( $settings->radio_check_border_color ); ?>;
+		border: <?php echo esc_attr( $settings->radio_check_border_width ); ?>px solid <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_border_color ) ); ?>;
 		display: inline-block;
 		vertical-align: middle;
 		width: <?php echo esc_attr( $settings->radio_check_size ); ?>px;
@@ -440,7 +440,7 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 		font-weight: bold;
 		font-size: calc(<?php echo esc_attr( $font_size ); ?>px - <?php echo esc_attr( $settings->radio_check_border_width ); ?>px );
 		padding-top: 0;
-		color: #<?php echo esc_attr( $settings->radio_check_selected_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_selected_color ) ); ?>;
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_body .ginput_container_checkbox .gfield_checkbox input[type='checkbox'] + label:before {
@@ -449,7 +449,7 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_body .ginput_container_radio .gfield_radio input[type='radio']:checked + label:before,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_body .ginput_container_radio .gfield_radio .gchoice_button.uabb-radio-active + .gchoice_label label:before {
-		background: #<?php echo esc_attr( $settings->radio_check_selected_color ); ?>;
+		background: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_selected_color ) ); ?>;
 		box-shadow: inset 0px 0px 0px 4px <?php echo esc_attr( $settings->radio_check_bgcolor ); ?>;
 	}
 
@@ -466,33 +466,37 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 <?php
 /* Placeholder Colors  */
 if ( $settings->placeholder_color && 'block' === $settings->input_placeholder_display ) {
+	if ( method_exists( 'FLBuilder', 'fa5_pro_enabled' ) ) {
+		$font_family = FLBuilder::fa5_pro_enabled() ? 'Font Awesome 5 Pro' : 'Font Awesome 5 Free';
+	} 
 	?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield input::-webkit-input-placeholder,
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select .chosen-container-single .chosen-single,
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select select,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .ginput_container_select:after {
-		color: #<?php echo esc_attr( $settings->placeholder_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->placeholder_color ) ); ?>;
+		font-family: '<?php echo esc_attr( $font_family ); ?>';
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield input:-moz-placeholder {
-		color: #<?php echo esc_attr( $settings->placeholder_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->placeholder_color ) ); ?>;
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield input::-moz-placeholder {
-		color: #<?php echo esc_attr( $settings->placeholder_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->placeholder_color ) ); ?>;
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield input:-ms-input-placeholder {
-		color: #<?php echo esc_attr( $settings->placeholder_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->placeholder_color ) ); ?>;
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield textarea::-webkit-input-placeholder {
-		color: #<?php echo esc_attr( $settings->placeholder_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->placeholder_color ) ); ?>;
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield textarea:-moz-placeholder {
-		color: #<?php echo esc_attr( $settings->placeholder_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->placeholder_color ) ); ?>;
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield textarea::-moz-placeholder {
-		color: #<?php echo esc_attr( $settings->placeholder_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->placeholder_color ) ); ?>;
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield textarea:-ms-input-placeholder {
-		color: #<?php echo esc_attr( $settings->placeholder_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->placeholder_color ) ); ?>;
 	}
 <?php } ?>
 
@@ -555,17 +559,25 @@ $bg_hover_grad_start = '';
 // Background Gradient.
 if ( 'gradient' === $settings->btn_style ) {
 	if ( ! empty( $settings->btn_background_color ) ) {
-		$bg_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->btn_background_color ), 30, 'lighten' );
+		$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->btn_background_color, 30, 'lighten' ) );
 	}
 	if ( ! empty( $settings->btn_background_hover_color ) ) {
-		$bg_hover_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->btn_background_hover_color ), 30, 'lighten' );
+		$bg_hover_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->btn_background_hover_color, 30, 'lighten' ) );
 	}
 }
 ?>
 <?php if ( 'default' === $settings->btn_style ) { ?>
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer input[type=submit],
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=button],
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit] {
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer input[type=submit],
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=button],
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit],
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper .button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]):where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]).button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input[type="submit"].button.gform_button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
 		<?php
 		if ( isset( $settings->button_padding_dimension_top ) ) {
 			echo ( '' !== $settings->button_padding_dimension_top ) ? 'padding-top:' . esc_attr( $settings->button_padding_dimension_top ) . 'px;' : 'padding-top:' . esc_attr( uabb_theme_padding_button( 'desktop', 'top' ) ) . ';';
@@ -585,9 +597,17 @@ if ( 'gradient' === $settings->btn_style ) {
 		?>
 	}
 	<?php if ( ! $version_bb_check ) { ?>
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer input[type=submit],
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=button],
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit] {
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer input[type=submit],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=button],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper .button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]):where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]).button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input[type="submit"].button.gform_button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
 			<?php
 			if ( isset( $settings->button_border_style ) ) {
 				echo ( '' !== $settings->button_border_style && 'none' !== $settings->button_border_style ) ? 'border-style:' . esc_attr( $settings->button_border_style ) . ';' : 'border-style:solid;';
@@ -607,7 +627,7 @@ if ( 'gradient' === $settings->btn_style ) {
 				echo ( '' !== $settings->button_border_radius ) ? 'border-radius:' . esc_attr( $settings->button_border_radius ) . 'px;' : 'border-radius:' . esc_attr( uabb_theme_button_border_radius( '' ) ) . 'px;';
 			}
 			if ( isset( $settings->button_border_color ) ) {
-				echo ( '' !== $settings->button_border_color ) ? 'border-color:#' . esc_attr( $settings->button_border_color ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_color( '' ) ) . ';';
+				echo ( '' !== $settings->button_border_color ) ? 'border-color:' . esc_attr( FLBuilderColor::hex_or_rgb( $settings->button_border_color ) ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_color( '' ) ) . ';';
 			}
 			?>
 		}
@@ -620,7 +640,7 @@ if ( 'gradient' === $settings->btn_style ) {
 				array(
 					'settings'     => $settings,
 					'setting_name' => 'button_border',
-					'selector'     => ".fl-node-$id .uabb-gf-style .gform_wrapper .gform_footer input[type=submit], .fl-node-$id .uabb-gf-style .gform_page .gform_page_footer input[type=button],.fl-node-$id .uabb-gf-style .gform_page .gform_page_footer input[type=submit]",
+					'selector'     => ".fl-node-$id .uabb-gf-style .gform_wrapper .gform_footer input[type=submit], .fl-node-$id .uabb-gf-style .gform_page .gform_page_footer input[type=button],.fl-node-$id .uabb-gf-style .gform_page .gform_page_footer input[type=submit],.fl-node-$id .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper .button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),.fl-node-$id .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type='submit'],.fl-node-$id .uabb-gf-style [type='button'],.fl-node-$id .uabb-gf-style [type='reset']):where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),.fl-node-$id .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type='submit'],.fl-node-$id .uabb-gf-style [type='button'],.fl-node-$id .uabb-gf-style [type='reset']).button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),.fl-node-$id .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input[type='submit'].button.gform_button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))",
 				)
 			);
 		}
@@ -628,14 +648,23 @@ if ( 'gradient' === $settings->btn_style ) {
 	?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer input[type=submit]:hover,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=button]:hover,
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit]:hover {
-		<?php echo ( '' !== $settings->border_hover_color ) ? 'border-color:#' . esc_attr( $settings->border_hover_color ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_hover_color( '' ) ) . ';'; ?>
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit]:hover,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper .button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):hover,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"]:hover,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"]:hover,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]):where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):hover,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"]:hover,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"]:hover,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]).button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):hover,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input[type="submit"].button.gform_button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):hover {
+		<?php echo ( '' !== $settings->border_hover_color ) ? 'border-color:' . esc_attr( FLBuilderColor::hex_or_rgb( $settings->border_hover_color ) ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_hover_color( '' ) ) . ';'; ?>
 		<?php echo ( '' !== $settings->btn_text_hover_color ) ? 'color:' . esc_attr( $settings->btn_text_hover_color ) . ';' : ''; ?>
 		<?php echo ( '' !== $settings->btn_background_hover_color ) ? 'background:' . esc_attr( $settings->btn_background_hover_color ) . ';' : ''; ?>
 	}
 <?php } ?>
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer {
 	text-align: <?php echo esc_attr( $settings->btn_align ); ?>;
+	justify-content: <?php echo esc_attr( 'right' === $settings->btn_align ? 'flex-end' : ( 'center' === $settings->btn_align ? 'center' : 'flex-start' ) ); ?>;
 	<?php if ( 'none' === $settings->typo_show_label ) { ?>
 		margin: 0;
 	<?php } ?>
@@ -643,7 +672,15 @@ if ( 'gradient' === $settings->btn_style ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer input[type=submit],
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=button],
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit] {
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper .button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]):where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]).button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input[type="submit"].button.gform_button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
 
 	<?php if ( '' !== $settings->btn_border_radius ) { ?>
 		border-radius: <?php echo esc_attr( $settings->btn_border_radius ); ?>px;
@@ -671,7 +708,7 @@ if ( 'gradient' === $settings->btn_style ) {
 		-moz-transition: none;
 		transition: none;
 		background: <?php echo esc_attr( uabb_theme_base_color( $settings->btn_background_color ) ); ?>;
-		<?php $shadow_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->btn_background_color ), 30, 'darken' ); ?>
+		<?php $shadow_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->btn_background_color, 30, 'darken' ) ); ?>
 		box-shadow: 0 6px <?php echo esc_attr( $shadow_color ); ?>;
 	<?php } ?>
 
@@ -701,7 +738,15 @@ if ( 'gradient' === $settings->btn_style ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer input[type=submit]:hover,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=button]:hover,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit]:hover {
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit]:hover,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper .button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):hover,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"]:hover,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"]:hover,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]):where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):hover,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"]:hover,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"]:hover,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]).button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):hover,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input[type="submit"].button.gform_button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):hover {
 	<?php if ( 'flat' === $settings->btn_style ) { ?>
 		<?php if ( '' !== $settings->btn_text_hover_color ) { ?>
 		color: <?php echo esc_attr( $settings->btn_text_hover_color ); ?>;
@@ -743,7 +788,7 @@ if ( 'gradient' === $settings->btn_style ) {
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='<?php echo esc_attr( $bg_hover_grad_start ); ?>', endColorstr='<?php echo esc_attr( $settings->btn_background_hover_color ); ?>',GradientType=0 ); /* IE6-9 */
 		<?php
 	} elseif ( '3d' === $settings->btn_style ) {
-		$shadow_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->btn_background_hover_color ), 30, 'darken' );
+		$shadow_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->btn_background_hover_color, 30, 'darken' ) );
 		?>
 		<?php if ( '' !== $settings->btn_text_hover_color ) { ?>
 		color: <?php echo esc_attr( $settings->btn_text_hover_color ); ?>;
@@ -757,7 +802,15 @@ if ( 'gradient' === $settings->btn_style ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer input[type=submit]:active,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=button]:active,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit]:active {
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit]:active,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper .button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):active,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"]:active,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"]:active,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]):where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):active,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"]:active,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"]:active,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]).button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):active,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input[type="submit"].button.gform_button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)):active {
 	<?php if ( '3d' === $settings->btn_style ) { ?>
 		top: 6px;
 		box-shadow: 0 0px <?php echo esc_attr( uabb_theme_base_color( $shadow_color ) ); ?>;
@@ -785,7 +838,7 @@ if ( 'gradient' === $settings->btn_style ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .ginput_container_textarea textarea {
 	<?php if ( '' !== $settings->textarea_height ) { ?>
-	height: <?php echo esc_attr( $settings->textarea_height ); ?>px;
+	height: <?php echo esc_attr( $settings->textarea_height ); ?>px !important;
 	<?php } ?>
 }
 
@@ -970,7 +1023,15 @@ if ( 'gradient' === $settings->btn_style ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer input[type=submit],
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=button],
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit] {
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper .button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]):where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]).button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input[type="submit"].button.gform_button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
 	margin-right : 0;
 	<?php if ( isset( $settings->btn_margin_top ) && '' !== $settings->btn_margin_top ) { ?>
 		margin-top: <?php echo esc_attr( $settings->btn_margin_top ); ?>px;
@@ -984,7 +1045,15 @@ if ( 'gradient' === $settings->btn_style ) {
 <?php if ( ! $version_bb_check ) { ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer input[type=submit],
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=button],
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit] {
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit],
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper .button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]):where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]).button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input[type="submit"].button.gform_button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
 
 		<?php
 		$uabb_theme_btn_family = apply_filters( 'uabb/theme/button_font_family', '' ); // phpcs:ignore WordPress.NamingConventions.ValidHookName.UseUnderscores
@@ -1062,7 +1131,7 @@ if ( 'gradient' === $settings->btn_style ) {
 			array(
 				'settings'     => $settings,
 				'setting_name' => 'button_font_typo',
-				'selector'     => ".fl-node-$id .uabb-gf-style .gform_wrapper .gform_footer input[type=submit], .fl-node-$id .uabb-gf-style .gform_page .gform_page_footer input[type=button], .fl-node-$id .uabb-gf-style .gform_page .gform_page_footer input[type=submit]",
+				'selector'     => ".fl-node-$id .uabb-gf-style .gform_wrapper .gform_footer input[type=submit], .fl-node-$id .uabb-gf-style .gform_page .gform_page_footer input[type=button], .fl-node-$id .uabb-gf-style .gform_page .gform_page_footer input[type=submit],.fl-node-$id .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper .button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),.fl-node-$id .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type='submit'],.fl-node-$id .uabb-gf-style [type='button'],.fl-node-$id .uabb-gf-style [type='reset']):where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),.fl-node-$id .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type='submit'],.fl-node-$id .uabb-gf-style [type='button'],.fl-node-$id .uabb-gf-style [type='reset']).button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),.fl-node-$id .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input[type='submit'].button.gform_button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *))",
 			)
 		);
 	}
@@ -1283,14 +1352,14 @@ if ( 'gradient' === $settings->btn_style ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield.gfield_error .gfield_label {
 	<?php if ( $settings->input_error_label_color && 'yes' === $settings->input_error_display ) { ?>
-	color: #<?php echo esc_attr( $settings->input_error_label_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->input_error_label_color ) ); ?>;
 	<?php } ?>
 	margin-left: 0;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield.gfield_error {
 	<?php if ( $settings->input_error_back_color && 'yes' === $settings->input_error_display ) { ?>
-		background-color: <?php echo '#' . esc_attr( $settings->input_error_back_color ); ?>;
+		background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->input_error_back_color ) ); ?>;
 		Width: 100%;
 	<?php } ?>
 }
@@ -1300,7 +1369,7 @@ if ( 'gradient' === $settings->btn_style ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield_error .ginput_container textarea,
 .fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select .chosen-container-single .chosen-single {
 	<?php if ( $settings->input_error_border_color && 'yes' === $settings->input_error_display ) { ?>
-		border-color: <?php echo '#' . esc_attr( $settings->input_error_border_color ); ?>;
+		border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->input_error_border_color ) ); ?>;
 	<?php } ?>
 	<?php if ( $settings->input_error_border_width >= 0 && 'yes' === $settings->input_error_display ) { ?>
 		border-width: <?php echo esc_attr( $settings->input_error_border_width ); ?>px;
@@ -1311,7 +1380,7 @@ if ( 'gradient' === $settings->btn_style ) {
 	font-family: inherit;
 	margin-top: 10px;
 	<?php if ( $settings->input_success_msg_color ) { ?>
-		color: <?php echo '#' . esc_attr( $settings->input_success_msg_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->input_success_msg_color ) ); ?>;
 	<?php } ?>
 	<?php if ( '' !== $settings->input_success_msg_font_size ) { ?>
 		font-size: <?php echo esc_attr( $settings->input_success_msg_font_size ); ?>px;
@@ -1348,7 +1417,7 @@ if ( 'gradient' === $settings->btn_style ) {
 					<?php } ?>
 
 					<?php if ( $settings->radio_checkbox_color ) { ?>
-						color: #<?php echo esc_attr( $settings->radio_checkbox_color ); ?>;
+						color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_checkbox_color ) ); ?>;
 					<?php } ?>
 				<?php } elseif ( 'false' === $settings->radio_check_custom_option ) { ?>
 
@@ -1433,7 +1502,15 @@ if ( 'gradient' === $settings->btn_style ) {
 
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer input[type=submit],
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=button],
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit] {
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper .button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]):where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]).button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input[type="submit"].button.gform_button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
 
 				<?php if ( 'yes' === $converted || isset( $settings->btn_font_size_unit_medium ) && '' !== $settings->btn_font_size_unit_medium ) { ?>
 					font-size: <?php echo esc_attr( $settings->btn_font_size_unit_medium ); ?>px;
@@ -1577,7 +1654,15 @@ if ( 'gradient' === $settings->btn_style ) {
 		<?php if ( 'default' === $settings->btn_style ) { ?>
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer input[type=submit],
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=button],
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit] {
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper .button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]):where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]).button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input[type="submit"].button.gform_button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
 				<?php
 				if ( isset( $settings->button_padding_dimension_top_medium ) ) {
 					echo ( '' !== $settings->button_padding_dimension_top_medium ) ? 'padding-top:' . esc_attr( $settings->button_padding_dimension_top_medium ) . 'px;' : 'padding-top:' . esc_attr( uabb_theme_padding_button( 'tablet', 'top' ) ) . ';';
@@ -1615,7 +1700,7 @@ if ( 'gradient' === $settings->btn_style ) {
 						font-size: <?php echo esc_attr( $settings->radio_checkbox_font_size['small'] ); ?>px;
 					<?php } ?>
 					<?php if ( $settings->radio_checkbox_color ) { ?>
-						color: #<?php echo esc_attr( $settings->radio_checkbox_color ); ?>;
+						color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_checkbox_color ) ); ?>;
 					<?php } ?>
 				<?php } elseif ( 'false' === $settings->radio_check_custom_option ) { ?>
 
@@ -1843,7 +1928,15 @@ if ( 'gradient' === $settings->btn_style ) {
 		<?php if ( 'default' === $settings->btn_style ) { ?>
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_wrapper .gform_footer input[type=submit],
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=button],
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit] {
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform_page .gform_page_footer input[type=submit],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper .button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]):where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input:is([type="submit"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="button"],
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style [type="reset"]).button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)),
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .gform-theme--framework.gform-theme.gform_wrapper input[type="submit"].button.gform_button:where(:not(.gform-theme-no-framework)):where(:not(.gform-theme__disable):not(.gform-theme__disable *):not(.gform-theme__disable-framework):not(.gform-theme__disable-framework *)) {
 				<?php
 				if ( isset( $settings->button_padding_dimension_top_responsive ) ) {
 					echo ( '' !== $settings->button_padding_dimension_top_responsive ) ? 'padding-top:' . esc_attr( $settings->button_padding_dimension_top_responsive ) . 'px;' : 'padding-top:' . esc_attr( uabb_theme_padding_button( 'mobile', 'top' ) ) . ';';

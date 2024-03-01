@@ -6,18 +6,18 @@
  */
 
 $version_bb_check                     = UABB_Compatibility::$version_bb_check;
-$settings->play_icon_color            = UABB_Helper::uabb_colorpicker( $settings, 'play_icon_color', true );
-$settings->play_icon_hover_color      = UABB_Helper::uabb_colorpicker( $settings, 'play_icon_hover_color', true );
-$settings->image_overlay_color        = UABB_Helper::uabb_colorpicker( $settings, 'image_overlay_color', true );
-$settings->subscribe_text_color       = UABB_Helper::uabb_colorpicker( $settings, 'subscribe_text_color', true );
-$settings->subscribe_text_bg_color    = UABB_Helper::uabb_colorpicker( $settings, 'subscribe_text_bg_color', true );
-$settings->play_default_icon_bg       = UABB_Helper::uabb_colorpicker( $settings, 'play_default_icon_bg', true );
-$settings->play_default_icon_bg_hover = UABB_Helper::uabb_colorpicker( $settings, 'play_default_icon_bg_hover', true );
-$settings->sticky_video_color         = UABB_Helper::uabb_colorpicker( $settings, 'sticky_video_color', true );
-$settings->sticky_close_icon_bgcolor  = UABB_Helper::uabb_colorpicker( $settings, 'sticky_close_icon_bgcolor', true );
-$settings->sticky_close_icon_color    = UABB_Helper::uabb_colorpicker( $settings, 'sticky_close_icon_color', true );
-$settings->sticky_info_bar_color      = UABB_Helper::uabb_colorpicker( $settings, 'sticky_info_bar_color', true );
-$settings->sticky_info_bar_bgcolor    = UABB_Helper::uabb_colorpicker( $settings, 'sticky_info_bar_bgcolor', true );
+$settings->play_icon_color            = FLBuilderColor::hex_or_rgb( $settings->play_icon_color );
+$settings->play_icon_hover_color      = FLBuilderColor::hex_or_rgb( $settings->play_icon_hover_color );
+$settings->image_overlay_color        = FLBuilderColor::hex_or_rgb( $settings->image_overlay_color );
+$settings->subscribe_text_color       = FLBuilderColor::hex_or_rgb( $settings->subscribe_text_color );
+$settings->subscribe_text_bg_color    = FLBuilderColor::hex_or_rgb( $settings->subscribe_text_bg_color );
+$settings->play_default_icon_bg       = FLBuilderColor::hex_or_rgb( $settings->play_default_icon_bg );
+$settings->play_default_icon_bg_hover = FLBuilderColor::hex_or_rgb( $settings->play_default_icon_bg_hover );
+$settings->sticky_video_color         = FLBuilderColor::hex_or_rgb( $settings->sticky_video_color );
+$settings->sticky_close_icon_bgcolor  = FLBuilderColor::hex_or_rgb( $settings->sticky_close_icon_bgcolor );
+$settings->sticky_close_icon_color    = FLBuilderColor::hex_or_rgb( $settings->sticky_close_icon_color );
+$settings->sticky_info_bar_color      = FLBuilderColor::hex_or_rgb( $settings->sticky_info_bar_color );
+$settings->sticky_info_bar_bgcolor    = FLBuilderColor::hex_or_rgb( $settings->sticky_info_bar_bgcolor );
 ?>
 <?php
 if ( isset( $settings->play_icon_size ) ) {

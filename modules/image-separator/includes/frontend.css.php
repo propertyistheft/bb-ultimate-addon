@@ -5,11 +5,11 @@
  *  @package UABB Image Separator Module
  */
 
-$settings->img_bg_color       = UABB_Helper::uabb_colorpicker( $settings, 'img_bg_color', true );
-$settings->img_bg_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'img_bg_hover_color', true );
+$settings->img_bg_color       = FLBuilderColor::hex_or_rgb( $settings->img_bg_color );
+$settings->img_bg_hover_color = FLBuilderColor::hex_or_rgb( $settings->img_bg_hover_color );
 
-$settings->img_border_color       = UABB_Helper::uabb_colorpicker( $settings, 'img_border_color' );
-$settings->img_border_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'img_border_hover_color' );
+$settings->img_border_color       = FLBuilderColor::hex_or_rgb( $settings->img_border_color );
+$settings->img_border_hover_color = FLBuilderColor::hex_or_rgb( $settings->img_border_hover_color );
 
 ?>
 
@@ -90,7 +90,7 @@ $settings->img_border_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'i
 			border-style: <?php echo esc_attr( $settings->img_border_style ); ?>;
 		<?php endif; ?>
 
-		background: 
+		background:
 		<?php echo esc_attr( uabb_theme_base_color( $settings->img_bg_color ) ); ?>;
 
 		<?php if ( ! empty( $settings->img_bg_size ) ) : ?>
@@ -103,13 +103,13 @@ $settings->img_border_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'i
 			border-color: <?php echo esc_attr( $settings->img_border_color ); ?>;
 		<?php endif; ?>
 
-		border-radius: 
+		border-radius:
 		<?php echo esc_attr( ( empty( $settings->img_bg_border_radius ) ) ? '0' : $settings->img_bg_border_radius ); ?>px;
 	<?php endif; ?>
 }
 
 /* Responsive Photo Size */
-<?php if ( $global_settings->responsive_enabled ) { // Global Setting If started. ?> 
+<?php if ( $global_settings->responsive_enabled ) { // Global Setting If started. ?>
 		@media ( max-width: <?php echo esc_attr( $global_settings->medium_breakpoint ) . 'px'; ?> ) {
 			<?php if ( '' !== $settings->medium_img_size ) { ?>
 				.fl-node-<?php echo esc_attr( $id ); ?> {

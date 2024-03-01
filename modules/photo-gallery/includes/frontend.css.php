@@ -9,25 +9,25 @@ $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
 $settings->overlay_color                 = ( '' === $settings->overlay_color ) ? '000000' : $settings->overlay_color;
-$settings->overlay_color                 = UABB_Helper::uabb_colorpicker( $settings, 'overlay_color', true );
-$settings->caption_bg_color              = UABB_Helper::uabb_colorpicker( $settings, 'caption_bg_color', true );
-$settings->color                         = UABB_Helper::uabb_colorpicker( $settings, 'color' );
-$settings->overlay_icon_color            = UABB_Helper::uabb_colorpicker( $settings, 'overlay_icon_color' );
-$settings->filter_title_color            = UABB_Helper::uabb_colorpicker( $settings, 'filter_title_color', true );
-$settings->cat_filter_color              = UABB_Helper::uabb_colorpicker( $settings, 'cat_filter_color', true );
-$settings->cat_filter_bg_color           = UABB_Helper::uabb_colorpicker( $settings, 'cat_filter_bg_color', true );
-$settings->cat_filter_hover_color        = UABB_Helper::uabb_colorpicker( $settings, 'cat_filter_hover_color', true );
-$settings->cat_filter_bg_hover_color     = UABB_Helper::uabb_colorpicker( $settings, 'cat_filter_bg_hover_color', true );
-$settings->cat_filter_border_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'cat_filter_border_hover_color', true );
+$settings->overlay_color                 = FLBuilderColor::hex_or_rgb( $settings->overlay_color );
+$settings->caption_bg_color              = FLBuilderColor::hex_or_rgb( $settings->caption_bg_color );
+$settings->color                         = FLBuilderColor::hex_or_rgb( $settings->color );
+$settings->overlay_icon_color            = FLBuilderColor::hex_or_rgb( $settings->overlay_icon_color );
+$settings->filter_title_color            = FLBuilderColor::hex_or_rgb( $settings->filter_title_color );
+$settings->cat_filter_color              = FLBuilderColor::hex_or_rgb( $settings->cat_filter_color );
+$settings->cat_filter_bg_color           = FLBuilderColor::hex_or_rgb( $settings->cat_filter_bg_color );
+$settings->cat_filter_hover_color        = FLBuilderColor::hex_or_rgb( $settings->cat_filter_hover_color );
+$settings->cat_filter_bg_hover_color     = FLBuilderColor::hex_or_rgb( $settings->cat_filter_bg_hover_color );
+$settings->cat_filter_border_hover_color = FLBuilderColor::hex_or_rgb( $settings->cat_filter_border_hover_color );
 $settings->photo_spacing                 = ( '' !== $settings->photo_spacing ) ? $settings->photo_spacing : '20';
 $settings->caption_bg_color              = ( '' !== $settings->caption_bg_color ) ? $settings->caption_bg_color : '#f7f7f7';
-$settings->load_more_bg_color            = UABB_Helper::uabb_colorpicker( $settings, 'load_more_bg_color', true );
-$settings->load_more_text_color          = UABB_Helper::uabb_colorpicker( $settings, 'load_more_text_color', true );
-$settings->load_more_text_hover_color    = UABB_Helper::uabb_colorpicker( $settings, 'load_more_text_hover_color', true );
-$settings->load_more_bg_hover_color      = UABB_Helper::uabb_colorpicker( $settings, 'load_more_bg_hover_color', true );
-$settings->border_hover_color            = UABB_Helper::uabb_colorpicker( $settings, 'border_hover_color', true );
-$settings->img_shadow_color              = UABB_Helper::uabb_colorpicker( $settings, 'img_shadow_color', true );
-$settings->img_shadow_color_hover        = UABB_Helper::uabb_colorpicker( $settings, 'img_shadow_color_hover', true );
+$settings->load_more_bg_color            = FLBuilderColor::hex_or_rgb( $settings->load_more_bg_color );
+$settings->load_more_text_color          = FLBuilderColor::hex_or_rgb( $settings->load_more_text_color );
+$settings->load_more_text_hover_color    = FLBuilderColor::hex_or_rgb( $settings->load_more_text_hover_color );
+$settings->load_more_bg_hover_color      = FLBuilderColor::hex_or_rgb( $settings->load_more_bg_hover_color );
+$settings->border_hover_color            = FLBuilderColor::hex_or_rgb( $settings->border_hover_color );
+$settings->img_shadow_color              = FLBuilderColor::hex_or_rgb( $settings->img_shadow_color );
+$settings->img_shadow_color_hover        = FLBuilderColor::hex_or_rgb( $settings->img_shadow_color_hover );
 ?>
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-photo-gallery,
@@ -63,7 +63,7 @@ $settings->img_shadow_color_hover        = UABB_Helper::uabb_colorpicker( $setti
 <?php if ( 'lightbox' === $settings->click_action && ! empty( $settings->show_captions ) ) : ?>
 .mfp-gallery img.mfp-img {
 	padding: 40px 0;
-}	
+}
 
 .mfp-counter {
 	display: block !important;
@@ -102,7 +102,7 @@ $settings->img_shadow_color_hover        = UABB_Helper::uabb_colorpicker( $setti
 			font-size: <?php echo esc_attr( $settings->font_size_unit ); ?>px;
 		<?php } elseif ( isset( $settings->font_size_unit ) && '' === $settings->font_size_unit && isset( $settings->font_size['desktop'] ) && '' !== $settings->font_size['desktop'] ) { ?>
 			font-size: <?php echo esc_attr( $settings->font_size['desktop'] ); ?>px;
-			<?php } ?>  
+			<?php } ?>
 
 		<?php if ( isset( $settings->font_size['desktop'] ) && '' === $settings->font_size['desktop'] && isset( $settings->line_height['desktop'] ) && '' !== $settings->line_height['desktop'] && '' === $settings->line_height_unit ) { ?>
 			line-height: <?php echo esc_attr( $settings->line_height['desktop'] ); ?>px;
@@ -222,9 +222,9 @@ $settings->img_shadow_color_hover        = UABB_Helper::uabb_colorpicker( $setti
 
 				<?php if ( 'yes' === $converted || isset( $settings->font_size_unit_medium ) && '' !== $settings->font_size_unit_medium ) { ?>
 					font-size: <?php echo esc_attr( $settings->font_size_unit_medium ); ?>px;
-				<?php } elseif ( isset( $settings->font_size_unit_medium ) && '' === $settings->font_size_unit_medium && isset( $settings->font_size['medium'] ) && '' !== $settings->font_size['medium'] ) { ?> 
+				<?php } elseif ( isset( $settings->font_size_unit_medium ) && '' === $settings->font_size_unit_medium && isset( $settings->font_size['medium'] ) && '' !== $settings->font_size['medium'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->font_size['medium'] ); ?>px;
-				<?php } ?>  
+				<?php } ?>
 
 				<?php if ( isset( $settings->font_size['medium'] ) && '' === $settings->font_size['medium'] && isset( $settings->line_height['medium'] ) && '' !== $settings->line_height['medium'] && '' === $settings->line_height_unit_medium && '' === $settings->line_height_unit ) { ?>
 					line-height: <?php echo esc_attr( $settings->line_height['medium'] ); ?>px;
@@ -232,7 +232,7 @@ $settings->img_shadow_color_hover        = UABB_Helper::uabb_colorpicker( $setti
 
 				<?php if ( 'yes' === $converted || isset( $settings->line_height_unit_medium ) && '' !== $settings->line_height_unit_medium ) { ?>
 					line-height: <?php echo esc_attr( $settings->line_height_unit_medium ); ?>em;
-				<?php } elseif ( isset( $settings->line_height_unit_medium ) && '' === $settings->line_height_unit_medium && isset( $settings->line_height['medium'] ) && '' !== $settings->line_height['medium'] ) { ?> 
+				<?php } elseif ( isset( $settings->line_height_unit_medium ) && '' === $settings->line_height_unit_medium && isset( $settings->line_height['medium'] ) && '' !== $settings->line_height['medium'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->line_height['medium'] ); ?>px;
 				<?php } ?>
 			}
@@ -271,9 +271,9 @@ $settings->img_shadow_color_hover        = UABB_Helper::uabb_colorpicker( $setti
 
 				<?php if ( 'yes' === $converted || isset( $settings->font_size_unit_responsive ) && '' !== $settings->font_size_unit_responsive ) { ?>
 					font-size: <?php echo esc_attr( $settings->font_size_unit_responsive ); ?>px;
-				<?php } elseif ( isset( $settings->font_size_unit_responsive ) && '' === $settings->font_size_unit_responsive && isset( $settings->font_size['small'] ) && '' !== $settings->font_size['small'] ) { ?> 
+				<?php } elseif ( isset( $settings->font_size_unit_responsive ) && '' === $settings->font_size_unit_responsive && isset( $settings->font_size['small'] ) && '' !== $settings->font_size['small'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->font_size['small'] ); ?>px;
-				<?php } ?>   
+				<?php } ?>
 
 				<?php if ( isset( $settings->font_size['small'] ) && '' === $settings->font_size['small'] && isset( $settings->line_height['small'] ) && '' !== $settings->line_height['small'] && '' === $settings->line_height_unit_responsive && '' === $settings->line_height_unit_medium && '' === $settings->line_height_unit ) { ?>
 					line-height: <?php echo esc_attr( $settings->line_height['small'] ); ?>px;
@@ -281,7 +281,7 @@ $settings->img_shadow_color_hover        = UABB_Helper::uabb_colorpicker( $setti
 
 				<?php if ( 'yes' === $converted || isset( $settings->line_height_unit_responsive ) && '' !== $settings->line_height_unit_responsive ) { ?>
 					line-height: <?php echo esc_attr( $settings->line_height_unit_responsive ); ?>em;
-				<?php } elseif ( isset( $settings->line_height_unit_responsive ) && '' === $settings->line_height_unit_responsive && isset( $settings->line_height['small'] ) && '' !== $settings->line_height['small'] ) { ?> 
+				<?php } elseif ( isset( $settings->line_height_unit_responsive ) && '' === $settings->line_height_unit_responsive && isset( $settings->line_height['small'] ) && '' !== $settings->line_height['small'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->line_height['small'] ); ?>px;
 				<?php } ?>
 			}
@@ -295,7 +295,7 @@ $settings->img_shadow_color_hover        = UABB_Helper::uabb_colorpicker( $setti
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-photo-gallery-item:nth-child(<?php echo esc_attr( $settings->grid_column ); ?>n+0)
 				<?php if ( $settings->grid_column !== $settings->medium_grid_column ) { ?>
 			, .fl-node-<?php echo esc_attr( $id ); ?> .uabb-photo-gallery-item:nth-child(<?php echo esc_attr( $settings->medium_grid_column ); ?>n+1),
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-photo-gallery-item:nth-child(<?php echo esc_attr( $settings->medium_grid_column ); ?>n+0) 
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-photo-gallery-item:nth-child(<?php echo esc_attr( $settings->medium_grid_column ); ?>n+0)
 			<?php } ?> {
 				clear: none;
 			}
@@ -462,7 +462,7 @@ if ( ! $version_bb_check ) {
 			echo ( '' !== $settings->cat_filter_border_width ) ? 'border-width:' . esc_attr( $settings->cat_filter_border_width ) . 'px;' : '';
 		}
 		if ( isset( $settings->cat_filter_border_color ) ) {
-			echo ( '' !== $settings->cat_filter_border_color ) ? 'border-color:#' . esc_attr( $settings->cat_filter_border_color ) . ';' : '';
+			echo ( '' !== $settings->cat_filter_border_color ) ? 'border-color:' . esc_attr( FLBuilderColor::hex_or_rgb( $settings->cat_filter_border_color ) ) . ';' : '';
 		}
 		?>
 	}

@@ -13,18 +13,18 @@ foreach ( $settings->businessHours as $business_hours_content ) { // phpcs:ignor
 		?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-business-hours-wrap .uabb-business-day-<?php echo esc_attr( $i ); ?> {
 			<?php if ( '' !== $business_hours_content->day_color && isset( $business_hours_content->day_color ) ) { ?>
-				color: <?php echo wp_kses_post( ( false === strpos( $business_hours_content->day_color, 'rgb' ) ) ? '#' . $business_hours_content->day_color : $business_hours_content->day_color ); ?>;
+				color: <?php echo wp_kses_post( FLBuilderColor::hex_or_rgb( $business_hours_content->day_color ) ); ?>;
 			<?php } ?>
 		}
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-business-hours-wrap .uabb-business-hours-<?php echo esc_attr( $i ); ?> {
 			<?php if ( '' !== $business_hours_content->hour_color && isset( $business_hours_content->hour_color ) ) { ?>
-				color: <?php echo wp_kses_post( ( false === strpos( $business_hours_content->hour_color, 'rgb' ) ) ? '#' . $business_hours_content->hour_color : $business_hours_content->hour_color ); ?>;
+				color: <?php echo wp_kses_post( FLBuilderColor::hex_or_rgb( $business_hours_content->hour_color ) ); ?>;
 				<?php
 			}
 			?>
 		}
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-business-hours-container .uabb-business-hours-wrap.uabb-business-hours-wrap-<?php echo esc_attr( $i ); ?>{
-			background-color: <?php echo wp_kses_post( ( false === strpos( $business_hours_content->background_color, 'rgb' ) ) ? '#' . $business_hours_content->background_color : $business_hours_content->background_color ); ?>;
+			background-color: <?php echo wp_kses_post( FLBuilderColor::hex_or_rgb( $business_hours_content->background_color ) ); ?>;
 		}
 		<?php
 endif;
@@ -34,19 +34,19 @@ endif;
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-business-hours-wrap:nth-child(odd) {
 	<?php if ( 'no' !== $settings->striped_effect ) : ?>
-		background-color: <?php echo wp_kses_post( ( false === strpos( $settings->striped_odd_rows_color, 'rgb' ) ) ? '#' . $settings->striped_odd_rows_color : $settings->striped_odd_rows_color ); ?>;
+		background-color: <?php echo wp_kses_post( FLBuilderColor::hex_or_rgb( $settings->striped_odd_rows_color ) ); ?>;
 	<?php endif; ?>
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-business-hours-wrap:nth-child(even) {
 	<?php if ( 'no' !== $settings->striped_effect ) : ?>
-		background-color: <?php echo wp_kses_post( ( false === strpos( $settings->striped_even_rows_color, 'rgb' ) ) ? '#' . $settings->striped_even_rows_color : $settings->striped_even_rows_color ); ?>;
+		background-color: <?php echo wp_kses_post( FLBuilderColor::hex_or_rgb( $settings->striped_even_rows_color ) ); ?>;
 	<?php endif; ?>
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-business-hours-container {
 	<?php if ( isset( $settings->background_color_all ) && '' !== $settings->background_color_all ) { ?>
-		background-color:<?php echo wp_kses_post( ( false === strpos( $settings->background_color_all, 'rgb' ) ) ? '#' . $settings->background_color_all : $settings->background_color_all ); ?>;
+		background-color:<?php echo wp_kses_post( FLBuilderColor::hex_or_rgb( $settings->background_color_all ) ); ?>;
 		<?php } ?>
 		<?php
 		if ( isset( $settings->box_padding_top ) && isset( $settings->box_padding_bottom ) && isset( $settings->box_padding_left ) && isset( $settings->box_padding_right ) ) {
@@ -78,7 +78,7 @@ endif;
 		border-left-width: <?php echo esc_attr( $settings->border_width_left ); ?>px;
 		border-right-width: <?php echo esc_attr( $settings->border_width_right ); ?>px;
 
-		border-color:<?php echo wp_kses_post( ( false === strpos( $settings->border_color, 'rgb' ) ) ? '#' . $settings->border_color : $settings->border_color ); ?>;
+		border-color:<?php echo wp_kses_post( FLBuilderColor::hex_or_rgb( $settings->border_color ) ); ?>;
 	}
 	<?php
 } else {
@@ -97,7 +97,7 @@ endif;
 <?php if ( 'no' !== $settings->row_divider ) : ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-business-hours-container .uabb-business-hours-wrap:not(:first-child) {
 		border-top-style: <?php echo esc_attr( $settings->divider_style ); ?>;
-		border-color:<?php echo wp_kses_post( ( false === strpos( $settings->divider_color, 'rgb' ) ) ? '#' . $settings->divider_color : $settings->divider_color ); ?>;
+		border-color:<?php echo wp_kses_post( FLBuilderColor::hex_or_rgb( $settings->divider_color ) ); ?>;
 		border-top-width: <?php echo esc_attr( $settings->divider_weight ); ?>px;
 	}
 <?php endif; ?>
@@ -121,7 +121,7 @@ if ( isset( $settings->row_spacing_right ) ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-business-day {
 	<?php if ( '' !== $settings->days_color && isset( $settings->days_color ) ) : ?>
-		color:<?php echo wp_kses_post( ( false === strpos( $settings->days_color, 'rgb' ) ) ? '#' . $settings->days_color : $settings->days_color ); ?>;
+		color:<?php echo wp_kses_post( FLBuilderColor::hex_or_rgb( $settings->days_color ) ); ?>;
 	<?php endif; ?>
 }
 
@@ -185,7 +185,7 @@ if ( isset( $settings->row_spacing_right ) ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-business-hours {
 
 	<?php if ( '' !== $settings->hours_color && isset( $settings->hours_color ) ) : ?>
-		color: <?php echo wp_kses_post( ( false === strpos( $settings->hours_color, 'rgb' ) ) ? '#' . $settings->hours_color : $settings->hours_color ); ?>;
+		color: <?php echo wp_kses_post( FLBuilderColor::hex_or_rgb( $settings->hours_color ) ); ?>;
 	<?php endif; ?>
 }
 <?php if ( ! $version_bb_check ) { ?>

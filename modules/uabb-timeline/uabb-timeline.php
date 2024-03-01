@@ -10,6 +10,8 @@
  *
  * @class UABBTimelineModule
  */
+
+#[AllowDynamicProperties]
 class UABBTimelineModule extends FLBuilderModule {
 
 	/**

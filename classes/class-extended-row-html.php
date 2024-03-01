@@ -28,7 +28,7 @@ if ( '' === $row->bot_separator_color_opc ) {
 
 if ( 'bottom' === $row->separator_flag ) {
 
-	$row->bot_separator_color = UABB_Helper::uabb_colorpicker( $row, 'bot_separator_color', false );
+	$row->bot_separator_color = FLBuilderColor::hex_or_rgb( $row->bot_separator_color );
 
 	if ( '' === $row->bot_separator_color ) {
 		$row->bot_separator_color = '#ffffff';
@@ -984,10 +984,10 @@ if ( 'bottom' === $row->separator_flag ) {
 	$top_separator_color = $row->uabb_row_separator_color_opc / 100;
 
 	if ( '' !== $row->uabb_row_separator_color ) {
-		$row->uabb_row_separator_color = UABB_Helper::uabb_colorpicker( $row, 'uabb_row_separator_color', true );
+		$row->uabb_row_separator_color = FLBuilderColor::hex_or_rgb( $row->uabb_row_separator_color );
 	} else {
 		if ( isset( $row->separator_color ) && '' !== $row->separator_color && 'ffffff' !== $row->separator_color ) {
-			$row->uabb_row_separator_color = UABB_Helper::uabb_colorpicker( $row, 'separator_color', true );
+			$row->uabb_row_separator_color = FLBuilderColor::hex_or_rgb( $row->separator_color );
 		}
 	}
 

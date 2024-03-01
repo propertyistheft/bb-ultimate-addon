@@ -8,17 +8,17 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->connector_border_color     = UABB_Helper::uabb_colorpicker( $settings, 'connector_border_color' );
-$settings->outer_bg_color             = UABB_Helper::uabb_colorpicker( $settings, 'outer_bg_color', true );
-$settings->thumb_border_color         = UABB_Helper::uabb_colorpicker( $settings, 'thumb_border_color' );
-$settings->thumb_active_border_color  = UABB_Helper::uabb_colorpicker( $settings, 'thumb_active_border_color' );
-$settings->info_icon_img_border_color = UABB_Helper::uabb_colorpicker( $settings, 'info_icon_img_border_color' );
-$settings->info_bg_color              = UABB_Helper::uabb_colorpicker( $settings, 'info_bg_color', true );
-$settings->thumb_active_border_color  = UABB_Helper::uabb_colorpicker( $settings, 'thumb_active_border_color' );
-$settings->info_separator_color       = UABB_Helper::uabb_colorpicker( $settings, 'info_separator_color' );
+$settings->connector_border_color     = FLBuilderColor::hex_or_rgb( $settings->connector_border_color );
+$settings->outer_bg_color             = FLBuilderColor::hex_or_rgb( $settings->outer_bg_color );
+$settings->thumb_border_color         = FLBuilderColor::hex_or_rgb( $settings->thumb_border_color );
+$settings->thumb_active_border_color  = FLBuilderColor::hex_or_rgb( $settings->thumb_active_border_color );
+$settings->info_icon_img_border_color = FLBuilderColor::hex_or_rgb( $settings->info_icon_img_border_color );
+$settings->info_bg_color              = FLBuilderColor::hex_or_rgb( $settings->info_bg_color );
+$settings->thumb_active_border_color  = FLBuilderColor::hex_or_rgb( $settings->thumb_active_border_color );
+$settings->info_separator_color       = FLBuilderColor::hex_or_rgb( $settings->info_separator_color );
 
-$settings->color      = UABB_Helper::uabb_colorpicker( $settings, 'color' );
-$settings->desc_color = UABB_Helper::uabb_colorpicker( $settings, 'desc_color' );
+$settings->color      = FLBuilderColor::hex_or_rgb( $settings->color );
+$settings->desc_color = FLBuilderColor::hex_or_rgb( $settings->desc_color );
 
 
 /* Set default color */
@@ -45,7 +45,7 @@ foreach ( $settings->add_circle_item as $item ) {
 		continue; }
 
 	$circle_item_count++;
-	$item->btn_color = UABB_Helper::uabb_colorpicker( $item, 'btn_color' );
+	$item->btn_color = FLBuilderColor::hex_or_rgb( $item->btn_color );
 
 	$imageicon_array = array(
 
@@ -383,11 +383,11 @@ foreach ( $settings->add_circle_item as $item ) {
 
 	endif;
 
-	$item->inner_circle_bg_color   = UABB_Helper::uabb_colorpicker( $item, 'inner_circle_bg_color', true );
-	$item->icon_hover_color        = UABB_Helper::uabb_colorpicker( $item, 'icon_hover_color' );
-	$item->icon_bg_hover_color     = UABB_Helper::uabb_colorpicker( $item, 'icon_bg_hover_color' );
-	$item->separator_color         = UABB_Helper::uabb_colorpicker( $item, 'separator_color' );
-	$item->inner_circle_bg_overlay = UABB_Helper::uabb_colorpicker( $item, 'inner_circle_bg_overlay' );
+	$item->inner_circle_bg_color   = FLBuilderColor::hex_or_rgb( $item->inner_circle_bg_color );
+	$item->icon_hover_color        = FLBuilderColor::hex_or_rgb( $item->icon_hover_color );
+	$item->icon_bg_hover_color     = FLBuilderColor::hex_or_rgb( $item->icon_bg_hover_color );
+	$item->separator_color         = FLBuilderColor::hex_or_rgb( $item->separator_color );
+	$item->inner_circle_bg_overlay = FLBuilderColor::hex_or_rgb( $item->inner_circle_bg_overlay );
 
 
 	/* Calculate & Set Info Circle Coordinates */
@@ -403,8 +403,7 @@ foreach ( $settings->add_circle_item as $item ) {
 		<?php if ( $item->icon_gradient ) { ?>
 			<?php
 
-			$bg_hover_color = ( ! empty( $item->icon_bg_hover_color ) ) ? uabb_parse_color_to_hex( $item->icon_bg_hover_color ) : uabb_parse_color_to_hex( $item->icon_bg_hover_color );
-			$bg_grad_start  = '#' . FLBuilderColor::adjust_brightness( $bg_hover_color, 40, 'lighten' );
+			$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $item->icon_bg_hover_color, 40, 'lighten' ) );
 			?>
 
 		/* Gradient Style */

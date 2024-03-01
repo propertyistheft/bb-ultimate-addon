@@ -16,24 +16,24 @@ if ( method_exists( 'FLBuilder', 'fa5_pro_enabled' ) ) {
 	$font_family = 'Font Awesome 5 Free';
 }
 
-$settings->page_overlay        = UABB_Helper::uabb_colorpicker( $settings, 'page_overlay', true );
-$settings->menu_color          = UABB_Helper::uabb_colorpicker( $settings, 'menu_color', true );
-$settings->menu_color_hover    = UABB_Helper::uabb_colorpicker( $settings, 'menu_color_hover', true );
-$settings->offcanvas_bg_color  = UABB_Helper::uabb_colorpicker( $settings, 'offcanvas_bg_color', true );
-$settings->icon_color          = UABB_Helper::uabb_colorpicker( $settings, 'icon_color', true );
-$settings->close_icon_color    = UABB_Helper::uabb_colorpicker( $settings, 'close_icon_color', true );
-$settings->close_icon_bg_color = UABB_Helper::uabb_colorpicker( $settings, 'close_icon_bg_color', true );
-$settings->text_color          = UABB_Helper::uabb_colorpicker( $settings, 'text_color', true );
-$settings->text_hover_color    = UABB_Helper::uabb_colorpicker( $settings, 'text_hover_color', true );
-$settings->content_color       = UABB_Helper::uabb_colorpicker( $settings, 'content_color', true );
-$settings->content_color_hover = UABB_Helper::uabb_colorpicker( $settings, 'content_color_hover', true );
-$settings->menu_bg_color       = UABB_Helper::uabb_colorpicker( $settings, 'menu_bg_color', true );
-$settings->menu_bg_color_hover = UABB_Helper::uabb_colorpicker( $settings, 'menu_bg_color_hover', true );
-$settings->icon_hover_color    = UABB_Helper::uabb_colorpicker( $settings, 'icon_hover_color', true );
-$settings->icon_bg_color       = UABB_Helper::uabb_colorpicker( $settings, 'icon_bg_color', true );
-$settings->icon_bg_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'icon_bg_hover_color', true );
-$settings->img_bg_color        = UABB_Helper::uabb_colorpicker( $settings, 'img_bg_color', true );
-$settings->img_bg_hover_color  = UABB_Helper::uabb_colorpicker( $settings, 'img_bg_hover_color', true );
+$settings->page_overlay        = FLBuilderColor::hex_or_rgb( $settings->page_overlay );
+$settings->menu_color          = FLBuilderColor::hex_or_rgb( $settings->menu_color );
+$settings->menu_color_hover    = FLBuilderColor::hex_or_rgb( $settings->menu_color_hover );
+$settings->offcanvas_bg_color  = FLBuilderColor::hex_or_rgb( $settings->offcanvas_bg_color );
+$settings->icon_color          = FLBuilderColor::hex_or_rgb( $settings->icon_color );
+$settings->close_icon_color    = FLBuilderColor::hex_or_rgb( $settings->close_icon_color );
+$settings->close_icon_bg_color = FLBuilderColor::hex_or_rgb( $settings->close_icon_bg_color );
+$settings->text_color          = FLBuilderColor::hex_or_rgb( $settings->text_color );
+$settings->text_hover_color    = FLBuilderColor::hex_or_rgb( $settings->text_hover_color );
+$settings->content_color       = FLBuilderColor::hex_or_rgb( $settings->content_color );
+$settings->content_color_hover = FLBuilderColor::hex_or_rgb( $settings->content_color_hover );
+$settings->menu_bg_color       = FLBuilderColor::hex_or_rgb( $settings->menu_bg_color );
+$settings->menu_bg_color_hover = FLBuilderColor::hex_or_rgb( $settings->menu_bg_color_hover );
+$settings->icon_hover_color    = FLBuilderColor::hex_or_rgb( $settings->icon_hover_color );
+$settings->icon_bg_color       = FLBuilderColor::hex_or_rgb( $settings->icon_bg_color );
+$settings->icon_bg_hover_color = FLBuilderColor::hex_or_rgb( $settings->icon_bg_hover_color );
+$settings->img_bg_color        = FLBuilderColor::hex_or_rgb( $settings->img_bg_color );
+$settings->img_bg_hover_color  = FLBuilderColor::hex_or_rgb( $settings->img_bg_hover_color );
 
 if ( 'button' === $settings->offcanvas_on ) {
 	FLBuilderCSS::dimension_field_rule(

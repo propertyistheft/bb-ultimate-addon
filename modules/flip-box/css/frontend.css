@@ -9,6 +9,9 @@
 .uabb-face {
 	opacity: 0;
 }
+.uabb-hover .uabb-front {
+    opacity: 0 !important;
+}
 
 .uabb-flip-box-wrap {
 	display: block;

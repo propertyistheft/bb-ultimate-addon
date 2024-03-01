@@ -6,29 +6,29 @@
  */
 
 $version_bb_check                     = UABB_Compatibility::$version_bb_check;
-$settings->form_bg_color              = UABB_Helper::uabb_colorpicker( $settings, 'form_bg_color', true );
-$settings->input_background_color     = UABB_Helper::uabb_colorpicker( $settings, 'input_background_color', true );
-$settings->input_text_color           = UABB_Helper::uabb_colorpicker( $settings, 'input_text_color', true );
-$settings->fields_icon_color          = UABB_Helper::uabb_colorpicker( $settings, 'fields_icon_color', true );
-$settings->divider_color              = UABB_Helper::uabb_colorpicker( $settings, 'divider_color', true );
-$settings->error_msg_color            = UABB_Helper::uabb_colorpicker( $settings, 'error_msg_color', true );
-$settings->btn_text_color             = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_color', true );
-$settings->btn_background_color       = UABB_Helper::uabb_colorpicker( $settings, 'btn_background_color', true );
-$settings->btn_background_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'btn_background_hover_color', true );
-$settings->btn_text_hover_color       = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_hover_color', true );
-$settings->login_link_color           = UABB_Helper::uabb_colorpicker( $settings, 'login_link_color', true );
-$settings->login_link_hover_color     = UABB_Helper::uabb_colorpicker( $settings, 'login_link_hover_color', true );
-$settings->pass_week_color            = UABB_Helper::uabb_colorpicker( $settings, 'pass_week_color', true );
-$settings->pass_medium_color          = UABB_Helper::uabb_colorpicker( $settings, 'pass_medium_color', true );
-$settings->pass_strong_color          = UABB_Helper::uabb_colorpicker( $settings, 'pass_strong_color', true );
-$settings->success_msg_color          = UABB_Helper::uabb_colorpicker( $settings, 'success_msg_color', true );
-$settings->input_border_active_color  = UABB_Helper::uabb_colorpicker( $settings, 'input_border_active_color', true );
-$settings->label_color                = UABB_Helper::uabb_colorpicker( $settings, 'label_color', true );
-$settings->checkbox_bgcolor           = UABB_Helper::uabb_colorpicker( $settings, 'checkbox_bgcolor', true );
-$settings->checkbox_selected_color    = UABB_Helper::uabb_colorpicker( $settings, 'checkbox_selected_color', true );
-$settings->checkbox_border_color      = UABB_Helper::uabb_colorpicker( $settings, 'checkbox_border_color', true );
-$settings->checkbox_text_color        = UABB_Helper::uabb_colorpicker( $settings, 'checkbox_text_color', true );
-$settings->terms_text_color           = UABB_Helper::uabb_colorpicker( $settings, 'terms_text_color', true );
+$settings->form_bg_color              = FLBuilderColor::hex_or_rgb( $settings->form_bg_color );
+$settings->input_background_color     = FLBuilderColor::hex_or_rgb( $settings->input_background_color );
+$settings->input_text_color           = FLBuilderColor::hex_or_rgb( $settings->input_text_color );
+$settings->fields_icon_color          = FLBuilderColor::hex_or_rgb( $settings->fields_icon_color );
+$settings->divider_color              = FLBuilderColor::hex_or_rgb( $settings->divider_color );
+$settings->error_msg_color            = FLBuilderColor::hex_or_rgb( $settings->error_msg_color );
+$settings->btn_text_color             = FLBuilderColor::hex_or_rgb( $settings->btn_text_color );
+$settings->btn_background_color       = FLBuilderColor::hex_or_rgb( $settings->btn_background_color );
+$settings->btn_background_hover_color = FLBuilderColor::hex_or_rgb( $settings->btn_background_hover_color );
+$settings->btn_text_hover_color       = FLBuilderColor::hex_or_rgb( $settings->btn_text_hover_color );
+$settings->login_link_color           = FLBuilderColor::hex_or_rgb( $settings->login_link_color );
+$settings->login_link_hover_color     = FLBuilderColor::hex_or_rgb( $settings->login_link_hover_color );
+$settings->pass_week_color            = FLBuilderColor::hex_or_rgb( $settings->pass_week_color );
+$settings->pass_medium_color          = FLBuilderColor::hex_or_rgb( $settings->pass_medium_color );
+$settings->pass_strong_color          = FLBuilderColor::hex_or_rgb( $settings->pass_strong_color );
+$settings->success_msg_color          = FLBuilderColor::hex_or_rgb( $settings->success_msg_color );
+$settings->input_border_active_color  = FLBuilderColor::hex_or_rgb( $settings->input_border_active_color );
+$settings->label_color                = FLBuilderColor::hex_or_rgb( $settings->label_color );
+$settings->checkbox_bgcolor           = FLBuilderColor::hex_or_rgb( $settings->checkbox_bgcolor );
+$settings->checkbox_selected_color    = FLBuilderColor::hex_or_rgb( $settings->checkbox_selected_color );
+$settings->checkbox_border_color      = FLBuilderColor::hex_or_rgb( $settings->checkbox_border_color );
+$settings->checkbox_text_color        = FLBuilderColor::hex_or_rgb( $settings->checkbox_text_color );
+$settings->terms_text_color           = FLBuilderColor::hex_or_rgb( $settings->terms_text_color );
 
 ?>
 

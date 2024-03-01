@@ -33,7 +33,7 @@ if ( isset( $photo_src ) ) {
 					$counter = 1;
 					$count   = count( $settings->hotspot_marker );
 					for ( $i = 0; $i < $count; $i++ ) {
-						$settings->hotspot_marker[ $i ]->tooltip_bg_color = UABB_Helper::uabb_colorpicker( $settings->hotspot_marker[ $i ], 'tooltip_bg_color' );
+						$settings->hotspot_marker[ $i ]->tooltip_bg_color = FLBuilderColor::hex_or_rgb( $settings->hotspot_marker[ $i ]->tooltip_bg_color );
 						?>
 				<div class="uabb-hotspot-item-<?php echo esc_attr( $i ); ?> uabb-hotspot-item <?php echo esc_attr( $hide_nonactive ); ?>" data-name="<?php echo esc_attr( $i ); ?>" data-uabb-tour="<?php echo esc_attr( $counter ); ?>">
 						<?php

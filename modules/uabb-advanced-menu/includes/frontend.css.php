@@ -9,11 +9,11 @@
 
 <?php
 
-$settings->text_hover_color               = UABB_Helper::uabb_colorpicker( $settings, 'text_hover_color', true );
-$settings->button_bg_color                = UABB_Helper::uabb_colorpicker( $settings, 'button_bg_color', true );
-$settings->bg_hover_color                 = UABB_Helper::uabb_colorpicker( $settings, 'bg_hover_color', true );
-$settings->creative_menu_link_color       = UABB_Helper::uabb_colorpicker( $settings, 'creative_menu_link_color', true );
-$settings->creative_menu_link_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'creative_menu_link_hover_color', true );
+$settings->text_hover_color               = FLBuilderColor::hex_or_rgb( $settings->text_hover_color );
+$settings->button_bg_color                = FLBuilderColor::hex_or_rgb( $settings->button_bg_color );
+$settings->bg_hover_color                 = FLBuilderColor::hex_or_rgb( $settings->bg_hover_color );
+$settings->creative_menu_link_color       = FLBuilderColor::hex_or_rgb( $settings->creative_menu_link_color );
+$settings->creative_menu_link_hover_color = FLBuilderColor::hex_or_rgb( $settings->creative_menu_link_hover_color );
 
 
 
@@ -351,7 +351,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 		<?php
 		if ( $settings->creative_menu_responsive_link_color ) {
 			?>
-			color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_color ); ?>;<?php } ?>
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_color ) ); ?>;<?php } ?>
 	}
 <?php } elseif ( 'plus' === $settings->creative_menu_responsive_toggle ) { ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-off-canvas-menu .uabb-menu-toggle:before,
@@ -366,7 +366,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 		<?php
 		if ( $settings->creative_menu_responsive_link_color ) {
 			?>
-			color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_color ); ?>;<?php } ?>
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_color ) ); ?>;<?php } ?>
 	}
 <?php } ?>
 
@@ -723,7 +723,7 @@ if ( $global_settings->responsive_enabled ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .menu > li > .uabb-has-submenu-container > a {
 	<?php if ( '' !== $settings->creative_menu_background_color ) { ?>
 		transition: background-color 300ms ease;
-		background-color:<?php echo esc_attr( ( false === strpos( $settings->creative_menu_background_color, 'rgb' ) ) ? '#' . $settings->creative_menu_background_color : $settings->creative_menu_background_color ); ?>;
+		background-color:<?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_background_color ) ); ?>;
 	<?php } ?>
 }
 
@@ -771,7 +771,7 @@ if ( $global_settings->responsive_enabled ) {
 			<?php } ?>
 
 			<?php if ( '' !== $settings->creative_menu_border_color ) { ?>
-				border-color: <?php echo esc_attr( ( false === strpos( $settings->creative_menu_border_color, 'rgb' ) ) ? '#' . $settings->creative_menu_border_color : $settings->creative_menu_border_color ); ?>;
+				border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_border_color ) ); ?>;
 			<?php } ?>
 		<?php } else { ?>
 			<?php if ( '' !== $settings->creative_menu_border_style ) { ?>
@@ -849,12 +849,12 @@ if ( ! empty( $settings->creative_menu_background_hover_color ) || $settings->cr
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .menu > li.current-menu-ancestor > .uabb-has-submenu-container > a,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .menu > li.current-menu-item > .uabb-has-submenu-container > a {
 		<?php if ( '' !== $settings->creative_menu_background_hover_color ) { ?>
-			background-color: <?php echo esc_attr( ( false === strpos( $settings->creative_menu_background_hover_color, 'rgb' ) ) ? '#' . $settings->creative_menu_background_hover_color : $settings->creative_menu_background_hover_color ); ?>;
+			background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_background_hover_color ) ); ?>;
 			<?php
 		}
 		if ( '' !== $settings->creative_menu_border_hover_color ) {
 			?>
-			border-color: <?php echo esc_attr( ( false === strpos( $settings->creative_menu_border_hover_color, 'rgb' ) ) ? '#' . $settings->creative_menu_border_hover_color : $settings->creative_menu_border_hover_color ); ?>;
+			border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_border_hover_color ) ); ?>;
 		<?php } ?>
 	}
 
@@ -863,7 +863,7 @@ if ( ! empty( $settings->creative_menu_background_hover_color ) || $settings->cr
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .sub-menu > li.current-menu-ancestor > a,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .sub-menu > li.current-menu-ancestor > .uabb-has-submenu-container > a {
 		<?php if ( '' !== $settings->creative_submenu_background_hover_color ) { ?>
-			background-color: <?php echo esc_attr( ( false === strpos( $settings->creative_submenu_background_hover_color, 'rgb' ) ) ? '#' . $settings->creative_submenu_background_hover_color : $settings->creative_submenu_background_hover_color ); ?>;
+			background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_background_hover_color ) ); ?>;
 		<?php } ?>
 	}
 
@@ -894,7 +894,7 @@ if ( ! empty( $settings->creative_menu_background_hover_color ) || $settings->cr
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .sub-menu > li.current-menu-ancestor > .uabb-has-submenu-container > a span.menu-item-text > i {
 		<?php
 		if ( '' !== $settings->creative_submenu_link_hover_color ) {
-			echo 'color: #' . esc_attr( $settings->creative_submenu_link_hover_color ) . ';';
+			echo 'color: ' . esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_link_hover_color ) ) . ';';
 		}
 		?>
 	}
@@ -980,7 +980,7 @@ if ( ! empty( $settings->creative_menu_background_hover_color ) || $settings->cr
 		;
 	<?php } ?>
 
-	background-color: <?php echo esc_attr( ( false === strpos( $settings->creative_submenu_background_color, 'rgb' ) ) ? '#' . $settings->creative_submenu_background_color : $settings->creative_submenu_background_color ); ?>;
+	background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_background_color ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu:not(.off-canvas):not(.full-screen):not(.menu-item) .uabb-creative-menu .sub-menu {
@@ -989,7 +989,7 @@ if ( ! empty( $settings->creative_menu_background_hover_color ) || $settings->cr
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .sub-menu > li.uabb-creative-menu > a > span,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .sub-menu > li > .uabb-has-submenu-container > a > span {
-	color: <?php echo '#' . esc_attr( $settings->creative_submenu_link_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_link_color ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .sub-menu > li {
@@ -999,7 +999,7 @@ if ( ! empty( $settings->creative_menu_background_hover_color ) || $settings->cr
 		border-bottom-width: <?php echo esc_attr( $settings->creative_submenu_separator_size ); ?>px;
 		<?php } ?>
 		<?php if ( '' !== $settings->creative_submenu_separator_color ) { ?>
-		border-bottom-color: <?php echo esc_attr( ( false === strpos( $settings->creative_submenu_separator_color, 'rgb' ) ) ? '#' . $settings->creative_submenu_separator_color : $settings->creative_submenu_separator_color ); ?>;
+		border-bottom-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_separator_color ) ); ?>;
 		<?php } ?>
 	<?php } ?>
 }
@@ -1019,7 +1019,7 @@ if ( ! empty( $settings->creative_menu_background_hover_color ) || $settings->cr
 		border-top-width: <?php echo esc_attr( $settings->creative_submenu_separator_size ); ?>px;
 		<?php } ?>
 		<?php if ( '' !== $settings->creative_submenu_separator_color ) { ?>
-		border-top-color: <?php echo esc_attr( ( false === strpos( $settings->creative_submenu_separator_color, 'rgb' ) ) ? '#' . $settings->creative_submenu_separator_color : $settings->creative_submenu_separator_color ); ?>;
+		border-top-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_separator_color ) ); ?>;
 		<?php } ?>
 	<?php } ?>
 }
@@ -1029,10 +1029,10 @@ if ( ! empty( $settings->creative_menu_background_hover_color ) || $settings->cr
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .sub-menu {
 	<?php if ( 'yes' === $settings->creative_submenu_drop_shadow ) { ?>
-		-webkit-box-shadow: <?php echo esc_attr( $settings->creative_submenu_shadow_color_hor ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_ver ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_blur ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_spr ); ?>px <?php echo esc_attr( UABB_Helper::uabb_hex2rgba( '#' . $settings->creative_submenu_shadow_color, $settings->creative_submenu_shadow_color_opc / 100 ) ); ?>;
-		-moz-box-shadow: <?php echo esc_attr( $settings->creative_submenu_shadow_color_hor ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_ver ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_blur ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_spr ); ?>px <?php echo esc_attr( UABB_Helper::uabb_hex2rgba( '#' . $settings->creative_submenu_shadow_color, $settings->creative_submenu_shadow_color_opc / 100 ) ); ?>;
-		-o-box-shadow: <?php echo esc_attr( $settings->creative_submenu_shadow_color_hor ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_ver ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_blur ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_spr ); ?>px <?php echo esc_attr( UABB_Helper::uabb_hex2rgba( '#' . $settings->creative_submenu_shadow_color, $settings->creative_submenu_shadow_color_opc / 100 ) ); ?>;
-		box-shadow: <?php echo esc_attr( $settings->creative_submenu_shadow_color_hor ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_ver ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_blur ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_spr ); ?>px <?php echo esc_attr( UABB_Helper::uabb_hex2rgba( '#' . $settings->creative_submenu_shadow_color, $settings->creative_submenu_shadow_color_opc / 100 ) ); ?>;
+		-webkit-box-shadow: <?php echo esc_attr( $settings->creative_submenu_shadow_color_hor ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_ver ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_blur ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_spr ); ?>px <?php echo esc_attr( UABB_Helper::uabb_hex2rgba( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_shadow_color ), $settings->creative_submenu_shadow_color_opc / 100 ) ); ?>;
+		-moz-box-shadow: <?php echo esc_attr( $settings->creative_submenu_shadow_color_hor ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_ver ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_blur ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_spr ); ?>px <?php echo esc_attr( UABB_Helper::uabb_hex2rgba( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_shadow_color ), $settings->creative_submenu_shadow_color_opc / 100 ) ); ?>;
+		-o-box-shadow: <?php echo esc_attr( $settings->creative_submenu_shadow_color_hor ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_ver ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_blur ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_spr ); ?>px <?php echo esc_attr( UABB_Helper::uabb_hex2rgba( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_shadow_color ), $settings->creative_submenu_shadow_color_opc / 100 ) ); ?>;
+		box-shadow: <?php echo esc_attr( $settings->creative_submenu_shadow_color_hor ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_ver ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_blur ); ?>px <?php echo esc_attr( $settings->creative_submenu_shadow_color_spr ); ?>px <?php echo esc_attr( UABB_Helper::uabb_hex2rgba( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_shadow_color ), $settings->creative_submenu_shadow_color_opc / 100 ) ); ?>;
 	<?php } ?>
 }
 
@@ -1074,7 +1074,7 @@ if ( ! empty( $settings->creative_menu_background_hover_color ) || $settings->cr
 				border-width: <?php echo esc_attr( $str ); ?>
 			<?php } ?>
 
-			border-color: <?php echo esc_attr( ( false === strpos( $settings->creative_submenu_border_color, 'rgb' ) ) ? '#' . $settings->creative_submenu_border_color : $settings->creative_submenu_border_color ); ?>;
+			border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_border_color ) ); ?>;
 		<?php } ?>
 	}
 	<?php
@@ -1144,7 +1144,7 @@ if ( ! $version_bb_check ) {
 				border-width: <?php echo esc_attr( $str ); ?>
 			<?php } ?>
 
-			border-color: <?php echo esc_attr( ( false === strpos( $settings->creative_submenu_border_color, 'rgb' ) ) ? '#' . $settings->creative_submenu_border_color : $settings->creative_submenu_border_color ); ?>;
+			border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_border_color ) ); ?>;
 		<?php } ?>
 	}
 	<?php
@@ -1171,14 +1171,14 @@ if ( ! $version_bb_check ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu ul.sub-menu > li.menu-item.uabb-creative-menu > a:focus span.menu-item-text,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu ul.sub-menu > li.menu-item.uabb-creative-menu > .uabb-has-submenu-container > a:hover span.menu-item-text,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu ul.sub-menu > li.menu-item.uabb-creative-menu > .uabb-has-submenu-container > a:focus span.menu-item-text {
-	color: <?php echo '#' . esc_attr( $settings->creative_submenu_link_hover_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_link_hover_color ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .sub-menu > li > a:hover,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .sub-menu > li > a:focus,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .sub-menu > li > .uabb-has-submenu-container > a:hover,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .sub-menu > li > .uabb-has-submenu-container > a:focus {
-	background-color: <?php echo esc_attr( ( false === strpos( $settings->creative_submenu_background_hover_color, 'rgb' ) ) ? '#' . $settings->creative_submenu_background_hover_color : $settings->creative_submenu_background_hover_color ); ?>;
+	background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_background_hover_color ) ); ?>;
 }
 
 <?php if ( ! empty( $settings->creative_submenu_link_color ) ) { ?>
@@ -1186,11 +1186,11 @@ if ( ! $version_bb_check ) {
 		<?php if ( ( in_array( $settings->creative_menu_layout, array( 'horizontal', 'vertical' ), true ) && in_array( $settings->creative_submenu_hover_toggle, array( 'arrows', 'none' ), true ) ) || ( 'accordion' === $settings->creative_menu_layout && 'arrows' === $settings->creative_submenu_click_toggle ) ) { ?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .uabb-toggle-arrows .sub-menu li .uabb-menu-toggle:before,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .uabb-toggle-none .sub-menu li .uabb-menu-toggle:before {
-			color: #<?php echo esc_attr( $settings->creative_submenu_link_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_link_color ) ); ?>;
 		}
 		<?php } elseif ( ( in_array( $settings->creative_menu_layout, array( 'horizontal', 'vertical' ), true ) && 'plus' === $settings->creative_submenu_hover_toggle ) || ( 'accordion' === $settings->creative_menu_layout && 'plus' === $settings->creative_submenu_click_toggle ) ) { ?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .uabb-toggle-plus .sub-menu li .uabb-menu-toggle:before {
-			color: #<?php echo esc_attr( $settings->creative_submenu_link_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_link_color ) ); ?>;
 		}
 		<?php } ?>
 <?php } ?>
@@ -1200,11 +1200,11 @@ if ( ! $version_bb_check ) {
 		<?php if ( ( in_array( $settings->creative_menu_layout, array( 'horizontal', 'vertical' ), true ) && in_array( $settings->creative_submenu_hover_toggle, array( 'arrows', 'none' ), true ) ) || ( 'accordion' === $settings->creative_menu_layout && 'arrows' === $settings->creative_submenu_click_toggle ) ) { ?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .uabb-toggle-arrows .sub-menu li:hover .uabb-menu-toggle:before,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .uabb-toggle-none .sub-menu li:hover .uabb-menu-toggle:before {
-			color: #<?php echo esc_attr( $settings->creative_submenu_link_hover_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_link_hover_color ) ); ?>;
 		}
 		<?php } elseif ( ( in_array( $settings->creative_menu_layout, array( 'horizontal', 'vertical' ), true ) && 'plus' === $settings->creative_submenu_hover_toggle ) || ( 'accordion' === $settings->creative_menu_layout && 'plus' === $settings->creative_submenu_click_toggle ) ) { ?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .uabb-toggle-plus .sub-menu li:hover .uabb-menu-toggle:before {
-			color: #<?php echo esc_attr( $settings->creative_submenu_link_hover_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_submenu_link_hover_color ) ); ?>;
 		}
 		<?php } ?>
 <?php } ?>
@@ -1214,7 +1214,7 @@ if ( ! $version_bb_check ) {
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu-mobile-toggle {
 		<?php
 		if ( ! empty( $settings->creative_menu_mobile_toggle_color ) ) {
-			echo 'color: #' . esc_attr( $settings->creative_menu_mobile_toggle_color ) . ';';
+			echo 'color: ' . esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_mobile_toggle_color ) ) . ';';
 		}
 		?>
 	}
@@ -1779,7 +1779,7 @@ if ( ! $version_bb_check ) {
 
 <?php if ( 'full-screen' === $settings->creative_mobile_menu_type ) { ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .uabb-menu-overlay {
-		background-color: <?php echo esc_attr( ( false === strpos( $settings->creative_menu_responsive_overlay_bg_color, 'rgb' ) ) ? '#' . $settings->creative_menu_responsive_overlay_bg_color : $settings->creative_menu_responsive_overlay_bg_color ); ?>;
+		background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_overlay_bg_color ) ); ?>;
 	}
 
 	/* Links */
@@ -1877,7 +1877,7 @@ if ( ! $version_bb_check ) {
 		<?php
 		if ( $settings->creative_menu_responsive_link_color ) {
 			?>
-			color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_color ); ?>;<?php } ?>
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_color ) ); ?>;<?php } ?>
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .menu > li > a,
@@ -1895,7 +1895,7 @@ if ( ! $version_bb_check ) {
 		<?php if ( $settings->creative_menu_responsive_link_border_color ) { ?>
 			border-bottom-width: 1px;
 			border-bottom-style: solid;
-			border-bottom-color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_border_color ); ?>;
+			border-bottom-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_border_color ) ); ?>;
 		<?php } ?>
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .sub-menu li:last-child {
@@ -1925,7 +1925,7 @@ if ( ! $version_bb_check ) {
 		<?php
 		if ( $settings->creative_menu_responsive_link_hover_color ) {
 			?>
-			color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_hover_color ); ?>;<?php } ?>
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_hover_color ) ); ?>;<?php } ?>
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .menu > li.current-menu-item > a span.menu-item-text,
@@ -1947,7 +1947,7 @@ if ( ! $version_bb_check ) {
 		<?php
 		if ( $settings->creative_menu_responsive_link_hover_color ) {
 			?>
-			color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_hover_color ); ?>;<?php } ?>
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_hover_color ) ); ?>;<?php } ?>
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .uabb-menu-overlay .uabb-menu-close-btn {
@@ -1980,7 +1980,7 @@ if ( ! $version_bb_check ) {
 			height: <?php echo esc_attr( $settings->creative_menu_close_icon_size ); ?>px;
 		<?php } ?>
 		<?php if ( '' !== $settings->creative_menu_close_icon_color ) { ?>
-			background-color: #<?php echo esc_attr( $settings->creative_menu_close_icon_color ); ?>;
+			background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_close_icon_color ) ); ?>;
 		<?php } ?>
 	}
 
@@ -1990,12 +1990,12 @@ if ( ! $version_bb_check ) {
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .uabb-toggle-none .uabb-menu-toggle:before,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .uabb-toggle-arrows .sub-menu .uabb-menu-toggle:before,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .uabb-toggle-none .sub-menu .uabb-menu-toggle:before {
-				color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_color ); ?>;
+				color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_color ) ); ?>;
 			}
 			<?php } elseif ( ( in_array( $settings->creative_menu_layout, array( 'horizontal', 'vertical' ), true ) && 'plus' === $settings->creative_submenu_hover_toggle ) || ( 'accordion' === $settings->creative_menu_layout && 'plus' === $settings->creative_submenu_click_toggle ) ) { ?>
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .uabb-toggle-plus .uabb-menu-toggle:before,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .uabb-toggle-plus .sub-menu .uabb-menu-toggle:before {
-				color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_color ); ?>;
+				color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_color ) ); ?>;
 			}
 			<?php } ?>
 	<?php } ?>
@@ -2008,7 +2008,7 @@ if ( ! $version_bb_check ) {
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .uabb-toggle-arrows li:focus .uabb-has-submenu-container .uabb-menu-toggle:before,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .uabb-toggle-arrows .uabb-creative-menu.current-menu-item .uabb-menu-toggle:before,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .uabb-toggle-arrows .uabb-creative-menu.current-menu-ancestor .uabb-menu-toggle:before {
-			color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_hover_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_hover_color ) ); ?>;
 		}
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .uabb-toggle-plus li:hover .uabb-menu-toggle:before,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .uabb-toggle-plus li:focus .uabb-menu-toggle:before,
@@ -2016,7 +2016,7 @@ if ( ! $version_bb_check ) {
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .uabb-toggle-plus li:focus .uabb-has-submenu-container .uabb-menu-toggle:before,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .uabb-toggle-plus .uabb-creative-menu.current-menu-item .uabb-menu-toggle:before,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.full-screen .uabb-toggle-plus .uabb-creative-menu.current-menu-ancestor .uabb-menu-toggle:before {
-			color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_hover_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_hover_color ) ); ?>;
 		}
 	<?php } ?>
 
@@ -2086,7 +2086,7 @@ if ( 'always' === $module->media_breakpoint() ) {
 
 	/* Container */
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .uabb-off-canvas-menu {
-		background-color: <?php echo esc_attr( ( false === strpos( $settings->creative_menu_responsive_overlay_bg_color, 'rgb' ) ) ? '#' . $settings->creative_menu_responsive_overlay_bg_color : $settings->creative_menu_responsive_overlay_bg_color ); ?>;
+		background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_overlay_bg_color ) ); ?>;
 
 		<?php
 		if ( 'yes' === $converted || isset( $settings->creative_menu_responsive_overlay_padding_dimension_top ) && isset( $settings->creative_menu_responsive_overlay_padding_dimension_bottom ) && isset( $settings->creative_menu_responsive_overlay_padding_dimension_left ) && isset( $settings->creative_menu_responsive_overlay_padding_dimension_right ) ) {
@@ -2115,9 +2115,9 @@ if ( 'always' === $module->media_breakpoint() ) {
 		if ( '' !== $settings->creative_menu_off_canvas_shadow_color ) {
 			?>
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-off-canvas-menu {
-				-webkit-box-shadow:  0 0 15px 1px <?php echo esc_attr( ( false === strpos( $settings->creative_menu_off_canvas_shadow_color, 'rgb' ) ) ? '#' . $settings->creative_menu_off_canvas_shadow_color : $settings->creative_menu_off_canvas_shadow_color ); ?>;
-				-moz-box-shadow:  0 0 15px 1px <?php echo esc_attr( ( false === strpos( $settings->creative_menu_off_canvas_shadow_color, 'rgb' ) ) ? '#' . $settings->creative_menu_off_canvas_shadow_color : $settings->creative_menu_off_canvas_shadow_color ); ?>;
-				box-shadow:  0 0 15px 1px <?php echo esc_attr( ( false === strpos( $settings->creative_menu_off_canvas_shadow_color, 'rgb' ) ) ? '#' . $settings->creative_menu_off_canvas_shadow_color : $settings->creative_menu_off_canvas_shadow_color ); ?>;
+				-webkit-box-shadow:  0 0 15px 1px <?php echo esc_attr( ( false === strpos( $settings->creative_menu_off_canvas_shadow_color, 'rgb' ) ) ? FLBuilderColor::hex_or_rgb( $settings->creative_menu_off_canvas_shadow_color ) : $settings->creative_menu_off_canvas_shadow_color ); ?>;
+				-moz-box-shadow:  0 0 15px 1px <?php echo esc_attr( ( false === strpos( $settings->creative_menu_off_canvas_shadow_color, 'rgb' ) ) ? FLBuilderColor::hex_or_rgb( $settings->creative_menu_off_canvas_shadow_color ) : $settings->creative_menu_off_canvas_shadow_color ); ?>;
+				box-shadow:  0 0 15px 1px <?php echo esc_attr( ( false === strpos( $settings->creative_menu_off_canvas_shadow_color, 'rgb' ) ) ? FLBuilderColor::hex_or_rgb( $settings->creative_menu_off_canvas_shadow_color ) : $settings->creative_menu_off_canvas_shadow_color ); ?>;
 			}
 			<?php
 		}
@@ -2131,7 +2131,7 @@ if ( 'always' === $module->media_breakpoint() ) {
 		<?php
 		if ( $settings->creative_menu_close_icon_color ) {
 			?>
-			color: #<?php echo esc_attr( $settings->creative_menu_close_icon_color ); ?>;<?php } ?>
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_close_icon_color ) ); ?>;<?php } ?>
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu .uabb-off-canvas-menu .uabb-menu-close-btn::selection {
@@ -2140,7 +2140,7 @@ if ( 'always' === $module->media_breakpoint() ) {
 		<?php
 		if ( $settings->creative_menu_close_icon_color ) {
 			?>
-			color: #<?php echo esc_attr( $settings->creative_menu_close_icon_color ); ?>;<?php } ?>
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_close_icon_color ) ); ?>;<?php } ?>
 	}
 
 	/* Menu */
@@ -2186,13 +2186,13 @@ if ( 'always' === $module->media_breakpoint() ) {
 		<?php
 		if ( $settings->creative_menu_responsive_link_color ) {
 			?>
-			color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_color ); ?>;<?php } ?>
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_color ) ); ?>;<?php } ?>
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .sub-menu li {
 		border-bottom-width: 1px;
 		border-bottom-style: solid;
-		border-bottom-color: <?php echo ( $settings->creative_menu_responsive_link_border_color ) ? '#' . esc_attr( $settings->creative_menu_responsive_link_border_color ) : ''; ?>;
+		border-bottom-color: <?php echo ( $settings->creative_menu_responsive_link_border_color ) ? esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_border_color ) ) : ''; ?>;
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .sub-menu li:last-child {
@@ -2214,7 +2214,7 @@ if ( 'always' === $module->media_breakpoint() ) {
 		<?php
 		if ( $settings->creative_menu_responsive_link_hover_color ) {
 			?>
-			color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_hover_color ); ?>;<?php } ?>
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_hover_color ) ); ?>;<?php } ?>
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .menu > li > a:hover span.menu-item-text,
@@ -2243,7 +2243,7 @@ if ( 'always' === $module->media_breakpoint() ) {
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .sub-menu > li.current-menu-ancestor > .uabb-has-submenu-container > a span.menu-item-text i {
 		<?php
 		if ( '' !== $settings->creative_menu_responsive_link_hover_color ) {
-			echo 'color: #' . esc_attr( $settings->creative_menu_responsive_link_hover_color ) . ';';
+			echo 'color: ' . esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_hover_color ) ) . ';';
 		}
 		?>
 	}
@@ -2263,12 +2263,12 @@ if ( 'always' === $module->media_breakpoint() ) {
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-toggle-none .uabb-menu-toggle:before,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-toggle-arrows .sub-menu .uabb-menu-toggle:before,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-toggle-none .sub-menu .uabb-menu-toggle:before {
-				color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_color ); ?>;
+				color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_color ) ); ?>;
 			}
 			<?php } elseif ( ( in_array( $settings->creative_menu_layout, array( 'horizontal', 'vertical' ), true ) && 'plus' === $settings->creative_submenu_hover_toggle ) || ( 'accordion' === $settings->creative_menu_layout && 'plus' === $settings->creative_submenu_click_toggle ) ) { ?>
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-toggle-plus .uabb-menu-toggle:before,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-toggle-plus .sub-menu .uabb-menu-toggle:before {
-				color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_color ); ?>;
+				color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_color ) ); ?>;
 			}
 			<?php } ?>
 	<?php } ?>
@@ -2280,7 +2280,7 @@ if ( 'always' === $module->media_breakpoint() ) {
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-toggle-arrows li:focus .uabb-has-submenu-container .uabb-menu-toggle:before,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-toggle-arrows .uabb-creative-menu.current-menu-item .uabb-menu-toggle:before,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-toggle-arrows .uabb-creative-menu.current-menu-ancestor .uabb-menu-toggle:before {
-			color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_hover_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_hover_color ) ); ?>;
 		}
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-toggle-plus li:hover .uabb-menu-toggle:before,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-toggle-plus li:focus .uabb-menu-toggle:before,
@@ -2288,12 +2288,12 @@ if ( 'always' === $module->media_breakpoint() ) {
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-toggle-plus li:focus .uabb-has-submenu-container .uabb-menu-toggle:before,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-toggle-plus .uabb-creative-menu.current-menu-item .uabb-menu-toggle:before,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-toggle-plus .uabb-creative-menu.current-menu-ancestor .uabb-menu-toggle:before {
-			color: #<?php echo esc_attr( $settings->creative_menu_responsive_link_hover_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_link_hover_color ) ); ?>;
 		}
 	<?php } ?>
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-menu.off-canvas .uabb-clear {
-		background: <?php echo esc_attr( ( false === strpos( $settings->creative_menu_responsive_overlay_color, 'rgb' ) ) ? '#' . $settings->creative_menu_responsive_overlay_color : $settings->creative_menu_responsive_overlay_color ); ?>;
+		background: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->creative_menu_responsive_overlay_color ) ); ?>;
 	}
 <?php }
 if ( class_exists( 'FLBuilderCSS' ) ) {

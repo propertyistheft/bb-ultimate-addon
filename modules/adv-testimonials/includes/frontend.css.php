@@ -15,20 +15,20 @@
 	$settings->layout_background  = uabb_theme_base_color( $settings->layout_background );
 	$settings->rating_color       = uabb_theme_base_color( $settings->rating_color );
 
-	$settings->arrow_color                        = UABB_Helper::uabb_colorpicker( $settings, 'arrow_color' );
-	$settings->arrow_color_back                   = UABB_Helper::uabb_colorpicker( $settings, 'arrow_color_back', true );
-	$settings->arrow_color_border                 = UABB_Helper::uabb_colorpicker( $settings, 'arrow_color_border' );
-	$settings->dot_color                          = UABB_Helper::uabb_colorpicker( $settings, 'dot_color' );
-	$settings->icon_color_noslider                = UABB_Helper::uabb_colorpicker( $settings, 'icon_color_noslider' );
-	$settings->testimonial_icon_bg_color_noslider = UABB_Helper::uabb_colorpicker( $settings, 'testimonial_icon_bg_color_noslider', true );
-	$settings->layout_background                  = UABB_Helper::uabb_colorpicker( $settings, 'layout_background', true );
-	$settings->rating_color                       = UABB_Helper::uabb_colorpicker( $settings, 'rating_color' );
+	$settings->arrow_color                        = FLBuilderColor::hex_or_rgb( $settings->arrow_color );
+	$settings->arrow_color_back                   = FLBuilderColor::hex_or_rgb( $settings->arrow_color_back );
+	$settings->arrow_color_border                 = FLBuilderColor::hex_or_rgb( $settings->arrow_color_border );
+	$settings->dot_color                          = FLBuilderColor::hex_or_rgb( $settings->dot_color );
+	$settings->icon_color_noslider                = FLBuilderColor::hex_or_rgb( $settings->icon_color_noslider );
+	$settings->testimonial_icon_bg_color_noslider = FLBuilderColor::hex_or_rgb( $settings->testimonial_icon_bg_color_noslider );
+	$settings->layout_background                  = FLBuilderColor::hex_or_rgb( $settings->layout_background );
+	$settings->rating_color                       = FLBuilderColor::hex_or_rgb( $settings->rating_color );
 
-	$settings->testimonial_icon_bg_color = UABB_Helper::uabb_colorpicker( $settings, 'testimonial_icon_bg_color', true );
+	$settings->testimonial_icon_bg_color = FLBuilderColor::hex_or_rgb( $settings->testimonial_icon_bg_color );
 
-	$settings->testimonial_heading_color         = UABB_Helper::uabb_colorpicker( $settings, 'testimonial_heading_color' );
-	$settings->testimonial_designation_color     = UABB_Helper::uabb_colorpicker( $settings, 'testimonial_designation_color' );
-	$settings->testimonial_description_opt_color = UABB_Helper::uabb_colorpicker( $settings, 'testimonial_description_opt_color' );
+	$settings->testimonial_heading_color         = FLBuilderColor::hex_or_rgb( $settings->testimonial_heading_color );
+	$settings->testimonial_designation_color     = FLBuilderColor::hex_or_rgb( $settings->testimonial_designation_color );
+	$settings->testimonial_description_opt_color = FLBuilderColor::hex_or_rgb( $settings->testimonial_description_opt_color );
 
 	$settings->testimonial_icon_image_size       = ( '' !== $settings->testimonial_icon_image_size ) ? $settings->testimonial_icon_image_size : '';
 	$settings->testimonial_icon_bg_border_radius = ( '' !== $settings->testimonial_icon_bg_border_radius ) ? $settings->testimonial_icon_bg_border_radius : '0';
@@ -266,7 +266,7 @@ if ( '' === ( $settings->responsive_img_size_slider ) ) {
 					line-height: <?php echo esc_attr( $settings->testimonial_icon_image_size_responsive ); ?>px;
 					height: <?php echo esc_attr( $settings->testimonial_icon_image_size_responsive ); ?>px;
 					width: <?php echo esc_attr( $settings->testimonial_icon_image_size_responsive ); ?>px;
-				}				
+				}
 				<?php
 			}
 			?>

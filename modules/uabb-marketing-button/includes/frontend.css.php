@@ -8,13 +8,13 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->bg_color                  = UABB_Helper::uabb_colorpicker( $settings, 'bg_color', true );
-$settings->bg_hover_color            = UABB_Helper::uabb_colorpicker( $settings, 'bg_hover_color', true );
-$settings->text_color                = UABB_Helper::uabb_colorpicker( $settings, 'text_color' );
-$settings->text_hover_color          = UABB_Helper::uabb_colorpicker( $settings, 'text_hover_color' );
-$settings->subtitle_text_color       = UABB_Helper::uabb_colorpicker( $settings, 'subtitle_text_color' );
-$settings->subtitle_text_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'subtitle_text_hover_color' );
-$settings->icon_color                = UABB_Helper::uabb_colorpicker( $settings, 'icon_color' );
+$settings->bg_color                  = FLBuilderColor::hex_or_rgb( $settings->bg_color );
+$settings->bg_hover_color            = FLBuilderColor::hex_or_rgb( $settings->bg_hover_color );
+$settings->text_color                = FLBuilderColor::hex_or_rgb( $settings->text_color );
+$settings->text_hover_color          = FLBuilderColor::hex_or_rgb( $settings->text_hover_color );
+$settings->subtitle_text_color       = FLBuilderColor::hex_or_rgb( $settings->subtitle_text_color );
+$settings->subtitle_text_hover_color = FLBuilderColor::hex_or_rgb( $settings->subtitle_text_hover_color );
+$settings->icon_color                = FLBuilderColor::hex_or_rgb( $settings->icon_color );
 ?>
 <?php if ( 'top' === $settings->icon_vertical_align ) { ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-marketing-button-icon.uabb-marketing-button-icon-all_before,

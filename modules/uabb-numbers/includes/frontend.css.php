@@ -12,13 +12,13 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->separator_color = UABB_Helper::uabb_colorpicker( $settings, 'separator_color' );
-$settings->circle_color    = UABB_Helper::uabb_colorpicker( $settings, 'circle_color', true );
-$settings->circle_bg_color = UABB_Helper::uabb_colorpicker( $settings, 'circle_bg_color', true );
-$settings->bar_color       = UABB_Helper::uabb_colorpicker( $settings, 'bar_color', true );
-$settings->bar_bg_color    = UABB_Helper::uabb_colorpicker( $settings, 'bar_bg_color', true );
-$settings->num_color       = UABB_Helper::uabb_colorpicker( $settings, 'num_color' );
-$settings->ba_color        = UABB_Helper::uabb_colorpicker( $settings, 'ba_color' );
+$settings->separator_color = FLBuilderColor::hex_or_rgb( $settings->separator_color );
+$settings->circle_color    = FLBuilderColor::hex_or_rgb( $settings->circle_color );
+$settings->circle_bg_color = FLBuilderColor::hex_or_rgb( $settings->circle_bg_color );
+$settings->bar_color       = FLBuilderColor::hex_or_rgb( $settings->bar_color );
+$settings->bar_bg_color    = FLBuilderColor::hex_or_rgb( $settings->bar_bg_color );
+$settings->num_color       = FLBuilderColor::hex_or_rgb( $settings->num_color );
+$settings->ba_color        = FLBuilderColor::hex_or_rgb( $settings->ba_color );
 
 $settings->icon_size         = ( '' !== trim( $settings->icon_size ) ) ? $settings->icon_size : '30';
 $settings->icon_bg_size      = ( '' !== trim( $settings->icon_bg_size ) ) ? $settings->icon_bg_size : '30';

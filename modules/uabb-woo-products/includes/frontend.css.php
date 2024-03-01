@@ -7,26 +7,26 @@
 
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 
-$pg_bg_hover_color = ( false === strpos( $settings->pg_bg_hover_color, 'rgb' ) ) ? '#' . $settings->pg_bg_hover_color : $settings->pg_bg_hover_color;
+$pg_bg_hover_color = FLBuilderColor::hex_or_rgb( $settings->pg_bg_hover_color );
 
-$pg_border_hover_color = ( false === strpos( $settings->pg_border_hover_color, 'rgb' ) ) ? '#' . $settings->pg_border_hover_color : $settings->pg_border_hover_color;
+$pg_border_hover_color = FLBuilderColor::hex_or_rgb( $settings->pg_border_hover_color );
 
-$pg_border_color = ( false === strpos( $settings->pg_border_color, 'rgb' ) ) ? '#' . $settings->pg_border_color : $settings->pg_border_color;
+$pg_border_color = FLBuilderColor::hex_or_rgb( $settings->pg_border_color );
 
-$sale_flash_bg_color = ( false === strpos( $settings->sale_flash_bg_color, 'rgb' ) ) ? '#' . $settings->sale_flash_bg_color : $settings->sale_flash_bg_color;
+$sale_flash_bg_color = FLBuilderColor::hex_or_rgb( $settings->sale_flash_bg_color );
 
-$rating_color = ( false === strpos( $settings->rating_color, 'rgb' ) ) ? '#' . $settings->rating_color : $settings->rating_color;
+$rating_color = FLBuilderColor::hex_or_rgb( $settings->rating_color );
 
-$add_cart_color = ( false === strpos( $settings->add_cart_color, 'rgb' ) ) ? '#' . $settings->add_cart_color : $settings->add_cart_color;
+$add_cart_color = FLBuilderColor::hex_or_rgb( $settings->add_cart_color );
 
-$add_cart_hover_color = ( false === strpos( $settings->add_cart_hover_color, 'rgb' ) ) ? '#' . $settings->add_cart_hover_color : $settings->add_cart_hover_color;
+$add_cart_hover_color = FLBuilderColor::hex_or_rgb( $settings->add_cart_hover_color );
 
-$add_cart_bg_color = ( false === strpos( $settings->add_cart_bg_color, 'rgb' ) ) ? '#' . $settings->add_cart_bg_color : $settings->add_cart_bg_color;
+$add_cart_bg_color = FLBuilderColor::hex_or_rgb( $settings->add_cart_bg_color );
 
-$add_cart_bg_hover_color = ( false === strpos( $settings->add_cart_bg_hover_color, 'rgb' ) ) ? '#' . $settings->add_cart_bg_hover_color : $settings->add_cart_bg_hover_color;
+$add_cart_bg_hover_color = FLBuilderColor::hex_or_rgb( $settings->add_cart_bg_hover_color );
 
-$new_arrow_color             = ( false === strpos( $settings->arrow_color, 'rgb' ) ) ? '#' . $settings->arrow_color : $settings->arrow_color;
-$settings->title_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'title_hover_color', true );
+$new_arrow_color             = FLBuilderColor::hex_or_rgb( $settings->arrow_color );
+$settings->title_hover_color = FLBuilderColor::hex_or_rgb( $settings->title_hover_color );
 
 
 ?>
@@ -46,15 +46,15 @@ $settings->title_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'title_
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> nav.uabb-woocommerce-pagination ul li > .page-numbers {
-	color: <?php echo esc_attr( ( false === strpos( $settings->pg_color, 'rgb' ) ) ? '#' . $settings->pg_color : $settings->pg_color ); ?>;
-	background: <?php echo esc_attr( ( false === strpos( $settings->pg_bg_color, 'rgb' ) ) ? '#' . $settings->pg_bg_color : $settings->pg_bg_color ); ?>;
-	border-color: <?php echo esc_attr( uabb_theme_base_color( $pg_border_color ) ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->pg_color ) ); ?>;
+	background: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->pg_bg_color ) ); ?>;
+	border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( uabb_theme_base_color( $pg_border_color ) ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> nav.uabb-woocommerce-pagination ul li .page-numbers:focus,
 .fl-node-<?php echo esc_attr( $id ); ?> nav.uabb-woocommerce-pagination ul li .page-numbers:hover,
 .fl-node-<?php echo esc_attr( $id ); ?> nav.uabb-woocommerce-pagination ul li span.current {
-	color: <?php echo esc_attr( ( false === strpos( $settings->pg_hover_color, 'rgb' ) ) ? '#' . $settings->pg_hover_color : $settings->pg_hover_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->pg_hover_color ) ); ?>;
 	background: <?php echo esc_attr( uabb_theme_base_color( $pg_bg_hover_color ) ); ?>;
 	border-color: <?php echo esc_attr( uabb_theme_base_color( $pg_border_hover_color ) ); ?>;
 }
@@ -65,7 +65,7 @@ $settings->title_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'title_
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-sale-flash-wrap .uabb-onsale {
 
-	color: <?php echo esc_attr( ( false === strpos( $settings->sale_flash_color, 'rgb' ) ) ? '#' . $settings->sale_flash_color : $settings->sale_flash_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->sale_flash_color ) ); ?>;
 
 	background: <?php echo esc_attr( uabb_theme_base_color( $sale_flash_bg_color ) ); ?>;
 
@@ -116,9 +116,9 @@ $settings->title_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'title_
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-woocommerce .uabb-featured {
 
-	color: <?php echo esc_attr( ( false === strpos( $settings->featured_flash_color, 'rgb' ) ) ? '#' . $settings->featured_flash_color : $settings->featured_flash_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->featured_flash_color ) ); ?>;
 
-	background: <?php echo esc_attr( ( false === strpos( $settings->featured_flash_bg_color, 'rgb' ) ) ? '#' . $settings->featured_flash_bg_color : $settings->featured_flash_bg_color ); ?>;
+	background: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->featured_flash_bg_color ) ); ?>;
 
 	min-width: <?php echo esc_attr( $settings->featured_flash_size ); ?>em;
 
@@ -167,7 +167,7 @@ $settings->title_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'title_
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-woocommerce .uabb-woo-product-category {
 
-	color: <?php echo esc_attr( ( false === strpos( $settings->cat_color, 'rgb' ) ) ? '#' . $settings->cat_color : $settings->cat_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->cat_color ) ); ?>;
 
 	<?php echo ( '' !== $settings->cat_margin_bottom ) ? 'margin-bottom: ' . esc_attr( $settings->cat_margin_bottom ) . 'px;' : ''; ?>
 }
@@ -209,7 +209,7 @@ $settings->title_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'title_
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-woocommerce .woocommerce-loop-product__title {
 
-	color: <?php echo esc_attr( ( false === strpos( $settings->title_color, 'rgb' ) ) ? '#' . $settings->title_color : $settings->title_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->title_color ) ); ?>;
 
 	<?php echo ( '' !== $settings->title_margin_bottom ) ? 'margin-bottom: ' . esc_attr( $settings->title_margin_bottom ) . 'px;' : ''; ?>
 }
@@ -258,7 +258,7 @@ $settings->title_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'title_
 ?>
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-woocommerce .uabb-loop-product__link:hover .woocommerce-loop-product__title {
-	color: <?php echo esc_attr( ( false === strpos( $settings->title_color, 'rgb' ) ) ? '#' . $settings->title_color : $settings->title_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->title_color ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-woocommerce .star-rating,
@@ -270,9 +270,9 @@ $settings->title_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'title_
 	<?php echo ( '' !== $settings->rating_margin_bottom ) ? 'margin-bottom: ' . esc_attr( $settings->rating_margin_bottom ) . 'px;' : ''; ?>
 }
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-woocommerce li.product .price {
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-woocommerce li.product .price .amount {
 
-	color: <?php echo esc_attr( ( false === strpos( $settings->price_color, 'rgb' ) ) ? '#' . $settings->price_color : $settings->price_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->price_color ) ); ?>;
 
 	<?php echo ( '' !== $settings->price_margin_bottom ) ? 'margin-bottom: ' . esc_attr( $settings->price_margin_bottom ) . 'px;' : ''; ?>
 }
@@ -314,7 +314,7 @@ $settings->title_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'title_
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-woocommerce .uabb-woo-products-description {
 
-	color: <?php echo esc_attr( ( false === strpos( $settings->desc_color, 'rgb' ) ) ? '#' . $settings->desc_color : $settings->desc_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->desc_color ) ); ?>;
 
 	<?php echo ( '' !== $settings->desc_margin_bottom ) ? 'margin-bottom: ' . esc_attr( $settings->desc_margin_bottom ) . 'px;' : ''; ?>
 }
@@ -424,14 +424,14 @@ if ( 'carousel' === $settings->layout ) {
 		case 'square':
 		case 'circle':
 			?>
-	background: <?php echo esc_attr( ( false === strpos( $settings->arrow_background_color, 'rgb' ) ) ? '#' . $settings->arrow_background_color : $settings->arrow_background_color ); ?>;
+	background: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->arrow_background_color ) ); ?>;
 			<?php
 			break;
 		case 'square-border':
 		case 'circle-border':
 			?>
 	border: <?php echo esc_attr( $settings->arrow_border_size ); ?>px solid;
-	border-color: <?php echo esc_attr( ( false === strpos( $settings->arrow_color_border, 'rgb' ) ) ? '#' . $settings->arrow_color_border : $settings->arrow_color_border ); ?>;
+	border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->arrow_color_border ) ); ?>;
 			<?php
 			break;
 	}
@@ -441,7 +441,7 @@ if ( 'carousel' === $settings->layout ) {
 
 
 <?php /* Global Setting If started */ ?>
-<?php if ( $global_settings->responsive_enabled ) { ?> 
+<?php if ( $global_settings->responsive_enabled ) { ?>
 
 		<?php /* Medium Breakpoint media query */ ?>
 		@media ( max-width: <?php echo esc_attr( $global_settings->medium_breakpoint ) . 'px'; ?> ) {

@@ -8,16 +8,16 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->foreground_outside = UABB_Helper::uabb_colorpicker( $settings, 'foreground_outside', true );
+$settings->foreground_outside = FLBuilderColor::hex_or_rgb( $settings->foreground_outside );
 
-$settings->column_background = UABB_Helper::uabb_colorpicker( $settings, 'column_background', true );
-$settings->border_color      = UABB_Helper::uabb_colorpicker( $settings, 'border_color' );
+$settings->column_background = FLBuilderColor::hex_or_rgb( $settings->column_background );
+$settings->border_color      = FLBuilderColor::hex_or_rgb( $settings->border_color );
 
 if ( 'yes' === $settings->add_legend ) {
-	$settings->legend_column->foreground = UABB_Helper::uabb_colorpicker( $settings->legend_column, 'foreground', true );
+	$settings->legend_column->foreground = FLBuilderColor::hex_or_rgb( $settings->legend_column->foreground );
 
-	$settings->legend_column->even_properties_bg = UABB_Helper::uabb_colorpicker( $settings->legend_column, 'even_properties_bg', true );
-	$settings->legend_column->legend_color       = UABB_Helper::uabb_colorpicker( $settings->legend_column, 'legend_color' );
+	$settings->legend_column->even_properties_bg = FLBuilderColor::hex_or_rgb( $settings->legend_column->even_properties_bg );
+	$settings->legend_column->legend_color       = FLBuilderColor::hex_or_rgb( $settings->legend_column->legend_color );
 }
 
 $foreground_outside = ( '' !== $settings->foreground_outside ) ? 'background: ' . esc_attr( $settings->foreground_outside ) : 'background: #f7f7f7';
@@ -194,29 +194,29 @@ for ( $i = 0; $i < $count; $i++ ) :
 		$settings->pricing_columns[ $i ]->featured_font_family = (array) $settings->pricing_columns[ $i ]->featured_font_family;
 	}
 
-			$settings->pricing_columns[ $i ]->foreground = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'foreground', true );
+			$settings->pricing_columns[ $i ]->foreground = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->foreground );
 
-			$settings->pricing_columns[ $i ]->even_properties_bg = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'even_properties_bg', true );
+			$settings->pricing_columns[ $i ]->even_properties_bg = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->even_properties_bg );
 
-			$settings->pricing_columns[ $i ]->featured_f_background_color = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'featured_f_background_color', true );
+			$settings->pricing_columns[ $i ]->featured_f_background_color = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->featured_f_background_color );
 
-			$settings->pricing_columns[ $i ]->features_color = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'features_color' );
+			$settings->pricing_columns[ $i ]->features_color = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->features_color );
 
-			$settings->pricing_columns[ $i ]->featured_color = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'featured_color' );
+			$settings->pricing_columns[ $i ]->featured_color = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->featured_color );
 
-			$settings->pricing_columns[ $i ]->title_typography_color = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'title_typography_color' );
+			$settings->pricing_columns[ $i ]->title_typography_color = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->title_typography_color );
 
-			$settings->pricing_columns[ $i ]->price_typography_color = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'price_typography_color' );
+			$settings->pricing_columns[ $i ]->price_typography_color = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->price_typography_color );
 
-			$settings->pricing_columns[ $i ]->original_price_color = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'original_price_color' );
+			$settings->pricing_columns[ $i ]->original_price_color = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->original_price_color );
 
-			$settings->pricing_columns[ $i ]->duration_typography_color = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'duration_typography_color' );
+			$settings->pricing_columns[ $i ]->duration_typography_color = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->duration_typography_color );
 
-			$settings->pricing_columns[ $i ]->highlight_color = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'highlight_color' );
+			$settings->pricing_columns[ $i ]->highlight_color = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->highlight_color );
 
-			$settings->pricing_columns[ $i ]->list_icon_color = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'list_icon_color' );
+			$settings->pricing_columns[ $i ]->list_icon_color = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->list_icon_color );
 
-			$settings->pricing_columns[ $i ]->title_icon_color = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'title_icon_color' );
+			$settings->pricing_columns[ $i ]->title_icon_color = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->title_icon_color );
 
 	if ( isset( $settings->list_icon_spacing ) && '' !== $settings->list_icon_spacing ) {
 		if ( 'before' === $settings->pricing_columns[ $i ]->icon_position ) {
@@ -294,7 +294,7 @@ for ( $i = 0; $i < $count; $i++ ) :
 
 	if ( 'yes' === $settings->pricing_columns[ $i ]->price_box_shadow ) {
 
-		$box_shadow_color = ( false === strpos( $settings->pricing_columns[ $i ]->box_shadow_color, 'rgb' ) ) ? '#' . $settings->pricing_columns[ $i ]->box_shadow_color : $settings->pricing_columns[ $i ]->box_shadow_color;
+		$box_shadow_color = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->box_shadow_color );
 		?>
 
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-pricing-table-outter-<?php echo esc_attr( $i ) + 1; ?> .uabb-pricing-table-column {
@@ -1033,7 +1033,7 @@ if ( 'yes' === $settings->add_legend ) {
 		<?php
 		if ( isset( $settings->legend_column->legend_feature_color ) ) {
 			if ( '' !== $settings->legend_column->legend_feature_color && '' === $settings->legend_column->legend_color ) {
-				$settings->legend_column->legend_feature_color = UABB_Helper::uabb_colorpicker( $settings->legend_column, 'legend_feature_color' );
+				$settings->legend_column->legend_feature_color = FLBuilderColor::hex_or_rgb( $settings->legend_column->legend_feature_color );
 				$settings->legend_column->legend_color         = $settings->legend_column->legend_feature_color;
 				echo 'color: ' . esc_attr( $settings->legend_column->legend_color ) . ';';
 
@@ -1374,9 +1374,9 @@ for ( $i = 0; $i < $count; $i++ ) {
 			}
 		}
 
-		$settings->pricing_columns[ $i ]->ribbon_bg_color     = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'ribbon_bg_color', true );
-		$settings->pricing_columns[ $i ]->ribbon_text_color   = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'ribbon_text_color', true );
-		$settings->pricing_columns[ $i ]->ribbon_shadow_color = UABB_Helper::uabb_colorpicker( $settings->pricing_columns[ $i ], 'ribbon_shadow_color', true );
+		$settings->pricing_columns[ $i ]->ribbon_bg_color     = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->ribbon_bg_color );
+		$settings->pricing_columns[ $i ]->ribbon_text_color   = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->ribbon_text_color );
+		$settings->pricing_columns[ $i ]->ribbon_shadow_color = FLBuilderColor::hex_or_rgb( $settings->pricing_columns[ $i ]->ribbon_shadow_color );
 
 		if ( ! empty( $settings->pricing_columns[ $i ]->ribbon_bg_color ) ) {
 			?>

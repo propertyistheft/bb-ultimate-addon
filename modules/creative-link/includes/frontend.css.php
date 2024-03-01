@@ -8,14 +8,14 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->link_color       = UABB_Helper::uabb_colorpicker( $settings, 'link_color' );
-$settings->link_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'link_hover_color' );
+$settings->link_color       = FLBuilderColor::hex_or_rgb( $settings->link_color );
+$settings->link_hover_color = FLBuilderColor::hex_or_rgb( $settings->link_hover_color );
 
-$settings->background_color       = UABB_Helper::uabb_colorpicker( $settings, 'background_color' );
-$settings->background_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'background_hover_color' );
+$settings->background_color       = FLBuilderColor::hex_or_rgb( $settings->background_color );
+$settings->background_hover_color = FLBuilderColor::hex_or_rgb( $settings->background_hover_color );
 
-$settings->border_color       = UABB_Helper::uabb_colorpicker( $settings, 'border_color' );
-$settings->border_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'border_hover_color' );
+$settings->border_color       = FLBuilderColor::hex_or_rgb( $settings->border_color );
+$settings->border_hover_color = FLBuilderColor::hex_or_rgb( $settings->border_hover_color );
 
 $settings->spacing        = ( '' !== $settings->spacing ) ? $settings->spacing : '10';
 $settings->bottom_spacing = ( '' !== $settings->bottom_spacing ) ? $settings->bottom_spacing : '15';
@@ -44,7 +44,7 @@ if ( ! $version_bb_check ) {
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-wrap .uabb-cl-heading a {
 
 		<?php if ( 'yes' === $converted || isset( $settings->link_typography_font_size_unit ) && '' !== $settings->link_typography_font_size_unit ) { ?>
-			font-size: <?php echo esc_attr( $settings->link_typography_font_size_unit ); ?>px;		
+			font-size: <?php echo esc_attr( $settings->link_typography_font_size_unit ); ?>px;
 		<?php } elseif ( isset( $settings->link_typography_font_size_unit ) && '' === $settings->link_typography_font_size_unit && isset( $settings->link_typography_font_size['desktop'] ) && '' !== $settings->link_typography_font_size['desktop'] ) { ?>
 			font-size: <?php echo esc_attr( $settings->link_typography_font_size['desktop'] ); ?>px;
 		<?php } ?>
@@ -54,7 +54,7 @@ if ( ! $version_bb_check ) {
 		<?php } ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->link_typography_line_height_unit ) && '' !== $settings->link_typography_line_height_unit ) { ?>
-			line-height: <?php echo esc_attr( $settings->link_typography_line_height_unit ); ?>em;	
+			line-height: <?php echo esc_attr( $settings->link_typography_line_height_unit ); ?>em;
 		<?php } elseif ( isset( $settings->link_typography_line_height_unit ) && '' === $settings->link_typography_line_height_unit && isset( $settings->link_typography_line_height['desktop'] ) && '' !== $settings->link_typography_line_height['desktop'] ) { ?>
 			line-height: <?php echo esc_attr( $settings->link_typography_line_height['desktop'] ); ?>px;
 		<?php } ?>
@@ -129,7 +129,7 @@ if ( 'style15' !== $settings->link_style && 'style19' !== $settings->link_style 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style2 p a,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style2 div a,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style2 span a {
-	color: 
+	color:
 	<?php echo esc_attr( uabb_theme_text_color( $settings->link_color ) ); ?>;
 }
 
@@ -191,7 +191,7 @@ if ( 'style15' !== $settings->link_style && 'style19' !== $settings->link_style 
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style8 a::after {
-	border-color: 
+	border-color:
 	<?php echo esc_attr( uabb_theme_text_color( $settings->border_hover_color ) ); ?>;
 }
 
@@ -208,7 +208,7 @@ if ( 'style15' !== $settings->link_style && 'style19' !== $settings->link_style 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style9 p a,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style9 div a,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style9 span a {
-	color: 
+	color:
 	<?php echo esc_attr( uabb_theme_text_color( $settings->link_color ) ); ?>;
 }
 
@@ -300,13 +300,13 @@ if ( 'style15' !== $settings->link_style && 'style19' !== $settings->link_style 
 	$color = ( '' !== uabb_theme_text_color( $settings->link_hover_color ) ) ? uabb_theme_text_color( $settings->link_hover_color ) : '#f7f7f7';
 	?>
 	color: <?php echo ( esc_attr( $color ) ); ?>;
-	text-shadow: 10px 0 
+	text-shadow: 10px 0
 	<?php echo esc_attr( uabb_theme_text_color( $color ) ); ?>, -10px 0 <?php echo esc_attr( uabb_theme_text_color( $color ) ); ?>;
 }
 
 /* Style 13 */
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style13 a::before, 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style13 a::before,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style13 a::after {
 	height: <?php echo esc_attr( $settings->border_size ); ?>px;
 	<?php
@@ -387,7 +387,7 @@ if ( 'style15' !== $settings->link_style && 'style19' !== $settings->link_style 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style18 p a,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style18 div a,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style18 span a {
-	color: 
+	color:
 	<?php echo esc_attr( uabb_theme_text_color( $settings->link_color ) ); ?>;
 }
 
@@ -421,7 +421,7 @@ if ( 'style15' !== $settings->link_style && 'style19' !== $settings->link_style 
 	<?php
 	$color      = uabb_theme_base_color( $settings->background_color );
 	$bg_color   = ( '' !== $color ) ? $color : '#f7f7f7';
-	$dark_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( uabb_theme_base_color( $bg_color ) ), 50, 'darken' );
+	$dark_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_color, 50, 'darken' ) );
 	?>
 	background: <?php echo esc_attr( $dark_color ); ?>;
 }
@@ -431,7 +431,7 @@ if ( 'style15' !== $settings->link_style && 'style19' !== $settings->link_style 
 <?php
 $color      = uabb_theme_base_color( $settings->background_color );
 $bg_color   = ( '' !== $color ) ? $color : '#f7f7f7';
-$dark_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( uabb_theme_base_color( $bg_color ) ), 50, 'darken' );
+$dark_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_color, 50, 'darken' ) );
 ?>
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style19 a span {
@@ -446,7 +446,7 @@ $dark_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style19 p a,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style19 div a,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-style19 span a {
-	color: 
+	color:
 	<?php echo esc_attr( uabb_theme_text_color( $settings->link_color ) ); ?>;
 }
 
@@ -516,7 +516,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 				<?php } ?>
 
 				<?php if ( 'yes' === $converted || isset( $settings->link_typography_line_height_unit_medium ) && '' !== $settings->link_typography_line_height_unit_medium ) { ?>
-					line-height: <?php echo esc_attr( $settings->link_typography_line_height_unit_medium ); ?>em;	
+					line-height: <?php echo esc_attr( $settings->link_typography_line_height_unit_medium ); ?>em;
 				<?php } elseif ( isset( $settings->link_typography_line_height_unit_medium ) && '' === $settings->link_typography_line_height_unit_medium && isset( $settings->link_typography_line_height['medium'] ) && '' !== $settings->link_typography_line_height['medium'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->link_typography_line_height['medium'] ); ?>px;
 				<?php } ?>
@@ -529,7 +529,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 				.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cl-wrap .uabb-cl-heading a {
 
 					<?php if ( 'yes' === $converted || isset( $settings->link_typography_font_size_unit_responsive ) && '' !== $settings->link_typography_font_size_unit_responsive ) { ?>
-						font-size: <?php echo esc_attr( $settings->link_typography_font_size_unit_responsive ); ?>px;	
+						font-size: <?php echo esc_attr( $settings->link_typography_font_size_unit_responsive ); ?>px;
 					<?php } elseif ( $settings->link_typography_font_size_unit_responsive && '' === $settings->link_typography_font_size_unit_responsive && isset( $settings->link_typography_font_size['small'] ) && '' !== $settings->link_typography_font_size['small'] ) { ?>
 						font-size: <?php echo esc_attr( $settings->link_typography_font_size['small'] ); ?>px;
 					<?php } ?>

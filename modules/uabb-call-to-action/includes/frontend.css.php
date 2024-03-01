@@ -11,9 +11,9 @@
 	$version_bb_check = UABB_Compatibility::$version_bb_check;
 	$converted        = UABB_Compatibility::$uabb_migration;
 
-	$settings->bg_color      = UABB_Helper::uabb_colorpicker( $settings, 'bg_color', true );
-	$settings->title_color   = UABB_Helper::uabb_colorpicker( $settings, 'title_color' );
-	$settings->subhead_color = UABB_Helper::uabb_colorpicker( $settings, 'subhead_color' );
+	$settings->bg_color      = FLBuilderColor::hex_or_rgb( $settings->bg_color );
+	$settings->title_color   = FLBuilderColor::hex_or_rgb( $settings->title_color );
+	$settings->subhead_color = FLBuilderColor::hex_or_rgb( $settings->subhead_color );
 
 	$settings->spacing = ( '' !== $settings->spacing ) ? $settings->spacing : '0';
 ?>

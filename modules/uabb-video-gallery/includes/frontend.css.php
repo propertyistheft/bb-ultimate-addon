@@ -8,19 +8,19 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->filter_title_color             = UABB_Helper::uabb_colorpicker( $settings, 'filter_title_color', true );
-$settings->cat_filter_color               = UABB_Helper::uabb_colorpicker( $settings, 'cat_filter_color', true );
-$settings->cat_filter_bg_color            = UABB_Helper::uabb_colorpicker( $settings, 'cat_filter_bg_color', true );
-$settings->cat_filter_hover_color         = UABB_Helper::uabb_colorpicker( $settings, 'cat_filter_hover_color', true );
-$settings->play_icon_color                = UABB_Helper::uabb_colorpicker( $settings, 'play_icon_color', true );
-$settings->play_icon_hover_color          = UABB_Helper::uabb_colorpicker( $settings, 'play_icon_hover_color', true );
-$settings->overlay_background_color       = UABB_Helper::uabb_colorpicker( $settings, 'overlay_background_color', true );
-$settings->overlay_background_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'overlay_background_hover_color', true );
-$settings->caption_color                  = UABB_Helper::uabb_colorpicker( $settings, 'caption_color', true );
-$settings->dots_color                     = UABB_Helper::uabb_colorpicker( $settings, 'dots_color', true );
-$settings->arrows_color                   = UABB_Helper::uabb_colorpicker( $settings, 'arrows_color', true );
-$settings->tag_color                      = UABB_Helper::uabb_colorpicker( $settings, 'tag_color', true );
-$settings->cat_filter_bg_hover_color      = UABB_Helper::uabb_colorpicker( $settings, 'cat_filter_bg_hover_color', true );
+$settings->filter_title_color             = FLBuilderColor::hex_or_rgb( $settings->filter_title_color );
+$settings->cat_filter_color               = FLBuilderColor::hex_or_rgb( $settings->cat_filter_color );
+$settings->cat_filter_bg_color            = FLBuilderColor::hex_or_rgb( $settings->cat_filter_bg_color );
+$settings->cat_filter_hover_color         = FLBuilderColor::hex_or_rgb( $settings->cat_filter_hover_color );
+$settings->play_icon_color                = FLBuilderColor::hex_or_rgb( $settings->play_icon_color );
+$settings->play_icon_hover_color          = FLBuilderColor::hex_or_rgb( $settings->play_icon_hover_color );
+$settings->overlay_background_color       = FLBuilderColor::hex_or_rgb( $settings->overlay_background_color );
+$settings->overlay_background_hover_color = FLBuilderColor::hex_or_rgb( $settings->overlay_background_hover_color );
+$settings->caption_color                  = FLBuilderColor::hex_or_rgb( $settings->caption_color );
+$settings->dots_color                     = FLBuilderColor::hex_or_rgb( $settings->dots_color );
+$settings->arrows_color                   = FLBuilderColor::hex_or_rgb( $settings->arrows_color );
+$settings->tag_color                      = FLBuilderColor::hex_or_rgb( $settings->tag_color );
+$settings->cat_filter_bg_hover_color      = FLBuilderColor::hex_or_rgb( $settings->cat_filter_bg_hover_color );
 
 if ( method_exists( 'FLBuilder', 'fa5_pro_enabled' ) ) {
 	if ( FLBuilder::fa5_pro_enabled() ) {
@@ -34,8 +34,8 @@ if ( method_exists( 'FLBuilder', 'fa5_pro_enabled' ) ) {
 	}
 }
 if ( ! $version_bb_check ) {
-	$settings->cat_filter_border_color        = UABB_Helper::uabb_colorpicker( $settings, 'cat_filter_border_color', true );
-	$settings->cat_filter_border_color_active = UABB_Helper::uabb_colorpicker( $settings, 'cat_filter_border_color_active', true );
+	$settings->cat_filter_border_color        = FLBuilderColor::hex_or_rgb( $settings->cat_filter_border_color );
+	$settings->cat_filter_border_color_active = FLBuilderColor::hex_or_rgb( $settings->cat_filter_border_color_active );
 }
 ?>
 <?php if ( isset( $settings->column_gap ) ) { ?>

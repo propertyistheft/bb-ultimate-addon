@@ -8,18 +8,18 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->overlay_color      = UABB_Helper::uabb_colorpicker( $settings, 'overlay_color', true );
-$settings->color              = UABB_Helper::uabb_colorpicker( $settings, 'color' );
-$settings->caption_bg_color   = UABB_Helper::uabb_colorpicker( $settings, 'caption_bg_color', true );
-$settings->overlay_icon_color = UABB_Helper::uabb_colorpicker( $settings, 'overlay_icon_color' );
+$settings->overlay_color      = FLBuilderColor::hex_or_rgb( $settings->overlay_color );
+$settings->color              = FLBuilderColor::hex_or_rgb( $settings->color );
+$settings->caption_bg_color   = FLBuilderColor::hex_or_rgb( $settings->caption_bg_color );
+$settings->overlay_icon_color = FLBuilderColor::hex_or_rgb( $settings->overlay_icon_color );
 
 $settings->photo_spacing    = ( '' !== $settings->photo_spacing ) ? $settings->photo_spacing : '20';
 $settings->caption_bg_color = ( '' !== $settings->caption_bg_color ) ? $settings->caption_bg_color : '#f7f7f7';
 
-$settings->arrow_color            = UABB_Helper::uabb_colorpicker( $settings, 'arrow_color' );
-$settings->arrow_background_color = UABB_Helper::uabb_colorpicker( $settings, 'arrow_background_color', true );
-$settings->arrow_color_border     = UABB_Helper::uabb_colorpicker( $settings, 'arrow_color_border' );
-$settings->dots_color             = UABB_Helper::uabb_colorpicker( $settings, 'dots_color' );
+$settings->arrow_color            = FLBuilderColor::hex_or_rgb( $settings->arrow_color );
+$settings->arrow_background_color = FLBuilderColor::hex_or_rgb( $settings->arrow_background_color );
+$settings->arrow_color_border     = FLBuilderColor::hex_or_rgb( $settings->arrow_color_border );
+$settings->dots_color             = FLBuilderColor::hex_or_rgb( $settings->dots_color );
 ?>
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-image-carousel {
@@ -138,7 +138,7 @@ if ( 'yes' === $settings->enable_dots ) {
 <?php if ( 'lightbox' === $settings->click_action && ! empty( $settings->show_captions ) ) : ?>
 .mfp-gallery img.mfp-img {
 	padding: 40px 0;
-}	
+}
 
 .mfp-counter {
 	display: block !important;
@@ -166,7 +166,7 @@ if ( 'yes' === $settings->enable_dots ) {
 		<?php endif; ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->font_size_unit ) && '' !== $settings->font_size_unit ) { ?>
-			font-size: <?php echo esc_attr( $settings->font_size_unit ); ?>px;		
+			font-size: <?php echo esc_attr( $settings->font_size_unit ); ?>px;
 		<?php } elseif ( isset( $settings->font_size_unit ) && '' === $settings->font_size_unit && isset( $settings->font_size['desktop'] ) && '' !== $settings->font_size['desktop'] ) { ?>
 			font-size: <?php echo esc_attr( $settings->font_size['desktop'] ); ?>px;
 		<?php } ?>
@@ -176,7 +176,7 @@ if ( 'yes' === $settings->enable_dots ) {
 		<?php } ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->line_height_unit ) && '' !== $settings->line_height_unit ) { ?>
-			line-height: <?php echo esc_attr( $settings->line_height_unit ); ?>em;	
+			line-height: <?php echo esc_attr( $settings->line_height_unit ); ?>em;
 		<?php } elseif ( isset( $settings->line_height_unit ) && '' === $settings->line_height_unit && isset( $settings->line_height['desktop'] ) && '' !== $settings->line_height['desktop'] ) { ?>
 			line-height: <?php echo esc_attr( $settings->line_height['desktop'] ); ?>px;
 		<?php } ?>
@@ -225,7 +225,7 @@ if ( 'yes' === $settings->enable_dots ) {
 				<?php } ?>
 
 				<?php if ( 'yes' === $converted || isset( $settings->line_height_unit_medium ) && '' !== $settings->line_height_unit_medium ) { ?>
-					line-height: <?php echo esc_attr( $settings->line_height_unit_medium ); ?>em;	
+					line-height: <?php echo esc_attr( $settings->line_height_unit_medium ); ?>em;
 				<?php } elseif ( isset( $settings->line_height_unit_medium ) && '' === $settings->line_height_unit_medium && isset( $settings->line_height['medium'] ) && '' !== $settings->line_height['medium'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->line_height['medium'] ); ?>px;
 				<?php } ?>
@@ -261,7 +261,7 @@ if ( 'yes' === $settings->enable_dots ) {
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-background-mask .uabb-caption  {
 
 				<?php if ( 'yes' === $converted || isset( $settings->font_size_unit_responsive ) && '' !== $settings->font_size_unit_responsive ) { ?>
-					font-size: <?php echo esc_attr( $settings->font_size_unit_responsive ); ?>px;	
+					font-size: <?php echo esc_attr( $settings->font_size_unit_responsive ); ?>px;
 				<?php } elseif ( $settings->font_size_unit_responsive && '' === $settings->font_size_unit_responsive && isset( $settings->font_size['small'] ) && '' !== $settings->font_size['small'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->font_size['small'] ); ?>px;
 				<?php } ?>

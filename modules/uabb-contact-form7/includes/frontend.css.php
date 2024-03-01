@@ -8,28 +8,28 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->form_bg_color = UABB_Helper::uabb_colorpicker( $settings, 'form_bg_color', true );
+$settings->form_bg_color = FLBuilderColor::hex_or_rgb( $settings->form_bg_color );
 
-$settings->input_background_color    = UABB_Helper::uabb_colorpicker( $settings, 'input_background_color', true );
-$settings->input_border_active_color = UABB_Helper::uabb_colorpicker( $settings, 'input_border_active_color' );
+$settings->input_background_color    = FLBuilderColor::hex_or_rgb( $settings->input_background_color );
+$settings->input_border_active_color = FLBuilderColor::hex_or_rgb( $settings->input_border_active_color );
 
-$settings->btn_text_color             = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_color' );
-$settings->btn_text_hover_color       = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_hover_color' );
-$settings->btn_background_color       = UABB_Helper::uabb_colorpicker( $settings, 'btn_background_color', true );
-$settings->btn_background_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'btn_background_hover_color', true );
+$settings->btn_text_color             = FLBuilderColor::hex_or_rgb( $settings->btn_text_color );
+$settings->btn_text_hover_color       = FLBuilderColor::hex_or_rgb( $settings->btn_text_hover_color );
+$settings->btn_background_color       = FLBuilderColor::hex_or_rgb( $settings->btn_background_color );
+$settings->btn_background_hover_color = FLBuilderColor::hex_or_rgb( $settings->btn_background_hover_color );
 
 /* Typography Colors */
 
-$settings->form_title_color = UABB_Helper::uabb_colorpicker( $settings, 'form_title_color' );
-$settings->form_desc_color  = UABB_Helper::uabb_colorpicker( $settings, 'form_desc_color' );
+$settings->form_title_color = FLBuilderColor::hex_or_rgb( $settings->form_title_color );
+$settings->form_desc_color  = FLBuilderColor::hex_or_rgb( $settings->form_desc_color );
 
-$settings->label_color = UABB_Helper::uabb_colorpicker( $settings, 'label_color' );
+$settings->label_color = FLBuilderColor::hex_or_rgb( $settings->label_color );
 /* Input Color */
-$settings->color = UABB_Helper::uabb_colorpicker( $settings, 'color' );
+$settings->color = FLBuilderColor::hex_or_rgb( $settings->color );
 
-$settings->input_msg_color      = UABB_Helper::uabb_colorpicker( $settings, 'input_msg_color' );
-$settings->validation_msg_color = UABB_Helper::uabb_colorpicker( $settings, 'validation_msg_color' );
-$settings->validation_bg_color  = UABB_Helper::uabb_colorpicker( $settings, 'validation_bg_color', true );
+$settings->input_msg_color      = FLBuilderColor::hex_or_rgb( $settings->input_msg_color );
+$settings->validation_msg_color = FLBuilderColor::hex_or_rgb( $settings->validation_msg_color );
+$settings->validation_bg_color  = FLBuilderColor::hex_or_rgb( $settings->validation_bg_color );
 
 $settings->radio_check_size         = ( isset( $settings->radio_check_size ) && '' !== $settings->radio_check_size ) ? $settings->radio_check_size : 20;
 $settings->radio_check_border_width = ( isset( $settings->radio_check_border_width ) && '' !== $settings->radio_check_border_width ) ? $settings->radio_check_border_width : 1;
@@ -40,8 +40,8 @@ $settings->validation_msg_font_size = ( isset( $settings->validation_msg_font_si
 
 if ( ! $version_bb_check ) {
 	$settings->input_border_radius     = ( isset( $settings->input_border_radius ) && '' !== $settings->input_border_radius ) ? $settings->input_border_radius : 0;
-	$settings->validation_border_color = UABB_Helper::uabb_colorpicker( $settings, 'validation_border_color' );
-	$settings->input_border_color      = UABB_Helper::uabb_colorpicker( $settings, 'input_border_color' );
+	$settings->validation_border_color = FLBuilderColor::hex_or_rgb( $settings->validation_border_color );
+	$settings->input_border_color      = FLBuilderColor::hex_or_rgb( $settings->input_border_color );
 }
 
 ?>
@@ -310,8 +310,8 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-radio input[type='radio'] + span:before,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-acceptance input[type="checkbox"] + span:before {
 		content: '';
-		background: #<?php echo esc_attr( $settings->radio_check_bgcolor ); ?>;
-		border: <?php echo esc_attr( $settings->radio_check_border_width ); ?>px solid #<?php echo esc_attr( $settings->radio_check_border_color ); ?>;
+		background: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_bgcolor ) ); ?>;
+		border: <?php echo esc_attr( $settings->radio_check_border_width ); ?>px solid <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_border_color ) ); ?>;
 		display: inline-block;
 		vertical-align: middle;
 		width: <?php echo esc_attr( $settings->radio_check_size ); ?>px;
@@ -324,18 +324,18 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-acceptance input[type="checkbox"] + span:before {
 		width: <?php echo esc_attr( $settings->radio_check_size ); ?>px;
 		height: <?php echo esc_attr( $settings->radio_check_size ); ?>px;
-		background-color: #<?php echo esc_attr( $settings->radio_check_bgcolor ); ?>;
+		background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_bgcolor ) ); ?>;
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-acceptance input[type="checkbox"]:checked + span:before {
 		font-size: calc( <?php echo esc_attr( $settings->radio_check_size ); ?>px / 1.2 );
-		color: #<?php echo esc_attr( $settings->radio_check_selected_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_selected_color ) ); ?>;
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-acceptance input[type="checkbox"]:checked + span:before, .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-acceptance input[type="checkbox"] + span:before {
 		border-width: <?php echo esc_attr( $settings->radio_check_border_width ); ?>px;
 		border-style: solid;
-		border-color: #<?php echo esc_attr( $settings->radio_check_border_color ); ?>;
+		border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_border_color ) ); ?>;
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-checkbox input[type='checkbox']:checked + span:before,
@@ -344,7 +344,7 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 		font-weight: bold;
 		font-size: calc(<?php echo esc_attr( $font_size ); ?>px - <?php echo esc_attr( $settings->radio_check_border_width ); ?>px );
 		padding-top: 0;
-		color: #<?php echo esc_attr( $settings->radio_check_selected_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_selected_color ) ); ?>;
 		line-height: 1.3;
 	}
 
@@ -354,8 +354,8 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-radio input[type='radio']:checked + span:before {
-		background: #<?php echo esc_attr( $settings->radio_check_selected_color ); ?>;
-		box-shadow: inset 0px 0px 0px 4px #<?php echo esc_attr( $settings->radio_check_bgcolor ); ?>;
+		background: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_selected_color ) ); ?>;
+		box-shadow: inset 0px 0px 0px 4px <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_check_bgcolor ) ); ?>;
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-radio input[type='radio'] + span:before {
@@ -372,7 +372,7 @@ if ( 'true' === $settings->radio_check_custom_option ) {
 	if ( 'true' === $settings->radio_check_custom_option ) {
 		if ( '' !== $settings->radio_checkbox_color ) :
 			?>
-			color: #<?php echo esc_attr( $settings->radio_checkbox_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->radio_checkbox_color ) ); ?>;
 			<?php
 		endif;
 	}
@@ -441,10 +441,10 @@ if ( 'transparent' === $settings->btn_style ) {
 // Background Gradient.
 if ( 'gradient' === $settings->btn_style ) {
 	if ( ! empty( $settings->btn_background_color ) ) {
-		$bg_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->btn_background_color ), 30, 'lighten' );
+		$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->btn_background_color, 30, 'lighten' ) );
 	}
 	if ( ! empty( $settings->btn_background_hover_color ) ) {
-		$bg_hover_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->btn_background_hover_color ), 30, 'lighten' );
+		$bg_hover_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->btn_background_hover_color, 30, 'lighten' ) );
 	}
 }
 ?>
@@ -489,7 +489,7 @@ if ( 'gradient' === $settings->btn_style ) {
 				echo ( '' !== $settings->button_border_radius ) ? 'border-radius:' . esc_attr( $settings->button_border_radius ) . 'px;' : 'border-radius:' . esc_attr( uabb_theme_button_border_radius( '' ) ) . 'px;';
 			}
 			if ( isset( $settings->button_border_color ) ) {
-				echo ( '' !== $settings->button_border_color ) ? 'border-color:#' . esc_attr( $settings->button_border_color ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_color( '' ) ) . ';';
+				echo ( '' !== $settings->button_border_color ) ? 'border-color:' . esc_attr( FLBuilderColor::hex_or_rgb( $settings->button_border_color ) ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_color( '' ) ) . ';';
 			}
 			?>
 		}
@@ -510,7 +510,7 @@ if ( 'gradient' === $settings->btn_style ) {
 	}
 	?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style input[type=submit]:hover {
-		<?php echo ( '' !== $settings->border_hover_color ) ? 'border-color:#' . esc_attr( $settings->border_hover_color ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_hover_color( '' ) ) . ';'; ?>
+		<?php echo ( '' !== $settings->border_hover_color ) ? 'border-color:' . esc_attr( FLBuilderColor::hex_or_rgb( $settings->border_hover_color ) ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_hover_color( '' ) ) . ';'; ?>
 		<?php echo ( '' !== $settings->btn_text_hover_color ) ? 'color:' . esc_attr( $settings->btn_text_hover_color ) . ';' : ''; ?>
 		<?php echo ( '' !== $settings->btn_background_hover_color ) ? 'background:' . esc_attr( $settings->btn_background_hover_color ) . ';' : ''; ?>
 	}
@@ -557,7 +557,7 @@ if ( 'gradient' === $settings->btn_style ) {
 		-moz-transition: none;
 				transition: none;
 		background: <?php echo esc_attr( uabb_theme_base_color( $settings->btn_background_color ) ); ?>;
-		<?php $shadow_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->btn_background_color ), 30, 'darken' ); ?>
+		<?php $shadow_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->btn_background_color, 30, 'darken' ) ); ?>
 		box-shadow: 0 6px <?php echo esc_attr( $shadow_color ); ?>;
 	<?php } ?>
 
@@ -632,7 +632,7 @@ if ( 'gradient' === $settings->btn_style ) {
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='<?php echo esc_attr( $bg_hover_grad_start ); ?>', endColorstr='<?php echo esc_attr( $settings->btn_background_hover_color ); ?>',GradientType=0 ); /* IE6-9 */
 		<?php
 	} elseif ( '3d' === $settings->btn_style ) {
-		$shadow_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->btn_background_hover_color ), 30, 'darken' );
+		$shadow_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->btn_background_hover_color, 30, 'darken' ) );
 		?>
 		top: 2px;
 		box-shadow: 0 4px <?php echo esc_attr( uabb_theme_base_color( $shadow_color ) ); ?>;

@@ -220,7 +220,7 @@ class iHoverModule extends FLBuilderModule { // @codingStandardsIgnoreLine.
 						$item->border_style_param['style'] = $item->border_style;
 						unset( $item->border_style );
 					}
-					$item->border_style_param['color'] = ( '' === $item->border_color ) ? 'EFEFEF' : UABB_Helper::uabb_colorpicker( $item, 'border_color', true );
+					$item->border_style_param['color'] = ( '' === $item->border_color ) ? 'EFEFEF' : FLBuilderColor::hex_or_rgb( $item->border_color );
 					if ( isset( $item->border_size ) ) {
 						$item->border_style_param['width'] = array(
 							'top'    => $item->border_size,
@@ -376,7 +376,7 @@ class iHoverModule extends FLBuilderModule { // @codingStandardsIgnoreLine.
 						$item->border_style_param['style'] = $item->border_style;
 						unset( $item->border_style );
 					}
-					$item->border_style_param['color'] = ( '' === $item->border_color ) ? 'EFEFEF' : UABB_Helper::uabb_colorpicker( $item, 'border_color', true );
+					$item->border_style_param['color'] = ( '' === $item->border_color ) ? 'EFEFEF' : FLBuilderColor::hex_or_rgb( $item->border_color );
 					if ( isset( $item->border_size ) ) {
 						$item->border_style_param['width'] = array(
 							'top'    => $item->border_size,

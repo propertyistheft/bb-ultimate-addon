@@ -10,6 +10,8 @@
  *
  * @class UABBPhotoGalleryModule
  */
+
+#[AllowDynamicProperties]
 class UABBPhotoGalleryModule extends FLBuilderModule {
 	/**
 	 * Constructor function that constructs default values for the Photo Gallery Module

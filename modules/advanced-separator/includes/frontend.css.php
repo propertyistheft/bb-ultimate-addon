@@ -8,8 +8,8 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->color      = UABB_Helper::uabb_colorpicker( $settings, 'color' );
-$settings->text_color = UABB_Helper::uabb_colorpicker( $settings, 'text_color' );
+$settings->color      = FLBuilderColor::hex_or_rgb( $settings->color );
+$settings->text_color = FLBuilderColor::hex_or_rgb( $settings->text_color );
 
 $settings->img_size            = ( '' !== trim( $settings->img_size ) ) ? $settings->img_size : '50';
 $settings->icon_photo_position = ( '' !== trim( $settings->icon_photo_position ) ) ? $settings->icon_photo_position : '50';

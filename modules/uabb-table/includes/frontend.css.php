@@ -7,41 +7,41 @@
 
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 
-$settings->table_foreground_outside = UABB_Helper::uabb_colorpicker( $settings, 'table_foreground_outside' );
+$settings->table_foreground_outside = FLBuilderColor::hex_or_rgb( $settings->table_foreground_outside );
 
-$settings->body_rows_bg_hover = UABB_Helper::uabb_colorpicker( $settings, 'body_rows_bg_hover' );
+$settings->body_rows_bg_hover = FLBuilderColor::hex_or_rgb( $settings->body_rows_bg_hover );
 
-$settings->body_rows_text_hover = UABB_Helper::uabb_colorpicker( $settings, 'body_rows_text_hover' );
+$settings->body_rows_text_hover = FLBuilderColor::hex_or_rgb( $settings->body_rows_text_hover );
 
-$settings->body_cell_text_hover = UABB_Helper::uabb_colorpicker( $settings, 'body_cell_text_hover' );
+$settings->body_cell_text_hover = FLBuilderColor::hex_or_rgb( $settings->body_cell_text_hover );
 
-$settings->head_icons_global_color = UABB_Helper::uabb_colorpicker( $settings, 'head_icons_global_color' );
+$settings->head_icons_global_color = FLBuilderColor::hex_or_rgb( $settings->head_icons_global_color );
 
-$settings->body_icons_global_color = UABB_Helper::uabb_colorpicker( $settings, 'body_icons_global_color' );
+$settings->body_icons_global_color = FLBuilderColor::hex_or_rgb( $settings->body_icons_global_color );
 
-$settings->body_cell_bg_hover = UABB_Helper::uabb_colorpicker( $settings, 'body_cell_bg_hover' );
+$settings->body_cell_bg_hover = FLBuilderColor::hex_or_rgb( $settings->body_cell_bg_hover );
 
-$settings->table_data_border_color = UABB_Helper::uabb_colorpicker( $settings, 'table_data_border_color' );
+$settings->table_data_border_color = FLBuilderColor::hex_or_rgb( $settings->table_data_border_color );
 
-$settings->table_body_data_border_color = UABB_Helper::uabb_colorpicker( $settings, 'table_body_data_border_color' );
+$settings->table_body_data_border_color = FLBuilderColor::hex_or_rgb( $settings->table_body_data_border_color );
 
-$settings->row_heading_color = UABB_Helper::uabb_colorpicker( $settings, 'row_heading_color' );
+$settings->row_heading_color = FLBuilderColor::hex_or_rgb( $settings->row_heading_color );
 
-$settings->features_color = UABB_Helper::uabb_colorpicker( $settings, 'features_color' );
+$settings->features_color = FLBuilderColor::hex_or_rgb( $settings->features_color );
 
-$settings->row_heading_background_color = UABB_Helper::uabb_colorpicker( $settings, 'row_heading_background_color' );
+$settings->row_heading_background_color = FLBuilderColor::hex_or_rgb( $settings->row_heading_background_color );
 
-$settings->even_properties_bg = UABB_Helper::uabb_colorpicker( $settings, 'even_properties_bg' );
+$settings->even_properties_bg = FLBuilderColor::hex_or_rgb( $settings->even_properties_bg );
 
-$settings->odd_properties_bg = UABB_Helper::uabb_colorpicker( $settings, 'odd_properties_bg' );
+$settings->odd_properties_bg = FLBuilderColor::hex_or_rgb( $settings->odd_properties_bg );
 
-$settings->entries_label_color = UABB_Helper::uabb_colorpicker( $settings, 'entries_label_color' );
+$settings->entries_label_color = FLBuilderColor::hex_or_rgb( $settings->entries_label_color );
 
-$settings->entries_input_color = UABB_Helper::uabb_colorpicker( $settings, 'entries_input_color' );
+$settings->entries_input_color = FLBuilderColor::hex_or_rgb( $settings->entries_input_color );
 
-$settings->entries_background_color = UABB_Helper::uabb_colorpicker( $settings, 'entries_background_color' );
+$settings->entries_background_color = FLBuilderColor::hex_or_rgb( $settings->entries_background_color );
 
-$settings->entries_border_color = UABB_Helper::uabb_colorpicker( $settings, 'entries_border_color' );
+$settings->entries_border_color = FLBuilderColor::hex_or_rgb( $settings->entries_border_color );
 
 $table_header = 0;
 
@@ -50,7 +50,7 @@ foreach ( $settings->thead_row as $head_row ) {
 		?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-table-header .table-heading-<?php echo esc_attr( $table_header ); ?> {
 			<?php if ( '' !== $head_row->head_text_color && isset( $head_row->head_text_color ) ) { ?>
-			color: <?php echo esc_attr( ( false === strpos( $head_row->head_text_color, 'rgb' ) ) ? '#' . $head_row->head_text_color : $head_row->head_text_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $head_row->head_text_color ) ); ?>;
 			<?php } ?>
 
 			background: unset;
@@ -58,7 +58,7 @@ foreach ( $settings->thead_row as $head_row ) {
 
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-table-header .table-heading-<?php echo esc_attr( $table_header ); ?> {
 			<?php if ( '' !== $head_row->head_bg_color && isset( $head_row->head_bg_color ) ) { ?>
-				background-color: <?php echo esc_attr( ( false === strpos( $head_row->head_bg_color, 'rgb' ) ) ? '#' . $head_row->head_bg_color : $head_row->head_bg_color ); ?>;
+				background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $head_row->head_bg_color ) ); ?>;
 			<?php } ?>
 			<?php if ( isset( $head_row->head_align ) && '' !== $head_row->head_align ) { ?>
 				text-align: <?php echo esc_attr( $head_row->head_align ); ?>;
@@ -68,7 +68,7 @@ foreach ( $settings->thead_row as $head_row ) {
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-table-header .table-heading-<?php echo esc_attr( $table_header ); ?> .before-icon,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-table-header .table-heading-<?php echo esc_attr( $table_header ); ?> .after-icon {
 			<?php if ( '' !== $head_row->head_icon_color && isset( $head_row->head_icon_color ) ) { ?>
-				color: <?php echo esc_attr( ( false === strpos( $head_row->head_icon_color, 'rgb' ) ) ? '#' . $head_row->head_icon_color : $head_row->head_icon_color ); ?>;
+				color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $head_row->head_icon_color ) ); ?>;
 			<?php } ?>
 		}
 
@@ -99,7 +99,7 @@ foreach ( $settings->tbody_row as $body_row ) {
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-table-features .table-body-<?php echo esc_attr( $table_body ); ?>,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-table-features .table-body-<?php echo esc_attr( $table_body ); ?> .content-text {
 			<?php if ( '' !== $body_row->body_text_color && isset( $body_row->body_text_color ) ) { ?>
-				color: <?php echo esc_attr( ( false === strpos( $body_row->body_text_color, 'rgb' ) ) ? '#' . $body_row->body_text_color : $body_row->body_text_color ); ?>;
+				color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $body_row->body_text_color ) ); ?>;
 			<?php } ?>
 
 			background: unset;
@@ -107,7 +107,7 @@ foreach ( $settings->tbody_row as $body_row ) {
 
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-table-features .table-body-<?php echo esc_attr( $table_body ); ?> {
 			<?php if ( '' !== $body_row->body_bg_color && isset( $body_row->body_bg_color ) ) { ?>
-				background-color: <?php echo esc_attr( ( false === strpos( $body_row->body_bg_color, 'rgb' ) ) ? '#' . $body_row->body_bg_color : $body_row->body_bg_color ); ?>;
+				background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $body_row->body_bg_color ) ); ?>;
 			<?php } ?>
 			<?php if ( isset( $body_row->body_align ) && '' !== $body_row->body_align ) { ?>
 				text-align: <?php echo esc_attr( $body_row->body_align ); ?>;
@@ -117,7 +117,7 @@ foreach ( $settings->tbody_row as $body_row ) {
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-table-features .table-body-<?php echo esc_attr( $table_body ); ?> .before-icon,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-table-features .table-body-<?php echo esc_attr( $table_body ); ?> .after-icon {
 			<?php if ( '' !== $body_row->body_icon_color && isset( $body_row->body_icon_color ) ) { ?>
-				color: <?php echo esc_attr( ( false === strpos( $body_row->body_icon_color, 'rgb' ) ) ? '#' . $body_row->body_icon_color : $body_row->body_icon_color ); ?>;
+				color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $body_row->body_icon_color ) ); ?>;
 			<?php } ?>
 		}
 

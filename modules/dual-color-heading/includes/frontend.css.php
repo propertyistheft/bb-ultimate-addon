@@ -8,13 +8,13 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->first_heading_color    = UABB_Helper::uabb_colorpicker( $settings, 'first_heading_color' );
-$settings->second_heading_color   = UABB_Helper::uabb_colorpicker( $settings, 'second_heading_color' );
-$settings->first_heading_bg_color = UABB_Helper::uabb_colorpicker( $settings, 'first_heading_bg_color' );
-$settings->second_head_bg_color   = UABB_Helper::uabb_colorpicker( $settings, 'second_head_bg_color' );
-$settings->bg_heading_color       = UABB_Helper::uabb_colorpicker( $settings, 'bg_heading_color' );
-$settings->after_heading_color    = UABB_Helper::uabb_colorpicker( $settings, 'after_heading_color' );
-$settings->after_head_bg_color    = UABB_Helper::uabb_colorpicker( $settings, 'after_head_bg_color' );
+$settings->first_heading_color    = FLBuilderColor::hex_or_rgb( $settings->first_heading_color );
+$settings->second_heading_color   = FLBuilderColor::hex_or_rgb( $settings->second_heading_color );
+$settings->first_heading_bg_color = FLBuilderColor::hex_or_rgb( $settings->first_heading_bg_color );
+$settings->second_head_bg_color   = FLBuilderColor::hex_or_rgb( $settings->second_head_bg_color );
+$settings->bg_heading_color       = FLBuilderColor::hex_or_rgb( $settings->bg_heading_color );
+$settings->after_heading_color    = FLBuilderColor::hex_or_rgb( $settings->after_heading_color );
+$settings->after_head_bg_color    = FLBuilderColor::hex_or_rgb( $settings->after_head_bg_color );
 
 
 ?>
@@ -150,7 +150,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 	}
 <?php } else { ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-dual-color-heading .uabb-after-heading-text {
-		margin-top:<?php echo ( isset( $settings->heading_spacing ) && '' !== $settings->heading_spacing ) ? esc_attr( $settings->heading_spacing ) . 'px' : ''; ?>;		
+		margin-top:<?php echo ( isset( $settings->heading_spacing ) && '' !== $settings->heading_spacing ) ? esc_attr( $settings->heading_spacing ) . 'px' : ''; ?>;
 	}
 <?php } ?>
 
@@ -351,7 +351,7 @@ if ( ! $version_bb_check ) {
 					<?php UABB_Helper::uabb_font_css( $settings->dual_font_family ); ?>
 				<?php endif; ?>
 			<?php if ( 'yes' === $converted || isset( $settings->dual_font_size_unit ) && '' !== $settings->dual_font_size_unit ) { ?>
-				font-size: <?php echo esc_attr( $settings->dual_font_size_unit ); ?>px;	
+				font-size: <?php echo esc_attr( $settings->dual_font_size_unit ); ?>px;
 			<?php } elseif ( isset( $settings->dual_font_size_unit ) && '' === $settings->dual_font_size_unit && isset( $settings->dual_font_size['desktop'] ) && '' !== $settings->dual_font_size['desktop'] ) { ?>
 				font-size: <?php echo esc_attr( $settings->dual_font_size['desktop'] ); ?>px;
 			<?php } ?>
@@ -415,7 +415,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 	);
 }
 ?>
-/* Typography responsive layout starts here */ 
+/* Typography responsive layout starts here */
 
 
 <?php
@@ -467,7 +467,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 					font-size: <?php echo esc_attr( $settings->dual_font_size_unit_responsive ); ?>px;
 				<?php } elseif ( $settings->dual_font_size_unit_responsive && '' === $settings->dual_font_size_unit_responsive && isset( $settings->dual_font_size['small'] ) && '' !== $settings->dual_font_size['small'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->dual_font_size['small'] ); ?>px;
-				<?php } ?>  
+				<?php } ?>
 
 			<?php if ( isset( $settings->dual_font_size['small'] ) && '' === $settings->dual_font_size['small'] && isset( $settings->dual_line_height['small'] ) && '' !== $settings->dual_line_height['small'] && '' === $settings->dual_line_height_unit_responsive && '' === $settings->dual_line_height_unit_medium && '' === $settings->dual_line_height_unit ) : ?>
 					line-height: <?php echo esc_attr( $settings->dual_line_height['small'] ); ?>px;

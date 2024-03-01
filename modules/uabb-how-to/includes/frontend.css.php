@@ -7,18 +7,18 @@
 
 	$version_bb_check = UABB_Compatibility::$version_bb_check;
 
-	$settings->box_bg_color             = UABB_Helper::uabb_colorpicker( $settings, 'box_bg_color', true );
-	$settings->title_color              = UABB_Helper::uabb_colorpicker( $settings, 'title_color', true );
-	$settings->description_color        = UABB_Helper::uabb_colorpicker( $settings, 'description_color', true );
-	$settings->total_time_color         = UABB_Helper::uabb_colorpicker( $settings, 'total_time_color', true );
-	$settings->estimated_cost_color     = UABB_Helper::uabb_colorpicker( $settings, 'estimated_cost_color', true );
-	$settings->supply_title_color       = UABB_Helper::uabb_colorpicker( $settings, 'supply_title_color', true );
-	$settings->supply_text_color        = UABB_Helper::uabb_colorpicker( $settings, 'supply_text_color', true );
-	$settings->tool_title_color         = UABB_Helper::uabb_colorpicker( $settings, 'tool_title_color', true );
-	$settings->tool_text_color          = UABB_Helper::uabb_colorpicker( $settings, 'tool_text_color', true );
-	$settings->step_section_title_color = UABB_Helper::uabb_colorpicker( $settings, 'step_section_title_color', true );
-	$settings->step_title_color         = UABB_Helper::uabb_colorpicker( $settings, 'step_title_color', true );
-	$settings->step_description_color   = UABB_Helper::uabb_colorpicker( $settings, 'step_description_color', true );
+	$settings->box_bg_color             = FLBuilderColor::hex_or_rgb( $settings->box_bg_color );
+	$settings->title_color              = FLBuilderColor::hex_or_rgb( $settings->title_color );
+	$settings->description_color        = FLBuilderColor::hex_or_rgb( $settings->description_color );
+	$settings->total_time_color         = FLBuilderColor::hex_or_rgb( $settings->total_time_color );
+	$settings->estimated_cost_color     = FLBuilderColor::hex_or_rgb( $settings->estimated_cost_color );
+	$settings->supply_title_color       = FLBuilderColor::hex_or_rgb( $settings->supply_title_color );
+	$settings->supply_text_color        = FLBuilderColor::hex_or_rgb( $settings->supply_text_color );
+	$settings->tool_title_color         = FLBuilderColor::hex_or_rgb( $settings->tool_title_color );
+	$settings->tool_text_color          = FLBuilderColor::hex_or_rgb( $settings->tool_text_color );
+	$settings->step_section_title_color = FLBuilderColor::hex_or_rgb( $settings->step_section_title_color );
+	$settings->step_title_color         = FLBuilderColor::hex_or_rgb( $settings->step_title_color );
+	$settings->step_description_color   = FLBuilderColor::hex_or_rgb( $settings->step_description_color );
 
 // Box - Border.
 if ( ! $version_bb_check ) { ?>

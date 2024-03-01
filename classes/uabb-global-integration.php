@@ -67,7 +67,7 @@ if ( ! class_exists( 'UABBGlobalSettingsOptions' ) ) {
 			} elseif ( isset( $uabb_setting_options->$option ) && ! empty( $uabb_setting_options->$option ) ) {
 
 				if ( $color ) {
-					$uabb_setting_options->$option = UABB_Helper::uabb_colorpicker( $uabb_setting_options, $option, $opc );
+					$uabb_setting_options->$option = FLBuilderColor::hex_or_rgb( $uabb_setting_options->$option );
 				}
 				return $uabb_setting_options->$option;
 			}

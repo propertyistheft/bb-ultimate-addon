@@ -8,29 +8,29 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->button_border_color = UABB_Helper::uabb_colorpicker( $settings, 'button_border_color' );
+$settings->button_border_color = FLBuilderColor::hex_or_rgb( $settings->button_border_color );
 
-$settings->_btn_one_back_color       = UABB_Helper::uabb_colorpicker( $settings, '_btn_one_back_color', true );
-$settings->_btn_one_back_hover_color = UABB_Helper::uabb_colorpicker( $settings, '_btn_one_back_hover_color', true );
+$settings->_btn_one_back_color       = FLBuilderColor::hex_or_rgb( $settings->_btn_one_back_color );
+$settings->_btn_one_back_hover_color = FLBuilderColor::hex_or_rgb( $settings->_btn_one_back_hover_color );
 
-$settings->_btn_two_back_color       = UABB_Helper::uabb_colorpicker( $settings, '_btn_two_back_color', true );
-$settings->_btn_two_back_hover_color = UABB_Helper::uabb_colorpicker( $settings, '_btn_two_back_hover_color', true );
+$settings->_btn_two_back_color       = FLBuilderColor::hex_or_rgb( $settings->_btn_two_back_color );
+$settings->_btn_two_back_hover_color = FLBuilderColor::hex_or_rgb( $settings->_btn_two_back_hover_color );
 
-$settings->divider_color = UABB_Helper::uabb_colorpicker( $settings, 'divider_color' );
+$settings->divider_color = FLBuilderColor::hex_or_rgb( $settings->divider_color );
 
-$settings->divider_background_color = UABB_Helper::uabb_colorpicker( $settings, 'divider_background_color', true );
-
-
-$settings->divider_border_color = UABB_Helper::uabb_colorpicker( $settings, 'divider_border_color' );
-
-$settings->_btn_one_text_color       = UABB_Helper::uabb_colorpicker( $settings, '_btn_one_text_color' );
-$settings->_btn_one_text_hover_color = UABB_Helper::uabb_colorpicker( $settings, '_btn_one_text_hover_color' );
+$settings->divider_background_color = FLBuilderColor::hex_or_rgb( $settings->divider_background_color );
 
 
-$settings->_btn_two_text_color       = UABB_Helper::uabb_colorpicker( $settings, '_btn_two_text_color' );
-$settings->_btn_two_text_hover_color = UABB_Helper::uabb_colorpicker( $settings, '_btn_two_text_hover_color' );
+$settings->divider_border_color = FLBuilderColor::hex_or_rgb( $settings->divider_border_color );
 
-$settings->border_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'border_hover_color' );
+$settings->_btn_one_text_color       = FLBuilderColor::hex_or_rgb( $settings->_btn_one_text_color );
+$settings->_btn_one_text_hover_color = FLBuilderColor::hex_or_rgb( $settings->_btn_one_text_hover_color );
+
+
+$settings->_btn_two_text_color       = FLBuilderColor::hex_or_rgb( $settings->_btn_two_text_color );
+$settings->_btn_two_text_hover_color = FLBuilderColor::hex_or_rgb( $settings->_btn_two_text_hover_color );
+
+$settings->border_hover_color = FLBuilderColor::hex_or_rgb( $settings->border_hover_color );
 
 $settings->button_border_width     = ( '' !== $settings->button_border_width ) ? $settings->button_border_width : '2';
 $settings->img_icon_width_btn_one  = ( '' !== $settings->img_icon_width_btn_one ) ? $settings->img_icon_width_btn_one : '30';
@@ -135,7 +135,7 @@ $settings->spacing_between_buttons = ( '' !== $settings->spacing_between_buttons
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-btn-two .uabb-btn-two-text,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-btn-two .uabb-imgicon-wrap .uabb-icon i {
 		color: <?php echo esc_attr( uabb_theme_default_button_text_color( $settings->_btn_two_text_color ) ); ?>;
-	}	
+	}
 <?php } ?>
 <?php if ( ! $version_bb_check ) { ?>
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-middle-text {
@@ -686,21 +686,21 @@ $settings->spacing_between_buttons = ( '' !== $settings->spacing_between_buttons
 	<?php
 	/* Calculate colors for gradient button one simple */
 	$_btn_one_grad_back_color = uabb_theme_base_color( $settings->_btn_one_back_color );
-	$_btn_one_bg_grad_start   = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $_btn_one_grad_back_color ), 30, 'lighten' );
+	$_btn_one_bg_grad_start   = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $_btn_one_grad_back_color, 30, 'lighten' ) );
 
 	/* Calculate colors for gradient button one hover */
 	if ( '' !== $settings->_btn_one_back_hover_color ) {
-		$_btn_one_bg_hover_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->_btn_one_back_hover_color ), 30, 'lighten' );
+		$_btn_one_bg_hover_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->_btn_one_back_hover_color, 30, 'lighten' ) );
 	}
 
 	/* Calculate colors for gradient button two simple */
 
 	$_btn_two_grad_back_color = uabb_theme_base_color( $settings->_btn_two_back_color );
-	$_btn_two_bg_grad_start   = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $_btn_two_grad_back_color ), 30, 'lighten' );
+	$_btn_two_bg_grad_start   = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $_btn_two_grad_back_color, 30, 'lighten' ) );
 
 	/* Calculate colors for gradient button two hover */
 	if ( '' !== $settings->_btn_two_back_hover_color ) {
-		$_btn_two_bg_hover_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->_btn_two_back_hover_color ), 30, 'lighten' );
+		$_btn_two_bg_hover_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->_btn_two_back_hover_color, 30, 'lighten' ) );
 	}
 
 	?>
@@ -1444,7 +1444,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 
 					<?php } ?>
 				}
-			<?php } ?>				
+			<?php } ?>
 			}
 				<?php
 			}

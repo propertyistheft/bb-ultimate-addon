@@ -8,10 +8,10 @@
 	$version_bb_check = UABB_Compatibility::$version_bb_check;
 	$converted        = UABB_Compatibility::$uabb_migration;
 
-	$settings->color         = UABB_Helper::uabb_colorpicker( $settings, 'color' );
-	$settings->desc_color    = UABB_Helper::uabb_colorpicker( $settings, 'desc_color' );
-	$settings->bg_color      = UABB_Helper::uabb_colorpicker( $settings, 'bg_color' );
-	$settings->bg_text_color = UABB_Helper::uabb_colorpicker( $settings, 'bg_text_color' );
+	$settings->color         = FLBuilderColor::hex_or_rgb( $settings->color );
+	$settings->desc_color    = FLBuilderColor::hex_or_rgb( $settings->desc_color );
+	$settings->bg_color      = FLBuilderColor::hex_or_rgb( $settings->bg_color );
+	$settings->bg_text_color = FLBuilderColor::hex_or_rgb( $settings->bg_text_color );
 
 
 	$settings->heading_margin_top    = ( '' !== trim( $settings->heading_margin_top ) ) ? $settings->heading_margin_top : '0';

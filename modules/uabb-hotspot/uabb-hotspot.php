@@ -519,7 +519,7 @@ class UABBHotspot extends FLBuilderModule {
 	 */
 	public function render_animation( $obj ) {
 
-		$color = UABB_Helper::uabb_colorpicker( $obj, 'animation_color' );
+		$color = FLBuilderColor::hex_or_rgb( $obj->animation_color );
 		$color = uabb_theme_base_color( $color );
 		?>
 		<div class="uabb-hspot-sonar">

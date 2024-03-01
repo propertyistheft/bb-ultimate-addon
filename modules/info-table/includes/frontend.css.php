@@ -8,16 +8,16 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->btn_text_color       = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_color' );
-$settings->btn_text_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_hover_color' );
-$settings->heading_color        = UABB_Helper::uabb_colorpicker( $settings, 'heading_color' );
-$settings->sub_heading_color    = UABB_Helper::uabb_colorpicker( $settings, 'sub_heading_color' );
-$settings->description_color    = UABB_Helper::uabb_colorpicker( $settings, 'description_color' );
+$settings->btn_text_color       = FLBuilderColor::hex_or_rgb( $settings->btn_text_color );
+$settings->btn_text_hover_color = FLBuilderColor::hex_or_rgb( $settings->btn_text_hover_color );
+$settings->heading_color        = FLBuilderColor::hex_or_rgb( $settings->heading_color );
+$settings->sub_heading_color    = FLBuilderColor::hex_or_rgb( $settings->sub_heading_color );
+$settings->description_color    = FLBuilderColor::hex_or_rgb( $settings->description_color );
 
-$settings->btn_bg_color       = UABB_Helper::uabb_colorpicker( $settings, 'btn_bg_color', true );
-$settings->btn_bg_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'btn_bg_hover_color', true );
-$settings->heading_back_color = UABB_Helper::uabb_colorpicker( $settings, 'heading_back_color', true );
-$settings->desc_back_color    = UABB_Helper::uabb_colorpicker( $settings, 'desc_back_color', true );
+$settings->btn_bg_color       = FLBuilderColor::hex_or_rgb( $settings->btn_bg_color );
+$settings->btn_bg_hover_color = FLBuilderColor::hex_or_rgb( $settings->btn_bg_hover_color );
+$settings->heading_back_color = FLBuilderColor::hex_or_rgb( $settings->heading_back_color );
+$settings->desc_back_color    = FLBuilderColor::hex_or_rgb( $settings->desc_back_color );
 
 $settings->icon_size             = ( '' !== trim( $settings->icon_size ) ) ? $settings->icon_size : '75';
 $settings->icon_bg_size          = ( '' !== trim( $settings->icon_bg_size ) ) ? $settings->icon_bg_size : '30';
@@ -125,7 +125,7 @@ FLBuilder::render_module_css( 'image-icon', $id, $imageicon_array );
 			$bg_color_code      = '#ffffff';
 			$border_color       = '#efefef';
 		}
-		$bg_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $bg_color_code ), 30, 'lighten' );
+		$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_color_code, 30, 'lighten' ) );
 	} elseif ( 'red' === $settings->color_scheme ) {
 		if ( 'design01' === $settings->box_design || 'design03' === $settings->box_design ) {
 			$bg_color_code = '#df4130';
@@ -148,7 +148,7 @@ FLBuilder::render_module_css( 'image-icon', $id, $imageicon_array );
 			$bg_color_code      = '#ffffff';
 			$border_color       = '#efefef';
 		}
-		$bg_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $bg_color_code ), 30, 'lighten' );
+		$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_color_code, 30, 'lighten' ) );
 	} elseif ( 'blue' === $settings->color_scheme ) {
 		if ( 'design01' === $settings->box_design || 'design03' === $settings->box_design ) {
 			$bg_color_code = '#2867b6';
@@ -171,7 +171,7 @@ FLBuilder::render_module_css( 'image-icon', $id, $imageicon_array );
 			$bg_color_code      = '#ffffff';
 			$border_color       = '#efefef';
 		}
-		$bg_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $bg_color_code ), 30, 'lighten' );
+		$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_color_code, 30, 'lighten' ) );
 	} elseif ( 'yellow' === $settings->color_scheme ) {
 		if ( 'design01' === $settings->box_design || 'design03' === $settings->box_design ) {
 			$bg_color_code = '#f1a90f';
@@ -194,7 +194,7 @@ FLBuilder::render_module_css( 'image-icon', $id, $imageicon_array );
 			$bg_color_code      = '#ffffff';
 			$border_color       = '#efefef';
 		}
-		$bg_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $bg_color_code ), 30, 'lighten' );
+		$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_color_code, 30, 'lighten' ) );
 	} elseif ( 'green' === $settings->color_scheme ) {
 		if ( 'design01' === $settings->box_design || 'design03' === $settings->box_design ) {
 			$bg_color_code = '#17924b';
@@ -240,7 +240,7 @@ FLBuilder::render_module_css( 'image-icon', $id, $imageicon_array );
 			$bg_color_code      = '#ffffff';
 			$border_color       = '#efefef';
 		}
-		$bg_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $bg_color_code ), 30, 'lighten' );
+		$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_color_code, 30, 'lighten' ) );
 	}
 	?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .info-table-<?php echo esc_attr( $settings->box_design ); ?>.info-table-cs-<?php echo esc_attr( $settings->color_scheme ); ?> {
@@ -401,7 +401,7 @@ FLBuilder::render_module_css( 'image-icon', $id, $imageicon_array );
 
 	if ( 'design01' === $settings->box_design ) {
 		$bg_color_code = ( $settings->desc_back_color ) ? $settings->desc_back_color : '#333333';
-		$bg_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $bg_color_code ), 30, 'lighten' );
+		$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_color_code, 30, 'lighten' ) );
 	} elseif ( 'design02' === $settings->box_design ) {
 		$icon_bg_color      = '#fbfbfb';
 		$border_color       = '#dcdcdc';
@@ -410,21 +410,21 @@ FLBuilder::render_module_css( 'image-icon', $id, $imageicon_array );
 	} elseif ( 'design03' === $settings->box_design ) {
 		$icon_bg_color = ( $settings->heading_back_color ) ? $settings->heading_back_color : '#333333';
 		$bg_color_code = ( $settings->desc_back_color ) ? $settings->desc_back_color : '#333333';
-		$bg_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $bg_color_code ), 30, 'lighten' );
+		$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_color_code, 30, 'lighten' ) );
 	} elseif ( 'design04' === $settings->box_design ) {
 		$border_color_top = ( $settings->desc_back_color ) ? $settings->desc_back_color : '#333333';
 		$bg_color_code    = ( $settings->heading_back_color ) ? $settings->heading_back_color : '#f9f9f9';
-		$bg_grad_start    = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $bg_color_code ), 30, 'lighten' );
+		$bg_grad_start    = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_color_code, 30, 'lighten' ) );
 	} elseif ( 'design05' === $settings->box_design ) {
 		$border_color       = '#dddddd';
 		$bg_head_color_code = ( $settings->desc_back_color ) ? $settings->desc_back_color : '#333333';
 		$bg_color_code      = ( $settings->heading_back_color ) ? $settings->heading_back_color : '#f7f7f7';
-		$bg_grad_start      = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $bg_color_code ), 30, 'lighten' );
+		$bg_grad_start      = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_color_code, 30, 'lighten' ) );
 	} elseif ( 'design06' === $settings->box_design ) {
 		$border_color       = '#efefef';
 		$bg_head_color_code = ( $settings->desc_back_color ) ? $settings->desc_back_color : '#333333';
 		$bg_color_code      = ( $settings->heading_back_color ) ? $settings->heading_back_color : '#ffffff';
-		$bg_grad_start      = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $bg_color_code ), 30, 'lighten' );
+		$bg_grad_start      = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_color_code, 30, 'lighten' ) );
 	}
 
 	if ( 'design01' === $settings->box_design || 'design03' === $settings->box_design || 'design04' === $settings->box_design || 'design05' === $settings->box_design || 'design06' === $settings->box_design ) {

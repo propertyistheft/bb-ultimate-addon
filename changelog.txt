@@ -1,3 +1,15 @@
+Version 1.35.19, Friday, 9th February 2024
+- Improvement: Compatibility with Beaver Builder 2.8
+- Improvement: Compatibility with PHP version 8.2.
+- Improvement: Added support for Global Colors selection in UABB modules.
+- Fixed: Flip Box - Text overlapping issue on iOS devices.
+- Fixed: Gravity Form Styler - Dropdown icon not displaying correctly when Font Awesome PRO is active in Beaver Builder.
+- Fixed: Gravity Form Styler - Padding and Height adjustments not getting applied when added to the Textarea field.
+- Fixed: Gravity Form Styler - Button styling controls not working.
+- Fixed: Modal Popup- Vimeo videos will play automatically when autoplay is set to 'Yes'.
+- Fixed: Woo - Mini Cart - Quantity icons are not showing on product pages with Mini Cart in the header themer layout.
+- Fixed: Woo Products - Price typography option not reflecting the chosen color settings. 
+
 Version 1.35.18, Tuesday, 19th December 2023
 - Fixed: Advanced Accordion - Accessibility issue with tabindex.
 - Fixed: Hotspot - Video inside tooltip keeps playing after closing tooltip.

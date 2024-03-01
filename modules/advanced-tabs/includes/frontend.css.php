@@ -8,30 +8,30 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->title_color        = UABB_Helper::uabb_colorpicker( $settings, 'title_color' );
-$settings->title_hover_color  = UABB_Helper::uabb_colorpicker( $settings, 'title_hover_color' );
-$settings->title_active_color = UABB_Helper::uabb_colorpicker( $settings, 'title_active_color' );
+$settings->title_color        = FLBuilderColor::hex_or_rgb( $settings->title_color );
+$settings->title_hover_color  = FLBuilderColor::hex_or_rgb( $settings->title_hover_color );
+$settings->title_active_color = FLBuilderColor::hex_or_rgb( $settings->title_active_color );
 
-$settings->description_color        = UABB_Helper::uabb_colorpicker( $settings, 'description_color' );
-$settings->description_active_color = UABB_Helper::uabb_colorpicker( $settings, 'description_active_color' );
+$settings->description_color        = FLBuilderColor::hex_or_rgb( $settings->description_color );
+$settings->description_active_color = FLBuilderColor::hex_or_rgb( $settings->description_active_color );
 
-$settings->title_background_color        = UABB_Helper::uabb_colorpicker( $settings, 'title_background_color', true );
-$settings->title_background_hover_color  = UABB_Helper::uabb_colorpicker( $settings, 'title_background_hover_color', true );
-$settings->title_active_background_color = UABB_Helper::uabb_colorpicker( $settings, 'title_active_background_color', true );
+$settings->title_background_color        = FLBuilderColor::hex_or_rgb( $settings->title_background_color );
+$settings->title_background_hover_color  = FLBuilderColor::hex_or_rgb( $settings->title_background_hover_color );
+$settings->title_active_background_color = FLBuilderColor::hex_or_rgb( $settings->title_active_background_color );
 
-$settings->underline_border_color = UABB_Helper::uabb_colorpicker( $settings, 'underline_border_color' );
+$settings->underline_border_color = FLBuilderColor::hex_or_rgb( $settings->underline_border_color );
 
-$settings->icon_color        = UABB_Helper::uabb_colorpicker( $settings, 'icon_color' );
-$settings->icon_hover_color  = UABB_Helper::uabb_colorpicker( $settings, 'icon_hover_color' );
-$settings->icon_active_color = UABB_Helper::uabb_colorpicker( $settings, 'icon_active_color' );
+$settings->icon_color        = FLBuilderColor::hex_or_rgb( $settings->icon_color );
+$settings->icon_hover_color  = FLBuilderColor::hex_or_rgb( $settings->icon_hover_color );
+$settings->icon_active_color = FLBuilderColor::hex_or_rgb( $settings->icon_active_color );
 
-$settings->content_color            = UABB_Helper::uabb_colorpicker( $settings, 'content_color' );
-$settings->content_background_color = UABB_Helper::uabb_colorpicker( $settings, 'content_background_color', true );
-$settings->tab_focus_color          = UABB_Helper::uabb_colorpicker( $settings, 'tab_focus_color', true );
+$settings->content_color            = FLBuilderColor::hex_or_rgb( $settings->content_color );
+$settings->content_background_color = FLBuilderColor::hex_or_rgb( $settings->content_background_color );
+$settings->tab_focus_color          = FLBuilderColor::hex_or_rgb( $settings->tab_focus_color );
 $settings->hori_tab_spacing         = ( '' !== esc_attr( $settings->hori_tab_spacing ) ) ? esc_attr( $settings->hori_tab_spacing ) : '0';
 
 if ( ! $version_bb_check ) {
-	$settings->content_border_color  = UABB_Helper::uabb_colorpicker( $settings, 'content_border_color' );
+	$settings->content_border_color  = FLBuilderColor::hex_or_rgb( $settings->content_border_color );
 	$settings->content_border_radius = ( '' !== $settings->content_border_radius ) ? $settings->content_border_radius : '0';
 }
 /* Fallback depricated underline Style */

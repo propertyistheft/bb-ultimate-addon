@@ -9,12 +9,12 @@ $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
 /* Variable settings */
-$settings->heading_color          = UABB_Helper::uabb_colorpicker( $settings, 'heading_color' );
-$settings->description_color      = UABB_Helper::uabb_colorpicker( $settings, 'description_color' );
-$settings->list_icon_border_color = UABB_Helper::uabb_colorpicker( $settings, 'list_icon_border_color' );
-$settings->list_connector_color   = UABB_Helper::uabb_colorpicker( $settings, 'list_connector_color' );
+$settings->heading_color          = FLBuilderColor::hex_or_rgb( $settings->heading_color );
+$settings->description_color      = FLBuilderColor::hex_or_rgb( $settings->description_color );
+$settings->list_icon_border_color = FLBuilderColor::hex_or_rgb( $settings->list_icon_border_color );
+$settings->list_connector_color   = FLBuilderColor::hex_or_rgb( $settings->list_connector_color );
 
-$settings->list_icon_bg_color = UABB_Helper::uabb_colorpicker( $settings, 'list_icon_bg_color', true );
+$settings->list_icon_bg_color = FLBuilderColor::hex_or_rgb( $settings->list_icon_bg_color );
 
 $settings->icon_image_size            = ( '' !== $settings->icon_image_size ) ? $settings->icon_image_size : '75';
 $settings->list_icon_bg_padding       = ( '' !== $settings->list_icon_bg_padding ) ? $settings->list_icon_bg_padding : '10';
@@ -293,7 +293,7 @@ foreach ( $settings->add_list_item as $item ) {
 		?>
 
 			text-align: center;
-			color: #<?php echo esc_attr( uabb_theme_base_color( $item->custom_color ) ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( uabb_theme_base_color( $item->custom_color ) ) ); ?>;
 			font-size:<?php echo esc_attr( $infolist_icon_size ); ?>px;
 			width:<?php echo esc_attr( $settings->icon_image_size + $custom_extra_width ); ?>px;
 			height:<?php echo esc_attr( $settings->icon_image_size + $custom_extra_width ); ?>px;
@@ -697,7 +697,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-info-list .uabb-info-list-left,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-info-list .uabb-info-list-right {
 				text-align: <?php echo esc_attr( $settings->list_alignment_medium ); ?>;
-			}	
+			}
 		<?php } ?>
 	}
 
@@ -706,7 +706,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-info-list .uabb-info-list-left,
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-info-list .uabb-info-list-right {
 				text-align: <?php echo esc_attr( $settings->list_alignment_responsive ); ?>;
-			}	
+			}
 			<?php
 		}
 

@@ -5,8 +5,8 @@
  *   @package UABB Advanced Timeline Module
  */
 
-$settings->arrow_color            = UABB_Helper::uabb_colorpicker( $settings, 'arrow_color', true );
-$settings->arrow_background_color = UABB_Helper::uabb_colorpicker( $settings, 'arrow_background_color', true );
+$settings->arrow_color            = FLBuilderColor::hex_or_rgb( $settings->arrow_color );
+$settings->arrow_background_color = FLBuilderColor::hex_or_rgb( $settings->arrow_background_color );
 
 // CSS for Global settings start.
 	// Layout CSS.

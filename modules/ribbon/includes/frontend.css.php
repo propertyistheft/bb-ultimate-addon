@@ -11,12 +11,12 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->text_color        = UABB_Helper::uabb_colorpicker( $settings, 'text_color' );
-$settings->ribbon_color      = UABB_Helper::uabb_colorpicker( $settings, 'ribbon_color' );
-$settings->text_shadow_color = UABB_Helper::uabb_colorpicker( $settings, 'text_shadow_color' );
-$settings->icon_color        = UABB_Helper::uabb_colorpicker( $settings, 'icon_color' );
-$settings->fold_color        = UABB_Helper::uabb_colorpicker( $settings, 'fold_color' );
-$settings->end_color         = UABB_Helper::uabb_colorpicker( $settings, 'end_color' );
+$settings->text_color        = FLBuilderColor::hex_or_rgb( $settings->text_color );
+$settings->ribbon_color      = FLBuilderColor::hex_or_rgb( $settings->ribbon_color );
+$settings->text_shadow_color = FLBuilderColor::hex_or_rgb( $settings->text_shadow_color );
+$settings->icon_color        = FLBuilderColor::hex_or_rgb( $settings->icon_color );
+$settings->fold_color        = FLBuilderColor::hex_or_rgb( $settings->fold_color );
+$settings->end_color         = FLBuilderColor::hex_or_rgb( $settings->end_color );
 
 $settings->icon_color = uabb_theme_text_color( $settings->icon_color );
 ?>
@@ -55,7 +55,7 @@ $settings->icon_color = uabb_theme_text_color( $settings->icon_color );
 		/*background: <?php echo ( '' !== uabb_theme_base_color( $settings->ribbon_color ) ) ? esc_attr( uabb_theme_base_color( $settings->ribbon_color ) ) : '#f7f7f7'; ?>;*/
 
 		<?php if ( 'yes' === $converted || isset( $settings->text_font_size_unit ) && '' !== $settings->text_font_size_unit ) { ?>
-			font-size: <?php echo esc_attr( $settings->text_font_size_unit ); ?>px;     
+			font-size: <?php echo esc_attr( $settings->text_font_size_unit ); ?>px;
 		<?php } elseif ( isset( $settings->text_font_size_unit ) && '' === $settings->text_font_size_unit && isset( $settings->text_font_size['desktop'] ) && '' !== $settings->text_font_size['desktop'] ) { ?>
 			font-size: <?php echo esc_attr( $settings->text_font_size['desktop'] ); ?>px;
 		<?php } ?>
@@ -65,7 +65,7 @@ $settings->icon_color = uabb_theme_text_color( $settings->icon_color );
 		<?php } ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->text_line_height_unit ) && '' !== $settings->text_line_height_unit ) { ?>
-			line-height: <?php echo esc_attr( $settings->text_line_height_unit ); ?>em; 
+			line-height: <?php echo esc_attr( $settings->text_line_height_unit ); ?>em;
 		<?php } elseif ( isset( $settings->text_line_height_unit ) && '' === $settings->text_line_height_unit && isset( $settings->text_line_height['desktop'] ) && '' !== $settings->text_line_height['desktop'] ) { ?>
 			line-height: <?php echo esc_attr( $settings->text_line_height['desktop'] ); ?>px;
 		<?php } ?>
@@ -526,10 +526,10 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 					<?php } ?>
 
 					<?php if ( 'yes' === $converted || isset( $settings->text_line_height_unit_medium ) && '' !== $settings->text_line_height_unit_medium ) { ?>
-						line-height: <?php echo esc_attr( $settings->text_line_height_unit_medium ); ?>em;  
+						line-height: <?php echo esc_attr( $settings->text_line_height_unit_medium ); ?>em;
 					<?php } elseif ( isset( $settings->text_line_height_unit_medium ) && '' === $settings->text_line_height_unit_medium && isset( $settings->text_line_height['medium'] ) && '' !== $settings->text_line_height['medium'] ) { ?>
 						line-height: <?php echo esc_attr( $settings->text_line_height['medium'] ); ?>px;
-					<?php } ?>   
+					<?php } ?>
 				}
 					<?php
 				}
@@ -540,7 +540,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-ribbon-wrap .uabb-ribbon {
 
 				<?php if ( 'yes' === $converted || isset( $settings->text_font_size_unit_responsive ) && '' !== $settings->text_font_size_unit_responsive ) { ?>
-					font-size: <?php echo esc_attr( $settings->text_font_size_unit_responsive ); ?>px;  
+					font-size: <?php echo esc_attr( $settings->text_font_size_unit_responsive ); ?>px;
 				<?php } elseif ( isset( $settings->text_font_size_unit_responsive ) && '' === $settings->text_font_size_unit_responsive && isset( $settings->text_font_size['small'] ) && '' !== $settings->text_font_size['small'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->text_font_size['small'] ); ?>px;
 				<?php } ?>
@@ -553,7 +553,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 					line-height: <?php echo esc_attr( $settings->text_line_height_unit_responsive ); ?>em;
 				<?php } elseif ( isset( $settings->text_line_height_unit_responsive ) && '' === $settings->text_line_height_unit_responsive && isset( $settings->text_line_height['small'] ) && '' !== $settings->text_line_height['small'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->text_line_height['small'] ); ?>px;
-				<?php } ?> 
+				<?php } ?>
 			}
 		}
 		<?php

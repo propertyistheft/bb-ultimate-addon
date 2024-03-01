@@ -7,16 +7,16 @@
 
 	$version_bb_check = UABB_Compatibility::$version_bb_check;
 
-	$settings->color                   = UABB_Helper::uabb_colorpicker( $settings, 'color' );
-	$settings->toc_bg_color            = UABB_Helper::uabb_colorpicker( $settings, 'toc_bg_color', true );
-	$settings->toc_content_color       = UABB_Helper::uabb_colorpicker( $settings, 'toc_content_color', true );
-	$settings->toc_content_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'toc_content_hover_color', true );
-	$settings->toc_toggle_color        = UABB_Helper::uabb_colorpicker( $settings, 'toc_toggle_color', true );
-	$settings->toc_toggle_hover_color  = UABB_Helper::uabb_colorpicker( $settings, 'toc_toggle_hover_color', true );
-	$settings->toggle_bg_color         = UABB_Helper::uabb_colorpicker( $settings, 'toggle_bg_color', true );
-	$settings->toggle_bg_hover_color   = UABB_Helper::uabb_colorpicker( $settings, 'toggle_bg_hover_color', true );
-	$settings->scroll_icon_color       = UABB_Helper::uabb_colorpicker( $settings, 'scroll_icon_color', true );
-	$settings->scroll_bg_color         = UABB_Helper::uabb_colorpicker( $settings, 'scroll_bg_color', true );
+	$settings->color                   = FLBuilderColor::hex_or_rgb( $settings->color );
+	$settings->toc_bg_color            = FLBuilderColor::hex_or_rgb( $settings->toc_bg_color );
+	$settings->toc_content_color       = FLBuilderColor::hex_or_rgb( $settings->toc_content_color );
+	$settings->toc_content_hover_color = FLBuilderColor::hex_or_rgb( $settings->toc_content_hover_color );
+	$settings->toc_toggle_color        = FLBuilderColor::hex_or_rgb( $settings->toc_toggle_color );
+	$settings->toc_toggle_hover_color  = FLBuilderColor::hex_or_rgb( $settings->toc_toggle_hover_color );
+	$settings->toggle_bg_color         = FLBuilderColor::hex_or_rgb( $settings->toggle_bg_color );
+	$settings->toggle_bg_hover_color   = FLBuilderColor::hex_or_rgb( $settings->toggle_bg_hover_color );
+	$settings->scroll_icon_color       = FLBuilderColor::hex_or_rgb( $settings->scroll_icon_color );
+	$settings->scroll_bg_color         = FLBuilderColor::hex_or_rgb( $settings->scroll_bg_color );
 
 	$settings->toc_margin_bottom       = ( '' !== trim( $settings->toc_margin_bottom ) ) ? $settings->toc_margin_bottom : '';
 	$settings->space_between_contents  = ( '' !== trim( $settings->space_between_contents ) ) ? $settings->space_between_contents : '';

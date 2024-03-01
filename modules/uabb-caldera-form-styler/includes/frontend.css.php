@@ -5,36 +5,36 @@
  *   @package UABB Caldera Forms Styler Module
  */
 
-	$settings->form_title_color              = UABB_Helper::uabb_colorpicker( $settings, 'form_title_color', true );
-	$settings->form_desc_color               = UABB_Helper::uabb_colorpicker( $settings, 'form_desc_color', true );
-	$settings->field_bg_color                = UABB_Helper::uabb_colorpicker( $settings, 'field_bg_color', true );
-	$settings->fields_border_active_color    = UABB_Helper::uabb_colorpicker( $settings, 'fields_border_active_color', true );
-	$settings->label_color                   = UABB_Helper::uabb_colorpicker( $settings, 'label_color', true );
-	$settings->placeholder_color             = UABB_Helper::uabb_colorpicker( $settings, 'placeholder_color', true );
-	$settings->field_desc_color              = UABB_Helper::uabb_colorpicker( $settings, 'field_desc_color', true );
-	$settings->required_asterisk_color       = UABB_Helper::uabb_colorpicker( $settings, 'required_asterisk_color', true );
-	$settings->button_bg_color               = UABB_Helper::uabb_colorpicker( $settings, 'button_bg_color', true );
-	$settings->button_bg_hover_color         = UABB_Helper::uabb_colorpicker( $settings, 'button_bg_hover_color', true );
-	$settings->btn_text_color                = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_color', true );
-	$settings->btn_text_hover_color          = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_hover_color', true );
-	$settings->button_border_hover_color     = UABB_Helper::uabb_colorpicker( $settings, 'button_border_hover_color', true );
-	$settings->error_msg_color               = UABB_Helper::uabb_colorpicker( $settings, 'error_msg_color', true );
-	$settings->error_msg_bg_color            = UABB_Helper::uabb_colorpicker( $settings, 'error_msg_bg_color', true );
-	$settings->error_label_color             = UABB_Helper::uabb_colorpicker( $settings, 'error_label_color', true );
-	$settings->error_highlight_border_color  = UABB_Helper::uabb_colorpicker( $settings, 'error_highlight_border_color', true );
-	$settings->success_msg_color             = UABB_Helper::uabb_colorpicker( $settings, 'success_msg_color', true );
-	$settings->success_bg_color              = UABB_Helper::uabb_colorpicker( $settings, 'success_bg_color', true );
-	$settings->form_bg_color                 = UABB_Helper::uabb_colorpicker( $settings, 'form_bg_color', true );
-	$settings->checkbox_radio_bgcolor        = UABB_Helper::uabb_colorpicker( $settings, 'checkbox_radio_bgcolor', true );
-	$settings->checkbox_radio_selected_color = UABB_Helper::uabb_colorpicker( $settings, 'checkbox_radio_selected_color', true );
-	$settings->checkbox_radio_text_color     = UABB_Helper::uabb_colorpicker( $settings, 'checkbox_radio_text_color', true );
-	$settings->star_icon_selected_color      = UABB_Helper::uabb_colorpicker( $settings, 'star_icon_selected_color', true );
-	$settings->star_icon_border_color        = UABB_Helper::uabb_colorpicker( $settings, 'star_icon_border_color', true );
+	$settings->form_title_color              = FLBuilderColor::hex_or_rgb( $settings->form_title_color );
+	$settings->form_desc_color               = FLBuilderColor::hex_or_rgb( $settings->form_desc_color );
+	$settings->field_bg_color                = FLBuilderColor::hex_or_rgb( $settings->field_bg_color );
+	$settings->fields_border_active_color    = FLBuilderColor::hex_or_rgb( $settings->fields_border_active_color );
+	$settings->label_color                   = FLBuilderColor::hex_or_rgb( $settings->label_color );
+	$settings->placeholder_color             = FLBuilderColor::hex_or_rgb( $settings->placeholder_color );
+	$settings->field_desc_color              = FLBuilderColor::hex_or_rgb( $settings->field_desc_color );
+	$settings->required_asterisk_color       = FLBuilderColor::hex_or_rgb( $settings->required_asterisk_color );
+	$settings->button_bg_color               = FLBuilderColor::hex_or_rgb( $settings->button_bg_color );
+	$settings->button_bg_hover_color         = FLBuilderColor::hex_or_rgb( $settings->button_bg_hover_color );
+	$settings->btn_text_color                = FLBuilderColor::hex_or_rgb( $settings->btn_text_color );
+	$settings->btn_text_hover_color          = FLBuilderColor::hex_or_rgb( $settings->btn_text_hover_color );
+	$settings->button_border_hover_color     = FLBuilderColor::hex_or_rgb( $settings->button_border_hover_color );
+	$settings->error_msg_color               = FLBuilderColor::hex_or_rgb( $settings->error_msg_color );
+	$settings->error_msg_bg_color            = FLBuilderColor::hex_or_rgb( $settings->error_msg_bg_color );
+	$settings->error_label_color             = FLBuilderColor::hex_or_rgb( $settings->error_label_color );
+	$settings->error_highlight_border_color  = FLBuilderColor::hex_or_rgb( $settings->error_highlight_border_color );
+	$settings->success_msg_color             = FLBuilderColor::hex_or_rgb( $settings->success_msg_color );
+	$settings->success_bg_color              = FLBuilderColor::hex_or_rgb( $settings->success_bg_color );
+	$settings->form_bg_color                 = FLBuilderColor::hex_or_rgb( $settings->form_bg_color );
+	$settings->checkbox_radio_bgcolor        = FLBuilderColor::hex_or_rgb( $settings->checkbox_radio_bgcolor );
+	$settings->checkbox_radio_selected_color = FLBuilderColor::hex_or_rgb( $settings->checkbox_radio_selected_color );
+	$settings->checkbox_radio_text_color     = FLBuilderColor::hex_or_rgb( $settings->checkbox_radio_text_color );
+	$settings->star_icon_selected_color      = FLBuilderColor::hex_or_rgb( $settings->star_icon_selected_color );
+	$settings->star_icon_border_color        = FLBuilderColor::hex_or_rgb( $settings->star_icon_border_color );
 
 
 	// Button Background Gradient.
 if ( ! empty( $settings->button_bg_color ) ) {
-	$bg_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->button_bg_color ), 30, 'lighten' );
+	$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->button_bg_color, 30, 'lighten' ) );
 }
 
 if ( method_exists( 'FLBuilder', 'fa5_pro_enabled' ) ) {
@@ -193,29 +193,29 @@ if ( isset( $settings->caf_title_desc_align ) ) {
 if ( isset( $settings->field_bg_color ) ) {
 	?>
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid .form-control, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="text"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="password"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="email"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="url"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="date"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="month"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="time"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="datetime"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="datetime-local"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="week"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="number"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="search"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="tel"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="color"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form select, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form textarea, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .trumbowyg-box, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .trumbowyg-editor, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid .form-control .ccselect2-choice, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid form input[type=checkbox], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid form input[type=radio] + span:before, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form input[type=file] { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid .form-control,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="text"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="password"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="email"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="url"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="date"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="month"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="time"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="datetime"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="datetime-local"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="week"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="number"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="search"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="tel"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="color"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form select,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form textarea,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .trumbowyg-box,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .trumbowyg-editor,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid .form-control .ccselect2-choice,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid form input[type=checkbox],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid form input[type=radio] + span:before,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form input[type=file] {
 
 	<?php
 	echo ( ! empty( $settings->field_bg_color ) ) ? 'background:' . esc_attr( $settings->field_bg_color ) . ';' : '';
@@ -263,7 +263,7 @@ if ( isset( $settings->fields_border_active_color ) && '' !== $settings->fields_
 	}
 <?php } ?>
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form label { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form label {
 	<?php
 
 	if ( isset( $settings->label_color ) ) {
@@ -303,7 +303,7 @@ if ( isset( $settings->fields_border_active_color ) && '' !== $settings->fields_
 	}
 <?php } ?>
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .form-group { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .form-group {
 	<?php
 
 	if ( isset( $settings->form_fields_spacing ) ) {
@@ -314,7 +314,7 @@ if ( isset( $settings->fields_border_active_color ) && '' !== $settings->fields_
 	?>
 }
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form label.control-label { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form label.control-label {
 	<?php
 
 	if ( isset( $settings->label_bottom_spacing ) ) {
@@ -325,7 +325,7 @@ if ( isset( $settings->fields_border_active_color ) && '' !== $settings->fields_
 	?>
 }
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .help-block { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .help-block {
 	<?php
 
 	if ( isset( $settings->desc_top_spacing ) ) {
@@ -341,29 +341,29 @@ if ( isset( $settings->fields_border_active_color ) && '' !== $settings->fields_
 if ( isset( $settings->placeholder_color ) ) {
 	?>
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form input.form-control, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="text"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="password"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="email"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="url"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="date"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="month"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="time"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="file"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="datetime"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="datetime-local"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="week"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="number"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="search"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="tel"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="color"], 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form select, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form textarea, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid form input[type=checkbox]:checked:after, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .ccselect2-chosen, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form .trumbowyg-editor, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input::placeholder, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form textarea::placeholder { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form input.form-control,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="text"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="password"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="email"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="url"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="date"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="month"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="time"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="file"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="datetime"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="datetime-local"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="week"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="number"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="search"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="tel"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input[type="color"],
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form select,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form textarea,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid form input[type=checkbox]:checked:after,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .ccselect2-chosen,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form .trumbowyg-editor,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form input::placeholder,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form form textarea::placeholder {
 	<?php
 
 	echo ( ! empty( $settings->placeholder_color ) ) ? 'color:' . esc_attr( $settings->placeholder_color ) . ';' : '';
@@ -384,22 +384,22 @@ if ( isset( $settings->placeholder_color ) ) {
 	?>
 }
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .raty-cancel,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .raty-heart-off, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .raty-heart-on, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .raty-face-off, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .raty-face-on, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .raty-dot-off, 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .raty-heart-off,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .raty-heart-on,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .raty-face-off,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .raty-face-on,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .raty-dot-off,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .raty-dot-on {
 	<?php
 
 	echo ( ! empty( $settings->placeholder_color ) ) ? 'color:' . esc_attr( $settings->placeholder_color ) . '!important;' : '';
 	?>
 }
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .cf-toggle-switch .btn-success.active, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .cf-toggle-switch .btn-success:active, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .cf-toggle-switch .btn-success:focus, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .cf-toggle-switch .btn-success:hover, 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .cf-toggle-switch .open .dropdown-toggle.btn-success, 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .cf-toggle-switch .btn-success.active,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .cf-toggle-switch .btn-success:active,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .cf-toggle-switch .btn-success:focus,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .cf-toggle-switch .btn-success:hover,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .cf-toggle-switch .open .dropdown-toggle.btn-success,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .cf-toggle-switch .btn-success {
 	<?php
 
@@ -425,7 +425,7 @@ if ( isset( $settings->placeholder_color ) ) {
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .field_required,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-forms-consent-field span { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-forms-consent-field span {
 	<?php
 
 	if ( isset( $settings->required_asterisk_color ) ) {
@@ -436,7 +436,7 @@ if ( isset( $settings->placeholder_color ) ) {
 	?>
 }
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid input[type="submit"], .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid .btn-default, .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid .cf-uploader-trigger { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid input[type="submit"], .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid .btn-default, .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .caldera-grid .cf-uploader-trigger {
 	<?php
 	if ( 'color' === esc_attr( $settings->button_bg_type ) ) {
 		if ( isset( $settings->button_bg_color ) ) {
@@ -493,7 +493,7 @@ if ( isset( $settings->placeholder_color ) ) {
 	?>
 }
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .has-error .caldera_ajax_error_block, 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .has-error .caldera_ajax_error_block,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .has-error .caldera_ajax_error_block {
 	<?php
 
@@ -585,7 +585,7 @@ if ( isset( $settings->checkbox_radio_size ) ) {
 	?>
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .caldera-grid .checkbox input[type=checkbox],
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .caldera-grid .checkbox-inline input[type=checkbox],
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .caldera-grid .radio input[type=radio] + span:before, 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .caldera-grid .radio input[type=radio] + span:before,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .caldera-grid .radio-inline input[type=radio] + span:before {
 	<?php
 	echo ( '' !== esc_attr( $settings->checkbox_radio_size ) ) ? 'height:' . esc_attr( $settings->checkbox_radio_size ) . 'px;' : '';
@@ -603,14 +603,14 @@ if ( isset( $settings->checkbox_radio_size ) ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .caldera-grid .radio input[type=radio] + span:before,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .radio-inline input[type=radio] + span:before,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .checkbox input[type=checkbox],
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .checkbox-inline input[type=checkbox] {	
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .checkbox-inline input[type=checkbox] {
 	<?php
 	echo ( '' !== esc_attr( $settings->checkbox_radio_bgcolor ) ) ? 'background-color:' . esc_attr( $settings->checkbox_radio_bgcolor ) . ';' : '';
 	?>
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .caldera-grid form .checkbox input[type=checkbox]:after,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .checkbox-inline input[type=checkbox]:after {	
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .checkbox-inline input[type=checkbox]:after {
 	<?php
 	echo ( '' !== esc_attr( $settings->checkbox_radio_selected_color ) ) ? 'color:' . esc_attr( $settings->checkbox_radio_selected_color ) . ';' : '';
 	?>
@@ -626,7 +626,7 @@ if ( isset( $settings->checkbox_radio_size ) ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .checkbox label,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom .radio label,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom label.checkbox-inline, 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom label.checkbox-inline,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form.uabb-caf-radio-custom label.radio-inline {
 	<?php
 	echo ( '' !== esc_attr( $settings->checkbox_radio_text_color ) ) ? 'color:' . esc_attr( $settings->checkbox_radio_text_color ) . ';' : '';
@@ -806,7 +806,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 			echo ( ! empty( $settings->form_fields_align_medium ) ) ? 'text-align-last:' . esc_attr( $settings->form_fields_align_medium ) . ';' : '';
 		?>
 		}
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .form-group { 
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .form-group {
 		<?php
 
 		if ( isset( $settings->form_fields_spacing_medium ) ) {
@@ -815,7 +815,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 		}
 		?>
 		}
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form label.control-label { 
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form label.control-label {
 		<?php
 
 		if ( isset( $settings->label_bottom_spacing_medium ) ) {
@@ -825,7 +825,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 		}
 		?>
 		}
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .help-block { 
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .help-block {
 		<?php
 
 		if ( isset( $settings->desc_top_spacing_medium ) ) {
@@ -876,7 +876,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 			echo ( ! empty( $settings->form_fields_align_responsive ) ) ? 'text-align-last:' . esc_attr( $settings->form_fields_align_responsive ) . ';' : '';
 			?>
 		}
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .form-group { 
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .form-group {
 			<?php
 
 			if ( isset( $settings->form_fields_spacing_responsive ) ) {
@@ -885,7 +885,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 			}
 			?>
 		}
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form label.control-label { 
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form label.control-label {
 			<?php
 
 			if ( isset( $settings->label_bottom_spacing_responsive ) ) {
@@ -895,7 +895,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 			}
 			?>
 		}
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .help-block { 
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-caf-form .help-block {
 			<?php
 
 			if ( isset( $settings->desc_top_spacing_responsive ) ) {

@@ -7,7 +7,7 @@
 
 ?>
 <?php
-	$settings->style_bg_color = UABB_Helper::uabb_colorpicker( $settings, 'style_bg_color', true );
+	$settings->style_bg_color = FLBuilderColor::hex_or_rgb( $settings->style_bg_color );
 ?>
 .fl-node-<?php echo esc_attr( $id ); ?> {
 	width: 100%;
@@ -45,11 +45,11 @@
 	border-radius: calc( 50% );
 	<?php endif; ?>
 }
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-photo-caption { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-photo-caption {
 	<?php if ( 'hover' === $settings->show_caption && ( 'circle' === $settings->style || 'custom' === $settings->style ) ) : ?>
 	top: 50%;
 	bottom: auto;
-	transform: translateY(-50%);    
+	transform: translateY(-50%);
 	<?php endif; ?>
 }
 
@@ -66,7 +66,7 @@
 		opacity: <?php echo esc_attr( ( '' !== $settings->opacity ) ? $settings->opacity / 100 : 100 ); ?>;
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-photo-content .uabb-photo-img:hover {
-		opacity: <?php echo esc_attr( ( '' !== $settings->hover_opacity ) ? $settings->hover_opacity / 100 : 100 ); ?>; 
+		opacity: <?php echo esc_attr( ( '' !== $settings->hover_opacity ) ? $settings->hover_opacity / 100 : 100 ); ?>;
 	}
 <?php elseif ( 'style2' === $settings->hover_effect ) : ?>
 	/*.fl-node-<?php echo esc_attr( $id ); ?> .uabb-photo-content .uabb-photo-img:hover {

@@ -197,6 +197,10 @@ class ModalPopupModule extends FLBuilderModule {
 				$params .= '&h=' . $h_param[1];
 			}
 
+			if ( 'yes' === $this->settings->video_autoplay ) {
+				$params .= '&muted=1';
+			}
+
 			$html .= '<div class="uabb-modal-iframe uabb-video-player" data-src="vimeo" data-id="' . $vid_id . '" data-append="' . $params . '" data-thumb="' . $thumb . '"></div>';
 		}
 		$html .= '</div>';

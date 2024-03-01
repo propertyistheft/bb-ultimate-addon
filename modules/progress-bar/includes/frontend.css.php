@@ -8,9 +8,9 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->text_color         = UABB_Helper::uabb_colorpicker( $settings, 'text_color' );
-$settings->number_color       = UABB_Helper::uabb_colorpicker( $settings, 'number_color' );
-$settings->before_after_color = UABB_Helper::uabb_colorpicker( $settings, 'before_after_color' );
+$settings->text_color         = FLBuilderColor::hex_or_rgb( $settings->text_color );
+$settings->number_color       = FLBuilderColor::hex_or_rgb( $settings->number_color );
+$settings->before_after_color = FLBuilderColor::hex_or_rgb( $settings->before_after_color );
 ?>
 
 <?php if ( 'vertical' === $settings->layout || 'circular' === $settings->layout || 'semi-circular' === $settings->layout ) { ?>
@@ -71,7 +71,7 @@ $settings->before_after_color = UABB_Helper::uabb_colorpicker( $settings, 'befor
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-progress-wrap {
 		<?php
 		if ( 'none' !== $settings->border_style ) {
-			$settings->border_color = UABB_Helper::uabb_colorpicker( $settings, 'border_color' );
+			$settings->border_color = FLBuilderColor::hex_or_rgb( $settings->border_color );
 			$border_size            = ( '' !== $settings->border_size ) ? $settings->border_size : '1';
 			echo 'border: ' . esc_attr( $border_size ) . 'px ' . esc_attr( $settings->border_style ) . ' ' . esc_attr( $settings->border_color ) . ';';
 		} else {
@@ -305,8 +305,8 @@ if ( count( $settings->horizontal ) > 0 ) {
 		$tmp = $settings->horizontal;
 		if ( is_object( $tmp[ $i ] ) ) {
 
-			$tmp[ $i ]->background_color = UABB_Helper::uabb_colorpicker( $tmp[ $i ], 'background_color', true );
-			$tmp[ $i ]->gradient_color   = UABB_Helper::uabb_colorpicker( $tmp[ $i ], 'gradient_color', true );
+			$tmp[ $i ]->background_color = FLBuilderColor::hex_or_rgb( $tmp[ $i ]->background_color );
+			$tmp[ $i ]->gradient_color   = FLBuilderColor::hex_or_rgb( $tmp[ $i ]->gradient_color );
 			?>
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-progress-bar-<?php echo esc_attr( $i ); ?> .uabb-progress-wrap {
 	background: <?php echo esc_attr( $tmp[ $i ]->background_color ); ?>;

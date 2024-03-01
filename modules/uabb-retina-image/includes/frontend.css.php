@@ -7,9 +7,9 @@
 
 	$version_bb_check = UABB_Compatibility::$version_bb_check;
 
-	$settings->color          = UABB_Helper::uabb_colorpicker( $settings, 'color' );
-	$settings->bg_color       = UABB_Helper::uabb_colorpicker( $settings, 'bg_color' );
-	$settings->style_bg_color = UABB_Helper::uabb_colorpicker( $settings, 'style_bg_color', true );
+	$settings->color          = FLBuilderColor::hex_or_rgb( $settings->color );
+	$settings->bg_color       = FLBuilderColor::hex_or_rgb( $settings->bg_color );
+	$settings->style_bg_color = FLBuilderColor::hex_or_rgb( $settings->style_bg_color );
 
 	$settings->caption_margin_top    = ( '' !== trim( $settings->caption_margin_top ) ) ? $settings->caption_margin_top : '0';
 	$settings->caption_margin_bottom = ( '' !== trim( $settings->caption_margin_bottom ) ) ? $settings->caption_margin_bottom : '15';
@@ -152,12 +152,12 @@
 <?php if ( 'opacity' === $settings->hover_effect ) { ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-retina-img-content .uabb-retina-img {
 		<?php if ( isset( $settings->opacity ) ) { ?>
-			opacity: <?php echo esc_attr( ( '' !== $settings->opacity ) ? $settings->opacity / 100 : 100 ); ?>; 
+			opacity: <?php echo esc_attr( ( '' !== $settings->opacity ) ? $settings->opacity / 100 : 100 ); ?>;
 		<?php } ?>
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-retina-img-content .uabb-retina-img:hover {
 		<?php if ( isset( $settings->hover_opacity ) ) { ?>
-			opacity: <?php echo esc_attr( ( '' !== $settings->hover_opacity ) ? $settings->hover_opacity / 100 : 100 ); ?>; 
+			opacity: <?php echo esc_attr( ( '' !== $settings->hover_opacity ) ? $settings->hover_opacity / 100 : 100 ); ?>;
 		<?php } ?>
 	}
 	<?php

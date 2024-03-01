@@ -11,22 +11,22 @@
 	$version_bb_check = UABB_Compatibility::$version_bb_check;
 	$converted        = UABB_Compatibility::$uabb_migration;
 
-	$settings->input_text_color           = UABB_Helper::uabb_colorpicker( $settings, 'input_text_color' );
-	$settings->input_background_color     = UABB_Helper::uabb_colorpicker( $settings, 'input_background_color', true );
-	$settings->input_border_active_color  = UABB_Helper::uabb_colorpicker( $settings, 'input_border_active_color' );
-	$settings->btn_text_color             = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_color' );
-	$settings->btn_text_hover_color       = UABB_Helper::uabb_colorpicker( $settings, 'btn_text_hover_color' );
-	$settings->btn_background_color       = UABB_Helper::uabb_colorpicker( $settings, 'btn_background_color', true );
-	$settings->btn_background_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'btn_background_hover_color', true );
+	$settings->input_text_color           = FLBuilderColor::hex_or_rgb( $settings->input_text_color );
+	$settings->input_background_color     = FLBuilderColor::hex_or_rgb( $settings->input_background_color );
+	$settings->input_border_active_color  = FLBuilderColor::hex_or_rgb( $settings->input_border_active_color );
+	$settings->btn_text_color             = FLBuilderColor::hex_or_rgb( $settings->btn_text_color );
+	$settings->btn_text_hover_color       = FLBuilderColor::hex_or_rgb( $settings->btn_text_hover_color );
+	$settings->btn_background_color       = FLBuilderColor::hex_or_rgb( $settings->btn_background_color );
+	$settings->btn_background_hover_color = FLBuilderColor::hex_or_rgb( $settings->btn_background_hover_color );
 
-	$settings->label_color          = UABB_Helper::uabb_colorpicker( $settings, 'label_color' );
-	$settings->form_bg_color        = UABB_Helper::uabb_colorpicker( $settings, 'form_bg_color', true );
-	$settings->invalid_msg_color    = UABB_Helper::uabb_colorpicker( $settings, 'invalid_msg_color' );
-	$settings->success_msg_color    = UABB_Helper::uabb_colorpicker( $settings, 'success_msg_color' );
-	$settings->error_msg_color      = UABB_Helper::uabb_colorpicker( $settings, 'error_msg_color' );
-	$settings->invalid_border_color = UABB_Helper::uabb_colorpicker( $settings, 'invalid_border_color' );
-	$settings->checkbox_color       = UABB_Helper::uabb_colorpicker( $settings, 'checkbox_color' );
-	$settings->terms_color          = UABB_Helper::uabb_colorpicker( $settings, 'terms_color' );
+	$settings->label_color          = FLBuilderColor::hex_or_rgb( $settings->label_color );
+	$settings->form_bg_color        = FLBuilderColor::hex_or_rgb( $settings->form_bg_color );
+	$settings->invalid_msg_color    = FLBuilderColor::hex_or_rgb( $settings->invalid_msg_color );
+	$settings->success_msg_color    = FLBuilderColor::hex_or_rgb( $settings->success_msg_color );
+	$settings->error_msg_color      = FLBuilderColor::hex_or_rgb( $settings->error_msg_color );
+	$settings->invalid_border_color = FLBuilderColor::hex_or_rgb( $settings->invalid_border_color );
+	$settings->checkbox_color       = FLBuilderColor::hex_or_rgb( $settings->checkbox_color );
+	$settings->terms_color          = FLBuilderColor::hex_or_rgb( $settings->terms_color );
 ?>
 .fl-node-<?php echo esc_attr( $id ); ?> {
 	width: 100%;
@@ -137,7 +137,7 @@
 <?php
 if ( ! $version_bb_check ) {
 
-	$settings->input_border_color = UABB_Helper::uabb_colorpicker( $settings, 'input_border_color' );
+	$settings->input_border_color = FLBuilderColor::hex_or_rgb( $settings->input_border_color );
 
 	$settings->input_border_width = ( '' !== $settings->input_border_width ) ? $settings->input_border_width : '1';
 	?>
@@ -269,10 +269,10 @@ if ( 'transparent' === $settings->btn_style ) {
 // Background Gradient.
 if ( 'gradient' === $settings->btn_style ) {
 	if ( ! empty( $settings->btn_background_color ) ) {
-		$bg_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->btn_background_color ), 30, 'lighten' );
+		$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->btn_background_color, 30, 'lighten' ) );
 	}
 	if ( ! empty( $settings->btn_background_hover_color ) ) {
-		$bg_hover_grad_start = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->btn_background_hover_color ), 30, 'lighten' );
+		$bg_hover_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->btn_background_hover_color, 30, 'lighten' ) );
 	}
 }
 
@@ -313,7 +313,7 @@ if ( 'default' === $settings->btn_style ) {
 	}
 	?>
 	.fl-builder-content .fl-node-<?php echo esc_attr( $id ); ?> .uabb-module-content.uabb-contact-form .uabb-contact-form-submit:hover {
-		<?php echo ( '' !== $settings->border_hover_color ) ? 'border-color:#' . esc_attr( $settings->border_hover_color ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_hover_color( '' ) ) . ';'; ?>
+		<?php echo ( '' !== $settings->border_hover_color ) ? 'border-color:' . esc_attr( FLBuilderColor::hex_or_rgb( $settings->border_hover_color ) ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_hover_color( '' ) ) . ';'; ?>
 	}
 <?php } ?>
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-contact-form .uabb-contact-form-submit i,
@@ -362,7 +362,7 @@ if ( 'full' !== $settings->btn_align ) {
 		-moz-transition: none;
 				transition: none;
 		background: <?php echo esc_attr( uabb_theme_base_color( $settings->btn_background_color ) ); ?>;
-		<?php $shadow_color = '#' . FLBuilderColor::adjust_brightness( uabb_parse_color_to_hex( $settings->btn_background_color ), 30, 'darken' ); ?>
+		<?php $shadow_color = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->btn_background_color, 30, 'darken' ) ); ?>
 		box-shadow: 0 6px <?php echo esc_attr( $shadow_color ); ?>;
 	<?php } ?>
 	<?php if ( 'full' === $settings->btn_align ) { ?>
@@ -742,10 +742,10 @@ $checked_width = $font_size - intval( $settings->checkbox_border_width );
 	content: '';
 	<?php if ( isset( $settings->checkbox_bgcolor ) && '' !== $settings->checkbox_bgcolor ) : ?>
 		transition: background-color 300ms ease;
-	background-color: <?php echo esc_attr( ( false === strpos( $settings->checkbox_bgcolor, 'rgb' ) ) ? '#' . $settings->checkbox_bgcolor : $settings->checkbox_bgcolor ); ?>;
+	background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->checkbox_bgcolor ) ); ?>;
 	<?php endif; ?>
 	border-width: <?php echo esc_attr( $settings->checkbox_border_width ); ?>px;
-	border-color: #<?php echo esc_attr( $settings->checkbox_border_color ); ?>;
+	border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->checkbox_border_color ) ); ?>;
 	vertical-align: middle;
 	width: <?php echo esc_attr( $settings->checkbox_size ); ?>px;
 	height: <?php echo esc_attr( $settings->checkbox_size ); ?>px;
@@ -763,7 +763,7 @@ $checked_width = $font_size - intval( $settings->checkbox_border_width );
 	font-size: <?php echo esc_attr( $checked_width ); ?>px;
 	line-height: <?php echo esc_attr( $checked_width ); ?>px;
 	padding-top: 2px;
-	color: #<?php echo esc_attr( $settings->checkbox_selected_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->checkbox_selected_color ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-contact-form .uabb-input-group-wrap input[type="checkbox"] + span:before {

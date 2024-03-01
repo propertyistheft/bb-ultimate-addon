@@ -8,22 +8,22 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 
 
-$settings->faq_title_color       = UABB_Helper::uabb_colorpicker( $settings, 'faq_title_color' );
-$settings->faq_title_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'faq_title_hover_color' );
+$settings->faq_title_color       = FLBuilderColor::hex_or_rgb( $settings->faq_title_color );
+$settings->faq_title_hover_color = FLBuilderColor::hex_or_rgb( $settings->faq_title_hover_color );
 
-$settings->faq_title_bg_color       = UABB_Helper::uabb_colorpicker( $settings, 'faq_title_bg_color', true );
-$settings->faq_title_bg_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'faq_title_bg_hover_color', true );
-$settings->icon_color               = UABB_Helper::uabb_colorpicker( $settings, 'icon_color' );
-$settings->icon_hover_color         = UABB_Helper::uabb_colorpicker( $settings, 'icon_hover_color' );
-$settings->answers_color            = UABB_Helper::uabb_colorpicker( $settings, 'answers_color' );
-$settings->answers_bg_color         = UABB_Helper::uabb_colorpicker( $settings, 'answers_bg_color', true );
-$settings->style_background_col     = UABB_Helper::uabb_colorpicker( $settings, 'style_background_col', true );
+$settings->faq_title_bg_color       = FLBuilderColor::hex_or_rgb( $settings->faq_title_bg_color );
+$settings->faq_title_bg_hover_color = FLBuilderColor::hex_or_rgb( $settings->faq_title_bg_hover_color );
+$settings->icon_color               = FLBuilderColor::hex_or_rgb( $settings->icon_color );
+$settings->icon_hover_color         = FLBuilderColor::hex_or_rgb( $settings->icon_hover_color );
+$settings->answers_color            = FLBuilderColor::hex_or_rgb( $settings->answers_color );
+$settings->answers_bg_color         = FLBuilderColor::hex_or_rgb( $settings->answers_bg_color );
+$settings->style_background_col     = FLBuilderColor::hex_or_rgb( $settings->style_background_col );
 $settings->faq_item_margin          = ( '' !== esc_attr( $settings->faq_item_margin ) ) ? esc_attr( $settings->faq_item_margin ) : '10';
 $settings->icon_size                = ( '' !== esc_attr( $settings->icon_size ) ) ? esc_attr( $settings->icon_size ) : '16';
 
 if ( ! $version_bb_check ) {
-	$settings->content_border_color = UABB_Helper::uabb_colorpicker( $settings, 'content_border_color' );
-	$settings->title_border_color   = UABB_Helper::uabb_colorpicker( $settings, 'title_border_color' );
+	$settings->content_border_color = FLBuilderColor::hex_or_rgb( $settings->content_border_color );
+	$settings->title_border_color   = FLBuilderColor::hex_or_rgb( $settings->title_border_color );
 }
 ?>
 <?php if ( isset( $settings->style_background_col ) ) { ?>

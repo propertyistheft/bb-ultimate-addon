@@ -706,12 +706,14 @@
 .uabb-mini-cart-content ul.cart_list li .quantity .plus {
 	border-left: none;
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button{
+input::-webkit-outer-spin-button{
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 	margin: 0;
+} 
+input::-webkit-inner-spin-button{
+	cursor: pointer;
 }
 .ast-mini-cart-price-wrap {
     float: right;

@@ -23,17 +23,17 @@ if ( isset( $settings->before_label_text ) && '' !== $settings->before_label_tex
 <?php } ?>
 
 <?php
-$settings->handle_color          = UABB_Helper::uabb_colorpicker( $settings, 'handle_color' );
-$settings->handle_triangle_color = UABB_Helper::uabb_colorpicker( $settings, 'handle_triangle_color' );
+$settings->handle_color          = FLBuilderColor::hex_or_rgb( $settings->handle_color );
+$settings->handle_triangle_color = FLBuilderColor::hex_or_rgb( $settings->handle_triangle_color );
 $settings->handle_color          = ( '' !== $settings->handle_color ) ? $settings->handle_color : '#fff';
 $settings->handle_triangle_color = ( '' !== $settings->handle_triangle_color ) ? $settings->handle_triangle_color : $settings->handle_color;
 
 
-$settings->slider_label_back_color = UABB_Helper::uabb_colorpicker( $settings, 'slider_label_back_color' );
-$settings->slider_color            = UABB_Helper::uabb_colorpicker( $settings, 'slider_color' );
-$settings->handle_back_overlay     = UABB_Helper::uabb_colorpicker( $settings, 'handle_back_overlay', true );
+$settings->slider_label_back_color = FLBuilderColor::hex_or_rgb( $settings->slider_label_back_color );
+$settings->slider_color            = FLBuilderColor::hex_or_rgb( $settings->slider_color );
+$settings->handle_back_overlay     = FLBuilderColor::hex_or_rgb( $settings->handle_back_overlay );
 if ( isset( $settings->handle_shadow_color ) ) {
-	$settings->handle_shadow_color = UABB_Helper::uabb_colorpicker( $settings, 'handle_shadow_color' );
+	$settings->handle_shadow_color = FLBuilderColor::hex_or_rgb( $settings->handle_shadow_color );
 }
 
 ?>

@@ -7,23 +7,23 @@
 
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 
-$settings->list_item_background_color       = UABB_Helper::uabb_colorpicker( $settings, 'list_item_background_color' );
-$settings->list_item_background_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'list_item_background_hover_color' );
-$settings->heading_color                    = UABB_Helper::uabb_colorpicker( $settings, 'heading_color' );
-$settings->heading_hover_color              = UABB_Helper::uabb_colorpicker( $settings, 'heading_hover_color' );
-$settings->description_color                = UABB_Helper::uabb_colorpicker( $settings, 'description_color' );
-$settings->description_hover_color          = UABB_Helper::uabb_colorpicker( $settings, 'description_hover_color' );
-$settings->price_color                      = UABB_Helper::uabb_colorpicker( $settings, 'price_color' );
-$settings->price_hover_color                = UABB_Helper::uabb_colorpicker( $settings, 'price_hover_color' );
-$settings->price_list_connector_color       = UABB_Helper::uabb_colorpicker( $settings, 'price_list_connector_color' );
-$settings->price_list_border_hover_color    = UABB_Helper::uabb_colorpicker( $settings, 'price_list_border_hover_color' );
-$settings->price_list_connector_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'price_list_connector_hover_color' );
+$settings->list_item_background_color       = FLBuilderColor::hex_or_rgb( $settings->list_item_background_color );
+$settings->list_item_background_hover_color = FLBuilderColor::hex_or_rgb( $settings->list_item_background_hover_color );
+$settings->heading_color                    = FLBuilderColor::hex_or_rgb( $settings->heading_color );
+$settings->heading_hover_color              = FLBuilderColor::hex_or_rgb( $settings->heading_hover_color );
+$settings->description_color                = FLBuilderColor::hex_or_rgb( $settings->description_color );
+$settings->description_hover_color          = FLBuilderColor::hex_or_rgb( $settings->description_hover_color );
+$settings->price_color                      = FLBuilderColor::hex_or_rgb( $settings->price_color );
+$settings->price_hover_color                = FLBuilderColor::hex_or_rgb( $settings->price_hover_color );
+$settings->price_list_connector_color       = FLBuilderColor::hex_or_rgb( $settings->price_list_connector_color );
+$settings->price_list_border_hover_color    = FLBuilderColor::hex_or_rgb( $settings->price_list_border_hover_color );
+$settings->price_list_connector_hover_color = FLBuilderColor::hex_or_rgb( $settings->price_list_connector_hover_color );
 
 
 if ( ! $version_bb_check ) {
-	$settings->price_list_border_color = UABB_Helper::uabb_colorpicker( $settings, 'price_list_border_color' );
+	$settings->price_list_border_color = FLBuilderColor::hex_or_rgb( $settings->price_list_border_color );
 }
-if ( 'left' === $settings->image_position || 'right' === $settings->image_position ) { ?> 
+if ( 'left' === $settings->image_position || 'right' === $settings->image_position ) { ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-price-list-item {
 		<?php
 		if ( 'top' === $settings->vertical_alignment ) {

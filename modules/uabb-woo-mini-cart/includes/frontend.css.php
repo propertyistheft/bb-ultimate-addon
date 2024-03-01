@@ -5,32 +5,32 @@
  *   @package UABB Woo - Mini Cart Module
  */
 
-$settings->cart_icon_color           = UABB_Helper::uabb_colorpicker( $settings, 'cart_icon_color', true );
-$settings->cart_btn_txt_color        = UABB_Helper::uabb_colorpicker( $settings, 'cart_btn_txt_color', true );
-$settings->badge_color               = UABB_Helper::uabb_colorpicker( $settings, 'badge_color', true );
-$settings->badge_bg_color            = UABB_Helper::uabb_colorpicker( $settings, 'badge_bg_color', true );
-$settings->cart_bg_color             = UABB_Helper::uabb_colorpicker( $settings, 'cart_bg_color', true );
-$settings->subtotal_color            = UABB_Helper::uabb_colorpicker( $settings, 'subtotal_color', true );
-$settings->subtotal_bg_color         = UABB_Helper::uabb_colorpicker( $settings, 'subtotal_bg_color', true );
-$settings->cart_title_color          = UABB_Helper::uabb_colorpicker( $settings, 'cart_title_color', true );
-$settings->cart_title_bg_color       = UABB_Helper::uabb_colorpicker( $settings, 'cart_title_bg_color', true );
-$settings->cart_msg_color            = UABB_Helper::uabb_colorpicker( $settings, 'cart_msg_color', true );
-$settings->cart_msg_bg_color         = UABB_Helper::uabb_colorpicker( $settings, 'cart_msg_bg_color', true );
-$settings->empty_msg_color           = UABB_Helper::uabb_colorpicker( $settings, 'empty_msg_color', true );
-$settings->item_name_color           = UABB_Helper::uabb_colorpicker( $settings, 'item_name_color', true );
-$settings->item_qty_price_color      = UABB_Helper::uabb_colorpicker( $settings, 'item_qty_price_color', true );
-$settings->remove_icon_color         = UABB_Helper::uabb_colorpicker( $settings, 'remove_icon_color', true );
-$settings->view_btn_text_color       = UABB_Helper::uabb_colorpicker( $settings, 'view_btn_text_color', true );
-$settings->view_btn_text_hov_color   = UABB_Helper::uabb_colorpicker( $settings, 'view_btn_text_hov_color', true );
-$settings->view_btn_bg_color         = UABB_Helper::uabb_colorpicker( $settings, 'view_btn_bg_color', true );
-$settings->view_btn_bg_hov_color     = UABB_Helper::uabb_colorpicker( $settings, 'view_btn_bg_hov_color', true );
-$settings->view_btn_border_hov_color = UABB_Helper::uabb_colorpicker( $settings, 'view_btn_border_hov_color', true );
-$settings->checkout_text_color       = UABB_Helper::uabb_colorpicker( $settings, 'checkout_text_color', true );
-$settings->checkout_text_hov_color   = UABB_Helper::uabb_colorpicker( $settings, 'checkout_text_hov_color', true );
-$settings->checkout_bg_color         = UABB_Helper::uabb_colorpicker( $settings, 'checkout_bg_color', true );
-$settings->checkout_bg_hov_color     = UABB_Helper::uabb_colorpicker( $settings, 'checkout_bg_hov_color', true );
-$settings->checkout_border_hov_color = UABB_Helper::uabb_colorpicker( $settings, 'checkout_border_hov_color', true );
-$settings->overlay_color             = UABB_Helper::uabb_colorpicker( $settings, 'overlay_color', true );
+$settings->cart_icon_color           = FLBuilderColor::hex_or_rgb( $settings->cart_icon_color );
+$settings->cart_btn_txt_color        = FLBuilderColor::hex_or_rgb( $settings->cart_btn_txt_color );
+$settings->badge_color               = FLBuilderColor::hex_or_rgb( $settings->badge_color );
+$settings->badge_bg_color            = FLBuilderColor::hex_or_rgb( $settings->badge_bg_color );
+$settings->cart_bg_color             = FLBuilderColor::hex_or_rgb( $settings->cart_bg_color );
+$settings->subtotal_color            = FLBuilderColor::hex_or_rgb( $settings->subtotal_color );
+$settings->subtotal_bg_color         = FLBuilderColor::hex_or_rgb( $settings->subtotal_bg_color );
+$settings->cart_title_color          = FLBuilderColor::hex_or_rgb( $settings->cart_title_color );
+$settings->cart_title_bg_color       = FLBuilderColor::hex_or_rgb( $settings->cart_title_bg_color );
+$settings->cart_msg_color            = FLBuilderColor::hex_or_rgb( $settings->cart_msg_color );
+$settings->cart_msg_bg_color         = FLBuilderColor::hex_or_rgb( $settings->cart_msg_bg_color );
+$settings->empty_msg_color           = FLBuilderColor::hex_or_rgb( $settings->empty_msg_color );
+$settings->item_name_color           = FLBuilderColor::hex_or_rgb( $settings->item_name_color );
+$settings->item_qty_price_color      = FLBuilderColor::hex_or_rgb( $settings->item_qty_price_color );
+$settings->remove_icon_color         = FLBuilderColor::hex_or_rgb( $settings->remove_icon_color );
+$settings->view_btn_text_color       = FLBuilderColor::hex_or_rgb( $settings->view_btn_text_color );
+$settings->view_btn_text_hov_color   = FLBuilderColor::hex_or_rgb( $settings->view_btn_text_hov_color );
+$settings->view_btn_bg_color         = FLBuilderColor::hex_or_rgb( $settings->view_btn_bg_color );
+$settings->view_btn_bg_hov_color     = FLBuilderColor::hex_or_rgb( $settings->view_btn_bg_hov_color );
+$settings->view_btn_border_hov_color = FLBuilderColor::hex_or_rgb( $settings->view_btn_border_hov_color );
+$settings->checkout_text_color       = FLBuilderColor::hex_or_rgb( $settings->checkout_text_color );
+$settings->checkout_text_hov_color   = FLBuilderColor::hex_or_rgb( $settings->checkout_text_hov_color );
+$settings->checkout_bg_color         = FLBuilderColor::hex_or_rgb( $settings->checkout_bg_color );
+$settings->checkout_bg_hov_color     = FLBuilderColor::hex_or_rgb( $settings->checkout_bg_hov_color );
+$settings->checkout_border_hov_color = FLBuilderColor::hex_or_rgb( $settings->checkout_border_hov_color );
+$settings->overlay_color             = FLBuilderColor::hex_or_rgb( $settings->overlay_color );
 
 if ( ( 'modal' === $settings->cart_style || 'off-canvas' === $settings->cart_style ) && isset( $settings->overlay_color ) ) {
 	?>
@@ -479,7 +479,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 	}
 
 	if ( isset( $settings->view_btn_box_shadow ) && 'yes' === $settings->view_btn_box_shadow ) {
-		$view_btn_shadow_color = ( false === strpos( $settings->view_btn_shadow_color, 'rgb' ) ) ? '#' . $settings->view_btn_shadow_color : $settings->view_btn_shadow_color;
+		$view_btn_shadow_color = FLBuilderColor::hex_or_rgb( $settings->view_btn_shadow_color );
 		?>
 
 		-webkit-box-shadow: <?php echo esc_attr( $settings->view_btn_shadow_color_hor ); ?>px <?php echo esc_attr( $settings->view_btn_shadow_color_ver ); ?>px <?php echo esc_attr( $settings->view_btn_shadow_color_blur ); ?>px <?php echo esc_attr( $settings->view_btn_shadow_color_spr ); ?>px <?php echo esc_attr( $view_btn_shadow_color ); ?>;
@@ -539,7 +539,7 @@ if ( class_exists( 'FLBuilderCSS' ) ) {
 	}
 
 	if ( isset( $settings->checkout_box_shadow ) && 'yes' === $settings->checkout_box_shadow ) {
-		$checkout_shadow_color = ( false === strpos( $settings->checkout_shadow_color, 'rgb' ) ) ? '#' . $settings->checkout_shadow_color : $settings->checkout_shadow_color;
+		$checkout_shadow_color = FLBuilderColor::hex_or_rgb( $settings->checkout_shadow_color );
 		?>
 
 		-webkit-box-shadow: <?php echo esc_attr( $settings->checkout_shadow_color_hor ); ?>px <?php echo esc_attr( $settings->checkout_shadow_color_ver ); ?>px <?php echo esc_attr( $settings->checkout_shadow_color_blur ); ?>px <?php echo esc_attr( $settings->checkout_shadow_color_spr ); ?>px <?php echo esc_attr( $checkout_shadow_color ); ?>;

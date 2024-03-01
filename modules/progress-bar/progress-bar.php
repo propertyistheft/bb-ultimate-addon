@@ -770,8 +770,8 @@ class ProgressBarModule extends FLBuilderModule {
 	 */
 	public function render_circle_progress_bar( $obj ) {
 
-		$obj->background_color = UABB_Helper::uabb_colorpicker( $obj, 'background_color', true );
-		$obj->gradient_color   = UABB_Helper::uabb_colorpicker( $obj, 'gradient_color', true );
+		$obj->background_color = FLBuilderColor::hex_or_rgb( $obj->background_color );
+		$obj->gradient_color   = FLBuilderColor::hex_or_rgb( $obj->gradient_color );
 
 		$stroke_thickness = ( '' !== $this->settings->stroke_thickness ) ? $this->settings->stroke_thickness : '10';
 		$width            = ! empty( $this->settings->circular_thickness ) ? $this->settings->circular_thickness : 300;
@@ -799,8 +799,8 @@ class ProgressBarModule extends FLBuilderModule {
 	 */
 	public function render_semi_circle_progress_bar( $obj ) {
 
-		$obj->background_color = UABB_Helper::uabb_colorpicker( $obj, 'background_color', true );
-		$obj->gradient_color   = UABB_Helper::uabb_colorpicker( $obj, 'gradient_color', true );
+		$obj->background_color = FLBuilderColor::hex_or_rgb( $obj->background_color );
+		$obj->gradient_color   = FLBuilderColor::hex_or_rgb( $obj->gradient_color );
 
 		$stroke_thickness = ( '' !== $this->settings->stroke_thickness ) ? $this->settings->stroke_thickness : '10';
 		$width            = ! empty( $this->settings->circular_thickness ) ? $this->settings->circular_thickness : 300;

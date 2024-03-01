@@ -8,12 +8,12 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->background_color = UABB_Helper::uabb_colorpicker( $settings, 'background_color', true );
-$settings->overlay_color    = UABB_Helper::uabb_colorpicker( $settings, 'overlay_color', true );
+$settings->background_color = FLBuilderColor::hex_or_rgb( $settings->background_color );
+$settings->overlay_color    = FLBuilderColor::hex_or_rgb( $settings->overlay_color );
 
-$settings->color      = UABB_Helper::uabb_colorpicker( $settings, 'color' );
-$settings->desc_color = UABB_Helper::uabb_colorpicker( $settings, 'desc_color' );
-$settings->link_color = UABB_Helper::uabb_colorpicker( $settings, 'link_color' );
+$settings->color      = FLBuilderColor::hex_or_rgb( $settings->color );
+$settings->desc_color = FLBuilderColor::hex_or_rgb( $settings->desc_color );
+$settings->link_color = FLBuilderColor::hex_or_rgb( $settings->link_color );
 
 ?>
 
@@ -386,7 +386,7 @@ if ( 'button' === $settings->cta_type ) {
 .fl-builder-content .fl-node-<?php echo esc_attr( $id ); ?> a,
 .fl-builder-content .fl-node-<?php echo esc_attr( $id ); ?> a *,
 .fl-builder-content .fl-node-<?php echo esc_attr( $id ); ?> a:visited {
-	color: 
+	color:
 	<?php echo esc_attr( uabb_theme_text_color( $settings->link_color ) ); ?>;
 }
 <?php endif; ?>

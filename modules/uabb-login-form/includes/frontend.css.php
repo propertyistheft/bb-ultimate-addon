@@ -6,23 +6,23 @@
  */
 
 $version_bb_check                              = UABB_Compatibility::$version_bb_check;
-$settings->wp_login_btn_text_color             = UABB_Helper::uabb_colorpicker( $settings, 'wp_login_btn_text_color', true );
-$settings->wp_login_btn_text_hover_color       = UABB_Helper::uabb_colorpicker( $settings, 'wp_login_btn_text_hover_color', true );
-$settings->wp_login_btn_background_color       = UABB_Helper::uabb_colorpicker( $settings, 'wp_login_btn_background_color', true );
-$settings->wp_login_btn_background_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'wp_login_btn_background_hover_color', true );
-$settings->form_bg_color                       = UABB_Helper::uabb_colorpicker( $settings, 'form_bg_color', true );
-$settings->input_text_color                    = UABB_Helper::uabb_colorpicker( $settings, 'input_text_color', true );
-$settings->input_background_color              = UABB_Helper::uabb_colorpicker( $settings, 'input_background_color', true );
-$settings->input_border_active_color           = UABB_Helper::uabb_colorpicker( $settings, 'input_border_active_color', true );
-$settings->label_color                         = UABB_Helper::uabb_colorpicker( $settings, 'label_color', true );
-$settings->lost_your_pass_color                = UABB_Helper::uabb_colorpicker( $settings, 'lost_your_pass_color', true );
-$settings->errormsg_bgcolor                    = UABB_Helper::uabb_colorpicker( $settings, 'errormsg_bgcolor', true );
-$settings->errormsg_text_color                 = UABB_Helper::uabb_colorpicker( $settings, 'errormsg_text_color', true );
-$settings->checkbox_bgcolor                    = UABB_Helper::uabb_colorpicker( $settings, 'checkbox_bgcolor', true );
-$settings->eye_icon_color                      = UABB_Helper::uabb_colorpicker( $settings, 'eye_icon_color', true );
-$settings->fields_icon_color                   = UABB_Helper::uabb_colorpicker( $settings, 'fields_icon_color', true );
-$settings->divider_color                       = UABB_Helper::uabb_colorpicker( $settings, 'divider_color', true );
-$settings->btn_icon_color                      = UABB_Helper::uabb_colorpicker( $settings, 'btn_icon_color', true );
+$settings->wp_login_btn_text_color             = FLBuilderColor::hex_or_rgb( $settings->wp_login_btn_text_color );
+$settings->wp_login_btn_text_hover_color       = FLBuilderColor::hex_or_rgb( $settings->wp_login_btn_text_hover_color );
+$settings->wp_login_btn_background_color       = FLBuilderColor::hex_or_rgb( $settings->wp_login_btn_background_color );
+$settings->wp_login_btn_background_hover_color = FLBuilderColor::hex_or_rgb( $settings->wp_login_btn_background_hover_color );
+$settings->form_bg_color                       = FLBuilderColor::hex_or_rgb( $settings->form_bg_color );
+$settings->input_text_color                    = FLBuilderColor::hex_or_rgb( $settings->input_text_color );
+$settings->input_background_color              = FLBuilderColor::hex_or_rgb( $settings->input_background_color );
+$settings->input_border_active_color           = FLBuilderColor::hex_or_rgb( $settings->input_border_active_color );
+$settings->label_color                         = FLBuilderColor::hex_or_rgb( $settings->label_color );
+$settings->lost_your_pass_color                = FLBuilderColor::hex_or_rgb( $settings->lost_your_pass_color );
+$settings->errormsg_bgcolor                    = FLBuilderColor::hex_or_rgb( $settings->errormsg_bgcolor );
+$settings->errormsg_text_color                 = FLBuilderColor::hex_or_rgb( $settings->errormsg_text_color );
+$settings->checkbox_bgcolor                    = FLBuilderColor::hex_or_rgb( $settings->checkbox_bgcolor );
+$settings->eye_icon_color                      = FLBuilderColor::hex_or_rgb( $settings->eye_icon_color );
+$settings->fields_icon_color                   = FLBuilderColor::hex_or_rgb( $settings->fields_icon_color );
+$settings->divider_color                       = FLBuilderColor::hex_or_rgb( $settings->divider_color );
+$settings->btn_icon_color                      = FLBuilderColor::hex_or_rgb( $settings->btn_icon_color );
 /* Render Separator CSS */
 if ( 'enable' === esc_attr( $settings->separator_select ) ) {
 
@@ -834,7 +834,7 @@ $checked_width = $font_size - intval( esc_attr( $settings->checkbox_border['widt
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-lf-form-wrap .uabb-lf-input-group .uabb-lf-checkbox-label input[type='checkbox'] + span:before {
 	font-size: <?php echo esc_attr( $checked_width ); ?>px;
 	line-height: <?php echo esc_attr( $checked_width ); ?>px;
-	color: #<?php echo esc_attr( $settings->checkbox_selected_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->checkbox_selected_color ) ); ?>;
 	<?php if ( isset( $settings->checkbox_bgcolor ) && '' !== $settings->checkbox_bgcolor ) : ?>
 	background-color: <?php echo esc_attr( $settings->checkbox_bgcolor ); ?>;
 	<?php endif; ?>

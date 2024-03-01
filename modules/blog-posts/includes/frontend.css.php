@@ -10,50 +10,50 @@ $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
 
-$settings->title_color              = UABB_Helper::uabb_colorpicker( $settings, 'title_color' );
-$settings->desc_color               = UABB_Helper::uabb_colorpicker( $settings, 'desc_color' );
-$settings->content_background_color = UABB_Helper::uabb_colorpicker( $settings, 'content_background_color', true );
+$settings->title_color              = FLBuilderColor::hex_or_rgb( $settings->title_color );
+$settings->desc_color               = FLBuilderColor::hex_or_rgb( $settings->desc_color );
+$settings->content_background_color = FLBuilderColor::hex_or_rgb( $settings->content_background_color );
 
-$settings->arrow_color            = UABB_Helper::uabb_colorpicker( $settings, 'arrow_color' );
-$settings->arrow_background_color = UABB_Helper::uabb_colorpicker( $settings, 'arrow_background_color', true );
-$settings->arrow_color_border     = UABB_Helper::uabb_colorpicker( $settings, 'arrow_color_border' );
+$settings->arrow_color            = FLBuilderColor::hex_or_rgb( $settings->arrow_color );
+$settings->arrow_background_color = FLBuilderColor::hex_or_rgb( $settings->arrow_background_color );
+$settings->arrow_color_border     = FLBuilderColor::hex_or_rgb( $settings->arrow_color_border );
 
-$settings->date_color            = UABB_Helper::uabb_colorpicker( $settings, 'date_color' );
-$settings->date_background_color = UABB_Helper::uabb_colorpicker( $settings, 'date_background_color', true );
-$settings->meta_color            = UABB_Helper::uabb_colorpicker( $settings, 'meta_color' );
-$settings->meta_text_color       = UABB_Helper::uabb_colorpicker( $settings, 'meta_text_color' );
-$settings->meta_hover_color      = UABB_Helper::uabb_colorpicker( $settings, 'meta_hover_color' );
+$settings->date_color            = FLBuilderColor::hex_or_rgb( $settings->date_color );
+$settings->date_background_color = FLBuilderColor::hex_or_rgb( $settings->date_background_color );
+$settings->meta_color            = FLBuilderColor::hex_or_rgb( $settings->meta_color );
+$settings->meta_text_color       = FLBuilderColor::hex_or_rgb( $settings->meta_text_color );
+$settings->meta_hover_color      = FLBuilderColor::hex_or_rgb( $settings->meta_hover_color );
 
-$settings->link_color            = UABB_Helper::uabb_colorpicker( $settings, 'link_color' );
-$settings->link_more_arrow_color = UABB_Helper::uabb_colorpicker( $settings, 'link_more_arrow_color' );
+$settings->link_color            = FLBuilderColor::hex_or_rgb( $settings->link_color );
+$settings->link_more_arrow_color = FLBuilderColor::hex_or_rgb( $settings->link_more_arrow_color );
 
-$settings->masonary_text_color          = UABB_Helper::uabb_colorpicker( $settings, 'masonary_text_color' );
-$settings->taxonomy_filter_select_color = UABB_Helper::uabb_colorpicker( $settings, 'taxonomy_filter_select_color' );
-$settings->selfilter_background_color   = UABB_Helper::uabb_colorpicker( $settings, 'selfilter_background_color' );
-$settings->selfilter_color_border       = UABB_Helper::uabb_colorpicker( $settings, 'selfilter_color_border' );
-$settings->post_dots_color              = UABB_Helper::uabb_colorpicker( $settings, 'post_dots_color' );
+$settings->masonary_text_color          = FLBuilderColor::hex_or_rgb( $settings->masonary_text_color );
+$settings->taxonomy_filter_select_color = FLBuilderColor::hex_or_rgb( $settings->taxonomy_filter_select_color );
+$settings->selfilter_background_color   = FLBuilderColor::hex_or_rgb( $settings->selfilter_background_color );
+$settings->selfilter_color_border       = FLBuilderColor::hex_or_rgb( $settings->selfilter_color_border );
+$settings->post_dots_color              = FLBuilderColor::hex_or_rgb( $settings->post_dots_color );
 
-$settings->masonary_background_color        = UABB_Helper::uabb_colorpicker( $settings, 'masonary_background_color', true );
-$settings->masonary_text_hover_color        = UABB_Helper::uabb_colorpicker( $settings, 'masonary_text_hover_color' );
-$settings->masonary_background_hover_color  = UABB_Helper::uabb_colorpicker( $settings, 'masonary_background_hover_color', true );
-$settings->masonary_background_active_color = UABB_Helper::uabb_colorpicker( $settings, 'masonary_background_active_color', true );
-$settings->masonary_active_color            = UABB_Helper::uabb_colorpicker( $settings, 'masonary_active_color' );
+$settings->masonary_background_color        = FLBuilderColor::hex_or_rgb( $settings->masonary_background_color );
+$settings->masonary_text_hover_color        = FLBuilderColor::hex_or_rgb( $settings->masonary_text_hover_color );
+$settings->masonary_background_hover_color  = FLBuilderColor::hex_or_rgb( $settings->masonary_background_hover_color );
+$settings->masonary_background_active_color = FLBuilderColor::hex_or_rgb( $settings->masonary_background_active_color );
+$settings->masonary_active_color            = FLBuilderColor::hex_or_rgb( $settings->masonary_active_color );
 
-$settings->pagination_background_color        = UABB_Helper::uabb_colorpicker( $settings, 'pagination_background_color', true );
-$settings->pagination_color                   = UABB_Helper::uabb_colorpicker( $settings, 'pagination_color' );
-$settings->pagination_hover_color             = UABB_Helper::uabb_colorpicker( $settings, 'pagination_hover_color' );
-$settings->pagination_active_color            = UABB_Helper::uabb_colorpicker( $settings, 'pagination_active_color' );
-$settings->pagination_hover_background_color  = UABB_Helper::uabb_colorpicker( $settings, 'pagination_hover_background_color', true );
-$settings->pagination_active_background_color = UABB_Helper::uabb_colorpicker( $settings, 'pagination_active_background_color', true );
-$settings->pagination_active_color_border     = UABB_Helper::uabb_colorpicker( $settings, 'pagination_active_color_border' );
+$settings->pagination_background_color        = FLBuilderColor::hex_or_rgb( $settings->pagination_background_color );
+$settings->pagination_color                   = FLBuilderColor::hex_or_rgb( $settings->pagination_color );
+$settings->pagination_hover_color             = FLBuilderColor::hex_or_rgb( $settings->pagination_hover_color );
+$settings->pagination_active_color            = FLBuilderColor::hex_or_rgb( $settings->pagination_active_color );
+$settings->pagination_hover_background_color  = FLBuilderColor::hex_or_rgb( $settings->pagination_hover_background_color );
+$settings->pagination_active_background_color = FLBuilderColor::hex_or_rgb( $settings->pagination_active_background_color );
+$settings->pagination_active_color_border     = FLBuilderColor::hex_or_rgb( $settings->pagination_active_color_border );
 $settings->masonary_border_size               = ( '' !== $settings->masonary_border_size ) ? $settings->masonary_border_size : '2';
-$settings->masonary_color_border              = UABB_Helper::uabb_colorpicker( $settings, 'masonary_color_border' );
-$settings->masonary_active_color_border       = UABB_Helper::uabb_colorpicker( $settings, 'masonary_active_color_border' );
+$settings->masonary_color_border              = FLBuilderColor::hex_or_rgb( $settings->masonary_color_border );
+$settings->masonary_active_color_border       = FLBuilderColor::hex_or_rgb( $settings->masonary_active_color_border );
 
-$settings->overlay_color    = UABB_Helper::uabb_colorpicker( $settings, 'overlay_color', true );
-$settings->term_color       = UABB_Helper::uabb_colorpicker( $settings, 'term_color', true );
-$settings->term_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'term_hover_color', true );
-$settings->term_bg_color    = UABB_Helper::uabb_colorpicker( $settings, 'term_bg_color', true );
+$settings->overlay_color    = FLBuilderColor::hex_or_rgb( $settings->overlay_color );
+$settings->term_color       = FLBuilderColor::hex_or_rgb( $settings->term_color );
+$settings->term_hover_color = FLBuilderColor::hex_or_rgb( $settings->term_hover_color );
+$settings->term_bg_color    = FLBuilderColor::hex_or_rgb( $settings->term_bg_color );
 
 $settings->title_margin_top    = ( isset( $settings->title_margin_top ) ) ? $settings->title_margin_top : '';
 $settings->title_margin_bottom = ( isset( $settings->title_margin_bottom ) ) ? $settings->title_margin_bottom : '';
@@ -74,7 +74,7 @@ $post_columns_tablet  = ( 100 - $space_tablet ) / $column_tablet;
 $post_columns_mobile  = ( 100 - $space_mobile ) / $column_mobile;
 $settings->show_meta  = ( isset( $settings->show_meta ) ) ? $settings->show_meta : 'yes';
 if ( ! $version_bb_check ) {
-	$settings->pagination_color_border = UABB_Helper::uabb_colorpicker( $settings, 'pagination_color_border' );
+	$settings->pagination_color_border = FLBuilderColor::hex_or_rgb( $settings->pagination_color_border );
 	$settings->pagination_border_size  = ( '' !== $settings->pagination_border_size ) ? $settings->pagination_border_size : '2';
 }
 
@@ -677,7 +677,7 @@ if ( 'yes' === $settings->show_meta ) {
 
 <?php
 if ( ! $version_bb_check ) {
-	$settings->content_border_color = UABB_Helper::uabb_colorpicker( $settings, 'content_border_color', true );
+	$settings->content_border_color = FLBuilderColor::hex_or_rgb( $settings->content_border_color );
 	?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts-shadow,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-blog-posts .uabb-blog-posts-shadow {

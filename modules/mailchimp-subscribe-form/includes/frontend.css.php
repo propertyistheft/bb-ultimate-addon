@@ -8,16 +8,16 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->background_color       = UABB_Helper::uabb_colorpicker( $settings, 'background_color', true );
-$settings->input_text_color       = UABB_Helper::uabb_colorpicker( $settings, 'input_text_color' );
-$settings->input_background_color = UABB_Helper::uabb_colorpicker( $settings, 'input_background_color', true );
-$settings->border_color           = UABB_Helper::uabb_colorpicker( $settings, 'border_color' );
-$settings->border_active_color    = UABB_Helper::uabb_colorpicker( $settings, 'border_active_color' );
-$settings->heading_color          = UABB_Helper::uabb_colorpicker( $settings, 'heading_color' );
-$settings->subheading_color       = UABB_Helper::uabb_colorpicker( $settings, 'subheading_color' );
-$settings->text_color             = UABB_Helper::uabb_colorpicker( $settings, 'text_color' );
-$settings->checkbox_color         = UABB_Helper::uabb_colorpicker( $settings, 'checkbox_color' );
-$settings->terms_color            = UABB_Helper::uabb_colorpicker( $settings, 'terms_color' );
+$settings->background_color       = FLBuilderColor::hex_or_rgb( $settings->background_color );
+$settings->input_text_color       = FLBuilderColor::hex_or_rgb( $settings->input_text_color );
+$settings->input_background_color = FLBuilderColor::hex_or_rgb( $settings->input_background_color );
+$settings->border_color           = FLBuilderColor::hex_or_rgb( $settings->border_color );
+$settings->border_active_color    = FLBuilderColor::hex_or_rgb( $settings->border_active_color );
+$settings->heading_color          = FLBuilderColor::hex_or_rgb( $settings->heading_color );
+$settings->subheading_color       = FLBuilderColor::hex_or_rgb( $settings->subheading_color );
+$settings->text_color             = FLBuilderColor::hex_or_rgb( $settings->text_color );
+$settings->checkbox_color         = FLBuilderColor::hex_or_rgb( $settings->checkbox_color );
+$settings->terms_color            = FLBuilderColor::hex_or_rgb( $settings->terms_color );
 
 $settings->spacing = ( '' !== $settings->spacing ) ? $settings->spacing : '10'; ?>
 
@@ -190,7 +190,7 @@ if ( '' !== $settings->btn_margin_top ) {
 		<?php endif; ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->heading_font_size_unit ) && '' !== $settings->heading_font_size_unit ) { ?>
-			font-size: <?php echo esc_attr( $settings->heading_font_size_unit ); ?>px;    
+			font-size: <?php echo esc_attr( $settings->heading_font_size_unit ); ?>px;
 		<?php } elseif ( isset( $settings->heading_font_size_unit ) && '' === $settings->heading_font_size_unit && isset( $settings->heading_font_size['desktop'] ) && '' !== $settings->heading_font_size['desktop'] ) { ?>
 			font-size: <?php echo esc_attr( $settings->heading_font_size['desktop'] ); ?>px;
 		<?php } ?>
@@ -200,7 +200,7 @@ if ( '' !== $settings->btn_margin_top ) {
 		<?php } ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->heading_line_height_unit ) && '' !== $settings->heading_line_height_unit ) { ?>
-			line-height: <?php echo esc_attr( $settings->heading_line_height_unit ); ?>em;  
+			line-height: <?php echo esc_attr( $settings->heading_line_height_unit ); ?>em;
 		<?php } elseif ( isset( $settings->heading_line_height_unit ) && '' === $settings->heading_line_height_unit && isset( $settings->heading_line_height['desktop'] ) && '' !== $settings->heading_line_height['desktop'] ) { ?>
 			line-height: <?php echo esc_attr( $settings->heading_line_height['desktop'] ); ?>px;
 		<?php } ?>
@@ -243,7 +243,7 @@ if ( '' !== $settings->btn_margin_top ) {
 		<?php endif; ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->subheading_font_size_unit ) && '' !== $settings->subheading_font_size_unit ) { ?>
-			font-size: <?php echo esc_attr( $settings->subheading_font_size_unit ); ?>px;     
+			font-size: <?php echo esc_attr( $settings->subheading_font_size_unit ); ?>px;
 		<?php } elseif ( isset( $settings->subheading_font_size_unit ) && '' === $settings->subheading_font_size_unit && isset( $settings->subheading_font_size['desktop'] ) && '' !== $settings->subheading_font_size['desktop'] ) { ?>
 			font-size: <?php echo esc_attr( $settings->subheading_font_size['desktop'] ); ?>px;
 		<?php } ?>
@@ -253,7 +253,7 @@ if ( '' !== $settings->btn_margin_top ) {
 		<?php } ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->subheading_line_height_unit ) && '' !== $settings->subheading_line_height_unit ) { ?>
-			line-height: <?php echo esc_attr( $settings->subheading_line_height_unit ); ?>em;  
+			line-height: <?php echo esc_attr( $settings->subheading_line_height_unit ); ?>em;
 		<?php } elseif ( isset( $settings->subheading_line_height_unit ) && '' === $settings->subheading_line_height_unit && isset( $settings->subheading_line_height['desktop'] ) && '' !== $settings->subheading_line_height['desktop'] ) { ?>
 			line-height: <?php echo esc_attr( $settings->subheading_line_height['desktop'] ); ?>px;
 		<?php } ?>
@@ -290,7 +290,7 @@ if ( '' !== $settings->btn_margin_top ) {
 		<?php endif; ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->input_font_size_unit ) && '' !== $settings->input_font_size_unit ) { ?>
-			font-size: <?php echo esc_attr( $settings->input_font_size_unit ); ?>px;  
+			font-size: <?php echo esc_attr( $settings->input_font_size_unit ); ?>px;
 		<?php } elseif ( isset( $settings->input_font_size_unit ) && '' === $settings->input_font_size_unit && isset( $settings->input_font_size['desktop'] ) && '' !== $settings->input_font_size['desktop'] ) { ?>
 			font-size: <?php echo esc_attr( $settings->input_font_size['desktop'] ); ?>px;
 		<?php } ?>
@@ -300,7 +300,7 @@ if ( '' !== $settings->btn_margin_top ) {
 		<?php } ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->input_line_height_unit ) && '' !== $settings->input_line_height_unit ) { ?>
-			line-height: <?php echo esc_attr( $settings->input_line_height_unit ); ?>em;  
+			line-height: <?php echo esc_attr( $settings->input_line_height_unit ); ?>em;
 		<?php } elseif ( isset( $settings->input_line_height_unit ) && '' === $settings->input_line_height_unit && isset( $settings->input_line_height['desktop'] ) && '' !== $settings->input_line_height['desktop'] ) { ?>
 			line-height: <?php echo esc_attr( $settings->input_line_height['desktop'] ); ?>px;
 		<?php } ?>
@@ -356,7 +356,7 @@ if ( '' !== $settings->btn_margin_top ) {
 	}
 <?php } ?>
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-sf-bottom-text {  
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-sf-bottom-text {
 
 	<?php if ( '' !== $settings->text_color ) { ?>
 		color: <?php echo esc_attr( $settings->text_color ); ?>;
@@ -382,7 +382,7 @@ if ( '' !== $settings->btn_margin_top ) {
 			font-size: <?php echo esc_attr( $settings->text_font_size_unit ); ?>px;
 			<?php if ( '' === $settings->text_line_height_unit && '' !== $settings->text_font_size_unit ) { ?>
 				line-height: <?php echo esc_attr( $settings->text_font_size_unit ) + 2; ?>px;
-			<?php } ?>      
+			<?php } ?>
 		<?php } elseif ( isset( $settings->text_font_size_unit ) && '' === $settings->text_font_size_unit && isset( $settings->text_font_size['desktop'] ) && '' !== $settings->text_font_size['desktop'] ) { ?>
 			font-size: <?php echo esc_attr( $settings->text_font_size['desktop'] ); ?>px;
 			line-height: <?php echo esc_attr( $settings->text_font_size['desktop'] + 2 ); ?>px;
@@ -393,7 +393,7 @@ if ( '' !== $settings->btn_margin_top ) {
 		<?php } ?>
 
 		<?php if ( 'yes' === $converted || isset( $settings->text_line_height_unit ) && '' !== $settings->text_line_height_unit ) { ?>
-			line-height: <?php echo esc_attr( $settings->text_line_height_unit ); ?>em;  
+			line-height: <?php echo esc_attr( $settings->text_line_height_unit ); ?>em;
 		<?php } elseif ( isset( $settings->text_line_height_unit ) && '' === $settings->text_line_height_unit && isset( $settings->text_line_height['desktop'] ) && '' !== $settings->text_line_height['desktop'] ) { ?>
 			line-height: <?php echo esc_attr( $settings->text_line_height['desktop'] ); ?>px;
 		<?php } ?>
@@ -449,7 +449,7 @@ if ( '' !== $settings->btn_margin_top ) {
 
 			<?php if ( '' !== $settings->checkbox_text_letter_spacing ) { ?>
 				letter-spacing: <?php echo esc_attr( $settings->checkbox_text_letter_spacing ); ?>px;
-			<?php } ?> 
+			<?php } ?>
 		}
 		<?php
 	} else {
@@ -528,10 +528,10 @@ $checked_width = $font_size - intval( $settings->checkbox_border_width );
 	content: '';
 	<?php if ( isset( $settings->checkbox_bgcolor ) && '' !== $settings->checkbox_bgcolor ) : ?>
 	transition: background-color 300ms ease;
-	background-color: <?php echo esc_attr( ( false === strpos( $settings->checkbox_bgcolor, 'rgb' ) ) ? '#' . $settings->checkbox_bgcolor : $settings->checkbox_bgcolor ); ?>; 
+	background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->checkbox_bgcolor ) ); ?>;
 	<?php endif; ?>
 	border-width: <?php echo esc_attr( $settings->checkbox_border_width ); ?>px;
-	border-color: #<?php echo esc_attr( $settings->checkbox_border_color ); ?>;
+	border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->checkbox_border_color ) ); ?>;
 	vertical-align: middle;
 	width: <?php echo esc_attr( $settings->checkbox_size ); ?>px;
 	height: <?php echo esc_attr( $settings->checkbox_size ); ?>px;
@@ -548,7 +548,7 @@ $checked_width = $font_size - intval( $settings->checkbox_border_width );
 	font-weight: bold;
 	font-size: <?php echo esc_attr( $checked_width ); ?>px;
 	line-height: <?php echo esc_attr( $checked_width ); ?>px;
-	color: #<?php echo esc_attr( $settings->checkbox_selected_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->checkbox_selected_color ) ); ?>;
 	padding-top: 2px;
 }
 
@@ -659,14 +659,14 @@ $checked_width = $font_size - intval( $settings->checkbox_border_width );
 
 <?php if ( 'left' === $settings->overall_alignment ) : ?>
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap .uabb-terms-wrap { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap .uabb-terms-wrap {
 	-webkit-box-pack: start;
 	-ms-flex-pack: start;
 	justify-content: flex-start;
 }
 <?php elseif ( 'right' === $settings->overall_alignment ) : ?>
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap .uabb-terms-wrap { 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap .uabb-terms-wrap {
 	-webkit-box-pack: end;
 	-ms-flex-pack: end;
 	justify-content: flex-end;
@@ -709,7 +709,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 				<?php } ?>
 
 				<?php if ( 'yes' === $converted || isset( $settings->heading_line_height_unit_medium ) && '' !== $settings->heading_line_height_unit_medium ) { ?>
-					line-height: <?php echo esc_attr( $settings->heading_line_height_unit_medium ); ?>em;   
+					line-height: <?php echo esc_attr( $settings->heading_line_height_unit_medium ); ?>em;
 				<?php } elseif ( isset( $settings->heading_line_height_unit_medium ) && '' === $settings->heading_line_height_unit_medium && isset( $settings->heading_line_height['medium'] ) && '' !== $settings->heading_line_height['medium'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->heading_line_height['medium'] ); ?>px;
 				<?php } ?>
@@ -728,7 +728,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 				<?php } ?>
 
 				<?php if ( 'yes' === $converted || isset( $settings->subheading_line_height_unit_medium ) && '' !== $settings->subheading_line_height_unit_medium ) { ?>
-					line-height: <?php echo esc_attr( $settings->subheading_line_height_unit_medium ); ?>em;   
+					line-height: <?php echo esc_attr( $settings->subheading_line_height_unit_medium ); ?>em;
 				<?php } elseif ( isset( $settings->subheading_line_height_unit_medium ) && '' === $settings->subheading_line_height_unit_medium && isset( $settings->subheading_line_height['medium'] ) && '' !== $settings->subheading_line_height['medium'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->subheading_line_height['medium'] ); ?>px;
 				<?php } ?>
@@ -747,7 +747,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 				<?php } ?>
 
 				<?php if ( 'yes' === $converted || isset( $settings->text_line_height_unit_medium ) && '' !== $settings->text_line_height_unit_medium ) { ?>
-					line-height: <?php echo esc_attr( $settings->text_line_height_unit_medium ); ?>em;   
+					line-height: <?php echo esc_attr( $settings->text_line_height_unit_medium ); ?>em;
 				<?php } elseif ( isset( $settings->text_line_height_unit_medium ) && '' === $settings->text_line_height_unit_medium && isset( $settings->text_line_height['medium'] ) && '' !== $settings->text_line_height['medium'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->text_line_height['medium'] ); ?>px;
 				<?php } ?>
@@ -782,14 +782,14 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 					font-size: <?php echo esc_attr( $settings->input_font_size_unit_medium ); ?>px;
 				<?php } elseif ( isset( $settings->input_font_size_unit_medium ) && '' === $settings->input_font_size_unit_medium && isset( $settings->input_font_size['medium'] ) && '' !== $settings->input_font_size['medium'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->input_font_size['medium'] ); ?>px;
-				<?php } ?> 
+				<?php } ?>
 
 				<?php if ( isset( $settings->input_font_size['medium'] ) && '' === $settings->input_font_size['medium'] && isset( $settings->input_line_height['medium'] ) && '' !== $settings->input_line_height['medium'] && '' === $settings->input_line_height_unit_medium && '' === $settings->input_line_height_unit ) { ?>
 							line-height: <?php echo esc_attr( $settings->input_line_height['medium'] ); ?>px;
 				<?php } ?>
 
 				<?php if ( 'yes' === $converted || isset( $settings->input_line_height_unit_medium ) && '' !== $settings->input_line_height_unit_medium ) { ?>
-					line-height: <?php echo esc_attr( $settings->input_line_height_unit_medium ); ?>em;   
+					line-height: <?php echo esc_attr( $settings->input_line_height_unit_medium ); ?>em;
 				<?php } elseif ( isset( $settings->input_line_height_unit_medium ) && '' === $settings->input_line_height_unit_medium && isset( $settings->input_line_height['medium'] ) && '' !== $settings->input_line_height['medium'] ) { ?>
 					line-height: <?php echo esc_attr( $settings->input_line_height['medium'] ); ?>px;
 				<?php } ?>
@@ -846,7 +846,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			<?php endif; ?>
 		}
 
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap { 
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap {
 			display: block;
 		}
 
@@ -856,13 +856,13 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			}
 
 				<?php if ( 'left' === $settings->resp_overall_alignment ) : ?>
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap { 
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap {
 				-webkit-box-pack: start;
 				-ms-flex-pack: start;
 				justify-content: flex-start;
 			}
 			<?php elseif ( 'right' === $settings->resp_overall_alignment ) : ?>
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap { 
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap {
 				-webkit-box-pack: end;
 				-ms-flex-pack: end;
 				justify-content: flex-end;
@@ -899,7 +899,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 					font-size: <?php echo esc_attr( $settings->heading_font_size_unit_responsive ); ?>px;
 				<?php } elseif ( isset( $settings->heading_font_size_unit_responsive ) && '' === $settings->heading_font_size_unit_medium && isset( $settings->heading_line_height['small'] ) && '' !== $settings->heading_line_height['small'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->heading_font_size['small'] ); ?>px;
-				<?php } ?>  
+				<?php } ?>
 
 				<?php if ( isset( $settings->heading_font_size['small'] ) && '' === $settings->heading_font_size['small'] && isset( $settings->heading_line_height['small'] ) && '' !== $settings->heading_line_height['small'] && '' === $settings->heading_line_height_unit_responsive && '' === $settings->heading_line_height_unit_medium && '' === $settings->heading_line_height_unit_responsive ) { ?>
 							line-height: <?php echo esc_attr( $settings->heading_line_height['small'] ); ?>px;
@@ -934,7 +934,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-sf-bottom-text {
 
 				<?php if ( 'yes' === $converted || isset( $settings->text_font_size_unit_responsive ) && '' !== $settings->text_font_size_unit_responsive ) { ?>
-					font-size: <?php echo esc_attr( $settings->text_font_size_unit_responsive ); ?>px;    
+					font-size: <?php echo esc_attr( $settings->text_font_size_unit_responsive ); ?>px;
 				<?php } elseif ( isset( $settings->text_font_size_unit_responsive ) && '' === $settings->text_font_size_unit_responsive && isset( $settings->text_font_size['small'] ) && '' !== $settings->text_font_size['small'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->text_font_size['small'] ); ?>px;
 				<?php } ?>
@@ -976,7 +976,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-form-field input[type="email"] ~ label {
 
 				<?php if ( 'yes' === $converted || isset( $settings->input_font_size_unit_responsive ) && '' !== $settings->input_font_size_unit_responsive ) { ?>
-					font-size: <?php echo esc_attr( $settings->input_font_size_unit_responsive ); ?>px;    
+					font-size: <?php echo esc_attr( $settings->input_font_size_unit_responsive ); ?>px;
 				<?php } elseif ( isset( $settings->input_font_size_unit_responsive ) && '' === $settings->input_font_size_unit_responsive && isset( $settings->input_font_size['small'] ) && '' !== $settings->input_font_size['small'] ) { ?>
 					font-size: <?php echo esc_attr( $settings->input_font_size['small'] ); ?>px;
 				<?php } ?>
@@ -1051,7 +1051,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 				display: block;
 			<?php endif; ?>
 		}
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap { 
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap {
 			display: block;
 		}
 		<?php endif; ?>
@@ -1061,13 +1061,13 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 				text-align: <?php echo esc_attr( $settings->resp_overall_alignment ); ?>;
 			}
 			<?php if ( 'left' === $settings->resp_overall_alignment ) : ?>
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap { 
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap {
 				-webkit-box-pack: start;
 				-ms-flex-pack: start;
 				justify-content: flex-start;
 			}
 			<?php elseif ( 'right' === $settings->resp_overall_alignment ) : ?>
-			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap { 
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form-inline .uabb-form-wrap {
 				-webkit-box-pack: end;
 				-ms-flex-pack: end;
 				justify-content: flex-end;

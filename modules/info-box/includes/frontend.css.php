@@ -8,24 +8,24 @@
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 $converted        = UABB_Compatibility::$uabb_migration;
 
-$settings->prefix_color  = UABB_Helper::uabb_colorpicker( $settings, 'prefix_color' );
-$settings->title_color   = UABB_Helper::uabb_colorpicker( $settings, 'title_color' );
-$settings->subhead_color = UABB_Helper::uabb_colorpicker( $settings, 'subhead_color' );
-$settings->link_color    = UABB_Helper::uabb_colorpicker( $settings, 'link_color' );
+$settings->prefix_color  = FLBuilderColor::hex_or_rgb( $settings->prefix_color );
+$settings->title_color   = FLBuilderColor::hex_or_rgb( $settings->title_color );
+$settings->subhead_color = FLBuilderColor::hex_or_rgb( $settings->subhead_color );
+$settings->link_color    = FLBuilderColor::hex_or_rgb( $settings->link_color );
 
-$settings->bg_color           = UABB_Helper::uabb_colorpicker( $settings, 'bg_color', true );
-$settings->img_bg_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'img_bg_hover_color', true );
+$settings->bg_color           = FLBuilderColor::hex_or_rgb( $settings->bg_color );
+$settings->img_bg_hover_color = FLBuilderColor::hex_or_rgb( $settings->img_bg_hover_color );
 
-$settings->icon_hover_color        = UABB_Helper::uabb_colorpicker( $settings, 'icon_hover_color' );
-$settings->uabb_border_color       = UABB_Helper::uabb_colorpicker( $settings, 'uabb_border_color' );
-$settings->icon_bg_hover_color     = UABB_Helper::uabb_colorpicker( $settings, 'icon_bg_hover_color', true );
-$settings->icon_border_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'icon_border_hover_color' );
-$settings->img_border_hover_color  = UABB_Helper::uabb_colorpicker( $settings, 'img_border_hover_color' );
-$settings->subhead_color_hover     = UABB_Helper::uabb_colorpicker( $settings, 'subhead_color_hover' );
-$settings->title_color_hover       = UABB_Helper::uabb_colorpicker( $settings, 'title_color_hover' );
-$settings->prefix_color_hover      = UABB_Helper::uabb_colorpicker( $settings, 'prefix_color_hover' );
-$settings->link_color_hover        = UABB_Helper::uabb_colorpicker( $settings, 'link_color_hover' );
-$settings->bg_color_hover          = UABB_Helper::uabb_colorpicker( $settings, 'bg_color_hover' );
+$settings->icon_hover_color        = FLBuilderColor::hex_or_rgb( $settings->icon_hover_color );
+$settings->uabb_border_color       = FLBuilderColor::hex_or_rgb( $settings->uabb_border_color );
+$settings->icon_bg_hover_color     = FLBuilderColor::hex_or_rgb( $settings->icon_bg_hover_color );
+$settings->icon_border_hover_color = FLBuilderColor::hex_or_rgb( $settings->icon_border_hover_color );
+$settings->img_border_hover_color  = FLBuilderColor::hex_or_rgb( $settings->img_border_hover_color );
+$settings->subhead_color_hover     = FLBuilderColor::hex_or_rgb( $settings->subhead_color_hover );
+$settings->title_color_hover       = FLBuilderColor::hex_or_rgb( $settings->title_color_hover );
+$settings->prefix_color_hover      = FLBuilderColor::hex_or_rgb( $settings->prefix_color_hover );
+$settings->link_color_hover        = FLBuilderColor::hex_or_rgb( $settings->link_color_hover );
+$settings->bg_color_hover          = FLBuilderColor::hex_or_rgb( $settings->bg_color_hover );
 
 $settings->img_size          = ( '' !== trim( $settings->img_size ) ) ? $settings->img_size : '150';
 $settings->icon_size         = ( '' !== trim( $settings->icon_size ) ) ? $settings->icon_size : '30';
@@ -493,7 +493,7 @@ if ( 'none' !== $settings->image_type ) {
 	<?php
 }
 if ( isset( $settings->enable_box_shadow ) && 'yes' === $settings->enable_box_shadow ) {
-	$box_shadow_color = ( false === strpos( $settings->info_shadow_color, 'rgb' ) ) ? '#' . $settings->info_shadow_color : $settings->info_shadow_color;
+	$box_shadow_color = FLBuilderColor::hex_or_rgb( $settings->info_shadow_color );
 	?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox {
 		-webkit-box-shadow: <?php echo esc_attr( $settings->info_shadow_color_hor ); ?>px <?php echo esc_attr( $settings->info_shadow_color_ver ); ?>px <?php echo esc_attr( $settings->info_shadow_color_blur ); ?>px <?php echo esc_attr( $settings->info_shadow_color_spr ); ?>px <?php echo esc_attr( $box_shadow_color ); ?>;
@@ -896,9 +896,9 @@ if ( 'custom' === $settings->min_height_switch && '' !== $settings->min_height )
 		<?php
 		if ( $settings->icon_three_d && ! empty( $settings->icon_bg_hover_color ) ) : // 3D Styles
 
-			$bg_hover_color      = ( ! empty( $settings->icon_bg_hover_color ) ) ? uabb_parse_color_to_hex( $settings->icon_bg_hover_color ) : '';
-			$bg_hover_grad_start = '#' . FLBuilderColor::adjust_brightness( $bg_hover_color, 40, 'lighten' );
-			$border_hover_color  = '#' . FLBuilderColor::adjust_brightness( $bg_hover_color, 20, 'darken' );
+			$bg_hover_color      = ( ! empty( $settings->icon_bg_hover_color ) ) ? $settings->icon_bg_hover_color : '';
+			$bg_hover_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->icon_bg_hover_color, 40, 'lighten' ) );
+			$border_hover_color  = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $settings->icon_bg_hover_color, 20, 'darken' ) );
 			?>
 
 		background: -moz-linear-gradient(top,  <?php echo esc_attr( $bg_hover_grad_start ); ?> 0%, <?php echo esc_attr( $settings->icon_bg_hover_color ); ?> 100%); /* FF3.6+ */

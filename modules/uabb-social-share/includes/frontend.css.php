@@ -6,10 +6,10 @@
  */
 
 $version_bb_check                = UABB_Compatibility::$version_bb_check;
-$settings->primary_color         = UABB_Helper::uabb_colorpicker( $settings, 'primary_color', true );
-$settings->secondary_color       = UABB_Helper::uabb_colorpicker( $settings, 'secondary_color', true );
-$settings->primary_hover_color   = UABB_Helper::uabb_colorpicker( $settings, 'primary_hover_color', true );
-$settings->secondary_hover_color = UABB_Helper::uabb_colorpicker( $settings, 'secondary_hover_color', true );
+$settings->primary_color         = FLBuilderColor::hex_or_rgb( $settings->primary_color );
+$settings->secondary_color       = FLBuilderColor::hex_or_rgb( $settings->secondary_color );
+$settings->primary_hover_color   = FLBuilderColor::hex_or_rgb( $settings->primary_hover_color );
+$settings->secondary_hover_color = FLBuilderColor::hex_or_rgb( $settings->secondary_hover_color );
 ?>
 <?php
 	$settings->size    = ( '' !== $settings->size ) ? $settings->size : '40';
@@ -138,7 +138,7 @@ if ( isset( $settings->skins ) && 'default' !== $settings->skins ) {
 			?>
 		}
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-social-share-wrap .uabb-ss-boxed .uabb-ss-grid-item:hover .uabb-ss-grid-button,
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-social-share-wrap .uabb-ss-framed .uabb-ss-grid-item:hover .uabb-ss-grid-button {			
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-social-share-wrap .uabb-ss-framed .uabb-ss-grid-item:hover .uabb-ss-grid-button {
 							<?php
 							if ( isset( $settings->primary_hover_color ) ) {
 								echo ( '' !== $settings->primary_hover_color ) ? 'border-color:' . esc_attr( $settings->primary_hover_color ) . ';' : '';
@@ -208,8 +208,8 @@ $icon_count                 = 1;
 $settings->bg_border_radius = ( '' !== $settings->bg_border_radius ) ? $settings->bg_border_radius : '0';
 foreach ( $settings->social_icons as $i => $icon ) :
 
-	$icon->bg_color       = uabb_theme_base_color( UABB_Helper::uabb_colorpicker( $icon, 'bg_color', true ) );
-	$icon->bg_hover_color = uabb_theme_base_color( UABB_Helper::uabb_colorpicker( $icon, 'bg_hover_color', true ) );
+	$icon->bg_color       = uabb_theme_base_color( FLBuilderColor::hex_or_rgb( $icon->bg_color ) );
+	$icon->bg_hover_color = uabb_theme_base_color( FLBuilderColor::hex_or_rgb( $icon->bg_hover_color ) );
 
 	if ( ! $version_bb_check ) {
 		$imageicon_array = array(
@@ -333,7 +333,7 @@ foreach ( $settings->social_icons as $i => $icon ) :
 		if ( $settings->three_d && 'simple' !== $settings->icoimage_style ) {
 
 			$bg_color      = $icon->bg_color;
-			$bg_grad_start = '#' . FLBuilderColor::adjust_brightness( $bg_color, 40, 'lighten' );
+			$bg_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_color, 40, 'lighten' ) );
 			?>
 
 			background: -moz-linear-gradient(top,  <?php echo esc_attr( $bg_grad_start ); ?> 0%, <?php echo esc_attr( $icon->bg_color ); ?> 100%); /* FF3.6+ */
@@ -353,7 +353,7 @@ foreach ( $settings->social_icons as $i => $icon ) :
 	if ( $settings->three_d && ! empty( $icon->bg_hover_color ) && 'simple' !== $settings->icoimage_style ) {
 		$bg_hover_color = ( ! empty( $icon->bg_hover_color ) ) ? uabb_parse_color_to_hex( $icon->bg_hover_color ) : '';
 
-		$bg_hover_grad_start = '#' . FLBuilderColor::adjust_brightness( $bg_hover_color, 40, 'lighten' );
+		$bg_hover_grad_start = FLBuilderColor::hex_or_rgb( FLBuilderColor::adjust_brightness( $bg_hover_color, 40, 'lighten' ) );
 		?>
 			background: -moz-linear-gradient(top,  <?php echo esc_attr( $bg_hover_grad_start ); ?> 0%,<?php echo esc_attr( $icon->bg_hover_color ); ?> 100%); /* FF3.6+ */
 			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,<?php echo esc_attr( $bg_hover_grad_start ); ?>), color-stop(100%,<?php echo esc_attr( $icon->bg_hover_color ); ?>)); /* Chrome,Safari4+ */
@@ -507,7 +507,7 @@ if ( isset( $settings->skins ) && 'default' !== $settings->skins ) {
 			.uabb-ss-column-medium-6 .uabb-ss-wrap {
 				grid-template-columns: repeat(6,1fr);
 				display: grid;
-			} 
+			}
 			.uabb-ss-wrap.uabb-ss-medium-align-right {
 				-webkit-box-pack: end;
 					-ms-flex-pack: end;

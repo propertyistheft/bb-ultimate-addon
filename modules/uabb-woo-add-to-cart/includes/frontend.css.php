@@ -11,7 +11,7 @@ $text_hover_color   = '';
 $border_size        = '';
 $bg_hover_color     = '';
 
-$get_bg_color = ( false === strpos( $settings->bg_color, 'rgb' ) ) ? '#' . $settings->bg_color : $settings->bg_color;
+$get_bg_color = FLBuilderColor::hex_or_rgb( $settings->bg_color );
 
 $bg_color = uabb_theme_button_bg_color( $get_bg_color );
 
@@ -22,14 +22,14 @@ if ( 'transparent' === $settings->style ) {
 }
 
 // Border Color.
-$border_color = ( false === strpos( $settings->bg_color, 'rgb' ) ) ? '#' . $settings->bg_color : $settings->bg_color;
+$border_color = FLBuilderColor::hex_or_rgb( $settings->bg_color );
 
 $theme_border_color = uabb_theme_button_bg_color( $border_color );
 
 if ( ! empty( $settings->bg_hover_color ) ) {
-	$border_hover_color = ( false === strpos( $settings->bg_hover_color, 'rgb' ) ) ? '#' . $settings->bg_hover_color : $settings->bg_hover_color;
+	$border_hover_color = FLBuilderColor::hex_or_rgb( $settings->bg_hover_color );
 
-	$bg_hover_color = ( false === strpos( $settings->bg_hover_color, 'rgb' ) ) ? '#' . $settings->bg_hover_color : $settings->bg_hover_color;
+	$bg_hover_color = FLBuilderColor::hex_or_rgb( $settings->bg_hover_color );
 } else {
 	$border_hover_color = $bg_color;
 	if ( 'default' !== $settings->style ) {
@@ -38,7 +38,7 @@ if ( ! empty( $settings->bg_hover_color ) ) {
 }
 
 if ( ! empty( $settings->text_hover_color ) ) {
-	$text_hover_color = ( false === strpos( $settings->text_hover_color, 'rgb' ) ) ? '#' . $settings->text_hover_color : $settings->text_hover_color;
+	$text_hover_color = FLBuilderColor::hex_or_rgb( $settings->text_hover_color );
 } else {
 	if ( 'default' !== $settings->style ) {
 		$text_hover_color = '#ffffff';
@@ -82,7 +82,7 @@ if ( ! empty( $settings->text_hover_color ) ) {
 
 	?>
 
-	color: <?php echo esc_attr( ( false === strpos( $settings->text_color, 'rgb' ) ) ? '#' . $settings->text_color : $settings->text_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->text_color ) ); ?>;
 
 	background: <?php echo esc_attr( $bg_color ); ?>;
 
@@ -155,10 +155,10 @@ if ( ! empty( $settings->text_hover_color ) ) {
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-woo-add-to-cart .added_to_cart {
-	color: <?php echo esc_attr( ( false === strpos( $settings->view_cart_color, 'rgb' ) ) ? '#' . $settings->view_cart_color : $settings->view_cart_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->view_cart_color ) ); ?>;
 }
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-woo-add-to-cart .added_to_cart:hover {
-	color: <?php echo esc_attr( ( false === strpos( $settings->view_cart_hover_color, 'rgb' ) ) ? '#' . $settings->view_cart_hover_color : $settings->view_cart_hover_color ); ?>;
+	color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->view_cart_hover_color ) ); ?>;
 }
 
 <?php /* Transparent New Style CSS*/ ?>
@@ -175,15 +175,15 @@ if ( 'transparent' === $settings->style ) {
 
 	.fl-node-<?php echo esc_attr( $id ); ?> a.uabb-creative-transparent-btn.uabb-none-btn:hover .uabb-atc-icon-align {
 		<?php if ( '' !== $settings->text_hover_color && 'FFFFFF' !== $settings->text_hover_color ) { ?>
-			color: <?php echo esc_attr( ( false === strpos( $settings->text_hover_color, 'rgb' ) ) ? '#' . $settings->text_hover_color : $settings->text_hover_color ); ?>
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->text_hover_color ) ); ?>
 		<?php } else { ?>
-			color: <?php echo esc_attr( ( false === strpos( $settings->text_color, 'rgb' ) ) ? '#' . $settings->text_color : $settings->text_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->text_color ) ); ?>;
 		<?php } ?>
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> a.uabb-creative-transparent-btn:hover .uabb-atc-btn-text,
 	.fl-node-<?php echo esc_attr( $id ); ?> a.uabb-creative-transparent-btn:hover .uabb-atc-select-text {
 		<?php if ( '' !== $settings->text_hover_color && 'FFFFFF' !== $settings->text_hover_color ) { ?>
-			color: <?php echo esc_attr( ( false === strpos( $settings->text_hover_color, 'rgb' ) ) ? '#' . $settings->text_hover_color : $settings->text_hover_color ); ?>
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->text_hover_color ) ); ?>
 		<?php } else { ?>
 			color: <?php echo esc_attr( $text_hover_color ); ?>;
 		<?php } ?>
@@ -269,7 +269,7 @@ if ( 'default' === $settings->style ) {
 	}
 	?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-woo-add-to-cart .button:hover {
-		<?php echo ( '' !== $settings->border_hover_color ) ? 'border-color:#' . esc_attr( $settings->border_hover_color ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_hover_color( '' ) ) . ';'; ?>
+		<?php echo ( '' !== $settings->border_hover_color ) ? 'border-color:' . esc_attr( FLBuilderColor::hex_or_rgb( $settings->border_hover_color ) ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_hover_color( '' ) ) . ';'; ?>
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-woo-add-to-cart .button:hover {
 		background: <?php echo esc_attr( uabb_theme_default_button_bg_hover_color( $bg_hover_color ) ); ?>;
@@ -280,7 +280,7 @@ if ( 'default' === $settings->style ) {
 }
 ?>
 <?php /* Global Setting If started */ ?>
-<?php if ( $global_settings->responsive_enabled ) { ?> 
+<?php if ( $global_settings->responsive_enabled ) { ?>
 
 		<?php /* Medium Breakpoint media query */ ?>
 		@media ( max-width: <?php echo esc_attr( $global_settings->medium_breakpoint ) . 'px'; ?> ) {

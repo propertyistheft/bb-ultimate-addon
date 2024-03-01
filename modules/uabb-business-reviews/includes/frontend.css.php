@@ -7,20 +7,20 @@
 
 $version_bb_check = UABB_Compatibility::$version_bb_check;
 
-$settings->reviewer_name_color = UABB_Helper::uabb_colorpicker( $settings, 'reviewer_name_color', true );
+$settings->reviewer_name_color = FLBuilderColor::hex_or_rgb( $settings->reviewer_name_color );
 
-$settings->reviewer_content_color = UABB_Helper::uabb_colorpicker( $settings, 'reviewer_content_color', true );
+$settings->reviewer_content_color = FLBuilderColor::hex_or_rgb( $settings->reviewer_content_color );
 
-$settings->reviewer_date_color = UABB_Helper::uabb_colorpicker( $settings, 'reviewer_date_color', true );
+$settings->reviewer_date_color = FLBuilderColor::hex_or_rgb( $settings->reviewer_date_color );
 
-$settings->rating_icon_color = UABB_Helper::uabb_colorpicker( $settings, 'rating_icon_color', true );
+$settings->rating_icon_color = FLBuilderColor::hex_or_rgb( $settings->rating_icon_color );
 
-$settings->stars_unmarked_color = UABB_Helper::uabb_colorpicker( $settings, 'stars_unmarked_color', true );
+$settings->stars_unmarked_color = FLBuilderColor::hex_or_rgb( $settings->stars_unmarked_color );
 
-$settings->block_bg_color  = UABB_Helper::uabb_colorpicker( $settings, 'block_bg_color', true );
-$settings->dots_color      = UABB_Helper::uabb_colorpicker( $settings, 'dots_color', true );
-$settings->arrows_color    = UABB_Helper::uabb_colorpicker( $settings, 'arrows_color', true );
-$settings->read_more_color = UABB_Helper::uabb_colorpicker( $settings, 'read_more_color', true );
+$settings->block_bg_color  = FLBuilderColor::hex_or_rgb( $settings->block_bg_color );
+$settings->dots_color      = FLBuilderColor::hex_or_rgb( $settings->dots_color );
+$settings->arrows_color    = FLBuilderColor::hex_or_rgb( $settings->arrows_color );
+$settings->read_more_color = FLBuilderColor::hex_or_rgb( $settings->read_more_color );
 
 if ( method_exists( 'FLBuilder', 'fa5_pro_enabled' ) ) {
 	if ( FLBuilder::fa5_pro_enabled() ) {
@@ -36,7 +36,7 @@ if ( method_exists( 'FLBuilder', 'fa5_pro_enabled' ) ) {
 	}
 }
 if ( ! $version_bb_check ) {
-	$settings->block_border_color = UABB_Helper::uabb_colorpicker( $settings, 'block_border_color', true );
+	$settings->block_border_color = FLBuilderColor::hex_or_rgb( $settings->block_border_color );
 }
 ?>
 <?php if ( isset( $settings->read_more_color ) ) { ?>
@@ -164,7 +164,7 @@ if ( ( 'yes' === $settings->review_rating ) || ( 'yes' === $settings->reviewer_i
 		}
 		?>
 
-	} 
+	}
 <?php } ?>
 
 /* css for name typography */
@@ -347,7 +347,7 @@ if ( ! $version_bb_check ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-reviews-skin-bubble .uabb-review-arrow-border {
 	<?php
 	if ( isset( $settings->block_border['color'] ) ) {
-		echo 'border-top-color:#' . esc_attr( $settings->block_border['color'] ) . ';';
+		echo 'border-top-color:' . esc_attr( FLBuilderColor::hex_or_rgb( $settings->block_border['color'] ) ) . ';';
 	}
 	?>
 
@@ -627,7 +627,7 @@ if ( 'carousel' === $settings->review_layout ) {
 					}
 					?>
 
-				} 
+				}
 		<?php } ?>
 		/* css for name typography */
 		<?php if ( 'yes' === $settings->reviewer_name ) { ?>
@@ -711,7 +711,7 @@ if ( 'carousel' === $settings->review_layout ) {
 					}
 					?>
 				}
-		<?php } ?>        
+		<?php } ?>
 	}
 	@media ( max-width: <?php echo esc_attr( $global_settings->responsive_breakpoint ); ?>px ) {
 		<?php if ( 'carousel' === $settings->review_layout ) { ?>
@@ -835,7 +835,7 @@ if ( 'carousel' === $settings->review_layout ) {
 					}
 					?>
 
-				} 
+				}
 		<?php } ?>
 		<?php if ( 'yes' === $settings->reviewer_name ) { ?>
 			<?php if ( ! $version_bb_check ) { ?>

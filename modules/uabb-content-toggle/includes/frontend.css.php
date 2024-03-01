@@ -12,40 +12,40 @@
 ?>
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-rbs-slider {
-	background-color:<?php echo esc_attr( ( false === strpos( $settings->color1, 'rgb' ) ) ? '#' . $settings->color1 : $settings->color1 ); ?>;
+	background-color:<?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->color1 ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-toggle input[type="checkbox"] + label:before {
-	background-color:<?php echo esc_attr( ( false === strpos( $settings->color1, 'rgb' ) ) ? '#' . $settings->color1 : $settings->color1 ); ?>;
+	background-color:<?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->color1 ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-toggle input[type="checkbox"]:not(:checked) + label:after {
-	border-color: <?php echo esc_attr( ( false === strpos( $settings->color1, 'rgb' ) ) ? '#' . $settings->color1 : $settings->color1 ); ?>;
+	border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->color1 ) ); ?>;
 	border-width: 0.3em;
 	border-style: solid;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-toggle .uabb-rbs-switch-2.checked + label:after {
-	border-color: <?php echo esc_attr( ( false === strpos( $settings->color2, 'rgb' ) ) ? '#' . $settings->color2 : $settings->color2 ); ?>;
+	border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->color2 ) ); ?>;
 	border-width: 0.3em;
 	border-style: solid;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-label-box-active .uabb-label-box-switch {
-	background:<?php echo esc_attr( ( false === strpos( $settings->color1, 'rgb' ) ) ? '#' . $settings->color1 : $settings->color1 ); ?>;
+	background:<?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->color1 ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-rbs-switch.checked + .uabb-rbs-slider {
-	background-color:<?php echo esc_attr( ( false === strpos( $settings->color2, 'rgb' ) ) ? '#' . $settings->color2 : $settings->color2 ); ?>;
+	background-color:<?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->color2 ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-rbs-switch:focus + .uabb-rbs-slider {
 	-webkit-box-shadow: 0 0 1px <?php echo esc_attr( $settings->color2 ); ?>;
-	box-shadow: 0 0 1px <?php echo '#' . esc_attr( $settings->color2 ); ?>;
+	box-shadow: 0 0 1px <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->color2 ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-toggle .uabb-rbs-switch-2.checked + label:before {
-	background-color:<?php echo esc_attr( ( false === strpos( $settings->color2, 'rgb' ) ) ? '#' . $settings->color2 : $settings->color2 ); ?>;
+	background-color:<?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->color2 ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-toggle .uabb-rbs-switch-2.checked + label:after {
@@ -55,21 +55,21 @@
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-label-box-inactive .uabb-label-box-switch {
-	background:<?php echo esc_attr( ( false === strpos( $settings->color2, 'rgb' ) ) ? '#' . $settings->color2 : $settings->color2 ); ?>;
+	background:<?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->color2 ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-rbs-slider:before,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-rbs-slider:after {
-	background-color: <?php echo esc_attr( ( false === strpos( $settings->controller_color, 'rgb' ) ) ? '#' . $settings->controller_color : $settings->controller_color ); ?>;
+	background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->controller_color ) ); ?>;
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-toggle input[type="checkbox"] + label:after {
-	background-color: <?php echo esc_attr( ( false === strpos( $settings->controller_color, 'rgb' ) ) ? '#' . $settings->controller_color : $settings->controller_color ); ?>;
+	background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->controller_color ) ); ?>;
 }
 
 <?php if ( '' !== $settings->controller_color && isset( $settings->controller_color ) ) : ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> span.uabb-label-box-switch {
-		color: <?php echo esc_attr( ( false === strpos( $settings->controller_color, 'rgb' ) ) ? '#' . $settings->controller_color : $settings->controller_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->controller_color ) ); ?>;
 	}
 <?php endif; ?>
 
@@ -79,13 +79,13 @@
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-rbs-head-1 {
 	<?php if ( '' !== $settings->head1_color && isset( $settings->head1_color ) ) : ?>
-		color: <?php echo esc_attr( ( false === strpos( $settings->head1_color, 'rgb' ) ) ? '#' . $settings->head1_color : $settings->head1_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->head1_color ) ); ?>;
 	<?php endif; ?>
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-rbs-head-2 {
 	<?php if ( '' !== $settings->head2_color && isset( $settings->head2_color ) ) : ?>
-		color: <?php echo esc_attr( ( false === strpos( $settings->head2_color, 'rgb' ) ) ? '#' . $settings->head2_color : $settings->head2_color ); ?>;
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->head2_color ) ); ?>;
 	<?php endif; ?>
 }
 
@@ -170,7 +170,7 @@
 	<?php if ( 'on' === $settings->advanced ) { ?>
 
 		<?php if ( '' !== $settings->background_color && isset( $settings->background_color ) ) { ?>
-			background-color:<?php echo esc_attr( ( false === strpos( $settings->background_color, 'rgb' ) ) ? '#' . $settings->background_color : $settings->background_color ); ?>;
+			background-color:<?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->background_color ) ); ?>;
 		<?php } ?>
 
 		<?php if ( ! $version_bb_check ) { ?>
@@ -181,7 +181,7 @@
 				border-width: <?php echo esc_attr( $settings->border_width_head ); ?>px;
 			<?php } ?>
 			<?php if ( '' !== $settings->border_color_head && isset( $settings->border_color_head ) ) { ?>
-				border-color: <?php echo '#' . esc_attr( $settings->border_color_head ); ?>;
+				border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->border_color_head ) ); ?>;
 			<?php } ?>
 			<?php if ( '' !== $settings->border_radius && isset( $settings->border_radius ) ) { ?>
 				border-radius: <?php echo esc_attr( $settings->border_radius ); ?>px;
@@ -220,7 +220,7 @@
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-rbs-content-1,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-rbs-section-1 {
 		<?php if ( '' !== $settings->section1_color && isset( $settings->section1_color ) ) : ?>
-			color:<?php echo esc_attr( ( false === strpos( $settings->section1_color, 'rgb' ) ) ? '#' . $settings->section1_color : $settings->section1_color ); ?>;
+			color:<?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->section1_color ) ); ?>;
 		<?php endif; ?>
 	}
 
@@ -263,7 +263,7 @@
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-rbs-content-2,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-rbs-section-2 {
 		<?php if ( '' !== $settings->section2_color && isset( $settings->section2_color ) ) : ?>
-			color: <?php echo esc_attr( ( false === strpos( $settings->section2_color, 'rgb' ) ) ? '#' . $settings->section2_color : $settings->section2_color ); ?>;
+			color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->section2_color ) ); ?>;
 		<?php endif; ?>
 	}
 
@@ -305,7 +305,7 @@
 	<?php if ( 'on' === $settings->advanced_sec ) { ?>
 
 		<?php if ( '' !== $settings->background_color_sec && isset( $settings->background_color_sec ) ) : ?>
-			background-color: <?php echo esc_attr( ( false === strpos( $settings->background_color_sec, 'rgb' ) ) ? '#' . $settings->background_color_sec : $settings->background_color_sec ); ?>;
+			background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->background_color_sec ) ); ?>;
 		<?php endif; ?>
 
 		<?php if ( ! $version_bb_check ) { ?>
@@ -317,7 +317,7 @@
 				border-width:<?php echo esc_attr( $settings->border_width_sec ); ?>px;
 			<?php endif; ?>
 			<?php if ( '' !== $settings->border_color_sec && isset( $settings->border_color_sec ) ) : ?>
-				border-color: <?php echo esc_attr( ( false === strpos( $settings->border_color_sec, 'rgb' ) ) ? '#' . $settings->border_color_sec : $settings->border_color_sec ); ?>;
+				border-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->border_color_sec ) ); ?>;
 			<?php endif; ?>
 			<?php if ( '' !== $settings->border_radius_sec && isset( $settings->border_radius_sec ) ) : ?>
 				border-radius:<?php echo esc_attr( $settings->border_radius_sec ); ?>px;
@@ -351,7 +351,7 @@
 		<?php endif; ?>
 
 		<?php if ( '' !== $settings->background_color_sec && isset( $settings->background_color_sec ) ) : ?>
-			background-color: <?php echo esc_attr( ( false === strpos( $settings->background_color_sec, 'rgb' ) ) ? '#' . $settings->background_color_sec : $settings->background_color_sec ); ?>;
+			background-color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->background_color_sec ) ); ?>;
 		<?php endif; ?>
 	<?php } ?>
 	overflow: hidden;
