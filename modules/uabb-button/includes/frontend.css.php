@@ -242,6 +242,22 @@ if ( ! empty( $settings->bg_hover_color ) ) {
 		}
 		?>
 }
+	<?php
+	// Opacity for normal and hover button.
+	if ( isset( $settings->bg_color_opc ) && ( $settings->bg_color_opc ) !== '' &&
+		isset( $settings->bg_hover_color_opc ) && ( $settings->bg_hover_color_opc ) !== '' 
+	) {
+		$opacity_decimal = (float) $settings->bg_color_opc / 100; 
+		$opacity_hover   = (float) $settings->bg_hover_color_opc / 100;
+		?>
+				.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-button-wrap a,
+				.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-button-wrap a:visited {
+					opacity: <?php echo esc_attr( $opacity_decimal ); ?>;
+				}
+				.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-button-wrap a:hover {
+					opacity: <?php echo esc_attr( $opacity_hover ); ?>;
+				}
+<?php } ?>
 	<?php if ( ! $version_bb_check ) { ?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-button-wrap a,
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-button-wrap a:visited {

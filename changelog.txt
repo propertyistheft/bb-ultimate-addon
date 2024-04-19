@@ -1,3 +1,13 @@
+Version 1.35.20, Tuesday, 9th April 2024
+- Fixed: Color picker not loading for some WooCommerce modules.
+- Fixed: Contact Form 7 Styler - Dropdown icon not displaying correctly when Font Awesome PRO is active in Beaver Builder.
+- Fixed: Gravity Form Styler - Undefined array offset issue.
+- Fixed: Gravity Form Styler - The font-family of the placeholder changes after applying color to it.
+- Fixed: Image Carousel - Opacity setting for overlay color is not working.
+- Fixed: Image Carousel - Image is open in a tab instead of light box.
+- Fixed: Photo Gallery - Scroll feature does not work correctly.
+- Fixed: Video - Added Alt attribute support for video play button.
+
 Version 1.35.19, Friday, 9th February 2024
 - Improvement: Compatibility with Beaver Builder 2.8
 - Improvement: Compatibility with PHP version 8.2.

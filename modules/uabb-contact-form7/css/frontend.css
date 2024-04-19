@@ -22,7 +22,6 @@
 
 .uabb-cf7-style .wpcf7-form-control-wrap:has(select):after {
     content: "\f078";
-    font-family: 'Font Awesome 5 Free';
     font-weight: 800;
     position: absolute;
     font-size: 0.7em;

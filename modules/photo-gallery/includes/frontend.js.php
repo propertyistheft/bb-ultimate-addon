@@ -126,11 +126,19 @@ jQuery(document).ready(function( $ ) {
 				total_img_count: <?php echo esc_attr( ( isset( $settings->photos ) && is_array( $settings->photos ) ) ? count( $settings->photos ) : 0 ); ?>,
 			};
 
-			var $grid = $('.fl-node-<?php echo esc_attr( $id ); ?> .uabb-module-content').imagesLoaded( function() {
-				$grid.isotope({
-					columnWidth: '.uabb-grid-sizer',
-					itemSelector: '.uabb-photo-item-grid'
-				});
+			document.addEventListener("DOMContentLoaded", function() {
+				// Check if the user agent indicates an iOS device.
+				var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+				if( isIOS ) {
+					var grid = document.querySelector('.fl-node-<?php echo esc_attr( $id ); ?> .uabb-module-content');
+					imagesLoaded(grid, function() {
+						new Isotope(grid, {
+							columnWidth: '.uabb-grid-sizer',
+							itemSelector: '.uabb-photo-item-grid'
+						});
+					});
+				}
 			});
 
 			/* Tab Click Trigger */

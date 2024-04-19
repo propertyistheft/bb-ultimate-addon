@@ -67,6 +67,17 @@ background: <?php echo esc_attr( $settings->title_bg_color ); ?>;
 	width: 100%;
 <?php endif; ?>
 }
+<?php 
+// Opacity for default body accordian.
+if ( isset( $settings->content_bg_color_opc ) && ! empty( $settings->content_bg_color_opc ) ) {
+	$opacity_bcolor = (float) $settings->content_bg_color_opc / 100;
+	?>
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-content{
+			opacity: <?php echo esc_attr( $opacity_bcolor ); ?>;
+		}
+		<?php
+}
+?>
 <?php if ( ! $version_bb_check ) { ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-button<?php echo esc_attr( $id ); ?> {
 		<?php if ( 'none' !== $settings->title_border_type ) { ?>
@@ -224,6 +235,24 @@ if ( isset( $settings->title_border_param['top'] ) ) {
 }
 
 
+<?php 
+// Opacity for title and onhover .
+if ( isset( $settings->title_bg_color_opc ) && ! empty( $settings->title_bg_color_opc ) &&
+	isset( $settings->title_bg_hover_color_opc ) && ! empty( $settings->title_bg_hover_color_opc )  
+) {
+	$opacity_title_color = (float) $settings->title_bg_color_opc / 100;
+	$opacity_hover_color = (float) $settings->title_bg_hover_color_opc / 100;
+	?>
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-button{
+			opacity: <?php echo esc_attr( $opacity_title_color ); ?>;
+		}
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-button<?php echo esc_attr( $id ); ?>:hover,
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-item-active > .uabb-adv-accordion-button<?php echo esc_attr( $id ); ?> {
+			opacity: <?php echo esc_attr( $opacity_hover_color ); ?>;
+		}
+		<?php
+}
+?>
 /* Typography */
 <?php if ( ! $version_bb_check ) { ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-button<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-button-label {

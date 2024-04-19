@@ -236,12 +236,13 @@ FLBuilder::register_module(
 					'title'  => __( 'Button Colors', 'uabb' ),
 					'fields' => array(
 						'text_color'            => array(
-							'type'       => 'color',
-							'label'      => __( 'Text Color', 'uabb' ),
-							'default'    => '',
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Text Color', 'uabb' ),
+							'default'     => '',
+							'show_reset'  => true,
+							'show_alpha'  => true,
+							'connections' => array( 'color' ),
+							'preview'     => array(
 								'type'      => 'css',
 								'selector'  => '.uabb-woo-add-to-cart .button',
 								'property'  => 'color',
@@ -249,22 +250,24 @@ FLBuilder::register_module(
 							),
 						),
 						'text_hover_color'      => array(
-							'type'       => 'color',
-							'label'      => __( 'Text Hover Color', 'uabb' ),
-							'default'    => '',
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Text Hover Color', 'uabb' ),
+							'default'     => '',
+							'show_reset'  => true,
+							'show_alpha'  => true,
+							'connections' => array( 'color' ),
+							'preview'     => array(
 								'type' => 'none',
 							),
 						),
 						'bg_color'              => array(
-							'type'       => 'color',
-							'label'      => __( 'Background Color', 'uabb' ),
-							'default'    => '',
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Background Color', 'uabb' ),
+							'default'     => '',
+							'show_reset'  => true,
+							'show_alpha'  => true,
+							'connections' => array( 'color' ),
+							'preview'     => array(
 								'type'      => 'css',
 								'important' => true,
 								'rules'     => array(
@@ -280,22 +283,24 @@ FLBuilder::register_module(
 							),
 						),
 						'bg_hover_color'        => array(
-							'type'       => 'color',
-							'label'      => __( 'Background Hover Color', 'uabb' ),
-							'default'    => '',
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Background Hover Color', 'uabb' ),
+							'default'     => '',
+							'show_reset'  => true,
+							'show_alpha'  => true,
+							'connections' => array( 'color' ),
+							'preview'     => array(
 								'type' => 'none',
 							),
 						),
 						'view_cart_color'       => array(
-							'type'       => 'color',
-							'label'      => __( 'View Cart Text', 'uabb' ),
-							'default'    => '',
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'View Cart Text', 'uabb' ),
+							'default'     => '',
+							'show_reset'  => true,
+							'show_alpha'  => true,
+							'connections' => array( 'color' ),
+							'preview'     => array(
 								'type'      => 'css',
 								'selector'  => '.uabb-woo-add-to-cart .added_to_cart',
 								'property'  => 'color',
@@ -304,12 +309,13 @@ FLBuilder::register_module(
 						),
 
 						'view_cart_hover_color' => array(
-							'type'       => 'color',
-							'label'      => __( 'View Cart Hover Text', 'uabb' ),
-							'default'    => '',
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'View Cart Hover Text', 'uabb' ),
+							'default'     => '',
+							'show_reset'  => true,
+							'show_alpha'  => true,
+							'connections' => array( 'color' ),
+							'preview'     => array(
 								'type'      => 'css',
 								'selector'  => '.uabb-woo-add-to-cart .added_to_cart:hover',
 								'property'  => 'color',

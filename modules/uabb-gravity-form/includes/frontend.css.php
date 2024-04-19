@@ -470,12 +470,14 @@ if ( $settings->placeholder_color && 'block' === $settings->input_placeholder_di
 		$font_family = FLBuilder::fa5_pro_enabled() ? 'Font Awesome 5 Pro' : 'Font Awesome 5 Free';
 	} 
 	?>
-	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield input::-webkit-input-placeholder,
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select .chosen-container-single .chosen-single,
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select select,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .ginput_container_select:after {
 		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->placeholder_color ) ); ?>;
 		font-family: '<?php echo esc_attr( $font_family ); ?>';
+	}
+	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield input::-webkit-input-placeholder{
+		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->placeholder_color ) ); ?>;
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield input:-moz-placeholder {
 		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->placeholder_color ) ); ?>;

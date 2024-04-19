@@ -152,7 +152,7 @@ jQuery(document).ready(function( $ ) {
 
 	<?php if ( 'lightbox' === $settings->click_action ) : ?>
 	$('.fl-node-<?php echo esc_attr( $id ); ?> .uabb-image-carousel').magnificPopup({
-		delegate: '.uabb-image-carousel-item:not(.slick-cloned) a',
+		delegate: '.uabb-image-carousel-content a',
 		closeBtnInside: false,
 		type: 'image',
 		gallery: {

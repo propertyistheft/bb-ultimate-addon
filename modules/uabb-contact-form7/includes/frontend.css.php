@@ -172,8 +172,12 @@ if ( ! $version_bb_check ) {
 	} else {
 		$bgcolor = 'transparent';
 	}
+	if ( method_exists( 'FLBuilder', 'fa5_pro_enabled' ) ) {
+		$font_family = FLBuilder::fa5_pro_enabled() ? 'Font Awesome 5 Pro' : 'Font Awesome 5 Free';
+	}
 	?>
 	background: <?php echo esc_attr( $bgcolor ); ?>;
+	font-family: '<?php echo esc_attr( $font_family ); ?>';
 }
 
 <?php if ( ! $version_bb_check ) { ?>

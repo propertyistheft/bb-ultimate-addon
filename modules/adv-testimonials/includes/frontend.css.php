@@ -273,6 +273,15 @@ if ( '' === ( $settings->responsive_img_size_slider ) ) {
 		}
 		<?php
 		$testimonial_list_counter++;
+
+		if ( isset( $settings->testimonial_icon_bg_color_opc ) && ! empty( $settings->testimonial_icon_bg_color_opc ) ) {  // Opacity Desktop slider.
+			$opacity_decimal = (float) $settings->testimonial_icon_bg_color_opc / 100;
+			?>
+			.fl-node-<?php echo esc_attr( $id ); ?> .uabb-icon-wrap .uabb-icon i {
+				opacity: <?php echo esc_attr( $opacity_decimal ); ?>;
+			}
+			<?php
+		}
 	}
 	?>
 <?php } ?>
@@ -445,6 +454,19 @@ if ( isset( $settings->rating_align ) && $version_bb_check ) {
 	flex-direction: column;
 }
 	<?php } ?>
+
+	<?php
+	// Box Layout opacity.
+	if ( isset( $settings->layout_background_opc ) && ! empty( $settings->layout_background_opc ) ) {
+		$opacity_decimal = (float) $settings->layout_background_opc / 100;
+		?>
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-testimonial,
+		.fl-node-<?php echo esc_attr( $id ); ?> .testimonial-arrow-down {
+			opacity: <?php echo esc_attr( $opacity_decimal ); ?>;
+		}
+			<?php
+	}
+	?>
 
 <?php } ?>
 
@@ -747,6 +769,16 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 				height: <?php echo esc_attr( $settings->testimonial_icon_image_size_noslider_medium ); ?>px;
 				width: <?php echo esc_attr( $settings->testimonial_icon_image_size_noslider_medium ); ?>px;
 			}
+			<?php
+			if ( isset( $settings->testimonial_icon_bg_color_opc ) && ! empty( $settings->testimonial_icon_bg_color_opc ) ) { // Opacity Tab & Mobile.
+				$opacity_decimal = (float) $settings->testimonial_icon_bg_color_opc / 100;
+				?>
+				.fl-node-<?php echo esc_attr( $id ); ?> .uabb-icon-wrap .uabb-icon i {
+					opacity: <?php echo esc_attr( $opacity_decimal ); ?>;
+				}
+				<?php
+			}
+			?>
 	}
 	<?php
 	if ( ! $version_bb_check ) {
@@ -773,6 +805,7 @@ if ( $global_settings->responsive_enabled ) { // Global Setting If started.
 						line-height: <?php echo esc_attr( $settings->testimonial_icon_image_size_responsive ); ?>px;
 						height: <?php echo esc_attr( $settings->testimonial_icon_image_size_responsive ); ?>px;
 						width: <?php echo esc_attr( $settings->testimonial_icon_image_size_responsive ); ?>px;
+					}
 					<?php
 				}
 				?>

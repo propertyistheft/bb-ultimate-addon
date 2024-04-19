@@ -57,6 +57,23 @@ if ( count( $settings->ihover_item ) > 0 ) {
 				background-color:
 				<?php echo esc_attr( uabb_theme_base_color( $settings->ihover_item[ $i ]->background_color ) ); ?>;
 			}
+			<?php 
+			// Opacity settings.
+			$selector_prefix = '.fl-node-' . esc_attr( $id ) . ' .uabb-ih-item-' . esc_attr( $i );
+
+			if ( isset( $settings->ihover_item[ $i ]->background_color_opc ) && ! empty( $settings->ihover_item[ $i ]->background_color_opc ) ) {
+					$opacity_decimal = (float) $settings->ihover_item[ $i ]->background_color_opc / 100;
+				?>
+				<?php echo esc_attr( $selector_prefix ); ?> .uabb-ih-circle.uabb-ih-effect1.uabb-ih-hover .uabb-ih-info .uabb-ih-info-back,
+				<?php echo esc_attr( $selector_prefix ); ?> .uabb-ih-square.uabb-ih-effect1.uabb-ih-hover .uabb-ih-info .uabb-ih-info-back,
+				<?php echo esc_attr( $selector_prefix ); ?> .uabb-ih-circle.uabb-ih-effect18.uabb-ih-hover .uabb-ih-info .uabb-ih-info-back,
+				<?php echo esc_attr( $selector_prefix ); ?> .uabb-ih-square.uabb-ih-effect18.uabb-ih-hover .uabb-ih-info .uabb-ih-info-back,
+				<?php echo esc_attr( $selector_prefix ); ?> .uabb-ih-info .uabb-ih-info-back{
+					opacity: <?php echo esc_attr( $opacity_decimal ); ?>;
+				}
+					<?php
+			}
+			?>
 			<?php
 			if ( '' !== $settings->ihover_item[ $i ]->title_color ) {
 				?>

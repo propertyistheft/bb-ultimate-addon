@@ -149,6 +149,17 @@ if ( 'yes' === $settings->enable_dots ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-background-mask {
 	background: <?php echo esc_attr( ( '' !== $settings->overlay_color ) ? $settings->overlay_color : 'rgba(0,0,0,.5)' ); ?>;
 }
+	<?php
+	if ( isset( $settings->overlay_color_opc ) ) {
+		$opacity_decimal = (float) $settings->overlay_color_opc / 100;
+		?>
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-image-carousel-content:hover .uabb-background-mask {
+		opacity: <?php echo esc_attr( $opacity_decimal ); ?>;
+	}
+		<?php
+	}
+	?>
+
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-background-mask .uabb-overlay-icon i {
 	color: <?php echo esc_attr( $settings->overlay_icon_color ); ?>;
 	font-size: <?php echo esc_attr( ( $settings->overlay_icon_size ) ? $settings->overlay_icon_size : '16' ); ?>px;

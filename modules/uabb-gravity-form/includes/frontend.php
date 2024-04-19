@@ -14,8 +14,8 @@
 	if ( 'yes' === $settings->form_title_option ) {
 		if ( class_exists( 'GFAPI' ) ) {
 			$form        = GFAPI::get_form( absint( $settings->form_id ) );
-			$form_title  = $form['title']; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
-			$description = $form['description'];
+			$form_title  = isset( $form['title'] ) ? $form['title'] : ''; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+			$description = isset( $form['description'] ) ? $form['description'] : '';
 		}
 	} elseif ( 'no' === $settings->form_title_option ) {
 		$form_title  = $settings->form_title; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited

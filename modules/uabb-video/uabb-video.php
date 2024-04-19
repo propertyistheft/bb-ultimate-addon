@@ -530,8 +530,10 @@ class UABBVideo extends FLBuilderModule {
 		} elseif ( 'icon' === $this->settings->play_source ) {
 			$html = '';
 		} else {
-			$thumb = $this->settings->play_img_src;
-			$html  = '<img src="' . $thumb . '" />';
+			$thumb    = $this->settings->play_img_src;
+			$image_id = attachment_url_to_postid( $thumb ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.attachment_url_to_postid_attachment_url_to_postid
+			$alt_text = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+			$html     = '<img src="' . $thumb . '" alt="' . $alt_text . '" />';
 		}
 		$schema = $this->get_structured_data();
 		if ( 'hosted' === $this->settings->video_type ) {
