@@ -1053,7 +1053,7 @@ FLBuilder::register_settings_form(
 							'video_url'          => array(
 								'type'        => 'text',
 								'label'       => __( 'External URL', 'uabb' ),
-								'placeholder' => __( 'http://www.example.com/my-photo.jpg', 'uabb' ),
+								'placeholder' => __( 'https://www.example.com/my-photo.jpg', 'uabb' ),
 								'preview'     => array(
 									'type' => 'none',
 								),

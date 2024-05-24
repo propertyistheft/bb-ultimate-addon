@@ -512,7 +512,7 @@ FLBuilder::register_module(
 						'photo_url'           => array(
 							'type'        => 'text',
 							'label'       => __( 'Photo URL', 'uabb' ),
-							'placeholder' => 'http://www.example.com/my-photo.jpg',
+							'placeholder' => 'https://www.example.com/my-photo.jpg',
 							'connections' => array( 'url' ),
 						),
 						'img_size'            => array(
@@ -1365,7 +1365,7 @@ FLBuilder::register_module(
 							'show_target'   => true,
 							'show_nofollow' => true,
 							'label'         => __( 'Link', 'uabb' ),
-							'placeholder'   => 'http://www.example.com',
+							'placeholder'   => 'https://www.example.com',
 							'preview'       => array(
 								'type' => 'none',
 							),
@@ -1758,6 +1758,7 @@ FLBuilder::register_module(
 							'type'          => 'link',
 							'show_target'   => true,
 							'show_nofollow' => true,
+							'placeholder'   => 'https://www.example.com',
 							'label'         => __( 'Link', 'uabb' ),
 							'help'          => __( 'The link applies to the entire module. If choosing a call to action type below, this link will also be used for the text or button.', 'uabb' ),
 							'preview'       => array(

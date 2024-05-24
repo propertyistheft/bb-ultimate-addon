@@ -735,6 +735,11 @@ if ( 'none' !== $settings->info_separator_style ) :
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-info-circle-small {
 			margin-bottom: 15px;
 		}
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-info-circle-wrap .uabb-info-circle-content,
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-info-circle-small{
+			position: relative;
+			transform: translate(-50%, 0%);
+		}
 	}
 <?php endif; ?>
 

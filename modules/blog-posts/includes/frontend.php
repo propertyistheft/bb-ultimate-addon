@@ -147,9 +147,7 @@ if ( 'masonary' === $settings->is_carousel || 'grid' === $settings->is_carousel 
 	}
 
 	?>
-	<?php if ( 'grid' === $settings->is_carousel ) : ?>
-	<div class="uabb-post-grid-sizer"></div>
-	<?php endif; ?>
+
 </div>
 <?php
 /*

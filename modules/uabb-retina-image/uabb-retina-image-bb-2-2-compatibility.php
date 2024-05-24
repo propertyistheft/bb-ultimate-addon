@@ -42,7 +42,7 @@ FLBuilder::register_module(
 						'default_img_url'    => array(
 							'type'        => 'text',
 							'label'       => __( 'Image URL', 'uabb' ),
-							'placeholder' => 'http://www.example.com/my-image.jpg',
+							'placeholder' => 'https://www.example.com/my-image.jpg',
 							'connections' => array( 'string' ),
 						),
 					),
@@ -76,7 +76,7 @@ FLBuilder::register_module(
 						'retina_img_url'    => array(
 							'type'        => 'text',
 							'label'       => __( 'Image URL', 'uabb' ),
-							'placeholder' => 'http://www.example.com/my-image.jpg',
+							'placeholder' => 'https://www.example.com/my-image.jpg',
 							'connections' => array( 'string' ),
 						),
 					),
@@ -191,6 +191,7 @@ FLBuilder::register_module(
 							'label'         => __( 'Link URL', 'uabb' ),
 							'show_target'   => true,
 							'show_nofollow' => true,
+							'placeholder'   => 'https://www.example.com',
 							'connections'   => array( 'string', 'url' ),
 							'preview'       => array(
 								'type' => 'none',
@@ -227,11 +228,12 @@ FLBuilder::register_module(
 							),
 						),
 						'style_bg_color'          => array(
-							'type'       => 'color',
-							'label'      => __( 'Background Color', 'uabb' ),
-							'show_alpha' => true,
-							'show_reset' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Background Color', 'uabb' ),
+							'connections' => array( 'color' ),
+							'show_alpha'  => true,
+							'show_reset'  => true,
+							'preview'     => array(
 								'type'      => 'css',
 								'selector'  => '.uabb-retina-img-wrap .uabb-retina-img-content',
 								'property'  => 'background-color',

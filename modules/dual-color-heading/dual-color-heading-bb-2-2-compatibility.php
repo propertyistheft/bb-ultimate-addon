@@ -58,6 +58,7 @@ FLBuilder::register_module(
 							'label'         => __( 'Link', 'uabb' ),
 							'show_target'   => true,
 							'show_nofollow' => true,
+							'placeholder'   => 'https://www.example.com',
 							'preview'       => array(
 								'type' => 'none',
 							),
@@ -86,6 +87,7 @@ FLBuilder::register_module(
 							'label'         => __( 'Link', 'uabb' ),
 							'show_nofollow' => true,
 							'show_target'   => true,
+							'placeholder'   => 'https://www.example.com',
 							'preview'       => array(
 								'type' => 'none',
 							),

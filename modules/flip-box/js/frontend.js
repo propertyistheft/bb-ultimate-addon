@@ -38,7 +38,7 @@ var UABBFlipBox;
 
         _init: function() {
         	var $this = this,
-                delay = 500,
+                delay = 1000, // 1 second delay
         		id = $this.id;
 
 			if( !( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) ) {

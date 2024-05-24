@@ -43,7 +43,7 @@ FLBuilder::register_module(
 						'photo_url'    => array(
 							'type'        => 'text',
 							'label'       => __( 'Photo URL', 'uabb' ),
-							'placeholder' => 'http://www.example.com/my-photo.jpg',
+							'placeholder' => 'https://www.example.com/my-photo.jpg',
 						),
 						'img_size'     => array(
 							'type'        => 'unit',
@@ -284,7 +284,7 @@ FLBuilder::register_module(
 						'custom_link'          => array(
 							'type'        => 'link',
 							'label'       => __( 'Link', 'uabb' ),
-							'placeholder' => 'http://www.example.com',
+							'placeholder' => 'https://www.example.com',
 							'connections' => array( 'url' ),
 						),
 						'custom_link_target'   => array(

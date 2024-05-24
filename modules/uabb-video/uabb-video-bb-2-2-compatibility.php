@@ -94,7 +94,7 @@ FLBuilder::register_module(
 						'video_url'    => array(
 							'type'        => 'text',
 							'label'       => __( 'External URL', 'uabb' ),
-							'placeholder' => __( 'http://www.example.com/my-photo.jpg', 'uabb' ),
+							'placeholder' => __( 'https://www.example.com/my-photo.jpg', 'uabb' ),
 							'preview'     => array(
 								'type' => 'none',
 							),
@@ -665,12 +665,13 @@ FLBuilder::register_module(
 						),
 
 						'sticky_video_color'   => array(
-							'type'       => 'color',
-							'label'      => __( 'Background Color', 'uabb' ),
-							'default'    => 'ffffff',
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Background Color', 'uabb' ),
+							'default'     => 'ffffff',
+							'connections' => array( 'color' ),
+							'show_reset'  => true,
+							'show_alpha'  => true,
+							'preview'     => array(
 								'type'     => 'css',
 								'selector' => '.uabb-video__outer-wrap.uabb-sticky-apply .uabb-video-inner-wrap',
 								'property' => 'background',

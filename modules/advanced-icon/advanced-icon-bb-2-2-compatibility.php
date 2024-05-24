@@ -320,6 +320,7 @@ FLBuilder::register_settings_form(
 								'type'          => 'link',
 								'label'         => __( 'Link', 'uabb' ),
 								'description'   => '',
+								'placeholder'   => 'https://www.example.com',
 								'show_target'   => true,
 								'show_nofollow' => true,
 								'preview'       => array(

@@ -526,12 +526,13 @@ FLBuilder::register_module(
 							),
 						),
 						'text_hover_color' => array(
-							'type'       => 'color',
-							'label'      => __( 'Navigation Hover Color', 'uabb' ),
-							'default'    => '',
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Navigation Hover Color', 'uabb' ),
+							'default'     => '',
+							'connections' => array( 'color' ),
+							'show_reset'  => true,
+							'show_alpha'  => true,
+							'preview'     => array(
 								'type' => 'none',
 							),
 						),
@@ -549,12 +550,13 @@ FLBuilder::register_module(
 							),
 						),
 						'bg_hover_color'   => array(
-							'type'       => 'color',
-							'label'      => __( 'Navigation Background Hover Color', 'uabb' ),
-							'default'    => '',
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Navigation Background Hover Color', 'uabb' ),
+							'default'     => '',
+							'connections' => array( 'color' ),
+							'show_reset'  => true,
+							'show_alpha'  => true,
+							'preview'     => array(
 								'type' => 'none',
 							),
 						),

@@ -136,7 +136,7 @@ if ( isset( $uabb_setting_options['uabb-google-map-api'] ) && ! empty( $uabb_set
 }
 if ( '' !== $google_api_key ) {
 	$notice = sprintf( /* translators: %1$s: search term */
-		__( '<span style="%1$s">Facing issues while using Google Map module. Please refer your browser for any console error related to Google Map and the following article for <a target="_blank" href="https://developers.google.com/maps/documentation/javascript/error-messages"> troubleshooting steps </a></span>', 'uabb' ),
+		__( '<span style="%1$s">Facing issues while using Google Map module? Please refer your browser for any console error related to Google Map and the following article for <a target="_blank" href="https://developers.google.com/maps/documentation/javascript/error-messages"> troubleshooting steps </a></span>', 'uabb' ),
 		$style1
 	);
 }

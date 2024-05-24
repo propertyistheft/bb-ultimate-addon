@@ -77,6 +77,7 @@ FLBuilder::register_module(
 						'it_link'      => array(
 							'type'          => 'link',
 							'label'         => __( 'Select URL', 'uabb' ),
+							'placeholder'   => 'https://www.example.com',
 							'connections'   => array( 'url' ),
 							'show_target'   => true,
 							'show_nofollow' => true,
@@ -423,7 +424,7 @@ FLBuilder::register_module(
 						'photo_url'    => array(
 							'type'        => 'text',
 							'label'       => __( 'Photo URL', 'uabb' ),
-							'placeholder' => 'http://www.example.com/my-photo.jpg',
+							'placeholder' => 'https://www.example.com/my-photo.jpg',
 						),
 						'img_size'     => array(
 							'type'        => 'unit',

@@ -35,7 +35,7 @@ FLBuilder::register_module(
 						'link'          => array(
 							'type'        => 'link',
 							'label'       => __( 'Link', 'uabb' ),
-							'placeholder' => 'http://www.example.com',
+							'placeholder' => 'https://www.example.com',
 							'default'     => '#',
 							'preview'     => array(
 								'type' => 'none',

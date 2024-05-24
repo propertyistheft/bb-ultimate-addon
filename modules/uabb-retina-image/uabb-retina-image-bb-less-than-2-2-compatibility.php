@@ -42,7 +42,7 @@ FLBuilder::register_module(
 						'default_img_url'    => array(
 							'type'        => 'text',
 							'label'       => __( 'Image URL', 'uabb' ),
-							'placeholder' => 'http://www.example.com/my-image.jpg',
+							'placeholder' => 'https://www.example.com/my-image.jpg',
 							'connections' => array( 'string' ),
 						),
 					),
@@ -76,7 +76,7 @@ FLBuilder::register_module(
 						'retina_img_url'    => array(
 							'type'        => 'text',
 							'label'       => __( 'Image URL', 'uabb' ),
-							'placeholder' => 'http://www.example.com/my-image.jpg',
+							'placeholder' => 'https://www.example.com/my-image.jpg',
 							'connections' => array( 'string' ),
 						),
 					),

@@ -388,6 +388,7 @@ FLBuilder::register_module(
 							'preview'       => array(
 								'type' => 'none',
 							),
+							'placeholder'   => 'https://www.example.com',
 							'connections'   => array( 'url' ),
 							'show_target'   => true,
 							'show_nofollow' => true,

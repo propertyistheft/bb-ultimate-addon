@@ -329,7 +329,7 @@ FLBuilder::register_module(
 						'btn_link' => array(
 							'type'          => 'link',
 							'label'         => __( 'Link', 'uabb' ),
-							'placeholder'   => 'http://www.example.com',
+							'placeholder'   => 'https://www.example.com',
 							'show_target'   => true,
 							'show_nofollow' => true,
 							'preview'       => array(
@@ -653,6 +653,7 @@ FLBuilder::register_module(
 							'label'         => __( 'Link', 'uabb' ),
 							'show_target'   => true,
 							'show_nofollow' => true,
+							'placeholder'   => 'https://www.example.com',
 							'help'          => __( 'The link applies to the entire module. If choosing a call to action type below, this link will also be used for the text or button.', 'uabb' ),
 							'preview'       => array(
 								'type' => 'none',

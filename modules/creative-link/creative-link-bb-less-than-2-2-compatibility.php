@@ -403,7 +403,7 @@ FLBuilder::register_settings_form(
 							'link'     => array(
 								'type'        => 'link',
 								'label'       => __( 'Link', 'uabb' ),
-								'placeholder' => 'http://www.example.com',
+								'placeholder' => 'https://www.example.com',
 								'connections' => array( 'url' ),
 							),
 							'target'   => array(

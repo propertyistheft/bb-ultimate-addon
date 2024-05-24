@@ -754,21 +754,23 @@ FLBuilder::register_module(
 					'title'  => __( 'Password/Login Link', 'uabb' ),
 					'fields' => array(
 						'login_link_color'       => array(
-							'type'       => 'color',
-							'label'      => __( 'Link Color', 'uabb' ),
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Link Color', 'uabb' ),
+							'connections' => array( 'color' ),
+							'show_reset'  => true,
+							'show_alpha'  => true,
+							'preview'     => array(
 								'type'     => 'css',
 								'selector' => '.uabb-rform-exteral-link-wrap .uabb-rform-exteral-link',
 								'property' => 'color',
 							),
 						),
 						'login_link_hover_color' => array(
-							'type'       => 'color',
-							'label'      => __( 'Link Hover Color', 'uabb' ),
-							'show_reset' => true,
-							'show_alpha' => true,
+							'type'        => 'color',
+							'label'       => __( 'Link Hover Color', 'uabb' ),
+							'connections' => array( 'color' ),
+							'show_reset'  => true,
+							'show_alpha'  => true,
 						),
 						'login_link_align'       => array(
 							'type'       => 'align',

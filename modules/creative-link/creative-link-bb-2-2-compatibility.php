@@ -371,7 +371,7 @@ FLBuilder::register_settings_form(
 								'label'         => __( 'Link', 'uabb' ),
 								'show_target'   => true,
 								'show_nofollow' => true,
-								'placeholder'   => 'http://www.example.com',
+								'placeholder'   => 'https://www.example.com',
 								'connections'   => array( 'url' ),
 							),
 						),

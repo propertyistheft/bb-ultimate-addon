@@ -551,7 +551,7 @@ FLBuilder::register_module(
 						'photo_url'    => array(
 							'type'        => 'text',
 							'label'       => __( 'Photo URL', 'uabb' ),
-							'placeholder' => 'http://www.example.com/my-photo.jpg',
+							'placeholder' => 'https://www.example.com/my-photo.jpg',
 						),
 						'img_size'     => array(
 							'type'        => 'unit',
@@ -941,11 +941,12 @@ FLBuilder::register_module(
 							),
 						),
 						'num_color'         => array(
-							'type'       => 'color',
-							'label'      => __( 'Color', 'uabb' ),
-							'default'    => '',
-							'show_reset' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Color', 'uabb' ),
+							'default'     => '',
+							'show_reset'  => true,
+							'connections' => array( 'color' ),
+							'preview'     => array(
 								'type'      => 'css',
 								'selector'  => '.uabb-number-string',
 								'property'  => 'color',
@@ -968,11 +969,12 @@ FLBuilder::register_module(
 							),
 						),
 						'ba_color' => array(
-							'type'       => 'color',
-							'label'      => __( 'Color', 'uabb' ),
-							'default'    => '',
-							'show_reset' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Color', 'uabb' ),
+							'default'     => '',
+							'connections' => array( 'color' ),
+							'show_reset'  => true,
+							'preview'     => array(
 								'type'      => 'css',
 								'selector'  => '.uabb-number-before-text, .uabb-number-after-text, .uabb-counter-before-text, .uabb-counter-after-text',
 								'property'  => 'color',

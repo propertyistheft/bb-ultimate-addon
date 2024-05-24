@@ -444,7 +444,7 @@ FLBuilder::register_module(
 						'photo_url_noslider'    => array(
 							'type'        => 'text',
 							'label'       => __( 'Photo URL', 'uabb' ),
-							'placeholder' => 'http://www.example.com/my-photo.jpg',
+							'placeholder' => 'https://www.example.com/my-photo.jpg',
 						),
 					),
 				),
@@ -636,11 +636,12 @@ FLBuilder::register_module(
 							),
 						),
 						'layout_background'          => array(
-							'type'       => 'color',
-							'label'      => __( 'Box Background Color', 'uabb' ),
-							'default'    => '',
-							'show_reset' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Box Background Color', 'uabb' ),
+							'default'     => '',
+							'connections' => array( 'color' ),
+							'show_reset'  => true,
+							'preview'     => array(
 								'type'  => 'css',
 								'rules' => array(
 									array(
@@ -911,12 +912,13 @@ FLBuilder::register_module(
 							),
 						),
 						'rating_color'          => array(
-							'type'       => 'color',
-							'label'      => __( 'Color', 'uabb' ),
-							'default'    => '',
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Color', 'uabb' ),
+							'default'     => '',
+							'connections' => array( 'color' ),
+							'show_reset'  => true,
+							'show_alpha'  => true,
+							'preview'     => array(
 								'type'     => 'css',
 								'selector' => '.uabb-rating .uabb-rating__ico',
 								'property' => 'color',
@@ -1216,7 +1218,7 @@ FLBuilder::register_settings_form(
 							'photo_url'    => array(
 								'type'        => 'text',
 								'label'       => __( 'Photo URL', 'uabb' ),
-								'placeholder' => 'http://www.example.com/my-photo.jpg',
+								'placeholder' => 'https://www.example.com/my-photo.jpg',
 							),
 						),
 					),

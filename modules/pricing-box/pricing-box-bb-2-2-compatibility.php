@@ -1186,7 +1186,7 @@ FLBuilder::register_settings_form(
 							'btn_link' => array(
 								'type'          => 'link',
 								'label'         => __( 'Link', 'uabb' ),
-								'placeholder'   => 'http://www.example.com',
+								'placeholder'   => 'https://www.example.com',
 								'connections'   => array( 'url' ),
 								'preview'       => array(
 									'type' => 'none',

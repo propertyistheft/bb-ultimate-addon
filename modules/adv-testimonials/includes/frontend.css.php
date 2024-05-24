@@ -414,14 +414,23 @@ if ( isset( $settings->rating_align ) && $version_bb_check ) {
 
 
 /* Layout style Box */
-	<?php if ( 'box' === $settings->tetimonial_layout ) { ?>
+	<?php 
+	$opacity_decimal = 1; // Default opacity if not provided.
+	if ( isset( $settings->layout_background_opc ) && ! empty( $settings->layout_background_opc ) ) {
+		$opacity_decimal = (float) $settings->layout_background_opc / 100;
+	} 
+	list($r, $g, $b) = sscanf( esc_attr( $settings->layout_background ), '#%02x%02x%02x' );
+	$rgba_color      = "rgba($r, $g, $b, $opacity_decimal)";
+
+	if ( 'box' === $settings->tetimonial_layout ) { 
+		?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-testimonial {
-		background: <?php echo esc_attr( $settings->layout_background ); ?>;
+		background: <?php echo esc_attr( $rgba_color ); ?>;
 		padding: 20px 40px;
 	}
 
 	.fl-node-<?php echo esc_attr( $id ); ?> .testimonial-arrow-down{
-		border-top: 40px solid <?php echo esc_attr( $settings->layout_background ); ?>;
+		border-top: 40px solid <?php echo esc_attr( $rgba_color ); ?>;
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-testimonials.box{
 		position: relative;
@@ -455,18 +464,6 @@ if ( isset( $settings->rating_align ) && $version_bb_check ) {
 }
 	<?php } ?>
 
-	<?php
-	// Box Layout opacity.
-	if ( isset( $settings->layout_background_opc ) && ! empty( $settings->layout_background_opc ) ) {
-		$opacity_decimal = (float) $settings->layout_background_opc / 100;
-		?>
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-testimonial,
-		.fl-node-<?php echo esc_attr( $id ); ?> .testimonial-arrow-down {
-			opacity: <?php echo esc_attr( $opacity_decimal ); ?>;
-		}
-			<?php
-	}
-	?>
 
 <?php } ?>
 

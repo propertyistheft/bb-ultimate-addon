@@ -2255,6 +2255,7 @@ class BlogPostsModule extends FLBuilderModule {
 				<?php
 				$count = count( $tag_detail );
 				for ( $k = 0; $k < $count; $k++ ) {
+					$j = $k; // Initialize $j here.
 					?>
 			<span class="uabb-tag-links <?php echo wp_kses_post( ( $count === $j + 1 ) ? 'uabb-last-tag' : '' ); ?>"><a href="<?php echo wp_kses_post( get_tag_link( $tag_detail[ $k ]->term_id ) ); ?>" rel="category tag"><?php echo esc_attr( $tag_detail[ $k ]->name ); ?></a></span><?php echo wp_kses_post( ( count( $tag_detail ) !== $k + 1 ) ? trim( ',&nbsp;' ) : '' ); // @codingStandardsIgnoreLine.
 				}

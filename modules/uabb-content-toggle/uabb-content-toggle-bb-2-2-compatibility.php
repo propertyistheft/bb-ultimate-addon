@@ -232,12 +232,13 @@ FLBuilder::register_module(
 							'connections' => array( 'string', 'html' ),
 						),
 						'color1'              => array(
-							'type'       => 'color',
-							'label'      => __( 'Color 1', 'uabb' ),
-							'default'    => '72da67',
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Color 1', 'uabb' ),
+							'default'     => '72da67',
+							'connections' => array( 'color' ),
+							'show_reset'  => true,
+							'show_alpha'  => true,
+							'preview'     => array(
 								'type'      => 'css',
 								'rules'     => array(
 									array(
@@ -253,12 +254,13 @@ FLBuilder::register_module(
 							),
 						),
 						'color2'              => array(
-							'type'       => 'color',
-							'label'      => __( 'Color 2', 'uabb' ),
-							'default'    => 'dfd9ea',
-							'show_reset' => true,
-							'show_alpha' => true,
-							'preview'    => array(
+							'type'        => 'color',
+							'label'       => __( 'Color 2', 'uabb' ),
+							'default'     => 'dfd9ea',
+							'connections' => array( 'color' ),
+							'show_reset'  => true,
+							'show_alpha'  => true,
+							'preview'     => array(
 								'type'      => 'css',
 								'rules'     => array(
 									array(

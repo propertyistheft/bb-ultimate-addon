@@ -38,7 +38,7 @@ if ( ! $version_bb_check ) {
 								'link'          => array(
 									'type'        => 'link',
 									'label'       => __( 'Link', 'uabb' ),
-									'placeholder' => 'http://www.example.com',
+									'placeholder' => 'https://www.example.com',
 									'connections' => array( 'url' ),
 								),
 								'link_target'   => array(
@@ -498,7 +498,7 @@ if ( ! $version_bb_check ) {
 								'link' => array(
 									'type'          => 'link',
 									'label'         => __( 'Link', 'uabb' ),
-									'placeholder'   => 'http://www.example.com',
+									'placeholder'   => 'https://www.example.com',
 									'connections'   => array( 'url' ),
 									'show_target'   => true,
 									'show_nofollow' => true,
@@ -617,25 +617,28 @@ if ( ! $version_bb_check ) {
 							'title'  => __( 'Colors', 'uabb' ),
 							'fields' => array(
 								'text_color'         => array(
-									'type'       => 'color',
-									'label'      => __( 'Text Color', 'uabb' ),
-									'default'    => '',
-									'show_reset' => true,
+									'type'        => 'color',
+									'label'       => __( 'Text Color', 'uabb' ),
+									'default'     => '',
+									'connections' => array( 'color' ),
+									'show_reset'  => true,
 								),
 								'text_hover_color'   => array(
-									'type'       => 'color',
-									'label'      => __( 'Text Hover Color', 'uabb' ),
-									'default'    => '',
-									'show_reset' => true,
-									'preview'    => array(
+									'type'        => 'color',
+									'label'       => __( 'Text Hover Color', 'uabb' ),
+									'default'     => '',
+									'connections' => array( 'color' ),
+									'show_reset'  => true,
+									'preview'     => array(
 										'type' => 'none',
 									),
 								),
 								'bg_color'           => array(
-									'type'       => 'color',
-									'label'      => __( 'Background Color', 'uabb' ),
-									'default'    => '',
-									'show_reset' => true,
+									'type'        => 'color',
+									'label'       => __( 'Background Color', 'uabb' ),
+									'default'     => '',
+									'connections' => array( 'color' ),
+									'show_reset'  => true,
 								),
 								'bg_color_opc'       => array(
 									'type'        => 'text',
@@ -646,11 +649,12 @@ if ( ! $version_bb_check ) {
 									'size'        => '5',
 								),
 								'bg_hover_color'     => array(
-									'type'       => 'color',
-									'label'      => __( 'Background Hover Color', 'uabb' ),
-									'default'    => '',
-									'show_reset' => true,
-									'preview'    => array(
+									'type'        => 'color',
+									'label'       => __( 'Background Hover Color', 'uabb' ),
+									'default'     => '',
+									'connections' => array( 'color' ),
+									'show_reset'  => true,
+									'preview'     => array(
 										'type' => 'none',
 									),
 								),

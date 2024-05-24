@@ -254,11 +254,9 @@ var UABBBlogPosts;
 				percentPosition: true,
                 fitRows: {
                     columnWidth: '.uabb-blog-posts-grid-item-' + $this.id,
-					gutter: '.uabb-post-grid-sizer'
 				  },
                 transitionDuration  : 0,
             });
-
 
             if( $this.uabb_masonary_filter_type == 'drop-down' ) {
 

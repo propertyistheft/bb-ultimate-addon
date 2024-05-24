@@ -46,7 +46,7 @@ if ( '' === $settings->show_entries_all_label ) {
 
 		<?php if ( 'yes' === $settings->show_search ) : ?>
 			<div class="search-wrapper">
-				<input class="search-input" type="text" placeholder="<?php echo $settings->search_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" name="toSearch" id="searchHere"/>
+				<input class="search-input" type="text" placeholder="<?php echo $settings->search_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" name="toSearch" id="searchHere" aria-label="<?php echo $settings->search_label; ?>"/>
 			</div>
 		<?php endif ?>
 	</div>

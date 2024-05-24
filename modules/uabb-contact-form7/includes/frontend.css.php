@@ -145,8 +145,17 @@ if ( ! $version_bb_check ) {
 	-webkit-appearance: none;
 }
 
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-form-control-wrap:has(select):after{
+	<?php 
+	$font_family = 'Font Awesome 5 Free'; // Default value.
+	if ( method_exists( 'FLBuilder', 'fa5_pro_enabled' ) ) {
+		$font_family = FLBuilder::fa5_pro_enabled() ? 'Font Awesome 5 Pro' : 'Font Awesome 5 Free';
+	}
+	?>
+		font-family: '<?php echo esc_attr( $font_family ); ?>';
+}
+
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style select,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style .wpcf7-form-control-wrap:has(select):after,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style input[type=tel],
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style input[type=email],
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style input[type=text],
@@ -161,7 +170,9 @@ if ( ! $version_bb_check ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style input[type=url]:focus,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style input[type=number]:focus,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style input[type=date]:focus,
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style textarea:focus {
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style textarea:focus,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style input[type=text]::placeholder,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-cf7-style textarea::placeholder  {
 	outline: none;
 	text-align: <?php echo esc_attr( $settings->input_text_align ); ?>;
 	color: <?php echo esc_attr( uabb_theme_text_color( $settings->color ) ); ?>;
@@ -172,12 +183,8 @@ if ( ! $version_bb_check ) {
 	} else {
 		$bgcolor = 'transparent';
 	}
-	if ( method_exists( 'FLBuilder', 'fa5_pro_enabled' ) ) {
-		$font_family = FLBuilder::fa5_pro_enabled() ? 'Font Awesome 5 Pro' : 'Font Awesome 5 Free';
-	}
 	?>
 	background: <?php echo esc_attr( $bgcolor ); ?>;
-	font-family: '<?php echo esc_attr( $font_family ); ?>';
 }
 
 <?php if ( ! $version_bb_check ) { ?>

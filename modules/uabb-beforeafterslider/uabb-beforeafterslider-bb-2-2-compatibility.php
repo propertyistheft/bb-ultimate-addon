@@ -44,7 +44,7 @@ FLBuilder::register_module(
 						'before_photo_url'  => array(
 							'type'        => 'text',
 							'label'       => __( 'Photo URL', 'uabb' ),
-							'placeholder' => 'http://www.example.com/my-photo.jpg',
+							'placeholder' => 'https://www.example.com/my-photo.jpg',
 						),
 						'before_label_text' => array(
 							'type'        => 'text',
@@ -85,7 +85,7 @@ FLBuilder::register_module(
 						'after_photo_url'  => array(
 							'type'        => 'text',
 							'label'       => __( 'Photo URL', 'uabb' ),
-							'placeholder' => 'http://www.example.com/my-photo.jpg',
+							'placeholder' => 'https://www.example.com/my-photo.jpg',
 						),
 						'after_label_text' => array(
 							'type'        => 'text',

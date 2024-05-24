@@ -1,3 +1,15 @@
+Version 1.35.21, Thursday, 23th May 2024
+- Improvement: Compatibility with PHP version 8.3.
+- Improvement: Table - Improved Accessibility for Search field.
+- Fixed: Advanced Posts - Spacing appears below when the featured image position is set to background.
+- Fixed: Advanced Posts - Display of posts to match the assigned number of columns in the device layout.
+- Fixed: Advanced Posts - Resolved PHP warning for an undefined variable when showing tags.
+- Fixed: Color picker not loading for modules.
+- Fixed: Contact Form 7 Styler - Placeholders font-family corrected.
+- Fixed: Flip Box - Box content bounce on page load.
+- Fixed: Info Circle - On responsive devices, the content is hidden behind the background image overlay.
+- Fixed: Opacity setting not working for some modules.
+
 Version 1.35.20, Tuesday, 9th April 2024
 - Fixed: Color picker not loading for some WooCommerce modules.
 - Fixed: Contact Form 7 Styler - Dropdown icon not displaying correctly when Font Awesome PRO is active in Beaver Builder.

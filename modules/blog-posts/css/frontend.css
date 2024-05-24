@@ -490,6 +490,7 @@ ul.uabb-masonary-filters > li {
 
 .uabb-thumbnail-position-background.uabb-blog-post-inner-wrap {
 	position: relative;
+	height: inherit;
 }
 
 .uabb-thumbnail-position-left .uabb-post-thumbnail,

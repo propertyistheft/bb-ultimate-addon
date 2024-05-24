@@ -405,7 +405,7 @@ FLBuilder::register_module(
 						'photo_url_noslider'    => array(
 							'type'        => 'text',
 							'label'       => __( 'Photo URL', 'uabb' ),
-							'placeholder' => 'http://www.example.com/my-photo.jpg',
+							'placeholder' => 'https://www.example.com/my-photo.jpg',
 						),
 					),
 				),
@@ -1232,7 +1232,7 @@ FLBuilder::register_settings_form(
 							'photo_url'    => array(
 								'type'        => 'text',
 								'label'       => __( 'Photo URL', 'uabb' ),
-								'placeholder' => 'http://www.example.com/my-photo.jpg',
+								'placeholder' => 'https://www.example.com/my-photo.jpg',
 							),
 						),
 					),
