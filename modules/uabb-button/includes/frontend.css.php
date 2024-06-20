@@ -237,8 +237,10 @@ if ( ! empty( $settings->bg_hover_color ) ) {
 		if ( isset( $settings->button_padding_dimension_right ) ) {
 			echo ( '' !== $settings->button_padding_dimension_right ) ? 'padding-right:' . esc_attr( $settings->button_padding_dimension_right ) . 'px;' : 'padding-right:' . esc_attr( uabb_theme_padding_button( 'desktop', 'right' ) ) . ';';
 		}
-		// Opacity for normal button and Background color.
 		if ( isset( $settings->bg_color ) ) {
+			echo ( '' !== $settings->bg_color ) ? 'background:' . esc_attr( $settings->bg_color ) . ';' : 'background:' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+
+			// Opacity for normal button and Background color.
 			$background_style = '';
 			$opacity_decimal  = isset( $settings->bg_color_opc ) && '' !== $settings->bg_color_opc ? (float) $settings->bg_color_opc / 100 : 1.0;
 
@@ -251,7 +253,8 @@ if ( ! empty( $settings->bg_hover_color ) ) {
 			}
 			
 			echo esc_attr( $background_style );
-		}            
+
+		}          
 		?>
 }
 	<?php if ( ! $version_bb_check ) { ?>
@@ -296,30 +299,31 @@ if ( ! empty( $settings->bg_hover_color ) ) {
 		}
 	}
 	?>
-	<?php 
-	// Opacity for hover button and Background color.
-	if ( isset( $settings->bg_hover_color ) ) {
-		$hover_background_style = '';
-		$opacity_hover          = isset( $settings->bg_hover_color_opc ) && '' !== $settings->bg_hover_color_opc ? (float) $settings->bg_hover_color_opc / 100 : 1.0;
-
-		if ( '' !== $settings->bg_hover_color ) {
-			list( $r_hover, $g_hover, $b_hover ) = sscanf( $settings->bg_hover_color, '#%02x%02x%02x' );
-			$rgba_hover_color                    = "rgba($r_hover, $g_hover, $b_hover, $opacity_hover)";
-			$hover_background_style              = 'background: ' . esc_attr( $rgba_hover_color ) . ';';
-		} else {
-			$hover_background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_hover_color( '' ) ) . ';';
-		}
-
-		echo esc_attr( $hover_background_style );
-	}
-	?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-module-content.uabb-creative-button-wrap a:hover,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-module-content.uabb-creative-button-wrap a:focus {
 		<?php echo ( '' !== $settings->border_hover_color ) ? 'border-color:#' . esc_attr( $settings->border_hover_color ) . ';' : 'border-color:' . esc_attr( uabb_theme_border_hover_color( '' ) ) . ';'; ?>
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-button-wrap a:focus,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-button-wrap a:hover {
-		<?php echo esc_attr( $hover_background_style ); ?>
+		<?php 
+		echo ( '' !== $settings->bg_hover_color ) ? 'background:' . esc_attr( $settings->bg_hover_color ) . ';' : 'background:' . esc_attr( uabb_theme_default_button_bg_hover_color( '' ) ) . ';'; 
+		
+		// Opacity for hover button and Background color.
+		if ( isset( $settings->bg_hover_color ) ) {
+			$hover_background_style = '';
+			$opacity_hover          = isset( $settings->bg_hover_color_opc ) && '' !== $settings->bg_hover_color_opc ? (float) $settings->bg_hover_color_opc / 100 : 1.0;
+
+			if ( '' !== $settings->bg_hover_color ) {
+				list( $r_hover, $g_hover, $b_hover ) = sscanf( $settings->bg_hover_color, '#%02x%02x%02x' );
+				$rgba_hover_color                    = "rgba($r_hover, $g_hover, $b_hover, $opacity_hover)";
+				$hover_background_style              = 'background: ' . esc_attr( $rgba_hover_color ) . ';';
+			} else {
+				$hover_background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_hover_color( '' ) ) . ';';
+			}
+
+			echo esc_attr( $hover_background_style );
+		}
+		?>
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-button-wrap a,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-creative-button-wrap a *,

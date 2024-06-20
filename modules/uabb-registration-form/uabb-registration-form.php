@@ -335,7 +335,7 @@ class UABBRegistrationFormModule extends FLBuilderModule {
 
 				unset( $user_args['phone'] );
 
-				if ( 'administrator' === $user_args['role'] ) {
+				if ( 'administrator' === $user_args['role'] || 'editor' === $user_args['role'] ) {
 					$user_args['role'] = get_option( 'default_role' );
 				}
 
@@ -634,7 +634,7 @@ class UABBRegistrationFormModule extends FLBuilderModule {
 		}
 
 		$roles = isset( $wp_roles->roles ) ? $wp_roles->roles : array();
-		unset( $roles['administrator'] );
+		unset( $roles['administrator'], $roles['editor'] );
 		$user_roles = array();
 
 		$user_roles['default'] = __( 'Default', 'uabb' );
