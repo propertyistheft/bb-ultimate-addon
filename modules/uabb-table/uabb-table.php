@@ -483,6 +483,7 @@ class UABBTable extends FLBuilderModule {
 
 			<?php if ( 'yes' === $this->settings->show_search ) : ?>
 				<div class="search-wrapper">
+					<label for="searchHere" class="visually-hidden">Search</label>
 					<input class="search-input" type="text" placeholder="<?php echo $this->settings->search_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" name="toSearch" id="searchHere"/>
 				</div>
 			<?php endif ?>

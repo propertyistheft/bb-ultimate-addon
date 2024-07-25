@@ -3039,8 +3039,9 @@
               this.drawLinkLine(particle, link);
             }
           }
-    
-          this.context.restore();
+          if ( this.context ) {
+            this.context.restore();
+          }
         }
       }
     

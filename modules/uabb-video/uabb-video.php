@@ -548,8 +548,6 @@ class UABBVideo extends FLBuilderModule {
 
 			$video_html = htmlspecialchars( $video_html, ENT_QUOTES );
 
-			$video_html = wp_json_encode( $video_html );
-
 		}
 		?>
 		<div class="uabb-video uabb-aspect-ratio-<?php echo esc_attr( $this->settings->aspect_ratio ); ?>  uabb-subscribe-responsive-<?php echo esc_attr( $this->settings->subscribe_bar_responsive ); ?> uabb-video-sticky-<?php echo esc_attr( $this->settings->sticky_alignment ); ?>" <?php echo $schema ? ' itemscope itemtype="https://schema.org/VideoObject"' : ''; ?>>

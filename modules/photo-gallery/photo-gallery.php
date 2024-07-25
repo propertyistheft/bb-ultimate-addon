@@ -486,7 +486,7 @@ class UABBPhotoGalleryModule extends FLBuilderModule {
 																								$click_action_link = $photo->link;
 																							}
 																							?>
-				<a href="<?php echo $click_action_link; ?>" target="<?php echo esc_attr( $click_action_target ); ?>" <?php BB_Ultimate_Addon_Helper::get_link_rel( $click_action_target, 0, 1 ); ?> data-caption="<?php echo esc_attr( $photo->caption ); ?>" itemprop="contentUrl"><?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<a href="<?php echo esc_url( $click_action_link ); ?>" target="<?php echo esc_attr( $click_action_target ); ?>" <?php BB_Ultimate_Addon_Helper::get_link_rel( $click_action_target, 0, 1 ); ?> data-caption="<?php echo esc_attr( $photo->caption ); ?>" itemprop="contentUrl"><?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				<?php endif; ?>
 
 				<img class="uabb-gallery-img" src="<?php echo esc_url( $photo->src ); ?>" alt="<?php echo esc_attr( $photo->alt ); ?>" title="<?php echo esc_attr( $photo->title ); ?>" itemprop="thumbnail" />
@@ -552,17 +552,17 @@ class UABBPhotoGalleryModule extends FLBuilderModule {
 			<?php if ( 'yes' === $this->settings->show_filter_title ) { ?>
 				<div class="uabb-photo-gallery-title-filters">
 					<div class="uabb-photo-gallery-title">
-						<<?php echo esc_attr( $this->settings->filter_title_tag ); ?> class="uabb-photo-gallery-title-text"><?php echo $this->settings->filters_heading_text; ?></<?php echo esc_attr( $this->settings->filter_title_tag ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+						<<?php echo esc_attr( $this->settings->filter_title_tag ); ?> class="uabb-photo-gallery-title-text"><?php echo esc_html( $this->settings->filters_heading_text ); ?></<?php echo esc_attr( $this->settings->filter_title_tag ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 					</div>
 			<?php } ?>
 				<ul class="uabb-photo__gallery-filters" data-default="
 				<?php
-					echo ( isset( $default ) ) ? $default : '*'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo ( isset( $default ) ) ? esc_html( $default ) : '*'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				?>
 				">
 					<li class="uabb-photo__gallery-filter uabb-filter__current" data-filter="*">
 					<?php
-					echo ( '' !== $this->settings->filters_all_text ) ? $this->settings->filters_all_text : __( 'All', 'uabb' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo ( '' !== $this->settings->filters_all_text ) ? esc_html( $this->settings->filters_all_text ) : esc_html__( 'All', 'uabb' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					?>
 					</li>
 					<?php

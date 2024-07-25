@@ -235,7 +235,7 @@ if ( ! $version_bb_check ) {
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-video__content i,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-video__content .uabb-vg__play{
 		<?php
-		if ( isset( $settings->play_icon_size ) ) {
+		if ( isset( $settings->play_icon_size ) && 0 != $settings->play_icon_size ) {
 			echo ( '' !== $settings->play_icon_size ) ? 'font-size:' . esc_attr( $settings->play_icon_size ) . 'px;' : '';
 			echo ( '' !== $settings->play_icon_size ) ? 'line-height:' . esc_attr( round( $settings->play_icon_size / $settings->play_icon_size, 2 ) ) . 'em;' : '';
 			echo ( '' !== $settings->play_icon_size ) ? 'height:' . esc_attr( $settings->play_icon_size ) . 'px;' : '';
@@ -253,7 +253,7 @@ if ( ! $version_bb_check ) {
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-vg__play i.uabb-vg__play-icon{
 		<?php
-		if ( isset( $settings->play_icon_size ) ) {
+		if ( isset( $settings->play_icon_size ) && 0 != $settings->play_icon_size ) {
 
 			echo ( '' !== $settings->play_icon_size ) ? 'line-height:' . esc_attr( round( $settings->play_icon_size / $settings->play_icon_size, 2 ) ) . 'em;' : '';
 			echo ( '' !== $settings->play_icon_size ) ? 'height:' . esc_attr( $settings->play_icon_size ) . 'px;' : '';

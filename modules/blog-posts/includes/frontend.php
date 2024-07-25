@@ -121,7 +121,7 @@ if ( 'masonary' === $settings->is_carousel || 'grid' === $settings->is_carousel 
 		<?php
 		if ( 'box' === $settings->cta_type ) {
 			$link_rel = BB_Ultimate_Addon_Helper::get_link_rel( $settings->link_target, $settings->link_nofollow, 0 );
-			echo '<a href="' . get_permalink( $the_query->posts[ $i ]->ID ) . '" target="' . esc_attr( $settings->link_target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' class="uabb-blog-post-element-link" aria-label="Post Element"></a>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<a href="' . get_permalink( $the_query->posts[ $i ]->ID ) . '" title="' . esc_attr( __( 'View Box Content', 'uabb' ) ) . '" target="' . esc_attr( $settings->link_target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' class="uabb-blog-post-element-link" aria-label="Post Element"></a>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 		?>
 		<div class="uabb-blog-posts-shadow clearfix">

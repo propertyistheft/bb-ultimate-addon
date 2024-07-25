@@ -309,7 +309,7 @@
 					if( window.innerWidth <= this.mediaBreakpoint ) {
 						$menu.css({ display: 'none' });
 					} else {
-						if( !this.mobileBelowRow == 'below-row' ) {
+						if( !( this.mobileBelowRow == 'below-row' ) ) {
 							$menu.css({ display: 'block' });
 						}
 					}
@@ -492,7 +492,7 @@
 				}, 600);
 
 				FLBuilder.addHook('settings-form-init', function() {
-					if ( ! $('.fl-builder-settings[data-node="'+self.settingsId+'"]').length > 0 ) {
+					if ( ! ( $('.fl-builder-settings[data-node="'+self.settingsId+'"]').length > 0 ) ) { 
 						return;
 					}
 					if ( ! $(self.nodeClass).find('.uabb-creative-menu').hasClass('uabb-menu-overlay') ) {

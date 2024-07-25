@@ -1,3 +1,12 @@
+Version 1.35.23, Wednesday, 24th July 2024
+- Improvement: Hardened the security of plugin.
+- Improvement: Compatibility with latest WordPress version 6.6.
+- Improvement: Advanced Posts - Improved accessibility by adding the missing title attribute to the "Read more" link.
+- Improvement: Table - Added a label to the search field for better accessibility.
+- Fixed: Info Circle - Icon Alignment fixed on mobile devices.
+- Fixed: Video Gallery - Fixed division by zero error when calculating play icon size.
+- Fixed: Video - Special characters appearing in HTML attributes.
+
 Version 1.35.22, Monday, 17th June 2024
 - Improvement: User Registration Form - Improved codebase for New user role.
 - Fixed: Resolved CSS rendering issue when button style is transparent.

@@ -1765,7 +1765,7 @@ class BlogPostsModule extends FLBuilderModule {
 		} elseif ( 'link' === $this->settings->cta_type ) {
 			$nofollow = ( isset( $this->settings->link_nofollow ) ) ? $this->settings->link_nofollow : '0';
 			$link_rel = BB_Ultimate_Addon_Helper::get_link_rel( $link_target, $nofollow, 0 );
-			echo '<span class="uabb-read-more-text uabb-blog-post-section"><a href="' . esc_url( $link ) . '" target="' . esc_attr( $link_target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . '>' . do_shortcode( $this->settings->cta_text ) . ' <span class="uabb-next-right-arrow">&#8594;</span></a></span>';
+			echo '<span class="uabb-read-more-text uabb-blog-post-section"><a href="' . esc_url( $link ) . '" title="' . esc_attr( __( 'Read More', 'uabb' ) ) . '" target="' . esc_attr( $link_target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . '>' . do_shortcode( $this->settings->cta_text ) . ' <span class="uabb-next-right-arrow">&#8594;</span></a></span>';
 		}
 	}
 
