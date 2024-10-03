@@ -62,22 +62,29 @@ if ( 'yes' === $converted || isset( $settings->title_spacing_dimension_top ) && 
 	?>
 	;
 <?php } ?>
-background: <?php echo esc_attr( $settings->title_bg_color ); ?>;
+<?php
+/** Accordian Tab background color  */
+echo ( '' !== $settings->title_bg_color ) ? 'background:' . esc_attr( $settings->title_bg_color ) . ';' : 'background:' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+
+if ( isset( $settings->title_bg_color ) ) {
+	$background_style = '';
+	$opacity_decimal  = isset( $settings->title_bg_color_opc ) && '' !== $settings->title_bg_color_opc ? (float) $settings->title_bg_color_opc / 100 : 1.0;
+
+	if ( '' !== $settings->title_bg_color ) {
+		list($r, $g, $b)  = sscanf( $settings->title_bg_color, '#%02x%02x%02x' );
+		$rgba_color       = "rgba($r, $g, $b, $opacity_decimal)";
+		$background_style = 'background: ' . esc_attr( $rgba_color ) . ';';
+	} else {
+		$background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+	}
+	echo esc_attr( $background_style );
+}  
+?>
+
 <?php if ( '' === $settings->open_icon && '' === $settings->close_icon ) : ?>
 	width: 100%;
 <?php endif; ?>
 }
-<?php 
-// Opacity for default body accordian.
-if ( isset( $settings->content_bg_color_opc ) && ! empty( $settings->content_bg_color_opc ) ) {
-	$opacity_bcolor = (float) $settings->content_bg_color_opc / 100;
-	?>
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-content{
-			opacity: <?php echo esc_attr( $opacity_bcolor ); ?>;
-		}
-		<?php
-}
-?>
 <?php if ( ! $version_bb_check ) { ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-button<?php echo esc_attr( $id ); ?> {
 		<?php if ( 'none' !== $settings->title_border_type ) { ?>
@@ -168,7 +175,24 @@ if ( isset( $settings->title_border_param['top'] ) ) {
 /* Content css */
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-content<?php echo esc_attr( $id ); ?> {
-	background: <?php echo esc_attr( $settings->content_bg_color ); ?>;
+	<?php
+	/** Content section background color */
+	echo ( '' !== $settings->content_bg_color ) ? 'background:' . esc_attr( $settings->content_bg_color ) . ';' : 'background:' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+	
+	if ( isset( $settings->content_bg_color ) ) {
+		$background_style = '';
+		$opacity_decimal  = isset( $settings->content_bg_color_opc ) && '' !== $settings->content_bg_color_opc ? (float) $settings->content_bg_color_opc / 100 : 1.0;
+
+		if ( '' !== $settings->content_bg_color ) {
+			list($r, $g, $b)  = sscanf( $settings->content_bg_color, '#%02x%02x%02x' );
+			$rgba_color       = "rgba($r, $g, $b, $opacity_decimal)";
+			$background_style = 'background: ' . esc_attr( $rgba_color ) . ';';
+		} else {
+			$background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+		}
+		echo esc_attr( $background_style );
+	} 
+	?>
 	<?php
 	if ( 'yes' === $converted || isset( $settings->content_spacing_dimension_top ) && isset( $settings->content_spacing_dimension_bottom ) && isset( $settings->content_spacing_dimension_left ) && isset( $settings->content_spacing_dimension_right ) ) {
 		if ( isset( $settings->content_spacing_dimension_top ) ) {
@@ -226,7 +250,24 @@ if ( isset( $settings->title_border_param['top'] ) ) {
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-button<?php echo esc_attr( $id ); ?>:hover,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-item-active > .uabb-adv-accordion-button<?php echo esc_attr( $id ); ?> {
-	background: <?php echo esc_attr( $settings->title_bg_hover_color ); ?>;
+	<?php
+	/** Title section background hover/active color */
+	echo ( '' !== $settings->title_bg_hover_color ) ? 'background:' . esc_attr( $settings->title_bg_hover_color ) . ';' : 'background:' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+	
+	if ( isset( $settings->title_bg_hover_color ) ) {
+		$background_style = '';
+		$opacity_decimal  = isset( $settings->title_bg_hover_color_opc ) && '' !== $settings->title_bg_hover_color_opc ? (float) $settings->title_bg_hover_color_opc / 100 : 1.0;
+
+		if ( '' !== $settings->title_bg_hover_color ) {
+			list($r, $g, $b)  = sscanf( $settings->title_bg_hover_color, '#%02x%02x%02x' );
+			$rgba_color       = "rgba($r, $g, $b, $opacity_decimal)";
+			$background_style = 'background: ' . esc_attr( $rgba_color ) . ';';
+		} else {
+			$background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+		}
+		echo esc_attr( $background_style );
+	}
+	?>
 }
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-button<?php echo esc_attr( $id ); ?>:hover .uabb-adv-accordion-button-icon,
@@ -235,24 +276,6 @@ if ( isset( $settings->title_border_param['top'] ) ) {
 }
 
 
-<?php 
-// Opacity for title and onhover .
-if ( isset( $settings->title_bg_color_opc ) && ! empty( $settings->title_bg_color_opc ) &&
-	isset( $settings->title_bg_hover_color_opc ) && ! empty( $settings->title_bg_hover_color_opc )  
-) {
-	$opacity_title_color = (float) $settings->title_bg_color_opc / 100;
-	$opacity_hover_color = (float) $settings->title_bg_hover_color_opc / 100;
-	?>
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-button{
-			opacity: <?php echo esc_attr( $opacity_title_color ); ?>;
-		}
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-button<?php echo esc_attr( $id ); ?>:hover,
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-item-active > .uabb-adv-accordion-button<?php echo esc_attr( $id ); ?> {
-			opacity: <?php echo esc_attr( $opacity_hover_color ); ?>;
-		}
-		<?php
-}
-?>
 /* Typography */
 <?php if ( ! $version_bb_check ) { ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-button<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-button-label {

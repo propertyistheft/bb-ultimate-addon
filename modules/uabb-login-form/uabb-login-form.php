@@ -81,36 +81,6 @@ class UABBLoginForm extends FLBuilderModule {
 	}
 
 	/**
-	 * Get access token info.
-	 *
-	 * @since 1.20.1
-	 * @access public
-	 * @param string $id_token ID token.
-	 * @param string $uabb_google_client_id settings page client ID.
-	 * @return array
-	 */
-	public function verify_user_data( $id_token, $uabb_google_client_id ) {
-
-		require_once BB_ULTIMATE_ADDON_DIR . 'modules/uabb-login-form/includes/vendor/autoload.php';
-
-		// Get $id_token via HTTPS POST.
-		$client = new \Google_Client( array( 'client_id' => $uabb_google_client_id ) );  //PHPCS:ignore:PHPCompatibility.PHP.ShortArray.Found
-
-		$verified_data = $client->verifyIdToken( $id_token );
-
-		if ( $verified_data ) {
-			return $verified_data;
-		} else {
-			wp_send_json_error(
-				array(
-					'error' => __( 'Unauthorized access', 'uabb' ),
-				)
-			);
-		}
-
-	}
-
-	/**
 	 * Google button ajax function.
 	 *
 	 * @since 1.24.0
@@ -125,24 +95,34 @@ class UABBLoginForm extends FLBuilderModule {
 		$user_data = array();
 		$result    = '';
 
-		if ( isset( $_POST['data'] ) ) {
+		if ( isset( $_POST['data'] ) && is_array( $_POST['data'] ) ) {
 
-			$id_token             = filter_input( INPUT_POST, 'id_token', FILTER_SANITIZE_STRING );
+			$data                 = array_map( 'sanitize_text_field', $_POST['data'] );
+			$id_token             = isset( $data['id_token'] ) ? $data['id_token'] : '';
 			$uabb_setting_options = UABB_Init::$uabb_options['fl_builder_uabb'];
 
 			if ( is_array( $uabb_setting_options ) ) {
 
 				$uabb_social_google_client_id = ( array_key_exists( 'uabb-social-google-client-id', $uabb_setting_options ) ) ? $uabb_setting_options['uabb-social-google-client-id'] : '';
 			}
-			$verified_data = $this->verify_user_data( $id_token, $uabb_social_google_client_id );
 
-			$data       = array_map( 'sanitize_text_field', $_POST['data'] );
+			// Verify the ID token using Google's token info endpoint.
+			$url = 'https://oauth2.googleapis.com/tokeninfo?id_token=' . $id_token;
+
+			$response = wp_remote_get( $url );
+			
+			if ( is_wp_error( $response ) ) {
+				wp_send_json_error( array( 'error' => __( 'Token verification failed', 'uabb' ) ) );
+			}
+
+			$verified_data = json_decode( wp_remote_retrieve_body( $response ), true );
+
 			$name       = isset( $verified_data['name'] ) ? $verified_data['name'] : '';
 			$email      = isset( $verified_data['email'] ) ? $verified_data['email'] : '';
-			$send_email = $data['send_email'];
+			$send_email = isset( $data['send_email'] ) ? $data['send_email'] : '';
 
 			// Check if email is verified with Google.
-			if ( empty( $verified_data ) || ( $verified_data['aud'] !== $uabb_social_google_client_id ) || ( isset( $verified_data['email'] ) && $verified_data['email'] !== $email ) ) {
+			if ( empty( $verified_data ) || ( isset( $verified_data['aud'] ) && $verified_data['aud'] !== $uabb_social_google_client_id ) || ( isset( $verified_data['email'] ) && $verified_data['email'] !== $email ) ) {
 				wp_send_json_error(
 					array(
 						'error' => __( 'Unauthorized access', 'uabb' ),
@@ -376,26 +356,23 @@ class UABBLoginForm extends FLBuilderModule {
 	 * @return array $user_data User Data.
 	 */
 	public function get_user_profile_info_google( $id_token, $uabb_social_google_client_id ) {
-
-		require_once BB_ULTIMATE_ADDON_DIR . 'modules/uabb-login-form/includes/vendor/autoload.php';
-
-		// Get $id_token via HTTPS POST.
-		$client = new Google_Client( array( 'client_id' => $uabb_social_google_client_id ) );  //PHPCS:ignore:PHPCompatibility.PHP.ShortArray.Found
-
-		$user_data = $client->verifyIdToken( $id_token );
-
-		if ( $user_data ) {
-
-			return $user_data;
-		} else {
-
-			wp_send_json_error(
-				array(
-					'error' => __( 'Unauthorized access', 'uabb' ),
-				)
-			);
+		// Verify the ID token using Google's token info endpoint.
+		$url = 'https://oauth2.googleapis.com/tokeninfo?id_token=' . $id_token;
+	
+		$response = wp_remote_get( $url );
+	
+		if ( is_wp_error( $response ) ) {
+			wp_send_json_error( array( 'error' => __( 'Token verification failed', 'uabb' ) ) );
 		}
-
+	
+		$user_data = json_decode( wp_remote_retrieve_body( $response ), true );
+	
+		// Check if the token is valid and the audience matches the client ID.
+		if ( empty( $user_data ) || ( isset( $user_data['aud'] ) && $user_data['aud'] !== $uabb_social_google_client_id ) ) {
+			wp_send_json_error( array( 'error' => __( 'Unauthorized access', 'uabb' ) ) );
+		}
+	
+		return $user_data;
 	}
 	/**
 	 * Function that authenticates Facebook user.
@@ -464,6 +441,31 @@ class UABBLoginForm extends FLBuilderModule {
 			)
 		);
 	}
+
+	/**
+	 * Send email after a new user has been created.
+	 *
+	 * @since 1.21.0
+	 *
+	 * @param array  $result Details of the newly created user.
+	 * @param string $notify Type of notification that should happen. See wp_send_new_user_notifications()
+	 * for more information on possible values.
+	 * @access public
+	 */
+	public function send_user_email( $result, $notify ) {
+
+		/**
+		 * Fires after a new user has been created.
+		 *
+		 * @since 1.21.0
+		 *
+		 * @param array  $result Details of the newly created user.
+		 * @param string $notify Type of notification that should happen. See wp_send_new_user_notifications()
+		 * for more information on possible values.
+		 */
+		do_action( 'edit_user_created_user', $result, $notify );
+	}
+
 	/**
 	 * Function that renders the Advanced separator
 	 *
@@ -536,7 +538,7 @@ class UABBLoginForm extends FLBuilderModule {
 				$google_button_class    = ( 'uabb-lf-google-dark' );
 				$google_button_string   = __( 'Log In with Google', 'uabb' );
 				$facebook_button_class  = 'uabb-lf-facebook-dark';
-				$facebook_button_string = __( 'Log In with Facebook', 'uabb' );
+				$facebook_button_string = __( 'Sign in with Facebook', 'uabb' );
 
 			}
 			if ( 'light' === $this->settings->social_button_theme ) {
@@ -544,7 +546,7 @@ class UABBLoginForm extends FLBuilderModule {
 				$google_button_class    = 'uabb-lf-google-light';
 				$google_button_string   = __( 'Google', 'uabb' );
 				$facebook_button_class  = 'uabb-lf-facebook-light';
-				$facebook_button_string = __( 'Facebook', 'uabb' );
+				$facebook_button_string = __( 'Sign in with Facebook', 'uabb' );
 
 			}
 		}
@@ -581,6 +583,22 @@ class UABBLoginForm extends FLBuilderModule {
 
 						}
 						?>
+							<?php if ( FLBuilderModel::is_builder_active() ) : ?>
+								<?php
+								$button_class = 'uabb-lf-google-button uabb-lf-google-button-light';
+								if ( 'dark' === $this->settings->social_button_theme ) {
+									$button_class = 'uabb-lf-google-button uabb-lf-google-button-dark';
+								}
+								?>
+								<div class="<?php echo esc_attr( $button_class ); ?>">
+									<div class="uabbGoogleButtonIcon">
+										<div class="uabbGoogleButtonIconImage">
+											<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="uabbGoogleButtonSvg"><g><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path><path fill="none" d="M0 0h48v48H0z"></path></g></svg>
+										</div>
+									</div>
+									<span class="uabb-goggle-text"><?php echo esc_html( 'Sign in with Google' ); ?></span>
+								</div>
+						<?php else : ?>
 							<div id="g_id_onload"
 								data-client_id="<?php echo esc_attr( $uabb_social_google_client_id ); ?>"
 								data-context="signin"
@@ -597,6 +615,7 @@ class UABBLoginForm extends FLBuilderModule {
 								data-logo_alignment="left"
 								data-width="<?php echo esc_attr( $width ); ?>">
 							</div>
+						<?php endif; ?>
 						</div>
 				<?php } elseif ( 'yes' === $this->settings->google_login_select && empty( $uabb_social_google_client_id ) && FLBuilderModel::is_builder_active() ) { ?>
 

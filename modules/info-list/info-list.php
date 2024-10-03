@@ -506,27 +506,29 @@ class UABBInfoList extends FLBuilderModule {
 			}
 		}
 		echo '<li class="uabb-info-list-item info-list-item-dynamic' . esc_attr( $list_item_counter ) . '">';
-		echo '<div class="uabb-info-list-content-wrapper fl-clearfix uabb-info-list-' . esc_attr( $this->settings->icon_position ) . '">';
-
 		$link_rel = BB_Ultimate_Addon_Helper::get_link_rel( $target, $nofollow, 0 );
 
 		if ( ! empty( $item->list_item_link ) && 'complete' === $item->list_item_link && ! empty( $item->list_item_url ) ) {
 
-			echo '<a href="' . $item->list_item_url . '" class="uabb-info-list-link" target="' . esc_attr( $target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . $item->list_item_url . '"></a>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<a href="' . $item->list_item_url . '" class="uabb-info-list-link" target="' . esc_attr( $target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . $item->list_item_url . '">'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
+		echo '<div class="uabb-info-list-content-wrapper fl-clearfix uabb-info-list-' . esc_attr( $this->settings->icon_position ) . '">';
 
 		if ( isset( $item->image_type ) && 'none' !== $item->image_type ) {
+			if ( ! empty( $item->list_item_link ) && 'icon' === $item->list_item_link ) {
+				echo '<a href="' . $item->list_item_url . '" class="uabb-info-list-link" target="' . esc_attr( $target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . $item->list_item_url . '">'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			}
 			echo '<div class="uabb-info-list-icon info-list-icon-dynamic' . esc_attr( $list_item_counter ) . '">';
 
-			if ( ! empty( $item->list_item_link ) && 'icon' === $item->list_item_link ) {
-				echo '<a href="' . $item->list_item_url . '" class="uabb-info-list-link" target="' . esc_attr( $target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . $item->list_item_url . '"></a>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			}
 			$this->render_image( $item, $this->settings );
 
 			if ( ! empty( $item->image_type ) && 'custom_char' === $item->image_type ) {
 				echo '<div class="custom-character' . esc_attr( $list_item_counter ) . '">' . $item->custom_text . '</div>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			echo '</div>';
+			if ( ! empty( $item->list_item_link ) && 'icon' === $item->list_item_link ) {
+				echo '</a>';            
+			}       
 		}
 
 		echo '<div class="uabb-info-list-content uabb-info-list-' . esc_attr( $this->settings->icon_position ) . ' info-list-content-dynamic' . esc_attr( $list_item_counter ) . '">';
@@ -563,6 +565,9 @@ class UABBInfoList extends FLBuilderModule {
 
 		$list_item_counter++;
 		echo '</div>';
+		if ( ! empty( $item->list_item_link ) && 'complete' === $item->list_item_link && ! empty( $item->list_item_url ) ) {
+			echo '</a>';
+		}
 		if ( isset( $item->image_type ) && 'none' !== $item->image_type ) {
 			if ( 'center' === $this->settings->align_items && 'top' !== $this->settings->icon_position ) {
 				echo '<div class="uabb-info-list-connector-top uabb-info-list-' . esc_attr( $this->settings->icon_position ) . '"></div>';

@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Beaver Builder package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Beaver Builder 1.35.23\n"
+"Project-Id-Version: Ultimate Addons for Beaver Builder 1.35.24\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/bb-ultimate-addon\n"
-"POT-Creation-Date: 2024-07-22 09:34:32+00:00\n"
+"POT-Creation-Date: 2024-10-02 06:25:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -711,14 +711,14 @@ msgstr ""
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:452
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:364
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:397
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1123
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1117
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:299
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:348
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:507
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:640
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:729
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:924
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1083
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1078
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:307
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:239
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:280
@@ -1024,8 +1024,8 @@ msgstr ""
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:310
 #: modules/uabb-how-to/uabb-how-to-bb-2-2-compatibility.php:313
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:351
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1182
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1135
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1176
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1130
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:98
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:74
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:398
@@ -4229,9 +4229,9 @@ msgstr ""
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:442
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:354
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:387
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1130
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1124
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:289
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1090
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1085
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:91
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:214
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:67
@@ -4967,10 +4967,10 @@ msgstr ""
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:643
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:781
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:893
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1368
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1362
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:713
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:826
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1725
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1720
 #: modules/uabb-off-canvas/uabb-off-canvas-bb-2-2-compatibility.php:558
 #: modules/uabb-off-canvas/uabb-off-canvas-bb-2-2-compatibility.php:682
 #: modules/uabb-off-canvas/uabb-off-canvas-bb-less-than-2-2-compatibility.php:409
@@ -5217,12 +5217,12 @@ msgstr ""
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:1498
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:1575
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:491
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1200
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1282
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1364
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1463
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1562
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1660
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1195
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1277
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1359
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1458
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1557
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1655
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:387
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:493
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:945
@@ -5394,12 +5394,12 @@ msgstr ""
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:1516
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:1593
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:509
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1218
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1300
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1382
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1481
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1580
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1678
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1213
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1295
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1377
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1476
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1575
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1673
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:405
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:511
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:963
@@ -5580,12 +5580,12 @@ msgstr ""
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:1550
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:1627
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:573
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1252
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1334
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1416
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1515
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1614
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1712
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1247
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1329
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1411
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1510
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1609
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1707
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:439
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:545
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:992
@@ -5820,13 +5820,11 @@ msgstr ""
 #: modules/uabb-hotspot/uabb-hotspot-bb-2-2-compatibility.php:255
 #: modules/uabb-hotspot/uabb-hotspot-bb-less-than-2-2-compatibility.php:187
 #: modules/uabb-hotspot/uabb-hotspot-bb-less-than-2-2-compatibility.php:261
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1056
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:387
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:546
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:679
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:768
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:963
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1031
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:653
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:754
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:651
@@ -6618,7 +6616,7 @@ msgstr ""
 #: includes/admin-settings-social.php:34
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:345
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:247
-#: modules/uabb-login-form/uabb-login-form.php:545
+#: modules/uabb-login-form/uabb-login-form.php:547
 msgid "Google"
 msgstr ""
 
@@ -6671,7 +6669,6 @@ msgstr ""
 #: includes/admin-settings-social.php:63
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:365
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:267
-#: modules/uabb-login-form/uabb-login-form.php:547
 #: modules/uabb-social-share/includes/frontend.php:64
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:545
 #: modules/uabb-social-share/uabb-social-share-bb-less-than-2-2-compatibility.php:192
@@ -6926,12 +6923,12 @@ msgstr ""
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:460
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:497
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:872
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1065
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1059
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:404
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:438
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:818
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1039
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1146
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1034
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1141
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:160
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:175
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:242
@@ -7069,12 +7066,12 @@ msgstr ""
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:462
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:499
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:874
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1067
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1061
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:406
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:440
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:820
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1041
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1148
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1036
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1143
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:161
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:176
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:243
@@ -9218,12 +9215,12 @@ msgstr ""
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:461
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:498
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:873
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1066
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1060
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:405
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:439
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:819
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1040
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1147
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1035
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1142
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:159
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:174
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:241
@@ -9708,14 +9705,14 @@ msgstr ""
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:560
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:583
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:456
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1232
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1239
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1254
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1269
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1298
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1327
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1358
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1181
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1226
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1233
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1248
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1263
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1292
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1321
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1352
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1176
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:409
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:416
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:454
@@ -9988,8 +9985,8 @@ msgstr ""
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:582
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:570
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:466
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1345
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1635
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1339
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1630
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:922
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:920
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:37
@@ -10093,8 +10090,8 @@ msgstr ""
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:583
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:571
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:467
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1346
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1636
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1340
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1631
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:923
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:921
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:46
@@ -10198,8 +10195,8 @@ msgstr ""
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:584
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:572
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:468
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1347
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1637
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1341
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1632
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:924
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:922
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:55
@@ -10303,8 +10300,8 @@ msgstr ""
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:585
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:573
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:469
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1348
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1638
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1342
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1633
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:925
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:923
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:64
@@ -10408,8 +10405,8 @@ msgstr ""
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:586
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:574
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:470
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1349
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1639
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1343
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1634
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:926
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:924
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:73
@@ -10513,8 +10510,8 @@ msgstr ""
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:587
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:575
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:471
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1350
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1640
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1344
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1635
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:927
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:925
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:82
@@ -10612,8 +10609,8 @@ msgstr ""
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:588
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:576
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:472
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1351
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1641
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1345
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1636
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:928
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:926
 #: modules/uabb-wp-forms-styler/uabb-wp-forms-styler-bb-2-2-compatibility.php:897
@@ -10709,8 +10706,8 @@ msgstr ""
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:589
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:577
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:473
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1352
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1642
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1346
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1637
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:929
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:927
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:872
@@ -10804,8 +10801,8 @@ msgstr ""
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:590
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:578
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:474
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1353
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1643
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1347
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1638
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:930
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:928
 msgid "span"
@@ -11022,15 +11019,15 @@ msgstr ""
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:552
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:656
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:922
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1147
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1280
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1309
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1141
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1274
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1303
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:300
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:491
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:855
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1107
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1430
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1529
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1102
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1425
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1524
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:452
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:569
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:945
@@ -11295,8 +11292,8 @@ msgstr ""
 #: modules/uabb-how-to/uabb-how-to-bb-2-2-compatibility.php:326
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:207
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:363
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1197
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1143
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1191
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1138
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:195
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:156
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:405
@@ -11496,12 +11493,12 @@ msgstr ""
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:1486
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:1563
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:479
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1188
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1270
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1352
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1451
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1550
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1648
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1183
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1265
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1347
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1446
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1545
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1643
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:375
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:481
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:933
@@ -11674,12 +11671,12 @@ msgstr ""
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:1534
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:1611
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:557
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1236
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1318
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1400
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1499
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1598
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1696
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1231
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1313
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1395
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1494
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1593
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1691
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:423
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:529
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:1069
@@ -12721,13 +12718,13 @@ msgstr ""
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:248
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:391
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:643
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1133
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1127
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:349
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:508
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:641
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:730
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:925
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1093
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1088
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:240
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:370
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:620
@@ -12862,13 +12859,13 @@ msgstr ""
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:249
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:392
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:645
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1134
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1128
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:350
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:509
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:642
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:731
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:926
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1094
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1089
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:241
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:371
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:621
@@ -13002,13 +12999,13 @@ msgstr ""
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:250
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:393
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:644
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1135
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1129
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:351
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:510
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:643
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:732
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:927
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1095
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1090
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:242
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:372
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:622
@@ -13134,13 +13131,13 @@ msgstr ""
 #: modules/uabb-hotspot/uabb-hotspot-bb-less-than-2-2-compatibility.php:234
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:251
 #: modules/uabb-how-to/uabb-how-to-bb-less-than-2-2-compatibility.php:394
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1136
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1130
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:352
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:511
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:644
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:733
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:928
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1096
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1091
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:243
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:373
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:623
@@ -13326,9 +13323,9 @@ msgstr ""
 #: modules/uabb-devices/uabb-devices.php:1464
 #: modules/uabb-faq/uabb-faq-bb-less-than-2-2-compatibility.php:113
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1049
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1103
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1097
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1025
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1070
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1065
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:213
 #: modules/uabb-social-share/uabb-social-share-bb-less-than-2-2-compatibility.php:56
 #: modules/uabb-star-rating/uabb-star-rating.php:180
@@ -14093,9 +14090,9 @@ msgid "Display a group of Image / Icons."
 msgstr ""
 
 #: modules/advanced-icon/includes/frontend.php:26
-#: modules/info-box/includes/frontend.php:32
-#: modules/info-list/info-list.php:515 modules/info-list/info-list.php:522
-#: modules/info-list/info-list.php:537
+#: modules/info-box/includes/frontend.php:30
+#: modules/info-list/info-list.php:513 modules/info-list/info-list.php:519
+#: modules/info-list/info-list.php:539
 msgid "Go to"
 msgstr ""
 
@@ -14501,8 +14498,8 @@ msgstr ""
 #: modules/flip-box/flip-box-bb-less-than-2-2-compatibility.php:1051
 #: modules/uabb-call-to-action/uabb-call-to-action-bb-2-2-compatibility.php:525
 #: modules/uabb-call-to-action/uabb-call-to-action-bb-less-than-2-2-compatibility.php:534
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1342
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1632
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1336
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1627
 msgid "Title Tag"
 msgstr ""
 
@@ -14515,9 +14512,9 @@ msgstr ""
 #: modules/team/team-bb-2-2-compatibility.php:349
 #: modules/team/team-bb-less-than-2-2-compatibility.php:335
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1031
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1087
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1081
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1007
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1061
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1056
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:466
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:491
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:464
@@ -14552,8 +14549,8 @@ msgstr ""
 #: modules/mailchimp-subscribe-form/mailchimp-subscribe-form-bb-less-than-2-2-compatibility.php:283
 #: modules/uabb-heading/uabb-heading-bb-2-2-compatibility.php:329
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:250
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1119
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1079
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1113
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1074
 msgid "Responsive Compatibility"
 msgstr ""
 
@@ -14563,8 +14560,8 @@ msgstr ""
 #: modules/dual-color-heading/dual-color-heading-bb-less-than-2-2-compatibility.php:168
 #: modules/uabb-heading/uabb-heading-bb-2-2-compatibility.php:330
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:251
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1120
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1080
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1114
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1075
 msgid ""
 "There might be responsive issues for long texts. If you are facing such "
 "issues then select appropriate devices width to make your module responsive."
@@ -14582,8 +14579,8 @@ msgstr ""
 #: modules/ribbon/ribbon-bb-less-than-2-2-compatibility.php:46
 #: modules/uabb-heading/uabb-heading-bb-2-2-compatibility.php:334
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:255
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1124
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1084
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1118
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1079
 msgid "Small Devices"
 msgstr ""
 
@@ -14595,8 +14592,8 @@ msgstr ""
 #: modules/ribbon/ribbon-bb-less-than-2-2-compatibility.php:47
 #: modules/uabb-heading/uabb-heading-bb-2-2-compatibility.php:335
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:256
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1125
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1085
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1119
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1080
 msgid "Medium & Small Devices"
 msgstr ""
 
@@ -14622,8 +14619,8 @@ msgstr ""
 #: modules/team/team-bb-less-than-2-2-compatibility.php:358
 #: modules/uabb-heading/uabb-heading-bb-2-2-compatibility.php:353
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:274
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1138
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1098
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1132
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1093
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:375
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:374
 #: modules/uabb-separator/uabb-separator-bb-2-2-compatibility.php:95
@@ -14645,8 +14642,8 @@ msgstr ""
 #: modules/team/team-bb-less-than-2-2-compatibility.php:373
 #: modules/uabb-heading/uabb-heading-bb-2-2-compatibility.php:377
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:295
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1160
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1120
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1154
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1115
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:390
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:389
 #: modules/uabb-separator/uabb-separator-bb-2-2-compatibility.php:30
@@ -14660,8 +14657,8 @@ msgstr ""
 #: modules/advanced-separator/advanced-separator-bb-less-than-2-2-compatibility.php:701
 #: modules/uabb-heading/uabb-heading-bb-2-2-compatibility.php:387
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:300
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1178
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1131
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1172
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1126
 #: modules/uabb-separator/uabb-separator-bb-2-2-compatibility.php:40
 #: modules/uabb-separator/uabb-separator-bb-less-than-2-2-compatibility.php:38
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:360
@@ -17601,7 +17598,7 @@ msgstr ""
 #: modules/uabb-hotspot/uabb-hotspot-bb-2-2-compatibility.php:887
 #: modules/uabb-how-to/uabb-how-to-bb-2-2-compatibility.php:845
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:635
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1385
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1379
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:490
 #: modules/uabb-off-canvas/uabb-off-canvas-bb-2-2-compatibility.php:1181
 #: modules/uabb-price-list/uabb-price-list-bb-2-2-compatibility.php:568
@@ -17639,7 +17636,7 @@ msgstr ""
 #: modules/uabb-hotspot/uabb-hotspot-bb-2-2-compatibility.php:890
 #: modules/uabb-how-to/uabb-how-to-bb-2-2-compatibility.php:848
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:638
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1388
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1382
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:493
 #: modules/uabb-off-canvas/uabb-off-canvas-bb-2-2-compatibility.php:1184
 #: modules/uabb-price-list/uabb-price-list-bb-2-2-compatibility.php:571
@@ -19937,8 +19934,8 @@ msgstr ""
 #: modules/google-map/google-map-bb-less-than-2-2-compatibility.php:211
 #: modules/uabb-contact-form/uabb-contact-form-bb-2-2-compatibility.php:1458
 #: modules/uabb-contact-form/uabb-contact-form-bb-less-than-2-2-compatibility.php:1734
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1075
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1049
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1069
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1044
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:1335
 #: modules/uabb-registration-form/uabb-registration-form-bb-less-than-2-2-compatibility.php:1431
 msgid "Dark"
@@ -21282,7 +21279,7 @@ msgstr ""
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:101
 #: modules/uabb-heading/uabb-heading-bb-less-than-2-2-compatibility.php:104
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:318
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1083
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1077
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:220
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:101
 msgid "Separator"
@@ -22936,8 +22933,8 @@ msgstr ""
 #: modules/mailchimp-subscribe-form/mailchimp-subscribe-form-bb-less-than-2-2-compatibility.php:1270
 #: modules/uabb-contact-form/uabb-contact-form-bb-2-2-compatibility.php:1145
 #: modules/uabb-contact-form/uabb-contact-form-bb-less-than-2-2-compatibility.php:1121
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1235
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1184
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1229
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1179
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:1097
 #: modules/uabb-registration-form/uabb-registration-form-bb-less-than-2-2-compatibility.php:919
 #: modules/uabb-search/uabb-search.php:927
@@ -27106,8 +27103,8 @@ msgstr ""
 
 #: modules/uabb-contact-form/uabb-contact-form-bb-2-2-compatibility.php:1262
 #: modules/uabb-contact-form/uabb-contact-form-bb-less-than-2-2-compatibility.php:1376
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1265
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1348
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1259
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1343
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:1127
 #: modules/uabb-registration-form/uabb-registration-form-bb-less-than-2-2-compatibility.php:1083
 #: modules/uabb-timeline/uabb-timeline.php:1676
@@ -27191,8 +27188,8 @@ msgstr ""
 
 #: modules/uabb-contact-form/uabb-contact-form-bb-2-2-compatibility.php:1457
 #: modules/uabb-contact-form/uabb-contact-form-bb-less-than-2-2-compatibility.php:1733
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1076
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1050
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1070
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1045
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:1334
 #: modules/uabb-registration-form/uabb-registration-form-bb-less-than-2-2-compatibility.php:1430
 msgid "Light"
@@ -27951,7 +27948,7 @@ msgstr ""
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:18
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:90
 #: modules/uabb-video/uabb-video-bb-less-than-2-2-compatibility.php:17
-#: modules/uabb-video/uabb-video.php:23 modules/uabb-video/uabb-video.php:24
+#: modules/uabb-video/uabb-video.php:30 modules/uabb-video/uabb-video.php:31
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:15
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:22
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:1049
@@ -29483,9 +29480,9 @@ msgid "Enable Lost your password"
 msgstr ""
 
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:133
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1294
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1288
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:81
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1447
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1442
 msgid "Lost your password Text"
 msgstr ""
 
@@ -29559,9 +29556,9 @@ msgid "Bottom of the Form"
 msgstr ""
 
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:253
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1250
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1244
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:163
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1266
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1261
 msgid "WP Login Button Text"
 msgstr ""
 
@@ -29592,9 +29589,9 @@ msgid "Redirect After Successful WordPress Logout"
 msgstr ""
 
 #: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:333
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1338
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1332
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:235
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1628
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1623
 msgid "Separator Text"
 msgstr ""
 
@@ -29721,38 +29718,38 @@ msgstr ""
 msgid "In-Line"
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1062
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1036
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1056
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1031
 msgid "Social Buttons Alignment"
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1072
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1046
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1066
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1041
 msgid "Social Buttons Theme"
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1088
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1062
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1082
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1057
 msgid "Adjust the position of  Text. 0% for very left & 100% for very right."
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1104
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1071
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1098
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1066
 msgid "Adjust the spacing between separator line edges & your Text."
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1202
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1153
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1196
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1148
 msgid "Separator Top Spacing"
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1215
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1165
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1209
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1160
 msgid "Separator Bottom Spacing"
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1323
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1546
+#: modules/uabb-login-form/uabb-login-bb-2-2-compatibility.php:1317
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1541
 msgid "Error Message Text"
 msgstr ""
 
@@ -29776,7 +29773,7 @@ msgstr ""
 msgid "Social Buttons Styling"
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1056
+#: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1051
 msgid "Separator Styling"
 msgstr ""
 
@@ -29788,32 +29785,37 @@ msgstr ""
 msgid "Login Module"
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-form.php:106
-#: modules/uabb-login-form/uabb-login-form.php:148
-#: modules/uabb-login-form/uabb-login-form.php:259
-#: modules/uabb-login-form/uabb-login-form.php:394
-#: modules/uabb-login-form/uabb-login-form.php:463
+#: modules/uabb-login-form/uabb-login-form.php:115
+#: modules/uabb-login-form/uabb-login-form.php:365
+msgid "Token verification failed"
+msgstr ""
+
+#: modules/uabb-login-form/uabb-login-form.php:128
+#: modules/uabb-login-form/uabb-login-form.php:239
+#: modules/uabb-login-form/uabb-login-form.php:372
+#: modules/uabb-login-form/uabb-login-form.php:440
 msgid "Unauthorized access"
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-form.php:537
+#: modules/uabb-login-form/uabb-login-form.php:539
 msgid "Log In with Google"
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-form.php:539
-msgid "Log In with Facebook"
+#: modules/uabb-login-form/uabb-login-form.php:541
+#: modules/uabb-login-form/uabb-login-form.php:549
+msgid "Sign in with Facebook"
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-form.php:604
+#: modules/uabb-login-form/uabb-login-form.php:623
 msgid "Please configure the Google Client ID from"
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-form.php:607
-#: modules/uabb-login-form/uabb-login-form.php:639
+#: modules/uabb-login-form/uabb-login-form.php:626
+#: modules/uabb-login-form/uabb-login-form.php:658
 msgid "Dashboard > Settings > UABB > Social Login Settings"
 msgstr ""
 
-#: modules/uabb-login-form/uabb-login-form.php:635
+#: modules/uabb-login-form/uabb-login-form.php:654
 msgid "Please configure the Facebook App ID and Facebook App Secret from"
 msgstr ""
 
@@ -32657,15 +32659,15 @@ msgstr ""
 msgid "Font size"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:453
+#: modules/uabb-video/uabb-video.php:460
 msgid "from "
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:567
+#: modules/uabb-video/uabb-video.php:574
 msgid "Please choose a file."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:900
+#: modules/uabb-video/uabb-video.php:907
 #. translators: %s: search term
 msgid ""
 "<div style=\"%2$s\"> Make sure you add the actual URL of the video and not "
@@ -32676,7 +32678,7 @@ msgid ""
 "https://youtu.be/HJRzUQMhJMQ</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:915
+#: modules/uabb-video/uabb-video.php:922
 #. translators: %s: search term
 msgid ""
 "<div style=\"%1$s\">Make sure you add the actual URL of the video and not "
@@ -32687,7 +32689,7 @@ msgid ""
 "https://vimeo.com/channels/staffpicks/274860274</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:928
+#: modules/uabb-video/uabb-video.php:935
 #: modules/uabb-video-gallery/uabb-video-gallery.php:939
 #. translators: %s: search term
 msgid ""
@@ -32695,7 +32697,7 @@ msgid ""
 "Thumbnail\" and paste here.</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:945
+#: modules/uabb-video/uabb-video.php:952
 msgid ""
 "Click <a "
 "href=\"https://www.ultimatebeaver.com/docs/how-to-find-youtube-channel-name-"
@@ -32704,14 +32706,14 @@ msgid ""
 "here</strong> </a> to know how to find your YouTube Channel ID."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:951
+#: modules/uabb-video/uabb-video.php:958
 msgid ""
 "Click <a href=\"https://support.google.com/youtube/answer/3250431?hl=en\" "
 "target=\"_blank\" rel=\"noopener\"> <strong> here</strong> </a> to know how "
 "to find your YouTube Channel ID."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:960
+#: modules/uabb-video/uabb-video.php:967
 msgid ""
 "Click <a "
 "href=\"https://www.ultimatebeaver.com/docs/how-to-find-youtube-channel-name-"
@@ -32720,7 +32722,7 @@ msgid ""
 "here</strong> </a> to know how to find your YouTube Channel Name."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:966
+#: modules/uabb-video/uabb-video.php:973
 msgid ""
 "Click <a href=\"https://support.google.com/youtube/answer/3250431?hl=en\" "
 "target=\"_blank\" rel=\"noopener\"> <strong> here</strong> </a> to know how "

@@ -61,15 +61,18 @@ if ( count( $settings->ihover_item ) > 0 ) {
 			// Opacity settings.
 			$selector_prefix = '.fl-node-' . esc_attr( $id ) . ' .uabb-ih-item-' . esc_attr( $i );
 
+			$opacity_decimal = 1; // Default opacity if not provided.
 			if ( isset( $settings->ihover_item[ $i ]->background_color_opc ) && ! empty( $settings->ihover_item[ $i ]->background_color_opc ) ) {
 					$opacity_decimal = (float) $settings->ihover_item[ $i ]->background_color_opc / 100;
+					list($r, $g, $b) = sscanf( esc_attr( $settings->ihover_item[ $i ]->background_color ), '#%02x%02x%02x' );
+					$rgba_color      = "rgba($r, $g, $b, $opacity_decimal)";
 				?>
 				<?php echo esc_attr( $selector_prefix ); ?> .uabb-ih-circle.uabb-ih-effect1.uabb-ih-hover .uabb-ih-info .uabb-ih-info-back,
 				<?php echo esc_attr( $selector_prefix ); ?> .uabb-ih-square.uabb-ih-effect1.uabb-ih-hover .uabb-ih-info .uabb-ih-info-back,
 				<?php echo esc_attr( $selector_prefix ); ?> .uabb-ih-circle.uabb-ih-effect18.uabb-ih-hover .uabb-ih-info .uabb-ih-info-back,
 				<?php echo esc_attr( $selector_prefix ); ?> .uabb-ih-square.uabb-ih-effect18.uabb-ih-hover .uabb-ih-info .uabb-ih-info-back,
 				<?php echo esc_attr( $selector_prefix ); ?> .uabb-ih-info .uabb-ih-info-back{
-					opacity: <?php echo esc_attr( $opacity_decimal ); ?>;
+					background: <?php echo esc_attr( $rgba_color ); ?>;
 				}
 					<?php
 			}

@@ -100,6 +100,9 @@
 	right: 0;
 	z-index: 9;
 }
+.uabb-info-list-link {
+	position: relative;
+}
 
 .uabb-info-list-item .uabb-info-list-icon .uabb-icon-wrap {
 	vertical-align: middle;
@@ -131,7 +134,7 @@
 .uabb-info-list-content-wrapper,
 .uabb-info-list-icon {
 	position: relative;
-	z-index: 5;
+	z-index: 4;
 }
 
 .uabb-info-list-item:first-child .uabb-info-list-connector-top,

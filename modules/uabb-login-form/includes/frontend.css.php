@@ -521,7 +521,7 @@ if ( 'enable' === $settings->fields_icon ) {
 				}
 				?>
 
-				text-align: <?php echo esc_attr( $settings->social_buttons_align ); ?>
+				justify-content: <?php echo esc_attr( $settings->social_buttons_align ); ?>
 					<?php
 			}
 		}
@@ -540,14 +540,7 @@ if ( 'enable' === $settings->fields_icon ) {
 
 	?>
 }
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-lf-form-wrap .uabb-lf-social-login-wrap .uabb-facebook-content-wrapper {
-	<?php
 
-	if ( isset( $settings->social_buttons_border_radius ) ) {
-		echo ( '' !== esc_attr( $settings->social_buttons_border_radius ) ) ? 'border-radius:' . esc_attr( $settings->social_buttons_border_radius ) . 'px;' : '';
-	}
-	?>
-}
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-lf-form-wrap .uabb-lf-login-form .uabb-lf-submit-button-wrap {
 		<?php
 

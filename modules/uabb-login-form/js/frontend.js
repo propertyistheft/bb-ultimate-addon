@@ -52,22 +52,32 @@
 
 		var google_data = {
 			'clientId': response.clientId,
+			'id_token': response.credential,
 		};
 		var data = {
 			'action': 'uabb-lf-google-submit',
 			'nonce': uabb_lf_nonce,
 			'data': google_data,
-			'id_token': response.credential,
 		};
 		$.post(ajaxurl, data, function (response) {
 
 			google_button_text = node_module.find('.uabb-google-text');
 
 			google_button_text.find('.uabb-login-form-loader').remove();
-
-			$(location).attr('href', uabb_lf_google_redirect_login_url);
-
-			is_google_button_clicked = false;
+			
+			if ( response && response.success ) {
+				// Redirect to the dashboard if login is successful
+				if ( typeof uabb_lf_google_redirect_login_url === 'undefined' ) {
+					location.reload();
+				} else {
+					$(location).attr('href', uabb_lf_google_redirect_login_url);
+				}
+			} else {
+			    // Handle error case
+				var errorMessage = response && response.data && response.data.error ? response.data.error : 'An error occurred during login.';
+				console.log(errorMessage);
+				is_google_button_clicked = false;
+			}
 
 		});
 	}

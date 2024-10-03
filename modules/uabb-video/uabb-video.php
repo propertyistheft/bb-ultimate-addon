@@ -13,6 +13,13 @@
 class UABBVideo extends FLBuilderModule {
 
 	/**
+	 * Property to hold data
+	 *
+	 * @var mixed
+	 */
+	public $data;
+
+	/**
 	 * Constructor function that constructs default values for the Video module
 	 *
 	 * @method __construct

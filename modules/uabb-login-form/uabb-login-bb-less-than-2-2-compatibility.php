@@ -1002,7 +1002,7 @@ FLBuilder::register_module(
 					'title'  => __( 'Social Buttons Styling', 'uabb' ), // Section Title.
 					'fields' => array(
 
-						'social_buttons_position'      => array(
+						'social_buttons_position' => array(
 							'type'    => 'select',
 							'label'   => __( 'Position', 'uabb' ),
 							'default' => 'bottom',
@@ -1011,7 +1011,7 @@ FLBuilder::register_module(
 								'bottom' => __( 'Bottom', 'uabb' ),
 							),
 						),
-						'social_buttons_layout'        => array(
+						'social_buttons_layout'   => array(
 							'type'    => 'select',
 							'label'   => __( 'Layout', 'uabb' ),
 							'default' => 'inline',
@@ -1020,18 +1020,13 @@ FLBuilder::register_module(
 								'stack'  => __( 'Stack', 'uabb' ),
 							),
 						),
-						'social_buttons_spacing'       => array(
+						'social_buttons_spacing'  => array(
 							'type'    => 'unit',
 							'label'   => __( 'Spacing', 'uabb' ),
 							'default' => '5',
 							'units'   => array( 'px' ),
 						),
-						'social_buttons_border_radius' => array(
-							'type'  => 'unit',
-							'label' => __( 'Border Radius', 'uabb' ),
-							'units' => array( 'px' ),
-						),
-						'social_buttons_align'         => array(
+						'social_buttons_align'    => array(
 							'type'    => 'select',
 							'label'   => __( 'Social Buttons Alignment', 'uabb' ),
 							'default' => 'flex-start',
@@ -1041,7 +1036,7 @@ FLBuilder::register_module(
 								'flex-end'   => __( 'Right', 'uabb' ),
 							),
 						),
-						'social_button_theme'          => array(
+						'social_button_theme'     => array(
 							'type'    => 'select',
 							'label'   => __( 'Social Buttons Theme', 'uabb' ),
 							'default' => 'dark',

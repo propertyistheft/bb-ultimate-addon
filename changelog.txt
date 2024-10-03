@@ -1,3 +1,13 @@
+Version 1.35.24, Wednesday, 2nd October 2024
+- Improvement: Compatibility with Beaver Builder 2.9
+- Improvement: Enhanced opacity handling for color presets in some modules.
+- Improvement: Resolved high contrast accessibility issues for Info Box, Info List, and Advanced Posts modules.
+- Improvement: Video - Addressed deprecated dynamic property creation in a class.
+- Fixed: Advanced Menu - Collapsible menu was displaying on page load.
+- Fixed: Info List - Resolved text overlapping issue with Slidebox module when opened.
+- Fixed: Login Form – Updated Google Sign In as per latest Google guidelines.
+- Deprecated: Login Form – Removed Social Buttons border-radius.
+
 Version 1.35.23, Wednesday, 24th July 2024
 - Improvement: Hardened the security of plugin.
 - Improvement: Compatibility with latest WordPress version 6.6.

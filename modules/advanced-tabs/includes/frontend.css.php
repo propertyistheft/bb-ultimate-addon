@@ -362,7 +362,25 @@ if ( '' !== $settings->title_background_color && 'iconfall' !== $settings->style
 	?>
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-tabs .uabb-tabs-nav<?php echo esc_attr( $id ); ?> ul li,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-tabs .uabb-tab-acc-title {
-	background-color: <?php echo esc_attr( $settings->title_background_color ); ?>;
+	<?php
+	/** Background color of each tab */
+		echo ( '' !== $settings->title_background_color ) ? 'background:' . esc_attr( $settings->title_background_color ) . ';' : 'background:' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+
+	if ( isset( $settings->title_background_color ) ) {
+
+		$background_style = '';
+		$opacity_decimal  = isset( $settings->title_background_color_opc ) && '' !== $settings->title_background_color_opc ? (float) $settings->title_background_color_opc / 100 : 1.0;
+
+		if ( '' !== $settings->title_background_color ) {
+			list($r, $g, $b)  = sscanf( $settings->title_background_color, '#%02x%02x%02x' );
+			$rgba_color       = "rgba($r, $g, $b, $opacity_decimal)";
+			$background_style = 'background: ' . esc_attr( $rgba_color ) . ';';
+		} else {
+			$background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+		}
+		echo esc_attr( $background_style );
+	}   
+	?>
 }
 	<?php
 }
@@ -382,11 +400,26 @@ if ( '' !== $settings->title_hover_color ) {
 
 if ( '' !== $settings->title_background_hover_color ) {
 	?>
-
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-tabs-style-bar nav ul li a:hover,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-tabs-style-bar .uabb-tab-acc-title:hover {
 	<?php
-	echo ( '' !== $settings->title_background_hover_color ) ? 'background-color:' . esc_attr( $settings->title_background_hover_color ) . ';' : '';
+	/** Background hover color on each tab */
+	echo ( '' !== $settings->title_background_hover_color ) ? 'background:' . esc_attr( $settings->title_background_hover_color ) . ';' : 'background:' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+
+	if ( isset( $settings->title_background_hover_color ) ) {
+
+		$background_style = '';
+		$opacity_decimal  = isset( $settings->title_background_hover_color_opc ) && '' !== $settings->title_background_hover_color_opc ? (float) $settings->title_background_hover_color_opc / 100 : 1.0;
+
+		if ( '' !== $settings->title_background_hover_color ) {
+			list($r, $g, $b)  = sscanf( $settings->title_background_hover_color, '#%02x%02x%02x' );
+			$rgba_color       = "rgba($r, $g, $b, $opacity_decimal)";
+			$background_style = 'background: ' . esc_attr( $rgba_color ) . ';';
+		} else {
+			$background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+		}
+		echo esc_attr( $background_style );
+	}  
 	?>
 }
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-tabs-style-simple nav ul li a,
@@ -563,7 +596,24 @@ if ( 'yes' === $settings->tab_spacing && '' !== $settings->tab_spacing_size ) {
 }
 ?>
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-content-wrap<?php echo esc_attr( $id ); ?> {
-	background-color: <?php echo esc_attr( $settings->content_background_color ); ?>;
+	<?php
+	/** Content section background color */
+	echo ( '' !== $settings->content_background_color ) ? 'background:' . esc_attr( $settings->content_background_color ) . ';' : 'background:' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+	if ( isset( $settings->content_background_color ) ) {
+
+		$background_style = '';
+		$opacity_decimal  = isset( $settings->content_background_color_opc ) && '' !== $settings->content_background_color_opc ? (float) $settings->content_background_color_opc / 100 : 1.0;
+
+		if ( '' !== $settings->content_background_color ) {
+			list($r, $g, $b)  = sscanf( $settings->content_background_color, '#%02x%02x%02x' );
+			$rgba_color       = "rgba($r, $g, $b, $opacity_decimal)";
+			$background_style = 'background: ' . esc_attr( $rgba_color ) . ';';
+		} else {
+			$background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+		}
+		echo esc_attr( $background_style );
+	}
+	?>
 }
 <?php if ( ! $version_bb_check ) { ?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-content-wrap<?php echo esc_attr( $id ); ?> {
@@ -642,9 +692,23 @@ if ( '' !== $settings->title_hover_color ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-module-content.uabb-tabs.uabb-tabs-layout-horizontal.uabb-tabs-style-topline li.uabb-tab-current,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-tabs-style-bar .uabb-content-wrap<?php echo esc_attr( $id ); ?> .uabb-content-current > .uabb-tab-acc-title {
 	<?php
-	$color_default = ( '' !== uabb_theme_base_color( $settings->title_active_background_color ) ) ? uabb_theme_base_color( $settings->title_active_background_color ) : '#a7a7a7';
+	/** Active background tab color */
+		echo ( '' !== $settings->title_active_background_color ) ? 'background:' . esc_attr( $settings->title_active_background_color ) . ';' : 'background:' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+		
+	if ( isset( $settings->title_active_background_color ) ) {
+		$background_style = '';
+		$opacity_decimal  = isset( $settings->title_active_background_color_opc ) && '' !== $settings->title_active_background_color_opc ? (float) $settings->title_active_background_color_opc / 100 : 1.0;
+
+		if ( '' !== $settings->title_active_background_color ) {
+			list($r, $g, $b)  = sscanf( $settings->title_active_background_color, '#%02x%02x%02x' );
+			$rgba_color       = "rgba($r, $g, $b, $opacity_decimal)";
+			$background_style = 'background: ' . esc_attr( $rgba_color ) . ';';
+		} else {
+			$background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+		}
+		echo esc_attr( $background_style );
+	} 
 	?>
-	background-color: <?php echo esc_attr( uabb_theme_base_color( $color_default ) ); ?>;
 }
 
 /* _____________________________________________________________________ */

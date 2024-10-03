@@ -113,7 +113,7 @@
 }
 
 .uabb-lf-form-wrap .uabb-lf-social-login-wrap.uabb-social-layout-stack-desktop {
-	display: block;
+	display: inline-grid;
 }
 
 .uabb-lf-end-text-wrap,
@@ -122,6 +122,73 @@
 	display: -ms-inline-flexbox;
 	display: inline-flex;
 }
+/** Css for Social Login Page editor button */
+ .uabb-lf-google-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    font-family: "Google Sans", arial, sans-serif;
+    font-size: 14px;
+    height: 41px;
+    letter-spacing: 0.25px;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    transition: background-color 0.3s ease;
+}
+
+.uabb-lf-google-button-light {
+    background-color: white;
+    color: #3c4043;
+}
+
+.uabb-lf-google-button-wrap .uabb-lf-google-button-dark{
+	background-color:#1a73e8;
+    border: none;
+    color: #fff;
+}
+
+.uabb-lf-google-button-dark .uabbGoogleButtonIcon {
+    background: #fff;
+    border: 1px solid #4285f4;
+}
+
+.uabb-lf-google-button-dark .uabbGoogleButtonIcon,
+.uabb-lf-google-button-light .uabbGoogleButtonIcon {
+    padding: 9px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    margin-left: -10px;
+    margin-right: 12px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+    min-width: 36px;
+    width: 36px;
+}
+
+.uabbGoogleButtonIcon svg{
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+.uabb-lf-google-login svg {
+    width: 18px;
+    height: 18px;
+}
+
+.uabb-lf-google-button-dark span.uabb-goggle-text,
+.uabb-lf-google-button-light span.uabb-goggle-text {
+    padding: 0px 20px 0px 0px;
+}
+
 
 @media only screen and (max-width: 992px) {
 	.uabb-lf-form-wrap .uabb-lf-social-login-wrap.uabb-social-layout-inline-desktop {
@@ -234,6 +301,8 @@
 	background: #3A5A97;
 	color: #fff;
 	border: 1px solid #3A5A97;
+	border-radius: 4px;
+	height: 41px;
 }
 
 .uabb-lf-form-wrap .uabb-lf-social-login-wrap .uabb-lf-facebook-light svg path {
@@ -312,9 +381,10 @@
 	border: none;
 	cursor: pointer;
 	background: #fff;
-	color: #6f6c6c;
-	border: 1px solid #6f6c6c;
-	border-radius: 5px;
+	color: #3c4043;
+	border: 1px solid #dadce0;
+	border-radius: 4px;
+	height: 41px;
 }
 
 @keyframes uabb-loader {

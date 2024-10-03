@@ -309,7 +309,7 @@
 					if( window.innerWidth <= this.mediaBreakpoint ) {
 						$menu.css({ display: 'none' });
 					} else {
-						if( !( this.mobileBelowRow == 'below-row' ) ) {
+						if( this.mobileBelowRow == 'below-row'  ) {
 							$menu.css({ display: 'block' });
 						}
 					}
