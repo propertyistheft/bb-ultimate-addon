@@ -717,7 +717,7 @@ FLBuilder::register_module(
 					'fields' => array(
 						'img_icon_position'          => array(
 							'type'    => 'select',
-							'label'   => __( 'Position', 'uabb' ),
+							'label'   => __( 'Image Icon Position', 'uabb' ),
 							'default' => 'above-title',
 							'help'    => __( 'Image Icon position', 'uabb' ),
 							'options' => array(

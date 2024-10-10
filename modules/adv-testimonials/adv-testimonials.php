@@ -568,38 +568,24 @@ class UABBAdvancedTestimonialsModule extends FLBuilderModule {
 	 * @param string $rating an string to get the ratings.
 	 */
 	public function render_ratings( $rating ) {
-
-		$rating_icon = apply_filters( 'uabb_testimonial_rating_icon', 'fa-star' );
-
+		
+		$rating_icon_filled = apply_filters( 'uabb_testimonial_rating_icon_filled', 'fas fa-star' );
+		$rating_icon_empty  = apply_filters( 'uabb_testimonial_rating_icon_empty', 'far fa-star' );
+	
 		if ( 'none' !== $rating ) {
-			$output  = '<div class="uabb-rating">
-                            <div class="uabb-rating__wrap">
-                              <input class="uabb-rating__input';
-			$output .= ( 5 === (int) $rating ) ? ' uabb-checked ' : '';
-			$output .= '" type="radio" value="5">
-                  <label class="uabb-rating__ico far ' . $rating_icon . '" title="5 out of 5 stars"></label>
-                  <input class="uabb-rating__input';
-			$output .= ( 4 === (int) $rating ) ? ' uabb-checked ' : '';
-			$output .= '" type="radio" value="4">
-                  <label class="uabb-rating__ico far ' . $rating_icon . '" title="4 out of 5 stars"></label>
-                  <input class="uabb-rating__input';
-			$output .= ( 3 === (int) $rating ) ? ' uabb-checked ' : '';
-			$output .= '" type="radio" value="3">
-                  <label class="uabb-rating__ico far ' . $rating_icon . '" title="3 out of 5 stars"></label>
-                  <input class="uabb-rating__input';
-			$output .= ( 2 === (int) $rating ) ? ' uabb-checked ' : '';
-			$output .= '" type="radio" value="2">
-                  <label class="uabb-rating__ico far ' . $rating_icon . '" title="2 out of 5 stars"></label>
-                  <input class="uabb-rating__input';
-			$output .= ( 1 === (int) $rating ) ? ' uabb-checked ' : '';
-			$output .= '" type="radio" value="1">
-                  <label class="uabb-rating__ico far ' . $rating_icon . '" title="1 out of 5 stars"></label>
-                </div>
-              </div>';
-
-			echo $output; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			$output = '<div class="uabb-rating" role="img" aria-label="' . esc_attr( $rating ) . ' out of 5 stars">
+							<div class="uabb-rating__wrap">';
+			for ( $i = 1; $i <= 5; $i++ ) {
+				$is_filled  = $i <= (int) $rating;
+				$span_class = $is_filled ? 'filled-star' : 'empty-star';
+				$output    .= '<span class="screen-reader-text ' . esc_attr( $span_class ) . '">' . ( $is_filled ? 'Filled star' : 'Empty star' ) . '</span>';
+				$output    .= '<i class=" uabb-rating__ico ' . ( $is_filled ? esc_attr( $rating_icon_filled ) : esc_attr( $rating_icon_empty ) ) . '" aria-hidden="true"></i>';
+			}
+			$output .= '</div>
+						</div>';
+			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
-	}
+	}   
 }
 
 /*

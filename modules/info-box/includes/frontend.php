@@ -33,38 +33,34 @@ if ( 'module' === $settings->cta_type && ! empty( $settings->link ) ) {
 <div class="uabb-module-content <?php echo wp_kses_post( $module->get_classname() ); ?> <?php echo esc_attr( $stacked_class ); ?>">
 	<div class="uabb-infobox-left-right-wrap">
 		<?php
-		// Image left.
-		$module->render_image( 'left' );
-		?>
-		<div class="uabb-infobox-content">
+		$module->render_image( 'left' ); // Image left.
+		// phpcs:disable Squiz.PHP.EmbeddedPhp.ContentAfterEnd
+		?><div class="uabb-infobox-content">
 			<?php
-			// Image above title.
-			$module->render_image( 'above-title' );
-			// Title.
-			$module->render_title();
-			// Image below title.
-			$module->render_image( 'below-title' );
-			// Separator.
-			$module->render_separator();
+			// phpcs:enable
+			$module->render_image( 'above-title' ); // Image above title.
+			$module->render_title(); // Title.
+			$module->render_image( 'below-title' ); // Image below title.
+			$module->render_separator(); // Separator.
 
 			if ( '' !== $settings->text || 'link' === $settings->cta_type || 'button' === $settings->cta_type ) {
 				?>
-				<div class="uabb-infobox-text-wrap">
-					<?php
-					// Text.
-					$module->render_text();
-					// Link CTA.
-					$module->render_link();
-					// Button CTA.
-					$module->render_button();
-					?>
-				</div>
+			<div class="uabb-infobox-text-wrap">
+				<?php
+				
+				$module->render_text(); // Text.
+				$module->render_link(); // Link CTA.
+				$module->render_button(); // Button CTA.
+				?>
+			</div>
 				<?php
 			}
 			?>
         </div><?php // @codingStandardsIgnoreLine.
+		// phpcs:disable Squiz.PHP.EmbeddedPhp.ContentAfterEnd
 		// Image right.
 		$module->render_image( 'right' );
+		// phpcs:enable
 		?>
 	</div>
 </div>

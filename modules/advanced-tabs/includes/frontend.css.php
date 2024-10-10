@@ -595,23 +595,29 @@ if ( 'yes' === $settings->tab_spacing && '' !== $settings->tab_spacing_size ) {
 	}
 }
 ?>
+<?php
+$color_default = ( '' !== uabb_theme_base_color( $settings->content_background_color ) ) ? uabb_theme_base_color( $settings->content_background_color ) : '#a7a7a7';
+?>
+
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-content-wrap<?php echo esc_attr( $id ); ?> {
 	<?php
-	/** Content section background color */
-	echo ( '' !== $settings->content_background_color ) ? 'background:' . esc_attr( $settings->content_background_color ) . ';' : 'background:' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
-	if ( isset( $settings->content_background_color ) ) {
+	if ( '' !== $settings->content_background_color ) {
+		echo 'background:' . esc_attr( $settings->content_background_color ) . ';';
+	} else {
+		echo 'background:' . esc_attr( $color_default ) . ';';
+	}
 
-		$background_style = '';
-		$opacity_decimal  = isset( $settings->content_background_color_opc ) && '' !== $settings->content_background_color_opc ? (float) $settings->content_background_color_opc / 100 : 1.0;
+	if ( isset( $settings->content_background_color ) ) {
+		$opacity_decimal = isset( $settings->content_background_color_opc ) && '' !== $settings->content_background_color_opc ? (float) $settings->content_background_color_opc / 100 : 1.0;
 
 		if ( '' !== $settings->content_background_color ) {
-			list($r, $g, $b)  = sscanf( $settings->content_background_color, '#%02x%02x%02x' );
-			$rgba_color       = "rgba($r, $g, $b, $opacity_decimal)";
-			$background_style = 'background: ' . esc_attr( $rgba_color ) . ';';
+			list($r, $g, $b) = sscanf( $settings->content_background_color, '#%02x%02x%02x' );
+			$rgba_color      = "rgba($r, $g, $b, $opacity_decimal)";
+			echo 'background: ' . esc_attr( $rgba_color ) . ';';
 		} else {
-			$background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+			$rgba_default = 'rgba(255, 255, 255, 1)';
+			echo 'background: ' . esc_attr( $rgba_default ) . ';';
 		}
-		echo esc_attr( $background_style );
 	}
 	?>
 }
@@ -688,26 +694,33 @@ if ( '' !== $settings->title_hover_color ) {
 	color: <?php echo esc_attr( $settings->title_active_color ); ?>;
 }
 
+<?php 
+	$default_bg_color = ( '' !== uabb_theme_base_color( $settings->title_active_background_color ) ) ? uabb_theme_base_color( $settings->title_active_background_color ) : '#a7a7a7';
+?>
+
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-tabs-style-bar > nav > ul li.uabb-tab-current a,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-module-content.uabb-tabs.uabb-tabs-layout-horizontal.uabb-tabs-style-topline li.uabb-tab-current,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-tabs-style-bar .uabb-content-wrap<?php echo esc_attr( $id ); ?> .uabb-content-current > .uabb-tab-acc-title {
 	<?php
-	/** Active background tab color */
-		echo ( '' !== $settings->title_active_background_color ) ? 'background:' . esc_attr( $settings->title_active_background_color ) . ';' : 'background:' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
-		
+	if ( '' !== $settings->title_active_background_color ) {
+		echo 'background:' . esc_attr( $settings->title_active_background_color ) . ';';
+	} else {
+		echo 'background:' . esc_attr( $default_bg_color ) . ';';
+	}
+
+	// Check if the active background color is set.
 	if ( isset( $settings->title_active_background_color ) ) {
-		$background_style = '';
-		$opacity_decimal  = isset( $settings->title_active_background_color_opc ) && '' !== $settings->title_active_background_color_opc ? (float) $settings->title_active_background_color_opc / 100 : 1.0;
+		$opacity_decimal = isset( $settings->title_active_background_color_opc ) && '' !== $settings->title_active_background_color_opc ? (float) $settings->title_active_background_color_opc / 100 : 1.0;
 
 		if ( '' !== $settings->title_active_background_color ) {
-			list($r, $g, $b)  = sscanf( $settings->title_active_background_color, '#%02x%02x%02x' );
-			$rgba_color       = "rgba($r, $g, $b, $opacity_decimal)";
-			$background_style = 'background: ' . esc_attr( $rgba_color ) . ';';
+			list($r, $g, $b) = sscanf( $settings->title_active_background_color, '#%02x%02x%02x' );
+			$rgba_color      = "rgba($r, $g, $b, $opacity_decimal)";
+			echo 'background: ' . esc_attr( $rgba_color ) . ';';
 		} else {
-			$background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+			$rgba_default = 'rgba(246, 246, 246, 1)'; // Use a default rgba color if no color is set.
+			echo 'background: ' . esc_attr( $rgba_default ) . ';';
 		}
-		echo esc_attr( $background_style );
-	} 
+	}
 	?>
 }
 

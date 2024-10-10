@@ -177,21 +177,22 @@ if ( isset( $settings->title_border_param['top'] ) ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-content<?php echo esc_attr( $id ); ?> {
 	<?php
 	/** Content section background color */
-	echo ( '' !== $settings->content_bg_color ) ? 'background:' . esc_attr( $settings->content_bg_color ) . ';' : 'background:' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
-	
+	$color_default = ( '' !== uabb_theme_base_color( $settings->content_bg_color ) ) ? uabb_theme_base_color( $settings->content_bg_color ) : '#a7a7a7';
+
+	echo ( '' !== $settings->content_bg_color ) ? 'background:' . esc_attr( $settings->content_bg_color ) . ';' : 'background:' . esc_attr( $color_default ) . ';';
+
 	if ( isset( $settings->content_bg_color ) ) {
-		$background_style = '';
-		$opacity_decimal  = isset( $settings->content_bg_color_opc ) && '' !== $settings->content_bg_color_opc ? (float) $settings->content_bg_color_opc / 100 : 1.0;
+		$opacity_decimal = isset( $settings->content_bg_color_opc ) && '' !== $settings->content_bg_color_opc ? (float) $settings->content_bg_color_opc / 100 : 1.0;
 
 		if ( '' !== $settings->content_bg_color ) {
-			list($r, $g, $b)  = sscanf( $settings->content_bg_color, '#%02x%02x%02x' );
-			$rgba_color       = "rgba($r, $g, $b, $opacity_decimal)";
-			$background_style = 'background: ' . esc_attr( $rgba_color ) . ';';
+			list($r, $g, $b) = sscanf( $settings->content_bg_color, '#%02x%02x%02x' );
+			$rgba_color      = "rgba($r, $g, $b, $opacity_decimal)";
+			echo 'background: ' . esc_attr( $rgba_color ) . ';';
 		} else {
-			$background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+			$rgba_default = 'rgba(255, 255, 255, 1)';
+			echo 'background: ' . esc_attr( $rgba_default ) . ';';
 		}
-		echo esc_attr( $background_style );
-	} 
+	}
 	?>
 	<?php
 	if ( 'yes' === $converted || isset( $settings->content_spacing_dimension_top ) && isset( $settings->content_spacing_dimension_bottom ) && isset( $settings->content_spacing_dimension_left ) && isset( $settings->content_spacing_dimension_right ) ) {
@@ -252,20 +253,21 @@ if ( isset( $settings->title_border_param['top'] ) ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-item-active > .uabb-adv-accordion-button<?php echo esc_attr( $id ); ?> {
 	<?php
 	/** Title section background hover/active color */
-	echo ( '' !== $settings->title_bg_hover_color ) ? 'background:' . esc_attr( $settings->title_bg_hover_color ) . ';' : 'background:' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
-	
+	$default_bg_color = ( '' !== uabb_theme_base_color( $settings->title_bg_hover_color ) ) ? uabb_theme_base_color( $settings->title_bg_hover_color ) : '#a7a7a7';
+
+	echo ( '' !== $settings->title_bg_hover_color ) ? 'background:' . esc_attr( $settings->title_bg_hover_color ) . ';' : 'background:' . esc_attr( $default_bg_color ) . ';';
+
 	if ( isset( $settings->title_bg_hover_color ) ) {
-		$background_style = '';
-		$opacity_decimal  = isset( $settings->title_bg_hover_color_opc ) && '' !== $settings->title_bg_hover_color_opc ? (float) $settings->title_bg_hover_color_opc / 100 : 1.0;
+		$opacity_decimal = isset( $settings->title_bg_hover_color_opc ) && '' !== $settings->title_bg_hover_color_opc ? (float) $settings->title_bg_hover_color_opc / 100 : 1.0;
 
 		if ( '' !== $settings->title_bg_hover_color ) {
-			list($r, $g, $b)  = sscanf( $settings->title_bg_hover_color, '#%02x%02x%02x' );
-			$rgba_color       = "rgba($r, $g, $b, $opacity_decimal)";
-			$background_style = 'background: ' . esc_attr( $rgba_color ) . ';';
+			list($r, $g, $b) = sscanf( $settings->title_bg_hover_color, '#%02x%02x%02x' );
+			$rgba_color      = "rgba($r, $g, $b, $opacity_decimal)";
+			echo 'background: ' . esc_attr( $rgba_color ) . ';';
 		} else {
-			$background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+			$rgba_default = 'rgba(246, 246, 246, 1)';
+			echo 'background: ' . esc_attr( $rgba_default ) . ';';
 		}
-		echo esc_attr( $background_style );
 	}
 	?>
 }

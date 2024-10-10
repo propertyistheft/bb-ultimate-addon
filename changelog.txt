@@ -1,3 +1,8 @@
+Version 1.35.25, Monday, 7th October 2024
+- Fixed: Default color fallback logic when the background color is not set for Advanced Accordion and Advanced Tabs.
+- Fixed: Info Box - Corrected image/icon alignment when positioned to the left of the text and heading.
+- Fixed: Testimonials - Improved Accessibility for form label.
+
 Version 1.35.24, Wednesday, 2nd October 2024
 - Improvement: Compatibility with Beaver Builder 2.9
 - Improvement: Enhanced opacity handling for color presets in some modules.

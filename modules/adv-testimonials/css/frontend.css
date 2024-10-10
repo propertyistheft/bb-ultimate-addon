@@ -54,6 +54,11 @@
 	position: relative;
 	z-index: 1;
 }
+.uabb-testimonials-wrap.compact-wide .far {
+	font-size: 20px;
+	position: relative;
+	z-index: 1;
+}
 
 .uabb-testimonials-wrap.wide .uabb-slider-prev {
 	left: 0!important;
@@ -191,7 +196,7 @@
 }
 
 .uabb-testimonial .uabb-rating .uabb-rating__ico {
-	float: right;
+	/* float: right; */
 	padding-left: 2px;
 	cursor: pointer;
 	color: #FFB300;
@@ -205,9 +210,10 @@
 	display: none;
 }
 
-.uabb-testimonial .uabb-rating__input.uabb-checked~.uabb-rating__ico:before {
+.uabb-testimonial .filled-star + .uabb-rating__ico:before{
 	content: "\f005";
 	font-weight: 900;
+	font-size: 20px;
 }
 
 .uabb-module-content .uabb-text-editor :not(a) {
@@ -232,4 +238,16 @@
 	display: table-cell;
 	vertical-align: top;
 	text-align: center;
+}
+/*Testimonials Star Rating Text*/
+.uabb-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
