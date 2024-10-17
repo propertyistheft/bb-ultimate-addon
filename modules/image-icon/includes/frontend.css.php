@@ -159,7 +159,9 @@ if ( 'none' !== $settings->image_type ) : // Condition contain whole Style.
 		}
 
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-icon-wrap .uabb-icon i:hover,
-		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-icon-wrap .uabb-icon i:hover:before {
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-icon-wrap .uabb-icon i:hover:before,
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox-module-link:hover .uabb-icon-wrap .uabb-icon i,
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox-module-link:hover .uabb-icon-wrap .uabb-icon i:before {
 			<?php if ( 'simple' !== $settings->icon_style ) : ?>
 				<?php if ( ! empty( $settings->icon_bg_hover_color ) ) : ?>
 				background: <?php echo esc_attr( $settings->icon_bg_hover_color ); ?>;

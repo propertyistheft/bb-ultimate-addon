@@ -549,6 +549,7 @@ if ( 'custom' === $settings->min_height_switch && '' !== $settings->min_height )
 /* Heading Color */
 <?php if ( ! empty( $settings->title_color ) ) : ?>
 .fl-node-<?php echo esc_attr( $id ); ?> <?php echo esc_attr( $settings->title_tag_selection ); ?>.uabb-infobox-title,
+.fl-node-<?php echo esc_attr( $id ); ?> a <?php echo esc_attr( $settings->title_tag_selection ); ?>.uabb-infobox-title,
 .fl-node-<?php echo esc_attr( $id ); ?> <?php echo esc_attr( $settings->title_tag_selection ); ?>.uabb-infobox-title span a,
 .fl-node-<?php echo esc_attr( $id ); ?> <?php echo esc_attr( $settings->title_tag_selection ); ?>.uabb-infobox-title * {
 	color: <?php echo esc_attr( $settings->title_color ); ?>
@@ -557,6 +558,7 @@ if ( 'custom' === $settings->min_height_switch && '' !== $settings->min_height )
 
 <?php if ( ! empty( $settings->title_color_hover ) ) : ?>
 .fl-node-<?php echo esc_attr( $id ); ?> <?php echo esc_attr( $settings->title_tag_selection ); ?>.uabb-infobox-title:hover,
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox-module-link:hover <?php echo esc_attr( $settings->title_tag_selection ); ?>.uabb-infobox-title,
 .fl-node-<?php echo esc_attr( $id ); ?> <?php echo esc_attr( $settings->title_tag_selection ); ?>.uabb-infobox-title span a:hover,
 .fl-node-<?php echo esc_attr( $id ); ?> <?php echo esc_attr( $settings->title_tag_selection ); ?>.uabb-infobox-title *:hover,
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox-module-link:hover ~ .uabb-infobox-content <?php echo esc_attr( $settings->title_tag_selection ); ?>.uabb-infobox-title,
@@ -573,12 +575,14 @@ if ( 'custom' === $settings->min_height_switch && '' !== $settings->min_height )
 
 /* Description Color */
 
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox-text {
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox-text,
+.fl-node-<?php echo esc_attr( $id ); ?> a .uabb-infobox-text p {
 	color:
 	<?php echo esc_attr( uabb_theme_text_color( $settings->subhead_color ) ); ?>;
 }
 <?php if ( isset( $settings->subhead_color_hover ) && '' !== $settings->subhead_color_hover ) { ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox-text:hover,
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox-module-link:hover .uabb-infobox-text p,
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox-module-link:hover ~ .uabb-infobox-content .uabb-text-editor{
 		color: <?php echo ( '' !== $settings->subhead_color_hover ) ? esc_attr( $settings->subhead_color_hover ) : ''; ?>;
 	}
@@ -824,7 +828,8 @@ if ( 'custom' === $settings->min_height_switch && '' !== $settings->min_height )
 
 <?php if ( isset( $settings->prefix_color_hover ) && '' !== $settings->prefix_color_hover ) { ?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox-module-link:hover ~ .uabb-infobox-content .uabb-infobox-title-prefix,
-	.fl-builder-content .fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox-title-prefix:hover{
+	.fl-builder-content .fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox-title-prefix:hover,
+	.fl-builder-content .fl-node-<?php echo esc_attr( $id ); ?> .uabb-infobox-module-link:hover .uabb-infobox-title-wrap .uabb-infobox-title-prefix{
 	color:<?php echo esc_attr( $settings->prefix_color_hover ); ?>;
 }
 <?php } ?>

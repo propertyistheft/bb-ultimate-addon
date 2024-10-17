@@ -615,7 +615,7 @@ $color_default = ( '' !== uabb_theme_base_color( $settings->content_background_c
 			$rgba_color      = "rgba($r, $g, $b, $opacity_decimal)";
 			echo 'background: ' . esc_attr( $rgba_color ) . ';';
 		} else {
-			$rgba_default = 'rgba(255, 255, 255, 1)';
+			$rgba_default = 'rgba(255, 255, 255, 0)';
 			echo 'background: ' . esc_attr( $rgba_default ) . ';';
 		}
 	}
