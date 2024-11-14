@@ -75,7 +75,8 @@ if ( isset( $settings->title_bg_color ) ) {
 		$rgba_color       = "rgba($r, $g, $b, $opacity_decimal)";
 		$background_style = 'background: ' . esc_attr( $rgba_color ) . ';';
 	} else {
-		$background_style = 'background: ' . esc_attr( uabb_theme_default_button_bg_color( '' ) ) . ';';
+		$rgba_default     = 'rgba(246, 246, 246, 0)';
+		$background_style = 'background: ' . esc_attr( $rgba_default ) . ';';
 	}
 	echo esc_attr( $background_style );
 }  
@@ -253,19 +254,23 @@ if ( isset( $settings->title_border_param['top'] ) ) {
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-adv-accordion-item-active > .uabb-adv-accordion-button<?php echo esc_attr( $id ); ?> {
 	<?php
 	/** Title section background hover/active color */
-	$default_bg_color = ( '' !== uabb_theme_base_color( $settings->title_bg_hover_color ) ) ? uabb_theme_base_color( $settings->title_bg_hover_color ) : '#a7a7a7';
+
+	// Default to active color if hover color is not set.
+	$hover_color = ( '' !== $settings->title_bg_hover_color ) ? $settings->title_bg_hover_color : $settings->title_bg_color;
+
+	$default_bg_color = ( '' !== uabb_theme_base_color( $hover_color ) ) ? uabb_theme_base_color( $hover_color ) : '#a7a7a7';
 
 	echo ( '' !== $settings->title_bg_hover_color ) ? 'background:' . esc_attr( $settings->title_bg_hover_color ) . ';' : 'background:' . esc_attr( $default_bg_color ) . ';';
 
-	if ( isset( $settings->title_bg_hover_color ) ) {
+	if ( isset( $hover_color ) ) {
 		$opacity_decimal = isset( $settings->title_bg_hover_color_opc ) && '' !== $settings->title_bg_hover_color_opc ? (float) $settings->title_bg_hover_color_opc / 100 : 1.0;
 
-		if ( '' !== $settings->title_bg_hover_color ) {
-			list($r, $g, $b) = sscanf( $settings->title_bg_hover_color, '#%02x%02x%02x' );
+		if ( '' !== $hover_color ) {
+			list($r, $g, $b) = sscanf( $hover_color, '#%02x%02x%02x' );
 			$rgba_color      = "rgba($r, $g, $b, $opacity_decimal)";
 			echo 'background: ' . esc_attr( $rgba_color ) . ';';
 		} else {
-			$rgba_default = 'rgba(246, 246, 246, 1)';
+			$rgba_default = 'rgba(246, 246, 246, 0)';
 			echo 'background: ' . esc_attr( $rgba_default ) . ';';
 		}
 	}

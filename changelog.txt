@@ -1,3 +1,8 @@
+Version 1.35.27, Tuesday, 12th November 2024
+- Fixed: Advanced Accordion - Resolved CSS rendering issue.
+- Fixed: Advanced Posts -  Ensured mouse pointer visibility CTA type Complete Box.
+- Fixed: Info Box - Fixed nested <a> tags for CTA type complete box. 
+
 Version 1.35.26, Tuesday, 15th October 2024
 - Fixed: Info Box - Hover color was not applying correctly.
 - Fixed: Resolved CSS rendering issue for Advanced Accordion and Advanced Tabs.

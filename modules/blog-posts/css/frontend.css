@@ -547,7 +547,7 @@ ul.uabb-masonary-filters > li {
 	top: 0;
 	bottom: 0;
 	right: 0;
-	z-index: 0;
+	z-index: 99;
 }
 
 .uabb-blog-post-inner-wrap.uabb-thumbnail-position-left,
