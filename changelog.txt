@@ -1,3 +1,12 @@
+Version 1.36.1, Thursday , 6th February 2025
+- Fixed: Resolved page editor issue in Beaver Builder when the site language is set to French by correcting a translation problem.
+
+Version 1.36.0, Tuesday, 4th February 2025
+- New: UABB Pro now includes translations for Dutch, French, Spanish, and German enhancing multilingual accessibility.
+- New: Added NPS Survey to gather your valuable feedback for UABB Pro!
+- Fixed: Resolved a fatal error when using built-in module templates with Beaver Builder, ensuring compatibility with both row and module templates.
+- Fixed: Info Box - Resolved icon alignment issue when increasing border width.
+
 Version 1.35.27, Tuesday, 12th November 2024
 - Fixed: Advanced Accordion - Resolved CSS rendering issue.
 - Fixed: Advanced Posts -  Ensured mouse pointer visibility CTA type Complete Box.

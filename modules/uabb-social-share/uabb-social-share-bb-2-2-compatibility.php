@@ -52,7 +52,7 @@ FLBuilder::register_module(
 								),
 								array(
 									'social_share_type' => 'twitter',
-									'icon'              => 'ua-icon ua-iconx',
+									'icon'              => 'ua-icon ua-icon-x',
 								),
 								array(
 									'social_share_type' => 'linkedin',

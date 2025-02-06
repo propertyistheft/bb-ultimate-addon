@@ -68,7 +68,7 @@ if ( count( $settings->social_icons ) > 0 ) {
 			case 'twitter':
 				$url         = 'https://twitter.com/share?url=' . $current_page;
 				$share_title = __( 'Twitter', 'uabb' );
-				$share_icon  = 'ua-icon ua-iconx';
+				$share_icon  = 'ua-icon ua-icon-x';
 				break;
 
 			case 'pinterest':

@@ -350,8 +350,9 @@ if ( ! class_exists( 'UABB_Batch_Process' ) ) :
 					$template->nodes = UABB_Importer_Beaver_Builder::get_instance()->get_import_data( $args['template']->nodes );
 
 					$template->settings = $args['template']->settings;
-					$template->type     = 'row';
-					$template->global   = false;
+					// Determine the type (row or module).
+					$template->type   = isset( $args['template']->type ) ? $args['template']->type : 'row';
+					$template->global = false;
 
 					return FLBuilderModel::apply_node_template( $args['template_id'], $args['parent_id'], $args['position'], $template );
 				}

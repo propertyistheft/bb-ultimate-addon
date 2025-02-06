@@ -117,6 +117,9 @@ if ( 'none' !== $settings->image_type ) : // Condition contain whole Style.
 					. 'px;' );
 					?>
 				text-align: center;
+				display: flex;
+				align-items: center;
+				justify-content: center;
 					<?php
 				}
 			} else {  // else rounded style.

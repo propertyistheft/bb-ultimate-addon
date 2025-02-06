@@ -200,6 +200,12 @@ class UABB_Init {
 		require_once BB_ULTIMATE_ADDON_DIR . 'lib/astra-notices/class-astra-notices.php';
 		require_once BB_ULTIMATE_ADDON_DIR . 'classes/class-uabb-presets.php';
 
+				// Load the NPS Survey library.
+		if ( ! class_exists( 'Uabb_Pro_Nps_Survey' ) ) {
+			require_once BB_ULTIMATE_ADDON_DIR . 'lib/class-uabb-pro-nps-survey.php';
+		}
+
+
 		if ( ! class_exists( 'BSF_Analytics_Loader' ) ) {
 			require_once BB_ULTIMATE_ADDON_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
 
@@ -218,7 +224,7 @@ class UABB_Init {
 		}
 
 		// Load the appropriate text-domain.
-		$this->load_plugin_textdomain();
+		$this->load_uabb_textdomain();
 
 	}
 
@@ -325,24 +331,49 @@ class UABB_Init {
 	 *
 	 * @since 1.4.6
 	 */
-	public function load_plugin_textdomain() {
+	public function load_uabb_textdomain() {
+		// Default languages directory for "bb-ultimate-addon".
+		$lang_dir = BB_ULTIMATE_ADDON_DIR . 'languages/';
+
+		/**
+		 * Filters the languages directory path to use for AffiliateWP.
+		 *
+		 * @param string $lang_dir The languages directory path.
+		 */
+		$lang_dir = apply_filters( 'uabb_languages_directory', $lang_dir );
+
 		// Traditional WordPress plugin locale filter.
-		$locale = apply_filters( 'plugin_locale', get_locale(), 'uabb' );
+		global $wp_version;
 
-		// Setup paths to current locale file.
-		$mofile_global = trailingslashit( WP_LANG_DIR ) . 'plugins/bb-ultimate-addon/' . $locale . '.mo';
-		$mofile_local  = trailingslashit( BB_ULTIMATE_ADDON_DIR ) . 'languages/' . $locale . '.mo';
+		$get_locale = get_locale();
 
-		if ( file_exists( $mofile_global ) ) {
-			// Look in global /wp-content/languages/plugins/bb-ultimate-addon/ folder.
-			return load_textdomain( 'uabb', $mofile_global );
-		} elseif ( file_exists( $mofile_local ) ) {
-			// Look in local /wp-content/plugins/bb-ultimate-addon/languages/ folder.
-			return load_textdomain( 'uabb', $mofile_local );
+		if ( $wp_version >= 4.7 ) {
+			$get_locale = get_user_locale();
 		}
 
-		// Nothing found.
-		return false;
+		/**
+		 * Language Locale for Ultimate BB
+		 *
+		 * @var $get_locale The locale to use. Uses get_user_locale()` in WordPress 4.7 or greater,
+		 *                  otherwise uses `get_locale()`.
+		 */
+		$locale = apply_filters( 'plugin_locale', $get_locale, 'uabb' );
+		$mofile = sprintf( '%1$s-%2$s.mo', 'uabb', $locale );
+
+		// Setup paths to current locale file.
+		$mofile_local  = $lang_dir . $mofile;
+		$mofile_global = WP_LANG_DIR . '/bb-ultimate-addon/' . $mofile;
+
+		if ( file_exists( $mofile_global ) ) {
+			// Look in global /wp-content/languages/bb-ultimate-addon/ folder.
+			load_textdomain( 'uabb', $mofile_global );
+		} elseif ( file_exists( $mofile_local ) ) {
+			// Look in local /wp-content/plugins/bb-ultimate-addon/languages/ folder.
+			load_textdomain( 'uabb', $mofile_local );
+		} else {
+			// Load the default language files.
+			load_plugin_textdomain( 'uabb', false, $lang_dir );
+		}
 	}
 
 	/**

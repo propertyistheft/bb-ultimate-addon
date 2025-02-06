@@ -47,6 +47,7 @@ final class UABBBuilderAdminSettings {
 		add_action( 'network_admin_menu', __CLASS__ . '::menu' );
 		add_action( 'admin_menu', __CLASS__ . '::menu' );
 		add_action( 'admin_init', __CLASS__ . '::render_styles' );
+		add_action( 'admin_footer', __CLASS__ . '::show_nps_notice' );
 	}
 	/**
 	 * Adds the admin menu and enqueues CSS/JS if we are on
@@ -664,6 +665,49 @@ final class UABBBuilderAdminSettings {
 
 		// Clear all asset cache.
 		FLBuilderModel::delete_asset_cache_for_all_posts();
+	}
+
+	/**
+	 * Render Ultimate Addons for Beaver Builder NPS Survey Notice.
+	 *
+	 * @since x.x.x
+	 * @return void
+	 */
+	public static function show_nps_notice() {
+		// Check if branding should be shown.
+		if ( ! self::show_branding() ) {
+			return;
+		}
+	
+		$dismiss_timespan = get_option( 'nps-survey-uabb-lite' ) ? ( 3 * MONTH_IN_SECONDS ) : ( 2 * WEEK_IN_SECONDS );
+	
+		if ( class_exists( 'Nps_Survey' ) ) {
+			\Nps_Survey::show_nps_notice(
+				'nps-survey-uabb',
+				array(
+					'show_if'          => true, // Add your display conditions.
+					'dismiss_timespan' => 2 * WEEK_IN_SECONDS,
+					'display_after'    => $dismiss_timespan,
+					'plugin_slug'      => 'uabb',
+					'show_on_screens'  => array( 'settings_page_uabb-builder-settings' ),
+					'message'          => array(
+	
+						// Step 1 i.e rating input.
+						'logo'                  => esc_url( BB_ULTIMATE_ADDON_URL . 'assets/images/uabb.svg' ),
+						'plugin_name'           => __( 'Ultimate Addons for Beaver Builder', 'uabb' ),
+						'nps_rating_message'    => __( 'How likely are you to recommend Ultimate Addons for Beaver Builder to your friends or colleagues?', 'uabb' ),
+	
+						// Step 2A i.e. positive.
+						'feedback_content'      => __( 'Could you please do us a favor and give us a 5-star rating on Trustpilot? It would help others choose Ultimate Addons for Beaver Builder with confidence. Thank you!', 'uabb' ),
+						'plugin_rating_link'    => esc_url( 'https://www.trustpilot.com/review/ultimatebeaver.com' ),
+	
+						// Step 2B i.e. negative.
+						'plugin_rating_title'   => __( 'Thank you for your feedback', 'uabb' ),
+						'plugin_rating_content' => __( 'We value your input. How can we improve your experience?', 'uabb' ),
+					),
+				)
+			);
+		}
 	}
 }
 
