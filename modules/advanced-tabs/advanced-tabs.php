@@ -559,6 +559,25 @@ class AdvancedTabsModule extends FLBuilderModule {
 		return $field;
 	}
 
+	/**
+	 * Function that gets the alternate value of the Image
+	 *
+	 * @param integer $item current item index.
+	 * @method get_alt
+	 */
+	public function get_alt_tabs( $item ) {
+		$photo = FLBuilderPhoto::get_attachment_data( $item->photo );
+		if ( ! empty( $photo->alt ) ) {
+			return esc_html( $photo->alt );
+		} elseif ( ! empty( $photo->description ) ) {
+			return esc_html( $photo->description );
+		} elseif ( ! empty( $photo->caption ) ) {
+			return esc_html( $photo->caption );
+		} elseif ( ! empty( $photo->title ) ) {
+			return esc_html( $photo->title );
+		}
+		return ''; // Return an empty string if all conditions fail.
+	}
 
 	/**
 	 * Function that renders Settings for the Advanced Tabs Module
@@ -574,7 +593,8 @@ class AdvancedTabsModule extends FLBuilderModule {
 				return wpautop( $wp_embed->autoembed( $settings->ct_content ) );
 			case 'photo':
 				if ( isset( $settings->ct_photo_src ) ) {
-					return '<img src="' . $settings->ct_photo_src . '" />';
+					$alt_text = $this->get_alt_tabs( (object) array( 'photo' => $settings->ct_photo ) );
+					return '<img src="' . esc_url( $settings->ct_photo_src ) . '" alt="' . esc_attr( $alt_text ) . '" />';
 				}
 				return '<img src="" />';
 			case 'video':

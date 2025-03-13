@@ -553,7 +553,7 @@ class UABBRegistrationFormModule extends FLBuilderModule {
 	 * @param String $suffix User suffix.
 	 * @method uabb_create_username
 	 */
-	public function uabb_create_username( $email, $suffix ) {
+	public static function uabb_create_username( $email, $suffix ) {
 		$username_parts = array();
 
 		// If there are no parts, e.g. name had unicode chars, or was not provided, fallback to email.
@@ -589,10 +589,10 @@ class UABBRegistrationFormModule extends FLBuilderModule {
 		if ( username_exists( $username ) ) {
 			// Generate something unique to append to the username in case of a conflict with another user.
 			$suffix = '-' . zeroise( wp_rand( 0, 9999 ), 4 );
-			return $this->uabb_create_username( $email, $suffix );
+			return self::uabb_create_username( $email, $suffix );
 		}
 
-		return $email_username;
+		return $username;
 	}
 
 	/**

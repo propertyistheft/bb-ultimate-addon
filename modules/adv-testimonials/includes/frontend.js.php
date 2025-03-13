@@ -83,6 +83,16 @@ if ( 'slider' === $settings->tetimonial_layout ) {
 
 	jQuery(window).on('load', function() {
 		testimonial_<?php echo esc_attr( $id ); ?>.reloadSlider();
+
+		var nextButtonSelector = jQuery('.fl-node-<?php echo esc_attr( $id ); ?> .bx-next');
+		var prevButtonSelector = jQuery('.fl-node-<?php echo esc_attr( $id ); ?> .bx-prev');
+
+		if ((nextButtonSelector).length) {
+			nextButtonSelector.attr('aria-label', '<?php echo esc_attr( __( 'Go to Next', 'uabb' ) ); ?>');
+		}
+		if ((prevButtonSelector).length) {
+			prevButtonSelector.attr('aria-label', '<?php echo esc_attr( __( 'Go to Previous', 'uabb' ) ); ?>');
+		}
 	});
 	<?php
 }

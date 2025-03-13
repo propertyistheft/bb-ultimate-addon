@@ -1,3 +1,12 @@
+Version 1.36.2, Monday, 3rd March 2025
+- Improvement: Advanced Tabs - Added alt attribute for content type Photo.
+- Improvement: Gravity Form Styler - Applied CSS changes to ensure proper font styling for select fields.
+- Improvement: Testimonials – Improved accessibility for navigation arrows in slider layout.
+- Improvement: User Registration Form - Validation message added to ensure the phone number entered is correct.
+- Fixed: Off-Canvas - Module now works properly with the Sticky Header in the Beaver Themer layout.
+- Fixed: Testimonials - Resolved display issue causing stars to not show correctly when used with the Star Rating.
+- Fixed: User Registration Form - Resolved a fatal error that blocked form submission when the username field was not required.
+
 Version 1.36.1, Thursday , 6th February 2025
 - Fixed: Resolved page editor issue in Beaver Builder when the site language is set to French by correcting a translation problem.
 

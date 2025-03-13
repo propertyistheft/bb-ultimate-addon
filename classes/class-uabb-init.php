@@ -73,6 +73,35 @@ class UABB_Init {
 			add_action( 'network_admin_notices', array( $this, 'admin_notices' ) );
 		}
 
+		if ( ! class_exists( 'BSF_Analytics_Loader' ) ) {
+			require_once BB_ULTIMATE_ADDON_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
+		}
+
+			$bsf_analytics = BSF_Analytics_Loader::get_instance();
+
+			$bsf_analytics->set_entity(
+				array(
+					'bsf' => array(
+						'product_name'        => 'Ultimate Addons for Beaver Builder',
+						'path'                => BB_ULTIMATE_ADDON_DIR . 'admin/bsf-analytics',
+						'author'              => 'Brainstorm Force',
+						'time_to_display'     => '+24 hours',
+						'deactivation_survey' => array(
+							array(
+								'id'                => 'deactivation-survey-bb-ultimate-addon', // 'deactivation-survey-<your-plugin-slug>'
+								'popup_logo'        => BB_ULTIMATE_ADDON_URL . 'assets/images/uabb.svg',
+								'plugin_slug'       => 'bb-ultimate-addon', // <your-plugin-slug>
+								'plugin_version'    => BB_ULTIMATE_ADDON_VER,
+								'popup_title'       => __( 'Quick Feedback', 'uabb' ),
+								'support_url'       => 'https://www.ultimatebeaver.com/contact/',
+								'popup_description' => __( 'If you have a moment, please share why you are deactivating Ultimate Addons for Beaver Builder:', 'uabb' ),
+								'show_on_screens'   => array( 'plugins' ),
+							),
+						),
+					),
+				)
+			);
+
 	}
 
 	/**
@@ -203,24 +232,6 @@ class UABB_Init {
 				// Load the NPS Survey library.
 		if ( ! class_exists( 'Uabb_Pro_Nps_Survey' ) ) {
 			require_once BB_ULTIMATE_ADDON_DIR . 'lib/class-uabb-pro-nps-survey.php';
-		}
-
-
-		if ( ! class_exists( 'BSF_Analytics_Loader' ) ) {
-			require_once BB_ULTIMATE_ADDON_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
-
-			$bsf_analytics = BSF_Analytics_Loader::get_instance();
-
-			$bsf_analytics->set_entity(
-				array(
-					'bsf' => array(
-						'product_name'    => 'Ultimate Addons for Beaver Builder',
-						'path'            => BB_ULTIMATE_ADDON_DIR . 'admin/bsf-analytics',
-						'author'          => 'Brainstorm Force',
-						'time_to_display' => '+24 hours',
-					),
-				)
-			);
 		}
 
 		// Load the appropriate text-domain.

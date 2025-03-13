@@ -471,9 +471,10 @@ if ( $settings->placeholder_color && 'block' === $settings->input_placeholder_di
 	} 
 	?>
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select .chosen-container-single .chosen-single,
-	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select select,
-	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .ginput_container_select:after {
+	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .ginput_container_select select {
 		color: <?php echo esc_attr( FLBuilderColor::hex_or_rgb( $settings->placeholder_color ) ); ?>;
+	}
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-gf-style .ginput_container_select:after {
 		font-family: '<?php echo esc_attr( $font_family ); ?>';
 	}
 	.fl-node-<?php echo esc_attr( $id ); ?> .gform_wrapper .gfield input::-webkit-input-placeholder{

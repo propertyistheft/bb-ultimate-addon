@@ -20,6 +20,7 @@ jQuery(document).ready(function() {
 		recaptcha_version: '<?php echo esc_attr( $settings->uabb_recaptcha_version ); ?>',
 		password_match_err_msg: '<?php echo esc_attr( $uabb_password_match_error_message ); ?>',
 		email_invalid_err_msg: '<?php echo esc_attr( $uabb_email_invalid_error_message ); ?>',
+		phone_invalid_err_msg: '<?php echo esc_attr( $uabb_phone_invalid_error_message ); ?>',
 		required_field_err_msg: '<?php echo esc_attr( $uabb_required_field_error_message ); ?>',
 		wp_version: <?php echo esc_attr( version_compare( get_bloginfo( 'version' ), '5.4.99', '>=' ) ); ?>,
 	});
