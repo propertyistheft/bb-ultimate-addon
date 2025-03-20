@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Beaver Builder package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Beaver Builder 1.36.2\n"
+"Project-Id-Version: Ultimate Addons for Beaver Builder 1.36.3\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/bb-ultimate-addon\n"
-"POT-Creation-Date: 2025-02-24 14:15:09+00:00\n"
+"POT-Creation-Date: 2025-03-17 15:00:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -204,7 +204,7 @@ msgid "Oops! Something went wrong. Please refresh the page and try again."
 msgstr ""
 
 #: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:80
-#: classes/class-uabb-init.php:95
+#: classes/class-uabb-init.php:96
 msgid "Quick Feedback"
 msgstr ""
 
@@ -3329,17 +3329,17 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: classes/class-uabb-init.php:97
+#: classes/class-uabb-init.php:98
 msgid ""
 "If you have a moment, please share why you are deactivating Ultimate Addons "
 "for Beaver Builder:"
 msgstr ""
 
-#: classes/class-uabb-init.php:475
+#: classes/class-uabb-init.php:473
 msgid "plugin requires"
 msgstr ""
 
-#: classes/class-uabb-init.php:475
+#: classes/class-uabb-init.php:473
 msgid " plugin installed & activated."
 msgstr ""
 
@@ -7841,8 +7841,12 @@ msgstr ""
 msgid "Note - You can enable, disable and manage %s sections here."
 msgstr ""
 
-#: lib/astra-notices/class-astra-notices.php:119
+#: lib/astra-notices/class-astra-notices.php:146
 msgid "WordPress Nonce not validated."
+msgstr ""
+
+#: lib/astra-notices/class-astra-notices.php:153
+msgid "Invalid notice ID."
 msgstr ""
 
 #: lib/nps-survey/classes/nps-survey-script.php:248

@@ -36,6 +36,7 @@ class UABB_Init {
 			add_filter( 'fl_builder_settings_form_defaults', array( $this, 'uabb_global_settings_form_defaults' ), 10, 2 );
 			// Load all the required files of bb-ultimate-addon.
 			self::includes();
+			add_action( 'init', array( $this, 'load_uabb_textdomain' ) ); // Load the appropriate text-domain.
 			add_action( 'init', array( $this, 'init' ) );
 
 			add_action( 'customize_preview_init', array( $this, 'uabb_customizer_save' ), 11 );
@@ -233,9 +234,6 @@ class UABB_Init {
 		if ( ! class_exists( 'Uabb_Pro_Nps_Survey' ) ) {
 			require_once BB_ULTIMATE_ADDON_DIR . 'lib/class-uabb-pro-nps-survey.php';
 		}
-
-		// Load the appropriate text-domain.
-		$this->load_uabb_textdomain();
 
 	}
 

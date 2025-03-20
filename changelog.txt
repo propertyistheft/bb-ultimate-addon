@@ -1,3 +1,7 @@
+Version 1.36.3, Tuesday, 18th March 2025
+- This update addressed a security bug. Please make sure you are using the latest version on your website.
+- Fixed: Ensured `load_plugin_textdomain` is properly loaded for localization support.
+
 Version 1.36.2, Monday, 3rd March 2025
 - Improvement: Advanced Tabs - Added alt attribute for content type Photo.
 - Improvement: Gravity Form Styler - Applied CSS changes to ensure proper font styling for select fields.
