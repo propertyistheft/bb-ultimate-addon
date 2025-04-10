@@ -1,3 +1,7 @@
+Version 1.36.4 - Tuesday, 1st April 2025
+- Improvement: Business Reviews - Added support to the New Google Place API.
+- Improvement: Social Share - Changed Twitter share button label to "X (Twitter)".
+
 Version 1.36.3, Tuesday, 18th March 2025
 - This update addressed a security bug. Please make sure you are using the latest version on your website.
 - Fixed: Ensured `load_plugin_textdomain` is properly loaded for localization support.

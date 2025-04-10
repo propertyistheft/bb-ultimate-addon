@@ -214,7 +214,8 @@ class UabbBusinessReview extends FLBuilderModule {
 	 */
 	public function get_google_api_call( $settings ) {
 
-		$place_id = $settings->google_place_id;
+		$google_status_code = get_option( 'google_status_code' );
+		$place_id           = $settings->google_place_id;
 
 		if ( '' === $place_id ) {
 			return;
@@ -225,18 +226,23 @@ class UabbBusinessReview extends FLBuilderModule {
 		if ( '' === $api_key || null === $api_key || false === $api_key ) {
 			return;
 		}
-		$add_query_arg = apply_filters(
-			'uabb_reviews_google_url_filter',
-			array(
-				'key'     => $api_key,
-				'placeid' => $place_id,
-			)
-		);
 
-		$url = add_query_arg(
-			$add_query_arg,
-			'https://maps.googleapis.com/maps/api/place/details/json'
-		);
+		if ( 'yes-new' === $google_status_code ) {
+			$url = "https://places.googleapis.com/v1/places/$place_id?fields=id,displayName,formatted_address,reviews&key=$api_key";
+		} else {
+			$add_query_arg = apply_filters(
+				'uabb_reviews_google_url_filter',
+				array(
+					'key'     => $api_key,
+					'placeid' => $place_id,
+				)
+			);
+
+			$url = add_query_arg(
+				$add_query_arg,
+				'https://maps.googleapis.com/maps/api/place/details/json'
+			);
+		}
 
 		$url = esc_url_raw( $url );
 
@@ -250,19 +256,32 @@ class UabbBusinessReview extends FLBuilderModule {
 
 		$expire_time = apply_filters( 'uabb_reviews_expire_time', $expire_time, $settings );
 
-		if ( false === $result ) {
-
-			$result = wp_remote_post(
-				$url,
-				array(
-					'method'      => 'POST',
-					'timeout'     => 60,
-					'httpversion' => '1.0',
-					'sslverify'   => false,
-				)
-			);
-
-			$result = wp_encode_emoji( $result['body'] );
+		if ( false === $result || '' == $result ) {
+			if ( 'yes-new' === $google_status_code ) {
+				$result = wp_remote_get(
+					$url,
+					array(
+						'method'      => 'GET',
+						'timeout'     => 60,
+						'httpversion' => '1.1',
+						'headers'     => array(
+							'Accept' => 'application/json',
+						),
+					)
+				); 
+				$result = wp_encode_emoji( $result['body'] );
+			} else {
+				$result = wp_remote_post(
+					$url,
+					array(
+						'method'      => 'POST',
+						'timeout'     => 60,
+						'httpversion' => '1.0',
+						'sslverify'   => false,
+					)
+				);
+				$result = wp_encode_emoji( $result['body'] );
+			}
 
 			set_transient( $transient_name, $result, $expire_time );
 		}
@@ -315,7 +334,8 @@ class UabbBusinessReview extends FLBuilderModule {
 	 */
 	public function get_google_reviews( $settings ) {
 
-		$place_id = $settings->google_place_id;
+		$place_id           = $settings->google_place_id;
+		$google_status_code = get_option( 'google_status_code' );
 
 		if ( '' === $place_id ) {
 			return;
@@ -350,51 +370,87 @@ class UabbBusinessReview extends FLBuilderModule {
 
 		$result_status = ( isset( $result->status ) ) ? $result->status : '';
 
-		if ( $is_editor ) {
+		if ( 'yes-new' === $google_status_code ) {
+			if ( $is_editor ) {
+				if ( empty( $result->reviews ) ) {
 
-			switch ( $result_status ) {
-				case 'OK':
-					if ( ! property_exists( $result->result, 'reviews' ) ) {
-						echo '<span>' . esc_html_e( 'Something went wrong: Seems like the Google place you have selected does not have any reviews.', 'uabb' ) . '</span>';
-						delete_transient( $transient_name );
-						return false;
-					}
-					break;
-
-				case 'OVER_QUERY_LIMIT':
-					echo '<span>' . esc_html_e( 'Something went wrong: You have exceeded the usage limits.', 'uabb' ) . '</span>';
-					delete_transient( $transient_name );
-					return false;
-					break; // phpcs:ignore Squiz.PHP.NonExecutableCode.Unreachable
-
-				case 'REQUEST_DENIED':
-					/* translators: %s: search term */
 					echo sprintf( '<span class="uabb-google-api-key-error">' . esc_html_e( 'Something went wrong: The invalid API key is entered. Please configure the API key from', 'uabb' ) . '<a href="%s" target="_blank" rel="noopener"> here </a>.</span>', esc_url( $admin_link ) );
 						delete_transient( $transient_name );
 					return false;
+				}
+			}
+		} else {
+			$result_status = $result->status;
+		
+			if ( $is_editor ) {
+				switch ( $result_status ) {
+					case 'OK':
+						if ( ! property_exists( $result->result, 'reviews' ) ) {
+							echo '<span>' . esc_html_e( 'Something went wrong: Seems like the Google place you have selected does not have any reviews.', 'uabb' ) . '</span>';
+							delete_transient( $transient_name );
+							return false;
+						}
+						break;
 
-				case 'UNKNOWN_ERROR':
-					echo '<span>' . esc_html_e( 'Something went wrong: Seems like a server-side error; Please try again later.', 'uabb' ) . '</span>';
-					delete_transient( $transient_name );
-					return false;
+					case 'OVER_QUERY_LIMIT':
+						echo '<span>' . esc_html_e( 'Something went wrong: You have exceeded the usage limits.', 'uabb' ) . '</span>';
+						delete_transient( $transient_name );
+						return false;
+						break; // phpcs:ignore Squiz.PHP.NonExecutableCode.Unreachable
 
-				case 'ZERO_RESULTS':
-				case 'INVALID_REQUEST':
-					echo '<span>' . esc_html_e( 'Something went wrong: The invalid Place ID is entered.', 'uabb' ) . '</span>';
-					delete_transient( $transient_name );
-					return false;
+					case 'REQUEST_DENIED':
+						/* translators: %s: search term */
+						echo sprintf( '<span class="uabb-google-api-key-error">' . esc_html_e( 'Something went wrong: The invalid API key is entered. Please configure the API key from', 'uabb' ) . '<a href="%s" target="_blank" rel="noopener"> here </a>.</span>', esc_url( $admin_link ) );
+							delete_transient( $transient_name );
+						return false;
 
-				default:
-					delete_transient( $transient_name );
-					return false;
+					case 'UNKNOWN_ERROR':
+						echo '<span>' . esc_html_e( 'Something went wrong: Seems like a server-side error; Please try again later.', 'uabb' ) . '</span>';
+						delete_transient( $transient_name );
+						return false;
+
+					case 'ZERO_RESULTS':
+					case 'INVALID_REQUEST':
+						echo '<span>' . esc_html_e( 'Something went wrong: The invalid Place ID is entered.', 'uabb' ) . '</span>';
+						delete_transient( $transient_name );
+						return false;
+
+					default:
+						delete_transient( $transient_name );
+						return false;
+				}
 			}
 		}
+
 		if ( 'OK' === $result_status ) {
 			if ( property_exists( $result->result, 'reviews' ) && ! empty( $result->result->reviews ) ) {
 				$reviews = $result->result->reviews;
 			}
+		}
+		if ( 'yes-new' === $google_status_code ) {
+			$formatted_reviews = array();
+			if ( isset( $result->reviews ) && is_array( $result->reviews ) ) {
+				// phpcs:disable PHPCompatibility.Operators.NewOperators.t_coalesceFound,WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- Property names coming from external API we cannot update it.
+				foreach ( $result->reviews as $review ) {
+					$formatted_reviews[] = (object) array(
+						'author_name'               => trim( $review->authorAttribution->displayName ?? '' ),
+						'author_url'                => trim( $review->authorAttribution->uri ?? '' ),
+						'profile_photo_url'         => trim( $review->authorAttribution->photoUri ?? '' ),
+						'rating'                    => $review->rating ?? 5,
+						'relative_time_description' => $review->relativePublishTimeDescription ?? '',
+						'text'                      => $review->text->text ?? '', 
+						'time'                      => isset( $review->publishTime ) ? strtotime( $review->publishTime ) : null,
+						'translated'                => false,
+					);
+				}
+				// phpcs:enable
+			}
+			$reviews = $formatted_reviews; 
 		} else {
-			return;
+			// Check if $reviews is undefined or empty before using it.
+			if ( ! isset( $reviews ) || empty( $reviews ) ) {
+				return;
+			}
 		}
 		return $reviews;
 	}

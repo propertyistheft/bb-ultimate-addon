@@ -110,7 +110,29 @@ final class UABBBuilderAdminSettings {
 
 					switch ( $result_status ) {
 						case 'REQUEST_DENIED':
-							update_option( 'google_status_code', 'no' );
+							$new_url = "https://places.googleapis.com/v1/places/$place_id?fields=id,displayName,formatted_address,reviews&key=$api_key";
+
+							$new_result = wp_remote_get(
+								$new_url,
+								array(
+									'method'      => 'GET',
+									'timeout'     => 60,
+									'httpversion' => '1.1',
+									'headers'     => array(
+										'Accept' => 'application/json',
+									),
+								)
+							);
+					
+							if ( ! is_wp_error( $new_result ) && wp_remote_retrieve_response_code( $new_result ) === 200 ) {
+								$new_body = json_decode( wp_remote_retrieve_body( $new_result ), true );
+								if ( isset( $new_body['id'] ) ) {
+									update_option( 'google_status_code', 'yes-new' ); // New Places API Key is valid.
+									return;
+								}
+							} else {
+								update_option( 'google_status_code', 'no' );
+							}
 							break;
 						case 'OK':
 							update_option( 'google_status_code', 'yes' );
