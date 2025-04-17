@@ -101,6 +101,30 @@
 			$(nodeClass + ' .uabb-google-login').click($.proxy(this._googleClick, this));
 			$(nodeClass + ' .uabb-lf-submit-button').click($.proxy(this._submit, this));
 			$(nodeClass + ' .uabb-facebook-content-wrapper').click($.proxy(this._fbClick, this));
+
+			// Accessibility for Checkbox - Remember me.
+            const $scope = jQuery(".uabb-lf-form-wrap"); 
+			const inputs = $scope.find(".uabb-lf-remember-me-checkbox");
+
+			inputs.each(function () {
+				const input = jQuery(this);
+
+				input.on("focus", function () {
+					const label = jQuery(`label[for="${this.id}"]`);
+					if (label.length) {
+						label.addClass("uabb-checkbox-focus");
+					}
+				});
+
+				input.on("blur", function () {
+					const label = jQuery(`label[for="${this.id}"]`);
+					if (label.length) {
+						label.removeClass("uabb-checkbox-focus");
+					}
+				});
+
+			});
+
 			/**
 			 * Login with Facebook.
 			 *
@@ -252,7 +276,7 @@
 			}
 		},
 	}
-
+	
 })(jQuery);
 
 

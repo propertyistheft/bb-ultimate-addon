@@ -88,7 +88,7 @@ if ( defined( 'FL_BUILDER_VERSION' ) ) {
 							<?php endif; ?>
 							<div class="uabb-terms-wrap">
 								<label class="uabb-terms-label" for="uabb-terms-checkbox-<?php echo esc_attr( $random_id ); ?>">
-									<input type="checkbox" id="uabb-terms-checkbox-<?php echo esc_attr( $random_id ); ?>" aria-label="checkbox" name="uabb-terms-checkbox" value="1" />
+									<input type="checkbox" class="uabb-terms-checkbox-sf" id="uabb-terms-checkbox-<?php echo esc_attr( $random_id ); ?>" aria-label="checkbox" name="uabb-terms-checkbox" value="1" />
 									<span class="terms-checkbox">
 										<?php echo $settings->terms_checkbox_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 									</span>

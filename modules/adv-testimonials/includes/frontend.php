@@ -171,7 +171,7 @@ if ( 'slider-no' === $settings->tetimonial_layout || 'box' === $settings->tetimo
 		$uabb_half_box = '';
 	}
 	?>
-		<div class="uabb-module-content uabb-testimonials <?php echo esc_attr( $settings->tetimonial_layout ) . ' uabb-testimonial-' . esc_attr( $settings->testimonial_image_position ) . esc_attr( $uabb_half_box ); ?>">
+		<div class="uabb-module-content uabb-testimonials <?php echo esc_attr( $settings->tetimonial_layout ) . ' uabb-testimonial-' . esc_attr( $settings->testimonial_image_position ) . esc_attr( $uabb_half_box ); ?>" tabindex="0" aria-label="<?php echo esc_attr__( 'Testimonials', 'uabb' ); ?>">
 			<div class="uabb-testimonial<?php echo esc_attr( $uabb_half_box ); ?>">
 				<?php
 				if ( 'none' !== $settings->image_type_noslider && ( ( isset( $settings->photo_noslider_src ) && '' !== $settings->photo_noslider_src ) || ( isset( $settings->photo_url_noslider ) && '' !== $settings->photo_url_noslider ) || ( isset( $settings->icon_noslider ) && '' !== $settings->icon_noslider ) ) ) {

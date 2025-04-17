@@ -45,7 +45,7 @@ $label_on  = ( isset( $settings->label_box_on ) ) ? $settings->label_box_on : 'O
 
 ?>
 <div class="<?php echo esc_attr( $rbs_wrapper ); ?>">
-	<div class="uabb-rbs-toggle">
+	<div class="uabb-rbs-toggle" tabindex="0" aria-label="<?php esc_attr_e( 'Content Toggle Module', 'uabb' ); ?>">
 		<div class="uabb-sec-1">
 			<<?php echo esc_attr( $settings->html_tag ); ?> class="uabb-rbs-head-1"><?php echo $settings->cont1_heading; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</<?php echo esc_attr( $settings->html_tag ); ?>>

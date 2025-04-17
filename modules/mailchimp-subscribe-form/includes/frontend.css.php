@@ -520,9 +520,6 @@ if ( '' !== $settings->btn_margin_top ) {
 $font_size     = intval( $settings->checkbox_size );
 $checked_width = $font_size - intval( $settings->checkbox_border_width );
 ?>
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form .uabb-input-group input[type="checkbox"] {
-	display: none;
-}
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-subscribe-form .uabb-input-group .uabb-terms-label input[type="checkbox"] + span:before {
 	content: '';

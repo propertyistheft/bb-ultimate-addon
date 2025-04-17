@@ -22,7 +22,7 @@ if ( isset( $settings->link_nofollow ) && UABB_Compatibility::$version_bb_check 
 
 	<<?php echo esc_attr( $settings->tag ); ?> class="uabb-heading">
 		<?php if ( ! empty( $settings->link ) ) : ?>
-		<a href="<?php echo $settings->link; ?>" title="<?php echo $settings->heading; ?>" target="<?php echo esc_attr( $settings->link_target ); ?>" <?php BB_Ultimate_Addon_Helper::get_link_rel( $settings->link_target, $link_nofollow, 1 ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+		<a href="<?php echo $settings->link; ?>" target="<?php echo esc_attr( $settings->link_target ); ?>" <?php BB_Ultimate_Addon_Helper::get_link_rel( $settings->link_target, $link_nofollow, 1 ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> aria-label="<?php echo esc_attr__( 'Go to ', 'uabb' ) . esc_url( $settings->link ); ?>">
 		<?php endif; ?>
 		<span class="uabb-heading-text"><?php echo $settings->heading; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 		<?php if ( ! empty( $settings->link ) ) : ?>

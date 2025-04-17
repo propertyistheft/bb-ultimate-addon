@@ -41,6 +41,28 @@
 				$( this.nodeClass + ' .uabb-form-button a' ).css( 'height', height );
 				$( this.nodeClass + ' .uabb-form-button a' ).css( 'line-height', line_height + 'px' );
 			}
+
+			const $scope = jQuery(".uabb-subscribe-form"); 
+			const inputs = $scope.find(".uabb-terms-checkbox-sf");
+
+			inputs.each(function () {
+				const input = jQuery(this);
+
+				input.on("focus", function () {
+					const label = jQuery(`label[for="${this.id}"]`);
+					if (label.length) {
+						label.addClass("uabb-sf-checkbox-focus");
+					}
+				});
+
+				input.on("blur", function () {
+					const label = jQuery(`label[for="${this.id}"]`);
+					if (label.length) {
+						label.removeClass("uabb-sf-checkbox-focus");
+					}
+				});
+
+			});
 		},
 
 		_focusOut: function( e ) {

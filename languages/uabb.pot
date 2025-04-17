@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Beaver Builder package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Beaver Builder 1.36.4\n"
+"Project-Id-Version: Ultimate Addons for Beaver Builder 1.36.5\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/bb-ultimate-addon\n"
-"POT-Creation-Date: 2025-04-01 05:42:02+00:00\n"
+"POT-Creation-Date: 2025-04-15 07:36:05+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -519,6 +519,7 @@ msgid "Your license is activated!"
 msgstr ""
 
 #: admin/bsf-core/class-bsf-license-manager.php:817
+#: modules/modal-popup/includes/frontend.php:14
 msgid "Close"
 msgstr ""
 
@@ -8396,6 +8397,7 @@ msgstr ""
 #: modules/adv-testimonials/adv-testimonials-bb-2-2-compatibility.php:352
 #: modules/adv-testimonials/adv-testimonials-bb-less-than-2-2-compatibility.php:315
 #: modules/adv-testimonials/adv-testimonials.php:23
+#: modules/adv-testimonials/includes/frontend.php:174
 msgid "Testimonials"
 msgstr ""
 
@@ -14214,10 +14216,7 @@ msgid "Display a group of Image / Icons."
 msgstr ""
 
 #: modules/advanced-icon/includes/frontend.php:26
-#: modules/info-box/includes/frontend.php:32
-#: modules/info-list/info-list.php:513 modules/info-list/info-list.php:519
-#: modules/info-list/info-list.php:539
-msgid "Go to"
+msgid "Visit our"
 msgstr ""
 
 #: modules/advanced-separator/advanced-separator-bb-2-2-compatibility.php:22
@@ -19306,6 +19305,13 @@ msgstr ""
 msgid "Dual Color Headings"
 msgstr ""
 
+#: modules/dual-color-heading/includes/frontend.php:35
+#: modules/dual-color-heading/includes/frontend.php:43
+#: modules/interactive-banner-2/includes/frontend.php:49
+#: modules/uabb-heading/includes/frontend.php:25
+msgid "Go to "
+msgstr ""
+
 #: modules/fancy-text/fancy-text-bb-2-2-compatibility.php:22
 #: modules/fancy-text/fancy-text-bb-2-2-compatibility.php:92
 #: modules/fancy-text/fancy-text-bb-less-than-2-2-compatibility.php:52
@@ -19369,6 +19375,7 @@ msgstr ""
 
 #: modules/fancy-text/fancy-text-bb-2-2-compatibility.php:61
 #: modules/fancy-text/fancy-text-bb-less-than-2-2-compatibility.php:21
+#: modules/fancy-text/includes/frontend.php:20
 msgid "Prefix"
 msgstr ""
 
@@ -19394,6 +19401,7 @@ msgstr ""
 
 #: modules/fancy-text/fancy-text-bb-2-2-compatibility.php:80
 #: modules/fancy-text/fancy-text-bb-less-than-2-2-compatibility.php:40
+#: modules/fancy-text/includes/frontend.php:62
 msgid "Suffix"
 msgstr ""
 
@@ -21359,6 +21367,12 @@ msgstr ""
 msgid "Link Text"
 msgstr ""
 
+#: modules/info-box/includes/frontend.php:32
+#: modules/info-list/info-list.php:513 modules/info-list/info-list.php:519
+#: modules/info-list/info-list.php:539
+msgid "Go to"
+msgstr ""
+
 #: modules/info-box/info-box-bb-2-2-compatibility.php:45
 #: modules/info-box/info-box-bb-2-2-compatibility.php:1777
 #: modules/info-box/info-box-bb-less-than-2-2-compatibility.php:21
@@ -22657,10 +22671,6 @@ msgstr ""
 #: modules/interactive-banner-1/interactive-banner-1.php:31
 #: modules/interactive-banner-1/interactive-banner-1.php:32
 msgid "Interactive Banner 1"
-msgstr ""
-
-#: modules/interactive-banner-2/includes/frontend.php:49
-msgid "Go to "
 msgstr ""
 
 #: modules/interactive-banner-2/interactive-banner-2-bb-2-2-compatibility.php:18
@@ -26797,15 +26807,15 @@ msgstr ""
 msgid "Please accept the Terms and Conditions to proceed."
 msgstr ""
 
-#: modules/uabb-contact-form/includes/frontend.php:125
+#: modules/uabb-contact-form/includes/frontend.php:126
 msgid "Invalid Email"
 msgstr ""
 
-#: modules/uabb-contact-form/includes/frontend.php:158
+#: modules/uabb-contact-form/includes/frontend.php:159
 msgid "Invalid Number"
 msgstr ""
 
-#: modules/uabb-contact-form/includes/frontend.php:200
+#: modules/uabb-contact-form/includes/frontend.php:201
 msgid "Please check the captcha to verify you are not a robot."
 msgstr ""
 
@@ -27554,6 +27564,10 @@ msgstr ""
 
 #: modules/uabb-contact-form7/uabb-contact-form7.php:23
 msgid "Style your CF7 form"
+msgstr ""
+
+#: modules/uabb-content-toggle/includes/frontend.php:48
+msgid "Content Toggle Module"
 msgstr ""
 
 #: modules/uabb-content-toggle/uabb-content-toggle-bb-2-2-compatibility.php:17
@@ -30047,6 +30061,10 @@ msgstr ""
 msgid "Marketing Button"
 msgstr ""
 
+#: modules/uabb-numbers/includes/frontend.php:25
+msgid "Counter module showing numbers"
+msgstr ""
+
 #: modules/uabb-numbers/uabb-numbers-bb-2-2-compatibility.php:23
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:22
 msgid "Counter Style"
@@ -30646,18 +30664,18 @@ msgstr ""
 msgid "For Registration Form E-mail field is required!"
 msgstr ""
 
-#: modules/uabb-registration-form/includes/frontend.php:134
+#: modules/uabb-registration-form/includes/frontend.php:135
 msgid "Please check the reCAPTCHA to verify you are not a robot."
 msgstr ""
 
-#: modules/uabb-registration-form/includes/frontend.php:205
+#: modules/uabb-registration-form/includes/frontend.php:207
 msgid ""
 "To use the Registration Form on your site, you must set the \"Allow new "
 "registrations\" to \"User accounts may be registered\" setting from Network "
 "Admin -> Dashboard -> Settings."
 msgstr ""
 
-#: modules/uabb-registration-form/includes/frontend.php:208
+#: modules/uabb-registration-form/includes/frontend.php:210
 msgid ""
 "To use the Registration Form on your site, you must enable the \"Anyone can "
 "register\" setting from Dashboard -> Settings -> General -> Membership."
@@ -32790,15 +32808,15 @@ msgstr ""
 msgid "Font size"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:460
+#: modules/uabb-video/uabb-video.php:490
 msgid "from "
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:574
+#: modules/uabb-video/uabb-video.php:604
 msgid "Please choose a file."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:907
+#: modules/uabb-video/uabb-video.php:937
 #. translators: %s: search term
 msgid ""
 "<div style=\"%2$s\"> Make sure you add the actual URL of the video and not "
@@ -32809,7 +32827,7 @@ msgid ""
 "https://youtu.be/HJRzUQMhJMQ</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:922
+#: modules/uabb-video/uabb-video.php:952
 #. translators: %s: search term
 msgid ""
 "<div style=\"%1$s\">Make sure you add the actual URL of the video and not "
@@ -32820,7 +32838,7 @@ msgid ""
 "https://vimeo.com/channels/staffpicks/274860274</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:935
+#: modules/uabb-video/uabb-video.php:965
 #: modules/uabb-video-gallery/uabb-video-gallery.php:939
 #. translators: %s: search term
 msgid ""
@@ -32828,7 +32846,7 @@ msgid ""
 "Thumbnail\" and paste here.</div>"
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:952
+#: modules/uabb-video/uabb-video.php:982
 msgid ""
 "Click <a "
 "href=\"https://www.ultimatebeaver.com/docs/how-to-find-youtube-channel-name-"
@@ -32837,14 +32855,14 @@ msgid ""
 "here</strong> </a> to know how to find your YouTube Channel ID."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:958
+#: modules/uabb-video/uabb-video.php:988
 msgid ""
 "Click <a href=\"https://support.google.com/youtube/answer/3250431?hl=en\" "
 "target=\"_blank\" rel=\"noopener\"> <strong> here</strong> </a> to know how "
 "to find your YouTube Channel ID."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:967
+#: modules/uabb-video/uabb-video.php:997
 msgid ""
 "Click <a "
 "href=\"https://www.ultimatebeaver.com/docs/how-to-find-youtube-channel-name-"
@@ -32853,7 +32871,7 @@ msgid ""
 "here</strong> </a> to know how to find your YouTube Channel Name."
 msgstr ""
 
-#: modules/uabb-video/uabb-video.php:973
+#: modules/uabb-video/uabb-video.php:1003
 msgid ""
 "Click <a href=\"https://support.google.com/youtube/answer/3250431?hl=en\" "
 "target=\"_blank\" rel=\"noopener\"> <strong> here</strong> </a> to know how "
@@ -33221,6 +33239,10 @@ msgstr ""
 msgid ""
 "Click here to edit the \"Floating Woo - Mini Cart Button\" settings. This "
 "text will not be visible on frontend."
+msgstr ""
+
+#: modules/uabb-woo-mini-cart/includes/frontend.php:28
+msgid "View your cart items"
 msgstr ""
 
 #: modules/uabb-woo-mini-cart/uabb-woo-mini-cart.php:24

@@ -249,7 +249,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 					$attr_string .= ' ' . $key . '="' . $value . '"';
 				}
 
-				$atc_html     .= '<a class="' . implode( ' ', $class ) . '"' . $attr_string . '>';
+				$atc_html     .= '<a class="' . implode( ' ', $class ) . '"' . $attr_string . ' aria-label="' . esc_attr( $settings->btn_text ) . '" >';
 					$atc_html .= '<span class="uabb-atc-content-wrapper">';
 
 				if ( ! empty( $settings->btn_icon ) ) :

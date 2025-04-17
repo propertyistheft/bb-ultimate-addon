@@ -22,7 +22,7 @@ if ( 'default' === $settings->layout ) {
 }
 
 ?>
-<div class="uabb-module-content uabb-number <?php echo esc_attr( $class ); ?> uabb-number-<?php echo esc_attr( $settings->layout ); ?>">
+<div class="uabb-module-content uabb-number <?php echo esc_attr( $class ); ?> uabb-number-<?php echo esc_attr( $settings->layout ); ?>" role="group" tabindex="0" aria-label="<?php esc_attr_e( 'Counter module showing numbers', 'uabb' ); ?>">
 <?php
 /***** Circle *****/
 if ( 'circle' === $settings->layout ) {

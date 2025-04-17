@@ -148,7 +148,7 @@ class UABBTimelineModule extends FLBuilderModule {
 
 			if ( '' !== $settings->items[ $i ]->heading || '' !== $settings->items[ $i ]->description ) {
 				?>
-				<div class="uabb-timeline-item-<?php echo esc_attr( $i ); ?> uabb-timeline-field animate-border out-view">
+				<div class="uabb-timeline-item-<?php echo esc_attr( $i ); ?> uabb-timeline-field animate-border out-view " tabindex="0">
 					<div class="<?php echo esc_attr( $data_alignment ); ?>">
 						<?php
 						if ( 'vertical' === $settings->layout ) {

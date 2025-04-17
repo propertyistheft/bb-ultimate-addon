@@ -60,6 +60,28 @@
 			});
 		}
 
+		const $scope = jQuery(".uabb-urf-form"); 
+		const inputs = $scope.find(".uabb-terms-checkbox-urf");
+
+		inputs.each(function () {
+			const input = jQuery(this);
+
+			input.on("focus", function () {
+				const label = jQuery(`label[for="${this.id}"]`);
+				if (label.length) {
+					label.addClass("uabb-urf-checkbox-focus");
+				}
+			});
+
+			input.on("blur", function () {
+				const label = jQuery(`label[for="${this.id}"]`);
+				if (label.length) {
+					label.removeClass("uabb-urf-checkbox-focus");
+				}
+			});
+
+		});
+
 	};
 	UABBRegistrationFormModule.prototype = {
 

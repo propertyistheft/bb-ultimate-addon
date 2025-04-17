@@ -729,9 +729,6 @@ if ( 'full' !== $settings->btn_align ) {
 $font_size     = intval( $settings->checkbox_size );
 $checked_width = $font_size - intval( $settings->checkbox_border_width );
 ?>
-.fl-node-<?php echo esc_attr( $id ); ?> .uabb-contact-form .uabb-input-group-wrap input[type="checkbox"] {
-	display: none;
-}
 
 .fl-node-<?php echo esc_attr( $id ); ?> .uabb-contact-form .uabb-terms-checkbox .checkbox-label {
 	padding-left: 0px;

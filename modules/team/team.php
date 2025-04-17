@@ -715,7 +715,7 @@ class UABBTeamModule extends FLBuilderModule {
 			);
 
 			/* Render HTML Function */
-			echo ( isset( $this->settings->enable_custom_link ) && 'no' !== $this->settings->enable_custom_link ) ? '<a href="' . $this->settings->custom_link . '" target ="' . esc_attr( $this->settings->custom_link_target ) . '">' : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo ( isset( $this->settings->enable_custom_link ) && 'no' !== $this->settings->enable_custom_link ) ? '<a href="' . $this->settings->custom_link . '" target ="' . esc_attr( $this->settings->custom_link_target ) . '" aria-label="Go to ' . esc_attr( $this->settings->custom_link ) . '">' : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			FLBuilder::render_module_html( 'image-icon', $imageicon_array );
 			echo ( isset( $this->settings->enable_custom_link ) && '' !== $this->settings->enable_custom_link ) ? '</a>' : '';
 		}

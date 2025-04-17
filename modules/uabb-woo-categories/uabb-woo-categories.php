@@ -440,7 +440,7 @@ class UABBWooCategoriesModule extends FLBuilderModule {
 	public function template_loop_category_link_open( $category ) {
 		$link = apply_filters( 'uabb_woo_category_link', esc_url( get_term_link( $category, 'product_cat' ) ) ); // phpcs:ignore WordPressVIPMinimum.Functions.CheckReturnValue.DirectFunctionCall
 
-		echo '<a href="' . esc_url( $link ) . '">';
+		echo '<a href="' . esc_url( $link ) . '" aria-label="' . esc_attr( 'View ' . $category->name . ' category' ) . '">';
 	}
 
 	/**

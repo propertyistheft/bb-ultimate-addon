@@ -480,5 +480,13 @@
             <field type="UABB Advanced Timeline : Custom Meta Key" editor_type="LINE">custom_meta_key</field>
             <field type="UABB Advanced Timeline : No Results Message" editor_type="LINE">no_results_message</field>
         </widget>
+        <widget name="uabb-table">
+                 <fields-in-item items_of="thead_row">
+                    <field type="UABB Table: Header Cell" editor_type="LINE">heading</field>
+                </fields-in-item>
+                <fields-in-item items_of="tbody_row">
+                    <field type="UABB Table: Body Cell" editor_type="LINE">features</field>
+                </fields-in-item> 
+        </widget>
     </beaver-builder-widgets>
 </wpml-config>

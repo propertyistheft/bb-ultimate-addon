@@ -8,10 +8,10 @@
 ?>
 
 <div <?php echo ( '' !== $settings->id ) ? 'id="' . esc_attr( $settings->id ) . '-overlay"' : ''; ?> class="uabb-modal-parent-wrapper uabb-module-content uamodal-<?php echo esc_attr( $id ); ?> <?php echo ( '' !== $settings->class ) ? esc_attr( $settings->class ) . '-overlay' : ''; ?>">
-	<div class="uabb-modal uabb-drag-fix uabb-center-modal uabb-modal-<?php echo esc_attr( $settings->content_type ); ?> uabb-modal-custom <?php echo esc_attr( $settings->modal_effect ); ?> uabb-aspect-ratio-<?php echo esc_attr( $settings->video_ratio ); ?>" id="modal-<?php echo esc_attr( $id ); ?>" data-content="<?php echo esc_attr( $settings->content_type ); ?>">
+	<div class="uabb-modal uabb-drag-fix uabb-center-modal uabb-modal-<?php echo esc_attr( $settings->content_type ); ?> uabb-modal-custom <?php echo esc_attr( $settings->modal_effect ); ?> uabb-aspect-ratio-<?php echo esc_attr( $settings->video_ratio ); ?>" id="modal-<?php echo esc_attr( $id ); ?>" aria-labelledby="modal-title" aria-describedby="modal-content" data-content="<?php echo esc_attr( $settings->content_type ); ?>">
 		<div class="uabb-content ">
 			<?php if ( ( ( 'icon' === $settings->close_source && '' !== $settings->close_icon ) || ( 'image' === $settings->close_source && '' !== $settings->close_photo ) ) && ( 'popup-top-left' === $settings->icon_position || 'popup-top-right' === $settings->icon_position || 'popup-edge-top-right' === $settings->icon_position || 'popup-edge-top-left' === $settings->icon_position ) ) { ?>
-			<span class="uabb-modal-close uabb-close-custom-<?php echo esc_attr( $settings->icon_position ); ?>" >
+			<span class="uabb-modal-close uabb-close-custom-<?php echo esc_attr( $settings->icon_position ); ?>" tabindex="0" aria-label="<?php esc_attr_e( 'Close', 'uabb' ); ?>" >
 				<?php
 				$close_photo_src = ( isset( $settings->close_photo_src ) ) ? $settings->close_photo_src : '';
 				if ( 'icon' === $settings->close_source ) {
@@ -36,7 +36,7 @@
 	</div>
 
 	<?php if ( ( ( 'icon' === $settings->close_source && '' !== $settings->close_icon ) || ( 'image' === $settings->close_source && '' !== $settings->close_photo ) ) && ( 'top-left' === $settings->icon_position || 'top-right' === $settings->icon_position ) ) { ?>
-	<span class="uabb-modal-close uabb-close-custom-<?php echo esc_attr( $settings->icon_position ); ?>" >
+	<span class="uabb-modal-close uabb-close-custom-<?php echo esc_attr( $settings->icon_position ); ?>" tabindex="0" aria-label="Close" >
 		<?php
 		$close_photo_src = ( isset( $settings->close_photo_src ) ) ? $settings->close_photo_src : '';
 		if ( 'icon' === $settings->close_source ) {

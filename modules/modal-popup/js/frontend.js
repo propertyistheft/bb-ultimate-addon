@@ -5,6 +5,39 @@ jQuery(document).ready(function( $ ) {
 			$(this).appendTo(document.body);
 		});
 	}
+
+	/** Accessibility to close the modal on tab of close icon */
+	
+	var $modal = jQuery('.uabb-modal.uabb-modal-content'); // Get the modal element
+	var modalId = $modal.attr('id'); // Fetch the modal ID dynamically
+	
+	var $closeButton = $('.uabb-modal-close');
+
+	function closeModal() {
+		$modal.removeClass('uabb-show');
+		$modal.attr('aria-hidden', 'true');
+		$closeButton.blur(); // Remove focus from close button
+	}
+
+	// Click event to close modal
+	$closeButton.on('click', function () {
+		closeModal();
+	});
+
+	// Keyboard accessibility: Enter or Space on close button
+	$closeButton.on('keydown', function (e) {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault(); // Prevent page scroll on spacebar
+			closeModal();
+		}
+	});
+
+	// Pressing ESC key closes the modal
+	$(document).on('keydown', function (e) {
+		if (e.key === 'Escape') {
+			closeModal();
+		}
+	});
 });
 
 (function($) {
@@ -580,6 +613,7 @@ jQuery(document).ready(function( $ ) {
 					}
 				}
 			}
+
 	}
 
 })(jQuery);

@@ -276,6 +276,14 @@ class UABBVideo extends FLBuilderModule {
 
 		if ( 'youtube' === $video_type ) {
 			$url = $this->settings->youtube_link;
+			if ( strpos( $url, '[' ) !== false && strpos( $url, ']' ) !== false ) {
+				preg_match( '/\[(.*?)\]/', $url, $matches );
+				if ( isset( $matches[0] ) ) {
+					$url = $matches[0]; // Keep only the shortcode, including [ and ].
+				}
+				$url = do_shortcode( $url ); // Process the shortcode.
+			}
+			$url = esc_url( $url );
 			if ( preg_match( '~^(?:https?://)? (?:www[.])?(?:youtube[.]com/watch[?]v=|youtu[.]be/)([^&]{11})~x', $url ) ) {
 				if ( preg_match( '/[\\?\\&]v=([^\\?\\&]+)/', $url, $matches ) ) {
 					$id = $matches[1];
@@ -283,12 +291,27 @@ class UABBVideo extends FLBuilderModule {
 			}
 		} elseif ( 'vimeo' === $video_type ) {
 			$url = $this->settings->vimeo_link;
+			if ( strpos( $url, '[' ) !== false && strpos( $url, ']' ) !== false ) {
+				preg_match( '/\[(.*?)\]/', $url, $matches );
+				if ( isset( $matches[0] ) ) {
+					$url = $matches[0]; // Keep only the shortcode, including [ and ].
+				}
+				$url = do_shortcode( $url ); // Process the shortcode.
+			}
+			$url = esc_url( $url );
 			if ( preg_match( '%^https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)(?:[?]?.*)$%im', $url, $regs ) ) {
 				$id = $regs[3];
 			}
 		} elseif ( 'wistia' === $video_type ) {
 			$url = $this->settings->wistia_link;
-			$id  = $this->getStringBetween( $url, 'wvideo=', '"' );
+			if ( strpos( $url, '[' ) !== false && strpos( $url, ']' ) !== false ) {
+				preg_match( '/\[(.*?)\]/', $url, $matches );
+				if ( isset( $matches[0] ) ) {
+					$url = $matches[0]; // Keep only the shortcode, including [ and ].
+				}
+				$url = do_shortcode( $url ); // Process the shortcode.
+			}
+			$id = $this->getStringBetween( $url, 'wvideo=', '"' );
 
 		}
 		return $id;
@@ -392,7 +415,14 @@ class UABBVideo extends FLBuilderModule {
 				$thumb = ( isset( $vimeo[0]['thumbnail_large'] ) && ! empty( $vimeo[0]['thumbnail_large'] ) ) ? str_replace( '_640', '_840', $vimeo[0]['thumbnail_large'] ) : '';
 
 			} elseif ( 'wistia' === $this->settings->video_type ) {
-				$url   = $this->settings->wistia_link;
+				$url = $this->settings->wistia_link;
+				if ( strpos( $url, '[' ) !== false && strpos( $url, ']' ) !== false ) {
+					preg_match( '/\[(.*?)\]/', $url, $matches );
+					if ( isset( $matches[0] ) ) {
+						$url = $matches[0]; // Keep only the shortcode, including [ and ].
+					}
+					$url = do_shortcode( $url ); // Process the shortcode.
+				}
 				$thumb = 'https://embed-ssl.wistia.com/deliveries/' . $this->getStringBetween( $url, 'deliveries/', '?' );
 			}
 		}

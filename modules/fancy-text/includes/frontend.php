@@ -17,7 +17,7 @@ if ( in_array( $settings->effect_type, array( 'swirl', 'blinds', 'wave' ) ) ) { 
 <div class="uabb-module-content uabb-fancy-text-node">
 <?php if ( ! empty( $settings->effect_type ) ) { ?>
 	<?php echo '<' . esc_attr( $settings->text_tag_selection ); ?> class="uabb-fancy-text-wrap <?php echo esc_attr( $class ); ?>"><!--
-	--><span class="uabb-fancy-plain-text uabb-fancy-text-wrapper uabb-fancy-text-prefix"><?php echo $settings->prefix; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span><?php echo '<!--'; ?>
+	--><span class="uabb-fancy-plain-text uabb-fancy-text-wrapper uabb-fancy-text-prefix" aria-label="<?php echo esc_attr__( 'Prefix', 'uabb' ); ?>"><?php echo $settings->prefix; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span><?php echo '<!--'; ?>
 	<?php
 		$output = '';
 
@@ -59,7 +59,7 @@ if ( in_array( $settings->effect_type, array( 'swirl', 'blinds', 'wave' ) ) ) { 
 	}
 	?>
 
-	<?php echo '-->'; ?><span class=" uabb-fancy-plain-text uabb-fancy-text-wrapper uabb-fancy-text-suffix"><?php echo $settings->suffix; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+	<?php echo '-->'; ?><span class=" uabb-fancy-plain-text uabb-fancy-text-wrapper uabb-fancy-text-suffix" aria-label="<?php echo esc_attr__( 'Suffix', 'uabb' ); ?>"><?php echo $settings->suffix; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
 	<?php echo '</' . esc_attr( $settings->text_tag_selection ) . '>'; ?>
 <?php } ?>
 </div>

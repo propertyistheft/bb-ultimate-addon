@@ -1,4 +1,11 @@
-Version 1.36.4 - Tuesday, 1st April 2025
+Version 1.36.5, Tuesday, 15th April 2025
+- Improvement: Improved accessibility compliance throughout the plugin.
+- Improvement: Photo Gallery - Added lazy loading to images and improved loading performance in the module.
+- Improvement: Table – Added support for WPML to translate table headers and content.
+- Improvement: Video - Added support for dynamic content in the Video module.
+- Fix: Resolved an issue where column settings caused content to be incorrectly aligned inside the Beaver Builder editor.
+
+Version 1.36.4, Tuesday, 1st April 2025
 - Improvement: Business Reviews - Added support to the New Google Place API.
 - Improvement: Social Share - Changed Twitter share button label to "X (Twitter)".
 

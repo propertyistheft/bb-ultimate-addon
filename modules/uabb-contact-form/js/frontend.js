@@ -71,6 +71,31 @@
 			var phone		= $( this.nodeClass + ' .uabb-phone input' );
 			phone.on( 'keyup', this._removeExtraSpaces );
 			$( this.nodeClass + ' .uabb-contact-form-submit' ).click( $.proxy( this._submit, this ) );
+
+			// Accessibility test for terms and condidtion checbox in Contact Form.
+			const $scope = jQuery(".uabb-cf-form"); 
+			const inputs = $scope.find(".uabb-terms-checkbox-cf");
+
+			inputs.each(function () {
+
+				const input = jQuery(this);
+				input.on("focus", function () {
+
+					const label = jQuery(`label[for="${this.id}"]`);
+					if (label.length) {
+						label.addClass("uabb-cf-checkbox-focus");
+					}
+				});
+
+				input.on("blur", function () {
+					const label = jQuery(`label[for="${this.id}"]`);
+					if (label.length) {
+						label.removeClass("uabb-cf-checkbox-focus");
+					}
+				});
+
+			});
+			
 		},
 		
 		_submit: function( e )

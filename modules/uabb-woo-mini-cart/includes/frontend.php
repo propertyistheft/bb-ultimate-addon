@@ -25,7 +25,7 @@ $offcanvas_pos  = ( 'off-canvas' === $settings->cart_style && isset( $settings->
 	?>
 <div class="uabb-woo-mini-cart <?php echo esc_attr( $floating_class ); ?>">
 	<div class="uabb-mini-cart-btn">
-		<a class="uabb-cart-btn-contents">
+		<a class="uabb-cart-btn-contents" aria-label="<?php esc_attr_e( 'View your cart items', 'uabb' ); ?>" tabindex="0">
 			<span class="uabb-cart-button-wrap uabb-badge-style-<?php echo esc_attr( $settings->badge_position ); ?>">
 			<?php if ( 'icon' === $settings->btn_style || 'icon-text' === $settings->btn_style ) { ?>
 
