@@ -74,6 +74,8 @@ class UABB_Init {
 			add_action( 'network_admin_notices', array( $this, 'admin_notices' ) );
 		}
 
+		require_once BB_ULTIMATE_ADDON_DIR . 'lib/astra-notices/class-astra-notices.php';
+
 		if ( ! class_exists( 'BSF_Analytics_Loader' ) ) {
 			require_once BB_ULTIMATE_ADDON_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
 		}
@@ -227,7 +229,6 @@ class UABB_Init {
 		require_once BB_ULTIMATE_ADDON_DIR . 'includes/column.php';
 
 		require_once BB_ULTIMATE_ADDON_DIR . 'classes/batch-process/class-uabb-batch-process.php';
-		require_once BB_ULTIMATE_ADDON_DIR . 'lib/astra-notices/class-astra-notices.php';
 		require_once BB_ULTIMATE_ADDON_DIR . 'classes/class-uabb-presets.php';
 
 				// Load the NPS Survey library.
