@@ -1,3 +1,7 @@
+Version 1.36.7, Tuesday, 6th May 2025
+- Fixed: Resolved PHP error with NPS library.
+- Fixed: Resolved the issue for function _load_textdomain_just_in_time was called incorrectly in WP 6.8.
+
 Version 1.36.6, Thursday, 17th April 2025
 - Fixed: Resolved a Fatal error Class "Astra_Notices" not found when Beaver Builder plugin is not activated.
 

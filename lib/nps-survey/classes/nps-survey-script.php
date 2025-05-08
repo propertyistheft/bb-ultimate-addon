@@ -6,6 +6,7 @@
  * @package {{package}}
  */
 
+if ( ! class_exists( 'Nps_Survey' ) ){
 /**
  * Nps_Survey
  */
@@ -505,3 +506,5 @@ class Nps_Survey {
  * Kicking this off by calling 'get_instance()' method
  */
 Nps_Survey::get_instance();
+
+}

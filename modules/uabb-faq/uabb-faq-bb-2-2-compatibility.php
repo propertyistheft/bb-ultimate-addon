@@ -74,6 +74,7 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'uabb' ),
 								'no'  => __( 'No', 'uabb' ),
 							),
+							'help'    => __( 'Choosing "Yes" enables schema on standard pages. Please note that Themer Layouts are not supported.', 'uabb' ),
 						),
 					),
 				),

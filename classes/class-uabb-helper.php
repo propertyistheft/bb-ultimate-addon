@@ -265,15 +265,15 @@ if ( ! class_exists( 'BB_Ultimate_Addon_Helper' ) ) {
 		 */
 		public function set_constants() {
 
-			self::$creative_modules = __( 'Creative Modules', 'uabb' );
-			self::$content_modules  = __( 'Content Modules', 'uabb' );
-			self::$lead_generation  = __( 'Lead Generation', 'uabb' );
-			self::$extra_additions  = __( 'Extra Additions', 'uabb' );
-			self::$woo_modules      = __( 'Woo Modules', 'uabb' );
+			self::$creative_modules = 'Creative Modules';
+			self::$content_modules  = 'Content Modules';
+			self::$lead_generation  = 'Lead Generation';
+			self::$extra_additions  = 'Extra Additions';
+			self::$woo_modules      = 'Woo Modules';
 
 			$branding         = self::get_builder_uabb_branding();
 			$branding_name    = 'UABB';
-			$branding_modules = __( 'UABB Modules', 'uabb' );
+			$branding_modules = 'UABB Modules';
 
 			// Branding - %s.
 			if (
@@ -284,7 +284,7 @@ if ( ! class_exists( 'BB_Ultimate_Addon_Helper' ) ) {
 
 			// Branding - %s Modules.
 			if ( 'UABB' !== $branding_name ) { /* translators: %s: search term */
-				$branding_modules = sprintf( __( '%s', 'uabb' ), $branding_name ); //phpcs:ignore WordPress.WP.I18n.NoEmptyStrings
+				$branding_modules = sprintf( __( '%s' ), $branding_name ); //phpcs:ignore WordPress.WP.I18n.NoEmptyStrings
 			}
 
 			if ( isset( $branding['uabb-global-module-listing'] ) && $branding['uabb-global-module-listing'] ) {

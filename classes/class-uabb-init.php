@@ -95,9 +95,9 @@ class UABB_Init {
 								'popup_logo'        => BB_ULTIMATE_ADDON_URL . 'assets/images/uabb.svg',
 								'plugin_slug'       => 'bb-ultimate-addon', // <your-plugin-slug>
 								'plugin_version'    => BB_ULTIMATE_ADDON_VER,
-								'popup_title'       => __( 'Quick Feedback', 'uabb' ),
+								'popup_title'       => 'Quick Feedback',
 								'support_url'       => 'https://www.ultimatebeaver.com/contact/',
-								'popup_description' => __( 'If you have a moment, please share why you are deactivating Ultimate Addons for Beaver Builder:', 'uabb' ),
+								'popup_description' => 'If you have a moment, please share why you are deactivating Ultimate Addons for Beaver Builder:',
 								'show_on_screens'   => array( 'plugins' ),
 							),
 						),
@@ -220,7 +220,13 @@ class UABB_Init {
 		require_once BB_ULTIMATE_ADDON_DIR . 'classes/class-uabb-branding.php';
 		require_once BB_ULTIMATE_ADDON_DIR . 'classes/class-uabb-graupi-branding.php';
 
-		require_once BB_ULTIMATE_ADDON_DIR . 'classes/uabb-global-settings-form.php';
+		add_action(
+			'init',
+			function () {
+				require_once BB_ULTIMATE_ADDON_DIR . 'classes/uabb-global-settings-form.php';
+			}
+		);
+		
 		require_once BB_ULTIMATE_ADDON_DIR . 'classes/helper.php';
 
 		require_once BB_ULTIMATE_ADDON_DIR . 'classes/class-extended-row-column.php';
@@ -231,7 +237,7 @@ class UABB_Init {
 		require_once BB_ULTIMATE_ADDON_DIR . 'classes/batch-process/class-uabb-batch-process.php';
 		require_once BB_ULTIMATE_ADDON_DIR . 'classes/class-uabb-presets.php';
 
-				// Load the NPS Survey library.
+		// Load the NPS Survey library.
 		if ( ! class_exists( 'Uabb_Pro_Nps_Survey' ) ) {
 			require_once BB_ULTIMATE_ADDON_DIR . 'lib/class-uabb-pro-nps-survey.php';
 		}

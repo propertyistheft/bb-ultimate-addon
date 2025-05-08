@@ -56,7 +56,6 @@ final class UABBGraupiBranding {
 	 * @since x.x.x
 	 */
 	public static function init() {
-
 		self::set_variables();
 		if ( '' !== self::$author_name ) {
 			add_filter( 'agency_updater_fullname', __CLASS__ . '::author_name' );
