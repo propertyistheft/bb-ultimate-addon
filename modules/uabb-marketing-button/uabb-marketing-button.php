@@ -257,8 +257,8 @@ class UABBMarketingButtonModule extends FLBuilderModule {
 		}
 		?>
 		<div class="uabb-marketing-button uabb-module-content <?php echo esc_attr( $this->get_classname() ); ?>">
-			<a href ="<?php echo $this->settings->link; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" target="<?php echo esc_attr( $this->settings->link_target ); ?>" <?php BB_Ultimate_Addon_Helper::get_link_rel( $this->settings->link_target, $this->settings->link_nofollow, 1 ); ?> class="uabb-button uabb-marketing-button  <?php echo esc_attr( $animation_class ); ?> uabb-marketing-button-wrap-<?php echo esc_attr( $this->settings->icon_position ); ?> <?php echo esc_attr( $custom_class ); ?> uabb-marketing-btn__link <?php echo esc_attr( $astra_class ); ?>" aria-label="<?php echo esc_attr( $this->settings->title . ' ' . $this->settings->sub_title ); ?>">
-				<?php echo $this->render_html(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<a href ="<?php echo $this->settings->link; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If not ignored then we are facing PHP Deprecated error ?>" target="<?php echo esc_attr( $this->settings->link_target ); ?>" <?php BB_Ultimate_Addon_Helper::get_link_rel( $this->settings->link_target, $this->settings->link_nofollow, 1 ); ?> class="uabb-button uabb-marketing-button  <?php echo esc_attr( $animation_class ); ?> uabb-marketing-button-wrap-<?php echo esc_attr( $this->settings->icon_position ); ?> <?php echo esc_attr( $custom_class ); ?> uabb-marketing-btn__link <?php echo esc_attr( $astra_class ); ?>" aria-label="<?php echo esc_attr( $this->settings->title . ' ' . $this->settings->sub_title ); ?>">
+				<?php echo $this->render_html(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If not ignored then we are facing PHP Deprecated error ?>
 			</a>
 		</div>
 		<?php
@@ -286,12 +286,12 @@ class UABBMarketingButtonModule extends FLBuilderModule {
 			<div class="uabb-marketing-buttons-wrap">
 				<?php if ( isset( $this->settings->title ) && '' !== $this->settings->title ) { ?>
 					<div class="uabb-button-content-wrapper uabb-marketing-title uabb-buttons-icon-<?php echo esc_attr( $this->settings->icon_position ); ?>">
-						<?php echo $this->settings->title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php echo wp_kses_post( $this->settings->title ); ?>
 					</div>
 				<?php } ?>
 				<?php if ( isset( $this->settings->sub_title ) && '' !== $this->settings->sub_title ) { ?>
 					<div class="uabb-marketing-subheading uabb-marketing-button-text">
-						<?php echo $this->settings->sub_title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php echo wp_kses_post( $this->settings->sub_title ); ?>
 					</div>
 				<?php } ?>
 			</div>
@@ -310,14 +310,14 @@ class UABBMarketingButtonModule extends FLBuilderModule {
 							<?php } ?>
 						<?php if ( isset( $this->settings->title ) && '' !== $this->settings->title ) { ?>
 							<span class="uabb-marketing-buttons-title-innerwrap uabb-marketing-title uabb-button-text uabb-marketing-title ">
-								<?php echo $this->settings->title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<?php echo wp_kses_post( $this->settings->title ); ?>
 							</span>
 						<?php } ?>
 					</div>
 					<div class="uabb-marketing-buttons-desc-innerwrap">
 						<?php if ( isset( $this->settings->sub_title ) && '' !== $this->settings->sub_title ) { ?>
 							<span class="uabb-marketing-subheading uabb-marketing-button-text">
-								<?php echo $this->settings->sub_title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<?php echo wp_kses_post( $this->settings->sub_title ); ?>
 							</span>
 						<?php } ?>
 					</div>

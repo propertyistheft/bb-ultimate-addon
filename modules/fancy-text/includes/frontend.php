@@ -17,7 +17,7 @@ if ( in_array( $settings->effect_type, array( 'swirl', 'blinds', 'wave' ) ) ) { 
 <div class="uabb-module-content uabb-fancy-text-node">
 <?php if ( ! empty( $settings->effect_type ) ) { ?>
 	<?php echo '<' . esc_attr( $settings->text_tag_selection ); ?> class="uabb-fancy-text-wrap <?php echo esc_attr( $class ); ?>"><!--
-	--><span class="uabb-fancy-plain-text uabb-fancy-text-wrapper uabb-fancy-text-prefix" aria-label="<?php echo esc_attr__( 'Prefix', 'uabb' ); ?>"><?php echo $settings->prefix; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span><?php echo '<!--'; ?>
+	--><span class="uabb-fancy-plain-text uabb-fancy-text-wrapper uabb-fancy-text-prefix" aria-label="<?php echo esc_attr__( 'Prefix', 'uabb' ); ?>"><?php echo wp_kses_post( $settings->prefix ); ?></span><?php echo '<!--'; ?>
 	<?php
 		$output = '';
 
@@ -27,7 +27,7 @@ if ( in_array( $settings->effect_type, array( 'swirl', 'blinds', 'wave' ) ) ) { 
 			$output .= '<span class="uabb-typed-main">';
 			$output .= '</span>';
 		$output     .= '</span><!--';
-		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Breaks functionality due to dynamic rendering
 	} elseif ( 'slide_up' === $settings->effect_type ) {
 		$adjust_class = '';
 		$slide_order  = array( "\r\n", "\n", "\r", '<br/>', '<br>' );
@@ -51,15 +51,15 @@ if ( in_array( $settings->effect_type, array( 'swirl', 'blinds', 'wave' ) ) ) { 
 		}
 			$output .= '</span>';
 			$output .= '</span><!--';
-			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Breaks functionality due to dynamic rendering
 	} else {
 		$output .= '--><span class="uabb-fancy-text-dynamic-wrapper uabb-fancy-text-wrapper">';
 		$output .= '</span><!--';
-		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Breaks functionality due to dynamic rendering
 	}
 	?>
 
-	<?php echo '-->'; ?><span class=" uabb-fancy-plain-text uabb-fancy-text-wrapper uabb-fancy-text-suffix" aria-label="<?php echo esc_attr__( 'Suffix', 'uabb' ); ?>"><?php echo $settings->suffix; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+	<?php echo '-->'; ?><span class=" uabb-fancy-plain-text uabb-fancy-text-wrapper uabb-fancy-text-suffix" aria-label="<?php echo esc_attr__( 'Suffix', 'uabb' ); ?>"><?php echo wp_kses_post( $settings->suffix ); ?></span>
 	<?php echo '</' . esc_attr( $settings->text_tag_selection ) . '>'; ?>
 <?php } ?>
 </div>

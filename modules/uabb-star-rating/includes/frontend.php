@@ -14,7 +14,7 @@ $layout       = 0;
 <?php
 if ( 'bottom' === $settings->star_position ) {
 	?>
-	<div class="uabb-rating-title"><?php echo $rating_title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+	<div class="uabb-rating-title"><?php echo wp_kses_post( $rating_title ); ?></div>
 	<?php
 }
 	$rating_scale   = (int) $settings->rating_scale;
@@ -23,7 +23,7 @@ if ( 'bottom' === $settings->star_position ) {
 	$floored_rating = (int) $rating;
 	$stars_html     = '';
 ?>
-	<div class="uabb-rating" title="<?php echo( $txt_rating ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" itemtype="http://schema.org/Rating" itemscope="" itemprop="reviewRating">
+	<div class="uabb-rating" title="<?php echo esc_attr( $txt_rating ); ?>" itemtype="http://schema.org/Rating" itemscope="" itemprop="reviewRating">
 	<?php
 	$icon = '&#9733;';
 
@@ -41,15 +41,15 @@ if ( 'bottom' === $settings->star_position ) {
 		}
 	}
 
-		echo $stars_html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo wp_kses_post( $stars_html );
 	?>
-	<span itemprop="ratingValue" class="uabb-hidden"><?php echo( $txt_rating ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+	<span itemprop="ratingValue" class="uabb-hidden"><?php echo esc_html( $txt_rating ); ?></span>
 	</div>
 
 <?php
 if ( 'top' === $settings->star_position ) {
 	?>
-	<div class="uabb-rating-title"><?php echo $rating_title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+	<div class="uabb-rating-title"><?php echo wp_kses_post( $rating_title ); ?></div>
 	<?php
 }
 ?>

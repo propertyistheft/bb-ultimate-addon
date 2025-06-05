@@ -423,7 +423,7 @@ class UABBNumbersModule extends FLBuilderModule {
 
 		$html = '<' . $tag . ' class="uabb-number-string">' . $prefix . '<span class="uabb-number-int">' . number_format( $number ) . '</span>' . $suffix . '</' . $tag . '>';
 
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing breaks the UI as it alters the required HTML structure.
 	}
 
 	/**
@@ -437,7 +437,7 @@ class UABBNumbersModule extends FLBuilderModule {
 			$html .= '<span class="uabb-number-before-text">' . $this->settings->before_number_text . '</span>';
 		}
 
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing breaks the UI as it alters the required HTML structure.
 	}
 
 	/**
@@ -464,7 +464,7 @@ class UABBNumbersModule extends FLBuilderModule {
 			$html .= '<span class="uabb-number-after-text">' . $this->settings->after_number_text . '</span>';
 		}
 
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing breaks the UI as it alters the required HTML structure.
 	}
 
 	/**
@@ -501,7 +501,7 @@ class UABBNumbersModule extends FLBuilderModule {
 		</svg>';
 		$html .= '</div>';
 
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing breaks the UI as it alters the required HTML structure.
 	}
 
 	/**
@@ -530,7 +530,7 @@ class UABBNumbersModule extends FLBuilderModule {
 		$html .= $this->render_after_counter_text();
 		$html .= '</div>';
 
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing breaks the UI as it alters the required HTML structure.
 	}
 
 	/**

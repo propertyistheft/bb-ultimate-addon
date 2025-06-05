@@ -663,13 +663,13 @@ class ProgressBarModule extends FLBuilderModule {
 				if ( $this->settings->text_position === $position ) {
 
 					echo '<div class="uabb-progress-info uabb-progress-bar-info-' . esc_attr( $i ) . '">
-                        <' . esc_attr( $this->settings->text_tag_selection ) . ' class="uabb-progress-title">' . $obj->horizontal_before_number . '</' . esc_attr( $this->settings->text_tag_selection ) . '>' . //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        <' . esc_attr( $this->settings->text_tag_selection ) . ' class="uabb-progress-title">' . wp_kses_post( $obj->horizontal_before_number ) . '</' . esc_attr( $this->settings->text_tag_selection ) . '>' . 
 					'</div>';
 				}
 			} elseif ( 'style3' !== $style ) {
 
 				echo '<div class="uabb-progress-info uabb-progress-bar-info-' . esc_attr( $i ) . '">
-                        <' . esc_attr( $this->settings->text_tag_selection ) . ' class="uabb-progress-title">' . $obj->horizontal_before_number . '</' . esc_attr( $this->settings->text_tag_selection ) . '>' . //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        <' . esc_attr( $this->settings->text_tag_selection ) . ' class="uabb-progress-title">' . wp_kses_post( $obj->horizontal_before_number ) . '</' . esc_attr( $this->settings->text_tag_selection ) . '>' .
 						'<div class="uabb-progress-value">0%</div>
                     </div>';
 			}
@@ -689,7 +689,7 @@ class ProgressBarModule extends FLBuilderModule {
                     <div class="uabb-progress-box">
                         <div class="uabb-progress-bar"></div>
                         <div class="uabb-progress-info uabb-progress-bar-info-' . esc_attr( $i ) . '">
-                            <' . esc_attr( $this->settings->text_tag_selection ) . ' class="uabb-progress-title">' . $obj->horizontal_before_number . '</' . esc_attr( $this->settings->text_tag_selection ) . '>' . //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                            <' . esc_attr( $this->settings->text_tag_selection ) . ' class="uabb-progress-title">' . wp_kses_post( $obj->horizontal_before_number ) . '</' . esc_attr( $this->settings->text_tag_selection ) . '>' . 
 							'<div class="uabb-progress-value">0%</div>
                         </div>
                     </div>
@@ -725,12 +725,12 @@ class ProgressBarModule extends FLBuilderModule {
 		if ( $this->settings->vertical_style === $style ) {
 			if ( 'style3' !== $style ) {
 				echo '<div class="uabb-progress-info uabb-progress-bar-info-' . esc_attr( $i ) . '">
-                        <' . esc_attr( $this->settings->text_tag_selection ) . ' class="uabb-progress-title">' . $obj->horizontal_before_number . '</' . esc_attr( $this->settings->text_tag_selection ) . '>' . //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        <' . esc_attr( $this->settings->text_tag_selection ) . ' class="uabb-progress-title">' . wp_kses_post( $obj->horizontal_before_number ) . '</' . esc_attr( $this->settings->text_tag_selection ) . '>' . 
 						'<div class="uabb-progress-value">0%</div>
                     </div>';
 			} else {
 				echo '<div class="uabb-progress-info uabb-progress-bar-info-' . esc_attr( $i ) . '">
-                        <' . esc_attr( $this->settings->text_tag_selection ) . ' class="uabb-progress-title">' . $obj->horizontal_before_number . '</' . esc_attr( $this->settings->text_tag_selection ) . '>' . //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+                        <' . esc_attr( $this->settings->text_tag_selection ) . ' class="uabb-progress-title">' . wp_kses_post( $obj->horizontal_before_number ) . '</' . esc_attr( $this->settings->text_tag_selection ) . '>' . 
 					'</div>';
 			}
 		}
@@ -788,7 +788,7 @@ class ProgressBarModule extends FLBuilderModule {
             <circle class="uabb-bar" r="' . $radius . '" cx="' . $pos . '" cy="' . $pos . '" fill="transparent" stroke-dasharray="' . $dash . '" stroke-dashoffset="' . $dash . '"></circle>
         </svg>';
 
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaping will break rendering.
 	}
 
 	/**
@@ -812,7 +812,7 @@ class ProgressBarModule extends FLBuilderModule {
             <circle class="uabb-bar-bg" r="' . $radius . '" cx="' . $pos . '" cy="' . $pos . '" fill=" ' . $obj->background_color . ' " stroke-dasharray="' . $dash . '" stroke-dashoffset="0"></circle>
             <circle class="uabb-bar" r="' . $radius . '" cx="' . $pos . '" cy="' . $pos . '" fill="transparent" stroke-dasharray="' . $dash . '" stroke-dashoffset="' . $dash . '" transform="rotate(-180 ' . $pos . ' ' . $pos . ')"></circle>
         </svg>';
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaping will break rendering.
 	}
 }
 

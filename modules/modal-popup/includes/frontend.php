@@ -5,10 +5,11 @@
  *  @package UABB Modal Popup Module
  */
 
+$remove_autoplay = apply_filters( 'uabb_modal_disable_autoplay', false );
 ?>
 
 <div <?php echo ( '' !== $settings->id ) ? 'id="' . esc_attr( $settings->id ) . '-overlay"' : ''; ?> class="uabb-modal-parent-wrapper uabb-module-content uamodal-<?php echo esc_attr( $id ); ?> <?php echo ( '' !== $settings->class ) ? esc_attr( $settings->class ) . '-overlay' : ''; ?>">
-	<div class="uabb-modal uabb-drag-fix uabb-center-modal uabb-modal-<?php echo esc_attr( $settings->content_type ); ?> uabb-modal-custom <?php echo esc_attr( $settings->modal_effect ); ?> uabb-aspect-ratio-<?php echo esc_attr( $settings->video_ratio ); ?>" id="modal-<?php echo esc_attr( $id ); ?>" aria-labelledby="modal-title" aria-describedby="modal-content" data-content="<?php echo esc_attr( $settings->content_type ); ?>">
+	<div class="uabb-modal uabb-drag-fix uabb-center-modal uabb-modal-<?php echo esc_attr( $settings->content_type ); ?> uabb-modal-custom <?php echo esc_attr( $settings->modal_effect ); ?> uabb-aspect-ratio-<?php echo esc_attr( $settings->video_ratio ); ?>" id="modal-<?php echo esc_attr( $id ); ?>" aria-labelledby="modal-title" aria-describedby="modal-content" data-content="<?php echo esc_attr( $settings->content_type ); ?>" data-autoplay-stop="<?php echo esc_attr( $remove_autoplay ); ?>">
 		<div class="uabb-content ">
 			<?php if ( ( ( 'icon' === $settings->close_source && '' !== $settings->close_icon ) || ( 'image' === $settings->close_source && '' !== $settings->close_photo ) ) && ( 'popup-top-left' === $settings->icon_position || 'popup-top-right' === $settings->icon_position || 'popup-edge-top-right' === $settings->icon_position || 'popup-edge-top-left' === $settings->icon_position ) ) { ?>
 			<span class="uabb-modal-close uabb-close-custom-<?php echo esc_attr( $settings->icon_position ); ?>" tabindex="0" aria-label="<?php esc_attr_e( 'Close', 'uabb' ); ?>" >
@@ -25,11 +26,11 @@
 
 			<?php if ( $settings->enable_title && '' !== $settings->modal_width ) { ?>
 			<div class="uabb-modal-title-wrap">
-			<<?php echo esc_attr( $settings->title_tag_selection ); ?> class="uabb-modal-title"><?php echo ( '' !== $settings->title ) ? $settings->title : 'This is modal title'; ?></<?php echo esc_attr( $settings->title_tag_selection ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+			<<?php echo esc_attr( $settings->title_tag_selection ); ?> class="uabb-modal-title"><?php echo wp_kses_post( ! empty( $settings->title ) ? wp_kses_post( $settings->title ) : __( 'This is modal title', 'uabb' ) ); ?></<?php echo esc_attr( $settings->title_tag_selection ); ?>>
 			</div>
 			<?php } ?>
 			<div class="uabb-modal-text uabb-modal-content-data <?php echo ( 'content' === $settings->content_type ) ? 'uabb-text-editor' : ''; ?> fl-clearfix">
-			<?php echo $module->get_modal_content( $settings ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<?php echo $module->get_modal_content( $settings ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaping the output will break the functionality ?>
 			</div>
 
 		</div>
@@ -56,7 +57,7 @@
 <?php if ( 'button' === $settings->modal_on ) { ?>
 	<?php $module->render_button( $id ); ?>
 <?php } elseif ( 'text' === $settings->modal_on ) { ?>
-	<div class="uabb-modal-action uabb-trigger" data-modal="<?php echo esc_attr( $id ); ?>"><?php echo $settings->modal_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+	<div class="uabb-modal-action uabb-trigger" data-modal="<?php echo esc_attr( $id ); ?>"><?php echo wp_kses_post( $settings->modal_text ); ?></div>
 <?php } elseif ( 'icon' === $settings->modal_on ) { ?>
 <div class="uabb-modal-action uabb-trigger uabb-modal-icon-wrap" data-modal="<?php echo esc_attr( $id ); ?>"><i class="uabb-modal-icon <?php echo wp_kses_post( $settings->icon ); ?>"></i></div>
 <?php } elseif ( 'photo' === $settings->modal_on ) { ?>

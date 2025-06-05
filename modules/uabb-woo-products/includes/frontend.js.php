@@ -19,8 +19,8 @@
 			cart_url: '<?php echo esc_url( apply_filters( 'uabb_woocommerce_add_to_cart_redirect', wc_get_cart_url() ) ); ?>',
 			layout: "<?php echo esc_attr( $settings->layout ); ?>",
 			skin: "<?php echo esc_attr( $settings->skin ); ?>",
-			next_arrow: '<?php echo apply_filters( 'uabb_woo_products_carousel_next_arrow_icon', 'fas fa-angle-right' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>',
-			prev_arrow: '<?php echo apply_filters( 'uabb_woo_products_carousel_previous_arrow_icon', 'fas fa-angle-left' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>',
+			next_arrow: '<?php echo esc_attr( apply_filters( 'uabb_woo_products_carousel_next_arrow_icon', 'fas fa-angle-right' ) ); ?>',
+			prev_arrow: '<?php echo esc_attr( apply_filters( 'uabb_woo_products_carousel_previous_arrow_icon', 'fas fa-angle-left' ) ); ?>',
 
 			/* Slider */
 			infinite: <?php echo esc_attr( ( 'yes' === $settings->infinite_loop ) ? 'true' : 'false' ); ?>,

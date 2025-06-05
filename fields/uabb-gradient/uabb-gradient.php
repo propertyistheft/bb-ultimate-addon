@@ -127,7 +127,7 @@ if ( ! class_exists( 'UABB_Gradient' ) ) {
 			$html .= '</div>';
 			$html .= '</div>';
 
-			echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing this output is breaking the rendering of the page editor.
 		}
 	}
 	new UABB_Gradient();

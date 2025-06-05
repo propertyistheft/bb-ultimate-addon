@@ -39,7 +39,7 @@
 	} else {
 		?>
 		<div class="uabb-search-no-posts">
-			<p><?php echo $settings->no_results_message; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+			<p><?php echo esc_html( $settings->no_results_message ); ?></p>
 		</div>
 		<?php
 	}

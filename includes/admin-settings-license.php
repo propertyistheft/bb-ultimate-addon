@@ -24,7 +24,7 @@
 			'bsf_license_allow_email'          => false,
 		);
 
-		echo bsf_license_activation_form( $args ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo bsf_license_activation_form( $args ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing breaks the license activation form rendering.
 		?>
 
 	<?php if ( is_multisite() ) : ?>

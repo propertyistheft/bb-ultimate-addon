@@ -31,10 +31,10 @@ if ( 'vertical' === $settings->tab_layout ) {
 					?>
 				<li class="<?php echo ( (int) $settings->active_tab === $i ) ? 'uabb-tab-current' : ''; ?>" data-index="<?php echo esc_attr( $i ); ?>" tabindex="0">
 					<<?php echo esc_attr( $settings->title_tag_selection ); ?> class="uabb-tag-selected">
-						<a class="uabb-tab-link" href="javascript:void(0);" class="" tabindex="-1"><?php echo wp_kses_post( $class ); ?><span class="uabb-tab-title"><?php echo $settings->items[ $i ]->label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+						<a class="uabb-tab-link" href="javascript:void(0);" class="" tabindex="-1"><?php echo wp_kses_post( $class ); ?><span class="uabb-tab-title"><?php echo wp_kses_post( $settings->items[ $i ]->label ); ?></span>
 						<?php if ( isset( $settings->items[ $i ]->description ) && ! empty( $settings->items[ $i ]->description ) ) { ?>
 					<div class="uabb-tab-description">
-							<?php echo $settings->items[ $i ]->description; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php echo wp_kses_post( $settings->items[ $i ]->description ); ?>
 					</div>
 				<?php } ?>
 						</a>
@@ -58,7 +58,7 @@ if ( 'vertical' === $settings->tab_layout ) {
 				<div class="uabb-tab-acc-title uabb-acc-<?php echo esc_attr( $i ); ?>">
 					<<?php echo esc_attr( $settings->title_tag_selection ); ?> class="uabb-title-tag">
 						<?php echo ( 'right' !== $settings->icon_position ) ? wp_kses_post( $class ) : ''; ?>
-						<span class="uabb-tab-title"><?php echo $settings->items[ $i ]->label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+						<span class="uabb-tab-title"><?php echo wp_kses_post( $settings->items[ $i ]->label ); ?></span>
 						<?php echo ( 'right' === $settings->icon_position ) ? wp_kses_post( $class ) : ''; ?>
 					</<?php echo esc_attr( $settings->title_tag_selection ); ?>>
 					<span class="uabb-acc-icon"><i class="ua-icon ua-icon-chevron-down2"></i></span>
@@ -70,7 +70,7 @@ if ( 'vertical' === $settings->tab_layout ) {
 						global $wp_embed; // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.VariableRedeclaration
 						echo wp_kses_post( wpautop( $wp_embed->autoembed( $settings->items[ $i ]->content ) ) );
 					} else {
-						echo $module->get_tab_content( $settings->items[ $i ] ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo $module->get_tab_content( $settings->items[ $i ] ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing breaks UI in certain cases.
 					}
 					?>
 				</div>

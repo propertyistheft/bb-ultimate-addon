@@ -11,7 +11,7 @@ if ( 'none' !== $settings->image_type && '' !== $settings->image_type ) { ?>
 	<?php if ( 'icon' === $settings->image_type ) { ?>
 		<span class="uabb-icon-wrap">
 			<span class="uabb-icon">
-				<i class="<?php echo wp_kses_post( $settings->icon ); ?>"></i>
+			<i class="<?php echo wp_kses_post( $settings->icon ); ?>" aria-hidden="true"></i>
 			</span>
 		</span>
 	<?php } // Icon Html End. ?>

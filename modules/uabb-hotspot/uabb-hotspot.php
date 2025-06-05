@@ -589,7 +589,7 @@ class UABBHotspot extends FLBuilderModule {
 			echo ( 'always' === $this->settings->hotspot_marker[ $i ]->show_animation ) ? ( ! is_null( $animation ) ? wp_kses_post( $animation ) : '' ) : '';
 			echo '</div>';
 		} else {
-			echo '<div class="uabb-hotspot-text uabb-hotspot-wrap uabb-text-editor">' . $this->settings->hotspot_marker[ $i ]->marker_text . '</div>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<div class="uabb-hotspot-text uabb-hotspot-wrap uabb-text-editor">' . wp_kses_post( $this->settings->hotspot_marker[ $i ]->marker_text ) . '</div>';
 		}
 
 	}

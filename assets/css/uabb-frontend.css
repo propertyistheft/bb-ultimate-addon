@@ -354,6 +354,16 @@
 .fl-builder-content .uabb-button-center {
     text-align: center;
 }
+.fl-builder-content .uabb-infobox .uabb-button-center,
+.fl-builder-content .uabb-modal-action-wrap .uabb-button-center,
+.fl-builder-content .uabb-ultb3-box .uabb-button-center,
+.fl-builder-content .uabb-slide-down .uabb-button-center,
+.fl-builder-content .uabb-blog-post-content .uabb-button-center,
+.fl-builder-content .uabb-cta-wrap .uabb-button-center,
+.fl-builder-content .fl-module-uabb-off-canvas .uabb-button-wrap .uabb-button-center{ 
+     text-align: inherit;
+}
+
 .fl-builder-content .uabb-button-right {
     text-align: right;
 }

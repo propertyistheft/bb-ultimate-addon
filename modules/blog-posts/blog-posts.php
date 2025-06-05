@@ -2066,8 +2066,8 @@ class BlogPostsModule extends FLBuilderModule {
 			?>
 			<<?php echo esc_attr( $this->settings->title_tag_selection ); ?> class="uabb-post-heading uabb-blog-post-section">
 				<?php
-				$title = '<a href=' . apply_filters( 'uabb_blog_posts_link', get_permalink( $obj->ID ), $obj->ID ) . ' title="' . the_title_attribute( 'echo=0' ) . '" tabindex="0" class="">' . get_the_title() . '</a>';
-				echo apply_filters( 'uabb_advanced_post_title_link', $title, get_the_title(), get_permalink( $obj->ID ), $obj->ID, $this->settings ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				$title = '<a href=' . esc_url( apply_filters( 'uabb_blog_posts_link', get_permalink( $obj->ID ), $obj->ID ) ) . ' title="' . esc_attr( the_title_attribute( 'echo=0' ) ) . '" tabindex="0" class="">' . esc_html( get_the_title() ) . '</a>';
+				echo wp_kses_post( apply_filters( 'uabb_advanced_post_title_link', $title, get_the_title(), get_permalink( $obj->ID ), $obj->ID, $this->settings ) );
 				?>
 			</<?php echo esc_attr( $this->settings->title_tag_selection ); ?>>
 			<?php
@@ -2121,17 +2121,17 @@ class BlogPostsModule extends FLBuilderModule {
 					?>
 					<div class="uabb-blog-posts-description uabb-blog-post-section uabb-text-editor">
 					<?php
-					echo apply_filters( 'uabb_blog_posts_excerpt', the_excerpt(), $this->settings ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo wp_kses_post( apply_filters( 'uabb_blog_posts_excerpt', the_excerpt(), $this->settings ) );
 					?>
 					</div>
 					<?php
 				} elseif ( 'content' === $content_type && 'no' === $strip_html ) {
 					?>
-					<div class="uabb-blog-posts-description uabb-blog-post-section uabb-text-editor"><?php echo apply_filters( 'uabb_blog_posts_excerpt', the_content(), $this->settings ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+					<div class="uabb-blog-posts-description uabb-blog-post-section uabb-text-editor"><?php echo wp_kses_post( apply_filters( 'uabb_blog_posts_excerpt', the_content(), $this->settings ) ); ?></div>
 					<?php
 				} else {
 					?>
-					<div class="uabb-blog-posts-description uabb-blog-post-section uabb-text-editor"><?php echo apply_filters( 'uabb_blog_posts_excerpt', $content, $this->settings ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+					<div class="uabb-blog-posts-description uabb-blog-post-section uabb-text-editor"><?php echo wp_kses_post( apply_filters( 'uabb_blog_posts_excerpt', $content, $this->settings ) ); ?></div>
 					<?php
 				}
 			}
@@ -2287,7 +2287,7 @@ class BlogPostsModule extends FLBuilderModule {
 				<?php
 				echo esc_url( get_permalink( $obj->ID ) );
 				?>
-			#comments"><?php echo esc_html( $obj->comment_count ); ?> <?php echo ( esc_html( $obj->comment_count ) > 1 ? __( 'Comments', 'uabb' ) : __( 'Comment', 'uabb' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a></span>
+			#comments"><?php echo esc_html( $obj->comment_count ); ?> <?php echo ( esc_html( $obj->comment_count ) > 1 ? __( 'Comments', 'uabb' ) : __( 'Comment', 'uabb' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- The comment count is a plain integer and already safe for output. Escaping it again may cause unexpected UI issues. ?></a></span>
 				<?php
 			}
 		}
@@ -2400,7 +2400,7 @@ class BlogPostsModule extends FLBuilderModule {
 
 		$terms_content = apply_filters( 'uabb_posts_terms_content', '<div class="uabb-post__terms-wrap"><span class="uabb-post__terms">' . $result . '</span></div>', $obj->ID, $settings );
 
-		printf( $terms_content );//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		printf( $terms_content );//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaping it will break intended output or custom formatting added.
 
 		do_action( 'uabb_single_post_after_terms', $obj->ID, $settings );
 	}

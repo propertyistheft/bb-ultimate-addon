@@ -65,7 +65,7 @@ if ( ! UABB_Compatibility::$version_bb_check ) {
 											<?php
 											if ( 'link' === $settings->ihover_item[ $i ]->on_click ) {
 												?>
-			<a target="<?php echo esc_attr( $settings->ihover_item[ $i ]->link_target ); ?>" <?php BB_Ultimate_Addon_Helper::get_link_rel( $settings->ihover_item[ $i ]->link_target, 0, 1 ); ?> href="<?php echo $settings->ihover_item[ $i ]->link_url; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" class="uabb-ih-link">
+			<a target="<?php echo esc_attr( $settings->ihover_item[ $i ]->link_target ); ?>" <?php BB_Ultimate_Addon_Helper::get_link_rel( $settings->ihover_item[ $i ]->link_target, 0, 1 ); ?> href="<?php echo esc_url( $settings->ihover_item[ $i ]->link_url ); ?>" class="uabb-ih-link">
 												<?php
 											}
 											?>
@@ -85,7 +85,7 @@ if ( ! UABB_Compatibility::$version_bb_check ) {
 											<?php
 											if ( '' !== $settings->ihover_item[ $i ]->title ) {
 												?>
-								<<?php echo esc_attr( $settings->title_typography_tag_selection ); ?> class="uabb-ih-heading"><?php echo $settings->ihover_item[ $i ]->title; ?></<?php echo esc_attr( $settings->title_typography_tag_selection ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+								<<?php echo esc_attr( $settings->title_typography_tag_selection ); ?> class="uabb-ih-heading"><?php echo wp_kses_post( $settings->ihover_item[ $i ]->title ); ?></<?php echo esc_attr( $settings->title_typography_tag_selection ); ?>>
 												<?php
 											}
 											?>
@@ -95,7 +95,7 @@ if ( ! UABB_Compatibility::$version_bb_check ) {
 							</div>
 							<div class="uabb-ih-description-block">
 								<div class="uabb-ih-description uabb-text-editor">
-											<?php echo $settings->ihover_item[ $i ]->description; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+											<?php echo wp_kses_post( $settings->ihover_item[ $i ]->description ); ?></div>
 							</div>
 						</div>
 					</div>

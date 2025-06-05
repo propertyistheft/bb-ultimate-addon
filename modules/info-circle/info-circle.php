@@ -747,7 +747,7 @@ class UABBInfoCircleModule extends FLBuilderModule {
 			FLBuilder::render_module_html( 'uabb-button', $btn_settings );
 		} else {
 			$link_rel = BB_Ultimate_Addon_Helper::get_link_rel( $item->cta_link_target, $item->cta_link_nofollow, 0 );
-			echo '<a href="' . $item->cta_link . '" target="' . esc_attr( $item->cta_link_target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' class="uabb-infoc-link" >' . $item->cta_text . '</a>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<a href="' . esc_url( $item->cta_link ) . '" target="' . esc_attr( $item->cta_link_target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' class="uabb-infoc-link" >' . esc_html( $item->cta_text ) . '</a>';
 		}
 	}
 }

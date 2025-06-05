@@ -103,7 +103,7 @@ class UABBSearchModule extends FLBuilderModule {
 		include $this->dir . '/includes/results.php';
 		$html = ob_get_clean();
 
-		echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing this output will break the expected functionality.
 		die();
 	}
 

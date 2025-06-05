@@ -818,7 +818,7 @@ class UabbBusinessReview extends FLBuilderModule {
 							<i class="<?php echo wp_kses_post( $yelp_icon ); ?>" aria-hidden="true"></i>
 							<?php
 						} else {
-							echo $google_icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							echo $google_icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- The variable contains HTML markup needed for rendering, sanitizing it breaks functionality.
 						}
 						?>
 					<?php } ?>
@@ -831,7 +831,7 @@ class UabbBusinessReview extends FLBuilderModule {
 							<i class="<?php echo wp_kses_post( $yelp_icon ); ?>" aria-hidden="true"></i>
 							<?php
 						} else {
-							echo $google_icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							echo $google_icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- The variable contains HTML markup needed for rendering, sanitizing it breaks functionality.
 						}
 						?>
 					<?php } ?>
@@ -922,7 +922,7 @@ class UabbBusinessReview extends FLBuilderModule {
 						<i class="<?php echo wp_kses_post( $yelp_icon ); ?>" aria-hidden="true"></i>
 						<?php
 					} elseif ( 'google' === $review['source'] ) {
-							echo $google_icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+							echo $google_icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- The variable contains HTML markup needed for rendering, sanitizing it breaks functionality.
 					}
 					?>
 				</div>
@@ -1061,7 +1061,7 @@ class UabbBusinessReview extends FLBuilderModule {
 												<i class="<?php echo wp_kses_post( $yelp_icon ); ?>" aria-hidden="true"></i>
 												<?php
 											} elseif ( 'google' === $review['source'] ) {
-												echo $google_icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+												echo $google_icon; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- The variable contains HTML markup needed for rendering, sanitizing it breaks functionality.
 											}
 											?>
 										</div>

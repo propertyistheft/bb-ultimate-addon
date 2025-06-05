@@ -186,6 +186,12 @@ if ( 'button' === $settings->modal_on ) {
 	}
 		<?php
 	} else {
+		?>
+		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-modal-action-wrap {
+			text-align: <?php echo esc_attr( $settings->btn_align ); ?>;
+		}
+
+		<?php
 		if ( 'default' === $settings->btn_style ) {
 			$btn_typo = uabb_theme_button_typography( $settings->btn_typo );
 

@@ -48,7 +48,7 @@ class UABBTable extends FLBuilderModule {
 			return $file;
 		} else {
 			if ( 'async-upload' === get_current_screen()->base ) {
-				$type = isset( $_POST['uabb_upload_type'] ) ? sanitize_text_field( $_POST['uabb_upload_type'] ) : false; // phpcs:ignore WordPress.Security.NonceVerification.Missing
+				$type = isset( $_POST['uabb_upload_type'] ) ? sanitize_text_field( $_POST['uabb_upload_type'] ) : false; // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Ignoring nonce verification as this runs in 'async-upload' and altering will break file upload.
 
 				$ext = pathinfo( $file['name'], PATHINFO_EXTENSION );
 
@@ -471,11 +471,11 @@ class UABBTable extends FLBuilderModule {
 		<div class="table-data">
 			<?php if ( 'yes' === $this->settings->show_entries ) : ?>
 				<div class="entries-wrapper">
-					<label class="lbl-entries"><?php echo $this->settings->show_entries_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </label>
+					<label class="lbl-entries"><?php echo wp_kses_post( $this->settings->show_entries_label ); ?> </label>
 					<select class="select-filter">
-						<option class="filter-entry"><?php echo $this->settings->show_entries_all_label;  //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></option>
+						<option class="filter-entry"><?php echo esc_html( $this->settings->show_entries_all_label ); ?></option>
 						<?php for ( $cnt = 1; $cnt < $total_rows; $cnt++ ) { ?>
-							<option class="filter-entry"> <?php echo $cnt; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </option>
+							<option class="filter-entry"> <?php echo wp_kses_post( $cnt ); ?> </option>
 						<?php } ?>
 					</select>
 				</div>
@@ -484,7 +484,7 @@ class UABBTable extends FLBuilderModule {
 			<?php if ( 'yes' === $this->settings->show_search ) : ?>
 				<div class="search-wrapper">
 					<label for="searchHere" class="visually-hidden">Search</label>
-					<input class="search-input" type="text" placeholder="<?php echo $this->settings->search_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" name="toSearch" id="searchHere"/>
+					<input class="search-input" type="text" placeholder="<?php echo esc_attr( $this->settings->search_label ); ?>" name="toSearch" id="searchHere"/>
 				</div>
 			<?php endif ?>
 		</div>
@@ -502,7 +502,7 @@ class UABBTable extends FLBuilderModule {
 									foreach ( $header_val as $hkey => $head ) {
 										?>
 										<th class="table-header-th table-heading-<?php echo esc_attr( $hkey ); ?>">
-											<label class="th-style"> <?php echo $head; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </label>
+											<label class="th-style"> <?php echo wp_kses_post( $head ); ?> </label>
 											<?php if ( 'yes' === $this->settings->show_sort ) { ?>
 													<i class="uabb-sort-icon fa fa-sort"> </i>
 												<?php } ?>
@@ -522,7 +522,7 @@ class UABBTable extends FLBuilderModule {
 									<tr class="tbody-row">
 										<?php foreach ( $row as $bkey => $col ) { ?>
 											<td class="table-body-td">
-												<span class="content-text"> <?php echo $col; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> </span>
+												<span class="content-text"> <?php echo wp_kses_post( $col ); ?> </span>
 											</td>
 											<?php
 												$cell_counter++;
@@ -555,7 +555,7 @@ class UABBTable extends FLBuilderModule {
 	 */
 	public function render() {
 		$output = $this->parse_csv_file();
-		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output is generated from a trusted internal source (parse_csv_file) and is expected to contain HTML.
 	}
 
 	/**

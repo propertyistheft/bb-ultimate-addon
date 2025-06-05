@@ -182,12 +182,13 @@ if ( empty( $settings->uabb_tool[0] ) || 'no' === $settings->show_advanced || 'n
 					}
 			</script>
 			<div class="uabb-how-to-container uabb-clearfix">
-				<<?php echo esc_attr( $settings->title_tag ); ?> class="uabb-how-to-title" ><?php echo $settings->uabb_how_to_title; ?></<?php echo esc_attr( $settings->title_tag ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+				<<?php echo esc_attr( $settings->title_tag ); ?> class="uabb-how-to-title" ><?php echo esc_html( $settings->uabb_how_to_title ); ?></<?php echo esc_attr( $settings->title_tag ); ?>>
 				<div class="uabb-how-to-description">
 					<?php
 					if ( isset( $settings->description ) && ! empty( $settings->description ) ) {
+						$description = $wp_embed->autoembed( $settings->description );
 
-						echo wpautop( $wp_embed->autoembed( $settings->description ) ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo wp_kses_post( wpautop( $description ) );
 					}
 					?>
 				</div>
@@ -202,14 +203,14 @@ if ( empty( $settings->uabb_tool[0] ) || 'no' === $settings->show_advanced || 'n
 						if ( isset( $settings->total_time ) && ! empty( $settings->total_time ) ) {
 							?>
 							<p class="uabb-how-to-total-time">
-								<?php echo ! empty( $settings->total_time_text ) ? $settings->total_time_text : ''; ?><?php echo ' ' . esc_attr( $settings->total_time ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> minutes
+								<?php echo ! empty( $settings->total_time_text ) ? esc_html( $settings->total_time_text ) : ''; ?><?php echo ' ' . esc_attr( $settings->total_time ); ?> minutes
 							</p>
 						<?php } ?>
 							<p class="uabb-how-to-estimated-cost">
 
-								<?php echo ! empty( $settings->estimated_cost_text ) ? $settings->estimated_cost_text : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<?php echo ! empty( $settings->estimated_cost_text ) ? esc_html( $settings->estimated_cost_text ) : ''; ?>
 								<?php if ( isset( $settings->estimated_cost ) && ! empty( $settings->estimated_cost ) && isset( $settings->currency_iso_code ) && ! empty( $settings->currency_iso_code ) ) { ?>
-									<span><?php echo $settings->currency_iso_code . ' ' . $settings->estimated_cost; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+									<span><?php echo esc_html( $settings->currency_iso_code ) . ' ' . esc_html( $settings->estimated_cost ); ?></span>
 								<?php } ?>
 							</p>
 					</div>
@@ -217,14 +218,14 @@ if ( empty( $settings->uabb_tool[0] ) || 'no' === $settings->show_advanced || 'n
 					<?php if ( 'yes' === esc_attr( $settings->add_supply ) ) { ?>
 						<div class="uabb-how-to-supply">
 							<?php if ( isset( $settings->supply_title ) && ! empty( $settings->supply_title ) ) { ?>
-								<<?php echo esc_attr( $settings->supply_title_tag ); ?> class="uabb-how-to-supply-title"><?php echo $settings->supply_title; ?></<?php echo esc_attr( $settings->supply_title_tag ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+								<<?php echo esc_attr( $settings->supply_title_tag ); ?> class="uabb-how-to-supply-title"><?php echo esc_html( $settings->supply_title ); ?></<?php echo esc_attr( $settings->supply_title_tag ); ?>>
 							<?php } ?>
 							<?php
 							if ( isset( $settings->uabb_supply ) ) {
 								foreach ( $settings->uabb_supply as $key => $supply ) {
 									?>
 									<div class="uabb-supply uabb-supply-<?php echo esc_attr( $key + 1 ); ?>">
-										<span><?php echo $supply; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+										<span><?php echo esc_html( $supply ); ?></span>
 									</div>
 								<?php } ?>
 							<?php } ?>
@@ -235,14 +236,14 @@ if ( empty( $settings->uabb_tool[0] ) || 'no' === $settings->show_advanced || 'n
 						?>
 						<div class="uabb-how-to-tool">
 							<?php if ( isset( $settings->tool_title ) && ! empty( $settings->tool_title ) ) { ?>
-								<<?php echo esc_attr( $settings->tool_title_tag ); ?> class="uabb-how-to-tool-title"><?php echo $settings->tool_title; ?></<?php echo esc_attr( $settings->tool_title_tag ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+								<<?php echo esc_attr( $settings->tool_title_tag ); ?> class="uabb-how-to-tool-title"><?php echo esc_html( $settings->tool_title ); ?></<?php echo esc_attr( $settings->tool_title_tag ); ?>>
 							<?php } ?>
 							<?php
 							if ( isset( $settings->uabb_tool ) ) {
 								foreach ( $settings->uabb_tool as $key => $tool ) {
 									?>
 									<div class="uabb-tool uabb-tool-<?php echo esc_attr( $key + 1 ); ?>" >
-										<span ><?php echo $tool; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+										<span ><?php echo esc_html( $tool ); ?></span>
 									</div>
 								<?php } ?>
 							<?php } ?>
@@ -254,7 +255,7 @@ if ( empty( $settings->uabb_tool[0] ) || 'no' === $settings->show_advanced || 'n
 						<?php
 						if ( isset( $settings->step_section_title ) && ! empty( $settings->step_section_title ) ) {
 							?>
-							<<?php echo esc_attr( $settings->step_section_title_tag ); ?> class="uabb-how-to-step-section-title" ><?php echo $settings->step_section_title; ?></<?php echo esc_attr( $settings->step_section_title_tag ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+							<<?php echo esc_attr( $settings->step_section_title_tag ); ?> class="uabb-how-to-step-section-title" ><?php echo esc_html( $settings->step_section_title ); ?></<?php echo esc_attr( $settings->step_section_title_tag ); ?>>
 						<?php } ?>
 						<?php
 						foreach ( $settings->step_data as $key => $step ) {
@@ -267,26 +268,32 @@ if ( empty( $settings->uabb_tool[0] ) || 'no' === $settings->show_advanced || 'n
 								<div class="uabb-how-to-step-content">
 								<?php if ( isset( $step->step_title ) && ! empty( $step->step_title ) ) { ?>
 									<?php if ( isset( $step->step_link ) && ! empty( $step->step_link ) ) { ?>
-										<a href="<?php echo $step->step_link; ?>"<?php echo esc_attr( $target ); ?><?php echo esc_attr( $nofollow ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+										<a href="<?php echo esc_url( $step->step_link ); ?>"<?php echo esc_attr( $target ); ?><?php echo esc_attr( $nofollow ); ?>>
 									<?php } ?>
-										<div class="uabb-how-to-step-title" ><?php echo $step->step_title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+										<div class="uabb-how-to-step-title" ><?php echo esc_html( $step->step_title ); ?></div>
 									<?php if ( isset( $step->step_link ) && ! empty( $step->step_link ) ) { ?>
 										</a>
 									<?php } ?>
 
 									<?php if ( isset( $step->step_description ) && ! empty( $step->step_description ) ) { ?>
 										<div class="uabb-how-to-step-description" >
-											<?php echo wpautop( $wp_embed->autoembed( $step->step_description ) );  //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+											<?php 
+												$description = $wp_embed->autoembed( $step->step_description );
+												echo wp_kses_post( wpautop( $description ) );
+											?>
 										</div>
 									<?php } ?>
 
 								<?php } else { ?>
 									<?php if ( isset( $step->step_link ) && ! empty( $step->step_link ) ) { ?>
-										<a href="<?php echo $step->step_link; ?>"<?php echo esc_attr( $target ); ?><?php echo esc_attr( $nofollow ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+										<a href="<?php echo esc_url( $step->step_link ); ?>"<?php echo esc_attr( $target ); ?><?php echo esc_attr( $nofollow ); ?>>
 									<?php } ?>
 										<?php if ( isset( $step->step_description ) && ! empty( $step->step_description ) ) { ?>
 											<div class="uabb-how-to-step-description">
-												<?php echo wpautop( $wp_embed->autoembed( $step->step_description ) ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+												<?php 
+													$description = $wp_embed->autoembed( $step->step_description );
+													echo wp_kses_post( wpautop( $description ) );
+												?>
 											</div>
 										<?php } ?>
 

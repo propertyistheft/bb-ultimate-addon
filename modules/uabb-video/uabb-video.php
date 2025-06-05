@@ -590,7 +590,7 @@ class UABBVideo extends FLBuilderModule {
 		<div class="uabb-video uabb-aspect-ratio-<?php echo esc_attr( $this->settings->aspect_ratio ); ?>  uabb-subscribe-responsive-<?php echo esc_attr( $this->settings->subscribe_bar_responsive ); ?> uabb-video-sticky-<?php echo esc_attr( $this->settings->sticky_alignment ); ?>" <?php echo $schema ? ' itemscope itemtype="https://schema.org/VideoObject"' : ''; ?>>
 			<?php
 			if ( $schema ) {
-				echo $schema; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo $schema; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing is not preserving schema markup for valid structured data.
 			}
 			?>
 			<?php
@@ -609,7 +609,7 @@ class UABBVideo extends FLBuilderModule {
 					<div class="uabb-video__play" data-src="<?php echo esc_url( $src ); ?>">
 					<<?php echo esc_attr( $custom_tag ); ?> src="<?php echo wp_kses_post( $video_thumb ); ?>" alt="<?php echo ( 'yes' === $this->settings->show_image_overlay ) ? esc_attr( $alt ) : esc_attr( $this->settings->video_type ) . '-video-thumbnail'; ?>"></<?php echo esc_attr( $custom_tag ); ?>>
 						<div class="uabb-video__play-icon <?php echo esc_attr( ( 'icon' === $this->settings->play_source ) ? $this->settings->play_icon : '' ); ?> uabb-animation-<?php echo esc_attr( $this->settings->hover_animation ); ?>" tabindex="0">
-							<?php echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing this output is breaking the rendering ?>
 						</div>
 					</div>
 					<?php
@@ -625,7 +625,7 @@ class UABBVideo extends FLBuilderModule {
 					</div>
 					<?php } ?>
 					<?php if ( 'yes' === $this->settings->sticky_info_bar_enable && '' !== $this->settings->sticky_info_bar_text ) { ?>
-						<div class="uabb-video-sticky-infobar"><?php echo $this->settings->sticky_info_bar_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+						<div class="uabb-video-sticky-infobar"><?php echo wp_kses_post( $this->settings->sticky_info_bar_text ); ?></div>
 					<?php } ?>
 
 				</div>
@@ -642,7 +642,7 @@ class UABBVideo extends FLBuilderModule {
 			$subscriber_count = ( 'yes' === $this->settings->show_count ) ? 'default' : 'hidden';
 			?>
 			<div class="uabb-subscribe-bar">
-				<div class="uabb-subscribe-bar-prefix"><?php echo $youtube_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+				<div class="uabb-subscribe-bar-prefix"><?php echo wp_kses_post( $youtube_text ); ?></div>
 				<div class="uabb-subscribe-content">
 					<script src="https://apis.google.com/js/platform.js"></script> <!-- Need to be enqueued from someplace else --> <?php // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript ?>
 

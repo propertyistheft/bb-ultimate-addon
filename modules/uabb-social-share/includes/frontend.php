@@ -203,7 +203,7 @@ if ( count( $settings->social_icons ) > 0 ) {
 			if ( 'email' === $icon->social_share_type ) {
 				echo '<div class="uabb-social-share-link-wrap"><a class="uabb-social-share-link uabb-social-share-' . esc_attr( $icon_count ) . '" href="' . esc_url( $url ) . '" target="_self" >';
 			} elseif ( 'print' === $icon->social_share_type ) {
-				echo '<div class="uabb-social-share-link-wrap"><a class="uabb-social-share-link uabb-social-share-' . esc_attr( $icon_count ) . '" href="' . $url . '" onclick="window.print();">'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<div class="uabb-social-share-link-wrap"><a class="uabb-social-share-link uabb-social-share-' . esc_attr( $icon_count ) . '" href="' . esc_url( $url ) . '" onclick="window.print();">';
 			} else {
 				echo '<div class="uabb-social-share-link-wrap"><a class="uabb-social-share-link uabb-social-share-' . esc_attr( $icon_count ) . '" href="' . esc_url( $url ) . '" target="_blank" onclick="window.open(this.href,\'social-share\',\'left=20,top=20,width=500,height=500,toolbar=1,resizable=0\');return false;">';
 			}
@@ -251,7 +251,7 @@ if ( count( $settings->social_icons ) > 0 ) {
 			<div class="uabb-ss-grid-item uabb-ss-animation-<?php echo esc_attr( $settings->hover_animation ); ?> uabb-ss-button-<?php echo esc_attr( $icon->social_share_type ); ?>">
 				<div class="uabb-ss-grid-button">
 					<?php if ( 'print' === $icon->social_share_type ) { ?>
-						<a class= "uabb-ss-grid-button-link" href="<?php echo $url; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" onclick="window.print();">
+						<a class= "uabb-ss-grid-button-link" href="<?php echo esc_url( $url ); ?>" onclick="window.print();">
 					<?php } else { ?>
 					<a class= "uabb-ss-grid-button-link" href="<?php echo esc_url( $url ); ?>" target="_blank" onclick="window.open(this.href,'social-share','left=20,top=20,width=500,height=500,toolbar=1,resizable=0');return false;">
 					<?php } ?>
@@ -259,15 +259,15 @@ if ( count( $settings->social_icons ) > 0 ) {
 						<span class="uabb-ss-icon">
 							<?php if ( '' !== $icon->icon ) { ?>
 								<?php if ( 'photo' !== $icon->image_type ) { ?>
-									<i class="<?php echo $icon->icon; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" aria-hidden="true"></i>
+									<i class="<?php echo esc_attr( $icon->icon ); ?>" aria-hidden="true"></i>
 							<?php } else { ?>
-								<img src="<?php echo $icon->photo_src; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" alt="<?php echo $icon->photo; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>"></img>
+								<img src="<?php echo esc_url( $icon->photo_src ); ?>" alt="<?php echo esc_attr( $icon->photo ); ?>"></img>
 							<?php } ?>
 						<?php } else { ?>
 								<?php if ( 'photo' !== $icon->image_type ) { ?>
-								<i class="<?php echo $share_icon; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" aria-hidden="true"></i>
+								<i class="<?php echo esc_attr( $share_icon ); ?>" aria-hidden="true"></i>
 							<?php } else { ?>
-									<img src="<?php echo $icon->photo_src; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" alt="<?php echo $icon->photo; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>"></img>
+									<img src="<?php echo esc_url( $icon->photo_src ); ?>" alt="<?php echo esc_attr( $icon->photo ); ?>"></img>
 								<?php } ?>
 							<?php } ?>
 						</span>

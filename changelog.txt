@@ -1,3 +1,9 @@
+Version 1.36.8, Thursday, 5th June 2025
+- Improvement: Enhanced the codebase to strengthen security measures.
+- Improvement: Modal Popup - Improved handling of iframe src inside popup after closing the modal.
+- Fixed: Testimonials – Accessibility issues with unlabeled buttons and non-functional icons exposed to screen readers.
+- Fixed: Button Alignment issue in modules with Beaver Builder version 2.9
+
 Version 1.36.7, Tuesday, 6th May 2025
 - Fixed: Resolved PHP error with NPS library.
 - Fixed: Resolved the issue for function _load_textdomain_just_in_time was called incorrectly in WP 6.8.

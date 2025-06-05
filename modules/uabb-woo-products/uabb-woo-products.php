@@ -615,7 +615,7 @@ class UABBWooProductsModule extends FLBuilderModule {
 		// load content template.
 		include BB_ULTIMATE_ADDON_DIR . 'modules/uabb-woo-products/templates/quick-view-product.php';
 
-		echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing alters the output, breaking the quick view product rendering.
 
 		die();
 	}

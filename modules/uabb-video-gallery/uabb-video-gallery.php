@@ -709,7 +709,7 @@ class UABBVideoGallery extends FLBuilderModule {
 			?>
 			<div  class="uabb-video__gallery-item <?php echo ( isset( $tags_key ) ) ? esc_attr( $tags_key ) : ''; ?> ">
 				<div class="uabb-video__gallery-iframe" style="background-image:url('<?php echo esc_url( $url['url'] ); ?>');">
-					<?php echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Preserving HTML output to prevent breaking embedded content. ?>
 						<div class="uabb-video__content-wrap">
 							<div class="uabb-video__content">
 								<?php $this->get_caption( $item ); ?>
@@ -763,7 +763,7 @@ class UABBVideoGallery extends FLBuilderModule {
 			return '';
 		}
 		?>
-		<h4 class="uabb-video__caption"><?php echo $item->title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></h4>
+		<h4 class="uabb-video__caption"><?php echo wp_kses_post( $item->title ); ?></h4>
 		<?php
 	}
 	/**
@@ -782,7 +782,7 @@ class UABBVideoGallery extends FLBuilderModule {
 			return '';
 		}
 		?>
-		<span class="uabb-video__tags"><?php echo $item->tags; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+		<span class="uabb-video__tags"><?php echo wp_kses_post( $item->tags ); ?></span>
 		<?php
 	}
 	/**
@@ -838,17 +838,13 @@ class UABBVideoGallery extends FLBuilderModule {
 			<?php if ( 'yes' === $this->settings->show_filter_title ) { ?>
 				<div class="uabb-video-gallery-title-filters">
 					<div class="uabb-video-gallery-title">
-						<<?php echo esc_attr( $this->settings->filter_title_tag ); ?> class="uabb-video-gallery-title-text"><?php echo $this->settings->filters_heading_text; ?></<?php echo esc_attr( $this->settings->filter_title_tag ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+						<<?php echo esc_attr( $this->settings->filter_title_tag ); ?> class="uabb-video-gallery-title-text"><?php echo wp_kses_post( $this->settings->filters_heading_text ); ?></<?php echo esc_attr( $this->settings->filter_title_tag ); ?>>
 					</div>
 			<?php } ?>
-					<ul class="uabb-video__gallery-filters" data-default="
-					<?php
-					echo ( isset( $default ) ) ? $default : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					?>
-					">
+					<ul class="uabb-video__gallery-filters" data-default="<?php echo esc_attr( ( isset( $default ) ) ? $default : '' ); ?>">
 						<li class="uabb-video__gallery-filter uabb-filter__current" data-filter="*">
 						<?php
-						echo ( '' !== $this->settings->filters_all_text ) ? $this->settings->filters_all_text : __( 'All', 'uabb' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo wp_kses_post( '' !== $this->settings->filters_all_text ) ? wp_kses_post( $this->settings->filters_all_text ) : esc_html__( 'All', 'uabb' );
 						?>
 						</li>
 						<?php foreach ( $filters as $key => $value ) { ?>

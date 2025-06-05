@@ -16,13 +16,13 @@
 					<?php
 					if ( '' !== $settings->title_front ) {
 						?>
-					<<?php echo esc_attr( $settings->front_title_typography_tag_selection ); ?> class="uabb-face-text-title"><?php echo $settings->title_front; ?></<?php echo esc_attr( $settings->front_title_typography_tag_selection ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+					<<?php echo esc_attr( $settings->front_title_typography_tag_selection ); ?> class="uabb-face-text-title"><?php echo wp_kses_post( $settings->title_front ); ?></<?php echo esc_attr( $settings->front_title_typography_tag_selection ); ?>>
 						<?php
 					}
 					if ( '' !== $settings->desc_front ) {
 						?>
 					<div class="uabb-flip-box-section-content uabb-text-editor" >
-						<?php echo $settings->desc_front; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php echo wp_kses_post( $settings->desc_front ); ?>
 					</div>
 						<?php
 					}
@@ -34,13 +34,13 @@
 					<?php
 					if ( '' !== $settings->title_back ) {
 						?>
-					<<?php echo esc_attr( $settings->back_title_typography_tag_selection ); ?> class="uabb-back-text-title"><?php echo $settings->title_back; ?></<?php echo esc_attr( $settings->back_title_typography_tag_selection ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+					<<?php echo esc_attr( $settings->back_title_typography_tag_selection ); ?> class="uabb-back-text-title"><?php echo wp_kses_post( $settings->title_back ); ?></<?php echo esc_attr( $settings->back_title_typography_tag_selection ); ?>>
 						<?php
 					}
 					if ( '' !== $settings->desc_back ) {
 						?>
 					<div class="uabb-back-flip-box-section-content uabb-text-editor">
-						<?php echo $settings->desc_back; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php echo wp_kses_post( $settings->desc_back ); ?>
 					</div>
 						<?php
 					}

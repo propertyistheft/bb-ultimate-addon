@@ -25,7 +25,7 @@ if ( 'always' === $settings->creative_menu_mobile_breakpoint ) {
 		</div>
 	<?php } else { ?>
 		<?php
-		echo $module->get_responsive_media( $settings, $module ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $module->get_responsive_media( $settings, $module ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing output breaks the media rendering.
 	}
 } else {
 	?>
@@ -44,5 +44,5 @@ if ( 'always' === $settings->creative_menu_mobile_breakpoint ) {
 	</div>
 
 	<?php
-	echo $module->get_responsive_media( $settings, $module ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo $module->get_responsive_media( $settings, $module ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing output breaks media rendering.
 }

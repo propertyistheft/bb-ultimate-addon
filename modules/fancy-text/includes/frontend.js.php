@@ -45,14 +45,14 @@ jQuery( document ).ready(function($) {
 		id:                 '<?php echo esc_attr( $id ); ?>',
 		viewport_position:  90,
 		animation:          '<?php echo esc_attr( $settings->effect_type ); ?>',
-		strings:            <?php echo $strings; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>,
-		typeSpeed:          <?php echo $type_speed; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>,
-		startDelay:         <?php echo $start_delay; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>,
-		backSpeed:          <?php echo $back_speed; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>,
-		backDelay:          <?php echo $back_delay; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>,
-		loop:               <?php echo $loop; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>,
-		showCursor:         <?php echo $show_cursor; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>,
-		cursorChar:         '<?php echo $cursor_char; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>'
+		strings:            <?php echo $strings; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>,
+		typeSpeed:          <?php echo $type_speed; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>,
+		startDelay:         <?php echo $start_delay; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>,
+		backSpeed:          <?php echo $back_speed; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>,
+		backDelay:          <?php echo $back_delay; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>,
+		loop:               <?php echo $loop; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>,
+		showCursor:         <?php echo $show_cursor; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>,
+		cursorChar:         '<?php echo $cursor_char; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>'
 	});
 });
 
@@ -74,12 +74,12 @@ jQuery( document ).ready(function($) {
 		id:                 '<?php echo esc_attr( $id ); ?>',
 		viewport_position:  90,
 		animation:          '<?php echo esc_attr( $settings->effect_type ); ?>',
-		speed:              <?php echo $speed; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>,
-		pause:              <?php echo $pause; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>,
-		mousePause:         Boolean( '<?php echo $mouse_pause; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>' ),
-		suffix:             "<?php echo addslashes( $settings->suffix ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>",
-		prefix:             "<?php echo addslashes( $settings->prefix ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>",
-		alignment:          '<?php echo $settings->alignment; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>',
+		speed:              <?php echo $speed; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>,
+		pause:              <?php echo $pause; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped  --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>,
+		mousePause:         Boolean( '<?php echo $mouse_pause; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped  --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>' ),
+		suffix:             "<?php echo addslashes( $settings->suffix ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>",
+		prefix:             "<?php echo addslashes( $settings->prefix ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>",
+		alignment:          '<?php echo $settings->alignment; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>',
 	});
 
 	$( window ).resize(function() {
@@ -100,11 +100,11 @@ jQuery( document ).ready(function($) {
 	new UABBFancyText({
 		id:                 '<?php echo esc_attr( $id ); ?>',
 		animation:          '<?php echo esc_attr( $settings->effect_type ); ?>',
-		animation_speed:     <?php echo $animation_speed; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>,
-		duration_reveal:     <?php echo $duration_reveal; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>,
-		animation_revel:     <?php echo $animation_revel; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>,
-		letter_delay:     <?php echo $letter_delay; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>,
-		fancy_text: '<?php echo str_replace( "'", "\'", $fancy_text ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>',
+		animation_speed:     <?php echo $animation_speed; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>,
+		duration_reveal:     <?php echo $duration_reveal; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>,
+		animation_revel:     <?php echo $animation_revel; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>,
+		letter_delay:     <?php echo $letter_delay; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>,
+		fancy_text: '<?php echo str_replace( "'", "\'", $fancy_text ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --- Changing sanitization affecting Fancy Text behavior in the page editor. ?>',
 	});
 });
 <?php }

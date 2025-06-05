@@ -99,14 +99,14 @@ if ( 'show' === $settings->msg_toggle && '50' === $settings->msg_width ) {
 		<?php if ( 'show' === $settings->name_toggle ) : ?>
 		<div class="uabb-input-group uabb-name <?php echo esc_attr( $name_class ); ?>">
 			<?php if ( 'style1' === $settings->form_style && 'yes' === $settings->enable_label ) { ?>
-			<label for="uabb-name"><?php echo $settings->name_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+			<label for="uabb-name"><?php echo wp_kses_post( $settings->name_label ); ?></label>
 			<?php } ?>
 			<div class="uabb-form-outter">
 				<input aria-label="text" type="text" name="uabb-name" value=""
 				<?php
 				if ( 'yes' === $settings->enable_placeholder ) {
 					?>
-					placeholder="<?php echo $settings->name_placeholder; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" <?php } ?>/>
+					placeholder="<?php echo esc_attr( $settings->name_placeholder ); ?>" <?php } ?>/>
 				<div class="uabb-form-error-message uabb-form-error-message-required"></div>
 			</div>
 		</div>
@@ -115,14 +115,14 @@ if ( 'show' === $settings->msg_toggle && '50' === $settings->msg_width ) {
 		<?php if ( 'show' === $settings->email_toggle ) : ?>
 		<div class="uabb-input-group uabb-email <?php echo esc_attr( $email_class ); ?>">
 			<?php if ( 'style1' === $settings->form_style && 'yes' === $settings->enable_label ) { ?>
-			<label for="uabb-email"><?php echo $settings->email_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+			<label for="uabb-email"><?php echo wp_kses_post( $settings->email_label ); ?></label>
 			<?php } ?>
 			<div class="uabb-form-outter">
 				<input aria-label="email" type="email" name="uabb-email" value=""
 				<?php
 				if ( 'yes' === $settings->enable_placeholder ) {
 					?>
-					placeholder="<?php echo $settings->email_placeholder; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>"<?php } ?>/>
+					placeholder="<?php echo esc_attr( $settings->email_placeholder ); ?>"<?php } ?>/>
 				<div class="uabb-form-error-message uabb-form-error-message-required"><span><?php esc_html_e( 'Invalid Email', 'uabb' ); ?></span></div>
 			</div>
 		</div>
@@ -131,14 +131,14 @@ if ( 'show' === $settings->msg_toggle && '50' === $settings->msg_width ) {
 		<?php if ( 'show' === $settings->subject_toggle ) : ?>
 		<div class="uabb-input-group uabb-subject <?php echo esc_attr( $subject_class ); ?>">
 			<?php if ( 'style1' === $settings->form_style && 'yes' === $settings->enable_label ) { ?>
-			<label for="uabb-subject"><?php echo $settings->subject_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+			<label for="uabb-subject"><?php echo wp_kses_post( $settings->subject_label ); ?></label>
 			<?php } ?>
 			<div class="uabb-form-outter">
 				<input aria-label="text" type="text" name="uabb-subject" value=""
 				<?php
 				if ( 'yes' === $settings->enable_placeholder ) {
 					?>
-					placeholder="<?php echo $settings->subject_placeholder; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>"<?php } ?>/>
+					placeholder="<?php echo esc_attr( $settings->subject_placeholder ); ?>"<?php } ?>/>
 				<div class="uabb-form-error-message uabb-form-error-message-required"></div>
 			</div>
 		</div>
@@ -148,14 +148,14 @@ if ( 'show' === $settings->msg_toggle && '50' === $settings->msg_width ) {
 		<?php if ( 'show' === $settings->phone_toggle ) : ?>
 		<div class="uabb-input-group uabb-phone <?php echo esc_attr( $phone_class ); ?>">
 			<?php if ( 'style1' === $settings->form_style && 'yes' === $settings->enable_label ) { ?>
-			<label for="uabb-phone"><?php echo $settings->phone_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+			<label for="uabb-phone"><?php echo wp_kses_post( $settings->phone_label ); ?></label>
 			<?php } ?>
 			<div class="uabb-form-outter">
 				<input aria-label="tel" type="tel" name="uabb-phone" value=""
 				<?php
 				if ( 'yes' === $settings->enable_placeholder ) {
 					?>
-					placeholder="<?php echo $settings->phone_placeholder; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>"<?php } ?> />
+					placeholder="<?php echo esc_attr( $settings->phone_placeholder ); ?>"<?php } ?> />
 				<div class="uabb-form-error-message uabb-form-error-message-required"><span><?php esc_html_e( 'Invalid Number', 'uabb' ); ?></span></div>
 			</div>
 		</div>
@@ -164,14 +164,14 @@ if ( 'show' === $settings->msg_toggle && '50' === $settings->msg_width ) {
 		<?php if ( 'show' === $settings->msg_toggle ) : ?>
 		<div class="uabb-input-group uabb-message <?php echo esc_attr( $msg_class ); ?>">
 			<?php if ( 'style1' === $settings->form_style && 'yes' === $settings->enable_label ) { ?>
-			<label for="uabb-message"><?php echo $settings->msg_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+			<label for="uabb-message"><?php echo wp_kses_post( $settings->msg_label ); ?></label>
 			<?php } ?>
 			<div class="uabb-form-outter-textarea">
 				<textarea aria-label="uabb-message" name="uabb-message"
 				<?php
 				if ( 'yes' === $settings->enable_placeholder ) {
 					?>
-					placeholder="<?php echo $settings->msg_placeholder; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>"<?php } ?>></textarea>
+					placeholder="<?php echo esc_attr( $settings->msg_placeholder ); ?>"<?php } ?>></textarea>
 				<div class="uabb-form-error-message uabb-form-error-message-required"></div>
 			</div>
 		</div>
@@ -180,13 +180,13 @@ if ( 'show' === $settings->msg_toggle && '50' === $settings->msg_width ) {
 		<?php if ( 'show' === $settings->terms_checkbox ) : ?>
 			<div class="uabb-input-group uabb-terms-checkbox">
 				<?php if ( isset( $settings->terms_text ) && ! empty( $settings->terms_text ) ) : ?>
-					<div class="uabb-terms-text"><?php echo $settings->terms_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+					<div class="uabb-terms-text"><?php echo wp_kses_post( $settings->terms_text ); ?></div>
 				<?php endif; ?>
 				<div class="uabb-form-outter">
 					<label class="uabb-terms-label" for="uabb-terms-checkbox-<?php echo esc_attr( $id ); ?>">
 						<input aria-label="checkbox" type="checkbox" class="checkbox-inline uabb-terms-checkbox-cf" id="uabb-terms-checkbox-<?php echo esc_attr( $id ); ?>" name="uabb-terms-checkbox" value="1" />
 						<span class="checkbox-label">
-							<?php echo $settings->terms_checkbox_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php echo wp_kses_post( $settings->terms_checkbox_text ); ?>
 						</span>
 					</label>
 				</div>
@@ -211,30 +211,30 @@ if ( 'show' === $settings->msg_toggle && '50' === $settings->msg_width ) {
 		</div>
 
 		<div class="uabb-submit-btn">
-			<div class="uabb-contact-form-button" data-wait-text="<?php echo $settings->btn_processing_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
+			<div class="uabb-contact-form-button" data-wait-text="<?php echo esc_attr( $settings->btn_processing_text ); ?>">
 				<button type="submit" class="uabb-contact-form-submit">
 				<?php
 				if ( isset( $settings->btn_icon ) && isset( $settings->btn_icon_position ) ) {
 
 					echo ( '' !== $settings->btn_icon && 'before' === $settings->btn_icon_position ) ? '<i class="' . esc_attr( $settings->btn_icon ) . ' uabb-contact-form-submit-button-icon "></i>' : ''; }
 				?>
-				<span class="uabb-contact-form-button-text"><?php echo $settings->btn_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+				<span class="uabb-contact-form-button-text"><?php echo wp_kses_post( $settings->btn_text ); ?></span>
 				<?php
 				if ( isset( $settings->btn_icon ) && isset( $settings->btn_icon_position ) ) {
 					echo ( '' !== $settings->btn_icon && 'after' === $settings->btn_icon_position ) ? '<i class="' . esc_attr( $settings->btn_icon ) . ' uabb-contact-form-submit-button-icon"></i>' : ''; }
 				?>
-	</button>
+				</button>
 			</div>
 		</div>
 		<?php if ( 'redirect' === $settings->success_action ) : ?>
-			<input aria-label="text" type="text" value="<?php echo $settings->success_url; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" style="display: none;" class="uabb-success-url">
+			<input aria-label="text" type="text" value="<?php echo esc_url( $settings->success_url ); ?>" style="display: none;" class="uabb-success-url">
 		<?php elseif ( 'none' === $settings->success_action ) : ?>
-			<span class="uabb-success-none" style="display:none;"><?php echo $settings->email_sccess; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+			<span class="uabb-success-none" style="display:none;"><?php echo esc_html( $settings->email_sccess ); ?></span>
 		<?php endif; ?>
-		<span class="uabb-send-error" style="display:none;"><?php echo $settings->email_error; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+		<span class="uabb-send-error" style="display:none;"><?php echo esc_html( $settings->email_error ); ?></span>
 
 	</form>
 </div>
 <?php if ( 'show_message' === $settings->success_action ) : ?>
-	<span class="uabb-success-msg uabb-text-editor" style="display:none;"><?php echo $settings->success_message; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+	<span class="uabb-success-msg uabb-text-editor" style="display:none;"><?php echo wp_kses_post( $settings->success_message ); ?></span>
 <?php endif; ?>

@@ -69,7 +69,7 @@ class CreativeLink extends FLBuilderModule {
 			case 'style15':
 			case 'style16':
 			case 'style20':
-				echo trim( $title, '' ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo esc_html( trim( $title, '' ) );
 				break;
 
 			case 'style2':
@@ -77,12 +77,12 @@ class CreativeLink extends FLBuilderModule {
 			case 'style17':
 			case 'style18':
 			case 'style19':
-				echo '<span data-hover="' . trim( $title, '' ) . '">' . trim( $title, '' ) . '</span>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<span data-hover="' . esc_attr( trim( $title, '' ) ) . '">' . esc_html( trim( $title, '' ) ) . '</span>';
 				break;
 
 			case 'style9':
 			case 'style11':
-				echo '<span>' . trim( $title, '' ) . '</span>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<span>' . esc_html( trim( $title, '' ) ) . '</span>';
 				break;
 
 		}

@@ -19,7 +19,7 @@ if ( 'yes' === $settings->scroll_top ) {
 	<div class="uabb-toc-container">
 	<?php $module->render_separator( 'top' ); ?>
 	<div class ="uabb-heading-block">
-		<span class="uabb-toc-heading"><?php echo $settings->heading_title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+		<span class="uabb-toc-heading"><?php echo esc_html( wp_strip_all_tags( $settings->heading_title ) ); ?></span>
 	<?php if ( 'yes' === $settings->show_button ) { ?>
 	<div id="uabb-toc-toggle" class="uabb-toggle-toc" >
 		<span class="uabb-icon">

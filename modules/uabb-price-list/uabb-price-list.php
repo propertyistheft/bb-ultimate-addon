@@ -370,18 +370,18 @@ class UABBPriceList extends FLBuilderModule {
 								<img src=" <?php echo esc_url( $item->photo_src ); ?>" alt="<?php echo esc_attr( $alt ); ?>">
 							<?php } ?>
 							<?php if ( 'url' === $item->image_type && isset( $item->photo ) && ! empty( $item->photo_url ) ) { ?>
-								<img src=" <?php echo $item->photo_url; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
+								<img src=" <?php echo esc_url( $item->photo_url ); ?>">
 							<?php } ?>
 						</div>
 							<?php } ?>
 						<div class="uabb-price-list-text">
 							<div class="uabb-price-list-header">
-								<?php echo $this->render_item_header( $item ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<?php echo $this->render_item_header( $item ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If not ignored then we are facing PHP Deprecated error ?>
 									<span>
-										<?php echo $item->price_list_item_title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+										<?php echo wp_kses_post( $item->price_list_item_title ); ?>
 									</span>
 								<?php
-								echo $this->render_item_footer( $item ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								echo $this->render_item_footer( $item ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If not ignored then we are facing PHP Deprecated error
 								if ( 'top' !== $this->settings->image_position && 'below' !== $this->settings->price_position ) {
 									?>
 									<span class="uabb-price-list-separator"></span>
@@ -394,7 +394,7 @@ class UABBPriceList extends FLBuilderModule {
 							</div>
 							<?php if ( '' !== $item->price_list_item_description ) { ?>
 								<div class="uabb-price-list-description" >
-								<?php echo $item->price_list_item_description; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+									<?php echo $item->price_list_item_description; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If not ignored then we are facing PHP Deprecated error ?>
 								</div>
 							<?php } ?>
 							<?php
@@ -420,7 +420,7 @@ class UABBPriceList extends FLBuilderModule {
 		if ( '' !== $item->price_list_item_url ) {
 			?>
 
-			<a href ="<?php echo $item->price_list_item_url; ?>" target="<?php echo esc_attr( $item->price_list_item_url_target ); ?>" <?php BB_Ultimate_Addon_Helper::get_link_rel( $item->price_list_item_url_target, $item->price_list_item_url_nofollow, 1 ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="uabb-price-list-title">
+			<a href ="<?php echo esc_url( $item->price_list_item_url ); ?>" target="<?php echo esc_attr( $item->price_list_item_url_target ); ?>" <?php BB_Ultimate_Addon_Helper::get_link_rel( $item->price_list_item_url_target, $item->price_list_item_url_nofollow, 1 ); ?> class="uabb-price-list-title">
 
 		<?php } else { ?>
 			<div class="uabb-price-list-title">
@@ -461,9 +461,9 @@ class UABBPriceList extends FLBuilderModule {
 		}
 		?>
 		<span class="uabb-price-wrapper  <?php echo esc_attr( $price_pos ); ?>">
-			<span class="uabb-price-list-price <?php echo esc_attr( $price_item_cls ); ?>"><?php echo $original_price; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+			<span class="uabb-price-list-price <?php echo esc_attr( $price_item_cls ); ?>"><?php echo wp_kses_post( $original_price ); ?></span>
 			<?php if ( 'yes' === $item->discount_offer ) { ?>
-				<span class="uabb-price-list-price"><?php echo $item->price; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+				<span class="uabb-price-list-price"><?php echo wp_kses_post( $item->price ); ?></span>
 			<?php } ?>
 		</span>
 		<?php

@@ -510,20 +510,20 @@ class UABBInfoList extends FLBuilderModule {
 
 		if ( ! empty( $item->list_item_link ) && 'complete' === $item->list_item_link && ! empty( $item->list_item_url ) ) {
 
-			echo '<a href="' . $item->list_item_url . '" class="uabb-info-list-link" target="' . esc_attr( $target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . $item->list_item_url . '">'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<a href="' . esc_url( $item->list_item_url ) . '" class="uabb-info-list-link" target="' . esc_attr( $target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . esc_attr( $item->list_item_url ) . '">';
 		}
 		echo '<div class="uabb-info-list-content-wrapper fl-clearfix uabb-info-list-' . esc_attr( $this->settings->icon_position ) . '">';
 
 		if ( isset( $item->image_type ) && 'none' !== $item->image_type ) {
 			if ( ! empty( $item->list_item_link ) && 'icon' === $item->list_item_link ) {
-				echo '<a href="' . $item->list_item_url . '" class="uabb-info-list-link" target="' . esc_attr( $target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . $item->list_item_url . '">'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<a href="' . esc_url( $item->list_item_url ) . '" class="uabb-info-list-link" target="' . esc_attr( $target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . esc_attr( $item->list_item_url ) . '">';
 			}
 			echo '<div class="uabb-info-list-icon info-list-icon-dynamic' . esc_attr( $list_item_counter ) . '">';
 
 			$this->render_image( $item, $this->settings );
 
 			if ( ! empty( $item->image_type ) && 'custom_char' === $item->image_type ) {
-				echo '<div class="custom-character' . esc_attr( $list_item_counter ) . '">' . $item->custom_text . '</div>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<div class="custom-character' . esc_attr( $list_item_counter ) . '">' . wp_kses_post( $item->custom_text ) . '</div>';
 			}
 			echo '</div>';
 			if ( ! empty( $item->list_item_link ) && 'icon' === $item->list_item_link ) {
@@ -536,12 +536,12 @@ class UABBInfoList extends FLBuilderModule {
 		echo '<' . esc_attr( $this->settings->heading_tag_selection ) . ' class="uabb-info-list-title">';
 		if ( ! empty( $item->list_item_link ) && 'list-title' === $item->list_item_link && ! empty( $item->list_item_url ) ) {
 
-			echo '<a href="' . $item->list_item_url . '" target="' . esc_attr( $target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . $item->list_item_url . '">'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<a href="' . esc_url( $item->list_item_url ) . '" target="' . esc_attr( $target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' aria-label="' . esc_attr__( 'Go to', 'uabb' ) . ' ' . esc_attr( $item->list_item_url ) . '">';
 
 		}
 		if ( isset( $item->list_item_title ) ) {
 
-			echo $item->list_item_title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo wp_kses_post( $item->list_item_title );
 		}
 		if ( ! empty( $item->list_item_link ) && 'list-title' === $item->list_item_link && ! empty( $item->list_item_url ) ) {
 
@@ -553,9 +553,9 @@ class UABBInfoList extends FLBuilderModule {
 		if ( isset( $item->list_item_description ) && '' !== $item->list_item_description ) {
 			echo '<div class="uabb-info-list-description uabb-text-editor info-list-description-dynamic' . esc_attr( $list_item_counter ) . '">';
 			if ( strpos( $item->list_item_description, '</p>' ) > 0 ) {
-				echo $item->list_item_description; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo wp_kses_post( $item->list_item_description );
 			} else {
-				echo '<p>' . $item->list_item_description . '</p>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<p>' . wp_kses_post( $item->list_item_description ) . '</p>';
 			}
 
 			echo '</div>';

@@ -7,5 +7,5 @@
 
 ?>
 <div class="uabb-align-price-list-<?php echo esc_attr( $settings->overall_alignment ); ?> uabb-pricelist-stack-<?php echo esc_attr( $settings->enable_stack ); ?>">
-	<?php echo $module->render(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+	<?php echo $module->render(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If not ignored then we are facing PHP Deprecated error ?>
 </div>

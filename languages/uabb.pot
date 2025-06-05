@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Beaver Builder package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Beaver Builder 1.36.7\n"
+"Project-Id-Version: Ultimate Addons for Beaver Builder 1.36.8\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/bb-ultimate-addon\n"
-"POT-Creation-Date: 2025-05-05 09:40:46+00:00\n"
+"POT-Creation-Date: 2025-06-03 06:58:06+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -158,44 +158,47 @@ msgstr ""
 msgid "20"
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:228
+#: admin/bsf-analytics/class-bsf-analytics.php:238
 #. translators: %s product name
 msgid ""
-"Want to help make %1s even more awesome? Allow us to collect non-sensitive "
-"diagnostic data and usage information. "
+"Help us improve %1$s and our other products!<br><br>With your permission, "
+"we'd like to collect <strong>non-sensitive information</strong> from your "
+"website — like your PHP version and which features you use — so we can fix "
+"bugs faster, make smarter decisions, and build features that actually "
+"matter to you. <em>No personal info. Ever.</em>"
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:231
+#: admin/bsf-analytics/class-bsf-analytics.php:244
 msgid "This will be applicable for all sites from the network."
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:255
+#: admin/bsf-analytics/class-bsf-analytics.php:268
 #. translators: %s usage doc link
 msgid " Know More."
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:265
+#: admin/bsf-analytics/class-bsf-analytics.php:278
 msgid "Yes! Allow it"
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:276
+#: admin/bsf-analytics/class-bsf-analytics.php:289
 msgid "No Thanks"
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:387
+#: admin/bsf-analytics/class-bsf-analytics.php:414
 msgid "Usage Tracking"
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:431
+#: admin/bsf-analytics/class-bsf-analytics.php:458
 #. translators: %s Product title
 msgid "Allow %s products to track non-sensitive usage tracking data."
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:434
+#: admin/bsf-analytics/class-bsf-analytics.php:461
 msgid " This will be applicable for all sites from the network."
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:439
+#: admin/bsf-analytics/class-bsf-analytics.php:466
 msgid "Learn More."
 msgstr ""
 
@@ -518,7 +521,7 @@ msgid "Your license is activated!"
 msgstr ""
 
 #: admin/bsf-core/class-bsf-license-manager.php:817
-#: modules/modal-popup/includes/frontend.php:14
+#: modules/modal-popup/includes/frontend.php:15
 msgid "Close"
 msgstr ""
 
@@ -677,33 +680,33 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
-#: bb-ultimate-addon.php:60
+#: bb-ultimate-addon.php:61
 msgid ""
 "Unfortunately, plugin could not be activated as the memory allocated by "
 "your host has almost exhausted. UABB plugin recommends that your site "
 "should have 15M PHP memory remaining. "
 msgstr ""
 
-#: bb-ultimate-addon.php:61
+#: bb-ultimate-addon.php:62
 msgid "Please check "
 msgstr ""
 
-#: bb-ultimate-addon.php:61 includes/admin-settings-general.php:69
+#: bb-ultimate-addon.php:62 includes/admin-settings-general.php:69
 #: includes/admin-settings-general.php:109
 #: includes/admin-settings-general.php:127
 #: includes/admin-settings-general.php:153
 msgid "this article"
 msgstr ""
 
-#: bb-ultimate-addon.php:62
+#: bb-ultimate-addon.php:63
 msgid " for solution or contact "
 msgstr ""
 
-#: bb-ultimate-addon.php:62
+#: bb-ultimate-addon.php:63
 msgid " support"
 msgstr ""
 
-#: bb-ultimate-addon.php:63
+#: bb-ultimate-addon.php:64
 msgid "Return to Plugins Page"
 msgstr ""
 
@@ -1009,7 +1012,7 @@ msgstr ""
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:94
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:94
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:504
-#: modules/uabb-timeline/uabb-timeline.php:1104
+#: modules/uabb-timeline/uabb-timeline.php:1102
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:558
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:630
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:691
@@ -2024,15 +2027,15 @@ msgstr ""
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:180
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:195
 #: modules/uabb-timeline/includes/loop-settings.php:217
-#: modules/uabb-timeline/uabb-timeline.php:909
-#: modules/uabb-timeline/uabb-timeline.php:932
-#: modules/uabb-timeline/uabb-timeline.php:942
-#: modules/uabb-timeline/uabb-timeline.php:1030
-#: modules/uabb-timeline/uabb-timeline.php:1055
-#: modules/uabb-timeline/uabb-timeline.php:1074
-#: modules/uabb-timeline/uabb-timeline.php:1083
-#: modules/uabb-timeline/uabb-timeline.php:1230
-#: modules/uabb-timeline/uabb-timeline.php:1716
+#: modules/uabb-timeline/uabb-timeline.php:907
+#: modules/uabb-timeline/uabb-timeline.php:930
+#: modules/uabb-timeline/uabb-timeline.php:940
+#: modules/uabb-timeline/uabb-timeline.php:1028
+#: modules/uabb-timeline/uabb-timeline.php:1053
+#: modules/uabb-timeline/uabb-timeline.php:1072
+#: modules/uabb-timeline/uabb-timeline.php:1081
+#: modules/uabb-timeline/uabb-timeline.php:1228
+#: modules/uabb-timeline/uabb-timeline.php:1714
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:139
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:177
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:186
@@ -2598,15 +2601,15 @@ msgstr ""
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:181
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:196
 #: modules/uabb-timeline/includes/loop-settings.php:218
-#: modules/uabb-timeline/uabb-timeline.php:910
-#: modules/uabb-timeline/uabb-timeline.php:933
-#: modules/uabb-timeline/uabb-timeline.php:943
-#: modules/uabb-timeline/uabb-timeline.php:1031
-#: modules/uabb-timeline/uabb-timeline.php:1056
-#: modules/uabb-timeline/uabb-timeline.php:1075
-#: modules/uabb-timeline/uabb-timeline.php:1084
-#: modules/uabb-timeline/uabb-timeline.php:1231
-#: modules/uabb-timeline/uabb-timeline.php:1717
+#: modules/uabb-timeline/uabb-timeline.php:908
+#: modules/uabb-timeline/uabb-timeline.php:931
+#: modules/uabb-timeline/uabb-timeline.php:941
+#: modules/uabb-timeline/uabb-timeline.php:1029
+#: modules/uabb-timeline/uabb-timeline.php:1054
+#: modules/uabb-timeline/uabb-timeline.php:1073
+#: modules/uabb-timeline/uabb-timeline.php:1082
+#: modules/uabb-timeline/uabb-timeline.php:1229
+#: modules/uabb-timeline/uabb-timeline.php:1715
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:140
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:178
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:187
@@ -2744,7 +2747,7 @@ msgstr ""
 #: modules/uabb-price-list/uabb-price-list-bb-less-than-2-2-compatibility.php:104
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:121
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:121
-#: modules/uabb-timeline/uabb-timeline.php:1246
+#: modules/uabb-timeline/uabb-timeline.php:1244
 msgid "Bottom"
 msgstr ""
 
@@ -2849,7 +2852,7 @@ msgstr ""
 #: modules/uabb-search/uabb-search.php:742
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:304
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:280
-#: modules/uabb-timeline/uabb-timeline.php:1400
+#: modules/uabb-timeline/uabb-timeline.php:1398
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:489
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:182
 #: modules/uabb-woo-mini-cart/uabb-woo-mini-cart.php:517
@@ -3077,7 +3080,7 @@ msgstr ""
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:699
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:781
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:863
-#: modules/uabb-timeline/uabb-timeline.php:777
+#: modules/uabb-timeline/uabb-timeline.php:775
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:464
 #: modules/uabb-video/uabb-video-bb-less-than-2-2-compatibility.php:359
 #: modules/uabb-video/uabb-video-bb-less-than-2-2-compatibility.php:730
@@ -3189,8 +3192,8 @@ msgstr ""
 #: modules/uabb-search/uabb-search.php:824
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:412
 #: modules/uabb-timeline/includes/loop-settings.php:109
-#: modules/uabb-timeline/uabb-timeline.php:798
-#: modules/uabb-timeline/uabb-timeline.php:1125
+#: modules/uabb-timeline/uabb-timeline.php:796
+#: modules/uabb-timeline/uabb-timeline.php:1123
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:170
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:162
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:443
@@ -3272,7 +3275,7 @@ msgstr ""
 #: modules/blog-posts/includes/loop-settings.php:113
 #: modules/blog-posts/includes/loop-settings.php:293
 #: modules/blog-posts/includes/loop-settings.php:294
-#: modules/photo-gallery/photo-gallery.php:565
+#: modules/photo-gallery/photo-gallery.php:564
 #: modules/uabb-business-reviews/uabb-business-reviews-bb-less-than-2-2-compatibility.php:27
 #: modules/uabb-table/includes/frontend.php:29
 #: modules/uabb-table/uabb-table-bb-2-2-compatibility.php:209
@@ -3284,7 +3287,7 @@ msgstr ""
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:161
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:152
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:153
-#: modules/uabb-video-gallery/uabb-video-gallery.php:851
+#: modules/uabb-video-gallery/uabb-video-gallery.php:847
 msgid "All"
 msgstr ""
 
@@ -3305,11 +3308,11 @@ msgstr ""
 msgid "%s"
 msgstr ""
 
-#: classes/class-uabb-init.php:480
+#: classes/class-uabb-init.php:483
 msgid "plugin requires"
 msgstr ""
 
-#: classes/class-uabb-init.php:480
+#: classes/class-uabb-init.php:483
 msgid " plugin installed & activated."
 msgstr ""
 
@@ -3360,9 +3363,9 @@ msgstr ""
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:17
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:21
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:549
-#: modules/uabb-timeline/uabb-timeline.php:1561
-#: modules/uabb-timeline/uabb-timeline.php:1682
-#: modules/uabb-timeline/uabb-timeline.php:1783
+#: modules/uabb-timeline/uabb-timeline.php:1559
+#: modules/uabb-timeline/uabb-timeline.php:1680
+#: modules/uabb-timeline/uabb-timeline.php:1781
 msgid "Heading"
 msgstr ""
 
@@ -3421,9 +3424,9 @@ msgstr ""
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:51
 #: modules/uabb-price-list/uabb-price-list-bb-2-2-compatibility.php:453
 #: modules/uabb-price-list/uabb-price-list-bb-less-than-2-2-compatibility.php:525
-#: modules/uabb-timeline/uabb-timeline.php:1588
-#: modules/uabb-timeline/uabb-timeline.php:1688
-#: modules/uabb-timeline/uabb-timeline.php:1806
+#: modules/uabb-timeline/uabb-timeline.php:1586
+#: modules/uabb-timeline/uabb-timeline.php:1686
+#: modules/uabb-timeline/uabb-timeline.php:1804
 #: modules/uabb-woo-categories/includes/loop-settings.php:139
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:438
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:520
@@ -3523,7 +3526,7 @@ msgstr ""
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:1053
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:1236
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:1240
-#: modules/uabb-timeline/uabb-timeline.php:1694
+#: modules/uabb-timeline/uabb-timeline.php:1692
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:52
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:59
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:66
@@ -4250,7 +4253,7 @@ msgstr ""
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:309
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:290
 #: modules/uabb-search/uabb-search.php:912
-#: modules/uabb-timeline/uabb-timeline.php:1140
+#: modules/uabb-timeline/uabb-timeline.php:1138
 msgid "No Results Message"
 msgstr ""
 
@@ -4289,7 +4292,7 @@ msgstr ""
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:18
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:27
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:17
-#: modules/uabb-timeline/uabb-timeline.php:768
+#: modules/uabb-timeline/uabb-timeline.php:766
 msgid "Presets"
 msgstr ""
 
@@ -4518,8 +4521,8 @@ msgstr ""
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:319
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:222
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:295
-#: modules/uabb-timeline/uabb-timeline.php:1162
-#: modules/uabb-timeline/uabb-timeline.php:1706
+#: modules/uabb-timeline/uabb-timeline.php:1160
+#: modules/uabb-timeline/uabb-timeline.php:1704
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:371
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:308
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:293
@@ -4706,7 +4709,7 @@ msgstr ""
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:1097
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:15
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:14
-#: modules/uabb-timeline/uabb-timeline.php:765
+#: modules/uabb-timeline/uabb-timeline.php:763
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:15
 #: modules/uabb-video/uabb-video-bb-less-than-2-2-compatibility.php:14
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:70
@@ -4980,8 +4983,8 @@ msgstr ""
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:247
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:229
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:474
-#: modules/uabb-timeline/uabb-timeline.php:1380
-#: modules/uabb-timeline/uabb-timeline.php:1744
+#: modules/uabb-timeline/uabb-timeline.php:1378
+#: modules/uabb-timeline/uabb-timeline.php:1742
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:506
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:669
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:723
@@ -5132,7 +5135,7 @@ msgstr ""
 #: modules/uabb-search/uabb-search.php:718
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:646
 #: modules/uabb-social-share/uabb-social-share-bb-less-than-2-2-compatibility.php:276
-#: modules/uabb-timeline/uabb-timeline.php:1394
+#: modules/uabb-timeline/uabb-timeline.php:1392
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:287
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-less-than-2-2-compatibility.php:236
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:327
@@ -5984,7 +5987,7 @@ msgstr ""
 #: modules/uabb-gravity-form/uabb-gravity-form-bb-2-2-compatibility.php:191
 #: modules/uabb-gravity-form/uabb-gravity-form-bb-less-than-2-2-compatibility.php:190
 #: modules/uabb-heading/uabb-heading-bb-2-2-compatibility.php:538
-#: modules/uabb-timeline/uabb-timeline.php:1259
+#: modules/uabb-timeline/uabb-timeline.php:1257
 #: modules/uabb-woo-mini-cart/uabb-woo-mini-cart.php:495
 #: modules/uabb-wp-forms-styler/uabb-wp-forms-styler-bb-2-2-compatibility.php:188
 #: modules/uabb-wp-forms-styler/uabb-wp-forms-styler-bb-less-than-2-2-compatibility.php:191
@@ -6380,8 +6383,8 @@ msgstr ""
 #: modules/blog-posts/includes/loop-settings.php:165
 #: modules/uabb-business-reviews/uabb-business-reviews-bb-less-than-2-2-compatibility.php:239
 #: modules/uabb-timeline/includes/loop-settings.php:160
-#: modules/uabb-timeline/uabb-timeline.php:1120
-#: modules/uabb-timeline/uabb-timeline.php:1657
+#: modules/uabb-timeline/uabb-timeline.php:1118
+#: modules/uabb-timeline/uabb-timeline.php:1655
 #: modules/uabb-woo-products/includes/loop-settings.php:205
 msgid "Date"
 msgstr ""
@@ -7075,7 +7078,7 @@ msgstr ""
 #: modules/uabb-price-list/uabb-price-list-bb-less-than-2-2-compatibility.php:102
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:120
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:120
-#: modules/uabb-timeline/uabb-timeline.php:1244
+#: modules/uabb-timeline/uabb-timeline.php:1242
 msgid "Top"
 msgstr ""
 
@@ -7201,8 +7204,8 @@ msgstr ""
 #: modules/uabb-star-rating/uabb-star-rating.php:200
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:249
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:405
-#: modules/uabb-timeline/uabb-timeline.php:1191
-#: modules/uabb-timeline/uabb-timeline.php:1277
+#: modules/uabb-timeline/uabb-timeline.php:1189
+#: modules/uabb-timeline/uabb-timeline.php:1275
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:359
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:74
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:85
@@ -7344,8 +7347,8 @@ msgstr ""
 #: modules/uabb-star-rating/uabb-star-rating.php:202
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:251
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:407
-#: modules/uabb-timeline/uabb-timeline.php:1192
-#: modules/uabb-timeline/uabb-timeline.php:1278
+#: modules/uabb-timeline/uabb-timeline.php:1190
+#: modules/uabb-timeline/uabb-timeline.php:1276
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:361
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:75
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:86
@@ -7973,7 +7976,7 @@ msgstr ""
 #: modules/uabb-devices/uabb-devices.php:859
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:353
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:282
-#: modules/uabb-timeline/uabb-timeline.php:958
+#: modules/uabb-timeline/uabb-timeline.php:956
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:170
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:166
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:178
@@ -8016,7 +8019,7 @@ msgstr ""
 #: modules/uabb-photo/uabb-photo-bb-less-than-2-2-compatibility.php:183
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:244
 #: modules/uabb-social-share/uabb-social-share-bb-less-than-2-2-compatibility.php:93
-#: modules/uabb-timeline/uabb-timeline.php:961
+#: modules/uabb-timeline/uabb-timeline.php:959
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:173
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:169
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:181
@@ -8059,7 +8062,7 @@ msgstr ""
 #: modules/uabb-photo/uabb-photo-bb-less-than-2-2-compatibility.php:182
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:243
 #: modules/uabb-social-share/uabb-social-share-bb-less-than-2-2-compatibility.php:92
-#: modules/uabb-timeline/uabb-timeline.php:962
+#: modules/uabb-timeline/uabb-timeline.php:960
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:174
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:170
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:182
@@ -8074,7 +8077,7 @@ msgstr ""
 #: modules/uabb-devices/uabb-devices.php:864
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:358
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:287
-#: modules/uabb-timeline/uabb-timeline.php:963
+#: modules/uabb-timeline/uabb-timeline.php:961
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:175
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:171
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:183
@@ -8089,7 +8092,7 @@ msgstr ""
 #: modules/uabb-devices/uabb-devices.php:865
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:359
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:288
-#: modules/uabb-timeline/uabb-timeline.php:964
+#: modules/uabb-timeline/uabb-timeline.php:962
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:176
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:172
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:184
@@ -8106,7 +8109,7 @@ msgstr ""
 #: modules/uabb-devices/uabb-devices.php:884
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:378
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:307
-#: modules/uabb-timeline/uabb-timeline.php:983
+#: modules/uabb-timeline/uabb-timeline.php:981
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:195
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:191
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:204
@@ -8121,7 +8124,7 @@ msgstr ""
 #: modules/uabb-devices/uabb-devices.php:896
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:390
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:318
-#: modules/uabb-timeline/uabb-timeline.php:991
+#: modules/uabb-timeline/uabb-timeline.php:989
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:203
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:198
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:212
@@ -8136,7 +8139,7 @@ msgstr ""
 #: modules/uabb-devices/uabb-devices.php:923
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:417
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:337
-#: modules/uabb-timeline/uabb-timeline.php:999
+#: modules/uabb-timeline/uabb-timeline.php:997
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:211
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:205
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:220
@@ -8188,7 +8191,7 @@ msgstr ""
 #: modules/uabb-price-list/uabb-price-list-bb-less-than-2-2-compatibility.php:310
 #: modules/uabb-table/uabb-table-bb-2-2-compatibility.php:658
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:577
-#: modules/uabb-timeline/uabb-timeline.php:1007
+#: modules/uabb-timeline/uabb-timeline.php:1005
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:206
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-less-than-2-2-compatibility.php:164
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:219
@@ -8366,7 +8369,7 @@ msgstr ""
 #: modules/adv-testimonials/adv-testimonials-bb-2-2-compatibility.php:352
 #: modules/adv-testimonials/adv-testimonials-bb-less-than-2-2-compatibility.php:315
 #: modules/adv-testimonials/adv-testimonials.php:23
-#: modules/adv-testimonials/includes/frontend.php:174
+#: modules/adv-testimonials/includes/frontend.php:175
 msgid "Testimonials"
 msgstr ""
 
@@ -8723,8 +8726,8 @@ msgstr ""
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:1208
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:516
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:589
-#: modules/uabb-timeline/uabb-timeline.php:1512
-#: modules/uabb-timeline/uabb-timeline.php:1757
+#: modules/uabb-timeline/uabb-timeline.php:1510
+#: modules/uabb-timeline/uabb-timeline.php:1755
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:710
 #: modules/uabb-video/uabb-video-bb-less-than-2-2-compatibility.php:601
 #: modules/uabb-woo-mini-cart/uabb-woo-mini-cart.php:316
@@ -9329,7 +9332,7 @@ msgstr ""
 #: modules/uabb-star-rating/uabb-star-rating.php:201
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:250
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:406
-#: modules/uabb-timeline/uabb-timeline.php:1193
+#: modules/uabb-timeline/uabb-timeline.php:1191
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:360
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:73
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:84
@@ -9843,14 +9846,14 @@ msgstr ""
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:546
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:553
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:568
-#: modules/uabb-timeline/uabb-timeline.php:1558
-#: modules/uabb-timeline/uabb-timeline.php:1578
-#: modules/uabb-timeline/uabb-timeline.php:1593
-#: modules/uabb-timeline/uabb-timeline.php:1608
-#: modules/uabb-timeline/uabb-timeline.php:1780
-#: modules/uabb-timeline/uabb-timeline.php:1800
-#: modules/uabb-timeline/uabb-timeline.php:1811
-#: modules/uabb-timeline/uabb-timeline.php:1822
+#: modules/uabb-timeline/uabb-timeline.php:1556
+#: modules/uabb-timeline/uabb-timeline.php:1576
+#: modules/uabb-timeline/uabb-timeline.php:1591
+#: modules/uabb-timeline/uabb-timeline.php:1606
+#: modules/uabb-timeline/uabb-timeline.php:1778
+#: modules/uabb-timeline/uabb-timeline.php:1798
+#: modules/uabb-timeline/uabb-timeline.php:1809
+#: modules/uabb-timeline/uabb-timeline.php:1820
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:762
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:879
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:855
@@ -11842,7 +11845,7 @@ msgstr ""
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:22
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:31
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:21
-#: modules/uabb-timeline/uabb-timeline.php:772
+#: modules/uabb-timeline/uabb-timeline.php:770
 msgid "Preset"
 msgstr ""
 
@@ -11860,7 +11863,7 @@ msgstr ""
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:24
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:33
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:23
-#: modules/uabb-timeline/uabb-timeline.php:774
+#: modules/uabb-timeline/uabb-timeline.php:772
 msgid ""
 "Before changing presets, save the content you added to the module. "
 "Otherwise, your content will be overwritten with the default one."
@@ -11898,7 +11901,7 @@ msgstr ""
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:770
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:37
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:27
-#: modules/uabb-timeline/uabb-timeline.php:778
+#: modules/uabb-timeline/uabb-timeline.php:776
 msgid "Preset 1"
 msgstr ""
 
@@ -11934,7 +11937,7 @@ msgstr ""
 #: modules/uabb-numbers/uabb-numbers-bb-less-than-2-2-compatibility.php:771
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:38
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:28
-#: modules/uabb-timeline/uabb-timeline.php:779
+#: modules/uabb-timeline/uabb-timeline.php:777
 msgid "Preset 2"
 msgstr ""
 
@@ -11952,7 +11955,7 @@ msgstr ""
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:30
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:39
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:29
-#: modules/uabb-timeline/uabb-timeline.php:780
+#: modules/uabb-timeline/uabb-timeline.php:778
 msgid "Preset 3"
 msgstr ""
 
@@ -11970,7 +11973,7 @@ msgstr ""
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:31
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:40
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:30
-#: modules/uabb-timeline/uabb-timeline.php:781
+#: modules/uabb-timeline/uabb-timeline.php:779
 msgid "Preset 4"
 msgstr ""
 
@@ -11988,7 +11991,7 @@ msgstr ""
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-2-2-compatibility.php:32
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:41
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:31
-#: modules/uabb-timeline/uabb-timeline.php:782
+#: modules/uabb-timeline/uabb-timeline.php:780
 msgid "Preset 5"
 msgstr ""
 
@@ -12272,7 +12275,7 @@ msgstr ""
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:1201
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:218
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:207
-#: modules/uabb-timeline/uabb-timeline.php:1472
+#: modules/uabb-timeline/uabb-timeline.php:1470
 #: modules/uabb-woo-mini-cart/uabb-woo-mini-cart.php:328
 msgid "Icon Size"
 msgstr ""
@@ -12493,8 +12496,8 @@ msgstr ""
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:726
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:916
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:1113
-#: modules/uabb-timeline/uabb-timeline.php:791
-#: modules/uabb-timeline/uabb-timeline.php:1647
+#: modules/uabb-timeline/uabb-timeline.php:789
+#: modules/uabb-timeline/uabb-timeline.php:1645
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:663
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:651
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:423
@@ -13366,7 +13369,7 @@ msgstr ""
 #: modules/uabb-hotspot/uabb-hotspot-bb-less-than-2-2-compatibility.php:936
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:193
 #: modules/uabb-social-share/uabb-social-share-bb-less-than-2-2-compatibility.php:41
-#: modules/uabb-timeline/uabb-timeline.php:1173
+#: modules/uabb-timeline/uabb-timeline.php:1171
 msgid "Horizontal"
 msgstr ""
 
@@ -13386,7 +13389,7 @@ msgstr ""
 #: modules/uabb-beforeafterslider/uabb-beforeafterslider-bb-less-than-2-2-compatibility.php:112
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:194
 #: modules/uabb-social-share/uabb-social-share-bb-less-than-2-2-compatibility.php:42
-#: modules/uabb-timeline/uabb-timeline.php:1172
+#: modules/uabb-timeline/uabb-timeline.php:1170
 msgid "Vertical"
 msgstr ""
 
@@ -13425,7 +13428,7 @@ msgstr ""
 #: modules/uabb-social-share/uabb-social-share-bb-less-than-2-2-compatibility.php:56
 #: modules/uabb-star-rating/uabb-star-rating.php:180
 #: modules/uabb-star-rating/uabb-star-rating.php:226
-#: modules/uabb-timeline/uabb-timeline.php:1284
+#: modules/uabb-timeline/uabb-timeline.php:1282
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:963
 #: modules/uabb-video/uabb-video-bb-less-than-2-2-compatibility.php:1005
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:311
@@ -14185,7 +14188,10 @@ msgid "Display a group of Image / Icons."
 msgstr ""
 
 #: modules/advanced-icon/includes/frontend.php:26
-msgid "Visit our"
+#: modules/info-box/includes/frontend.php:32
+#: modules/info-list/info-list.php:513 modules/info-list/info-list.php:519
+#: modules/info-list/info-list.php:539
+msgid "Go to"
 msgstr ""
 
 #: modules/advanced-separator/advanced-separator-bb-2-2-compatibility.php:22
@@ -14490,7 +14496,7 @@ msgstr ""
 #: modules/uabb-off-canvas/uabb-off-canvas-bb-less-than-2-2-compatibility.php:308
 #: modules/uabb-search/uabb-search.php:688
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:527
-#: modules/uabb-timeline/uabb-timeline.php:1527
+#: modules/uabb-timeline/uabb-timeline.php:1525
 msgid "Icon Hover Color"
 msgstr ""
 
@@ -14564,8 +14570,8 @@ msgstr ""
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:885
 #: modules/uabb-registration-form/uabb-registration-form-bb-less-than-2-2-compatibility.php:708
 #: modules/uabb-social-share/uabb-social-share-bb-2-2-compatibility.php:99
-#: modules/uabb-timeline/uabb-timeline.php:1103
-#: modules/uabb-timeline/uabb-timeline.php:1658
+#: modules/uabb-timeline/uabb-timeline.php:1101
+#: modules/uabb-timeline/uabb-timeline.php:1656
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:756
 #: modules/uabb-video/uabb-video-bb-less-than-2-2-compatibility.php:650
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:60
@@ -14890,12 +14896,12 @@ msgid "Index of default active tab. Index starts from 0."
 msgstr ""
 
 #: modules/advanced-tabs/advanced-tabs-bb-2-2-compatibility.php:247
-#: modules/uabb-timeline/uabb-timeline.php:1289
+#: modules/uabb-timeline/uabb-timeline.php:1287
 msgid "Horizontal Spacing"
 msgstr ""
 
 #: modules/advanced-tabs/advanced-tabs-bb-2-2-compatibility.php:261
-#: modules/uabb-timeline/uabb-timeline.php:1298
+#: modules/uabb-timeline/uabb-timeline.php:1296
 msgid "Vertical Spacing"
 msgstr ""
 
@@ -15092,8 +15098,8 @@ msgstr ""
 #: modules/uabb-price-list/uabb-price-list-bb-2-2-compatibility.php:467
 #: modules/uabb-price-list/uabb-price-list-bb-less-than-2-2-compatibility.php:577
 #: modules/uabb-price-list/uabb-price-list-bb-less-than-2-2-compatibility.php:702
-#: modules/uabb-timeline/uabb-timeline.php:1358
-#: modules/uabb-timeline/uabb-timeline.php:1736
+#: modules/uabb-timeline/uabb-timeline.php:1356
+#: modules/uabb-timeline/uabb-timeline.php:1734
 msgid "Description Color"
 msgstr ""
 
@@ -15266,9 +15272,9 @@ msgstr ""
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:55
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:73
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:91
-#: modules/uabb-timeline/uabb-timeline.php:851
-#: modules/uabb-timeline/uabb-timeline.php:867
-#: modules/uabb-timeline/uabb-timeline.php:883
+#: modules/uabb-timeline/uabb-timeline.php:849
+#: modules/uabb-timeline/uabb-timeline.php:865
+#: modules/uabb-timeline/uabb-timeline.php:881
 msgid "1 Column"
 msgstr ""
 
@@ -15292,9 +15298,9 @@ msgstr ""
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:56
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:74
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:92
-#: modules/uabb-timeline/uabb-timeline.php:852
-#: modules/uabb-timeline/uabb-timeline.php:868
-#: modules/uabb-timeline/uabb-timeline.php:884
+#: modules/uabb-timeline/uabb-timeline.php:850
+#: modules/uabb-timeline/uabb-timeline.php:866
+#: modules/uabb-timeline/uabb-timeline.php:882
 msgid "2 Columns"
 msgstr ""
 
@@ -15318,9 +15324,9 @@ msgstr ""
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:57
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:75
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:93
-#: modules/uabb-timeline/uabb-timeline.php:853
-#: modules/uabb-timeline/uabb-timeline.php:869
-#: modules/uabb-timeline/uabb-timeline.php:885
+#: modules/uabb-timeline/uabb-timeline.php:851
+#: modules/uabb-timeline/uabb-timeline.php:867
+#: modules/uabb-timeline/uabb-timeline.php:883
 msgid "3 Columns"
 msgstr ""
 
@@ -15344,9 +15350,9 @@ msgstr ""
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:58
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:76
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:94
-#: modules/uabb-timeline/uabb-timeline.php:854
-#: modules/uabb-timeline/uabb-timeline.php:870
-#: modules/uabb-timeline/uabb-timeline.php:886
+#: modules/uabb-timeline/uabb-timeline.php:852
+#: modules/uabb-timeline/uabb-timeline.php:868
+#: modules/uabb-timeline/uabb-timeline.php:884
 msgid "4 Columns"
 msgstr ""
 
@@ -15368,8 +15374,8 @@ msgstr ""
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:59
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:77
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:95
-#: modules/uabb-timeline/uabb-timeline.php:855
-#: modules/uabb-timeline/uabb-timeline.php:871
+#: modules/uabb-timeline/uabb-timeline.php:853
+#: modules/uabb-timeline/uabb-timeline.php:869
 msgid "5 Columns"
 msgstr ""
 
@@ -15391,8 +15397,8 @@ msgstr ""
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:60
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:78
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:96
-#: modules/uabb-timeline/uabb-timeline.php:856
-#: modules/uabb-timeline/uabb-timeline.php:872
+#: modules/uabb-timeline/uabb-timeline.php:854
+#: modules/uabb-timeline/uabb-timeline.php:870
 msgid "6 Columns"
 msgstr ""
 
@@ -15414,8 +15420,8 @@ msgstr ""
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:61
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:79
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:97
-#: modules/uabb-timeline/uabb-timeline.php:857
-#: modules/uabb-timeline/uabb-timeline.php:873
+#: modules/uabb-timeline/uabb-timeline.php:855
+#: modules/uabb-timeline/uabb-timeline.php:871
 msgid "7 Columns"
 msgstr ""
 
@@ -15437,8 +15443,8 @@ msgstr ""
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:62
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:80
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:98
-#: modules/uabb-timeline/uabb-timeline.php:858
-#: modules/uabb-timeline/uabb-timeline.php:874
+#: modules/uabb-timeline/uabb-timeline.php:856
+#: modules/uabb-timeline/uabb-timeline.php:872
 msgid "8 Columns"
 msgstr ""
 
@@ -15454,20 +15460,20 @@ msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:78
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:77
-#: modules/uabb-timeline/uabb-timeline.php:865
+#: modules/uabb-timeline/uabb-timeline.php:863
 msgid "This is how many posts you want to show at one time on tablet devices."
 msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:94
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:93
-#: modules/uabb-timeline/uabb-timeline.php:881
+#: modules/uabb-timeline/uabb-timeline.php:879
 msgid "This is how many posts you want to show at a time on mobile devices."
 msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:105
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:104
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:179
-#: modules/uabb-timeline/uabb-timeline.php:843
+#: modules/uabb-timeline/uabb-timeline.php:841
 msgid "Carousel Filter"
 msgstr ""
 
@@ -15479,7 +15485,7 @@ msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:110
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:109
-#: modules/uabb-timeline/uabb-timeline.php:892
+#: modules/uabb-timeline/uabb-timeline.php:890
 msgid "This is how many posts you want to scroll at a time."
 msgstr ""
 
@@ -15491,7 +15497,7 @@ msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:124
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:116
-#: modules/uabb-timeline/uabb-timeline.php:906
+#: modules/uabb-timeline/uabb-timeline.php:904
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:101
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:97
 #: modules/uabb-woo-products/uabb-woo-products-bb-less-than-2-2-compatibility.php:106
@@ -15504,7 +15510,7 @@ msgstr ""
 #: modules/uabb-business-reviews/uabb-business-reviews-bb-less-than-2-2-compatibility.php:190
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:231
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:205
-#: modules/uabb-timeline/uabb-timeline.php:920
+#: modules/uabb-timeline/uabb-timeline.php:918
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:275
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:260
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:115
@@ -15516,7 +15522,7 @@ msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:139
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:131
-#: modules/uabb-timeline/uabb-timeline.php:921
+#: modules/uabb-timeline/uabb-timeline.php:919
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:116
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:112
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:124
@@ -15531,7 +15537,7 @@ msgstr ""
 #: modules/uabb-devices/uabb-devices.php:832
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:249
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:223
-#: modules/uabb-timeline/uabb-timeline.php:928
+#: modules/uabb-timeline/uabb-timeline.php:926
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:290
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:275
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:123
@@ -15543,7 +15549,7 @@ msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:147
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:139
-#: modules/uabb-timeline/uabb-timeline.php:929
+#: modules/uabb-timeline/uabb-timeline.php:927
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:124
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:120
 #: modules/uabb-woo-products/uabb-woo-products-bb-less-than-2-2-compatibility.php:129
@@ -15554,7 +15560,7 @@ msgstr ""
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:148
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:259
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:233
-#: modules/uabb-timeline/uabb-timeline.php:938
+#: modules/uabb-timeline/uabb-timeline.php:936
 msgid "Enable Lazy Load"
 msgstr ""
 
@@ -15562,7 +15568,7 @@ msgstr ""
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:149
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:260
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:234
-#: modules/uabb-timeline/uabb-timeline.php:939
+#: modules/uabb-timeline/uabb-timeline.php:937
 msgid "Enable this to load the image as soon as user slide to it."
 msgstr ""
 
@@ -15610,7 +15616,7 @@ msgstr ""
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:183
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-2-2-compatibility.php:344
 #: modules/uabb-image-carousel/uabb-image-carousel-bb-less-than-2-2-compatibility.php:273
-#: modules/uabb-timeline/uabb-timeline.php:1241
+#: modules/uabb-timeline/uabb-timeline.php:1239
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:161
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:157
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:169
@@ -15642,13 +15648,13 @@ msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:200
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:192
-#: modules/uabb-timeline/uabb-timeline.php:948
+#: modules/uabb-timeline/uabb-timeline.php:946
 msgid "Left Arrow Icon"
 msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:205
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:197
-#: modules/uabb-timeline/uabb-timeline.php:953
+#: modules/uabb-timeline/uabb-timeline.php:951
 msgid "Right Arrow Icon"
 msgstr ""
 
@@ -15682,13 +15688,13 @@ msgstr ""
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:310
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:291
 #: modules/uabb-search/uabb-search.php:913
-#: modules/uabb-timeline/uabb-timeline.php:1141
+#: modules/uabb-timeline/uabb-timeline.php:1139
 msgid "Sorry, we couldn't find any posts. Please try a different search."
 msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:314
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:295
-#: modules/uabb-timeline/uabb-timeline.php:1145
+#: modules/uabb-timeline/uabb-timeline.php:1143
 msgid "Show Search"
 msgstr ""
 
@@ -15737,8 +15743,8 @@ msgstr ""
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:67
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:76
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:85
-#: modules/uabb-timeline/uabb-timeline.php:1148
-#: modules/uabb-timeline/uabb-timeline.php:1216
+#: modules/uabb-timeline/uabb-timeline.php:1146
+#: modules/uabb-timeline/uabb-timeline.php:1214
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:163
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:236
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:246
@@ -15804,8 +15810,8 @@ msgstr ""
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:68
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:77
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-less-than-2-2-compatibility.php:86
-#: modules/uabb-timeline/uabb-timeline.php:1149
-#: modules/uabb-timeline/uabb-timeline.php:1217
+#: modules/uabb-timeline/uabb-timeline.php:1147
+#: modules/uabb-timeline/uabb-timeline.php:1215
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:164
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:237
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:247
@@ -15828,13 +15834,13 @@ msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:320
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:301
-#: modules/uabb-timeline/uabb-timeline.php:1151
+#: modules/uabb-timeline/uabb-timeline.php:1149
 msgid "Shows the search form if no posts are found."
 msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:327
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:308
-#: modules/uabb-timeline/uabb-timeline.php:1158
+#: modules/uabb-timeline/uabb-timeline.php:1156
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:230
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-less-than-2-2-compatibility.php:223
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:243
@@ -16059,7 +16065,7 @@ msgstr ""
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:486
 #: modules/uabb-off-canvas/uabb-off-canvas-bb-2-2-compatibility.php:32
 #: modules/uabb-off-canvas/uabb-off-canvas-bb-less-than-2-2-compatibility.php:21
-#: modules/uabb-timeline/uabb-timeline.php:795
+#: modules/uabb-timeline/uabb-timeline.php:793
 msgid "Content Type"
 msgstr ""
 
@@ -16125,7 +16131,7 @@ msgstr ""
 #: modules/info-list/info-list-bb-2-2-compatibility.php:462
 #: modules/info-list/info-list-bb-less-than-2-2-compatibility.php:506
 #: modules/uabb-price-list/uabb-price-list-bb-less-than-2-2-compatibility.php:796
-#: modules/uabb-timeline/uabb-timeline.php:1102
+#: modules/uabb-timeline/uabb-timeline.php:1100
 msgid "Complete Box"
 msgstr ""
 
@@ -17137,8 +17143,8 @@ msgstr ""
 #: modules/uabb-search/uabb-search.php:304
 #: modules/uabb-search/uabb-search.php:331
 #: modules/uabb-star-rating/uabb-star-rating.php:114
-#: modules/uabb-timeline/uabb-timeline.php:1165
-#: modules/uabb-timeline/uabb-timeline.php:1169
+#: modules/uabb-timeline/uabb-timeline.php:1163
+#: modules/uabb-timeline/uabb-timeline.php:1167
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:74
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:73
 #: modules/uabb-woo-categories/uabb-woo-categories-bb-2-2-compatibility.php:22
@@ -17384,8 +17390,8 @@ msgstr ""
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:1181
 #: modules/photo-gallery/photo-gallery-bb-2-2-compatibility.php:275
 #: modules/photo-gallery/photo-gallery-bb-2-2-compatibility.php:279
-#: modules/uabb-timeline/uabb-timeline.php:750
-#: modules/uabb-timeline/uabb-timeline.php:1023
+#: modules/uabb-timeline/uabb-timeline.php:748
+#: modules/uabb-timeline/uabb-timeline.php:1021
 #: modules/uabb-woo-products/uabb-woo-products-bb-2-2-compatibility.php:693
 #: modules/uabb-woo-products/uabb-woo-products-bb-less-than-2-2-compatibility.php:657
 msgid "Pagination"
@@ -17429,7 +17435,7 @@ msgstr ""
 
 #: modules/blog-posts/blog-posts-bb-2-2-compatibility.php:1341
 #: modules/blog-posts/blog-posts-bb-less-than-2-2-compatibility.php:1225
-#: modules/uabb-timeline/uabb-timeline.php:1041
+#: modules/uabb-timeline/uabb-timeline.php:1039
 msgid "Posts Per Page"
 msgstr ""
 
@@ -17696,7 +17702,7 @@ msgstr ""
 #: modules/uabb-search/uabb-search.php:959
 #: modules/uabb-table/uabb-table-bb-2-2-compatibility.php:806
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:649
-#: modules/uabb-timeline/uabb-timeline.php:1620
+#: modules/uabb-timeline/uabb-timeline.php:1618
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:1038
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:935
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:350
@@ -17734,7 +17740,7 @@ msgstr ""
 #: modules/uabb-search/uabb-search.php:962
 #: modules/uabb-table/uabb-table-bb-2-2-compatibility.php:809
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:652
-#: modules/uabb-timeline/uabb-timeline.php:1623
+#: modules/uabb-timeline/uabb-timeline.php:1621
 #: modules/uabb-video/uabb-video-bb-2-2-compatibility.php:1041
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:938
 #: modules/uabb-woo-add-to-cart/uabb-woo-add-to-cart-bb-2-2-compatibility.php:353
@@ -21207,7 +21213,7 @@ msgstr ""
 #: modules/uabb-marketing-button/uabb-marketing-button-bb-less-than-2-2-compatibility.php:337
 #: modules/uabb-price-list/uabb-price-list-bb-2-2-compatibility.php:104
 #: modules/uabb-price-list/uabb-price-list-bb-less-than-2-2-compatibility.php:103
-#: modules/uabb-timeline/uabb-timeline.php:1245
+#: modules/uabb-timeline/uabb-timeline.php:1243
 msgid "Middle"
 msgstr ""
 
@@ -21332,14 +21338,8 @@ msgstr ""
 #: modules/info-banner/info-banner-bb-less-than-2-2-compatibility.php:1024
 #: modules/slide-box/slide-box-bb-2-2-compatibility.php:1074
 #: modules/slide-box/slide-box-bb-less-than-2-2-compatibility.php:1267
-#: modules/uabb-timeline/uabb-timeline.php:1114
+#: modules/uabb-timeline/uabb-timeline.php:1112
 msgid "Link Text"
-msgstr ""
-
-#: modules/info-box/includes/frontend.php:32
-#: modules/info-list/info-list.php:513 modules/info-list/info-list.php:519
-#: modules/info-list/info-list.php:539
-msgid "Go to"
 msgstr ""
 
 #: modules/info-box/info-box-bb-2-2-compatibility.php:45
@@ -21607,7 +21607,7 @@ msgstr ""
 #: modules/uabb-price-list/uabb-price-list-bb-2-2-compatibility.php:480
 #: modules/uabb-price-list/uabb-price-list-bb-less-than-2-2-compatibility.php:589
 #: modules/uabb-price-list/uabb-price-list-bb-less-than-2-2-compatibility.php:714
-#: modules/uabb-timeline/uabb-timeline.php:1372
+#: modules/uabb-timeline/uabb-timeline.php:1370
 msgid "Description Hover Color"
 msgstr ""
 
@@ -21884,7 +21884,7 @@ msgstr ""
 
 #: modules/info-circle/info-circle-bb-2-2-compatibility.php:635
 #: modules/info-circle/info-circle-bb-less-than-2-2-compatibility.php:530
-#: modules/uabb-timeline/uabb-timeline.php:1454
+#: modules/uabb-timeline/uabb-timeline.php:1452
 msgid "Connector"
 msgstr ""
 
@@ -21895,7 +21895,7 @@ msgstr ""
 
 #: modules/info-circle/info-circle-bb-2-2-compatibility.php:690
 #: modules/info-circle/info-circle-bb-less-than-2-2-compatibility.php:578
-#: modules/uabb-timeline/uabb-timeline.php:1497
+#: modules/uabb-timeline/uabb-timeline.php:1495
 msgid "Line Color"
 msgstr ""
 
@@ -22033,8 +22033,8 @@ msgstr ""
 #: modules/uabb-off-canvas/uabb-off-canvas-bb-less-than-2-2-compatibility.php:176
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:537
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:600
-#: modules/uabb-timeline/uabb-timeline.php:1534
-#: modules/uabb-timeline/uabb-timeline.php:1764
+#: modules/uabb-timeline/uabb-timeline.php:1532
+#: modules/uabb-timeline/uabb-timeline.php:1762
 msgid "Icon Background Color"
 msgstr ""
 
@@ -23081,11 +23081,17 @@ msgid ""
 "you use latest Beaver Builder to view best results."
 msgstr ""
 
-#: modules/modal-popup/includes/frontend.php:74
-msgid "Modal Popup - ID "
+#: modules/modal-popup/includes/frontend.php:29
+#: modules/modal-popup/modal-popup-bb-2-2-compatibility.php:53
+#: modules/modal-popup/modal-popup-bb-less-than-2-2-compatibility.php:52
+msgid "This is modal title"
 msgstr ""
 
 #: modules/modal-popup/includes/frontend.php:75
+msgid "Modal Popup - ID "
+msgstr ""
+
+#: modules/modal-popup/includes/frontend.php:76
 msgid ""
 "Click here to edit the \"Modal Popup\" settings. This text will not be "
 "visible on frontend."
@@ -23111,11 +23117,6 @@ msgstr ""
 #: modules/modal-popup/modal-popup-bb-2-2-compatibility.php:52
 #: modules/modal-popup/modal-popup-bb-less-than-2-2-compatibility.php:51
 msgid "Enter Title"
-msgstr ""
-
-#: modules/modal-popup/modal-popup-bb-2-2-compatibility.php:53
-#: modules/modal-popup/modal-popup-bb-less-than-2-2-compatibility.php:52
-msgid "This is modal title"
 msgstr ""
 
 #: modules/modal-popup/modal-popup-bb-2-2-compatibility.php:72
@@ -24031,8 +24032,8 @@ msgstr ""
 #: modules/uabb-how-to/uabb-how-to-bb-2-2-compatibility.php:676
 #: modules/uabb-retina-image/uabb-retina-image-bb-2-2-compatibility.php:366
 #: modules/uabb-retina-image/uabb-retina-image-bb-less-than-2-2-compatibility.php:364
-#: modules/uabb-timeline/uabb-timeline.php:1565
-#: modules/uabb-timeline/uabb-timeline.php:1787
+#: modules/uabb-timeline/uabb-timeline.php:1563
+#: modules/uabb-timeline/uabb-timeline.php:1785
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-2-2-compatibility.php:862
 #: modules/uabb-video-gallery/uabb-video-gallery-bb-less-than-2-2-compatibility.php:811
 msgid "HTML Tag"
@@ -25354,7 +25355,7 @@ msgstr ""
 #: modules/uabb-content-toggle/uabb-content-toggle-bb-2-2-compatibility.php:359
 #: modules/uabb-content-toggle/uabb-content-toggle-bb-less-than-2-2-compatibility.php:347
 #: modules/uabb-table/uabb-table-bb-2-2-compatibility.php:220
-#: modules/uabb-timeline/uabb-timeline.php:1252
+#: modules/uabb-timeline/uabb-timeline.php:1250
 msgid "Responsive Layout"
 msgstr ""
 
@@ -26119,7 +26120,7 @@ msgstr ""
 #: modules/uabb-table/uabb-table-bb-2-2-compatibility.php:593
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:484
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:526
-#: modules/uabb-timeline/uabb-timeline.php:1066
+#: modules/uabb-timeline/uabb-timeline.php:1064
 msgid "Image Size"
 msgstr ""
 
@@ -27214,7 +27215,7 @@ msgstr ""
 #: modules/uabb-login-form/uabb-login-bb-less-than-2-2-compatibility.php:1343
 #: modules/uabb-registration-form/uabb-registration-form-bb-2-2-compatibility.php:1127
 #: modules/uabb-registration-form/uabb-registration-form-bb-less-than-2-2-compatibility.php:1083
-#: modules/uabb-timeline/uabb-timeline.php:1676
+#: modules/uabb-timeline/uabb-timeline.php:1674
 msgid "Label Text"
 msgstr ""
 
@@ -28077,7 +28078,7 @@ msgid "Iframe"
 msgstr ""
 
 #: modules/uabb-devices/uabb-devices.php:256
-#: modules/uabb-timeline/uabb-timeline.php:1188
+#: modules/uabb-timeline/uabb-timeline.php:1186
 msgid "Orientation"
 msgstr ""
 
@@ -28800,7 +28801,7 @@ msgstr ""
 
 #: modules/uabb-gravity-form/uabb-gravity-form-bb-2-2-compatibility.php:1014
 #: modules/uabb-gravity-form/uabb-gravity-form-bb-less-than-2-2-compatibility.php:1203
-#: modules/uabb-timeline/uabb-timeline.php:1071
+#: modules/uabb-timeline/uabb-timeline.php:1069
 msgid "Show Title"
 msgstr ""
 
@@ -30377,7 +30378,7 @@ msgstr ""
 
 #: modules/uabb-off-canvas/uabb-off-canvas-bb-2-2-compatibility.php:1001
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:402
-#: modules/uabb-timeline/uabb-timeline.php:1209
+#: modules/uabb-timeline/uabb-timeline.php:1207
 msgid "Content Alignment"
 msgstr ""
 
@@ -30440,7 +30441,7 @@ msgstr ""
 #: modules/uabb-photo/uabb-photo-bb-less-than-2-2-compatibility.php:115
 #: modules/uabb-retina-image/uabb-retina-image-bb-2-2-compatibility.php:171
 #: modules/uabb-retina-image/uabb-retina-image-bb-less-than-2-2-compatibility.php:162
-#: modules/uabb-timeline/uabb-timeline.php:1099
+#: modules/uabb-timeline/uabb-timeline.php:1097
 msgid "Link Type"
 msgstr ""
 
@@ -31713,8 +31714,8 @@ msgstr ""
 
 #: modules/uabb-table/uabb-table-bb-2-2-compatibility.php:240
 #: modules/uabb-table/uabb-table-bb-less-than-2-2-compatibility.php:224
-#: modules/uabb-timeline/uabb-timeline.php:1337
-#: modules/uabb-timeline/uabb-timeline.php:1729
+#: modules/uabb-timeline/uabb-timeline.php:1335
+#: modules/uabb-timeline/uabb-timeline.php:1727
 msgid "Heading Color"
 msgstr ""
 
@@ -32179,12 +32180,12 @@ msgid " Contents Toggle"
 msgstr ""
 
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:549
-#: modules/uabb-timeline/uabb-timeline.php:1549
+#: modules/uabb-timeline/uabb-timeline.php:1547
 msgid "Icon Background Hover Color"
 msgstr ""
 
 #: modules/uabb-table-of-contents/uabb-table-of-contents-bb-2-2-compatibility.php:572
-#: modules/uabb-timeline/uabb-timeline.php:1488
+#: modules/uabb-timeline/uabb-timeline.php:1486
 msgid "Icon Border"
 msgstr ""
 
@@ -32240,182 +32241,182 @@ msgstr ""
 msgid "Display a horizontal/vertical timeline of posts/content."
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:799
-#: modules/uabb-timeline/uabb-timeline.php:1047
+#: modules/uabb-timeline/uabb-timeline.php:797
+#: modules/uabb-timeline/uabb-timeline.php:1045
 msgid "Posts"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:814
-#: modules/uabb-timeline/uabb-timeline.php:1331
+#: modules/uabb-timeline/uabb-timeline.php:812
+#: modules/uabb-timeline/uabb-timeline.php:1329
 msgid "Timeline Items"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:818
+#: modules/uabb-timeline/uabb-timeline.php:816
 msgid "Timeline Item"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:847
+#: modules/uabb-timeline/uabb-timeline.php:845
 msgid "No. of items on Desktop"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:849
+#: modules/uabb-timeline/uabb-timeline.php:847
 msgid "This is how many items you want to show at one time on desktop."
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:863
+#: modules/uabb-timeline/uabb-timeline.php:861
 msgid "No. of items on Medium Devices"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:879
+#: modules/uabb-timeline/uabb-timeline.php:877
 msgid "No. of items on Small Devices"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:891
+#: modules/uabb-timeline/uabb-timeline.php:889
 msgid "Items to Scroll"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:905
+#: modules/uabb-timeline/uabb-timeline.php:903
 msgid "Autoplay Scroll"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1027
+#: modules/uabb-timeline/uabb-timeline.php:1025
 msgid "Infinite Load"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1052
+#: modules/uabb-timeline/uabb-timeline.php:1050
 msgid "Show Image"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1080
+#: modules/uabb-timeline/uabb-timeline.php:1078
 msgid "Show Excerpt"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1094
+#: modules/uabb-timeline/uabb-timeline.php:1092
 msgid "Excerpt Length"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1123
+#: modules/uabb-timeline/uabb-timeline.php:1121
 msgid "Published Date"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1124
+#: modules/uabb-timeline/uabb-timeline.php:1122
 msgid "Last Modified Date"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1135
+#: modules/uabb-timeline/uabb-timeline.php:1133
 msgid "Custom Meta Key"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1213
-#: modules/uabb-timeline/uabb-timeline.php:1427
-#: modules/uabb-timeline/uabb-timeline.php:1603
-#: modules/uabb-timeline/uabb-timeline.php:1817
+#: modules/uabb-timeline/uabb-timeline.php:1211
+#: modules/uabb-timeline/uabb-timeline.php:1425
+#: modules/uabb-timeline/uabb-timeline.php:1601
+#: modules/uabb-timeline/uabb-timeline.php:1815
 msgid "Item Label"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1227
+#: modules/uabb-timeline/uabb-timeline.php:1225
 msgid "Show Card Arrow"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1256
+#: modules/uabb-timeline/uabb-timeline.php:1254
 msgid "Responsive Support"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1260
+#: modules/uabb-timeline/uabb-timeline.php:1258
 msgid "For Tablet & Mobile"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1261
+#: modules/uabb-timeline/uabb-timeline.php:1259
 msgid "For Mobile"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1274
+#: modules/uabb-timeline/uabb-timeline.php:1272
 msgid "Responsive Orientation"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1294
+#: modules/uabb-timeline/uabb-timeline.php:1292
 msgid "Adds horizontal spacing between cards."
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1303
+#: modules/uabb-timeline/uabb-timeline.php:1301
 msgid "Adds vertical spacing between cards."
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1308
+#: modules/uabb-timeline/uabb-timeline.php:1306
 msgid "Heading Bottom Spacing"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1315
+#: modules/uabb-timeline/uabb-timeline.php:1313
 msgid "Item Label Bottom Spacing"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1344
+#: modules/uabb-timeline/uabb-timeline.php:1342
 msgid "Heading Focused Color"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1351
+#: modules/uabb-timeline/uabb-timeline.php:1349
 msgid "Heading Hover Color"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1365
+#: modules/uabb-timeline/uabb-timeline.php:1363
 msgid "Description Focused Color"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1387
+#: modules/uabb-timeline/uabb-timeline.php:1385
 msgid "Background Focused Color"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1433
-#: modules/uabb-timeline/uabb-timeline.php:1771
+#: modules/uabb-timeline/uabb-timeline.php:1431
+#: modules/uabb-timeline/uabb-timeline.php:1769
 msgid "Item Label Color"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1440
+#: modules/uabb-timeline/uabb-timeline.php:1438
 msgid "Item Label Focused Color"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1447
+#: modules/uabb-timeline/uabb-timeline.php:1445
 msgid "Item Label Hover Color"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1459
-#: modules/uabb-timeline/uabb-timeline.php:1750
+#: modules/uabb-timeline/uabb-timeline.php:1457
+#: modules/uabb-timeline/uabb-timeline.php:1748
 msgid "Connector Icon"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1465
+#: modules/uabb-timeline/uabb-timeline.php:1463
 msgid "Connector Width"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1480
+#: modules/uabb-timeline/uabb-timeline.php:1478
 msgid "Icon Background Size"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1505
+#: modules/uabb-timeline/uabb-timeline.php:1503
 msgid "Line Focused Color"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1520
+#: modules/uabb-timeline/uabb-timeline.php:1518
 msgid "Icon Focused Color"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1542
+#: modules/uabb-timeline/uabb-timeline.php:1540
 msgid "Icon Background Focused Color"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1644
+#: modules/uabb-timeline/uabb-timeline.php:1642
 msgid "Add Timeline Item"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1654
+#: modules/uabb-timeline/uabb-timeline.php:1652
 msgid "Label Type"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1695
+#: modules/uabb-timeline/uabb-timeline.php:1693
 msgid "https://www.example.com"
 msgstr ""
 
-#: modules/uabb-timeline/uabb-timeline.php:1713
+#: modules/uabb-timeline/uabb-timeline.php:1711
 msgid "Override Global Settings"
 msgstr ""
 
@@ -32815,7 +32816,7 @@ msgid ""
 msgstr ""
 
 #: modules/uabb-video/uabb-video.php:965
-#: modules/uabb-video-gallery/uabb-video-gallery.php:939
+#: modules/uabb-video-gallery/uabb-video-gallery.php:935
 #. translators: %s: search term
 msgid ""
 "<div style=\"%1$s\">Go to your Wistia video, right click, \"Copy Link & "
@@ -33002,7 +33003,7 @@ msgstr ""
 msgid "Video  Gallery"
 msgstr ""
 
-#: modules/uabb-video-gallery/uabb-video-gallery.php:911
+#: modules/uabb-video-gallery/uabb-video-gallery.php:907
 #. translators: %s: search term
 msgid ""
 "<div style=\"%2$s\"> Make sure you add the actual URL of the video and not "
@@ -33013,7 +33014,7 @@ msgid ""
 "https://youtu.be/HJRzUQMhJMQ</div>"
 msgstr ""
 
-#: modules/uabb-video-gallery/uabb-video-gallery.php:926
+#: modules/uabb-video-gallery/uabb-video-gallery.php:922
 #. translators: %s: search term
 msgid ""
 "<div style=\"%1$s\">Make sure you add the actual URL of the video and not "

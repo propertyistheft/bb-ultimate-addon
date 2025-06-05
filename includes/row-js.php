@@ -346,7 +346,7 @@ function uabb_particle_row_dependency_js( $js, $nodes, $global_settings ) {
 							<?php
 							if ( '' !== $json_particles_custom ) {
 								?>
-								tsParticles.load( 'uabb-particle-' + row_id, <?php echo $json_particles_custom; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> );
+								tsParticles.load( 'uabb-particle-' + row_id, <?php echo $json_particles_custom; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing will break JSON structure, affecting particle rendering. ?> );
 								<?php
 							}
 							?>

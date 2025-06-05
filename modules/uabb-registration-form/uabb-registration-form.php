@@ -161,8 +161,8 @@ class UABBRegistrationFormModule extends FLBuilderModule {
 			return false;
 		}
 
-		if ( ! empty( $_POST['phone'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Missing
-			update_user_meta( $user_id, 'phone', intval( $_POST['phone'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Missing
+		if ( ! empty( $_POST['phone'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Missing -- Sanitization will break verification here.
+			update_user_meta( $user_id, 'phone', intval( $_POST['phone'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Missing -- Sanitization will break verification here.
 		}
 	}
 	/**
@@ -444,7 +444,7 @@ class UABBRegistrationFormModule extends FLBuilderModule {
 		?>
 		<div class="uabb-input-group uabb-<?php echo esc_attr( $field_name ); ?> uabb-rf-column-desktop_<?php echo esc_attr( $field_width['desktop'] ); ?> uabb-rf-column-medium_<?php echo esc_attr( $field_width['medium'] ); ?> uabb-rf-column-responsive_<?php echo esc_attr( $field_width['responsive'] ); ?> <?php echo esc_attr( $required_class ); ?>" >
 			<?php if ( '' !== $label ) { ?>
-				<label for="uabb-name" class="uabb-label-mark"> <?php echo $label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+				<label for="uabb-name" class="uabb-label-mark"> <?php echo wp_kses_post( $label ); ?></label>
 			<?php } ?>
 			<div class="uabb-form-outter">
 				<input type="<?php echo esc_attr( $type ); ?>" aria-label="<?php echo esc_attr( $field_name ); ?>" name="uabb_<?php echo esc_attr( $field_name ); ?>" value="" class="uabb-registration-form-requried-<?php echo esc_attr( $error_class ); ?>" placeholder="<?php echo esc_attr( $placeholder ); ?>">

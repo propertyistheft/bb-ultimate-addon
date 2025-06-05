@@ -40,7 +40,7 @@ if ( ! is_user_logged_in() || FLBuilderModel::is_builder_active() ) {
 			if ( 'yes' === $settings->enable_label ) {
 				?>
 				<div class="uabb-lf-input-group uabb-lf-label">
-					<label for="uabb-lf-name"><?php echo $settings->username_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+					<label for="uabb-lf-name"><?php echo wp_kses_post( $settings->username_label ); ?></label>
 				</div>
 				<?php } ?>
 				<div class="uabb-lf-input-group uabb-lf-row uabb-lf-username-input">
@@ -53,7 +53,7 @@ if ( ! is_user_logged_in() || FLBuilderModel::is_builder_active() ) {
 				</div>
 				<?php if ( 'yes' === $settings->enable_label ) { ?>
 				<div class="uabb-lf-input-group uabb-lf-label">
-					<label for="uabb-lf-password"> <?php echo $settings->password_label; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></label>
+					<label for="uabb-lf-password"> <?php echo wp_kses_post( $settings->password_label ); ?></label>
 				</div>
 				<?php } ?>
 				<div class="uabb-lf-input-group uabb-lf-row uabb-lf-password-input">
@@ -73,7 +73,7 @@ if ( ! is_user_logged_in() || FLBuilderModel::is_builder_active() ) {
 							<label class="uabb-lf-checkbox-label" for="uabb-lf-checkbox-<?php echo esc_attr( $id ); ?>">
 								<input type="checkbox" class="uabb-lf-remember-me-checkbox checkbox-inline" id="uabb-lf-checkbox-<?php echo esc_attr( $id ); ?>" name="uabb-lf-checkbox" value="1" />
 								<span class="checkbox-label">
-									<?php echo $settings->remember_me_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+									<?php echo wp_kses_post( $settings->remember_me_text ); ?>
 								</span>
 							</label>
 						</div>
@@ -88,7 +88,7 @@ if ( ! is_user_logged_in() || FLBuilderModel::is_builder_active() ) {
 
 							echo ( '' !== $settings->btn_icon && 'before' === $settings->btn_icon_position ) ? '<i class="' . esc_attr( $settings->btn_icon ) . ' uabb-login-form-submit-button-icon "></i>' : ''; }
 						?>
-						<span class="uabb-login-form-button-text"><?php echo $settings->wp_login_btn_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+						<span class="uabb-login-form-button-text"><?php echo wp_kses_post( $settings->wp_login_btn_text ); ?></span>
 						<?php
 						if ( isset( $settings->btn_icon ) && isset( $settings->btn_icon_position ) ) {
 							echo ( '' !== $settings->btn_icon && 'after' === $settings->btn_icon_position ) ? '<i class="' . esc_attr( $settings->btn_icon ) . ' uabb-login-form-submit-button-icon"></i>' : ''; }
@@ -101,10 +101,10 @@ if ( ! is_user_logged_in() || FLBuilderModel::is_builder_active() ) {
 						<div class="uabb-lf-input-group uabb-lf-row uabb-lf-custom-link">
 							<a class="uabb-lf-lost-your-pass-label" href="
 							<?php
-								echo $settings->custom_link_url //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+								echo esc_url( $settings->custom_link_url )
 							?>
 								"
-								> <?php echo $settings->custom_link_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								> <?php echo esc_html( $settings->custom_link_text ); ?>
 							</a>
 						</div>
 					<?php } ?>
@@ -116,9 +116,9 @@ if ( ! is_user_logged_in() || FLBuilderModel::is_builder_active() ) {
 								?>
 								<?php echo esc_url( wp_lostpassword_url() ); ?>
 								<?php } else { ?>
-								<?php echo $settings->lost_your_password_url; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								<?php echo esc_url( $settings->lost_your_password_url ); ?>
 								<?php } ?>"
-								> <?php echo $settings->lost_your_password_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+								> <?php echo wp_kses_post( $settings->lost_your_password_text ); ?>
 							</a>
 						</div>
 					<?php } ?>
@@ -151,11 +151,11 @@ if ( ! is_user_logged_in() || FLBuilderModel::is_builder_active() ) {
 		<div class="uabb-lf-logout-text">
 		<p> 
 		<?php
-		echo apply_filters( 'uabb_lf_succesfully_login_text', $uabb_lf_succesfully_login_text ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo esc_html( apply_filters( 'uabb_lf_succesfully_login_text', $uabb_lf_succesfully_login_text ) );
 		?>
 					<b> 
 					<?php
-					echo $current_user->display_name . '.'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo esc_html( $current_user->display_name ) . '.'; 
 					?>
 			</b><a href="
 			<?php
@@ -164,11 +164,11 @@ if ( ! is_user_logged_in() || FLBuilderModel::is_builder_active() ) {
 				echo esc_url( wp_logout_url() );
 			} else {
 
-				echo wp_logout_url( $settings->logout_redirect_url ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo esc_url( wp_logout_url( $settings->logout_redirect_url ) );
 			}
 
 			?>
-		"> <?php echo apply_filters( 'uabb_lf_logout_text', $uabb_lf_logout_text ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></a> </p> 
+		"> <?php echo esc_html( apply_filters( 'uabb_lf_logout_text', $uabb_lf_logout_text ) ); ?></a> </p> 
 		</div>
 
 	<?php

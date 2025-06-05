@@ -121,7 +121,7 @@ if ( 'masonary' === $settings->is_carousel || 'grid' === $settings->is_carousel 
 		<?php
 		if ( 'box' === $settings->cta_type ) {
 			$link_rel = BB_Ultimate_Addon_Helper::get_link_rel( $settings->link_target, $settings->link_nofollow, 0 );
-			echo '<a href="' . get_permalink( $the_query->posts[ $i ]->ID ) . '" title="' . esc_attr( __( 'View Box Content', 'uabb' ) ) . '" target="' . esc_attr( $settings->link_target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' class="uabb-blog-post-element-link" aria-label="Post Element"></a>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo '<a href="' . esc_url( get_permalink( $the_query->posts[ $i ]->ID ) ) . '" title="' . esc_attr( __( 'View Box Content', 'uabb' ) ) . '" target="' . esc_attr( $settings->link_target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . ' class="uabb-blog-post-element-link" aria-label="Post Element"></a>';
 		}
 		?>
 		<div class="uabb-blog-posts-shadow clearfix">
@@ -190,7 +190,7 @@ if ( 'carousel' !== $settings->is_carousel && 'yes' === $show_pagination ) {
 if ( empty( $the_query->posts ) ) :
 	?>
 <div class="fl-post-grid-empty">
-	<p><?php echo $settings->no_results_message; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+	<p><?php echo wp_kses_post( $settings->no_results_message ); ?></p>
 	<?php if ( $settings->show_search ) : ?>
 		<?php get_search_form(); ?>
 	<?php endif; ?>

@@ -715,7 +715,7 @@ class UABBTeamModule extends FLBuilderModule {
 			);
 
 			/* Render HTML Function */
-			echo ( isset( $this->settings->enable_custom_link ) && 'no' !== $this->settings->enable_custom_link ) ? '<a href="' . $this->settings->custom_link . '" target ="' . esc_attr( $this->settings->custom_link_target ) . '" aria-label="Go to ' . esc_attr( $this->settings->custom_link ) . '">' : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo ( isset( $this->settings->enable_custom_link ) && 'no' !== $this->settings->enable_custom_link ) ? '<a href="' . $this->settings->custom_link . '" target ="' . esc_attr( $this->settings->custom_link_target ) . '" aria-label="Go to ' . esc_attr( $this->settings->custom_link ) . '">' : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing the entire output breaks functionality, as it includes a dynamically generated anchor tag.
 			FLBuilder::render_module_html( 'image-icon', $imageicon_array );
 			echo ( isset( $this->settings->enable_custom_link ) && '' !== $this->settings->enable_custom_link ) ? '</a>' : '';
 		}
@@ -733,7 +733,7 @@ class UABBTeamModule extends FLBuilderModule {
 			$output .= ( isset( $this->settings->enable_custom_link ) && 'no' !== $this->settings->enable_custom_link ) ? '<a href="' . $this->settings->custom_link . '" target ="' . $this->settings->custom_link_target . '" ' . BB_Ultimate_Addon_Helper::get_link_rel( $this->settings->custom_link_target, $this->settings->custom_link_nofollow, 0 ) . '>' . $this->settings->name . '</a>' : $this->settings->name;
 			$output .= '</' . $this->settings->tag_selection . '>';
 			$output .= '</div>';
-			echo $output; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $output; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing breaks functionality, as it includes dynamic HTML tags and links that need to be rendered correctly.
 		}
 	}
 
@@ -747,7 +747,7 @@ class UABBTeamModule extends FLBuilderModule {
 			$output  = '<div class="uabb-team-desgn">';
 			$output .= '<span class="uabb-team-desgn-text">' . $this->settings->designation . '</span>';
 			$output .= '</div>';
-			echo $output; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $output; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing breaks functionality, as it includes dynamic HTML tags and links that need to be rendered correctly.
 		}
 	}
 
@@ -761,7 +761,7 @@ class UABBTeamModule extends FLBuilderModule {
 			$output  = '<div class="uabb-team-desc">';
 			$output .= '<span class="uabb-team-desc-text">' . $this->settings->description . '</span>';
 			$output .= '</div>';
-			echo $output; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $output; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitizing breaks functionality, as it includes dynamic HTML tags and links that need to be rendered correctly.
 		}
 	}
 
@@ -792,7 +792,7 @@ class UABBTeamModule extends FLBuilderModule {
 				}
 				$icon->link_target = ( isset( $icon->link_target ) ) ? $icon->link_target : '_blank';
 				$link_rel          = BB_Ultimate_Addon_Helper::get_link_rel( $icon->link_target, $icon->link_nofollow, 0 );
-				echo '<a class="uabb-team-icon-link uabb-team-icon-' . esc_attr( $icon_count ) . '" href="' . $icon->link . '" target="' . esc_attr( $icon->link_target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . '>'; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<a class="uabb-team-icon-link uabb-team-icon-' . esc_attr( $icon_count ) . '" href="' . esc_url( $icon->link ) . '" target="' . esc_attr( $icon->link_target ) . '" ' . ( ! is_null( $link_rel ) ? wp_kses_post( $link_rel ) : '' ) . '>';
 				$imageicon_array = array(
 
 					/* General Section */

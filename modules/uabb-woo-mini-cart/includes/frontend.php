@@ -36,7 +36,7 @@ $offcanvas_pos  = ( 'off-canvas' === $settings->cart_style && isset( $settings->
 			if ( 'text' === $settings->btn_style || 'icon-text' === $settings->btn_style ) {
 				?>
 
-				<span class="uabb-mini-cart-text"><?php echo $settings->cart_text; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+				<span class="uabb-mini-cart-text"><?php echo esc_html( $settings->cart_text ); ?></span>
 				<?php if ( 'yes' === $settings->show_subtotal ) { ?>
 					<span class="uabb-mc__btn-subtotal">
 						<?php echo wp_kses_post( WC()->cart->get_cart_subtotal() ); ?>
@@ -62,7 +62,7 @@ $offcanvas_pos  = ( 'off-canvas' === $settings->cart_style && isset( $settings->
 					<div class="uabb-cart-<?php echo esc_attr( $style ); ?>__close-btn"><i class="fa fa-times"></i></div>
 				<?php } ?>
 				<div class="uabb-mini-cart-title">
-					<p><?php echo $settings->cart_title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+					<p><?php echo wp_kses_post( $settings->cart_title ); ?></p>
 				</div>
 				<div class="uabb-mini-cart-header">
 					<div class="uabb-mini-cart-icon-wrap">
@@ -80,7 +80,7 @@ $offcanvas_pos  = ( 'off-canvas' === $settings->cart_style && isset( $settings->
 					</span>
 				</div>
 				<div class="uabb-mini-cart-items"><?php woocommerce_mini_cart(); ?></div>
-				<div class="uabb-mini-cart-message"><?php echo $settings->cart_msg; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></div>
+				<div class="uabb-mini-cart-message"><?php echo esc_html( wp_strip_all_tags( $settings->cart_msg ) ); ?></div>
 			</div>
 			<div class="uabb-overlay"></div>
 	<?php if ( 'modal' === $settings->cart_style || 'off-canvas' === $settings->cart_style ) { ?>

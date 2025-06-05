@@ -6,7 +6,7 @@
  */
 
 if ( 'yes' === $settings->filterable_gallery_enable && 'none' === $settings->pagination ) {
-	echo $module->render_gallery_filters(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	echo $module->render_gallery_filters(); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Sanitization would break the gallery filter functionality.
 
 	$filters     = $module->get_filter_values();
 	$filter_data = wp_json_encode( array_keys( $filters ) );
@@ -40,7 +40,7 @@ if ( ! empty( $settings->photos ) ) {
 	<?php if ( isset( $settings->pagination ) && ( 'load_more' === $settings->pagination || 'scroll' === $settings->pagination ) ) { ?>
 		<?php if ( ! empty( $settings->images_per_page ) && absint( $settings->images_per_page ) < count( $settings->photos ) ) { ?>
 			<div class="uabb-gallery-pagination pagination-<?php echo esc_attr( $settings->pagination ); ?>">
-				<a href="#" class="uabb-gallery-load-more"><?php echo $settings->load_more_text; ?></a> <?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<a href="#" class="uabb-gallery-load-more"><?php echo esc_html( $settings->load_more_text ); ?></a> 
 			</div>
 			<?php if ( 'scroll' === $settings->pagination ) { ?>
 				<div class="uabb-gallery-loader" style="display: none;">

@@ -262,7 +262,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 					$atc_html     .= '</span>';
 				$atc_html         .= '</a>';
 
-				echo $atc_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo wp_kses_post( $atc_html );
 			} elseif ( current_user_can( 'manage_options' ) ) {
 
 				if ( 'transparent' === $settings->style ) {
@@ -279,7 +279,7 @@ if ( class_exists( 'WooCommerce' ) ) {
 					$atc_html     .= '</span>';
 				$atc_html         .= '</a>';
 
-				echo $atc_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo wp_kses_post( $atc_html );
 			}
 		}
 	}

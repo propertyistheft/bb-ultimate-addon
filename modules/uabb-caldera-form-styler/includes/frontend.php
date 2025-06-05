@@ -129,10 +129,10 @@ if ( empty( $settings->caf_form_id ) || '0' === $settings->caf_form_id ) { ?>
 		if ( 'yes' === $settings->caf_custom_desc ) {
 			if ( $settings->caf_form_title ) {
 				?>
-				<<?php echo esc_attr( $settings->title_tag_selection ); ?> class="uabb-caf-form-title"><?php echo $settings->caf_form_title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></<?php echo esc_attr( $settings->title_tag_selection ); ?>>
+				<<?php echo esc_attr( $settings->title_tag_selection ); ?> class="uabb-caf-form-title"><?php echo wp_kses_post( $settings->caf_form_title ); ?></<?php echo esc_attr( $settings->title_tag_selection ); ?>>
 				<?php } ?>
 			<?php if ( $settings->caf_form_desc ) { ?>
-				<p class="uabb-caf-form-desc"><?php echo $settings->caf_form_desc; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+				<p class="uabb-caf-form-desc"><?php echo wp_kses_post( $settings->caf_form_desc ); ?></p>
 				<?php
 			}
 		}

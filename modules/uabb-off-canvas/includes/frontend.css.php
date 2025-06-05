@@ -50,6 +50,7 @@ if ( 'button' === $settings->offcanvas_on ) {
 			),
 		)
 	);
+	
 	if ( 'full' === $settings->btn_width ) { ?>
 		.fl-node-<?php echo esc_attr( $id ); ?> .uabb-module-content.uabb-creative-button-wrap a {
 			display: block !important;
@@ -326,19 +327,26 @@ if ( ! $version_bb_check ) {
 	}
 	<?php
 } else {
+	?>
+	.fl-builder-content .fl-node-<?php echo esc_attr( $id ); ?> .uabb-button-wrap {
+		text-align: <?php echo esc_attr( $settings->btn_align ); ?>;
+	}
+
+	<?php
 	if ( 'default' === $settings->btn_style ) {
 		$button_typo = uabb_theme_button_typography( $settings->btn_typo );
 
-		$settings->btn_typo            = ( array_key_exists( 'desktop', $button_typo ) ) ? $button_typo['desktop'] : $settings->btn_typo;
-		$settings->btn_typo_medium     = ( array_key_exists( 'tablet', $button_typo ) ) ? $button_typo['tablet'] : $settings->btn_typo_medium;
-		$settings->btn_typo_responsive = ( array_key_exists( 'mobile', $button_typo ) ) ? $button_typo['mobile'] : $settings->btn_typo_responsive;
+		$settings->btn_typo            = array_key_exists( 'desktop', $button_typo ) ? $button_typo['desktop'] : $settings->btn_typo;
+		$settings->btn_typo_medium     = array_key_exists( 'tablet', $button_typo ) ? $button_typo['tablet'] : $settings->btn_typo_medium;
+		$settings->btn_typo_responsive = array_key_exists( 'mobile', $button_typo ) ? $button_typo['mobile'] : $settings->btn_typo_responsive;
 	}
+
 	if ( class_exists( 'FLBuilderCSS' ) ) {
 		FLBuilderCSS::typography_field_rule(
 			array(
 				'settings'     => $settings,
 				'setting_name' => 'btn_typo',
-				'selector'     => ".fl-node-$id .uabb-creative-button-wrap .uabb-button,.fl-node-$id .uabb-creative-button-wrap .uabb-button:visited",
+				'selector'     => ".fl-node-$id .uabb-creative-button-wrap .uabb-button, .fl-node-$id .uabb-creative-button-wrap .uabb-button:visited",
 			)
 		);
 	}

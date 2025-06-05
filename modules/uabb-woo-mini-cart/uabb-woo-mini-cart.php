@@ -49,7 +49,7 @@ class UABBWooMiniCartModule extends FLBuilderModule {
 				ob_start();
 				?>
 				<div class="uabb-mini-cart-items">
-					<?php echo woocommerce_mini_cart();//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo wp_kses_post( woocommerce_mini_cart() ); ?>
 				</div>
 				<?php
 				$fragments['div.uabb-mini-cart-items'] = ob_get_clean();

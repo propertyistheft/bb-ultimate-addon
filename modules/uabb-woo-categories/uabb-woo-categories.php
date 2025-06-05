@@ -429,7 +429,7 @@ class UABBWooCategoriesModule extends FLBuilderModule {
 		remove_action( 'woocommerce_shop_loop_subcategory_title', array( $this, 'template_loop_category_title' ), 10 );
 		add_action( 'woocommerce_shop_loop_subcategory_title', 'woocommerce_template_loop_category_title', 10 );
 
-		echo $inner_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo wp_kses_post( $inner_content );
 	}
 
 	/**
@@ -472,7 +472,7 @@ class UABBWooCategoriesModule extends FLBuilderModule {
 		if ( $category && ! empty( $category->description ) ) {
 
 			echo '<div class="uabb-product-cat-desc">';
-				echo '<div class="uabb-term-description">' . wc_format_content( $category->description ) . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo '<div class="uabb-term-description">' . wp_kses_post( wc_format_content( $category->description ) ) . '</div>';
 			echo '</div>';
 		}
 	}

@@ -137,7 +137,7 @@ if ( isset( $settings->media_type ) && '' !== $settings->media_type && 'slider' 
 									<div class="uabb-video-player uabb-player">
 										<?php if ( 'self_hosted' === $settings->video_src ) { ?>
 											<video class="uabb-video-player-source uabb-player-source" poster="<?php echo esc_url( $settings->embed_cover_image_src ); ?>" <?php echo esc_attr( $loop ); ?> >
-												<source <?php echo $video_url; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> >
+												<source <?php echo $video_url; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaping is done, the video does not load properly in the frontend. ?> >
 											</video>
 												<?php
 										} else {
@@ -250,9 +250,9 @@ if ( isset( $settings->media_type ) && '' !== $settings->media_type && 'slider' 
 
 								<?php
 								if ( 'yes' === $settings->async_iframe ) {
-									echo '<div class="uabb-content-type-iframe" data-src="' . $settings->iframe_url . '" frameborder="0" allowfullscreen></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									echo '<div class="uabb-content-type-iframe" data-src="' . $settings->iframe_url . '" frameborder="0" allowfullscreen></div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If sanitized, some URLs may be stripped or modified, causing the iframe not to load correctly in the frontend.
 								} else {
-									echo '<iframe src="' . $settings->iframe_url . '" class="uabb-content-iframe" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									echo '<iframe src="' . $settings->iframe_url . '" class="uabb-content-iframe" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If sanitized, some URLs may be stripped or modified, causing the iframe not to load correctly in the frontend.
 								}
 								?>
 								</div>

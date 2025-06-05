@@ -47,7 +47,7 @@ $label_on  = ( isset( $settings->label_box_on ) ) ? $settings->label_box_on : 'O
 <div class="<?php echo esc_attr( $rbs_wrapper ); ?>">
 	<div class="uabb-rbs-toggle" tabindex="0" aria-label="<?php esc_attr_e( 'Content Toggle Module', 'uabb' ); ?>">
 		<div class="uabb-sec-1">
-			<<?php echo esc_attr( $settings->html_tag ); ?> class="uabb-rbs-head-1"><?php echo $settings->cont1_heading; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<<?php echo esc_attr( $settings->html_tag ); ?> class="uabb-rbs-head-1"><?php echo wp_kses_post( $settings->cont1_heading ); ?>
 			</<?php echo esc_attr( $settings->html_tag ); ?>>
 		</div>
 		<div class="uabb-main-btn" data-switch-type="<?php echo esc_attr( $settings->select_switch_style ); ?>">
@@ -80,11 +80,11 @@ $label_on  = ( isset( $settings->label_box_on ) ) ? $settings->label_box_on : 'O
 			?>
 
 			<!-- Display Switch -->
-			<?php echo $switch_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<?php echo $switch_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Output contains necessary HTML markup for the switch UI, escaping it would break functionality. ?>
 
 		</div>
 		<div class="uabb-sec-2">
-			<<?php echo esc_attr( $settings->html_tag ); ?> class="uabb-rbs-head-2"><?php echo $settings->cont2_heading; ?></<?php echo esc_attr( $settings->html_tag ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+			<<?php echo esc_attr( $settings->html_tag ); ?> class="uabb-rbs-head-2"><?php echo wp_kses_post( $settings->cont2_heading ); ?></<?php echo esc_attr( $settings->html_tag ); ?>>
 		</div>
 	</div>
 	<div class="uabb-rbs-toggle-sections">
@@ -92,9 +92,10 @@ $label_on  = ( isset( $settings->label_box_on ) ) ? $settings->label_box_on : 'O
 			<?php
 			if ( 'content' === $settings->cont1_section ) {
 				global $wp_embed;
-				echo wpautop( $wp_embed->autoembed( $settings->content_editor ) ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				$cont1 = ( $wp_embed->autoembed( $settings->content_editor ) );
+				echo wp_kses_post( wpautop( $cont1 ) ); 
 			} else {
-				echo $module->get_toggle_content1( $settings ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo wp_kses_post( $module->get_toggle_content1( $settings ) );
 			}
 			?>
 
@@ -103,9 +104,10 @@ $label_on  = ( isset( $settings->label_box_on ) ) ? $settings->label_box_on : 'O
 			<?php
 			if ( 'content_head2' === $settings->cont2_section ) {
 				global $wp_embed; // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.VariableRedeclaration
-				echo wpautop( $wp_embed->autoembed( $settings->content2_editor ) ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				$cont2 = ( $wp_embed->autoembed( $settings->content2_editor ) );
+				echo wp_kses_post( wpautop( $cont2 ) );
 			} else {
-				echo $module->get_toggle_content2( $settings ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				echo wp_kses_post( $module->get_toggle_content2( $settings ) );
 			}
 			?>
 		</div>

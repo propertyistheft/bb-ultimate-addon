@@ -579,11 +579,11 @@ class UABBAdvancedTestimonialsModule extends FLBuilderModule {
 				$is_filled  = $i <= (int) $rating;
 				$span_class = $is_filled ? 'filled-star' : 'empty-star';
 				$output    .= '<span class="screen-reader-text ' . esc_attr( $span_class ) . '">' . ( $is_filled ? 'Filled star' : 'Empty star' ) . '</span>';
-				$output    .= '<i class=" uabb-rating__ico ' . ( $is_filled ? esc_attr( $rating_icon_filled ) : esc_attr( $rating_icon_empty ) ) . '" aria-hidden="true"></i>';
+				$output    .= '<i class=" uabb-rating__ico ' . ( $is_filled ? esc_attr( $rating_icon_filled ) : esc_attr( $rating_icon_empty ) ) . '" aria-hidden="true" aria-label="Filled star"></i>';
 			}
 			$output .= '</div>
 						</div>';
-			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo wp_kses_post( $output );
 		}
 	}   
 }

@@ -159,7 +159,7 @@ class UABBTimelineModule extends FLBuilderModule {
 						<div class="uabb-day-new <?php echo esc_attr( $day_align_class ); ?>">
 							<div class="uabb-events-new">
 								<?php if ( ! empty( $settings->items[ $i ]->link ) ) { ?>
-									<a href="<?php echo ( $settings->items[ $i ]->link ); ?>" target="<?php echo esc_attr( $settings->items[ $i ]->link_target ); ?>" <?php BB_Ultimate_Addon_Helper::get_link_rel( $settings->items[ $i ]->link_target, $settings->items[ $i ]->link_nofollow, 1 ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> >
+									<a href="<?php echo esc_url( $settings->items[ $i ]->link ); ?>" target="<?php echo esc_attr( $settings->items[ $i ]->link_target ); ?>" <?php BB_Ultimate_Addon_Helper::get_link_rel( esc_attr( $settings->items[ $i ]->link_target ), esc_attr( $settings->items[ $i ]->link_nofollow ), 1 ); ?> >
 									<?php
 								}
 								if ( 'horizontal' === $settings->layout && 'yes' === $settings->show_card_arrow ) {
@@ -182,16 +182,14 @@ class UABBTimelineModule extends FLBuilderModule {
 											<?php
 												$heading_tag = ( 'yes' === $settings->items[ $i ]->override_global ) ? $settings->items[ $i ]->heading_tag_single : $settings->heading_tag;
 											?>
-												<<?php echo esc_attr( $heading_tag ); ?> class="uabb-timeline-heading"><?php echo $settings->items[ $i ]->heading; ?></<?php echo esc_attr( $heading_tag ); ?>> <?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-											</div>
+												<<?php echo esc_attr( $heading_tag ); ?> class="uabb-timeline-heading"><?php echo wp_kses_post( $settings->items[ $i ]->heading ); ?></<?php echo esc_attr( $heading_tag ); ?>> 											</div>
 											<?php } ?>
 											<?php do_action( 'uabb_timeline_below_heading', $settings->items[ $i ] ); ?>
 											<?php do_action( 'uabb_timeline_above_content', $settings->items[ $i ] ); ?>
 											<?php
 											if ( '' !== $settings->items[ $i ]->description ) {
 												?>
-												<div class="uabb-timeline-desc-content"><?php echo $settings->items[ $i ]->description; ?></div> <?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-										<?php } ?>
+												<div class="uabb-timeline-desc-content"><?php echo wp_kses_post( $settings->items[ $i ]->description ); ?></div> 										<?php } ?>
 										<?php do_action( 'uabb_timeline_below_content', $settings->items[ $i ] ); ?>
 									</div>
 									<?php if ( 'vertical' === $settings->layout && 'yes' === $settings->show_card_arrow ) { ?>

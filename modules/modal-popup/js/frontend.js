@@ -457,7 +457,8 @@ jQuery(document).ready(function( $ ) {
 			},
 			_stopVideo: function() {
 				var active_modal = $('.fl-node-' + this.node ),
-				    active_popup = $('.uamodal-' + this.node );
+				    active_popup = $('.uamodal-' + this.node ),
+					autoplay_modal = active_popup.find( '.uabb-modal' ).data( 'autoplay-stop' );
 
 				if ( this.modal_content != 'photo' ) {
 
@@ -465,16 +466,18 @@ jQuery(document).ready(function( $ ) {
 						modal_video_tag 	= active_popup.find( 'video' ),
 						modal_audio_tag     = active_popup.find( '.mejs-mediaelement audio' );
 
-						if ( modal_iframe.length ) {
-							var modal_src 			= modal_iframe.attr( "src" ).replace("&autoplay=1", "");
-							modal_iframe.attr( "src", '' );
-						    modal_iframe.attr( "src", modal_src );
-						}else if ( modal_video_tag.length ) {
-				        	modal_video_tag[0].pause();
-							modal_video_tag[0].currentTime = 0;
-						}
-						if ( modal_audio_tag.length ) {
-							modal_audio_tag[0].player.pause();
+						if( autoplay_modal !== 1 ) {
+							if ( modal_iframe.length ) {
+								var modal_src 			= modal_iframe.attr( "src" ).replace("&autoplay=1", "");
+								modal_iframe.attr( "src", '' );
+								modal_iframe.attr( "src", modal_src );
+							}else if ( modal_video_tag.length ) {
+								modal_video_tag[0].pause();
+								modal_video_tag[0].currentTime = 0;
+							}
+							if ( modal_audio_tag.length ) {
+								modal_audio_tag[0].player.pause();
+							}
 						}
 				}
 			},

@@ -80,11 +80,13 @@ class UABB_Init {
 			require_once BB_ULTIMATE_ADDON_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
 		}
 
+		add_filter( 'uabb_tracking_enabled', '__return_true' );
+
 			$bsf_analytics = BSF_Analytics_Loader::get_instance();
 
 			$bsf_analytics->set_entity(
 				array(
-					'bsf' => array(
+					'uabb' => array(
 						'product_name'        => 'Ultimate Addons for Beaver Builder',
 						'path'                => BB_ULTIMATE_ADDON_DIR . 'admin/bsf-analytics',
 						'author'              => 'Brainstorm Force',
@@ -101,7 +103,8 @@ class UABB_Init {
 								'show_on_screens'   => array( 'plugins' ),
 							),
 						),
-					),
+						'hide_optin_checkbox' => true, // Hide the opt-in checkbox.
+					),              
 				)
 			);
 

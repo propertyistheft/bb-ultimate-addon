@@ -33,7 +33,7 @@ if ( 'yes' === $settings->add_legend ) {
 						foreach ( $settings->legend_column->features as $feature ) :
 							?>
 													<?php if ( '' !== trim( $feature ) ) : ?>
-						<li><?php echo trim( $feature ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></li>
+						<li><?php echo wp_kses_post( trim( $feature ) ); ?></li>
 					<?php endif; ?>
 											<?php
 					endforeach;
@@ -61,7 +61,7 @@ if ( 'yes' === $settings->add_legend ) {
 			<?php
 			if ( 'yes' === $settings->pricing_columns[ $i ]->set_featured ) {
 				?>
-			<<?php echo esc_attr( $settings->pricing_columns[ $i ]->featured_tag_selection ); ?> class="uabb-featured-pricing-box"><?php echo $settings->pricing_columns[ $i ]->featured_text; ?></<?php echo esc_attr( $settings->pricing_columns[ $i ]->featured_tag_selection ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+			<<?php echo esc_attr( $settings->pricing_columns[ $i ]->featured_tag_selection ); ?> class="uabb-featured-pricing-box"><?php echo esc_html( $settings->pricing_columns[ $i ]->featured_text ); ?></<?php echo esc_attr( $settings->pricing_columns[ $i ]->featured_tag_selection ); ?>>
 				<?php
 			}
 			?>
@@ -100,7 +100,7 @@ if ( 'yes' === $settings->add_legend ) {
 									if ( isset( $settings->legend_column->features[ $j ] ) ) :
 										?>
 										<span class="uabb-pricing-ledgend">
-											<?php echo $settings->legend_column->features[ $j ]; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+											<?php echo wp_kses_post( $settings->legend_column->features[ $j ] ); ?>
 										</span>
 										<?php
 										endif;
