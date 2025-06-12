@@ -155,16 +155,14 @@ class UABBCountdownModule extends FLBuilderModule {
 
 		if ( ! empty( $settings->time_zone ) ) {
 
-			$time_zone_kolkata = new DateTimeZone( 'Asia/Kolkata' );
-			$time_zone         = new DateTimeZone( $settings->time_zone );
+				$time_zone = new DateTimeZone( $settings->time_zone );
+				$time      = new DateTime( 'now', $time_zone );
 
-			$time_kolkata = new DateTime( 'now', $time_zone_kolkata );
+				$timeoffset = $time_zone->getOffset( $time );
 
-			$timeoffset = $time_zone->getOffset( $time_kolkata );
-
-			return $timeoffset / 3600;
+				return $timeoffset / 3600;
 		} else {
-			return 'NULL';
+				return 'NULL';
 		}
 	}
 

@@ -12,18 +12,26 @@
 			var self = this;
 			var form   = $('.fl-builder-settings'),
 
-				timer_type    = form.find('select[name=timer_type]').val(),
-				day    = parseInt( form.find('select[name=fixed_date_days]').val() ),
-				month  = parseInt( form.find('select[name=fixed_date_month]').val() ),
-				year   = parseInt( form.find('select[name=fixed_date_year]').val() ),
-				hour   = parseInt( form.find('select[name="fixed_date_hour"]').val() ),
-				minute = parseInt( form.find('select[name="fixed_date_minutes"]').val() ),
-				date   = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':00 ';
+                               timer_type    = form.find('select[name=timer_type]').val(),
+                               day    = parseInt( form.find('select[name=fixed_date_days]').val() ),
+                               month  = parseInt( form.find('select[name=fixed_date_month]').val() ),
+                               year   = parseInt( form.find('select[name=fixed_date_year]').val() ),
+                               hour   = parseInt( form.find('select[name="fixed_date_hour"]').val() ),
+                               minute = parseInt( form.find('select[name="fixed_date_minutes"]').val() ),
+                               timezone = form.find('select[name=time_zone]').val();
 
-			if( timer_type == "fixed" && Date.parse( date ) <= Date.now() ) {
-				FLBuilder.alert( "Error! You should select date in the future." );
-				return false;
-			}
+                       var date = new Date(year, month - 1, day, hour, minute);
+
+                       if ( timer_type == "fixed" && timezone ) {
+                               var tzDate = new Date(date.toLocaleString('en-US', { timeZone: timezone }));
+                               var diff = tzDate.getTime() - date.getTime();
+                               date = new Date(date.getTime() - diff);
+                       }
+
+                       if( timer_type == "fixed" && date.getTime() <= Date.now() ) {
+                               FLBuilder.alert( "Error! You should select date in the future." );
+                               return false;
+                       }
 
 			return true;
 

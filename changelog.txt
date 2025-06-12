@@ -1,3 +1,10 @@
+Version 1.36.9, Thursday, 12th June 2025
+- Improvement: Video - Added Bunny.net stream support.
+- Improvement: Video Gallery - Added Bunny.net stream support.
+- Fixed: Advanced Tab - Tabs collapse issue in mobile devices with Saved Row.
+- Fixed: Countdown - Resolved issue with error when different timezone is selected.
+- Fixed: Resolved HTML render issue in modules.
+
 Version 1.36.8, Thursday, 5th June 2025
 - Improvement: Enhanced the codebase to strengthen security measures.
 - Improvement: Modal Popup - Improved handling of iframe src inside popup after closing the modal.

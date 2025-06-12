@@ -17,7 +17,7 @@ FLBuilder::register_module(
 				'general'                => array( // Section.
 					'title'  => __( 'Video', 'uabb' ), // Section Title.
 					'fields' => array( // Section Fields.
-						'video_type'   => array(
+						'video_type'       => array(
 							'type'    => 'select',
 							'label'   => __( 'Video Type', 'uabb' ),
 							'default' => 'youtube',
@@ -25,6 +25,7 @@ FLBuilder::register_module(
 								'youtube' => __( 'YouTube', 'uabb' ),
 								'vimeo'   => __( 'Vimeo', 'uabb' ),
 								'wistia'  => __( 'Wistia', 'uabb' ),
+								'bunny'   => __( 'Bunny.net', 'uabb' ),
 								'hosted'  => __( 'Self Hosted', 'uabb' ),
 							),
 							'toggle'  => array(
@@ -41,34 +42,49 @@ FLBuilder::register_module(
 									'fields'   => array( 'wistia_link' ),
 									'sections' => array( 'wistia_option' ),
 								),
+								'bunny'   => array(
+									'fields'   => array( 'bunny_link', 'bunny_cdn_prefix' ),
+									'sections' => array( 'bunny_option' ),
+								),
 								'hosted'  => array(
 									'fields'   => array( 'video_source', 'autoplay', 'loop', 'end', 'start', 'video', 'video_url' ),
 									'sections' => array( 'video_controls_section' ),
 								),
 							),
 						),
-						'youtube_link' => array(
+						'youtube_link'     => array(
 							'type'        => 'text',
 							'label'       => __( 'Link', 'uabb' ),
 							'default'     => 'https://www.youtube.com/watch?v=HJRzUQMhJMQ',
 							'description' => UABBVideo::get_description( 'youtube_link' ),
 							'connections' => array( 'url' ),
 						),
-						'vimeo_link'   => array(
+						'vimeo_link'       => array(
 							'type'        => 'text',
 							'label'       => __( 'Link', 'uabb' ),
 							'default'     => 'https://vimeo.com/274860274',
 							'description' => UABBVideo::get_description( 'vimeo_link' ),
 							'connections' => array( 'url' ),
 						),
-						'wistia_link'  => array(
+						'wistia_link'      => array(
 							'type'        => 'text',
 							'label'       => __( 'Link', 'uabb' ),
 							'default'     => '<p><a href="https://pratikc.wistia.com/medias/gyvkfithw2?wvideo=gyvkfithw2"><img src="https://embed-ssl.wistia.com/deliveries/53eec5fa72737e60aa36731b57b607a7c0636f52.webp?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=54bbffe0" width="400" height="225" style="width: 400px; height: 225px;"></a></p><p><a href="https://pratikc.wistia.com/medias/gyvkfithw2?wvideo=gyvkfithw2">Video Placeholder - Brainstorm Force - pratikc</a></p>',
 							'description' => UABBVideo::get_description( 'wistia_link' ),
 							'connections' => array( 'url' ),
 						),
-						'video_source' => array(
+						'bunny_link'       => array(
+							'type'        => 'text',
+							'label'       => __( 'Link', 'uabb' ),
+							'default'     => 'https://iframe.mediadelivery.net/play/432016/13530e19-ff52-4f20-a422-0075cccd73d4',
+							'connections' => array( 'url' ),
+						),
+						'bunny_cdn_prefix' => array(
+							'type'    => 'text',
+							'label'   => __( 'CDN Prefix', 'uabb' ),
+							'default' => 'vz-f9672ed3-d10',
+						),
+						'video_source'     => array(
 							'type'    => 'select',
 							'label'   => __( 'Video Source', 'uabb' ),
 							'default' => 'library',
@@ -85,13 +101,13 @@ FLBuilder::register_module(
 								),
 							),
 						),
-						'video'        => array(
+						'video'            => array(
 							'type'        => 'video',
 							'label'       => __( 'Video', 'uabb' ),
 							'help'        => __( 'A video in the MP4 format. Most modern browsers support this format.', 'uabb' ),
 							'show_remove' => true,
 						),
-						'video_url'    => array(
+						'video_url'        => array(
 							'type'        => 'text',
 							'label'       => __( 'External URL', 'uabb' ),
 							'placeholder' => __( 'https://www.example.com/my-photo.jpg', 'uabb' ),
@@ -99,7 +115,7 @@ FLBuilder::register_module(
 								'type' => 'none',
 							),
 						),
-						'start'        => array(
+						'start'            => array(
 							'type'    => 'unit',
 							'label'   => __( 'Start Time', 'uabb' ),
 							'default' => '',
@@ -107,7 +123,7 @@ FLBuilder::register_module(
 							'units'   => array( 'Sec' ),
 							'slider'  => true,
 						),
-						'end'          => array(
+						'end'              => array(
 							'type'    => 'unit',
 							'label'   => __( 'End Time', 'uabb' ),
 							'default' => '',
@@ -115,7 +131,7 @@ FLBuilder::register_module(
 							'units'   => array( 'Sec' ),
 							'slider'  => true,
 						),
-						'aspect_ratio' => array(
+						'aspect_ratio'     => array(
 							'type'    => 'select',
 							'label'   => __( 'Aspect Ratio', 'uabb' ),
 							'default' => '16_9',
@@ -323,6 +339,36 @@ FLBuilder::register_module(
 								'yes' => __( 'Yes', 'uabb' ),
 								'no'  => __( 'No', 'uabb' ),
 							),
+						),
+					),
+				),
+				'bunny_option'           => array(
+					'title'  => __( 'Video Options', 'uabb' ),
+					'fields' => array(
+						'bunny_autoplay' => array(
+							'type'    => 'select',
+							'label'   => __( 'AutoPlay', 'uabb' ),
+							'default' => 'no',
+							'options' => array(
+								'yes' => __( 'Yes', 'uabb' ),
+								'no'  => __( 'No', 'uabb' ),
+							),
+							'toggle'  => array(
+								'no' => array(
+									'tabs' => array( 'thumbnail' ),
+								),
+							),
+							'help'    => __( 'Thumbnail will not display if AutoPlay mode is enabled. ', 'uabb' ),
+						),
+						'bunny_loop'     => array(
+							'type'    => 'select',
+							'label'   => __( 'Loop', 'uabb' ),
+							'default' => 'no',
+							'options' => array(
+								'yes' => __( 'Yes', 'uabb' ),
+								'no'  => __( 'No', 'uabb' ),
+							),
+							'help'    => __( 'Choose a video to play continuously in a loop. The video will automatically start again after reaching the end.', 'uabb' ),
 						),
 					),
 				),

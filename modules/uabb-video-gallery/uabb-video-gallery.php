@@ -456,13 +456,16 @@ class UABBVideoGallery extends FLBuilderModule {
 
 		switch ( $item->video_type ) {
 			case 'youtube':
-				$video_url = $item->youtube_link;
+						$video_url = $item->youtube_link;
 				break;
 			case 'vimeo':
-				$video_url = $item->vimeo_link;
+							$video_url = $item->vimeo_link;
 				break;
 			case 'wistia':
 				$video_url = $item->wistia_link;
+				break;
+			case 'bunny':
+					$video_url = str_replace( '/play/', '/embed/', $item->bunny_link );
 				break;
 			case 'hosted':
 				$video_url = $this->get_hosted_video_url( $item );
@@ -480,7 +483,12 @@ class UABBVideoGallery extends FLBuilderModule {
 			}
 		} elseif ( 'wistia' === $item->video_type ) {
 
-			$vid_id = $this->getStringBetween( $video_url, 'wvideo=', '"' );
+				$vid_id = $this->getStringBetween( $video_url, 'wvideo=', '"' );
+		} elseif ( 'bunny' === $item->video_type ) {
+				$parts    = wp_parse_url( $video_url );
+				$path     = isset( $parts['path'] ) ? trim( $parts['path'], '/' ) : '';
+				$segments = explode( '/', $path );
+				$vid_id   = end( $segments );
 		}
 
 		if ( 'yes' === $item->custom_placeholder ) {
@@ -507,7 +515,10 @@ class UABBVideoGallery extends FLBuilderModule {
 				}
 			} elseif ( 'wistia' === $item->video_type ) {
 
-				$url = 'https://embed-ssl.wistia.com/deliveries/' . $this->getStringBetween( $video_url, 'deliveries/', '?' );
+					$url = 'https://embed-ssl.wistia.com/deliveries/' . $this->getStringBetween( $video_url, 'deliveries/', '?' );
+			} elseif ( 'bunny' === $item->video_type ) {
+					$cdn = isset( $item->bunny_cdn_prefix ) ? $item->bunny_cdn_prefix : 'vz-f9672ed3-d10';
+					$url = 'https://' . $cdn . '.b-cdn.net/' . $vid_id . '/thumbnail.jpg';
 			} elseif ( 'hosted' === $item->video_type ) {
 
 				$url = FL_BUILDER_URL . 'img/no-image.png';
@@ -632,13 +643,17 @@ class UABBVideoGallery extends FLBuilderModule {
 				$href = $item->vimeo_link;
 
 			} elseif ( 'wistia' === $item->video_type ) {
-				$wistia_id = $this->getStringBetween( $item->wistia_link, 'wvideo=', '"' );
-				$video_url = 'https://fast.wistia.net/embed/iframe/' . $wistia_id . '?videoFoam=true';
-				$href      = $video_url . '&autoplay=1';
+					$wistia_id = $this->getStringBetween( $item->wistia_link, 'wvideo=', '"' );
+					$video_url = 'https://fast.wistia.net/embed/iframe/' . $wistia_id . '?videoFoam=true';
+					$href      = $video_url . '&autoplay=1';
+
+			} elseif ( 'bunny' === $item->video_type ) {
+					$video_url = str_replace( '/play/', '/embed/', $item->bunny_link );
+					$href      = $video_url;
 
 			} elseif ( 'hosted' === $item->video_type ) {
-				$video_url = $this->get_hosted_video_url( $item );
-				$href      = $video_url;
+					$video_url = $this->get_hosted_video_url( $item );
+					$href      = $video_url;
 			}
 
 			$url = $this->get_placeholder_image( $item );
@@ -672,8 +687,9 @@ class UABBVideoGallery extends FLBuilderModule {
 
 					break;
 				case 'wistia':
+				case 'bunny':
 				case 'hosted':
-					$vurl = $video_url . '&autoplay=1';
+					$vurl = str_replace( '/play/', '/embed/', $video_url ) . '&autoplay=1';
 					break;
 			}
 
@@ -699,8 +715,9 @@ class UABBVideoGallery extends FLBuilderModule {
 						}
 						break;
 					case 'wistia':
+					case 'bunny':
 					case 'hosted':
-						$vurl = $video_url . '?&autoplay=1';
+							$vurl = str_replace( '/play/', '/embed/', $video_url ) . '?&autoplay=1';
 						break;
 				}
 				$html = '<a href="' . $href . '" aria-label="uabb-video-gallery" class="uabb-clickable uabb-vg__play_full" data-url="' . $vurl . '">';

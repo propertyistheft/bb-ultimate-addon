@@ -303,18 +303,25 @@ class UABBVideo extends FLBuilderModule {
 				$id = $regs[3];
 			}
 		} elseif ( 'wistia' === $video_type ) {
-			$url = $this->settings->wistia_link;
+				$url = $this->settings->wistia_link;
 			if ( strpos( $url, '[' ) !== false && strpos( $url, ']' ) !== false ) {
-				preg_match( '/\[(.*?)\]/', $url, $matches );
+						preg_match( '/\[(.*?)\]/', $url, $matches );
 				if ( isset( $matches[0] ) ) {
 					$url = $matches[0]; // Keep only the shortcode, including [ and ].
 				}
-				$url = do_shortcode( $url ); // Process the shortcode.
+						$url = do_shortcode( $url ); // Process the shortcode.
 			}
-			$id = $this->getStringBetween( $url, 'wvideo=', '"' );
+				$id = $this->getStringBetween( $url, 'wvideo=', '"' );
+
+		} elseif ( 'bunny' === $video_type ) {
+				$url      = $this->settings->bunny_link;
+				$parts    = wp_parse_url( $url );
+				$path     = isset( $parts['path'] ) ? trim( $parts['path'], '/' ) : '';
+				$segments = explode( '/', $path );
+				$id       = end( $segments );
 
 		}
-		return $id;
+				return $id;
 	}
 	/**
 	 * Returns Video URL.
@@ -337,7 +344,12 @@ class UABBVideo extends FLBuilderModule {
 			$url = 'https://www.youtube' . $cookie . '.com/embed/';
 		} elseif ( 'wistia' === $this->settings->video_type ) {
 
-			$url = 'https://fast.wistia.net/embed/iframe/';
+				$url = 'https://fast.wistia.net/embed/iframe/';
+
+		} elseif ( 'bunny' === $this->settings->video_type ) {
+
+				$url = str_replace( '/play/', '/embed/', $this->settings->bunny_link );
+				$id  = '';
 
 		}
 
@@ -415,18 +427,21 @@ class UABBVideo extends FLBuilderModule {
 				$thumb = ( isset( $vimeo[0]['thumbnail_large'] ) && ! empty( $vimeo[0]['thumbnail_large'] ) ) ? str_replace( '_640', '_840', $vimeo[0]['thumbnail_large'] ) : '';
 
 			} elseif ( 'wistia' === $this->settings->video_type ) {
-				$url = $this->settings->wistia_link;
+					$url = $this->settings->wistia_link;
 				if ( strpos( $url, '[' ) !== false && strpos( $url, ']' ) !== false ) {
-					preg_match( '/\[(.*?)\]/', $url, $matches );
+								preg_match( '/\[(.*?)\]/', $url, $matches );
 					if ( isset( $matches[0] ) ) {
 						$url = $matches[0]; // Keep only the shortcode, including [ and ].
 					}
-					$url = do_shortcode( $url ); // Process the shortcode.
+								$url = do_shortcode( $url ); // Process the shortcode.
 				}
-				$thumb = 'https://embed-ssl.wistia.com/deliveries/' . $this->getStringBetween( $url, 'deliveries/', '?' );
+					$thumb = 'https://embed-ssl.wistia.com/deliveries/' . $this->getStringBetween( $url, 'deliveries/', '?' );
+			} elseif ( 'bunny' === $this->settings->video_type ) {
+					$cdn_prefix = isset( $this->settings->bunny_cdn_prefix ) ? $this->settings->bunny_cdn_prefix : 'vz-f9672ed3-d10';
+					$thumb      = 'https://' . $cdn_prefix . '.b-cdn.net/' . $id . '/thumbnail.jpg';
 			}
 		}
-		return $thumb;
+				return $thumb;
 	}
 
 	/**
@@ -525,10 +540,13 @@ class UABBVideo extends FLBuilderModule {
 				$autoplay = ( 'yes' === $this->settings->vimeo_autoplay ) ? '1' : '0';
 				break;
 			case 'wistia':
-				$autoplay = ( 'yes' === $this->settings->wistia_autoplay ) ? '1' : '0';
+					$autoplay = ( 'yes' === $this->settings->wistia_autoplay ) ? '1' : '0';
+				break;
+			case 'bunny':
+					$autoplay = ( 'yes' === $this->settings->bunny_autoplay ) ? '1' : '0';
 				break;
 			case 'hosted':
-				$autoplay = ( '1' === $this->settings->autoplay ) ? '1' : '0';
+					$autoplay = ( '1' === $this->settings->autoplay ) ? '1' : '0';
 				break;
 		}
 
@@ -558,10 +576,11 @@ class UABBVideo extends FLBuilderModule {
 					$html = '<svg version="1.1" height="100%" width="100%"  viewBox="0 14.375 95 66.25"><path class="uabb-vimeo-icon-bg" d="M12.5,14.375c-6.903,0-12.5,5.597-12.5,12.5v41.25c0,6.902,5.597,12.5,12.5,12.5h70c6.903,0,12.5-5.598,12.5-12.5v-41.25c0-6.903-5.597-12.5-12.5-12.5H12.5z"/><polygon fill="#FFFFFF" points="39.992,64.299 39.992,30.701 62.075,47.5 "/></svg>';
 					break;
 				case 'wistia':
-					$html = '<button class="uabb-video-wistia-play w-big-play-button w-css-reset-button-important w-vulcan-v2-button"><svg x="0px" y="0px" viewBox="0 0 125 80" enable-background="new 0 0 125 80" focusable="false" alt="" style="fill: rgb(255, 255, 255); height: 100%; left: 0px; stroke-width: 0px; top: 0px; width: 100%;"><rect fill-rule="evenodd" clip-rule="evenodd" fill="none" width="125" height="80"></rect><polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="53,22 53,58 79,40"></polygon></svg></button>';
+						$html = '<button class="uabb-video-wistia-play w-big-play-button w-css-reset-button-important w-vulcan-v2-button"><svg x="0px" y="0px" viewBox="0 0 125 80" enable-background="new 0 0 125 80" focusable="false" alt="" style="fill: rgb(255, 255, 255); height: 100%; left: 0px; stroke-width: 0px; top: 0px; width: 100%;"><rect fill-rule="evenodd" clip-rule="evenodd" fill="none" width="125" height="80"></rect><polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="53,22 53,58 79,40"></polygon></svg></button>';
 					break;
+				case 'bunny':
 				case 'hosted':
-					$html = '<svg version="1.1" height="100%" width="100%"  viewBox="0 14.375 95 66.25"><path class="uabb-vimeo-icon-bg" d="M12.5,14.375c-6.903,0-12.5,5.597-12.5,12.5v41.25c0,6.902,5.597,12.5,12.5,12.5h70c6.903,0,12.5-5.598,12.5-12.5v-41.25c0-6.903-5.597-12.5-12.5-12.5H12.5z"/><polygon fill="#FFFFFF" points="39.992,64.299 39.992,30.701 62.075,47.5 "/></svg>';
+						$html = '<svg version="1.1" height="100%" width="100%"  viewBox="0 14.375 95 66.25"><path class="uabb-vimeo-icon-bg" d="M12.5,14.375c-6.903,0-12.5,5.597-12.5,12.5v41.25c0,6.902,5.597,12.5,12.5,12.5h70c6.903,0,12.5-5.598,12.5-12.5v-41.25c0-6.903-5.597-12.5-12.5-12.5H12.5z"/><polygon fill="#FFFFFF" points="39.992,64.299 39.992,30.701 62.075,47.5 "/></svg>';
 					break;
 			}
 		} elseif ( 'icon' === $this->settings->play_source ) {
@@ -914,7 +933,24 @@ class UABBVideo extends FLBuilderModule {
 				}
 			}
 
-			$params['videoFoam'] = 'true';
+				$params['videoFoam'] = 'true';
+		}
+		if ( 'bunny' === $this->settings->video_type ) {
+
+				$bunny_options = array( 'autoplay', 'loop' );
+
+			foreach ( $bunny_options as $option ) {
+				if ( 'autoplay' === $option ) {
+					if ( 'yes' === $this->settings->bunny_autoplay ) {
+						$params[ $option ] = 'true';
+					}
+					continue;
+				}
+				if ( 'loop' === $option ) {
+					$value             = ( 'yes' === $this->settings->bunny_loop ) ? 'true' : 'false';
+					$params[ $option ] = $value;
+				}
+			}
 		}
 		return $params;
 	}

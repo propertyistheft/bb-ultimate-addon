@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Ultimate Addons for Beaver Builder package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Beaver Builder 1.36.8\n"
+"Project-Id-Version: Ultimate Addons for Beaver Builder 1.36.9\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/bb-ultimate-addon\n"
 "POT-Creation-Date: 2025-06-03 06:58:06+00:00\n"
