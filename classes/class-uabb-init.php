@@ -79,8 +79,7 @@ class UABB_Init {
 		if ( ! class_exists( 'BSF_Analytics_Loader' ) ) {
 			require_once BB_ULTIMATE_ADDON_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
 		}
-
-		add_filter( 'uabb_tracking_enabled', '__return_true' );
+		add_action( 'admin_init', array( $this, 'uabb_maybe_migrate_analytics_tracking' ) );
 
 			$bsf_analytics = BSF_Analytics_Loader::get_instance();
 
@@ -108,6 +107,28 @@ class UABB_Init {
 				)
 			);
 
+	}
+
+	/**
+	 * Migrates analytics tracking option from 'bsf_analytics_optin' to 'uabb_analytics_optin'.
+	 *
+	 * Checks if the old analytics tracking option ('bsf_analytics_optin') is set to 'yes'
+	 * and if the new option ('uabb_analytics_optin') is not already set.
+	 * If so, updates the new tracking option to 'yes' to maintain user consent during migration.
+	 *
+	 * @since 1.36.10
+	 * @access public
+	 *
+	 * @return void
+	 */
+	public function uabb_maybe_migrate_analytics_tracking() {
+		$old_tracking = get_option( 'bsf_analytics_optin', false );
+		$new_tracking = get_option( 'uabb_analytics_optin', false );
+		if ( 'yes' === $old_tracking && false === $new_tracking ) {
+			update_option( 'uabb_analytics_optin', 'yes' );
+			$time = get_option( 'bsf_analytics_installed_time' );
+			update_option( 'uabb_analytics_installed_time', $time );
+		}
 	}
 
 	/**

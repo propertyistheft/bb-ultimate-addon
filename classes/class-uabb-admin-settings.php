@@ -557,7 +557,13 @@ final class UABBBuilderAdminSettings {
 			if ( isset( $_POST['uabb-google-map-api'] ) ) {
 				$uabb['uabb-google-map-api'] = sanitize_text_field( $_POST['uabb-google-map-api'] );
 			}
-			isset( $_POST['uabb-enable-beta-updates'] ) ? $uabb['uabb-enable-beta-updates'] = true : $uabb['uabb-enable-beta-updates'] = false;
+			isset( $_POST['uabb-enable-beta-updates'] ) ? $uabb['uabb-enable-beta-updates']           = true : $uabb['uabb-enable-beta-updates'] = false;
+			isset( $_POST['uabb-enable-analytics-updates'] ) ? $uabb['uabb-enable-analytics-updates'] = true : $uabb['uabb-enable-analytics-updates'] = false;
+			if ( isset( $_POST['uabb-enable-analytics-updates'] ) ) {
+				update_option( 'uabb_analytics_optin', 'yes' );
+			} else {
+				update_option( 'uabb_analytics_optin', 'no' );
+			}
 			if ( isset( $_POST['uabb-yelp-api-key'] ) ) {
 				$uabb['uabb-yelp-api-key'] = sanitize_text_field( $_POST['uabb-yelp-api-key'] );
 			}

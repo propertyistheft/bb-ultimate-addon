@@ -21,16 +21,17 @@
 				$branding_name       = BB_Ultimate_Addon_Helper::get_builder_uabb_branding( 'uabb-plugin-name' );
 				$branding_short_name = BB_Ultimate_Addon_Helper::get_builder_uabb_branding( 'uabb-plugin-short-name' );
 
-				$is_load_templates     = '';
-				$is_load_panels        = '';
-				$uabb_live_preview     = '';
-				$uabb_google_map_api   = '';
-				$uabb_colorpicker      = '';
-				$uabb_beta_updates     = '';
-				$uabb_yelp_api_key     = '';
-				$google_status         = '';
-				$yelp_status           = '';
-				$uabb_google_place_api = '';
+				$is_load_templates      = '';
+				$is_load_panels         = '';
+				$uabb_live_preview      = '';
+				$uabb_google_map_api    = '';
+				$uabb_colorpicker       = '';
+				$uabb_beta_updates      = '';
+				$uabb_yelp_api_key      = '';
+				$google_status          = '';
+				$yelp_status            = '';
+				$uabb_google_place_api  = '';
+				$uabb_analytics_updates = '';
 
 
 			if ( is_array( $uabb ) ) {
@@ -38,10 +39,10 @@
 				$uabb_live_preview   = ( array_key_exists( 'uabb-live-preview', $uabb ) && 1 === $uabb['uabb-live-preview'] ) ? ' checked' : '';
 				$uabb_google_map_api = ( array_key_exists( 'uabb-google-map-api', $uabb ) ) ? $uabb['uabb-google-map-api'] : '';
 
-				$uabb_beta_updates     = ( array_key_exists( 'uabb-enable-beta-updates', $uabb ) && 1 === (int) $uabb['uabb-enable-beta-updates'] ) ? ' checked' : '';
-				$uabb_yelp_api_key     = ( array_key_exists( 'uabb-yelp-api-key', $uabb ) ) ? $uabb['uabb-yelp-api-key'] : '';
-				$uabb_google_place_api = ( array_key_exists( 'uabb-google-place-api', $uabb ) ) ? $uabb['uabb-google-place-api'] : '';
-
+				$uabb_beta_updates      = ( array_key_exists( 'uabb-enable-beta-updates', $uabb ) && 1 === (int) $uabb['uabb-enable-beta-updates'] ) ? ' checked' : '';
+				$uabb_yelp_api_key      = ( array_key_exists( 'uabb-yelp-api-key', $uabb ) ) ? $uabb['uabb-yelp-api-key'] : '';
+				$uabb_google_place_api  = ( array_key_exists( 'uabb-google-place-api', $uabb ) ) ? $uabb['uabb-google-place-api'] : '';
+				$uabb_analytics_updates = ( get_option( 'uabb_analytics_optin' ) === 'yes' ) ? ' checked' : '';
 			}
 				$api_key_status = BB_Ultimate_Addon_Helper::api_key_status();
 
@@ -161,6 +162,16 @@
 				<?php } elseif ( 'no' === $yelp_status ) { ?>
 						<div class="uabb-key-warning"><?php esc_html_e( 'Yelp API key you have entered is incorrect.', 'uabb' ); ?></div>
 				<?php } ?>
+			</div>
+			<br/><hr/>
+
+			<div class="uabb-form-setting">
+				<h4><?php esc_html_e( 'Enable Anonymous Analytics', 'uabb' ); ?></h4>
+				<label>
+					<input type="checkbox" class="uabb-enable-analytics-updates" name="uabb-enable-analytics-updates" value="" <?php echo esc_attr( $uabb_analytics_updates ); ?> >
+					<?php esc_html_e( 'Collect non-sensitive information from your website, such as the PHP version and features used, to help us fix bugs faster, make smarter decisions, and build features that actually matter to you.', 'uabb' ); ?>
+					<a target="_blank" rel="noopener" href="https://store.brainstormforce.com/usage-tracking/?utm_source=wp_dashboard&utm_medium=general_settings&utm_campaign=usage_tracking"><?php esc_html_e( 'Learn More', 'uabb' ); ?></a>
+				</label>
 			</div>
 
 		</div>

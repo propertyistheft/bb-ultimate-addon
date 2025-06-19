@@ -338,13 +338,14 @@ if ( ! class_exists( 'BB_Ultimate_Addon_Helper' ) ) {
 			$uabb = UABB_Init::$uabb_options['fl_builder_uabb'];
 
 			$defaults = array(
-				'load_panels'              => 1,
-				'uabb-live-preview'        => 1,
-				'load_templates'           => 1,
-				'uabb-google-map-api'      => '',
-				'uabb-colorpicker'         => 1,
-				'uabb-row-separator'       => 1,
-				'uabb-enable-beta-updates' => 0,
+				'load_panels'                   => 1,
+				'uabb-live-preview'             => 1,
+				'load_templates'                => 1,
+				'uabb-google-map-api'           => '',
+				'uabb-colorpicker'              => 1,
+				'uabb-row-separator'            => 1,
+				'uabb-enable-beta-updates'      => 0,
+				'uabb-enable-analytics-updates' => 0,
 			);
 
 			// if empty add all defaults.
