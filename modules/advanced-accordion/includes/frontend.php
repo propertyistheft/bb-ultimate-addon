@@ -28,7 +28,7 @@
 	data-index="<?php echo esc_attr( $i ); ?>">
 		<div class="uabb-adv-accordion-button uabb-adv-accordion-button<?php echo esc_attr( $id ); ?> uabb-adv-<?php echo esc_attr( $settings->icon_position ); ?>-text" aria-selected="false" role="tab" tabindex="0" aria-expanded="true" aria-controls="expandable">
 			<?php echo wp_kses_post( $module->render_icon( 'before' ) ); ?>
-			<<?php echo esc_attr( $settings->tag_selection ); ?> class="uabb-adv-accordion-button-label" ><?php echo esc_html( sanitize_text_field( $settings->acc_items[ $i ]->acc_title ) ); ?></<?php echo esc_attr( $settings->tag_selection ); ?>>
+			<<?php echo esc_attr( $settings->tag_selection ); ?> class="uabb-adv-accordion-button-label"><?php echo wp_kses_post( $settings->acc_items[ $i ]->acc_title ); ?></<?php echo esc_attr( $settings->tag_selection ); ?>>
 			<?php echo wp_kses_post( $module->render_icon( 'after' ) ); ?>
 		</div>
 		<div class="uabb-adv-accordion-content uabb-adv-accordion-content<?php echo esc_attr( $id ); ?> fl-clearfix <?php echo ( 'content' === $settings->acc_items[ $i ]->content_type ) ? 'uabb-accordion-desc uabb-text-editor' : ''; ?>" aria-expanded="true" >

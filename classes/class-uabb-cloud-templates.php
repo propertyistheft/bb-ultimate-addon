@@ -219,6 +219,7 @@ if ( ! class_exists( 'UABB_Cloud_Templates' ) ) {
 							 *  If old template is not downloaded recently then it'll be removed.
 							 */
 							if (
+								is_array( $template ) &&
 								( array_key_exists( 'status', $downloaded_templates[ $type ][ $key ] ) ) &&
 								( array_key_exists( 'dat_url_local', $downloaded_templates[ $type ][ $key ] ) )
 							) {

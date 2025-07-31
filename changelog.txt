@@ -1,3 +1,13 @@
+Version 1.36.11, Tuesday, 29th July 2025
+- Improvement: Login Form - reCAPTCHA integration support.
+- Fixed: UABB Templates not displaying.
+- Fixed: Advanced Accordion - Title tag can be used with custom HTML tags.
+- Fixed: Advanced Posts - Title tag can be used with custom HTML tags.
+- Fixed: Photo Gallery - HTML tag based Caption not escaping properly in Lightbox.
+- Fixed: Testimonials - Fixed the accessibility issue with the UABB Testimonials module carousel.
+- Fixed: Creative Link - Fixed the issue with relative URLs.
+- Fixed: Advanced Timeline - Layouts rendering issue when module is added in advanced tab content using saved row.
+
 Version 1.36.10, Monday, 16th June 2025
 - Improvement: Optimized codebase and improved code quality.
 

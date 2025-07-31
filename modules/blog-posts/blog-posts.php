@@ -2066,7 +2066,7 @@ class BlogPostsModule extends FLBuilderModule {
 			?>
 			<<?php echo esc_attr( $this->settings->title_tag_selection ); ?> class="uabb-post-heading uabb-blog-post-section">
 				<?php
-				$title = '<a href=' . esc_url( apply_filters( 'uabb_blog_posts_link', get_permalink( $obj->ID ), $obj->ID ) ) . ' title="' . esc_attr( the_title_attribute( 'echo=0' ) ) . '" tabindex="0" class="">' . esc_html( get_the_title() ) . '</a>';
+				$title = '<a href=' . esc_url( apply_filters( 'uabb_blog_posts_link', get_permalink( $obj->ID ), $obj->ID ) ) . ' title="' . esc_attr( the_title_attribute( 'echo=0' ) ) . '" tabindex="0" class="">' . get_the_title() . '</a>';
 				echo wp_kses_post( apply_filters( 'uabb_advanced_post_title_link', $title, get_the_title(), get_permalink( $obj->ID ), $obj->ID, $this->settings ) );
 				?>
 			</<?php echo esc_attr( $this->settings->title_tag_selection ); ?>>

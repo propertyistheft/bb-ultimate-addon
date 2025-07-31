@@ -41,10 +41,13 @@ jQuery(document).ready(function( $ ) {
 				},
 				'image': {
 					titleSrc: function(item) {
-						<?php if ( 'below' === $settings->show_captions ) : ?>
-							return item.el.data('caption');
-						<?php elseif ( 'hover' === $settings->show_captions ) : ?>
-							return item.el.data('caption');
+						<?php
+							// Create a temporary div to safely escape HTML in captions for Lightbox; The issue was that when displaying captions in the lightbox, the Magnific Popup library was directly using the raw HTML content from the data-caption attribute without any escaping . 
+						if ( 'below' === $settings->show_captions || 'hover' === $settings->show_captions ) : 
+							?>
+							var tempDiv = document.createElement('div');
+							tempDiv.innerHTML = item.el.data('caption');
+							return tempDiv.textContent || tempDiv.innerText || '';
 						<?php endif; ?>
 					}
 				}

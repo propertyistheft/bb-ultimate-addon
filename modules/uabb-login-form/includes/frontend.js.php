@@ -31,11 +31,18 @@ if ( is_array( $uabb_setting_options ) ) {
 		uabb_social_google_client_id: "<?php echo ! empty( $uabb_social_google_client_id ) ? esc_attr( $uabb_social_google_client_id ) : ''; ?>",
 		google_login_select: "<?php echo ! empty( $settings->google_login_select ) ? esc_attr( $settings->google_login_select ) : ''; ?>",
 		facebook_login_select: "<?php echo ! empty( $settings->facebook_login_select ) ? esc_attr( $settings->facebook_login_select ) : ''; ?>",	
-		uabb_lf_username_empty_err_msg: "<?php esc_attr_e( 'Error: The Username field should not be Empty.', 'uabb' ); ?>",
-		uabb_lf_password_empty_err_msg: "<?php esc_attr_e( 'Error: The Password field should not be Empty.', 'uabb' ); ?>",
-		uabb_lf_both_empty_err_msg: "<?php esc_attr_e( 'Error: The Username and Password fields should not be Empty.', 'uabb' ); ?>",
-		uabb_lf_username_invalid_err_msg: "<?php esc_attr_e( 'Error: The Username you have entered is Invalid', 'uabb' ); ?>",
-		uabb_lf_password_invalid_err_msg: "<?php esc_attr_e( 'Error: The Password you have entered is Invalid.', 'uabb' ); ?>"
+		uabb_lf_username_empty_err_msg: "<?php esc_attr_e( 'Error: The Username field should not be empty.', 'uabb' ); ?>",
+		uabb_lf_password_empty_err_msg: "<?php esc_attr_e( 'Error: The Password field should not be empty.', 'uabb' ); ?>",
+		uabb_lf_both_empty_err_msg: "<?php esc_attr_e( 'Error: The Username and Password fields should not be empty.', 'uabb' ); ?>",
+		uabb_lf_username_invalid_err_msg: "<?php esc_attr_e( 'Error: The Username you have entered is invalid', 'uabb' ); ?>",
+		uabb_lf_password_invalid_err_msg: "<?php esc_attr_e( 'Error: The Password you have entered is invalid.', 'uabb' ); ?>",
+		recaptcha_toggle: "<?php echo isset( $settings->uabb_lf_recaptcha_toggle ) ? esc_attr( $settings->uabb_lf_recaptcha_toggle ) : 'hide'; ?>",
+		recaptcha_version: "<?php echo isset( $settings->uabb_lf_recaptcha_version ) ? esc_attr( $settings->uabb_lf_recaptcha_version ) : 'v2'; ?>",
+		recaptcha_site_key_v2: "<?php echo isset( $settings->uabb_lf_recaptcha_site_key ) ? esc_attr( $settings->uabb_lf_recaptcha_site_key ) : ''; ?>",
+		recaptcha_site_key_v3: "<?php echo isset( $settings->uabb_lf_v3_recaptcha_site_key ) ? esc_attr( $settings->uabb_lf_v3_recaptcha_site_key ) : ''; ?>",
+		recaptcha_theme: "<?php echo isset( $settings->uabb_lf_recaptcha_theme ) ? esc_attr( $settings->uabb_lf_recaptcha_theme ) : 'light'; ?>",
+		recaptcha_score: "<?php echo isset( $settings->uabb_lf_v3_recaptcha_score ) ? esc_attr( $settings->uabb_lf_v3_recaptcha_score ) : '0.5'; ?>",
+		badge_position: "<?php echo isset( $settings->uabb_lf_badge_position ) ? esc_attr( $settings->uabb_lf_badge_position ) : 'bottomright'; ?>"
 		});
 	});
 

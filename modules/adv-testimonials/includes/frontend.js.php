@@ -3,6 +3,11 @@
  * Render JavaScript to check function the various settings of module
  *
  * @package UABB Advanced Testimonials Module
+ * 
+ * Accessibility Fix: Disables aria-live="polite" when auto-advance is enabled
+ * to prevent screen readers from announcing content changes automatically,
+ * which interrupts the user experience. This follows WCAG best practices
+ * that recommend against using live regions for auto-advancing content.
  */
 
 ?>
@@ -30,6 +35,7 @@ if ( 'slider' === $settings->tetimonial_layout ) {
 		<?php if ( $settings->auto_play && $settings->auto_hover ) { ?>
 		autoHover: true,
 		<?php } ?>
+		ariaLive: <?php echo $settings->auto_play ? 'false' : 'true'; ?>,
 		adaptiveHeight: <?php echo esc_attr( $settings->adaptive_height ); ?>,
 		pause : <?php echo esc_attr( $settings->pause ) * 1000; ?>,
 		mode : '<?php echo esc_attr( $settings->transition ); ?>',

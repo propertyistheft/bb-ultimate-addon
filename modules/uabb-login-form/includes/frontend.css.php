@@ -1055,3 +1055,39 @@ $checked_width = $font_size - intval( esc_attr( $settings->checkbox_border['widt
 		}
 	}
 <?php } ?>
+
+/* reCAPTCHA Styles */
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-lf-recaptcha {
+	margin-bottom: 15px;
+}
+
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-lf-grecaptcha {
+	margin-bottom: 10px;
+}
+
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-lf-recaptcha-error {
+	color: #d9534f;
+	font-size: 14px;
+	margin-top: 5px;
+	display: block;
+}
+
+.fl-node-<?php echo esc_attr( $id ); ?> .uabb-lf-input-group-honeypot {
+	position: absolute !important;
+	left: -9999px !important;
+	top: -9999px !important;
+	visibility: hidden !important;
+	opacity: 0 !important;
+	height: 0 !important;
+	width: 0 !important;
+	overflow: hidden !important;
+}
+
+/* reCAPTCHA responsive adjustments */
+@media (max-width: 768px) {
+	.fl-node-<?php echo esc_attr( $id ); ?> .uabb-lf-grecaptcha {
+		transform: scale(0.77);
+		transform-origin: 0 0;
+		margin-bottom: 5px;
+	}
+}

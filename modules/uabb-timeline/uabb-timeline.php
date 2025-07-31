@@ -173,7 +173,7 @@ class UABBTimelineModule extends FLBuilderModule {
 										<div class="uabb-timeline-date-hide uabb-date-inner"><div class="inner-date-new"><p><?php echo wp_kses_post( ( 'date' === $settings->items[ $i ]->card_label_type ) ? $settings->items[ $i ]->date : $settings->items[ $i ]->label_text ); ?></p></div>
 										</div>
 									<?php } ?>
-									<div class="uabb-content">
+									<div class="uabb-timeline-content">
 										<?php do_action( 'uabb_timeline_above_heading', $settings->items[ $i ] ); ?>
 										<?php
 										if ( '' !== $settings->items[ $i ]->heading ) {
@@ -296,7 +296,7 @@ class UABBTimelineModule extends FLBuilderModule {
 										$this->get_date( $post_id, $settings );
 									}
 									?>
-								<div class="uabb-content">
+								<div class="uabb-timeline-content">
 									<?php if ( 'yes' === $settings->show_title && '' !== get_the_title( $post_id ) ) { ?>
 										<div class="uabb-timeline-heading-text">
 											<<?php echo esc_attr( $settings->heading_tag ); ?> class="uabb-timeline-heading"><?php echo wp_kses_post( get_the_title( $post_id ) ); ?></<?php echo esc_attr( $settings->heading_tag ); ?>>
@@ -1577,7 +1577,7 @@ FLBuilder::register_module(
 							'responsive' => true,
 							'preview'    => array(
 								'type'     => 'css',
-								'selector' => '.uabb-timeline-main .uabb-content .uabb-timeline-heading',
+								'selector' => '.uabb-timeline-main .uabb-timeline-content .uabb-timeline-heading',
 							),
 						),
 					),

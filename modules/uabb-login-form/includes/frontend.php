@@ -5,6 +5,26 @@
  *  @package UABB Login Form Module
  */
 
+/**
+ * Function that adds async attribute for reCAPTCHA script
+ *
+ * @since 1.36.11
+ * @method  uabb_lf_add_async_attribute for the enqueued `uabb-lf-g-recaptcha` script
+ * @param string $tag    Script tag.
+ * @param string $handle Registered script handle.
+ */
+add_filter(
+	'script_loader_tag',
+	function( $tag, $handle ) {
+		if ( ( 'uabb-lf-g-recaptcha' !== $handle ) || ( 'uabb-lf-g-recaptcha' === $handle && strpos( $tag, 'uabb-lf-g-recaptcha-api' ) !== false ) ) {
+			return $tag;
+		}
+		return str_replace( ' src', ' id="uabb-lf-g-recaptcha-api" async="async" defer="defer" src', $tag );
+	},
+	10,
+	2
+);
+
 if ( isset( $settings->input_field_width ) && ! empty( $settings->input_field_width ) ) {
 
 	$input_field_width_class = 'uabb-lf-input-width_' . $settings->input_field_width;
@@ -79,6 +99,33 @@ if ( ! is_user_logged_in() || FLBuilderModel::is_builder_active() ) {
 						</div>
 					</div>
 				<?php } ?>
+
+				<?php
+				// Add reCAPTCHA widget.
+				if ( isset( $settings->uabb_lf_recaptcha_toggle ) && 'show' === $settings->uabb_lf_recaptcha_toggle ) {
+					?>
+					<div class="uabb-lf-input-group uabb-lf-row uabb-lf-recaptcha">
+						<div class="uabb-lf-outter">
+							<?php if ( 'v3' === $settings->uabb_lf_recaptcha_version && ! empty( $settings->uabb_lf_v3_recaptcha_site_key ) && ! empty( $settings->uabb_lf_v3_recaptcha_secret_key ) ) { ?>
+								<div id="<?php echo esc_attr( $id ); ?>-uabb-lf-grecaptcha" class="uabb-lf-grecaptcha" data-sitekey="<?php echo esc_attr( $settings->uabb_lf_v3_recaptcha_site_key ); ?>" data-theme="<?php echo esc_attr( $settings->uabb_lf_recaptcha_theme ); ?>"  data-type="v3" data-action="LoginForm" data-badge="<?php echo esc_attr( $settings->uabb_lf_badge_position ); ?>" data-size="invisible"></div>
+							<?php } elseif ( 'v2' === $settings->uabb_lf_recaptcha_version && ! empty( $settings->uabb_lf_recaptcha_site_key ) && ! empty( $settings->uabb_lf_recaptcha_secret_key ) ) { ?>
+								<div id="<?php echo esc_attr( $id ); ?>-uabb-lf-grecaptcha" class="uabb-lf-grecaptcha" data-sitekey="<?php echo esc_attr( $settings->uabb_lf_recaptcha_site_key ); ?>" data-theme="<?php echo esc_attr( $settings->uabb_lf_recaptcha_theme ); ?>"></div>
+							<?php } ?>
+							<span class="uabb-lf-recaptcha-error uabb-lf-error-message" style="display: none;"><?php esc_html_e( 'Please check the reCAPTCHA to verify you are not a robot.', 'uabb' ); ?></span>
+						</div>
+					</div>
+					<?php
+				}
+
+				// Add honeypot field.
+				if ( isset( $settings->uabb_lf_honeypot_check ) && 'yes' === $settings->uabb_lf_honeypot_check ) {
+					?>
+					<div class="uabb-lf-input-group-honeypot" style="display: none;">
+						<input size="1" type="text" name="uabb-lf-honeypot" tabindex="-1" autocomplete="off">
+					</div>
+					<?php
+				}
+				?>
 
 				<div class="uabb-lf-input-group uabb-lf-row uabb-lf-submit-button-wrap">
 					<div class="uabb-lf-submit-button-align">

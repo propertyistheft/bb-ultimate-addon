@@ -166,7 +166,7 @@
 			<br/><hr/>
 
 			<div class="uabb-form-setting">
-				<h4><?php esc_html_e( 'Enable Anonymous Analytics', 'uabb' ); ?></h4>
+				<h4><?php esc_html_e( 'Help Us Improve Your Experience', 'uabb' ); ?></h4>
 				<label>
 					<input type="checkbox" class="uabb-enable-analytics-updates" name="uabb-enable-analytics-updates" value="" <?php echo esc_attr( $uabb_analytics_updates ); ?> >
 					<?php esc_html_e( 'Collect non-sensitive information from your website, such as the PHP version and features used, to help us fix bugs faster, make smarter decisions, and build features that actually matter to you.', 'uabb' ); ?>

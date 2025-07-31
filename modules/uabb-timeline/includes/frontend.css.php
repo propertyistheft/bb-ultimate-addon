@@ -151,7 +151,7 @@ $settings->arrow_background_color = FLBuilderColor::hex_or_rgb( $settings->arrow
 
 	FLBuilderCSS::rule(
 		array(
-			'selector' => ".fl-node-$id .uabb-timeline-main .uabb-content .uabb-timeline-heading",
+			'selector' => ".fl-node-$id .uabb-timeline-main .uabb-timeline-content .uabb-timeline-heading",
 			'enabled'  => ! empty( $settings->heading_color ),
 			'props'    => array(
 				'color' => $settings->heading_color,
@@ -161,7 +161,7 @@ $settings->arrow_background_color = FLBuilderColor::hex_or_rgb( $settings->arrow
 
 	FLBuilderCSS::rule(
 		array(
-			'selector' => ".fl-node-$id .uabb-timeline-main .in-view .uabb-content .uabb-timeline-heading, .fl-node-$id .uabb-timeline-main .slick-current .uabb-content .uabb-timeline-heading",
+			'selector' => ".fl-node-$id .uabb-timeline-main .in-view .uabb-timeline-content .uabb-timeline-heading, .fl-node-$id .uabb-timeline-main .slick-current .uabb-timeline-content .uabb-timeline-heading",
 			'enabled'  => ! empty( $settings->heading_focused_color ),
 			'props'    => array(
 				'color' => $settings->heading_focused_color,
@@ -171,7 +171,7 @@ $settings->arrow_background_color = FLBuilderColor::hex_or_rgb( $settings->arrow
 
 	FLBuilderCSS::rule(
 		array(
-			'selector' => ".fl-node-$id .uabb-timeline-main .animate-border:hover .uabb-content .uabb-timeline-heading",
+			'selector' => ".fl-node-$id .uabb-timeline-main .animate-border:hover .uabb-timeline-content .uabb-timeline-heading",
 			'enabled'  => ! empty( $settings->heading_hover_color ),
 			'props'    => array(
 				'color' => $settings->heading_hover_color,
@@ -617,7 +617,7 @@ $settings->arrow_background_color = FLBuilderColor::hex_or_rgb( $settings->arrow
 			array(
 				'settings'     => $settings,
 				'setting_name' => 'heading_typo',
-				'selector'     => ".fl-node-$id .uabb-timeline-main .uabb-content .uabb-timeline-heading",
+				'selector'     => ".fl-node-$id .uabb-timeline-main .uabb-timeline-content .uabb-timeline-heading",
 			)
 		);
 	}
@@ -658,7 +658,7 @@ $settings->arrow_background_color = FLBuilderColor::hex_or_rgb( $settings->arrow
 			if ( 'yes' === $item->override_global ) {
 				FLBuilderCSS::rule(
 					array(
-						'selector' => ".fl-node-$id .uabb-timeline-item-$i .uabb-content .uabb-timeline-heading",
+						'selector' => ".fl-node-$id .uabb-timeline-item-$i .uabb-timeline-content .uabb-timeline-heading",
 						'enabled'  => ! empty( $item->item_heading_color ),
 						'props'    => array(
 							'color' => $item->item_heading_color,
@@ -767,7 +767,7 @@ $settings->arrow_background_color = FLBuilderColor::hex_or_rgb( $settings->arrow
 						array(
 							'settings'     => $item,
 							'setting_name' => 'heading_typo_single',
-							'selector'     => ".fl-node-$id .uabb-timeline-main .uabb-timeline-item-$i .uabb-content .uabb-timeline-heading",
+							'selector'     => ".fl-node-$id .uabb-timeline-main .uabb-timeline-item-$i .uabb-timeline-content .uabb-timeline-heading",
 						)
 					);
 				}

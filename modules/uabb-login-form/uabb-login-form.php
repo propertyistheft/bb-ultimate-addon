@@ -64,6 +64,21 @@ class UABBLoginForm extends FLBuilderModule {
 
 			$this->add_js( 'uabb_lf_google_login', 'https://accounts.google.com/gsi/client' );
 		}
+
+		// Add reCAPTCHA scripts.
+		if ( isset( $settings->uabb_lf_recaptcha_toggle ) && 'show' === $settings->uabb_lf_recaptcha_toggle ) {
+
+			$site_lang = substr( get_locale(), 0, 2 );
+			$post_id   = FLBuilderModel::get_post_id();
+
+			$this->add_js(
+				'uabb-lf-g-recaptcha',
+				'https://www.google.com/recaptcha/api.js?onload=onLoadUABBLoginReCaptcha&render=explicit&hl=' . $site_lang,
+				array(),
+				'2.0',
+				true
+			);
+		}
 	}
 	/**
 	 * Function to get the icon for the Login Form Module.
@@ -313,18 +328,112 @@ class UABBLoginForm extends FLBuilderModule {
 
 		check_ajax_referer( 'uabb-lf-nonce', 'nonce' );
 
+		$node_id          = isset( $_POST['node_id'] ) ? sanitize_text_field( $_POST['node_id'] ) : false;
+		$template_id      = isset( $_POST['template_id'] ) ? sanitize_text_field( $_POST['template_id'] ) : false;
+		$template_node_id = isset( $_POST['template_node_id'] ) ? sanitize_text_field( $_POST['template_node_id'] ) : false;
+
+		if ( $node_id ) {
+			// Get the module settings.
+			if ( $template_id ) {
+				$post_id  = FLBuilderModel::get_node_template_post_id( $template_id );
+				$data     = FLBuilderModel::get_layout_data( 'published', $post_id );
+				$settings = $data[ $template_node_id ]->settings;
+			} else {
+				$module   = FLBuilderModel::get_module( $node_id );
+				$settings = $module->settings;
+			}
+		}
+
 		$username   = ! empty( $_POST['username'] ) ? sanitize_user( $_POST['username'] ) : '';
 		$password   = ! empty( $_POST['password'] ) ? sanitize_text_field( $_POST['password'] ) : '';
 		$rememberme = ! empty( $_POST['rememberme'] ) ? sanitize_text_field( $_POST['rememberme'] ) : '';
-		$user_data  = get_user_by( 'login', $username );
+		$honeypot   = ! empty( $_POST['honeypot'] ) ? sanitize_text_field( $_POST['honeypot'] ) : '';
+
+		// Check honeypot field.
+		if ( isset( $settings->uabb_lf_honeypot_check ) && 'yes' === $settings->uabb_lf_honeypot_check && ! empty( $honeypot ) ) {
+			wp_send_json_error( 'Spam detected' );
+		}
+
+		// reCAPTCHA validation.
+		if ( isset( $settings->uabb_lf_recaptcha_toggle ) && 'show' === $settings->uabb_lf_recaptcha_toggle ) {
+						
+			if ( 'v3' === $settings->uabb_lf_recaptcha_version ) {
+				$recaptcha_response = isset( $_POST['recaptcha_response'] ) ? sanitize_text_field( $_POST['recaptcha_response'] ) : '';
+				$recaptcha_secret   = $settings->uabb_lf_v3_recaptcha_secret_key;
+				$client_ip          = $this->get_client_ip();
+				$recaptcha_score    = isset( $settings->uabb_lf_v3_recaptcha_score ) ? floatval( $settings->uabb_lf_v3_recaptcha_score ) : 0.5;
+
+				if ( 0 > $recaptcha_score || 1 < $recaptcha_score ) {
+					$recaptcha_score = 0.5;
+				}
+
+				$request       = array(
+					'body' => array(
+						'secret'   => $recaptcha_secret,
+						'response' => $recaptcha_response,
+						'remoteip' => $client_ip,
+					),
+				);
+				$response      = wp_remote_post( 'https://www.google.com/recaptcha/api/siteverify', $request );
+				$response_code = wp_remote_retrieve_response_code( $response );
+
+				if ( 200 !== (int) $response_code ) {
+					wp_send_json_error( sprintf( __( 'Can not connect to the reCAPTCHA server.', 'uabb' ), $response_code ) );
+				} else {
+					$body   = wp_remote_retrieve_body( $response );
+					$result = json_decode( $body, true );
+										
+					$action = ( ( isset( $result['action'] ) && 'LoginForm' === $result['action'] ) && ( $result['score'] > $recaptcha_score ) );
+
+					if ( ! $result['success'] || ! $action ) {
+						wp_send_json_error( __( 'reCAPTCHA verification failed. Please try again.', 'uabb' ) );
+					}
+				}
+			} else {
+				// reCAPTCHA v2 validation.
+				$recaptcha_response = isset( $_POST['recaptcha_response'] ) ? sanitize_text_field( $_POST['recaptcha_response'] ) : '';
+								
+				if ( empty( $recaptcha_response ) ) {
+					wp_send_json_error( __( 'Please complete the reCAPTCHA verification.', 'uabb' ) );
+				}
+
+				$recaptcha_secret = $settings->uabb_lf_recaptcha_secret_key;
+				$client_ip        = $this->get_client_ip();
+
+				$request       = array(
+					'body' => array(
+						'secret'   => $recaptcha_secret,
+						'response' => $recaptcha_response,
+						'remoteip' => $client_ip,
+					),
+				);
+				$response      = wp_remote_post( 'https://www.google.com/recaptcha/api/siteverify', $request );
+				$response_code = wp_remote_retrieve_response_code( $response );
+
+				if ( 200 !== (int) $response_code ) {
+					wp_send_json_error( sprintf( __( 'Can not connect to the reCAPTCHA server.', 'uabb' ), $response_code ) );
+				} else {
+					$body   = wp_remote_retrieve_body( $response );
+					$result = json_decode( $body, true );
+
+					if ( ! $result['success'] ) {
+						wp_send_json_error( __( 'reCAPTCHA verification failed. Please try again.', 'uabb' ) );
+					}
+				}
+			}
+		}
+
+		$user_data = get_user_by( 'login', $username );
 		if ( ! $user_data ) {
 			$user_data = get_user_by( 'email', $username );
 		}
+				
 		if ( $user_data ) {
 			$user_ID    = $user_data->ID;
 			$user_email = $user_data->user_email;
 
 			if ( wp_check_password( $password, $user_data->user_pass, $user_data->ID ) ) {
+				
 				if ( '1' === $rememberme ) {
 
 					wp_set_auth_cookie( $user_ID, true );
@@ -337,15 +446,42 @@ class UABBLoginForm extends FLBuilderModule {
 				wp_send_json_success();
 
 			} else {
-
 				wp_send_json_error( 'Incorrect Password' );
 			}
 		} else {
-
 			wp_send_json_error( 'Incorrect Username' );
 		}
 
 	}
+
+	/**
+	 * Function that gets client IP address for reCAPTCHA validation
+	 *
+	 * @since 1.36.11
+	 * @method get_client_ip
+	 * @return string Client IP address
+	 */
+	public static function get_client_ip() {
+		$server_ip_keys = array(
+			'HTTP_CLIENT_IP',
+			'HTTP_X_FORWARDED_FOR',
+			'HTTP_X_FORWARDED',
+			'HTTP_X_CLUSTER_CLIENT_IP',
+			'HTTP_FORWARDED_FOR',
+			'HTTP_FORWARDED',
+			'REMOTE_ADDR',
+		);
+
+		foreach ( $server_ip_keys as $key ) {
+			if ( isset( $_SERVER[ $key ] ) && filter_var( $_SERVER[ $key ], FILTER_VALIDATE_IP ) ) {
+				return sanitize_text_field( $_SERVER[ $key ] );
+			}
+		}
+
+		// Fallback local ip.
+		return '127.0.0.1';
+	}
+
 	/**
 	 * Function that authenticates Google user.
 	 *

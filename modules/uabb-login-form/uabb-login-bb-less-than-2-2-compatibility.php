@@ -1733,5 +1733,121 @@ FLBuilder::register_module(
 				),
 			),
 		),
+		'reCAPTCHA'  => array(
+			'title'    => __( 'Anti-Spam Protection', 'uabb' ),
+			'sections' => array(
+				'honeypot_section'  => array(
+					'title'  => __( 'Honeypot', 'uabb' ),
+					'fields' => array(
+						'uabb_lf_honeypot_check' => array(
+							'type'    => 'select',
+							'label'   => __( ' Enable Honeypot', 'uabb' ),
+							'default' => 'no',
+							'options' => array(
+								'yes' => __( 'Yes', 'uabb' ),
+								'no'  => __( 'No', 'uabb' ),
+							),
+						),
+					),
+				),
+				'recaptcha_general' => array(
+					'title'       => __( 'reCAPTCHA', 'uabb' ),
+					'description' => '<div style="line-height: 1em; margin-left:20px; background:#e4e7ea; padding:15px;">' . __( 'Please register keys for your website at', 'uabb' ) . ' <a href="https://www.google.com/recaptcha/admin" target="_blank"> <b>Google Admin Console </b> </a>. </div>',
+					'fields'      => array(
+						'uabb_lf_recaptcha_toggle'        => array(
+							'type'    => 'select',
+							'label'   => __( 'Enable reCAPTCHA', 'uabb' ),
+							'default' => 'hide',
+							'options' => array(
+								'show' => __( 'Yes', 'uabb' ),
+								'hide' => __( 'No', 'uabb' ),
+							),
+							'preview' => array(
+								'type' => 'none',
+							),
+							'toggle'  => array(
+								'show' => array(
+									'fields' => array( 'uabb_lf_recaptcha_version', 'uabb_lf_recaptcha_site_key', 'uabb_lf_recaptcha_secret_key', 'uabb_lf_v3_recaptcha_site_key', 'uabb_lf_v3_recaptcha_secret_key', 'uabb_lf_v3_recaptcha_score', 'uabb_lf_recaptcha_theme', 'uabb_lf_badge_position' ),
+								),
+							),
+						),
+						'uabb_lf_recaptcha_version'       => array(
+							'type'    => 'select',
+							'label'   => __( 'reCAPTCHA Version', 'uabb' ),
+							'default' => 'v2',
+							'options' => array(
+								'v2' => __( 'v2', 'uabb' ),
+								'v3' => __( 'v3', 'uabb' ),
+							),
+							'toggle'  => array(
+								'v2' => array(
+									'fields' => array( 'uabb_lf_recaptcha_site_key', 'uabb_lf_recaptcha_secret_key', 'uabb_lf_recaptcha_theme' ),
+								),
+								'v3' => array(
+									'fields' => array( 'uabb_lf_v3_recaptcha_site_key', 'uabb_lf_v3_recaptcha_secret_key', 'uabb_lf_badge_position', 'uabb_lf_recaptcha_score', 'uabb_lf_recaptcha_theme' ),
+								),
+							),
+						),
+						'uabb_lf_badge_position'          => array(
+							'type'    => 'select',
+							'label'   => __( 'Badge Position', 'uabb' ),
+							'default' => 'bottomright',
+							'options' => array(
+								'bottomright' => __( 'Bottom Right', 'uabb' ),
+								'bottomleft'  => __( 'Bottom Left', 'uabb' ),
+								'inline'      => __( 'Inline', 'uabb' ),
+							),
+						),
+						'uabb_lf_recaptcha_site_key'      => array(
+							'type'        => 'text',
+							'label'       => __( 'Site Key', 'uabb' ),
+							'connections' => array( 'string', 'html' ),
+							'preview'     => array(
+								'type' => 'none',
+							),
+						),
+						'uabb_lf_recaptcha_secret_key'    => array(
+							'type'        => 'text',
+							'label'       => __( 'Secret Key', 'uabb' ),
+							'connections' => array( 'string', 'html' ),
+							'preview'     => array(
+								'type' => 'none',
+							),
+						),
+						'uabb_lf_v3_recaptcha_site_key'   => array(
+							'type'        => 'text',
+							'label'       => __( 'Site Key', 'uabb' ),
+							'connections' => array( 'string', 'html' ),
+							'preview'     => array(
+								'type' => 'none',
+							),
+						),
+						'uabb_lf_v3_recaptcha_secret_key' => array(
+							'type'        => 'text',
+							'label'       => __( 'Secret Key', 'uabb' ),
+							'connections' => array( 'string', 'html' ),
+							'preview'     => array(
+								'type' => 'none',
+							),
+						),
+						'uabb_lf_v3_recaptcha_score'      => array(
+							'type'    => 'text',
+							'label'   => __( 'reCAPTCHA Score', 'uabb' ),
+							'default' => '0.5',
+							'help'    => __( 'Set the minimum score threshold (0.0 to 1.0). Lower scores indicate more likely bot traffic.', 'uabb' ),
+						),
+						'uabb_lf_recaptcha_theme'         => array(
+							'type'    => 'select',
+							'label'   => __( 'Theme', 'uabb' ),
+							'default' => 'light',
+							'options' => array(
+								'light' => __( 'Light', 'uabb' ),
+								'dark'  => __( 'Dark', 'uabb' ),
+							),
+						),
+					),
+				),
+			),
+		),
 	)
 );
